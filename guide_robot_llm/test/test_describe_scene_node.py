@@ -47,6 +47,7 @@ def _make_node(
     frame_buffer: _FakeFrameBuffer,
     frozen: tuple | None = None,
     frozen_now: float | None = None,
+    frozen_mission: object | None = None,
     max_candidates: int = 5,
     max_frame_age_s: float = 2.0,
 ) -> DialogAgentNode:
@@ -75,6 +76,7 @@ def _make_node(
     node._vision_max_frame_age_s = max_frame_age_s  # noqa: SLF001
     node._turn_frozen_frames = frozen  # noqa: SLF001
     node._turn_frozen_now_s = frozen_now  # noqa: SLF001
+    node._turn_frozen_mission = frozen_mission  # noqa: SLF001
     node._frame_buffer = frame_buffer  # noqa: SLF001
     return node
 
@@ -150,3 +152,37 @@ def test_no_frames_fails_with_quality_none() -> None:
     assert result.data["quality"] == "none"
     assert result.data["visual_context"] == ""
     assert result.data["exhibit_candidates"] == ()
+
+
+# -- C3: кандидаты по замороженному снимку миссии хода ------------------------------
+
+
+def test_turn_frozen_mission_wins_over_live_state() -> None:
+    """Пока LLM думал, живое /mission/state сменилось на другую
+    остановку: кандидаты обязаны смотреть на ЗАМОРОЖЕННЫЙ снимок миссии
+    хода (тот же ход, что и кадры), не на живое состояние."""
+    node = _make_node(
+        frame_buffer=_FakeFrameBuffer([_frame(_URL_A, captured_at=99.9)]),
+        frozen=(_frame(_URL_B, captured_at=99.9),),
+        frozen_now=100.0,
+        frozen_mission=SimpleNamespace(stop_id="stop_exhibit"),
+    )
+    # Живое состояние -- уже ЧУЖАЯ зона (hall_b, один экспонат):
+    # если бы кандидаты строились по нему, получили бы ("other_zone",).
+    node.last_mission_state = lambda: SimpleNamespace(stop_id="other_zone")  # noqa: SLF001
+
+    result = node._tool_describe_scene({})  # noqa: SLF001
+
+    assert result.ok, result.message
+    assert result.data["exhibit_candidates"] == ("stop_exhibit", "neighbour")
+
+
+def test_outside_turn_candidates_use_live_state() -> None:
+    """Вне хода стэш сброшен -- кандидаты строятся по живому состоянию."""
+    node = _make_node(frame_buffer=_FakeFrameBuffer([_frame(_URL_A, captured_at=99.9)]))
+    node.last_mission_state = lambda: SimpleNamespace(stop_id="other_zone")  # noqa: SLF001
+
+    result = node._tool_describe_scene({})  # noqa: SLF001
+
+    assert result.ok, result.message
+    assert result.data["exhibit_candidates"] == ("other_zone",)

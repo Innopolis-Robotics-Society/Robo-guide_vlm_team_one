@@ -250,6 +250,10 @@ class DialogAgentNode(LifecycleNode):
         # хода; None вне хода (тогда describe_scene морозит кадры сама).
         self._turn_frozen_frames: tuple | None = None
         self._turn_frozen_now_s: float | None = None
+        # Снимок миссии ТОГО ЖЕ хода (стешуется рядом с кадрами):
+        # кандидаты describe_scene обязаны смотреть на ту же остановку,
+        # что и замороженные кадры -- не на живое /mission/state.
+        self._turn_frozen_mission: MissionState | None = None
 
         self._cb_reentrant = ReentrantCallbackGroup()
 
@@ -1232,6 +1236,10 @@ class DialogAgentNode(LifecycleNode):
             # остаются локальными переменными для промпт-пути (build_content).
             frozen: list = []
             now_s = self._now_s()
+            # describe_scene (C3): снимок миссии хода стешуется вне условия
+            # vision -- кадры без vision не нужны, а вот «какая остановка
+            # была в этот ход» нужен любому читателю стэша.
+            self._turn_frozen_mission = mission
             if self._frame_buffer is not None:
                 frozen = self._frame_buffer.freeze(now_s)
                 snap["frames"] = [
@@ -1580,10 +1588,12 @@ class DialogAgentNode(LifecycleNode):
                 self._pending_answer_replay = None
                 self._turn_in_flight = False
                 self._abort_event = None
-                # describe_scene (C3): стэш кадров хода живёт только внутри
-                # хода; вне его describe_scene морозит кадры сама.
+                # describe_scene (C3): стэш хода (кадры + now_s + миссия)
+                # живёт только внутри хода; вне него describe_scene
+                # морозит кадры сама и берёт живое состояние миссии.
                 self._turn_frozen_frames = None
                 self._turn_frozen_now_s = None
+                self._turn_frozen_mission = None
             if pending_text is None and pending_answer_replay is None:
                 self._disarm_listen()
             self._arm_wake_grace()
@@ -1683,7 +1693,9 @@ class DialogAgentNode(LifecycleNode):
         """
         timeout = timeout_s if timeout_s is not None else self._service_call_timeout_s
         if name == "describe_scene":
-            return self._tool_describe_scene(args, mission_state=mission_state)
+            # Локальный обработчик: миссия хода и кадры стешены внутри
+            # узла; брокер здесь не нужен (см. _tool_describe_scene).
+            return self._tool_describe_scene(args)
         client = getattr(self, "_call_tool_client", None)
         if client is None:
             return _RemoteToolResult(ok=False, message="узел уже разобран", data={})
@@ -1712,21 +1724,31 @@ class DialogAgentNode(LifecycleNode):
             data = {}
         return _RemoteToolResult(ok=response.ok, message=response.message, data=data)
 
-    def _tool_describe_scene(
-        self, args: dict, *, mission_state: int | None = None
-    ) -> _RemoteToolResult:
+    def _tool_describe_scene(self, args: dict) -> _RemoteToolResult:
         """Описать сцену по замороженным кадрам и каталогу экспонатов.
 
         Переиспользует визуальный конвейер visual_context: каталог
         текущей остановки/зоны только через `_visual_candidates` (C1), а
-        во время хода -- кадры, уже замороженные `_run_turn`'ом (C3,
-        ровно один freeze на ход). Каталог используется только как список
-        кандидатов для маркировки, а не как источник фактов о сцене.
+        во время хода -- кадры и снимок миссии, уже замороженные
+        `_run_turn`'ом (C3, ровно один freeze на ход). Каталог
+        используется только как список кандидатов для маркировки, а не
+        как источник фактов о сцене.
         """
         focus = str(args.get("focus", ""))
         focus = focus[:120]
 
-        mission = self.last_mission_state()
+        # C3: во время хода кандидаты строятся по ЗАМОРОЖЕННОМУ снимку
+        # миссии того же хода (стешен `_run_turn`'ом рядом с кадрами), не
+        # по живому `last_mission_state()`: пока LLM думал, /mission/state
+        # мог смениться (аривали на новую остановку) -- тогда кандидаты
+        # разъехались бы с кадрами (stage3 C1: снимок хода -- единый
+        # источник состояния хода). Вне хода (стэш сброшен в finally
+        # прошлого хода) -- живое состояние, как и раньше.
+        mission = (
+            self._turn_frozen_mission
+            if self._turn_frozen_mission is not None
+            else self.last_mission_state()
+        )
         # C1: единственный источник кандидатов -- `_visual_candidates(mission)`
         # (текущая остановка первой, затем экспонаты той же зоны в порядке
         # каталога). Инлайн-копия этого цикла удалена: она дублировала
