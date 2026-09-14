@@ -8,6 +8,24 @@
 > harness. The rest of this document is retained as the full survey and
 > watchlist context.
 
+## License verification (checked 2026-09-15)
+
+Fresh verification against primary sources, executed for plan task T1 of
+`vlm-bench-50` (harness for Taiga #10). Dates below are the verification date.
+
+| Source | Verdict | Evidence (checked 2026-09-15) |
+|---|---|---|
+| **DP / Deepoint** | **GO** — modifiable, noncommercial | [data/README.md](https://github.com/kyotovision-public/deepoint/blob/main/data/README.md) states CC BY-NC 4.0; 7 zips (5 frame days `2023-01-{17,18,19,24,25}.zip` + `labels.zip` + `keypoints.zip`) with published md5sums; frames are squashfs (mount required); layout `frames_squashed/<date-venue>/take*/00..14` (15 camera views per take). |
+| **EgoPoint-Bench** | **GO for unmodified private research use ONLY — NO-GO for adaptation/redistribution** | Hugging Face API: `license: None`, no README in the dataset repo, `gated: False` ([dataset](https://huggingface.co/datasets/GUYYYUG/EgoPoint), tree: `realdata_benchmark/`, `simdata_benchmark/`). GitHub [project is Apache-2.0](https://github.com/GUYYYUG/EgoPoint) ("This project is licensed…", code only). No declared license ⇒ HF default terms; no derivative or redistribution rights. Our use: download real-world images, run authors' QA protocol, no redistribution, no derivative set — within private research use. Re-verify before any publication of an adapted subset. |
+| **YouRefIt** | **GO for unmodified protocol use — NO-GO for adaptation** | [License.pdf](https://yixchen.github.io/YouRefIt/file/License.pdf): non-commercial scientific research only; "The Datasets shall not be reproduced, modified, distributed and/or made available in any form to any third party without Licensor's prior written permission"; one archive copy allowed. [Request page](https://yixchen.github.io/YouRefIt/request.html): registration form, noncommercial research. |
+| **AGHRI** | **GO** — modifiable, attribution required | [AGHRI-dataset-benchmark README](https://github.com/LCAS/AGHRI-dataset-benchmark): "The AGHRI dataset is distributed separately under CC BY 4.0… independent of the benchmark code licence" (Apache-2.0). [AGHRI-dataset-tools](https://github.com/LCAS/AGHRI-dataset-tools): ~70 GB released, 65 sequences (52/7/6 train/val/test), 10 participants, ZED RGB 672×376 + 3 fisheye 640×360, 138,741 camera frames, 154,002 2D human boxes. |
+
+Watchlist re-check (2026-09-15), all still release-pending — do not plan around them:
+
+- **GestureTarget** — [TransGesture README](https://github.com/IrohXu/TransGesture) line 29: "Get GestureTarget-v1. Coming Soon."
+- **EgoPoint-Ground** — [arXiv:2603.26646](https://arxiv.org/abs/2603.26646) abs page: "code will be made publicly available."
+- **EgoPointVQA** — [EgoPointVQA repo](https://github.com/Yuuraa/EgoPointVQA): dataset badge has an empty link; release pending.
+
 ## Decision summary
 
 The robot needs two different evaluations. **Deixis resolution** asks which of the exhibits available at the current stop a visitor indicates while saying, for example, «а что это такое?»; the scored answer is the exhibit's existing `content_id` or an explicit abstention. **Audience assessment** asks how many visitors are in the robot's interaction zone, whether each is attending to the robot or the exhibit, and whether `mission_control` should continue, wait, or seek clarification. The latter action is a policy decision over visual observations, not a property that most public vision datasets label.
