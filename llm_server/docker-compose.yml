@@ -9,6 +9,10 @@ services:
     environment:
       LLAMA_ARG_MODEL: /models/${MODEL_FILE:?set MODEL_FILE in .env}
       LLAMA_ARG_ALIAS: ${MODEL_ALIAS:?set MODEL_ALIAS in .env}
+      # Vision-модели (Gemma 4, Qwen3.5, LFM2.5-VL...): путь к mmproj внутри /models.
+      # Пусто = текст-модель без проектора (поведение по умолчанию не меняется).
+      # Имя env-переменной проверено по --help актуального образа: LLAMA_ARG_MMPROJ.
+      LLAMA_ARG_MMPROJ: ${MM_PROJ:-}
       LLAMA_ARG_HOST: 0.0.0.0
       LLAMA_ARG_PORT: 8080
       LLAMA_ARG_CTX_SIZE: ${CTX_SIZE:-16384}
