@@ -1,0 +1,498 @@
+"""T4: скоринг + отчёт -- фикстуры с руками посчитанными значениями.
+
+Прогон собирается настоящим раннером + MockBackend (офлайн, детерминировано);
+затем `score_run` судит его. Ожидаемые числа -- посчитаны в тесте вручную
+(AC: "unit tests assert exact hand-computed values on fixed fixtures").
+
+Разбивка:
+- t4-pointing: перцепция (evidence, candidates, top-2, box IoU) + политика
+  (freeform top-1, FP на no-target, abstention credit);
+- t4-count: MAE + exact accuracy;
+- t4-report: отчёт markdown + score.json, перцепция/политика отдельными
+  секциями, заявление «no final score».
+"""
+
+import json
+import struct
+import zlib
+from pathlib import Path
+
+import pytest
+from guide_robot_llm.eval.runner import MockBackend, run_manifest
+from guide_robot_llm.eval.schema import Case, MediaRef, PromptSpec, Provenance
+from guide_robot_llm.eval.scoring import (
+    NO_TARGET_ID,
+    STATEMENT,
+    box_iou,
+    build_report,
+    image_size,
+    score_run,
+    write_outputs,
+)
+
+# --- синтетические медиа: PNG 200x100 и JPEG 320x240, байты генерируются ---
+
+
+def _png(width: int, height: int) -> bytes:
+    """Минимальный PNG с IHDR `width x height` (скорер читает только IHDR)."""
+    sig = b"\x89PNG\r\n\x1a\n"
+
+    def chunk(tag: bytes, data: bytes) -> bytes:
+        body = tag + data
+        return (
+            struct.pack(">I", len(data))
+            + body
+            + struct.pack(">I", zlib.crc32(body) & 0xFFFFFFFF)
+        )
+
+    ihdr = struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0)
+    return sig + chunk(b"IHDR", ihdr) + chunk(b"IEND", b"")
+
+
+def _jpeg(width: int, height: int) -> bytes:
+    """Минимальный JPEG с SOF0 `height x width` (после APP-сегмента)."""
+    sof = (
+        b"\xff\xc0"
+        + struct.pack(">H", 8)  # длина сегмента
+        + b"\x08"  # precision
+        + struct.pack(">HH", height, width)
+        + b"\x01\x01\x01"  # planes, quant, sampling
+    )
+    return b"\xff\xd8" + sof + b"\xff\xd9"
+
+
+PNG_200_100 = "p1.png"
+JPG_320_240 = "m.jpg"
+FAKE_MEDIA = "fake.bin"
+
+
+def _case(
+    case_id: str,
+    *,
+    track: str = "pointing",
+    source: str = "pilot-cc",
+    mode: str = "deployed",
+    gold: dict,
+    candidates: tuple[str, ...] = ("a", "b"),
+    tools: tuple[str, ...] = ("reply",),
+    slices: dict | None = None,
+    media: str = FAKE_MEDIA,
+    media_sha: str = "0" * 64,
+) -> Case:
+    return Case(
+        case_id=case_id,
+        source=source,
+        track=track,
+        split_group_id=f"g-{case_id.lower()}",
+        media=MediaRef(
+            path=media,
+            sha256=media_sha,
+            format="png" if media.endswith(".png") else "jpg",
+        ),
+        prompt=PromptSpec(mode=mode, user_text="x"),
+        candidates=candidates,
+        allowed_tools=tools,
+        gold=gold,
+        provenance=Provenance(
+            source=source,
+            license="test",
+            version="v1",
+            rights_note="fixture",
+        ),
+        slices=slices or {},
+    )
+
+
+def _target_gold(
+    target: str, candidates: tuple[str, ...], *, box: list[int] | None = None
+) -> dict:
+    return {
+        "type": "target_box",
+        "target_id": target,
+        "box_px": box,
+        "distractors": [c for c in candidates if c != target],
+    }
+
+
+OBS_P1 = (
+    '{"people_count": 1, "exhibit_candidates": ["a", "b"],'
+    ' "pointing_evidence": "yes", "pointing_box": [0.0, 0.0, 0.3, 0.6],'
+    ' "scene_facts": "человек у шкафа"}'
+)
+OBS_P2 = (
+    '{"people_count": 0, "exhibit_candidates": ["b"], "pointing_evidence": "none",'
+    ' "pointing_box": null, "scene_facts": "пусто"}'
+)
+def _obs_count(n: int) -> str:  # фикстура-генератор
+    return (
+        f'{{"people_count": {n}, "exhibit_candidates": [],'
+        ' "pointing_evidence": "none", "pointing_box": null,'
+        f' "scene_facts": "зрительный зал"}}'
+    )
+OBS_TOOL = (
+    '{"people_count": 1, "exhibit_candidates": [], "pointing_evidence": "none",'
+    ' "pointing_box": null, "scene_facts": "x"}'
+)
+ACT_T1 = (
+    '{"tool": "start_tour", "args": {"tour_id": "tour-lab-01"},'
+    ' "confidence": 0.9, "abstain": false}'
+)
+ACT_T2 = '{"tool": "reply", "args": {}, "confidence": 0.6, "abstain": true}'
+ACT_T3 = '{"tool": "reply", "args": {}, "confidence": 0.6, "abstain": true}'
+ACT_T4 = '{"tool": "pause", "args": {}, "confidence": 0.8, "abstain": false}'
+FF_P3 = '{"answer": "the Red Car", "confidence": 0.8, "abstain": false}'
+FF_P4 = '{"answer": "", "confidence": 0.2, "abstain": true}'
+FF_P5 = '{"answer": "chair", "confidence": 0.7, "abstain": false}'
+
+
+def _build_run(tmp_path: Path) -> Path:
+    """14 кейсов + canned-ответы → run-директория настоящим раннером."""
+    ab = ("a", "b")
+    ep = ("epa", "epb")
+    cases = [
+        # перцепция pointing (deployed): P1 -- всё верно, P2 -- всё неверно
+        _case("SC-P1", source="dp", gold=_target_gold("a", ab, box=[0, 0, 100, 100]),
+              slices={"n_distractors": 1}, media=PNG_200_100),
+        _case("SC-P2", source="dp", gold=_target_gold("a", ab, box=[0, 0, 100, 100]),
+              slices={"n_distractors": 2}, media=PNG_200_100),
+        # политика pointing (freeform, авторский QA-протокол)
+        _case("SC-P3", source="egopoint", mode="freeform",
+              gold=_target_gold("epa", ep), candidates=ep,
+              slices={"answer_map": {"red car": "epa", "blue vase": "epb"}, "n_distractors": 1}),
+        _case("SC-P4", source="egopoint", mode="freeform", gold={"type": "unanswerable"}),
+        _case("SC-P5", source="egopoint", mode="freeform", gold={"type": "unanswerable"}),
+        # аудитория: MAE 0.5, exact 0.5 (вручную: ошибки 1 и 0)
+        _case("SC-C1", source="aghri", track="audience", gold={"type": "count", "count": 2},
+              candidates=(), slices={"count_bucket": "2"}),
+        _case("SC-C2", source="aghri", track="audience", gold={"type": "count", "count": 3},
+              candidates=(), slices={"count_bucket": "3"}),
+        # политика tool: T1 -- точное совпадение, T2 -- отказ,
+        # T3 -- обоснованный отказ (credit), T4 -- FP (инструмент при gold-отказе)
+        _case("SC-T1", source="pilot-cc", track="tool",
+              gold={"type": "action", "tool": "start_tour", "args": {"tour_id": "tour-lab-01"}},
+              candidates=(), tools=("reply", "start_tour")),
+        _case("SC-T2", source="pilot-cc", track="tool",
+              gold={"type": "action", "tool": "start_tour", "args": {"tour_id": "tour-lab-01"}},
+              candidates=(), tools=("reply", "start_tour")),
+        _case("SC-T3", source="pilot-cc", track="tool",
+              gold={"type": "action", "abstention_reason": "injection"},
+              candidates=(), tools=("reply", "pause")),
+        _case("SC-T4", source="pilot-cc", track="tool",
+              gold={"type": "action", "abstention_reason": "injection"},
+              candidates=(), tools=("reply", "pause")),
+        # сцена: claims и unanswerable -- записываем, без вердикта
+        _case("SC-S1", source="pilot-cc", track="scene",
+              gold={"type": "claims", "claims": ["красный короб", "синий шкаф"]}, candidates=()),
+        _case("SC-S2", source="pilot-cc", track="scene", gold={"type": "unanswerable"}),
+        # parse_failed: не судим, не дроп
+        _case("SC-PF", source="dp", gold=_target_gold("a", ab, box=[0, 0, 100, 100]),
+              media=JPG_320_240),
+    ]
+    responses: dict[tuple[str, str], str] = {
+        ("SC-P1", "observation"): OBS_P1,
+        ("SC-P2", "observation"): OBS_P2,
+        ("SC-P3", "freeform"): FF_P3,
+        ("SC-P4", "freeform"): FF_P4,
+        ("SC-P5", "freeform"): FF_P5,
+        ("SC-C1", "observation"): _obs_count(1),
+        ("SC-C2", "observation"): _obs_count(3),
+        ("SC-T1", "observation"): OBS_TOOL,
+        ("SC-T1", "action"): ACT_T1,
+        ("SC-T2", "observation"): OBS_TOOL,
+        ("SC-T2", "action"): ACT_T2,
+        ("SC-T3", "observation"): OBS_TOOL,
+        ("SC-T3", "action"): ACT_T3,
+        ("SC-T4", "observation"): OBS_TOOL,
+        ("SC-T4", "action"): ACT_T4,
+        ("SC-S1", "observation"): OBS_TOOL,
+        ("SC-S2", "observation"): OBS_TOOL,
+        ("SC-PF", "observation"): "not json at all",
+    }
+    (tmp_path / PNG_200_100).write_bytes(_png(200, 100))
+    (tmp_path / JPG_320_240).write_bytes(_jpeg(320, 240))
+    (tmp_path / FAKE_MEDIA).write_bytes(b"not an image")
+    backend = MockBackend(responses)
+    out = tmp_path / "run"
+    run_manifest(cases, backend, out, data_root=tmp_path)
+    return out
+
+
+# --- примитивы: box IoU и размер картинки ------------------------------------
+
+
+def test_box_iu_exact_hand_computed_values() -> None:
+    # пересечение [0,0,0.3,0.6]∩[0,0,0.5,1.0] = 0.18; объединение = 0.5
+    assert box_iou((0.0, 0.0, 0.5, 1.0), (0.0, 0.0, 0.3, 0.6)) == pytest.approx(0.36)
+    assert box_iou((0.0, 0.0, 1.0, 1.0), (0.0, 0.0, 1.0, 1.0)) == 1.0
+    assert box_iou((0.0, 0.0, 1.0, 1.0), (2.0, 2.0, 3.0, 3.0)) == 0.0
+    assert box_iou((0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 1.0, 1.0)) == 0.0  # вырожденный
+
+
+def test_image_size_png_jpeg_and_unknown(tmp_path: Path) -> None:
+    png = tmp_path / "p.png"
+    png.write_bytes(_png(200, 100))
+    jpg = tmp_path / "j.jpg"
+    jpg.write_bytes(_jpeg(320, 240))
+    other = tmp_path / "x.bin"
+    other.write_bytes(b"hello world")
+    assert image_size(png) == (200, 100)
+    assert image_size(jpg) == (320, 240)
+    assert image_size(other) is None
+    assert image_size(tmp_path / "absent.png") is None
+
+
+# --- t4-pointing: перцепция + политика pointing ------------------------------
+
+
+def test_pointing_perception_hand_computed(tmp_path: Path) -> None:
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    p1 = score["per_case"]["SC-P1"]["perception"]
+    # gold px [0,0,100,100] на 200x100 → [0, 0, 0.5, 1.0]; obs [0,0,0.3,0.6] → IoU 0.36
+    assert p1["evidence_correct"] is True
+    assert p1["target_in_candidates"] is True
+    assert p1["top2_hit"] is True
+    assert p1["box_iou"] == 0.36
+    p2 = score["per_case"]["SC-P2"]["perception"]
+    assert p2["evidence_correct"] is False
+    assert p2["target_in_candidates"] is False
+    assert p2["top2_hit"] is False
+    assert p2["box_iou"] is None
+    assert p2["box_iou_skipped"] == "no_observation_box"
+    m = score["metrics"]["perception"]["pointing"]
+    assert m["evidence_accuracy"] == {"value": 0.5, "n": 2}
+    assert m["target_in_candidates"] == {"value": 0.5, "n": 2}
+    assert m["top2_recall"] == {"value": 0.5, "n": 2}
+    assert m["box_iou_mean"] == {"value": 0.36, "n": 1}
+    assert m["box_iou_not_computed"] == 1
+    assert score["per_case"]["SC-P1"]["pass"] is True
+    assert score["per_case"]["SC-P2"]["pass"] is False
+
+
+def test_pointing_policy_freeform_and_no_target(tmp_path: Path) -> None:
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    p3 = score["per_case"]["SC-P3"]["policy"]
+    assert p3["mapped_target_id"] == "epa"  # "the Red Car" → "red car" → epa
+    assert p3["top1_correct"] is True
+    assert score["per_case"]["SC-P3"]["pass"] is True
+    # no-target (gold unanswerable): P4 -- credit, P5 -- false positive
+    p4 = score["per_case"]["SC-P4"]["policy"]
+    p5 = score["per_case"]["SC-P5"]["policy"]
+    assert p4["abstention_credit"] is True
+    assert p4["false_positive"] is False
+    assert p5["abstention_credit"] is False
+    assert p5["false_positive"] is True
+    assert score["per_case"]["SC-P4"]["pass"] is True
+    assert score["per_case"]["SC-P5"]["pass"] is False
+    m = score["metrics"]["policy"]["pointing"]
+    assert m["top1_target_accuracy"] == {"value": 1.0, "n": 1}
+    assert m["no_target"]["n"] == 2
+    assert m["no_target"]["false_positive_rate"] == {"value": 0.5, "n": 2}
+    assert m["no_target"]["abstention_credit"] == {"value": 0.5, "n": 2}
+
+
+def test_deployed_no_target_case_abstention_credit(tmp_path: Path) -> None:
+    """Deployed no-target (gold `unknown`): отказ верен, ответ -- FP."""
+    abstain = (
+        '{"people_count": 0, "exhibit_candidates": [], "pointing_evidence": "none",'
+        ' "pointing_box": null, "scene_facts": "x"}'
+    )
+    answered = (
+        '{"people_count": 1, "exhibit_candidates": ["a"], "pointing_evidence": "yes",'
+        ' "pointing_box": [0.1, 0.1, 0.2, 0.2], "scene_facts": "x"}'
+    )
+    gold = {"type": "target_box", "target_id": NO_TARGET_ID, "box_px": None, "distractors": ["a"]}
+    cases = [
+        _case("NT-1", gold=gold),
+        _case("NT-2", gold=gold),
+    ]
+    backend = MockBackend({("NT-1", "observation"): abstain, ("NT-2", "observation"): answered})
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest(cases, backend, out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    assert score["per_case"]["NT-1"]["kind"] == "pointing-no-target"
+    assert score["per_case"]["NT-1"]["pass"] is True
+    assert score["per_case"]["NT-2"]["policy"]["false_positive"] is True
+    assert score["per_case"]["NT-2"]["pass"] is False
+    m = score["metrics"]["policy"]["pointing"]["no_target"]
+    assert m["false_positive_rate"] == {"value": 0.5, "n": 2}
+    assert m["abstention_credit"] == {"value": 0.5, "n": 2}
+
+
+# --- t4-count: MAE + exact accuracy ------------------------------------------
+
+
+def test_count_mae_and_exact_hand_computed(tmp_path: Path) -> None:
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    c1 = score["per_case"]["SC-C1"]["perception"]
+    c2 = score["per_case"]["SC-C2"]["perception"]
+    assert c1 == {"count_pred": 1, "count_gold": 2, "count_exact": False, "abs_error": 1}
+    assert c2 == {"count_pred": 3, "count_gold": 3, "count_exact": True, "abs_error": 0}
+    assert score["per_case"]["SC-C1"]["pass"] is False
+    assert score["per_case"]["SC-C2"]["pass"] is True
+    m = score["metrics"]["perception"]["audience"]
+    assert m["mae"] == {"value": 0.5, "n": 2}  # (1 + 0) / 2
+    assert m["exact_accuracy"] == {"value": 0.5, "n": 2}
+
+
+# --- tool-политика ------------------------------------------------------------
+
+
+def test_tool_exact_match_and_abstention_credit(tmp_path: Path) -> None:
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    assert score["per_case"]["SC-T1"]["policy"]["exact_match"] is True
+    assert score["per_case"]["SC-T1"]["pass"] is True
+    assert score["per_case"]["SC-T2"]["policy"]["abstained"] is True
+    assert score["per_case"]["SC-T2"]["pass"] is False
+    assert score["per_case"]["SC-T3"]["policy"]["abstention_credit"] is True
+    assert score["per_case"]["SC-T3"]["pass"] is True
+    assert score["per_case"]["SC-T4"]["policy"]["false_positive"] is True
+    assert score["per_case"]["SC-T4"]["pass"] is False
+    m = score["metrics"]["policy"]["tool"]
+    assert m["exact_match_accuracy"] == {"value": 0.5, "n": 2}  # T1 ✓, T2 отказ
+    assert m["no_target"]["n"] == 2
+    assert m["no_target"]["false_positive_rate"] == {"value": 0.5, "n": 2}
+    assert m["no_target"]["abstention_credit"] == {"value": 0.5, "n": 2}
+
+
+# --- сцена и parse_failed: не судим, не дроп ---------------------------------
+
+
+def test_scene_recorded_and_parse_failed_unjudged(tmp_path: Path) -> None:
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    s1 = score["per_case"]["SC-S1"]
+    assert s1["kind"] == "scene-recorded"
+    assert s1["pass"] is None
+    assert s1["recorded"]["claims"] == ["красный короб", "синий шкаф"]
+    assert s1["recorded"]["scene_facts"] == "x"
+    assert score["per_case"]["SC-S2"]["pass"] is None
+    pf = score["per_case"]["SC-PF"]
+    assert pf["status"] == "parse_failed"
+    assert pf["pass"] is None
+    assert score["status_counts"] == {"ok": 13, "parse_failed": 1, "backend_error": 0}
+    # судимые: 11 (14 минус сцена-2 минус parse_failed), pass 6 / fail 5
+    assert score["pass_counts"] == {"pass": 6, "fail": 5, "unjudged": 3}
+    assert score["errors"] == []
+
+
+# --- срезy --------------------------------------------------------------------
+
+
+def test_slices_by_source_and_metadata(tmp_path: Path) -> None:
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    by_source = score["slices"]["by_source"]
+    assert by_source["dp"] == {
+        "n": 3, "pass": 1, "fail": 1, "unjudged": 1, "pass_rate": {"value": 0.5, "n": 2}
+    }
+    assert by_source["aghri"] == {
+        "n": 2, "pass": 1, "fail": 1, "unjudged": 0, "pass_rate": {"value": 0.5, "n": 2},
+        "count_mae": {"value": 0.5, "n": 2},
+    }
+    assert by_source["egopoint"] == {
+        "n": 3, "pass": 2, "fail": 1, "unjudged": 0, "pass_rate": {"value": 0.6667, "n": 3}
+    }
+    assert by_source["pilot-cc"]["n"] == 6
+    assert by_source["pilot-cc"]["pass"] == 2
+    assert by_source["pilot-cc"]["fail"] == 2
+    assert by_source["pilot-cc"]["unjudged"] == 2
+    meta = score["slices"]["by_metadata"]
+    assert meta["n_distractors"]["1"] == {
+        "n": 2, "pass": 2, "fail": 0, "unjudged": 0, "pass_rate": {"value": 1.0, "n": 2}
+    }
+    assert meta["n_distractors"]["2"] == {
+        "n": 1, "pass": 0, "fail": 1, "unjudged": 0, "pass_rate": {"value": 0.0, "n": 1}
+    }
+    assert meta["count_bucket"]["2"]["fail"] == 1
+    assert meta["count_bucket"]["3"]["pass"] == 1
+    # split-группы: у синтетических кейсов каждая своя
+    assert len(score["slices"]["by_split_group"]) == 14
+
+
+# --- t4-report: markdown + score.json ----------------------------------------
+
+
+def test_report_structure_and_statement(tmp_path: Path) -> None:
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    report = build_report(score)
+    # обязательное заявление (режим диагностики)
+    assert STATEMENT in report
+    assert "no final project score" in report
+    # перцепция и политика -- РАЗДЕЛЬНЫЕ секции
+    perception_pos = report.index("## Perception")
+    policy_pos = report.index("## Policy")
+    slices_pos = report.index("## Slices")
+    assert perception_pos < policy_pos < slices_pos
+    assert "### Audience" in report
+    # ключевые числа из ручного расчёта
+    assert "0.36 (n=1)" in report
+    assert "0.5 (n=2)" in report
+    # per-case приложен
+    assert "SC-P1" in report
+    assert "| SC-S1 |" in report
+    assert score["statement"] == STATEMENT
+
+
+def test_write_outputs_and_manifest_pass_backfill(tmp_path: Path) -> None:
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    write_outputs(run_dir, score)
+    assert (run_dir / "score.json").is_file()
+    assert (run_dir / "report.md").is_file()
+    on_disk = json.loads((run_dir / "score.json").read_text(encoding="utf-8"))
+    assert on_disk["statement"] == STATEMENT
+    assert on_disk["metrics"]["perception"]["audience"]["mae"] == {"value": 0.5, "n": 2}
+    # `pass` в run_manifest.json заполнен из score
+    lines = json.loads((run_dir / "run_manifest.json").read_text(encoding="utf-8"))
+    passes = {line["case_id"]: line["pass"] for line in lines}
+    assert passes["SC-P1"] is True
+    assert passes["SC-P2"] is False
+    assert passes["SC-C2"] is True
+    assert passes["SC-C1"] is False
+    assert passes["SC-S1"] is None  # сцена -- не судим
+    assert passes["SC-PF"] is None  # parse_failed -- не судим
+    assert passes["SC-T3"] is True
+    assert passes["SC-T4"] is False
+
+
+def test_scoring_tolerates_missing_meta(tmp_path: Path) -> None:
+    """Кейс без meta.json не роняет скоринг: ошибка записана, кейс не судим."""
+    run_dir = _build_run(tmp_path)
+    (run_dir / "cases" / "SC-P1" / "meta.json").unlink()
+    score = score_run(run_dir, data_root=tmp_path)
+    assert score["per_case"]["SC-P1"]["pass"] is None
+    assert score["per_case"]["SC-P1"]["status"] == "ok"
+    assert any("SC-P1" in e for e in score["errors"])
+    # остальные кейсы судятся как обычно
+    assert score["per_case"]["SC-C2"]["pass"] is True
+    assert score["pass_counts"]["pass"] == 5  # 6 минус SC-P1
+
+
+def test_score_run_empty_metric_groups_do_not_crash(tmp_path: Path) -> None:
+    """Только tool-кейсы: перцепционных групп нет → метрики пустые, не краш (AC #10)."""
+    cases = [
+        _case("ONLY-T", source="pilot-cc", track="tool",
+              gold={"type": "action", "tool": "start_tour", "args": {"tour_id": "tour-lab-01"}},
+              candidates=(), tools=("reply", "start_tour")),
+    ]
+    backend = MockBackend({("ONLY-T", "observation"): OBS_TOOL, ("ONLY-T", "action"): ACT_T1})
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest(cases, backend, out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    assert score["metrics"]["perception"]["pointing"] == {}
+    assert score["metrics"]["perception"]["audience"] == {}
+    assert score["metrics"]["policy"]["tool"]["exact_match_accuracy"] == {"value": 1.0, "n": 1}
+    report = build_report(score)
+    assert STATEMENT in report
+    assert "нет данных" in report
+
+
+if __name__ == "__main__":
+    raise SystemExit(pytest.main([__file__, "-q"]))
