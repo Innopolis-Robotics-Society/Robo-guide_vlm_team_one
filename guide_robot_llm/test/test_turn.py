@@ -1032,6 +1032,28 @@ def test_describe_scene_outcome_renders_visual_context_and_candidates() -> None:
     )
 
 
+def test_describe_scene_outcome_carries_observation_instruction() -> None:
+    """Taiga #6: observation_instruction не мёртвые данные -- итог read-only
+    вызова доносит инструкцию до фазы реплики."""
+    record = ToolCallRecord(
+        name="describe_scene",
+        args={"focus": "что в кадре"},
+        result_ok=True,
+        result_message="",
+        result_data={
+            "visual_context": "В кадре человек указывает на экспонат.",
+            "quality": "ok",
+            "exhibit_candidates": ("lab105a",),
+            "observation_instruction": "Опишите сцену кратко (2-3 предложения). Фокус: что в кадре.",
+        },
+        read_only=True,
+    )
+
+    rendered = render_action_outcome(record)
+
+    assert "Опишите сцену кратко (2-3 предложения). Фокус: что в кадре." in rendered
+
+
 def test_describe_scene_outcome_keeps_quality_line_when_not_ok() -> None:
     record = ToolCallRecord(
         name="describe_scene",

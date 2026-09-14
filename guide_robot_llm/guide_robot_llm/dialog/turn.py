@@ -227,6 +227,12 @@ def _render_read_only_result(data: dict) -> str:
         candidates = data.get("exhibit_candidates", ())
         if candidates:
             parts.append("видимые экспонаты: " + ", ".join(candidates))
+        # Taiga #6: observation_instruction построен в _tool_describe_scene
+        # (dialog_agent_node) и обязан дойти до фазы реплики, иначе это
+        # мёртвые данные (раньше здесь терялся).
+        instruction = str(data.get("observation_instruction", "")).strip()
+        if instruction:
+            parts.append(instruction)
         return " ".join(parts)
     return "готово"
 

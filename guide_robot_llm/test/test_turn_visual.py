@@ -469,6 +469,7 @@ _DESCRIBE_RESULT = _FakeResult(
         "visual_context": "В кадре человек указывает на экспонат.",
         "quality": "stale",
         "exhibit_candidates": ("lab105a",),
+        "observation_instruction": "Опишите сцену кратко (2-3 предложения). Фокус: что это?",
     },
 )
 
@@ -493,6 +494,24 @@ def test_describe_scene_answer_phase_sees_visual_context() -> None:
     assert "В кадре человек указывает на экспонат." in joined
     assert "качество кадров: stale" in joined
     assert "видимые экспонаты: lab105a" in joined
+
+
+def test_describe_scene_observation_instruction_reaches_answer_phase() -> None:
+    """Taiga #6: observation_instruction, построенный в _tool_describe_scene,
+    не мёртвые данные -- фаза реплики читает его из полного read-only итога."""
+    _complete_answer, captured = _capture_answer()
+
+    result = _run(
+        _describe(),
+        complete_answer=_complete_answer,
+        execute_tool=lambda name, args: _DESCRIBE_RESULT,
+        tool_names=("describe_scene", "reply"),
+        read_only_tools=frozenset({"describe_scene"}),
+    )
+
+    assert result.stopped_reason == "ok"
+    joined = "\n".join(str(m.get("content")) for m in captured[0])
+    assert "Опишите сцену кратко (2-3 предложения). Фокус: что это?" in joined
 
 
 def test_describe_scene_answer_frames_used_when_flag_on() -> None:
