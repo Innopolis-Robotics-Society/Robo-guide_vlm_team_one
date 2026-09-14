@@ -211,6 +211,58 @@ the mock — no network in tests, ever.
 - New pilot data collection (that is #9; this harness replays it).
 - Changes to `llm_client` itself; ROS integration; C++ (Stage-3 concerns).
 
+## Appendix A — one schema, five source shapes
+
+The same record shape below (abridged to the fields that differ per
+source) expresses every source without runner branches:
+
+```json
+// 1. DP/Deepoint — pointing, synthetic exhibit IDs from the marker table
+{"case_id":"DP-TAKE-0042","source":"dp","track":"pointing","split_group_id":"g-dp-2023-01-17-livingroom-take3",
+ "media":{"path":"eval_data/dp/2023-01-17-livingroom/take3/07/0000001234.jpg","sha256":"…","format":"jpg"},
+ "prompt":{"mode":"deployed","user_text":"А что это такое?","language":"ru"},
+ "candidates":["exhibit_19","exhibit_22"],
+ "gold":{"type":"target_box","target_id":"exhibit_19","box_px":[120,80,300,400],"distractors":["exhibit_22"]},
+ "provenance":{"source":"DP/Deepoint","license":"CC BY-NC 4.0 (verified 2026-09-15)","version":"md5 6233f6c1…","rights_note":"noncommercial"},
+ "slices":{"target_size_px":412,"n_distractors":2}}
+
+// 2. EgoPoint-Bench — pointing, freeform QA, candidate table maps name→ID
+{"case_id":"EPO-REAL-0007","source":"egopoint","track":"pointing","split_group_id":"g-ep-real-0007",
+ "media":{"path":"eval_data/egopoint/realdata_benchmark/test_img/…jpg","sha256":"…","format":"jpg"},
+ "prompt":{"mode":"freeform","user_text":"What is the person pointing at?","language":"en"},
+ "candidates":["epobj-07-a","epobj-07-b","epobj-07-c"],
+ "gold":{"type":"target_box","target_id":"epobj-07-a","box_px":null,"distractors":["epobj-07-b","epobj-07-c"]},
+ "provenance":{"source":"EgoPoint-Bench","license":"HF license undeclared — unmodified private research use (GO 2026-09-15)","version":"hf-rev-…","rights_note":"no redistribution, no derivatives"},
+ "slices":{"n_distractors":3,"deixis_level":"implicit_pronoun"}}
+
+// 3. YouRefIt — pointing, authors' protocol, unmodified
+{"case_id":"YRI-SCN-0114-03","source":"yourifit","track":"pointing","split_group_id":"g-yri-scene-0114",
+ "media":{"path":"eval_data/yourifit/scenes/0114/frame_…jpg","sha256":"…","format":"jpg"},
+ "prompt":{"mode":"freeform","user_text":"Can you show me the <object class> the person is referring to?","language":"en"},
+ "candidates":["yri-0114-t1","yri-0114-t2"],
+ "gold":{"type":"target_box","target_id":"yri-0114-t1","box_px":[…],"distractors":["yri-0114-t2"]},
+ "provenance":{"source":"YouRefIt","license":"no-modification clause (verified 2026-09-15), reg-ref …","version":"release-1","rights_note":"unmodified, one archive copy"},
+ "slices":{"n_distractors":1}}
+
+// 4. AGHRI — audience count, 2D-box-derived gold
+{"case_id":"AGHRI-SEQ-0041-F003","source":"aghri","track":"audience","split_group_id":"g-aghri-seq-0041",
+ "media":{"path":"eval_data/aghri/seq_0041/rgb/frame_…png","sha256":"…","format":"png"},
+ "prompt":{"mode":"deployed","user_text":"Сколько людей сейчас рядом с роботом?","language":"ru"},
+ "candidates":[],
+ "gold":{"type":"count","count":3},
+ "provenance":{"source":"AGHRI","license":"CC BY 4.0 (verified 2026-09-15)","version":"part-hash-…","rights_note":"attribution; selected sequences only"},
+ "slices":{"count_bucket":"3","n_sequences_sampled":1}}
+
+// 5. Pilot (CC, 2026-09-13 manifest) — pointing/audience/tool/scene, unchanged fields
+{"case_id":"POI-CC-001","source":"pilot-cc","track":"pointing","split_group_id":"g-cc-poi-001",
+ "media":{"path":"pilot/media/cc/…jpg","sha256":"…","format":"jpg"},
+ "prompt":{"mode":"deployed","user_text":"Это что за прибор?","language":"ru"},
+ "candidates":["cand-voltmeter-01","cand-gauge-02"],
+ "gold":{"type":"target_box","target_id":"cand-voltmeter-01","box_px":[…],"distractors":["cand-gauge-02"]},
+ "provenance":{"source":"pilot-manifest","license":"self-captured/pre-approved","version":"2026-09-13","rights_note":"rights_ledger.csv"},
+ "slices":{"venue":"staged-office","n_distractors":1}}
+```
+
 ## Approval
 
 Approved by: sinorin (user, date: 2026-09-15)
