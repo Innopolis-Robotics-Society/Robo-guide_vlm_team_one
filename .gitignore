@@ -18,6 +18,9 @@ local/
 
 .vscode/
 .idea/
+.ipynb_checkpoints/
+.scratch/
+uv.lock
 .clion.source.dir/
 *.user
 .claude
