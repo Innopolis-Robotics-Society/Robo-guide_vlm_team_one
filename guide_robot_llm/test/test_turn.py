@@ -1044,7 +1044,9 @@ def test_describe_scene_outcome_carries_observation_instruction() -> None:
             "visual_context": "В кадре человек указывает на экспонат.",
             "quality": "ok",
             "exhibit_candidates": ("lab105a",),
-            "observation_instruction": "Опишите сцену кратко (2-3 предложения). Фокус: что в кадре.",
+            "observation_instruction": (
+                "Опишите сцену кратко (2-3 предложения). Фокус: что в кадре."
+            ),
         },
         read_only=True,
     )
