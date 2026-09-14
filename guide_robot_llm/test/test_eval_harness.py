@@ -211,6 +211,36 @@ def test_load_pilot_unknown_family_rejected(tmp_path) -> None:
         load_pilot(tampered, PACKAGE_ROOT)
 
 
+def test_load_pilot_shared_media_stays_in_one_split_group() -> None:
+    # Инвариант против утечек (P2-AC): общий медиафайл допустим ТОЛЬКО
+    # внутри одного split_group (по дизайн-решению пилота: шесть TOL-CC
+    # эпизодов делят один нейтральный фон CC-TOL-NEUTRAL -- это контроль,
+    # а не дубль). Тот же файл в разных группах = утечка в разбивку.
+    cases = load_pilot(PILOT_MANIFEST, PACKAGE_ROOT)
+    by_path: dict[str, set[str]] = {}
+    for case in cases:
+        by_path.setdefault(case.media.path, set()).add(case.split_group_id)
+    leaked = {path: groups for path, groups in by_path.items() if len(groups) > 1}
+    assert leaked == {}
+
+
+def test_load_pilot_synthetic_sr_row_uses_same_projection(tmp_path) -> None:
+    # Будущий SR (robot-view) эпизод (Taiga #9) обязан проходить ТОЙ ЖЕ
+    # проекцией: source_family "surrogate_real" → source "pilot-sr",
+    # без отдельных веток в коде (T5: #9-специфичных веток нет).
+    raw_text = PILOT_MANIFEST.read_text(encoding="utf-8")
+    episode = json.loads(raw_text.splitlines()[0])
+    sr = dict(episode)
+    sr["source_family"] = "surrogate_real"
+    sr["episode_id"] = "SR-SYN-001"
+    row = tmp_path / "m.jsonl"
+    row.write_text(json.dumps(sr, ensure_ascii=False) + "\n", encoding="utf-8")
+    cases = load_pilot(row, PACKAGE_ROOT)
+    assert len(cases) == 1
+    assert cases[0].source == "pilot-sr"
+    assert cases[0].case_id == "SR-SYN-001"
+
+
 # ---------------------------------------------------------------------------
 # runner (t3-runner, t3-tests)
 # ---------------------------------------------------------------------------
