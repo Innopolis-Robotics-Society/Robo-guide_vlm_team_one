@@ -6,7 +6,9 @@
 
 from __future__ import annotations
 
-from guide_robot_llm.llm_client.grammar import build_action_grammar
+from guide_robot_llm.llm_client.grammar import build_action_grammar, build_observation_grammar
+from guide_robot_llm.tools.validate import parse_action
+from guide_robot_llm.visual_context import parse_observation
 
 
 def test_grammar_contains_root_and_tool_name_rules() -> None:
@@ -95,3 +97,160 @@ def test_grammar_abstain_is_boolean_literal() -> None:
     root_rule = next(line for line in grammar.splitlines() if line.startswith("root ::="))
 
     assert '"true" | "false"' in root_rule
+
+
+def test_action_root_keys_are_json_quoted() -> None:
+    """Regression (живой смоук 2026-09-13): GBNF-литерал `"tool"` матчит `tool`
+    без кавычек → грамматика форсила невалидный JSON, который strict
+    `json.loads` в parse_action отклонял. Ключи обязаны генерироваться с
+    кавычками: в GBNF это `\\"tool\\"` (экранированная кавычка в литерале).
+    """
+    grammar = build_action_grammar(["say"])
+    root_rule = next(line for line in grammar.splitlines() if line.startswith("root ::="))
+
+    for key in ("tool", "args", "confidence", "abstain"):
+        assert f'\\"{key}\\"' in root_rule, key
+
+
+def test_grammar_conformed_action_output_parses_as_contract_json() -> None:
+    """Текст, который ДОПУСКАЕТ исправленная грамматика (ключи с кавычками,
+    whitespace по правилу ws, вкл. табы/переносы), обязан проходить strict
+    parse_action. Старый формат (ключи без кавычек) -- обязан падать.
+    """
+    grammar = build_action_grammar(["reply"])
+    assert '\\"tool\\"' in grammar
+
+    conformed = (
+        '{\n  \t\t  "tool"\n  \t:  "reply",'
+        '\n  "args": {},\n  "confidence": 0.75,\n  "abstain": false\n}'
+    )
+    action = parse_action(conformed)
+    assert action is not None
+    assert action.tool == "reply"
+    assert action.confidence == 0.75
+    assert action.abstain is False
+
+    # До-исправление формат грамматики (без кавычек) -- malformed:
+    assert parse_action('{tool: "reply", args: {}, confidence: 0.75, abstain: false}') is None
+
+
+def test_observation_root_keys_are_json_quoted_and_output_parses() -> None:
+    """Тот же regression для фазы наблюдения: parse_observation -- strict.
+    Ключи наблюдений обязаны генерироваться с кавычками.
+    """
+    grammar = build_observation_grammar(["cand-1"])
+    root_rule = next(line for line in grammar.splitlines() if line.startswith("root ::="))
+    for key in ("people_count", "exhibit_candidates", "pointing_evidence", "scene_facts"):
+        assert f'\\"{key}\\"' in root_rule, key
+
+    # Значения pointing -- JSON-строки (regression: голые none/yes/uncertain
+    # падали в strict json.loads).
+    pointing_rule = next(line for line in grammar.splitlines() if line.startswith("pointing ::="))
+    for value in ("none", "yes", "uncertain"):
+        assert f'\\"{value}\\"' in pointing_rule, value
+
+    conformed = (
+        '{\n  "people_count": 1,\n  "exhibit_candidates": ["cand-1"],'
+        '\n  "pointing_evidence": "none",'
+        '\n  "scene_facts": "камер виден один экспонат"\n}'
+    )
+    observation = parse_observation(conformed, candidate_ids=frozenset({"cand-1"}), max_chars=400)
+    assert observation is not None
+    assert observation.people_count == 1
+    assert observation.exhibit_candidates == ("cand-1",)
+
+    assert (
+        parse_observation(
+            '{people_count: 1, exhibit_candidates: ["cand-1"],'
+            ' pointing_evidence: "none", scene_facts: ""}',
+            candidate_ids=frozenset({"cand-1"}),
+            max_chars=400,
+        )
+        is None
+    )
+
+
+def _gbnf_literals(line: str) -> list[str | None]:
+    """GBNF-литералы строки: содержимое каждого (экраны сняты).
+
+    `None`-элемент -- незакрытый литерал (грамматика невалидна). Классы
+    `[...]` пропускаются: `"` внутри класса -- не разделитель.
+    """
+    literals: list[str | None] = []
+    i, n = 0, len(line)
+    in_class = False
+    while i < n:
+        c = line[i]
+        if c == "[":
+            in_class = True
+            i += 1
+        elif c == "]":
+            in_class = False
+            i += 1
+        elif c == "#" and not in_class:
+            break  # комментарий
+        elif c == '"' and not in_class:
+            j = i + 1
+            buf: list[str] = []
+            while j < n:
+                d = line[j]
+                if d == "\\" and j + 1 < n and line[j + 1] in ('"', "\\"):
+                    buf.append(line[j + 1])
+                    j += 2
+                    continue
+                if d == '"':
+                    break
+                buf.append(d)
+                j += 1
+            if j >= n:
+                literals.append(None)
+                break
+            literals.append("".join(buf))
+            i = j + 1
+        else:
+            i += 1
+    return literals
+
+
+def test_all_grammar_literals_terminated_and_key_literals_exactly_quoted() -> None:
+    """Структурный regression (2026-09-15): пропущенная closing-кавычка
+    GBNF-литерала проглатывает соседние токены (` ws `, ` | `) как
+    содержимое либо оставляет литерал незакрытым -- llama.cpp отклоняет
+    всю грамматику: HTTP 400 "failed to parse grammar" (проверено живым
+    сервером). Подстрочные проверки это НЕ ловят: `\\"key\\"` присутствует
+    и в сломанном тексте. Проверяем ГРАНИЦЫ: каждый литерал закрыт, а
+    ключевой литерал матчит ровно `"key"`.
+    """
+    grammars = (
+        build_action_grammar(["reply", "start_tour"]),
+        build_observation_grammar(["cabinet-01", "frame-02"]),
+    )
+    for grammar in grammars:
+        for line in grammar.splitlines():
+            for literal in _gbnf_literals(line):
+                assert literal is not None, f"unterminated literal in {line[:60]!r}"
+
+    for line, keys in (
+        (
+            next(rule for rule in grammars[0].splitlines() if rule.startswith("root ::=")),
+            {"tool", "args", "confidence", "abstain"},
+        ),
+        (
+            next(rule for rule in grammars[1].splitlines() if rule.startswith("root ::=")),
+            {
+                "people_count",
+                "exhibit_candidates",
+                "pointing_evidence",
+                "pointing_box",
+                "scene_facts",
+            },
+        ),
+    ):
+        literals = set(_gbnf_literals(line))
+        for key in keys:
+            assert f'"{key}"' in literals, key
+
+    pointing_line = next(
+        rule for rule in grammars[1].splitlines() if rule.startswith("pointing ::=")
+    )
+    assert {'"none"', '"yes"', '"uncertain"'} <= set(_gbnf_literals(pointing_line))

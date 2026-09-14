@@ -23,9 +23,14 @@ __all__ = ["build_action_grammar", "build_observation_grammar"]
 
 # Порядок полей контракта фиксирован (ADR-0001 §2) -- не менять:
 # repair-инструкции и парсер на него опираются.
+# Ключи огибающего объекта в GBNF пишутся с экранированными кавычками: строковый
+# литерал GBNF `"tool"` матчит `tool` БЕЗ кавычек (кавычки -- только delimiter
+# литерала), и тогда грамматика форсирует невалидный JSON, который strict
+# `json.loads` в tools.validate.parse_action отклоняет (regression, найден живым
+# смоуком против llama.cpp 2026-09-13). `\"tool\"` матчит `"tool"` -- валидный JSON.
 _ACTION_ROOT = (
-    'root ::= "{" ws "tool" ws ":" ws tool-name ws "," ws "args" ws ":" ws object ws '
-    '"," ws "confidence" ws ":" ws confidence ws "," ws "abstain" ws ":" ws '
+    'root ::= "{" ws "\\"tool\\"" ws ":" ws tool-name ws "," ws "\\"args\\"" ws ":" ws object ws '
+    '"," ws "\\"confidence\\"" ws ":" ws confidence ws "," ws "\\"abstain\\"" ws ":" ws '
     '("true" | "false") ws "}" ws'
 )
 
@@ -87,20 +92,26 @@ def build_action_grammar(tool_names: list[str]) -> str:
 # факты сцены. Ключевое отличие от action-грамматики: `exhibit_candidates`
 # фиксируется на конкретные строки кандидатов (semantic map -- единственный
 # источник id, инвариант issue #4), а не на общий `string`.
+# Ключи -- с теми же экранированными кавычками, что и в _ACTION_ROOT (см. там):
+# strict json.loads в visual_context.parse_observation принимает только
+# валидный JSON.
 _OBSERVATION_ROOT = (
-    'root ::= "{" ws "people_count" ws ":" ws people-count ws "," ws '
-    '"exhibit_candidates" ws ":" ws candidate-array ws "," ws '
-    '"pointing_evidence" ws ":" ws pointing ws "," ws '
-    '"pointing_box" ws ":" ws pointing-box ws "," ws '
-    '"scene_facts" ws ":" ws string ws "}" ws'
+    'root ::= "{" ws "\\"people_count\\"" ws ":" ws people-count ws "," ws '
+    '"\\"exhibit_candidates\\"" ws ":" ws candidate-array ws "," ws '
+    '"\\"pointing_evidence\\"" ws ":" ws pointing ws "," ws '
+    '"\\"pointing_box\\"" ws ":" ws pointing-box ws "," ws '
+    '"\\"scene_facts\\"" ws ":" ws string ws "}" ws'
 )
 _PEOPLE_COUNT_RULE = "people-count ::= [0-9]{1,2} ws"
-_POINTING_RULE = 'pointing ::= ("none" | "yes" | "uncertain") ws'
+# Значения pointing -- JSON-СТРОКИ: кавычки обязательны, иначе strict
+# json.loads в parse_observation падает (regression из живого смоука
+# 2026-09-13 -- та же болезнь, что у ключей root'ов, см. _ACTION_ROOT).
+_POINTING_RULE = 'pointing ::= ("\\"none\\"" | "\\"yes\\"" | "\\"uncertain\\"") ws'
 # Taiga #7: бокс жеста-указания в НОРМИРОВАННЫХ координатах кадра
 # [x0, y0, x1, y1], каждое число в [0, 1]. Всегда присутствует как ключ:
 # массив -- когда жест есть, `null` -- когда нет (none/uncertain). Хост
 # (visual_context.parse_observation) остаётся последней линией защиты и
-# принимает наблюдение И без ключа (4 поля -- сервер проигнорировал грамма).
+# принимает наблюдение И без ключа (5 полей -- сервер проигнорировал грамма).
 _POINTING_BOX_RULE = (
     'pointing-box ::= '
     '("[" ws pointing-coord ("," ws pointing-coord){3} ws "]" | "null") ws'

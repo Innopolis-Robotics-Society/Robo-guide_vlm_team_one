@@ -459,7 +459,9 @@ def test_observation_grammar_has_pointing_box_rule() -> None:
 
     assert "pointing-box" in grammar
     assert "pointing-coord" in grammar
-    assert '"pointing_box"' in grammar
+    # Ключ -- JSON-ключ с GBNF-экранированием кавычек (та же регрессия,
+    # что в test_llm_client_grammar: bare-ключи давали невалидный JSON).
+    assert '\\"pointing_box\\"' in grammar
 
 
 if __name__ == "__main__":
