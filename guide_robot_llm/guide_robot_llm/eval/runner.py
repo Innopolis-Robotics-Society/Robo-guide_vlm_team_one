@@ -1,0 +1,608 @@
+"""Раннер офлайн-оценки: один кейс или целый манифест → run-директория.
+
+Повторяет production-контракт через существующий `llm_client`
+(дизайн: `docs/eval_harness_design.md`, раздел "Runner"): транспорт
+`Backend`, кадры `build_content`, грамматики `grammar`, host-парсеры
+`visual_context.parse_observation` / `tools.validate.parse_action`.
+
+Два режима контракта на кейс:
+* `deployed` -- фаза наблюдения (observation-грамма + host-парсер),
+  для gold типа `action` добавляется фаза действия (action-грамма);
+* `freeform` -- строгий JSON-ответ `{answer, confidence, abstain}`
+  (авторский QA-протокол EgoPoint-Bench).
+
+Инструкции фаз (константы ниже) -- самодостаточные: harness обязан
+работать без ROS, а каталог описаний production-инструментов живёт в
+`tools.schema` (там `guide_robot_msgs`). Контракт, который измеряет
+harness, задают грамматика + host-парсер (общие с production,
+`llm_client`/`visual_context`/`tools.validate`); инструкции -- вспомогательный
+контекст для модели.
+
+Токены: текущий `Backend.complete()` серверный `usage` не захватывает
+-- записываем `tokens: null` с пометкой (известный gap, расширение
+`llm_client` вне скоупа #10).
+"""
+
+from __future__ import annotations
+
+import argparse
+import base64
+import json
+import mimetypes
+import time
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any, Protocol
+
+from guide_robot_llm.eval.schema import Case, case_to_dict
+from guide_robot_llm.llm_client.backend import Backend, BackendConfig, build_content
+from guide_robot_llm.llm_client.grammar import (
+    _CONFIDENCE_RULE,
+    _JSON_RULES,
+    build_action_grammar,
+    build_observation_grammar,
+)
+from guide_robot_llm.llm_client.telemetry import ClientTelemetry
+from guide_robot_llm.tools.validate import parse_action
+from guide_robot_llm.visual_context import (
+    QUALITY_OK,
+    Observation,
+    parse_observation,
+    render_observation,
+)
+
+# Потолок scene_facts как в production (vision.observation_max_chars=400).
+OBSERVATION_MAX_CHARS = 400
+# Серверный usage в llm_client не захватывается -- честно пишем null.
+TOKENS_NOTE = "server usage not captured by llm_client (known gap, out of scope for #10)"
+DEFAULT_MAX_ATTEMPTS = 2
+
+# Корень freeform-грамматики: ровно {answer, confidence, abstain}.
+# Экранирование как в grammar.py: в GBNF-строковом литерале `\"` даёт
+# литеральный кавычный ключ JSON.
+_FREEFORM_ROOT = (
+    'root ::= "{" ws "\\"answer\\"" ws ":" ws (string) ws "," ws '
+    '"\\"confidence\\"" ws ":" ws (confidence) ws "," ws '
+    '"\\"abstain\\"" ws ":" ws ("true" | "false") ws "}" ws'
+)
+
+# Инструкция фазы наблюдения (сжатый аналог production
+# `dialog.prompt.build_observation_instruction`; id кандидатов inline --
+# в production они приходят в контекстном сообщении, здесь -- в списке).
+_OBSERVATION_INSTRUCTION = (
+    "Перед выбором действия посмотри ПРИЛОЖЁННЫЕ кадры с камеры и ответь "
+    "ТОЛЬКО одним JSON-объектом вида "
+    '{"people_count": <целое 0..20>, "exhibit_candidates": ["<id>"], '
+    '"pointing_evidence": "none"|"yes"|"uncertain", '
+    '"pointing_box": [x0, y0, x1, y1] | null, "scene_facts": "<короткий текст>"} '
+    "без какого-либо текста до или после него. people_count -- сколько людей "
+    "в кадре. exhibit_candidates -- id ТОЛЬКО из списка доступных (внешние id "
+    "не существует, лучше пусто, чем выдумка); повторять id нельзя. "
+    "pointing_evidence -- видит ли кто-то в кадре явный жест-указание "
+    "(на экспонат/направление): none/yes/uncertain. pointing_box -- "
+    "НОРМИРОВАННЫЙ бокс [x0, y0, x1, y1] (координаты в долях кадра, 0..1), "
+    "охватывающий жест/указываемую зону; ставь его ТОЛЬКО когда "
+    'pointing_evidence "yes", иначе null. scene_facts -- одна-две фразы '
+    "по-русски: что реально видно, только устойчивые детали, без домысливания. "
+    "Если кадров нет или их не разобрать -- people_count 0, пустой список, "
+    'pointing_evidence "uncertain", pointing_box null, scene_facts "кадры не разобрать".'
+)
+
+# Инструкция фазы действия (аналог production `build_action_instruction`;
+# каталог -- имена из кейса, без описаний: описания живут в tools.schema).
+_ACTION_INSTRUCTION_TEMPLATE = (
+    "[Инструкция фазы действия]\n"
+    "Выбери ровно одно действие, соответствующее намерению посетителя, и "
+    "ответь ТОЛЬКО одним JSON-объектом вида "
+    '{"tool": "<имя>", "args": {...}, "confidence": <0..1>, "abstain": true|false} '
+    "без какого-либо текста до или после него.\n"
+    "Доступные инструменты: {TOOLS}.\n"
+    "reply -- выбор ПО УМОЛЧАНИЮ: ответы, уточнения, приветствия, "
+    "светская беседа. Инструменты с физическим эффектом -- только по "
+    "однозначному намерению посетителя. Если намерение неоднозначно или "
+    "подходящего инструмента нет -- tool=reply, abstain=true."
+)
+
+# Инструкция freeform-режима (авторский QA-протокол EgoPoint-Bench).
+_FREEFORM_INSTRUCTION = (
+    "Ответь ТОЛЬКО одним JSON-объектом вида "
+    '{"answer": "<короткий ответ>", "confidence": <0..1>, "abstain": true|false} '
+    "без какого-либо текста до или после него. answer -- краткий ответ на "
+    "вопрос (имя объекта, число, факт). Если по кадру вопрос ответить "
+    "нельзя -- abstain=true."
+)
+
+_MIME_BY_FORMAT = {"jpg": "image/jpeg", "jpeg": "image/jpeg", "png": "image/png"}
+
+
+def build_freeform_answer_grammar() -> str:
+    """Строгая GBNF-грамма ответа freeform-режима (answer/confidence/abstain)."""
+    return "\n".join([_FREEFORM_ROOT, *_JSON_RULES.splitlines(), _CONFIDENCE_RULE])
+
+
+def parse_freeform_answer(text: str) -> dict[str, Any] | None:
+    """Строгий host-парсер freeform-ответа; `None` = malformed.
+
+    Правила те же, что у `parse_action`: ровно три ключа, `confidence`
+    -- число в [0, 1] (bool отклоняется), `abstain` -- bool.
+    """
+    try:
+        data = json.loads(text.strip())
+    except (json.JSONDecodeError, ValueError):
+        return None
+    if not isinstance(data, dict) or set(data) != {"answer", "confidence", "abstain"}:
+        return None
+    if not isinstance(data["answer"], str):
+        return None
+    confidence = data["confidence"]
+    if isinstance(confidence, bool) or not isinstance(confidence, int | float):
+        return None
+    confidence = float(confidence)
+    if not 0.0 <= confidence <= 1.0:
+        return None
+    if not isinstance(data["abstain"], bool):
+        return None
+    return {"answer": data["answer"], "confidence": confidence, "abstain": data["abstain"]}
+
+
+def media_to_data_url(media_path: Path) -> str:
+    """Медиафайл → data-URL (кадры `build_content` приходят в этом виде)."""
+    mime = _MIME_BY_FORMAT.get(media_path.suffix.lstrip(".").lower())
+    if mime is None:
+        guessed, _ = mimetypes.guess_type(media_path.name)
+        mime = guessed or "application/octet-stream"
+    encoded = base64.b64encode(media_path.read_bytes()).decode("ascii")
+    return f"data:{mime};base64,{encoded}"
+
+
+def _observation_instruction(candidates: tuple[str, ...]) -> str:
+    """Инструкция фазы наблюдения с inline-списком id кандидатов."""
+    ids = ", ".join(candidates) if candidates else "(список пуст -- отвечай пустым)"
+    return _OBSERVATION_INSTRUCTION + f"\nДоступные id экспонатов: {ids}."
+
+
+def _action_instruction(allowed_tools: tuple[str, ...]) -> str:
+    """Инструкция фазы действия; пустой список деградирует до reply."""
+    tools = ", ".join(allowed_tools) if allowed_tools else "reply"
+    return _ACTION_INSTRUCTION_TEMPLATE.replace("{TOOLS}", tools)
+
+
+def _action_to_dict(action: Any | None) -> dict[str, Any] | None:
+    """`ParsedAction` → плоский dict для записи в run-директорию."""
+    if action is None:
+        return None
+    return {
+        "tool": action.tool,
+        "args": dict(action.args),
+        "confidence": action.confidence,
+        "abstain": action.abstain,
+    }
+
+
+def _observation_to_dict(observation: Observation | None) -> dict[str, Any] | None:
+    """Наблюдение → плоский dict для записи в run-директорию."""
+    if observation is None:
+        return None
+    return {
+        "people_count": observation.people_count,
+        "exhibit_candidates": list(observation.exhibit_candidates),
+        "pointing_evidence": observation.pointing_evidence,
+        "pointing_box": observation.pointing_box,
+        "scene_facts": observation.scene_facts,
+    }
+
+
+def _parse_observation(
+    text: str, *, candidates: tuple[str, ...], max_chars: int = OBSERVATION_MAX_CHARS
+) -> Observation | None:
+    """Host-валидация наблюдения (production-парсер, та же строга)."""
+    return parse_observation(
+        text,
+        candidate_ids=frozenset(candidates),
+        max_chars=max_chars,
+    )
+
+
+class Llm(Protocol):
+    """Подмножество интерфейса `Backend.complete`, нужное раннеру."""
+
+    def complete(
+        self,
+        messages: list[dict],
+        *,
+        grammar: str | None = None,
+        max_tokens: int = 512,
+        temperature: float = 0.2,
+        telemetry: ClientTelemetry | None = None,
+    ) -> Any:
+        """Один вызов модели (подпись как у `Backend.complete`)."""
+        ...
+
+
+class MockBackend:
+    """Тестовый/драйв-раннер бэкенд: заранее заготовленные ответы без сети.
+
+    Ключи ответов -- пары `(case_id, phase)`, где фаза --
+    `observation` / `action` / `freeform`. Раннер перед каждым вызовом
+    вызывает `set_context(case_id, phase)`; неизвестный кейс/фаза →
+    пустой текст (host-парсер отметит `parse_failed` -- прогон фиксирует
+    сбой, а не молча пропускает кейс).
+    """
+
+    def __init__(self, responses: dict[tuple[str, str], str] | None = None) -> None:
+        """`responses` -- словарь {(case_id, phase): text}; `None` -- пустой бэкенд."""
+        self._responses = dict(responses or {})
+        self._context: tuple[str, str] = ("", "")
+
+    def set_context(self, case_id: str, phase: str) -> None:
+        """Указать кейс и фазу следующего вызова (осознанное состояние)."""
+        self._context = (case_id, phase)
+
+    def complete(
+        self,
+        messages: list[dict],
+        *,
+        grammar: str | None = None,
+        max_tokens: int = 512,
+        temperature: float = 0.2,
+        telemetry: ClientTelemetry | None = None,
+    ) -> Any:
+        """Возвращает заготовленный текст для текущего (кейс, фаза)."""
+        from guide_robot_llm.llm_client.backend import CompletionResult
+
+        return CompletionResult(text=self._responses.get(self._context, ""), finish_reason="stop")
+
+
+@dataclass
+class PhaseRecord:
+    """Результат одной фазы кейса (raw + parsed + тайминги + попытки)."""
+
+    raw_text: str
+    parsed: dict[str, Any] | None
+    parse_status: str  # "ok" | "failed"
+    finish_reason: str
+    latency_ms: float
+    attempts: int
+    timings: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class CaseRun:
+    """Итог прогона одного кейса (что пишется в run-директорию)."""
+
+    case_id: str
+    source: str
+    track: str
+    status: str  # "ok" | "parse_failed" | "backend_error"
+    prompt_mode: str
+    observation: PhaseRecord | None = None
+    action: PhaseRecord | None = None
+    freeform: PhaseRecord | None = None
+    error: str = ""
+
+
+class _PhaseBackendError(RuntimeError):
+    """Все попытки фазы упали на транспорте (для записи backend_error)."""
+
+
+def _run_phase(
+    llm: Llm,
+    messages: list[dict],
+    *,
+    case_id: str,
+    grammar: str | None,
+    phase: str,
+    max_attempts: int,
+    parse_fn: Any,
+) -> PhaseRecord:
+    """Одна фаза; ретрай только на сбое транспорта (не на парсинге)."""
+    raw_text = ""
+    finish_reason = ""
+    telemetry = ClientTelemetry()
+    attempts = 0
+    last_error = ""
+    succeeded = False
+    phase_start = time.monotonic()
+    while attempts < max_attempts:
+        attempts += 1
+        try:
+            if isinstance(llm, MockBackend):
+                llm.set_context(case_id, phase)
+            completion = llm.complete(messages, grammar=grammar, telemetry=telemetry)
+        except Exception as error:  # noqa: BLE001 -- любой сбой транспорта → ретрай/запись
+            last_error = f"{type(error).__name__}: {error}"
+            continue
+        raw_text = completion.text or ""
+        finish_reason = getattr(completion, "finish_reason", "") or ""
+        succeeded = True
+        break
+    if not succeeded:
+        # Все попытки упали на транспорте -- кейс backend_error, парсинг не нужен.
+        raise _PhaseBackendError(last_error)
+
+    latency_ms = (time.monotonic() - phase_start) * 1000.0
+    timings = telemetry.snapshot()
+    parsed = parse_fn(raw_text)
+    parse_status = "ok" if parsed is not None else "failed"
+    return PhaseRecord(
+        raw_text=raw_text,
+        parsed=parsed,
+        parse_status=parse_status,
+        finish_reason=finish_reason,
+        latency_ms=latency_ms,
+        attempts=attempts,
+        timings=timings,
+    )
+
+
+def run_case(
+    case: Case,
+    llm: Llm,
+    *,
+    max_attempts: int = DEFAULT_MAX_ATTEMPTS,
+    data_root: Path | None = None,
+) -> CaseRun:
+    """Прогнать один кейс (без записи -- см. `write_case_run`).
+
+    `data_root` -- корень, относительно которого лежит `media.path`.
+    """
+    media_path = (data_root or Path(".")) / case.media.path
+    frames = (media_to_data_url(media_path),) if media_path.is_file() else ()
+
+    run = CaseRun(
+        case_id=case.case_id,
+        source=case.source,
+        track=case.track,
+        status="ok",
+        prompt_mode=case.prompt.mode,
+    )
+
+    try:
+        if case.prompt.mode == "deployed":
+            base_messages = [
+                {"role": "user", "content": build_content(case.prompt.user_text, frames)},
+                {"role": "user", "content": _observation_instruction(case.candidates)},
+            ]
+            run.observation = _run_phase(
+                llm,
+                base_messages,
+                case_id=case.case_id,
+                grammar=build_observation_grammar(list(case.candidates)),
+                phase="observation",
+                max_attempts=max_attempts,
+                parse_fn=lambda text: _parse_observation(text, candidates=case.candidates),
+            )
+            observation: Observation | None = (
+                run.observation.parsed if run.observation is not None else None
+            )
+            # Запись -- плоский dict; Observation нужен для рендера фазе действия.
+            if run.observation is not None:
+                run.observation.parsed = _observation_to_dict(observation)
+
+            if case.gold.get("type") == "action":
+                action_messages = [
+                    *base_messages,
+                    {"role": "user", "content": _action_instruction(case.allowed_tools)},
+                ]
+                if observation is not None:
+                    # Визуальный суффикс фазы действия -- как в production
+                    # (render_observation, тот же потолок max_chars).
+                    action_messages.append(
+                        {
+                            "role": "user",
+                            "content": render_observation(
+                                observation,
+                                quality=QUALITY_OK,
+                                max_chars=OBSERVATION_MAX_CHARS,
+                            ),
+                        }
+                    )
+                run.action = _run_phase(
+                    llm,
+                    action_messages,
+                    case_id=case.case_id,
+                    grammar=build_action_grammar(list(case.allowed_tools)),
+                    phase="action",
+                    max_attempts=max_attempts,
+                    parse_fn=lambda text: _action_to_dict(parse_action(text)),
+                )
+        else:
+            freeform_messages = [
+                {"role": "user", "content": build_content(case.prompt.user_text, frames)},
+                {"role": "user", "content": _FREEFORM_INSTRUCTION},
+            ]
+            run.freeform = _run_phase(
+                llm,
+                freeform_messages,
+                case_id=case.case_id,
+                grammar=build_freeform_answer_grammar(),
+                phase="freeform",
+                max_attempts=max_attempts,
+                parse_fn=parse_freeform_answer,
+            )
+    except _PhaseBackendError as error:
+        run.status = "backend_error"
+        run.error = str(error)
+        return run
+
+    if run.status == "ok":
+        failed = [
+            name
+            for name, phase in _phase_records(run)
+            if phase is not None and phase.parse_status == "failed"
+        ]
+        if failed:
+            run.status = "parse_failed"
+    return run
+
+
+def write_case_run(case: Case, run: CaseRun, out_dir: Path) -> Path:
+    """Записать run-директорию кейса: raw + parsed + meta (дизайн: "Runner")."""
+    case_dir = out_dir / "cases" / run.case_id
+    case_dir.mkdir(parents=True, exist_ok=True)
+
+    for phase_name, record in _phase_records(run):
+        if record is None:
+            continue
+        raw_file = f"raw_{phase_name}.txt"
+        parsed_file = f"parsed_{phase_name}.json"
+        (case_dir / raw_file).write_text(record.raw_text, encoding="utf-8")
+        with open(case_dir / parsed_file, "w", encoding="utf-8") as fh:
+            json.dump(
+                record.parsed if record.parsed is not None else {"parse_status": "failed"},
+                fh,
+                ensure_ascii=False,
+                indent=2,
+            )
+
+    phases: dict[str, Any] = {}
+    for phase_name in ("observation", "action", "freeform"):
+        record = getattr(run, phase_name)
+        if record is None:
+            continue
+        phases[phase_name] = {
+            "latency_ms": round(record.latency_ms, 3),
+            "attempts": record.attempts,
+            "finish_reason": record.finish_reason,
+            "parse_status": record.parse_status,
+            "timings": record.timings,
+        }
+    meta = {
+        "case_id": run.case_id,
+        "source": run.source,
+        "track": run.track,
+        "prompt_mode": run.prompt_mode,
+        "status": run.status,
+        "error": run.error or None,
+        "tokens": None,
+        "tokens_note": TOKENS_NOTE,
+        "phases": phases,
+        "latency_ms": round(sum(p["latency_ms"] for p in phases.values()), 3),
+        "attempts": sum(p["attempts"] for p in phases.values()),
+        "case": case_to_dict(case),
+    }
+    with open(case_dir / "meta.json", "w", encoding="utf-8") as fh:
+        json.dump(meta, fh, ensure_ascii=False, indent=2)
+    return case_dir
+
+
+def run_manifest(
+    cases: list[Case],
+    llm: Llm,
+    out_dir: Path,
+    *,
+    max_attempts: int = DEFAULT_MAX_ATTEMPTS,
+    data_root: Path | None = None,
+) -> list[dict[str, Any]]:
+    """Прогнать список кейсов → run-директория + `run_manifest.json`.
+
+    Возврат -- строки манифеста (одна на кейс: case_id, source, track,
+    status, pass=None, latency_ms, attempts). Сбои кейса не прерывают
+    прогон: записываются и фиксируются в отчёте.
+    """
+    out_dir.mkdir(parents=True, exist_ok=True)
+    lines: list[dict[str, Any]] = []
+    for case in cases:
+        run = run_case(case, llm, max_attempts=max_attempts, data_root=data_root)
+        write_case_run(case, run, out_dir)
+        phases = _phase_dict(run)
+        lines.append(
+            {
+                "case_id": run.case_id,
+                "source": run.source,
+                "track": run.track,
+                "status": run.status,
+                "pass": None,  # оценка -- T4
+                "latency_ms": round(sum(p["latency_ms"] for p in phases.values()), 3),
+                "attempts": sum(p["attempts"] for p in phases.values()),
+            }
+        )
+    with open(out_dir / "run_manifest.json", "w", encoding="utf-8") as fh:
+        json.dump(lines, fh, ensure_ascii=False, indent=2)
+    return lines
+
+
+def _phase_records(run: CaseRun) -> tuple[tuple[str, PhaseRecord | None], ...]:
+    """Пары (имя_фазы, PhaseRecord|None) в фиксированном порядке записи."""
+    return (
+        ("observation", run.observation),
+        ("action", run.action),
+        ("freeform", run.freeform),
+    )
+
+
+def _phase_dict(run: CaseRun) -> dict[str, dict[str, Any]]:
+    result: dict[str, dict[str, Any]] = {}
+    for name, record in _phase_records(run):
+        if record is not None:
+            result[name] = {"latency_ms": record.latency_ms, "attempts": record.attempts}
+    return result
+
+
+def build_backend_from_config(config: dict[str, Any]) -> Backend:
+    """`Backend` из словаря конфигурации (эндпоинт только из конфигов)."""
+    return Backend(
+        BackendConfig(
+            base_url=config["base_url"],
+            api_key=config.get("api_key") or "",
+            model_name=config.get("model_name") or "",
+            connect_timeout_s=float(config.get("connect_timeout_s", 5.0)),
+            read_timeout_s=float(config.get("read_timeout_s", 60.0)),
+            multimodal_enabled=bool(config.get("multimodal_enabled", True)),
+            max_images=int(config.get("max_images", 4)),
+        )
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    """CLI: манифест кейсов → run-директория (см. модульный докстринг)."""
+    parser = argparse.ArgumentParser(description="Офлайн-прогон кейсов оценки VLM (Taiga #10)")
+    parser.add_argument("--manifest", required=True, help="унифицированный JSONL-манифест кейсов")
+    parser.add_argument("--out", required=True, help="каталог run-директории")
+    parser.add_argument("--backend-config", help="JSON-конфиг эндпоинта (base_url и т.д.)")
+    parser.add_argument("--mock-responses", help="JSON {case_id: {phase: text}}, прогон без сети")
+    parser.add_argument("--data-root", default=".", help="корень путей media (по умолчанию CWD)")
+    parser.add_argument("--max-attempts", type=int, default=DEFAULT_MAX_ATTEMPTS)
+    args = parser.parse_args(argv)
+
+    from guide_robot_llm.eval.loader import load_manifest as _load_manifest
+
+    cases = _load_manifest(args.manifest)
+    out_dir = Path(args.out)
+
+    if args.mock_responses:
+        canned_all = json.loads(Path(args.mock_responses).read_text(encoding="utf-8"))
+        llm: Llm = MockBackend(_flatten_canned(canned_all))
+    elif args.backend_config:
+        config = json.loads(Path(args.backend_config).read_text(encoding="utf-8"))
+        llm = build_backend_from_config(config)
+    else:
+        parser.error("нужен --backend-config или --mock-responses")
+        return 2
+
+    lines = run_manifest(
+        cases,
+        llm,
+        out_dir,
+        max_attempts=args.max_attempts,
+        data_root=Path(args.data_root),
+    )
+    failed = [line for line in lines if line["status"] != "ok"]
+    print(f"прогоно кейсов: {len(lines)}; сбоев: {len(failed)}; run: {out_dir}")
+    return 0
+
+
+def _flatten_canned(canned_all: dict[str, dict[str, str]]) -> dict[tuple[str, str], str]:
+    """`{case_id: {phase: text}}` (JSON) → `{(case_id, phase): text}`.
+
+    JSON не умеет tuple-ключи -- вложенный словарь разворачивается здесь.
+    """
+    flat: dict[tuple[str, str], str] = {}
+    for case_id, phases in canned_all.items():
+        for phase, text in phases.items():
+            flat[(case_id, phase)] = text
+    return flat
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
