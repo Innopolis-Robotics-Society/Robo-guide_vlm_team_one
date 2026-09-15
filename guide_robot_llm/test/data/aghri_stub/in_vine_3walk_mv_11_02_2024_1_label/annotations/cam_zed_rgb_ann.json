@@ -1,0 +1,134 @@
+[
+ {
+  "File": "1729826000000000001.png",
+  "Labels": [
+   {
+    "Class": "human1",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       10,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   },
+   {
+    "Class": "human2",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       30,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   },
+   {
+    "Class": "human3",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       50,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "File": "1729826000010000001.png",
+  "Labels": [
+   {
+    "Class": "human1",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       10,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   },
+   {
+    "Class": "human2",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       30,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   },
+   {
+    "Class": "human3",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       50,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "File": "1729826000020000001.png",
+  "Labels": [
+   {
+    "Class": "human1",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       10,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   },
+   {
+    "Class": "human2",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       30,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   },
+   {
+    "Class": "human3",
+    "BoundingBoxes": [
+     {
+      "Position": [
+       50,
+       20,
+       50,
+       90
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

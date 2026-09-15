@@ -1,0 +1,8 @@
+Sequence Name,Number of Participants,Archive,Number of Frames,Split
+footpath1_1walk_st_10_24_2024_1_label,1,dataset_part1.zip,120,train
+in_straw_2pick_st_10_30_2024_2_label,2,dataset_part1.zip,200,train
+in_vine_3walk_mv_11_02_2024_1_label,3,dataset_part2.zip,300,val
+out_straw_4push_st_11_05_2024_1_label,4,dataset_part3.zip,150,test
+out_vine_5swap_walk_st_ly_11_06_2024_2_label,5,dataset_part3.zip,250,test
+in_straw_2push_diff_st_10_31_2024_1_label,2,dataset_part4.zip,180,train
+in_vine_3pick_diff_mv_11_03_2024_3_label,3,dataset_part4.zip,220,train

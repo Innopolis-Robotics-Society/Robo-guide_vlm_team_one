@@ -1,0 +1,81 @@
+[
+ {
+  "File": "1729825000000000001.png",
+  "Labels": [
+   {
+    "Class": "human1",
+    "BoundingBoxes": [
+     10,
+     20,
+     50,
+     90
+    ]
+   },
+   {
+    "Class": "human2",
+    "BoundingBoxes": [
+     30,
+     20,
+     50,
+     90
+    ]
+   },
+   {
+    "Class": "plant",
+    "BoundingBoxes": [
+     480,
+     10,
+     40,
+     30
+    ]
+   }
+  ]
+ },
+ {
+  "File": "1729825000010000001.png",
+  "Labels": [
+   {
+    "Class": "human1",
+    "BoundingBoxes": [
+     10,
+     20,
+     50,
+     90
+    ]
+   },
+   {
+    "Class": "human2",
+    "BoundingBoxes": [
+     30,
+     20,
+     50,
+     90
+    ]
+   }
+  ]
+ },
+ {
+  "File": "1729825000020000001.png",
+  "Labels": [
+   {
+    "Class": "human1",
+    "BoundingBoxes": [
+     10,
+     20,
+     50,
+     90
+    ]
+   },
+   {
+    "Class": "human2",
+    "BoundingBoxes": [
+     30,
+     20,
+     50,
+     90
+    ],
+    "Ignore": true
+   }
+  ]
+ }
+]
