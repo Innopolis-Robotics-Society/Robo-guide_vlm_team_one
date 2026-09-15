@@ -37,6 +37,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import struct
 from datetime import datetime
 from pathlib import Path
@@ -132,6 +133,25 @@ def _case_calls(meta: dict[str, Any]) -> int | None:
     return sum(phase_calls) if phase_calls else None
 
 
+def _letter_option_phrase(prompt_text: str, letter: str) -> str | None:
+    """Буква опции A–D → фраза опции из текста вопроса (MC-протокол).
+
+    Строки EgoPoint-Bench Multiple_Choice требуют в вопросе буквальный ответ
+    буквой ("Answer directly using the letters"), а `answer_map` держит
+    фразы опций → без этого моста буквенные ответы структурно
+    засчитываются бы как промахи.
+    """
+    if not (len(letter) == 1 and "A" <= letter <= "D"):
+        return None
+    # опция -- одна строка: захват до конца строки, без lookahead'ов,
+    # иначе последняя опция (D) захватит хвост вопроса (инструкцию
+    # "Answer directly using the letters..."), и фраза не совпадёт с таблицей
+    match = re.search(rf"{re.escape(letter)}[.\)]\s+([^\n]+)", prompt_text)
+    if match is None:
+        return None
+    return " ".join(match.group(1).split())
+
+
 def _answer_to_id(answer: str, case: Case) -> str | None:
     """Freeform-ответ → id кандидата (`None` -- ответ не в таблице)."""
     if answer in case.candidates:
@@ -142,6 +162,13 @@ def _answer_to_id(answer: str, case: Case) -> str | None:
         for key, cid in raw_map.items():
             if isinstance(cid, str) and _norm_answer(str(key)) == norm:
                 return cid
+        # MC-протокол: ответ буквой ("C") → фраза опции из вопроса → таблица.
+        phrase = _letter_option_phrase(case.prompt.user_text, answer.strip().upper())
+        if phrase is not None:
+            norm_phrase = _norm_answer(phrase)
+            for key, cid in raw_map.items():
+                if isinstance(cid, str) and _norm_answer(str(key)) == norm_phrase:
+                    return cid
     return None
 
 
@@ -798,11 +825,12 @@ def _variant_block(vid: str, g: dict[str, Any]) -> list[str]:
     return out
 
 
-def build_report(score: dict[str, Any]) -> str:
+def build_report(score: dict[str, Any], notes: str | None = None) -> str:
     """Markdown-отчёт: перцепция и политика -- РАЗДЕЛЬНЫЕ секции.
 
-    Обязательное заявление `STATEMENT` -- всегда в шапке. Per-variant-
-    секция (P6, Taiga #16) -- после срезов, перед ошибками.
+    Обязательное заявление `STATEMENT` -- всегда в шапке. `notes` -- текстовые
+    пометки прогона (состав/исключения срезов, T10) -- сразу после заявления.
+    Per-variant-секция (P6, Taiga #16) -- после срезов, перед ошибками.
     """
     lines: list[str] = []
     add = lines.append
@@ -821,6 +849,11 @@ def build_report(score: dict[str, Any]) -> str:
     add("")
     add(f"> **{STATEMENT}**")
     add("")
+    if notes:
+        add("## Run notes")
+        add("")
+        lines.extend(notes.rstrip().splitlines())
+        add("")
     add("## Perception")
     add("")
     perception = score["metrics"]["perception"]
@@ -871,12 +904,14 @@ def build_report(score: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def write_outputs(run_dir: Path, score: dict[str, Any]) -> None:
+def write_outputs(
+    run_dir: Path, score: dict[str, Any], notes: str | None = None
+) -> None:
     """`score.json` + `report.md` + заполнение `pass` в `run_manifest.json`."""
     (run_dir / "score.json").write_text(
         json.dumps(score, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    (run_dir / "report.md").write_text(build_report(score), encoding="utf-8")
+    (run_dir / "report.md").write_text(build_report(score, notes=notes), encoding="utf-8")
     manifest_path = run_dir / "run_manifest.json"
     lines = json.loads(manifest_path.read_text(encoding="utf-8"))
     for line in lines:
@@ -895,10 +930,16 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--run-dir", required=True, help="run-директория раннера")
     parser.add_argument("--data-root", default=None, help="корень путей медиа (для box IoU)")
+    parser.add_argument(
+        "--notes-file",
+        default=None,
+        help="markdown-пометки прогона (состав, исключения срезов) -- секция 'Run notes'",
+    )
     args = parser.parse_args(argv)
     run_dir = Path(args.run_dir)
     score = score_run(run_dir, data_root=args.data_root)
-    write_outputs(run_dir, score)
+    notes = Path(args.notes_file).read_text(encoding="utf-8") if args.notes_file else None
+    write_outputs(run_dir, score, notes=notes)
     pc = score["pass_counts"]
     print(
         f"кейсов: {score['n_cases']}; pass {pc['pass']}, fail {pc['fail']}, "

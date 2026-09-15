@@ -296,6 +296,43 @@ def test_pointing_policy_freeform_and_no_target(tmp_path: Path) -> None:
     assert m["no_target"]["abstention_credit"] == {"value": 0.5, "n": 2}
 
 
+def test_freeform_letter_answer_maps_via_options() -> None:
+    """MC-протокол (EgoPoint-Bench): вопрос требует ответ буквой ("Answer
+    directly using the letters"), а `answer_map` держит фразы опций --
+    мост буква → фраза опции из текста вопроса → id (regression: bench-40
+    live, все 10 EgoPoint-кейсов отвечали буквой и структурно
+    засчитывались бы промахами)."""
+    from guide_robot_llm.eval.scoring import _answer_to_id
+
+    prompt_text = (
+        "What is the brand on the object I am pointing to?\n"
+        "A. Ocean Blue\nB. Red Star\nC. Dream Blue\nD. Golden Harvest\n"
+        "Answer directly using the letters of the options given."
+    )
+    amap = {"Ocean Blue": "epa", "Red Star": "epb", "Dream Blue": "epc", "Golden Harvest": "epd"}
+    case = Case(
+        case_id="MC-1",
+        source="egopoint",
+        track="pointing",
+        split_group_id="g-mc",
+        media=MediaRef(path=FAKE_MEDIA, sha256="0" * 64, format="png"),
+        prompt=PromptSpec(mode="freeform", user_text=prompt_text),
+        candidates=("epa", "epb", "epc", "epd"),
+        allowed_tools=("reply",),
+        gold={"type": "target_box", "target_id": "epa", "box_px": None, "distractors": ["epb"]},
+        provenance=Provenance(source="egopoint", license="test", version="v1", rights_note="fixture"),
+        slices={"answer_map": amap},
+    )
+    assert _answer_to_id("C", case) == "epc"
+    assert _answer_to_id("c", case) == "epc"  # регистр буквы не важен
+    assert _answer_to_id("A", case) == "epa"
+    assert _answer_to_id("D", case) == "epd"  # последняя опция + инструкция в хвосте
+    assert _answer_to_id("Ocean Blue", case) == "epa"  # фраза продолжает работать
+    assert _answer_to_id("E", case) is None  # буквы вне A-D
+    assert _answer_to_id("1", case) is None
+    assert _answer_to_id("something else", case) is None
+
+
 def test_deployed_no_target_case_abstention_credit(tmp_path: Path) -> None:
     """Deployed no-target (gold `unknown`): отказ верен, ответ -- FP."""
     abstain = (
@@ -441,6 +478,11 @@ def test_report_structure_and_statement(tmp_path: Path) -> None:
     assert "SC-P1" in report
     assert "| SC-S1 |" in report
     assert score["statement"] == STATEMENT
+    # пометки прогона (T10: состав/исключения срезов) -- после заявления, до метрик
+    noted = build_report(score, notes="DP slice: not acquired")
+    notes_pos = noted.index("## Run notes")
+    assert noted.index(STATEMENT) < notes_pos < noted.index("## Perception")
+    assert "DP slice: not acquired" in noted
 
 
 def test_write_outputs_and_manifest_pass_backfill(tmp_path: Path) -> None:

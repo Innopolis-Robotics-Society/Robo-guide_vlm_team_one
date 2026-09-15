@@ -1,0 +1,27 @@
+{
+  "name": "bench_40.jsonl",
+  "n_cases": 40,
+  "generated": "2026-09-16 02:07:51 +07",
+  "scope_decision": "2026-09-15 (T10): DP excluded (180 GB), YouRefIt registration pending",
+  "slices": [
+    {
+      "source": "egopoint",
+      "file": "eval_manifests/egopoint_10.jsonl",
+      "sha256": "20502730e9355b174f57418f053317a7f2c40bfd702861b18c87d06866609a9f",
+      "n_cases": 10
+    },
+    {
+      "source": "aghri",
+      "file": "eval_manifests/aghri_15.jsonl",
+      "sha256": "5f95de1821569bdc813fe531d43f75f10f44d13a214f635712cf357a8d3e2303",
+      "n_cases": 15
+    },
+    {
+      "source": "pilot-cc",
+      "file": "pilot/manifest.jsonl",
+      "sha256": "4e131dcf2560613658f16c1a411d59c796078588bae8dec8a59373991a67c81d",
+      "n_cases": 15
+    }
+  ],
+  "media_root": "корень пакета guide_robot_llm/ (раннер: --data-root . из каталога пакета)"
+}

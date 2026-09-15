@@ -230,6 +230,7 @@ class Backend:
             telemetry=telemetry,
             timings=timings,
             t_request_start=t_request_start,
+            grammar_active=grammar is not None,
         )
 
     def _consume_stream(
@@ -242,6 +243,7 @@ class Backend:
         telemetry: ClientTelemetry | None = None,
         timings: StageTimings | None = None,
         t_request_start: float | None = None,
+        grammar_active: bool = False,
     ) -> CompletionResult:
         """Чтение SSE-потока до конца ответа.
 
@@ -249,6 +251,7 @@ class Backend:
         стадия `generation` (Taiga #3).
         """
         chunks: list[str] = []
+        reasoning_chunks: list[str] = []
         finish_reason = ""
         first_token_at: float | None = None
         parse_ready_at: float | None = None
@@ -290,7 +293,19 @@ class Backend:
                 if not choices:
                     continue
                 choice = choices[0]
-                delta = (choice.get("delta") or {}).get("content") or ""
+                choice_delta = choice.get("delta") or {}
+                delta = choice_delta.get("content") or ""
+                # llama.cpp с reasoning-моделями (`--reasoning on`) иногда
+                # рокирует весь ответ в `reasoning_content` с пустым
+                # `content`. Без грамматики это "подумал, но не ответил"
+                # (ответа нет и быть не должно), а при активной грамматике
+                # любой сгенерированный поток по определению
+                # грамматически валиден -- значит, это и есть ответ.
+                delta_reasoning = choice_delta.get("reasoning_content") or ""
+                if delta_reasoning:
+                    if first_token_at is None and not delta:
+                        first_token_at = time.monotonic()
+                    reasoning_chunks.append(delta_reasoning)
                 if delta:
                     if first_token_at is None:
                         first_token_at = time.monotonic()
@@ -332,4 +347,9 @@ class Backend:
                 timings.parse_ready_ms = timings.full_ms
             if telemetry is not None:
                 telemetry.record_success(timings)
-        return CompletionResult(text="".join(chunks), finish_reason=finish_reason)
+        text = "".join(chunks)
+        if not text and grammar_active and reasoning_chunks:
+            # ответ пришёл через `reasoning_content` (см. комментарий выше):
+            # под грамматикой это грамматически валидный ответ, а не чужой поток
+            text = "".join(reasoning_chunks)
+        return CompletionResult(text=text, finish_reason=finish_reason)

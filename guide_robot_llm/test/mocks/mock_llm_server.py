@@ -104,6 +104,9 @@ class MockLlmServer:
         # поведение, тесты llm_client/backend.py его не трогают).
         self.chunks_no_grammar: list[str] | None = None
         self.chunks_with_grammar: list[str] | None = None
+        # llama.cpp с reasoning-моделями: дельты `reasoning_content` (идут
+        # до контентных чанков); `None` -- такие события не шлются.
+        self.reasoning_chunks: list[str] | None = None
         self.chunk_delay_s = 0.05
         self.hang_s = 10.0
         self.http_status = 500
@@ -237,6 +240,11 @@ class MockLlmServer:
             handler.close_connection = True
             handler.connection.close()
             return
+
+        if self.reasoning_chunks is not None:
+            for piece in self.reasoning_chunks:
+                event = {"choices": [{"delta": {"reasoning_content": piece}, "finish_reason": None}]}
+                _write_chunk(f"data: {json.dumps(event)}\n\n".encode())
 
         delay = self.chunk_delay_s if self.mode == self.MODE_SLOW else 0.0
         first_delay = (

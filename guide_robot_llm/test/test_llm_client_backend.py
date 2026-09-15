@@ -161,3 +161,33 @@ def test_stop_when_ends_stream_without_abort(mock_server: MockLlmServer) -> None
     assert "SHOULD_NOT" not in result.text
     assert '"tool":"reply"' in result.text
     assert result.finish_reason == "stop_when"
+
+
+def test_reasoning_content_fallback_only_under_grammar(mock_server: MockLlmServer) -> None:
+    """llama.cpp с `--reasoning on` рокирует ответ в `reasoning_content`, а
+    `content` остаётся пустым. Под грамматикой любой сгенерированный поток
+    валиден по определению -- фолбэк на него допустим; без грамматики это
+    "подумал, но не ответил" -- текст остаётся пустым (регрессия: bench-40
+    live-прогон, 2026-09-16).
+    """
+    mock_server.chunks = []
+    mock_server.reasoning_chunks = ['{"people_count":', " 2}"]
+    backend = Backend(BackendConfig(base_url=mock_server.url, read_timeout_s=5.0))
+
+    with_grammar = backend.complete(_MESSAGES, grammar='root = {"a": 1}')
+    assert with_grammar.text == '{"people_count": 2}'
+
+    mock_server.reasoning_chunks = ['"я подумал, но не ответил"']
+    without_grammar = backend.complete(_MESSAGES)
+    assert without_grammar.text == ""
+
+
+def test_reasoning_content_ignored_when_content_present(mock_server: MockLlmServer) -> None:
+    """Если `content` не пуст -- `reasoning_content` в текст не попадает."""
+    mock_server.chunks = ["ответ"]
+    mock_server.reasoning_chunks = ["мысли"]
+    backend = Backend(BackendConfig(base_url=mock_server.url, read_timeout_s=5.0))
+
+    result = backend.complete(_MESSAGES, grammar='root = {"a": 1}')
+
+    assert result.text == "ответ"
