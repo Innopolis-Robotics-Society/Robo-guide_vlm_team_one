@@ -1,0 +1,330 @@
+{
+  "version": "prompt-variants-v1 (2026-09-15, Taiga #16)",
+  "description": "Системные промпт-варианты для сравнения (таблица issue #16): 3 навыка (describe_scene/resolve_pointing/audience_engagement) × 3 оси техник + 3 production-базовые линии. mode: A* — freeform (вопрос кейса), D*/P* — deployed (наблюдение-JSON). execution: single | cot_2pass | loop. few-shot-примеры (V4) — замороженные CC-сцены EX-CC-* (pilot/fixtures/cc/), ответы-эталоны ниже.",
+  "execution_modes": [
+    "single",
+    "cot_2pass",
+    "loop"
+  ],
+  "variants": [
+    {
+      "id": "D0",
+      "skill": "describe_scene",
+      "track": "scene",
+      "axis": "baseline",
+      "technique": "нулевая базовая линия",
+      "source": null,
+      "mode": "deployed",
+      "execution": "single",
+      "text": "prompt_variants/D0.txt",
+      "examples": []
+    },
+    {
+      "id": "D1",
+      "skill": "describe_scene",
+      "track": "scene",
+      "axis": "observational",
+      "technique": "наблюдательная инструкция (наблюдаемое/предполагаемое, отказ по плохому кадру)",
+      "source": null,
+      "mode": "deployed",
+      "execution": "single",
+      "text": "prompt_variants/D1.txt",
+      "examples": []
+    },
+    {
+      "id": "D2",
+      "skill": "describe_scene",
+      "track": "scene",
+      "axis": "cot",
+      "technique": "chain-of-thought: перечислить по пунктам → собрать описание",
+      "source": "Kojima et al., 2022, arXiv:2205.11916 (Chain-of-Thought)",
+      "mode": "deployed",
+      "execution": "cot_2pass",
+      "text": "prompt_variants/D2.txt",
+      "examples": []
+    },
+    {
+      "id": "D3",
+      "skill": "describe_scene",
+      "track": "scene",
+      "axis": "self_correct",
+      "technique": "утверждения + пометки уверенности, низкая уверенность = предположение",
+      "source": "Dhuliawala et al., 2023, arXiv:2309.11495 (self-ask self-correction)",
+      "mode": "deployed",
+      "execution": "single",
+      "text": "prompt_variants/D3.txt",
+      "examples": []
+    },
+    {
+      "id": "D4",
+      "skill": "describe_scene",
+      "track": "scene",
+      "axis": "few_shot",
+      "technique": "few-shot: 2 примера (кадр → наблюдение-JSON), D1-текст + примеры",
+      "source": "Brown et al., 2020, arXiv:2005.14165 (few-shot prompting, GPT-3)",
+      "mode": "deployed",
+      "execution": "single",
+      "text": "prompt_variants/D4.txt",
+      "examples": [
+        {
+          "id": "EX-CC-D-01",
+          "media": {
+            "path": "pilot/media/cc/EX-CC-D-01.png",
+            "sha256": "a996d85d1ddd7ff8e823b0d0f122cd5ccf3d97474ba82f839fadbda30438ce69",
+            "format": "png"
+          },
+          "context": {
+            "candidates": [
+              "cabinet-01",
+              "frame-02"
+            ]
+          },
+          "answer": "{\"people_count\": 1, \"exhibit_candidates\": [\"cabinet-01\", \"frame-02\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"Светлая комната: человек у синего шкафа, картина на стене\"}"
+        },
+        {
+          "id": "EX-CC-D-02",
+          "media": {
+            "path": "pilot/media/cc/EX-CC-D-02.png",
+            "sha256": "956cab8cb1e534811706823b6783218109a7f0cea9d4e17f5fd075282efb4066",
+            "format": "png"
+          },
+          "context": {
+            "candidates": []
+          },
+          "answer": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"uncertain\", \"pointing_box\": null, \"scene_facts\": \"кадры не разобрать\"}"
+        }
+      ]
+    },
+    {
+      "id": "D_base",
+      "skill": "describe_scene",
+      "track": "scene",
+      "axis": "production",
+      "technique": "production-базовая линия (встроенная _OBSERVATION_INSTRUCTION)",
+      "source": null,
+      "mode": "deployed",
+      "execution": "single",
+      "text": null,
+      "examples": []
+    },
+    {
+      "id": "P0",
+      "skill": "resolve_pointing",
+      "track": "pointing",
+      "axis": "baseline",
+      "technique": "нулевая базовая линия",
+      "source": null,
+      "mode": "deployed",
+      "execution": "single",
+      "text": "prompt_variants/P0.txt",
+      "examples": []
+    },
+    {
+      "id": "P1",
+      "skill": "resolve_pointing",
+      "track": "pointing",
+      "axis": "evidence",
+      "technique": "мульти-доказательства (жест/взгляд/слова/геометрия) + запрет угадывать",
+      "source": null,
+      "mode": "deployed",
+      "execution": "single",
+      "text": "prompt_variants/P1.txt",
+      "examples": []
+    },
+    {
+      "id": "P2",
+      "skill": "resolve_pointing",
+      "track": "pointing",
+      "axis": "cot",
+      "technique": "chain-of-thought: сектор жеста → кандидаты → слова → один остался",
+      "source": "Kojima et al., 2022, arXiv:2205.11916 (Chain-of-Thought)",
+      "mode": "deployed",
+      "execution": "cot_2pass",
+      "text": "prompt_variants/P2.txt",
+      "examples": []
+    },
+    {
+      "id": "P3",
+      "skill": "resolve_pointing",
+      "track": "pointing",
+      "axis": "loop",
+      "technique": "ReAct-цикл: наблюдай → сопоставь → уточни, лимит попыток",
+      "source": "Yao et al., 2023, arXiv:2210.03629 (ReAct: observation–thought–action loop)",
+      "mode": "deployed",
+      "execution": "loop",
+      "text": "prompt_variants/P3.txt",
+      "examples": []
+    },
+    {
+      "id": "P4",
+      "skill": "resolve_pointing",
+      "track": "pointing",
+      "axis": "few_shot",
+      "technique": "few-shot: 3 примера (явный / неоднозначно → воздержаться / мимо → воздержаться), P1-текст + примеры",
+      "source": "Brown et al., 2020, arXiv:2005.14165 (few-shot prompting, GPT-3)",
+      "mode": "deployed",
+      "execution": "single",
+      "text": "prompt_variants/P4.txt",
+      "examples": [
+        {
+          "id": "EX-CC-P-01",
+          "media": {
+            "path": "pilot/media/cc/EX-CC-P-01.png",
+            "sha256": "53ad7d43c0aabddf3a70fa2890a6b263462ce322c1bad75c5555cd7932069b89",
+            "format": "png"
+          },
+          "context": {
+            "candidates": [
+              "globe-01"
+            ]
+          },
+          "answer": "Указывает на глобус (content_id: globe-01) — единственный кандидат в направлении жеста."
+        },
+        {
+          "id": "EX-CC-P-02",
+          "media": {
+            "path": "pilot/media/cc/EX-CC-P-02.png",
+            "sha256": "4a28fbb19482e8ca3673e44be9c36b16600ea72c9547cf2bebe5e9e3dde83c3c",
+            "format": "png"
+          },
+          "context": {
+            "candidates": [
+              "vase-01",
+              "vase-02"
+            ]
+          },
+          "answer": "Жест направлен между двумя похожими вазами (vase-01, vase-02) — не угадывай: воздержись и попроси уточнить."
+        },
+        {
+          "id": "EX-CC-P-03",
+          "media": {
+            "path": "pilot/media/cc/EX-CC-P-03.png",
+            "sha256": "7a8dfc5197acee4c3db2e28963bc4e9c3f02bdfef4688318f359c85a63b91aae",
+            "format": "png"
+          },
+          "context": {
+            "candidates": [
+              "tank-02"
+            ]
+          },
+          "answer": "Направление жеста не совпадает ни с одним кандидатом (tank-02) — воздержись и попроси уточнить."
+        }
+      ]
+    },
+    {
+      "id": "P_base",
+      "skill": "resolve_pointing",
+      "track": "pointing",
+      "axis": "production",
+      "technique": "production-базовая линия (встроенная _OBSERVATION_INSTRUCTION)",
+      "source": null,
+      "mode": "deployed",
+      "execution": "single",
+      "text": null,
+      "examples": []
+    },
+    {
+      "id": "A0",
+      "skill": "audience_engagement",
+      "track": "audience",
+      "axis": "baseline",
+      "technique": "нулевая базовая линия",
+      "source": null,
+      "mode": "freeform",
+      "execution": "single",
+      "text": "prompt_variants/A0.txt",
+      "examples": []
+    },
+    {
+      "id": "A1",
+      "skill": "audience_engagement",
+      "track": "audience",
+      "axis": "criteria",
+      "technique": "явные критерии готовности слушать",
+      "source": null,
+      "mode": "freeform",
+      "execution": "single",
+      "text": "prompt_variants/A1.txt",
+      "examples": []
+    },
+    {
+      "id": "A2",
+      "skill": "audience_engagement",
+      "track": "audience",
+      "axis": "cot",
+      "technique": "2 прохода: посчитать каждого → по критериям просуммировать готовых",
+      "source": "Kojima et al., 2022, arXiv:2205.11916 (Chain-of-Thought); Hou, Zorzi, Testolin, 2025, arXiv:2512.04727 (Sequential Enumeration: CoT/enumeration для счёта)",
+      "mode": "freeform",
+      "execution": "cot_2pass",
+      "text": "prompt_variants/A2.txt",
+      "examples": []
+    },
+    {
+      "id": "A3",
+      "skill": "audience_engagement",
+      "track": "audience",
+      "axis": "loop",
+      "technique": "ReAct-цикл: повторные вызовы навыка на новых кадрах до порога/лимитов",
+      "source": "Yao et al., 2023, arXiv:2210.03629 (ReAct: observation–thought–action loop)",
+      "mode": "freeform",
+      "execution": "loop",
+      "text": "prompt_variants/A3.txt",
+      "examples": []
+    },
+    {
+      "id": "A4",
+      "skill": "audience_engagement",
+      "track": "audience",
+      "axis": "few_shot",
+      "technique": "few-shot: 3 примера (толпа 4/3, разошлись 3/0, один смотрит 2/1), A1-текст + примеры",
+      "source": "Brown et al., 2020, arXiv:2005.14165 (few-shot prompting, GPT-3)",
+      "mode": "freeform",
+      "execution": "single",
+      "text": "prompt_variants/A4.txt",
+      "examples": [
+        {
+          "id": "EX-CC-A-01",
+          "media": {
+            "path": "pilot/media/cc/EX-CC-A-01.png",
+            "sha256": "a0af6491ae90ea0436604d57d58df6265913685a14ec52873dab40fd33a241c2",
+            "format": "png"
+          },
+          "context": null,
+          "answer": "Всего 4 человека, готовы слушать 3."
+        },
+        {
+          "id": "EX-CC-A-02",
+          "media": {
+            "path": "pilot/media/cc/EX-CC-A-02.png",
+            "sha256": "2580e6a76daffeb3699caf6dd005dd17b83b3ec611f831ad26971d016aec675a",
+            "format": "png"
+          },
+          "context": null,
+          "answer": "Всего 3 человека, готовы слушать 0."
+        },
+        {
+          "id": "EX-CC-A-03",
+          "media": {
+            "path": "pilot/media/cc/EX-CC-A-03.png",
+            "sha256": "dd530e1ddccc001adc3002e8a5522fc91e5f2bf286287343310038c66accbbdc",
+            "format": "png"
+          },
+          "context": null,
+          "answer": "Всего 2 человека, готов слушать 1."
+        }
+      ]
+    },
+    {
+      "id": "A_base",
+      "skill": "audience_engagement",
+      "track": "audience",
+      "axis": "production",
+      "technique": "production-базовая линия (вопрос кейса + встроенная _FREEFORM_INSTRUCTION)",
+      "source": null,
+      "mode": "freeform",
+      "execution": "single",
+      "text": null,
+      "examples": []
+    }
+  ]
+}
