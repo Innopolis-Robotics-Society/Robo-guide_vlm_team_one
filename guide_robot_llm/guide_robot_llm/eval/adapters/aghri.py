@@ -109,6 +109,10 @@ _SEQ_ALIASES = (
     "bag",
     "bagname",
     "name",
+    # реальный v2-релиз (2026-08-21): заголовок «Scene Name»
+    "scene",
+    "scenename",
+    "sceneid",
 )
 _COUNT_ALIASES = (
     "participants",
@@ -124,6 +128,12 @@ _COUNT_ALIASES = (
     "npersons",
     "nperson",
     "personcount",
+    # реальный v2-релиз: заголовок «Number of Humans»
+    "humans",
+    "numberofhumans",
+    "nhumans",
+    "numhumans",
+    "humancount",
 )
 _ARCHIVE_ALIASES = (
     "archive",
@@ -138,6 +148,10 @@ _ARCHIVE_ALIASES = (
     "file",
     "filepart",
     "download",
+    # реальный v2-релиз: «Dataset compressed part it belongs to» (целое)
+    "datasetcompressedpartitbelongsto",
+    "partitbelongsto",
+    "compressedpart",
 )
 _FRAMES_ALIASES = (
     "frames",
@@ -148,6 +162,9 @@ _FRAMES_ALIASES = (
     "annotatedframes",
 )
 _SPLIT_ALIASES = ("split",)
+# v2-релиз: срезы напрямую из CSV (точнее, чем парсинг имени)
+_ENV_ALIASES = ("environment", "env", "sceneenvironment")
+_ROBOT_ALIASES = ("robotmovements", "robotmovement", "robotstate")
 
 
 class AghriAdapterError(RuntimeError):
@@ -165,6 +182,8 @@ class SummaryRow:
     archive: str | None
     frames: int | None
     split: str | None
+    environment: str | None = None  # CSV-колонка v2 (по имени — fallback в build)
+    robot_state: str | None = None
 
 
 @dataclass(frozen=True)
@@ -177,6 +196,8 @@ class SelectedSeq:
     count_source: str
     archive: str | None
     split: str | None
+    environment: str | None
+    robot_state: str | None
     frames_wanted: int
 
 
@@ -205,7 +226,7 @@ def declared_count_from_name(seq_name: str) -> int | None:
     ``out_vine_5swap_walk_st_ly_11_06_2024_2`` → 5 (``walk`` без цифры =
     те же 5). Нет ни одной группы → ``None``.
     """
-    name = seq_name[:-len("_label")] if seq_name.endswith("_label") else seq_name
+    name = seq_name[: -len("_label")] if seq_name.endswith("_label") else seq_name
     total = 0
     found = False
     for token in name.split("_"):
@@ -237,10 +258,35 @@ def _find_columns(fieldnames: list[str]) -> dict[str, int]:
             ("archive", _ARCHIVE_ALIASES),
             ("frames", _FRAMES_ALIASES),
             ("split", _SPLIT_ALIASES),
+            ("env", _ENV_ALIASES),
+            ("robot", _ROBOT_ALIASES),
         ):
             if key in aliases and role not in found:
                 found[role] = idx
     return found
+
+
+_ARCHIVE_PART_RE = re.compile(r"^dataset_part(\d+)\.zip$")
+
+
+def _archive_to_zip(raw: str | None) -> str | None:
+    """Значение archive-колонки → имя zip-архива.
+
+    v2-релиз кладёт в колонку целое число части («1»..«10»), a не имя
+    файла — нормализуем в ``dataset_partN.zip``. Пустое → ``None``.
+    """
+    value = (raw or "").strip()
+    if not value:
+        return None
+    if value.isdigit():
+        return f"dataset_part{value}.zip"
+    return value
+
+
+def _zip_to_part(archive: str | None) -> int | None:
+    """Имя zip-архива → номер части (для ``--parts``-фильтра)."""
+    match = _ARCHIVE_PART_RE.match(archive or "")
+    return int(match.group(1)) if match else None
 
 
 def _parse_count(raw: str) -> int | None:
@@ -252,6 +298,28 @@ def _parse_count(raw: str) -> int | None:
     if value < 0 or not value.is_integer():
         return None
     return int(value)
+
+
+def _field_has_content(value: Any) -> bool:
+    """Есть ли содержимое в значении поля (None и пустые строки — нет)."""
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return bool(value.strip())
+    if isinstance(value, list | tuple):
+        return any(_field_has_content(item) for item in value)
+    return True
+
+
+def _row_is_blank(values: dict[str, Any]) -> bool:
+    """Полностью пустая строка-заглушка (хвост v2-CSV).
+
+    Строка с частью полей — в т.ч. с лишними сверх заголовка (csv restkey)
+    — заглушкой НЕ считается: её пустое имя дальше станет ошибкой.
+    """
+    if values.get(None):
+        return False
+    return not any(_field_has_content(value) for value in values.values())
 
 
 def load_summary_csv(path: Path) -> list[SummaryRow]:
@@ -280,14 +348,18 @@ def load_summary_csv(path: Path) -> list[SummaryRow]:
         archive_col = fieldnames[cols["archive"]] if "archive" in cols else None
         frames_col = fieldnames[cols["frames"]] if "frames" in cols else None
         split_col = fieldnames[cols["split"]] if "split" in cols else None
+        env_col = fieldnames[cols["env"]] if "env" in cols else None
+        robot_col = fieldnames[cols["robot"]] if "robot" in cols else None
         rows: list[SummaryRow] = []
         for row_no, record in enumerate(reader, start=1):
             values = record or {}
+            # v2-релиз: хвост CSV содержит полностью пустые строки-заглушки —
+            # пропускаем их (строка с частью полей, но без имени — ошибка).
+            if _row_is_blank(values):
+                continue  # хвостовая заглушка, данных нет
             seq = (values.get(seq_col) or "").strip()
             if not seq:
-                raise AghriAdapterError(
-                    f"{path.name}:{row_no}: пустое имя последовательности"
-                )
+                raise AghriAdapterError(f"{path.name}:{row_no}: пустое имя последовательности")
             declared = None
             source = ""
             if count_col is not None:
@@ -307,12 +379,20 @@ def load_summary_csv(path: Path) -> list[SummaryRow]:
                     row_no=row_no,
                     declared_count=declared,
                     count_source=source,
-                    archive=(values.get(archive_col) or "").strip() or None
-                    if archive_col is not None
-                    else None,
+                    archive=_archive_to_zip(
+                        (values.get(archive_col) or "").strip()
+                        if archive_col is not None
+                        else None
+                    ),
                     frames=frames,
                     split=(values.get(split_col) or "").strip() or None
                     if split_col is not None
+                    else None,
+                    environment=(values.get(env_col) or "").strip() or None
+                    if env_col is not None
+                    else None,
+                    robot_state=(values.get(robot_col) or "").strip() or None
+                    if robot_col is not None
                     else None,
                 )
             )
@@ -330,17 +410,22 @@ def select_sequences(
     rows: list[SummaryRow],
     n_frames: int = DEFAULT_N_FRAMES,
     max_per_seq: int = DEFAULT_MAX_PER_SEQ,
+    parts: tuple[int, ...] | None = None,
+    required_counts: tuple[int, ...] = REQUIRED_COUNTS,
 ) -> tuple[list[SelectedSeq], dict[str, Any]]:
-    """Детерминированный выбор: покрытие 0–5, round-robin ≤ ``max_per_seq``.
+    """Детерминированный выбор: покрытие счётчиков, round-robin ≤ ``max_per_seq``.
 
     1) Строки с ``declared_count`` 0..5 группируются по счётчику
        (порядок строк summary сохраняется); ядро = первая строка каждого
        счётчика. Счётчик > 5 — за gold-диапазоном (схема: ≤20, но T9
        фиксирует 0–5), без имени и без счётчика — исключаются с
-       заметкой.
-    2) Счётчики 1..5 ОБЯЗАТЕЛЬНО представлены в ядре — иначе ошибка
-       (нельзя достроить покрытие из кадров); отсутствие 0 — только
-       заметка (gold-0 дадут аннотированные пустые кадры).
+       заметкой. ``parts`` — фильтр по zip-частям релиза: строка без
+       archive-колонки или из другой части исключается (данных у
+       пользователя нет; scope-решение vlm-bench-50, T10, 2026-09-15).
+    2) Счётчики ``required_counts`` (по умолчанию 1..5) ОБЯЗАТЕЛЬНО
+       представлены в ядре — иначе ошибка (нельзя достроить покрытие из
+       кадров); отсутствие 0 — только заметка (gold-0 дадут аннотированные
+       пустые кадры).
     3) Квоты: round-robin по ядру (порядок (count, строка)), по 1 кадру за
        проход, до ``max_per_seq`` на последовательность. Если квот не
        хватает — добавляются резервные строки (дубликаты счётчиков)
@@ -354,6 +439,22 @@ def select_sequences(
     excluded: list[dict[str, Any]] = []
     buckets: dict[int, list[SummaryRow]] = {}
     for row in rows:
+        if parts is not None:
+            part = _zip_to_part(row.archive)
+            if part not in parts:
+                excluded.append(
+                    {
+                        "seq": row.seq,
+                        "row_no": row.row_no,
+                        "declared_count": row.declared_count,
+                        "reason": (f"archive part {part} not in --parts {sorted(parts)}"),
+                    }
+                )
+                notes.append(
+                    f"строка {row.row_no} ({row.seq}): часть {part} вне "
+                    f"фильтра {sorted(parts)} — не скачивается, исключена"
+                )
+                continue
         count = row.declared_count
         if count is None:
             excluded.append(
@@ -387,11 +488,12 @@ def select_sequences(
             continue
         buckets.setdefault(count, []).append(row)
     core = [buckets[count][0] for count in range(0, MAX_COUNT + 1) if count in buckets]
-    missing = [count for count in REQUIRED_COUNTS if count not in buckets]
+    missing = [count for count in required_counts if count not in buckets]
     if missing:
         raise AghriAdapterError(
             "покрытие сбоем: в summary нет последовательностей со "
-            f"счётчиком(ами) {missing} — нельзя собрать 15 кейсов 0–5"
+            f"счётчиком(ами) {missing} — нельзя собрать {n_frames} кейсов "
+            f"по покрытию {sorted(required_counts)}"
         )
     if 0 not in buckets:
         notes.append(
@@ -443,6 +545,8 @@ def select_sequences(
                 count_source=row.count_source,
                 archive=row.archive,
                 split=row.split,
+                environment=row.environment,
+                robot_state=row.robot_state,
                 frames_wanted=quota[row.seq],
             )
         )
@@ -451,6 +555,8 @@ def select_sequences(
         count = row.declared_count
         if count is None or count > MAX_COUNT:
             continue
+        if count not in cover_row:
+            continue  # этот count не в core: его строки уже отфильтрованы
         if row in selected:
             continue
         excluded.append(
@@ -458,9 +564,7 @@ def select_sequences(
                 "seq": row.seq,
                 "row_no": row.row_no,
                 "declared_count": count,
-                "reason": (
-                    f"duplicate of count {count} (covered by row {cover_row[count]})"
-                ),
+                "reason": (f"duplicate of count {count} (covered by row {cover_row[count]})"),
             }
         )
     declared_coverage = {
@@ -473,6 +577,8 @@ def select_sequences(
         "n_excluded": len(excluded),
         "declared_coverage": declared_coverage,
         "archives": sorted({row.archive for row in selected if row.archive}),
+        "parts": sorted(parts) if parts is not None else None,
+        "required_counts": sorted(required_counts),
         "notes": notes,
     }
     return chosen, {"excluded": excluded, "report": report}
@@ -521,23 +627,17 @@ def load_ann_frames(ann_path: Path) -> list[tuple[str, list[dict[str, Any]]]]:
 
     def add(file: Any, labels: Any) -> None:
         if not isinstance(file, str) or not file:
-            raise AghriAdapterError(
-                f"{ann_path.name}: запись без имени кадра: {file!r}"
-            )
+            raise AghriAdapterError(f"{ann_path.name}: запись без имени кадра: {file!r}")
         if labels is None:
             labels = []
         if not isinstance(labels, list):
-            raise AghriAdapterError(
-                f"{ann_path.name}: `Labels` для {file} — не список"
-            )
+            raise AghriAdapterError(f"{ann_path.name}: `Labels` для {file} — не список")
         entries.setdefault(file, []).extend(labels)
 
     if isinstance(data, list):
         for item in data:
             if not isinstance(item, dict):
-                raise AghriAdapterError(
-                    f"{ann_path.name}: элемент списка — не объект: {item!r}"
-                )
+                raise AghriAdapterError(f"{ann_path.name}: элемент списка — не объект: {item!r}")
             add(
                 item.get("File") or item.get("file") or item.get("Image"),
                 item.get("Labels", item.get("labels", item.get("objects"))),
@@ -574,12 +674,12 @@ def parse_box(raw: Any) -> tuple[float, ...] | None:
             if (
                 isinstance(position, list)
                 and len(position) >= 4
-                and all(isinstance(v, (int, float)) and not isinstance(v, bool) for v in position)
+                and all(isinstance(v, int | float) and not isinstance(v, bool) for v in position)
             ):
                 return tuple(float(v) for v in position[:4])
         return None
     if len(raw) >= 4 and all(
-        isinstance(v, (int, float)) and not isinstance(v, bool) for v in raw[:4]
+        isinstance(v, int | float) and not isinstance(v, bool) for v in raw[:4]
     ):
         return tuple(float(v) for v in raw[:4])
     return None
@@ -636,9 +736,7 @@ def frame_person_count(labels: list[dict[str, Any]]) -> int:
             continue
         if _is_ignored(label):
             continue
-        identity = _human_identity(
-            label.get("Class", label.get("class", label.get("label")))
-        )
+        identity = _human_identity(label.get("Class", label.get("class", label.get("label"))))
         if identity is None:
             continue
         box = parse_box(label.get("BoundingBoxes", label.get("boundingboxes")))
@@ -662,9 +760,13 @@ def _package_root() -> Path:
 
 
 def _seq_slices(seq: str) -> tuple[str, str]:
-    """Срезы отчёта по имени: среда (``in_straw``, ``footpath1``…) и
-    состояние робота (``st``/``mv``), если объявлены в имени."""
-    name = seq[:-len("_label")] if seq.endswith("_label") else seq
+    """Срезы отчёта по имени: среда (``in_straw``, ``footpath1``…) и состояние робота.
+
+    Значения берутся из имени последовательности (fallback, когда в CSV нет
+    соответствующих колонок): среда — префикс (``footpath``, ``farmside``…),
+    состояние робота — ``st``/``mv``.
+    """
+    name = seq[: -len("_label")] if seq.endswith("_label") else seq
     tokens = name.split("_")
     if tokens[0] in ("in", "out") and len(tokens) > 1:
         environment = f"{tokens[0]}_{tokens[1]}"
@@ -740,11 +842,7 @@ def build_aghri_cases(
     data_root = Path(data_root)
     if not data_root.is_dir():
         raise AghriAdapterError(f"не найден корень данных: {data_root}")
-    sel_path = (
-        Path(selection_path)
-        if selection_path is not None
-        else data_root / SELECTION_NAME
-    )
+    sel_path = Path(selection_path) if selection_path is not None else data_root / SELECTION_NAME
     if not sel_path.is_file():
         raise AghriAdapterError(
             f"не найдена {sel_path.name}: сначала `plan` (печатает команды "
@@ -764,14 +862,15 @@ def build_aghri_cases(
         frames = load_ann_frames(data_root / seq / ANNOTATIONS_REL)
         if not frames:
             raise AghriAdapterError(f"{seq}: аннотации пусты ({ANNOTATIONS_REL})")
-        environment, robot_state = _seq_slices(seq)
+        # Срезы: CSV-колонки v2-релиза точнее парсинга имени; fallback — имя.
+        name_env, name_robot = _seq_slices(seq)
+        environment = item.get("environment") or name_env
+        robot_state = item.get("robot_state") or name_robot
         indexes = pick_frame_indices(len(frames), item["frames_wanted"])
         for j in indexes:
             img_path = data_root / seq / FRAMES_REL / frames[j][0]
             if not img_path.is_file():
-                raise AghriAdapterError(
-                    f"{seq}: кадр не найден {FRAMES_REL}/{frames[j][0]}"
-                )
+                raise AghriAdapterError(f"{seq}: кадр не найден {FRAMES_REL}/{frames[j][0]}")
             cases.append(
                 _case_for_frame(
                     seq=seq,
@@ -797,6 +896,8 @@ def build_aghri_cases(
                 "frames": frames_per_sequence[seq],
                 "archive": item.get("archive"),
                 "split": item.get("split"),
+                "environment": environment,
+                "robot_state": robot_state,
             }
         )
     cases.sort(key=lambda case: case.case_id)
@@ -827,9 +928,7 @@ def load(data_root: str | Path) -> list[Case]:
     return build_aghri_cases(data_root)[0]
 
 
-def write_manifest(
-    cases: list[Case], report: dict[str, Any], out_path: Path
-) -> Path:
+def write_manifest(cases: list[Case], report: dict[str, Any], out_path: Path) -> Path:
     """Пишет ``cases.jsonl`` (единая схема) + sidecar-отчёт; возвращает путь."""
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -837,9 +936,7 @@ def write_manifest(
         for case in cases:
             fh.write(json.dumps(case_to_dict(case), ensure_ascii=False) + "\n")
     sidecar = out_path.with_name(out_path.name + ".sidecar.json")
-    sidecar.write_text(
-        json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    sidecar.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return sidecar
 
 
@@ -919,7 +1016,7 @@ def provenance_text(cases: list[Case], report: dict[str, Any]) -> str:
         )
     lines += [
         "",
-        "## Кейсы (n={0})".format(report["n_cases"]),
+        f"## Кейсы (n={report['n_cases']})",
         "",
         "| case_id | кадр | gold | объявлено | bucket |",
         "| --- | --- | --- | --- | --- |",
@@ -964,16 +1061,22 @@ def main(argv: list[str] | None = None) -> int:
         description="AGHRI → единая схема: 15 count-кейсов аудитории (T9)",
     )
     sub = parser.add_subparsers(dest="command", required=True)
-    plan_p = sub.add_parser(
-        "plan", help="выбор последовательностей по dataset_summary.csv"
-    )
+    plan_p = sub.add_parser("plan", help="выбор последовательностей по dataset_summary.csv")
     plan_p.add_argument("--summary", type=Path, required=True, help=SUMMARY_NAME)
     plan_p.add_argument("--n-frames", type=int, default=DEFAULT_N_FRAMES)
     plan_p.add_argument("--max-per-seq", type=int, default=DEFAULT_MAX_PER_SEQ)
-    plan_p.add_argument("--out", type=Path, default=Path(SELECTION_NAME))
-    build_p = sub.add_parser(
-        "build", help="cases.jsonl + PROVENANCE.md из selection + данных"
+    plan_p.add_argument(
+        "--parts",
+        default=None,
+        help="только эти zip-части релиза, напр. 1,2,3 (без фильтра — все)",
     )
+    plan_p.add_argument(
+        "--required",
+        default=None,
+        help="обязательное покрытие счётчиков, напр. 1,2,3 (по умолчанию 1-5)",
+    )
+    plan_p.add_argument("--out", type=Path, default=Path(SELECTION_NAME))
+    build_p = sub.add_parser("build", help="cases.jsonl + PROVENANCE.md из selection + данных")
     build_p.add_argument(
         "--data-root",
         type=Path,
@@ -988,8 +1091,20 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "plan":
         from dataclasses import asdict
 
+        parts = tuple(int(p) for p in args.parts.split(",") if p.strip()) if args.parts else None
+        required = (
+            tuple(int(c) for c in args.required.split(",") if c.strip())
+            if args.required
+            else REQUIRED_COUNTS
+        )
         rows = load_summary_csv(args.summary)
-        selected, extra = select_sequences(rows, args.n_frames, args.max_per_seq)
+        selected, extra = select_sequences(
+            rows,
+            args.n_frames,
+            args.max_per_seq,
+            parts=parts,
+            required_counts=required,
+        )
         report = extra["report"]
         payload = {
             "schema": SELECTION_SCHEMA,
@@ -998,6 +1113,8 @@ def main(argv: list[str] | None = None) -> int:
             "summary_sha256": hashlib.sha256(args.summary.read_bytes()).hexdigest(),
             "n_frames": args.n_frames,
             "max_frames_per_seq": args.max_per_seq,
+            "parts": sorted(parts) if parts is not None else None,
+            "required_counts": sorted(required),
             "selected": [asdict(item) for item in selected],
             "excluded": extra["excluded"],
             "report": report,
@@ -1014,10 +1131,7 @@ def main(argv: list[str] | None = None) -> int:
         for note in report["notes"]:
             print(f"  note: {note}")
         for item in extra["excluded"]:
-            print(
-                f"  excluded: строка {item['row_no']} ({item['seq']}): "
-                f"{item['reason']}"
-            )
+            print(f"  excluded: строка {item['row_no']} ({item['seq']}): " f"{item['reason']}")
         print()
         print(download_instructions(report["archives"]))
         return 0
@@ -1028,8 +1142,7 @@ def main(argv: list[str] | None = None) -> int:
     provenance = args.data_root / "PROVENANCE.md"
     provenance.write_text(provenance_text(cases, report) + "\n", encoding="utf-8")
     print(
-        f"cases: {args.out} ({len(cases)}); sidecar-отчёт: {sidecar}; "
-        f"provenance: {provenance}"
+        f"cases: {args.out} ({len(cases)}); sidecar-отчёт: {sidecar}; " f"provenance: {provenance}"
     )
     return 0
 

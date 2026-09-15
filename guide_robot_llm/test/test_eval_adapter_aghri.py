@@ -63,9 +63,10 @@ def aghri_root(tmp_path: Path) -> Path:
     root = tmp_path / "aghri"
     shutil.copytree(STUB_ROOT, root)
     selection = tmp_path / "selection.json"
-    assert aghri.main(
-        ["plan", "--summary", str(root / aghri.SUMMARY_NAME), "--out", str(selection)]
-    ) == 0
+    assert (
+        aghri.main(["plan", "--summary", str(root / aghri.SUMMARY_NAME), "--out", str(selection)])
+        == 0
+    )
     shutil.copy(selection, root / aghri.SELECTION_NAME)
     return root
 
@@ -122,8 +123,7 @@ def test_summary_csv_stub(tmp_path: Path) -> None:
 def test_summary_csv_header_aliases(tmp_path: Path) -> None:
     p = tmp_path / "s.csv"
     p.write_text(
-        "seq,n_people,zip\n"
-        "out_vine_5swap_walk_st_ly_11_06_2024_2_label,,\n",
+        "seq,n_people,zip\n" "out_vine_5swap_walk_st_ly_11_06_2024_2_label,,\n",
         encoding="utf-8",
     )
     rows = aghri.load_summary_csv(p)
@@ -626,6 +626,115 @@ def test_provenance_text(aghri_root: Path) -> None:
     assert aghri.DOI_URL in text
     assert aghri.TOOLS_REPO_URL in text
     assert report["summary_sha256"] in text
-    for case_id, count in EXPECTED_GOLD.items():
+    for case_id, _count in EXPECTED_GOLD.items():
         assert case_id in text
     assert str(cases[0].slices["declared_count"]) in text
+
+
+# ---------------------------------------------------------------------------
+# Формат v2-релиза (страница DOI, 2026-08-21): «Scene Name», «Number of
+# Humans», целые номера частей в колонке part, Environment/Robot movements,
+# хвостовые пустые строки.
+# ---------------------------------------------------------------------------
+
+V2_SUMMARY_CSV = (
+    "Scene Name,Environment,Number of Humans,Human activities,Human "
+    "movements,Robot movements,Occlusions,Recording Duration (s),Dataset "
+    "compressed part it belongs to\n"
+    "footpath1_1walk_1stand_st_11_12_2024_1_label,Footpath,2,walking + "
+    "standing,moving away from robot,still,none,16.29,1\n"
+    "in_straw_2pick_st_11_10_2024_1_label,Inside Strawberry Polytunnel,2,"
+    "picking,still,still,partial,20.0,1\n"
+    "in_vine_3walk_mv_11_11_2024_1_label,Inside Vineyard,3,walking,moving "
+    "towards robot,moving,none,25.5,1\n"
+    "footpath1_1walk_st_11_13_2024_1_label,Footpath,1,walking,still,"
+    "still,none,10.0,2\n"
+    "in_vine_1walk_st_11_14_2024_1_label,Inside Vineyard,1,walking,"
+    "moving away from robot,still,none,12.0,3\n"
+    "out_vine_4swap_walk_st_ly_11_06_2024_1_label,Outside Vineyard,4,"
+    "swapping,still,still,none,30.0,10\n"
+    "out_vine_5walk_talk_push_st_ly_11_06_2024_2_label,Outside Vineyard,"
+    "5,walking,still,still,none,40.0,10\n"
+    "\n"
+    "\n"
+)
+
+
+def _write_v2_summary(tmp_path: Path) -> Path:
+    """Временный summary в реальном формате v2-релиза."""
+    summary = tmp_path / "dataset_summary.csv"
+    summary.write_text(V2_SUMMARY_CSV, encoding="utf-8")
+    return summary
+
+
+def test_v2_summary_parsing(tmp_path: Path) -> None:
+    """Заголовки v2, целые части, env/robot-колонки, хвостовые пустые строки."""
+    rows = aghri.load_summary_csv(_write_v2_summary(tmp_path))
+    assert len(rows) == 7  # 9 записей минус 2 пустые хвостовые
+    first = rows[0]
+    assert first.seq == "footpath1_1walk_1stand_st_11_12_2024_1_label"
+    assert first.declared_count == 2
+    assert first.count_source == "csv"
+    assert first.archive == "dataset_part1.zip"  # целое 1 → имя архива
+    assert first.environment == "Footpath"
+    assert first.robot_state == "still"
+    assert first.frames is None  # колонки Number of Frames в v2 нет
+    assert first.split is None
+    last = rows[-1]
+    assert last.declared_count == 5
+    assert last.archive == "dataset_part10.zip"
+
+
+def test_archive_normalization_helpers() -> None:
+    """_archive_to_zip / _zip_to_part: целые ↔ имена архивов."""
+    assert aghri._archive_to_zip("3") == "dataset_part3.zip"
+    assert aghri._archive_to_zip("10") == "dataset_part10.zip"
+    assert aghri._archive_to_zip("dataset_part2.zip") == "dataset_part2.zip"
+    assert aghri._archive_to_zip("") is None
+    assert aghri._archive_to_zip(None) is None
+    assert aghri._zip_to_part("dataset_part10.zip") == 10
+    assert aghri._zip_to_part("other.zip") is None
+    assert aghri._zip_to_part(None) is None
+
+
+def test_v2_parts_filter_selects_within_scope(tmp_path: Path) -> None:
+    """--parts 1,2,3 + --required 1,2,3: часть 10 исключается, план сходится."""
+    rows = aghri.load_summary_csv(_write_v2_summary(tmp_path))
+    selected, extra = aghri.select_sequences(
+        rows, 5, 3, parts=(1, 2, 3), required_counts=(1, 2, 3)
+    )
+    report = extra["report"]
+    seqs = {item.seq for item in selected}
+    assert "out_vine_4swap_walk_st_ly_11_06_2024_1_label" not in seqs
+    assert "out_vine_5walk_talk_push_st_ly_11_06_2024_2_label" not in seqs
+    assert report["parts"] == [1, 2, 3]
+    assert report["required_counts"] == [1, 2, 3]
+    excluded_seqnames = {item["seq"] for item in extra["excluded"]}
+    assert "out_vine_4swap_walk_st_ly_11_06_2024_1_label" in excluded_seqnames
+
+
+def test_v2_parts_filter_default_required_raises(tmp_path: Path) -> None:
+    """Части 1–3 без override покрытия: 4 и 5 отсутствуют → ошибка."""
+    rows = aghri.load_summary_csv(_write_v2_summary(tmp_path))
+    with pytest.raises(aghri.AghriAdapterError, match="покрытие сбоем"):
+        aghri.select_sequences(rows, 5, 3, parts=(1, 2, 3))
+
+
+def test_build_slices_prefer_csv_columns(aghri_root: Path) -> None:
+    """Срезы: значения из CSV (в selection.json) бьют парсинг имени."""
+    import json
+
+    selection_path = aghri_root / aghri.SELECTION_NAME
+    selection = json.loads(selection_path.read_text(encoding="utf-8"))
+    for item in selection["selected"]:
+        item["environment"] = "CSV-ENV"
+        item["robot_state"] = "csv_state"
+    selection_path.write_text(
+        json.dumps(selection, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    cases, _ = aghri.build_aghri_cases(aghri_root)
+    assert cases, "ожидали кейсы"
+    for case in cases:
+        assert case.slices["environment"] == "CSV-ENV"
+        assert case.slices["robot_state"] == "csv_state"
