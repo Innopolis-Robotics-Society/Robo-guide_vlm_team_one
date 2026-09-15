@@ -7,7 +7,7 @@
 * пилот 15 кейсов — ``pilot/manifest.jsonl`` через ``load_pilot`` (T5).
 
 DP/Deepoint исключён (дистрибуция 180 GB, не скачивается локально),
-YouRefIt — регистрация pending (досборка позже инкрементальным прогонсом).
+YouRefIt снят с плана командным решением 2026-09-16 (данные не регистрируются).
 
 Запуск из каталога пакета ``guide_robot_llm/``:
 
@@ -70,7 +70,7 @@ def cmd_manifest(_args: argparse.Namespace) -> None:
         "name": OUT.name,
         "n_cases": len(rows),
         "generated": time.strftime("%Y-%m-%d %H:%M:%S %Z"),
-        "scope_decision": "2026-09-15 (T10): DP excluded (180 GB), YouRefIt registration pending",
+        "scope_decision": "2026-09-15 (T10): DP excluded (180 GB); 2026-09-16: YouRefIt dropped (team decision — bench stays at 40 cases)",
         "slices": [
             {"source": "egopoint", "file": str(EGOPPOINT.relative_to(_PKG_ROOT)), "sha256": _sha256(EGOPPOINT), "n_cases": 10},
             {"source": "aghri", "file": str(AGHRI.relative_to(_PKG_ROOT)), "sha256": _sha256(AGHRI), "n_cases": 15},

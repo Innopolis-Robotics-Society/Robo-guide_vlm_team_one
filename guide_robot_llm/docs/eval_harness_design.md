@@ -6,6 +6,13 @@ pilot episodes plus the 50-case external mini-benchmark (DP 20, EgoPoint-Bench
 **Diagnostic only** — no final project score, no #11 model selection, no
 prompt/threshold tuning on the frozen sets.
 
+**Status (2026-09-16):** the external set ships as the 40-case bench
+(`eval_manifests/bench_40.jsonl`): EgoPoint-Bench 10 + AGHRI 15 + pilot-CC 15.
+DP/Deepoint is excluded (180 GB distribution, never downloaded locally) and
+YouRefIt was dropped by team decision 2026-09-16 (no data registration). The
+YouRefIt adapter (`eval/adapters/yourifit.py`, T8) remains in the tree with
+tests, but no data will ever be registered for it.
+
 ## Placement (decision)
 
 The harness lives inside the existing pure-Python package, no new colcon

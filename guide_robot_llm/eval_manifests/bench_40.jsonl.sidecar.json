@@ -1,8 +1,8 @@
 {
   "name": "bench_40.jsonl",
   "n_cases": 40,
-  "generated": "2026-09-16 02:07:51 +07",
-  "scope_decision": "2026-09-15 (T10): DP excluded (180 GB), YouRefIt registration pending",
+  "generated": "2026-09-16 03:12:40 +07",
+  "scope_decision": "2026-09-15 (T10): DP excluded (180 GB); 2026-09-16: YouRefIt dropped (team decision — bench stays at 40 cases)",
   "slices": [
     {
       "source": "egopoint",
