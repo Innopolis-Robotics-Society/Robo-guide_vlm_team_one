@@ -422,6 +422,76 @@ def test_runner_cli_mock_run(tmp_path) -> None:
     assert (out / "cases" / "CLI-1" / "meta.json").exists()
 
 
+def test_cli_writes_run_config(tmp_path) -> None:
+    """AC #10 «freeze metadata»: CLI фиксирует run_config.json ДО прогона.
+
+    Манифест (sha256 + число кейсов), «модель» (mock: canned-файл),
+    промпт (температура фаз, вариант) и параметры -- на месте; `api_key`
+    нигде не фиксируется.
+    """
+    sha = _make_media(tmp_path)
+    raw = _case("CLI-2", mode="freeform", gold={"type": "unanswerable"}, media_sha=sha)
+    manifest = tmp_path / "m.jsonl"
+    manifest.write_text(json.dumps(raw, ensure_ascii=False) + "\n", encoding="utf-8")
+    mock = tmp_path / "mock.json"
+    mock.write_text(
+        json.dumps({"CLI-2": {"freeform": FREEFORM_GOOD}}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    out = tmp_path / "run"
+    exit_code = runner_main(
+        [
+            "--manifest",
+            str(manifest),
+            "--out",
+            str(out),
+            "--mock-responses",
+            str(mock),
+            "--data-root",
+            str(tmp_path),
+            "--max-attempts",
+            "3",
+        ]
+    )
+    assert exit_code == 0
+    config = json.loads((out / "run_config.json").read_text(encoding="utf-8"))
+    assert config["manifest"]["n_cases"] == 1
+    assert config["manifest"]["sha256"] == hashlib.sha256(manifest.read_bytes()).hexdigest()
+    backend = config["backend"]
+    assert backend["kind"] == "mock"
+    assert backend["canned_sha256"] == hashlib.sha256(mock.read_bytes()).hexdigest()
+    assert config["prompt"]["variant_id"] is None
+    assert config["prompt"]["temperature"] == 0.2
+    assert config["params"]["max_attempts"] == 3
+    assert "api_key" not in (out / "run_config.json").read_text(encoding="utf-8")
+
+
+def test_backend_freeze_info_redacts_api_key_and_keeps_declarative() -> None:
+    """`api_key` не фиксируется (только флаг); операторские ключи (seed) -- да.
+
+    `llm_client` декларативные ключи в payload не уносит (изменение вне
+    скоупа #10), поэтому seed в run_config -- это то, что оператор
+    зафиксировал в конфиг-файле эндпоинта (напр. серверный сид llama.cpp).
+    """
+    from guide_robot_llm.eval.runner import _backend_freeze_info
+
+    info = _backend_freeze_info(
+        {
+            "base_url": "http://127.0.0.1:8080/v1",
+            "api_key": "secret",
+            "model_name": "qwen3.8-27b",
+            "seed": 42,
+            "connect_timeout_s": 5.0,
+        }
+    )
+    assert "api_key" not in info
+    assert info["api_key_set"] is True
+    assert info["kind"] == "http"
+    assert info["seed"] == 42
+    assert info["model_name"] == "qwen3.8-27b"
+    assert "connect_timeout_s" not in info
+
+
 def test_media_missing_runs_text_only(tmp_path) -> None:
     # Нет файла медиа -- прогон идёт без кадров, а не падает (кейсы фиксируются).
     case = case_from_dict(_case("NOMED", gold={"type": "count", "count": 1}))  # sha без файла

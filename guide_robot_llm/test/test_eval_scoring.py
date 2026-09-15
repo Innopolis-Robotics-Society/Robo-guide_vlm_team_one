@@ -15,6 +15,8 @@
   per-variant-группы в отчёте.
 """
 
+import csv
+import io
 import json
 import struct
 import zlib
@@ -320,7 +322,9 @@ def test_freeform_letter_answer_maps_via_options() -> None:
         candidates=("epa", "epb", "epc", "epd"),
         allowed_tools=("reply",),
         gold={"type": "target_box", "target_id": "epa", "box_px": None, "distractors": ["epb"]},
-        provenance=Provenance(source="egopoint", license="test", version="v1", rights_note="fixture"),
+        provenance=Provenance(
+            source="egopoint", license="test", version="v1", rights_note="fixture"
+        ),
         slices={"answer_map": amap},
     )
     assert _answer_to_id("C", case) == "epc"
@@ -505,6 +509,98 @@ def test_write_outputs_and_manifest_pass_backfill(tmp_path: Path) -> None:
     assert passes["SC-PF"] is None  # parse_failed -- не судим
     assert passes["SC-T3"] is True
     assert passes["SC-T4"] is False
+
+
+def test_results_jsonl_and_summary_csv(tmp_path: Path) -> None:
+    """AC #10 «Export JSONL and CSV summary».
+
+    `results.jsonl` -- построчно per-episode (порядок манифеста, `pass`
+    заполнен); `summary.csv` -- плоская сводка: scope, group, metric, value, n.
+    """
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    write_outputs(run_dir, score)
+
+    # --- results.jsonl ---
+    jsonl_lines = (run_dir / "results.jsonl").read_text(encoding="utf-8").splitlines()
+    assert len(jsonl_lines) == score["n_cases"]
+    rows = {json.loads(line)["case_id"]: json.loads(line) for line in jsonl_lines}
+    assert rows["SC-P1"]["pass"] is True
+    assert rows["SC-PF"]["pass"] is None  # parse_failed -- не судим
+    assert rows["SC-S1"]["pass"] is None  # сцена -- не судим
+    assert rows["SC-C1"]["perception"]["abs_error"] == 1
+    manifest_ids = [
+        line["case_id"]
+        for line in json.loads((run_dir / "run_manifest.json").read_text(encoding="utf-8"))
+    ]
+    assert [json.loads(line)["case_id"] for line in jsonl_lines] == manifest_ids
+
+    # --- summary.csv ---
+    csv_text = (run_dir / "summary.csv").read_text(encoding="utf-8")
+    parsed = list(csv.DictReader(io.StringIO(csv_text)))
+    assert list(parsed[0].keys()) == ["scope", "group", "metric", "value", "n"]
+    by_key = {(r["scope"], r["group"], r["metric"]): r for r in parsed}
+    assert by_key[("counts", "", "n_cases")]["value"] == str(score["n_cases"])
+    assert by_key[("counts", "", "status_parse_failed")]["value"] == "1"
+    # ручные значения: MAE 0.5 (n=2), top-2 0.5 (n=2)
+    mae = by_key[("perception", "audience", "mae")]
+    assert (mae["value"], mae["n"]) == ("0.5", "2")
+    top2 = by_key[("perception", "pointing", "top2_recall")]
+    assert (top2["value"], top2["n"]) == ("0.5", "2")
+    # no-target-блок разворачивается в точечные метрики
+    assert by_key[("policy", "pointing", "no_target.false_positive_rate")]["value"] == "0.5"
+    # срезы: по source и split_group
+    assert any(r["group"] == "source:dp" for r in parsed if r["scope"] == "slice")
+    assert any(r["group"] == "split_group:g-sc-p1" for r in parsed if r["scope"] == "slice")
+    # прогон без варианта группируется в (no variant)
+    assert by_key[("variant", "(no variant)", "n")]["value"] == str(score["n_cases"])
+
+
+def test_run_config_in_score_and_report_header(tmp_path: Path) -> None:
+    """AC #10 «freeze metadata»: run_config.json → score.json + шапка отчёта."""
+    run_dir = _build_run(tmp_path)
+    (run_dir / "run_config.json").write_text(
+        json.dumps(
+            {
+                "generated": "2026-09-16T00:00:00+00:00",
+                "manifest": {"path": "m.jsonl", "sha256": "ab" * 32, "n_cases": 14},
+                "backend": {
+                    "kind": "http",
+                    "base_url": "http://127.0.0.1:8080/v1",
+                    "model_name": "qwen3.8-27b",
+                    "seed": 42,
+                    "api_key_set": True,
+                },
+                "prompt": {"variant_id": None, "examples_root": None, "temperature": 0.2},
+                "params": {},
+            }
+        ),
+        encoding="utf-8",
+    )
+    score = score_run(run_dir, data_root=tmp_path)
+    assert score["run_config"] is not None
+    assert score["run_config"]["backend"]["seed"] == 42
+    report = build_report(score)
+    assert (
+        "- Backend: `http://127.0.0.1:8080/v1` · model `qwen3.8-27b` · seed `42`"
+        in report
+    )
+    assert "(sha256 abababababab…)" in report
+    write_outputs(run_dir, score)
+    on_disk = json.loads((run_dir / "score.json").read_text(encoding="utf-8"))
+    assert on_disk["run_config"]["backend"]["model_name"] == "qwen3.8-27b"
+
+
+def test_no_run_config_is_tolerated(tmp_path: Path) -> None:
+    """Старые run-директории (без run_config.json) не роняют скоринг и экспорт."""
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    assert score["run_config"] is None
+    report = build_report(score)
+    assert "- Backend:" not in report
+    write_outputs(run_dir, score)
+    assert (run_dir / "results.jsonl").is_file()
+    assert (run_dir / "summary.csv").is_file()
 
 
 def test_scoring_tolerates_missing_meta(tmp_path: Path) -> None:

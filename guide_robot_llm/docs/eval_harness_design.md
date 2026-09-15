@@ -46,7 +46,16 @@ guide_robot_llm/
 │   └── <source>/PROVENANCE.md   # license, version, archive hashes, download cmds
 └── eval_runs/                   # NEW, gitignored — one dir per run
     └── <run_id>/
+        ├── run_config.json      # frozen BEFORE the first call: manifest path +
+        │                        # sha256 + n_cases, backend (endpoint/model/seed
+        │                        # for http, canned-file sha for mock; `api_key` is
+        │                        # never recorded, only `api_key_set`), prompt
+        │                        # (variant, temperature), params
         ├── run_manifest.json    # one line per case (see below)
+        ├── score.json           # machine-readable score (written by scoring)
+        ├── results.jsonl        # one JSON line per judged episode
+        ├── summary.csv          # flat aggregate export: scope,group,metric,value,n
+        ├── report.md            # human report (header shows the frozen backend)
         └── cases/<case_id>/     # raw + parsed + meta per case
 ```
 
@@ -172,6 +181,13 @@ cases/<case_id>/
 `run_manifest.json` — one line per case: `case_id, source, track, status
 (ok|parse_failed|backend_error), pass, latency_ms, attempts`.
 
+`run_config.json` is written by the runner before the first LLM call, so a
+killed run still records what was frozen (endpoint, model, seed, manifest
+sha, prompt variant, sampling params). The seed is declarative: `llm_client`
+does not transmit it, the runner only records what the operator declared in
+the backend config (e.g. a server-side llama.cpp seed), so two runs with
+different seeds differ in the artifact, not just in the transcript.
+
 Attempts: up to 2 (one retry on network/generation failure). Parse failures
 are logged, never dropped. CLI:
 
@@ -187,6 +203,20 @@ returning canned per-case responses from a fixture file. All unit tests use
 the mock — no network in tests, ever.
 
 ## Scoring and report (T4)
+
+Outputs written by the scoring step (`score.json`, `results.jsonl`,
+`summary.csv`, `report.md`, plus `pass` backfilled into `run_manifest.json`):
+
+- `score.json` — machine-readable: counts, perception/policy metrics, variant
+  groups, slices (source / split_group / per metadata key), per-case rows,
+  and the run's `run_config` (freeze metadata) when present;
+- `results.jsonl` — one JSON line per judged episode, in manifest order,
+  `pass` already filled in (AC: JSONL export);
+- `summary.csv` — flat aggregate export, columns `scope,group,metric,value,n`
+  (scopes: counts, perception/policy, slice, variant; nested blocks like
+  `no_target` are dotted into `no_target.*`); missing values are empty cells;
+- `report.md` — human report; its header lists the frozen backend/manifest/
+  prompt from `run_config.json` when present (AC: freeze metadata).
 
 - **Pointing** (perception + policy split):
   - perception: `pointing_evidence` accuracy vs gold presence,

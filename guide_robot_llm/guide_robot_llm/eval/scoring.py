@@ -36,6 +36,8 @@ calls-per-case (loop -- meta `calls_per_case`, иначе сумма `calls` п�
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import json
 import re
 import struct
@@ -609,6 +611,14 @@ def score_run(run_dir: str | Path, *, data_root: str | Path | None = None) -> di
     """
     run = Path(run_dir)
     lines = json.loads((run / "run_manifest.json").read_text(encoding="utf-8"))
+    # Freeze-метаданные прогона (эндпоинт/модель/seed/манифест) -- если
+    # раннер их записал (`run_config.json`); старые run-директории без них
+    # не роняются (Taiga #10, AC «freeze metadata»).
+    run_config: dict[str, Any] | None = None
+    try:
+        run_config = json.loads((run / "run_config.json").read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        run_config = None
     root = Path(data_root) if data_root is not None else None
     per_case: dict[str, dict[str, Any]] = {}
     errors: list[str] = []
@@ -656,6 +666,7 @@ def score_run(run_dir: str | Path, *, data_root: str | Path | None = None) -> di
         "n_cases": len(per_case),
         "status_counts": status_counts,
         "pass_counts": pass_counts,
+        "run_config": run_config,
         "per_case": per_case,
         "metrics": _aggregate(per_case),
         "variants": _variant_groups(per_case),
@@ -846,7 +857,12 @@ def build_report(score: dict[str, Any], notes: str | None = None) -> str:
     pc = score["pass_counts"]
     judged = pc["pass"] + pc["fail"]
     add(f"- Judged: {judged} (pass {pc['pass']}, fail {pc['fail']}, unjudged {pc['unjudged']})")
-    add("")
+    freeze_added = False
+    for line in _freeze_header_lines(score.get("run_config")):
+        add(line)
+        freeze_added = True
+    if freeze_added:
+        add("")
     add(f"> **{STATEMENT}**")
     add("")
     if notes:
@@ -904,14 +920,103 @@ def build_report(score: dict[str, Any], notes: str | None = None) -> str:
     return "\n".join(lines)
 
 
+def _freeze_header_lines(run_config: dict[str, Any] | None) -> list[str]:
+    """Шапка отчёта: что заморожено прогоном (эндпоинт/модель/seed/манифест)."""
+    if not run_config:
+        return []
+    lines: list[str] = []
+    backend = run_config.get("backend") or {}
+    if backend.get("kind") == "http":
+        model = f" · model `{backend['model_name']}`" if backend.get("model_name") else ""
+        seed = f" · seed `{backend['seed']}`" if "seed" in backend else ""
+        lines.append(f"- Backend: `{backend.get('base_url', '?')}`{model}{seed}")
+    elif backend.get("kind") == "mock":
+        digest = str(backend.get("canned_sha256") or "?")
+        lines.append(f"- Backend: mock (canned {digest[:12]}…)")
+    manifest = run_config.get("manifest") or {}
+    if manifest.get("sha256"):
+        lines.append(
+            f"- Manifest: `{manifest.get('path')}` (sha256 {str(manifest['sha256'])[:12]}…)"
+        )
+    prompt = run_config.get("prompt") or {}
+    if prompt.get("variant_id"):
+        lines.append(f"- Prompt variant: `{prompt['variant_id']}`")
+    return lines
+
+
+def _csv_cell(value: Any) -> str:
+    return "" if value is None else str(value)
+
+
+def _flat_metric_rows(
+    scope: str, group: str, block: dict[str, Any], key_prefix: str = ""
+) -> list[list[Any]]:
+    """Блок метрик → плоские строки CSV: {value, n} / вложенные блоки / счётчики."""
+    rows: list[list[Any]] = []
+    for key, value in block.items():
+        name = f"{key_prefix}{key}"
+        if isinstance(value, dict) and "value" in value:
+            rows.append([scope, group, name, _csv_cell(value.get("value")), value.get("n", "")])
+        elif isinstance(value, dict):
+            rows.extend(_flat_metric_rows(scope, group, value, f"{name}."))
+        elif value is None:
+            rows.append([scope, group, name, "", ""])
+        else:
+            rows.append([scope, group, name, _csv_cell(value), ""])
+    return rows
+
+
+def _summary_csv(score: dict[str, Any]) -> str:
+    """`summary.csv`: плоский экспорт агрегатов (counts, метрики, срезы, варианты).
+
+    Колонки: `scope, group, metric, value, n`. Скоупы: `counts`,
+    `perception`/`policy` (group -- трек), `slice` (group --
+    `source:…`/`split_group:…`/`metadata:ключ:значение`), `variant`.
+    """
+    rows: list[list[Any]] = [["scope", "group", "metric", "value", "n"]]
+    rows.append(["counts", "", "n_cases", score["n_cases"], ""])
+    for key, value in score["status_counts"].items():
+        rows.append(["counts", "", f"status_{key}", value, ""])
+    for key, value in score["pass_counts"].items():
+        rows.append(["counts", "", key, value, ""])
+    for section in ("perception", "policy"):
+        for track, block in (score["metrics"].get(section) or {}).items():
+            rows.extend(_flat_metric_rows(section, track, block))
+    slices = score.get("slices") or {}
+    for name, group in (slices.get("by_source") or {}).items():
+        rows.extend(_flat_metric_rows("slice", f"source:{name}", group))
+    for name, group in (slices.get("by_split_group") or {}).items():
+        rows.extend(_flat_metric_rows("slice", f"split_group:{name}", group))
+    for key, table in (slices.get("by_metadata") or {}).items():
+        for name, group in table.items():
+            rows.extend(_flat_metric_rows("slice", f"metadata:{key}:{name}", group))
+    for vid, block in (score.get("variants") or {}).items():
+        rows.extend(_flat_metric_rows("variant", vid, block))
+    buf = io.StringIO()
+    writer = csv.writer(buf, lineterminator="\n")
+    writer.writerows(rows)
+    return buf.getvalue()
+
+
 def write_outputs(
     run_dir: Path, score: dict[str, Any], notes: str | None = None
 ) -> None:
-    """`score.json` + `report.md` + заполнение `pass` в `run_manifest.json`."""
+    """`score.json` + `report.md` + `results.jsonl` + `summary.csv` + заполнение `pass`.
+
+    `results.jsonl` -- построчный экспорт per-episode результатов (одна JSON-
+    строка на кейс, порядок как в `run_manifest.json`, `pass` уже заполнен);
+    `summary.csv` -- плоская сводка агрегатов (Taiga #10, AC «JSONL and CSV
+    summary export»).
+    """
     (run_dir / "score.json").write_text(
         json.dumps(score, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     (run_dir / "report.md").write_text(build_report(score, notes=notes), encoding="utf-8")
+    (run_dir / "results.jsonl").write_text(
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in score["per_case"].values()),
+        encoding="utf-8",
+    )
+    (run_dir / "summary.csv").write_text(_summary_csv(score), encoding="utf-8")
     manifest_path = run_dir / "run_manifest.json"
     lines = json.loads(manifest_path.read_text(encoding="utf-8"))
     for line in lines:

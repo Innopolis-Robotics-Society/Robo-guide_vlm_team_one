@@ -50,6 +50,7 @@ import mimetypes
 import re
 import time
 from dataclasses import asdict, dataclass, field
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -75,6 +76,10 @@ OBSERVATION_MAX_CHARS = 400
 # Серверный usage в llm_client не захватывается -- честно пишем null.
 TOKENS_NOTE = "server usage not captured by llm_client (known gap, out of scope for #10)"
 DEFAULT_MAX_ATTEMPTS = 2
+# Температура всех фаз раннера: передаётся явно (freeze-метаданные в
+# `run_config.json` обязаны совпадать с тем, что ушло в payload, а не с
+# неявным дефолтом протокола).
+_PHASE_TEMPERATURE = 0.2
 
 # Корень freeform-грамматики: ровно {answer, confidence, abstain}.
 # Экранирование как в grammar.py: в GBNF-строковом литерале `\"` даёт
@@ -514,7 +519,12 @@ def _run_phase(
         try:
             if isinstance(llm, MockBackend):
                 llm.set_context(case_id, phase, pass_label)
-            completion = llm.complete(messages, grammar=grammar, telemetry=telemetry)
+            completion = llm.complete(
+                messages,
+                grammar=grammar,
+                temperature=_PHASE_TEMPERATURE,
+                telemetry=telemetry,
+            )
         except Exception as error:  # noqa: BLE001 -- любой сбой транспорта → ретрай/запись
             last_error = f"{type(error).__name__}: {error}"
             continue
@@ -1134,6 +1144,106 @@ def build_backend_from_config(config: dict[str, Any]) -> Backend:
     )
 
 
+def _sha256_of_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for block in iter(lambda: fh.read(1 << 20), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+# Ключи конфиг-файла бэкенда, которые реально потребляет `Backend` (#3).
+# Остальные ключи операторского файла (например, `seed` -- серверный сид
+# llama.cpp, запускаемого с фиксированным сидом) декларативны: `llm_client`
+# их в payload не уносит (менять в #10 нельзя), но для freeze их фиксируем.
+_BACKEND_EFFECTIVE_KEYS = frozenset(
+    {
+        "base_url",
+        "api_key",
+        "model_name",
+        "connect_timeout_s",
+        "read_timeout_s",
+        "multimodal_enabled",
+        "max_images",
+        "extra_headers",
+    }
+)
+
+
+def _backend_freeze_info(config: dict[str, Any]) -> dict[str, Any]:
+    """Конфиг-файл эндпоинта → запись `run_config.json.backend`.
+
+    `api_key` никогда не фиксируется (вместо значения -- флаг
+    `api_key_set`); выходные поля (base_url/модель/capability) и прочие
+    операторские ключи (seed, sampling-параметры) сохраняются как есть.
+    """
+    info: dict[str, Any] = {"kind": "http"}
+    for key in ("base_url", "model_name", "multimodal_enabled", "max_images"):
+        if key in config:
+            info[key] = config[key]
+    info["api_key_set"] = bool(config.get("api_key"))
+    for key, value in config.items():
+        if key not in _BACKEND_EFFECTIVE_KEYS:
+            info[key] = value
+    return info
+
+
+def _mock_freeze_info(canned_path: Path) -> dict[str, Any]:
+    """Mock-бэкенд: «моделью» здесь служит canned-файл -- фиксируем его sha256."""
+    return {
+        "kind": "mock",
+        "canned_path": str(canned_path),
+        "canned_sha256": _sha256_of_file(canned_path),
+    }
+
+
+def write_run_config(
+    out_dir: Path,
+    *,
+    backend: dict[str, Any],
+    manifest_path: Path,
+    n_cases: int,
+    variant_id: str | None = None,
+    examples_root: Path | None = None,
+    max_attempts: int = DEFAULT_MAX_ATTEMPTS,
+    loop_max_calls: int = LOOP_MAX_CALLS,
+    loop_budget_ticks: int = LOOP_BUDGET_TICKS,
+    data_root: Path | None = None,
+) -> Path:
+    """Записать `run_config.json` -- freeze-метаданные прогона (Taiga #10, AC).
+
+    Замораживает: эндпоинт/модель (+операторские параметры, напр. `seed`),
+    манифест (путь + sha256 + число кейсов), промпт (вариант, few-shot корень,
+    температура фаз) и параметры прогона. Пишется ДО прогона: если прогон
+    оборван, конфиг уже на месте. `api_key` не фиксируется
+    (см. `_backend_freeze_info`).
+    """
+    out_dir.mkdir(parents=True, exist_ok=True)
+    config = {
+        "generated": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "manifest": {
+            "path": str(manifest_path),
+            "sha256": _sha256_of_file(manifest_path),
+            "n_cases": n_cases,
+        },
+        "backend": backend,
+        "prompt": {
+            "variant_id": variant_id,
+            "examples_root": str(examples_root) if examples_root else None,
+            "temperature": _PHASE_TEMPERATURE,
+        },
+        "params": {
+            "max_attempts": max_attempts,
+            "loop_max_calls": loop_max_calls,
+            "loop_budget_ticks": loop_budget_ticks,
+            "data_root": str(data_root) if data_root is not None else None,
+        },
+    }
+    path = out_dir / "run_config.json"
+    path.write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
+    return path
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI: манифест кейсов → run-директория (см. модульный докстринг)."""
     parser = argparse.ArgumentParser(description="Офлайн-прогон кейсов оценки VLM (Taiga #10)")
@@ -1171,11 +1281,14 @@ def main(argv: list[str] | None = None) -> int:
     out_dir = Path(args.out)
 
     if args.mock_responses:
-        canned_all = json.loads(Path(args.mock_responses).read_text(encoding="utf-8"))
+        canned_path = Path(args.mock_responses)
+        canned_all = json.loads(canned_path.read_text(encoding="utf-8"))
         llm: Llm = MockBackend(_flatten_canned(canned_all))
+        backend_info = _mock_freeze_info(canned_path)
     elif args.backend_config:
         config = json.loads(Path(args.backend_config).read_text(encoding="utf-8"))
         llm = build_backend_from_config(config)
+        backend_info = _backend_freeze_info(config)
     else:
         parser.error("нужен --backend-config или --mock-responses")
         return 2
@@ -1187,8 +1300,18 @@ def main(argv: list[str] | None = None) -> int:
         loop_max_calls=args.loop_max_calls,
         loop_budget_ticks=args.loop_budget_ticks,
     )
+    freeze = dict(
+        backend=backend_info,
+        manifest_path=Path(args.manifest),
+        examples_root=common["examples_root"],
+        max_attempts=args.max_attempts,
+        loop_max_calls=args.loop_max_calls,
+        loop_budget_ticks=args.loop_budget_ticks,
+        data_root=common["data_root"],
+    )
 
     if not args.prompt_variant:
+        write_run_config(out_dir, n_cases=len(cases), **freeze)
         lines = run_manifest(cases, llm, out_dir, **common)
         failed = [line for line in lines if line["status"] != "ok"]
         print(f"прогоно кейсов: {len(lines)}; сбоев: {len(failed)}; run: {out_dir}")
@@ -1198,6 +1321,12 @@ def main(argv: list[str] | None = None) -> int:
     if args.prompt_variant == "all":
         for spec in variants.values():
             sub_out = out_dir / spec.id
+            write_run_config(
+                sub_out,
+                variant_id=spec.id,
+                n_cases=sum(1 for c in cases if c.track == spec.track),
+                **freeze,
+            )
             lines = run_manifest(cases, llm, sub_out, variant=spec, **common)
             failed = [line for line in lines if line["status"] != "ok"]
             print(
@@ -1210,6 +1339,12 @@ def main(argv: list[str] | None = None) -> int:
     except KeyError:
         parser.error(f"вариант '{args.prompt_variant}' не найден в prompt_variants.json")
         return 2
+    write_run_config(
+        out_dir,
+        variant_id=spec.id,
+        n_cases=sum(1 for c in cases if c.track == spec.track),
+        **freeze,
+    )
     lines = run_manifest(cases, llm, out_dir, variant=spec, **common)
     failed = [line for line in lines if line["status"] != "ok"]
     print(f"прогоно кейсов: {len(lines)}; сбоев: {len(failed)}; run: {out_dir}")
