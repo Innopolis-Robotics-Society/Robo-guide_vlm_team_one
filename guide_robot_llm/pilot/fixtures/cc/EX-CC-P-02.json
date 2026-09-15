@@ -1,0 +1,56 @@
+{
+  "objects": {
+    "vase-01": {
+      "box_px": [
+        560,
+        560,
+        660,
+        780
+      ],
+      "color": [
+        210,
+        190,
+        120
+      ],
+      "shape": "rect"
+    },
+    "vase-02": {
+      "box_px": [
+        700,
+        560,
+        800,
+        780
+      ],
+      "color": [
+        205,
+        185,
+        115
+      ],
+      "shape": "rect"
+    }
+  },
+  "people": [
+    {
+      "person_id": "p1100",
+      "box_px": [
+        1037,
+        560,
+        1163,
+        860
+      ],
+      "visible_fraction": 1.0,
+      "occluded_by": null,
+      "counts_as_person": true,
+      "note": null
+    }
+  ],
+  "pointing": null,
+  "pointing_note": "кончик жеста (680, 650) -- в промежутке между vase-01 и vase-02: двусмысленно, эталонный ответ -- воздержаться и уточнить",
+  "scene_id": "EX-CC-P-02",
+  "size": [
+    1600,
+    900
+  ],
+  "seed": 20260914,
+  "venue": "synthetic (PIL, deterministic spec)"
+}

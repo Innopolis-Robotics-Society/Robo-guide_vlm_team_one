@@ -1,0 +1,55 @@
+{
+  "objects": {
+    "cabinet-01": {
+      "box_px": [
+        140,
+        470,
+        400,
+        800
+      ],
+      "color": [
+        52,
+        84,
+        140
+      ],
+      "shape": "rect"
+    },
+    "frame-02": {
+      "box_px": [
+        1200,
+        260,
+        1400,
+        460
+      ],
+      "color": [
+        146,
+        94,
+        52
+      ],
+      "shape": "rect"
+    }
+  },
+  "people": [
+    {
+      "person_id": "p760",
+      "box_px": [
+        697,
+        560,
+        823,
+        860
+      ],
+      "visible_fraction": 1.0,
+      "occluded_by": null,
+      "counts_as_person": true,
+      "note": null
+    }
+  ],
+  "pointing": null,
+  "scene_id": "EX-CC-D-01",
+  "size": [
+    1600,
+    900
+  ],
+  "seed": 20260914,
+  "venue": "synthetic (PIL, deterministic spec)"
+}

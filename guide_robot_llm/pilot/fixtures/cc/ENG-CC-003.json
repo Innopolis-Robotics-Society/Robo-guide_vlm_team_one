@@ -1,0 +1,28 @@
+{
+  "objects": {
+    "poster-01": {
+      "box_px": [
+        700,
+        240,
+        900,
+        480
+      ],
+      "color": [
+        120,
+        140,
+        90
+      ],
+      "shape": "rect"
+    }
+  },
+  "people": [],
+  "pointing": null,
+  "engaged_count": 0,
+  "scene_id": "ENG-CC-003",
+  "size": [
+    1600,
+    900
+  ],
+  "seed": 20260914,
+  "venue": "synthetic (PIL, deterministic spec)"
+}

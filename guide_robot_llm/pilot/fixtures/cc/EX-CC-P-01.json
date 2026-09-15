@@ -1,0 +1,48 @@
+{
+  "objects": {
+    "globe-01": {
+      "box_px": [
+        220,
+        520,
+        420,
+        760
+      ],
+      "color": [
+        60,
+        120,
+        160
+      ],
+      "shape": "sphere"
+    }
+  },
+  "people": [
+    {
+      "person_id": "p900",
+      "box_px": [
+        837,
+        560,
+        963,
+        860
+      ],
+      "visible_fraction": 1.0,
+      "occluded_by": null,
+      "counts_as_person": true,
+      "note": null
+    }
+  ],
+  "pointing": {
+    "person": "p900",
+    "target_id": "globe-01",
+    "tip_px": [
+      350,
+      640
+    ]
+  },
+  "scene_id": "EX-CC-P-01",
+  "size": [
+    1600,
+    900
+  ],
+  "seed": 20260914,
+  "venue": "synthetic (PIL, deterministic spec)"
+}

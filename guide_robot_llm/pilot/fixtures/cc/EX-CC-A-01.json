@@ -1,0 +1,85 @@
+{
+  "objects": {
+    "poster-01": {
+      "box_px": [
+        700,
+        240,
+        900,
+        480
+      ],
+      "color": [
+        120,
+        140,
+        90
+      ],
+      "shape": "rect"
+    }
+  },
+  "people": [
+    {
+      "person_id": "p380",
+      "box_px": [
+        317,
+        550,
+        443,
+        850
+      ],
+      "visible_fraction": 1.0,
+      "occluded_by": null,
+      "counts_as_person": true,
+      "note": null,
+      "facing_camera": true
+    },
+    {
+      "person_id": "p650",
+      "box_px": [
+        590,
+        570,
+        710,
+        860
+      ],
+      "visible_fraction": 1.0,
+      "occluded_by": null,
+      "counts_as_person": true,
+      "note": null,
+      "facing_camera": true
+    },
+    {
+      "person_id": "p920",
+      "box_px": [
+        857,
+        550,
+        983,
+        850
+      ],
+      "visible_fraction": 1.0,
+      "occluded_by": null,
+      "counts_as_person": true,
+      "note": null,
+      "facing_camera": false
+    },
+    {
+      "person_id": "p1190",
+      "box_px": [
+        1127,
+        570,
+        1253,
+        870
+      ],
+      "visible_fraction": 1.0,
+      "occluded_by": null,
+      "counts_as_person": true,
+      "note": null,
+      "facing_camera": true
+    }
+  ],
+  "pointing": null,
+  "engaged_count": 3,
+  "scene_id": "EX-CC-A-01",
+  "size": [
+    1600,
+    900
+  ],
+  "seed": 20260914,
+  "venue": "synthetic (PIL, deterministic spec)"
+}

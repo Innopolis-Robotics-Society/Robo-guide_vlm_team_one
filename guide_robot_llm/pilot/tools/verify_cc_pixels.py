@@ -140,6 +140,29 @@ def check_plaque_text(img, gt, errors):
         errors.append("в рамке таблички нет тёмного текста")
 
 
+def check_facing(img, gt, errors):
+    """ENG/SEQ-сцены: facing_camera=True → «глаза» нарисованы (тёмные точки).
+
+    facing_camera=False → на позициях глаз кожа. Формула точек — та же,
+    что в cc_scene_gen.eye_points.
+    """
+    for p in gt.get("people", []):
+        if "facing_camera" not in p:
+            continue  # старые сцены без атрибута -- не проверяем
+        x0, y0, x1, _y1 = p["box_px"]
+        w = x1 - x0
+        cx = (x0 + x1) // 2
+        head_r = int(w * 0.26)
+        for ex, ey in ((cx - head_r // 2, y0 + head_r // 2), (cx + head_r // 2, y0 + head_r // 2)):
+            pt = (ex, ey)
+            c = px(img, ex, ey)
+            s = c[0] + c[1] + c[2]
+            if p["facing_camera"] and s > 300:
+                errors.append(f"{p['person_id']}: facing=True, но в глазу {pt} не тёмно {c}")
+            elif not p["facing_camera"] and not near(c, SKIN):
+                errors.append(f"{p['person_id']}: facing=False, но в глазу {pt} не кожа {c}")
+
+
 def main() -> int:
     errors: list[str] = []
     for scene_id in sorted(p.stem for p in GT.glob("*.json")):
@@ -152,6 +175,7 @@ def main() -> int:
         check_pointing(img, gt, errors)
         check_people(img, gt, errors)
         check_plaque_text(img, gt, errors)
+        check_facing(img, gt, errors)
 
     # сцены «пустоты»: SCN-CC-003 -- только стул, никаких витрин/экранов
     scn3 = Image.open(MEDIA / "SCN-CC-003.png").convert("RGB")
@@ -162,12 +186,13 @@ def main() -> int:
     if c[0] + c[1] + c[2] < 500:
         errors.append(f"SCN-CC-003: стена не светлая {c}")
 
+    n = len(list(GT.glob("*.json")))
     if errors:
         print(f"PIXEL CHECK FAIL ({len(errors)}):")
         for e in errors:
             print(f"  - {e}")
         return 1
-    print("PIXEL CHECK OK: все 10 кадров соответствуют GT")
+    print(f"PIXEL CHECK OK: все {n} кадров соответствуют GT")
     return 0
 
 

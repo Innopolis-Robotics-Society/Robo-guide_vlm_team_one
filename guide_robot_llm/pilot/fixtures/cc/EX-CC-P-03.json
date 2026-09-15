@@ -1,0 +1,42 @@
+{
+  "objects": {
+    "tank-02": {
+      "box_px": [
+        180,
+        480,
+        560,
+        800
+      ],
+      "color": [
+        70,
+        100,
+        90
+      ],
+      "shape": "rect"
+    }
+  },
+  "people": [
+    {
+      "person_id": "p900",
+      "box_px": [
+        837,
+        570,
+        963,
+        870
+      ],
+      "visible_fraction": 1.0,
+      "occluded_by": null,
+      "counts_as_person": true,
+      "note": null
+    }
+  ],
+  "pointing": null,
+  "pointing_note": "кончик жеста (1400, 400) -- на пустой стене, кандидаты отсутствуют",
+  "scene_id": "EX-CC-P-03",
+  "size": [
+    1600,
+    900
+  ],
+  "seed": 20260914,
+  "venue": "synthetic (PIL, deterministic spec)"
+}

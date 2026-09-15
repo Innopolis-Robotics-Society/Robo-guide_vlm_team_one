@@ -1,0 +1,45 @@
+{
+  "source": "pilot-cc",
+  "n_cases": 7,
+  "gt_dir": "pilot/fixtures/cc (ENG-*/SEQ-*_f*.json)",
+  "generator": "pilot/tools/cc_scene_gen.py (seed 20260914, deterministic)",
+  "selection_rule": "4 статичных ENG-кадра (count/engaged по GT-атрибуту facing_camera) + 3 SEQ-последовательности (loop-контракт A3)",
+  "loop_contract": "K_max=3 повторных вызова; 1 кадр = 1 тик; порог N=min_engaged; gold = терминальный кадр",
+  "selected": [
+    {
+      "case_id": "ENG-CC-001",
+      "count": 3,
+      "engaged_count": 2
+    },
+    {
+      "case_id": "ENG-CC-002",
+      "count": 1,
+      "engaged_count": 1
+    },
+    {
+      "case_id": "ENG-CC-003",
+      "count": 0,
+      "engaged_count": 0
+    },
+    {
+      "case_id": "ENG-CC-004",
+      "count": 4,
+      "engaged_count": 1
+    },
+    {
+      "case_id": "SEQ-CC-001",
+      "count": 3,
+      "engaged_count": 3
+    },
+    {
+      "case_id": "SEQ-CC-002",
+      "count": 3,
+      "engaged_count": 2
+    },
+    {
+      "case_id": "SEQ-CC-003",
+      "count": 3,
+      "engaged_count": 1
+    }
+  ]
+}

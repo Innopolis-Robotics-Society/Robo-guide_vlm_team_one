@@ -70,3 +70,27 @@ failure; sets `review.*` and `gold.annotated_by`).
 | TOL-CC-005 | ANSWERING | action | passed |
 | TOL-CC-006 | IDLE | action | passed |
 | TOL-CC-007 | NARRATING | abstention | passed |
+
+## Audience engagement expansion (Taiga #16, 2026-09-15)
+
+The prompt-variant benchmark needs a **readiness** gold (how many people are
+ready to listen), which the frozen 15-episode set does not carry. Rather than
+retro-fitting the frozen pilot (15 episodes, `check_cc.py`, adjudication), the
+expansion lives in a separate unified manifest:
+
+- `tools/cc_scene_gen.py` — 4 static `ENG-CC-*` frames + 3 `SEQ-CC-*`
+  sequences (3 frames each). Readiness is encoded as a `facing_camera`
+  attribute: facing faces render two dark eye-dots, averted faces do not.
+  `verify_cc_pixels.py` now cross-checks the marker against pixels
+  (23/23 frames).
+- `tools/build_eng_manifest.py` — builds
+  `eval_manifests/audience_engagement.jsonl` (7 cases, source `pilot-cc`):
+  gold `{count, engaged_count}`; SEQ cases carry `slices.frames` (ordered
+  frame refs + sha256) and `slices.min_engaged` (loop-stop threshold N).
+- The original 10 CC frames are **byte-identical** to the frozen set —
+  the expansion only adds files, never rewrites frozen assets.
+
+The pilot's frozen contract (15 episodes, A.3, `allowed_tools`, rights) is
+unchanged. `engaged_count` is a free-dict gold field: it flows through
+`case_from_dict` untouched and is consumed only by the loop-variant executor
+and the new scoring (both in this issue's scope).
