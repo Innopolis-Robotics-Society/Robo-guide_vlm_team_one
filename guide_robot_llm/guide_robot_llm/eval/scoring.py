@@ -19,6 +19,17 @@ Freeform-ответ → id цели (кандидатная таблица): т�
 нормализации через `slices.answer_map` (lowercase, схлоп пробелов,
 отброс начального "the ") либо прямой ответ id-ом кандидата.
 
+Промпт-варианты (Taiga #16, P6): отдельная метрическая группа engaged
+(человек, смотрящих в камеру): MAE + exact по кейсам с
+`gold.engaged_count`; предсказание -- `extract_engaged_freeform` из
+freeform-ответа (в грамматике deployed-наблюдения поля engaged нет --
+такие кейсы исключаются из метрик, а не заполняются нулями; то же для
+кейсов без gold и без извлекаемого сигнала). В отчёте -- per-variant-
+группы (id из meta раннера, без варианта -- `(no variant)`): pass,
+count/engaged MAE+exact, pointing, сцены (записаны, не судимы),
+calls-per-case (loop -- meta `calls_per_case`, иначе сумма `calls` по
+фазам: single = 1, cot_2pass = 2) и задержка.
+
 Модуль чистый Python (без `rclpy`), юнит-тесты -- фикстуры без сети.
 """
 
@@ -31,6 +42,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from guide_robot_llm.eval.runner import extract_engaged_freeform
 from guide_robot_llm.eval.schema import Case, CaseError, case_from_dict
 
 # Gold-цель «нет цели / неоднозначно» для deployed-трека (в freeform
@@ -100,6 +112,24 @@ def _norm_answer(text: str) -> str:
     if t.startswith("the "):
         t = t[4:]
     return t
+
+
+def _case_calls(meta: dict[str, Any]) -> int | None:
+    """Логических вызовов модели на кейс (P6).
+
+    loop -- meta `calls_per_case` (K всего вызовов); иначе сумма `calls`
+    по фазам (single = 1, cot_2pass = 2); старых/чужих meta без полей --
+    `None`.
+    """
+    calls = meta.get("calls_per_case")
+    if isinstance(calls, int) and not isinstance(calls, bool):
+        return calls
+    phase_calls = [
+        phase.get("calls")
+        for phase in (meta.get("phases") or {}).values()
+        if isinstance(phase, dict) and isinstance(phase.get("calls"), int)
+    ]
+    return sum(phase_calls) if phase_calls else None
 
 
 def _answer_to_id(answer: str, case: Case) -> str | None:
@@ -193,6 +223,7 @@ def score_case(
         "source": case.source,
         "track": case.track,
         "prompt_mode": meta.get("prompt_mode", case.prompt.mode),
+        "variant_id": meta.get("variant_id"),
         "split_group_id": case.split_group_id,
         "slices": dict(case.slices),
         "status": meta.get("status", "ok"),
@@ -200,6 +231,8 @@ def score_case(
         "perception": {},
         "policy": {},
         "pass": None,
+        "calls": _case_calls(meta),
+        "latency_ms": meta.get("latency_ms"),
     }
 
     if gtype == "target_box":
@@ -252,6 +285,22 @@ def score_case(
             result["perception"]["count_exact"] = pred == gold_n
             result["perception"]["abs_error"] = abs(pred - gold_n)
             result["pass"] = bool(result["perception"]["count_exact"])
+        # Engaged (P6): только кейсы с gold.engaged_count. Предсказание --
+        # text-парсер freeform-ответа (один на loop-стоп и скоринг); в
+        # deployed-грамматике поля нет (ff -- None) → предсказание None,
+        # кейс исключается из engaged-метрик, а не заполняется нулями.
+        engaged_gold = gold.get("engaged_count")
+        if engaged_gold is not None:
+            engaged_pred = None
+            if ff is not None:
+                answer = ff.get("answer")
+                if isinstance(answer, str):
+                    engaged_pred = extract_engaged_freeform(answer)
+            result["perception"]["engaged_gold"] = engaged_gold
+            result["perception"]["engaged_pred"] = engaged_pred
+            if engaged_pred is not None:
+                result["perception"]["engaged_exact"] = engaged_pred == engaged_gold
+                result["perception"]["engaged_abs_error"] = abs(engaged_pred - engaged_gold)
     elif gtype == "action":
         if gold.get("abstention_reason"):
             result["kind"] = "tool-abstention"
@@ -307,6 +356,12 @@ def _mean(values: list[Any]) -> dict[str, Any] | None:
     return {"value": round(sum(vals) / len(vals), 4), "n": len(vals)}
 
 
+def _put_metric(target: dict[str, Any], key: str, metric: dict[str, Any] | None) -> None:
+    """В группу кладём только непустые метрики (нет данных ≠ ноль)."""
+    if metric is not None:
+        target[key] = metric
+
+
 def _aggregate(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
     """Агрегаты: `perception` и `policy` -- отдельными группами."""
     perception: dict[str, Any] = {"pointing": {}, "audience": {}}
@@ -318,6 +373,8 @@ def _aggregate(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
     p_iou_skipped = 0
     c_mae: list[Any] = []
     c_exact: list[Any] = []
+    c_eng_mae: list[Any] = []
+    c_eng_exact: list[Any] = []
     f_top1: list[Any] = []
     nt_fp: list[Any] = []
     nt_credit: list[Any] = []
@@ -343,6 +400,8 @@ def _aggregate(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
         elif kind == "audience-count":
             c_mae.append(p.get("abs_error"))
             c_exact.append(p.get("count_exact"))
+            c_eng_mae.append(p.get("engaged_abs_error"))
+            c_eng_exact.append(p.get("engaged_exact"))
         elif kind == "tool-action":
             t_exact.append(pol.get("exact_match"))
         elif kind == "tool-abstention":
@@ -361,25 +420,15 @@ def _aggregate(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
         perception["pointing"]["box_iou_not_computed"] = p_iou_skipped
     put(perception["audience"], "mae", _mean(c_mae))
     put(perception["audience"], "exact_accuracy", _mean(c_exact))
+    put(perception["audience"], "engaged_mae", _mean(c_eng_mae))
+    put(perception["audience"], "engaged_exact_accuracy", _mean(c_eng_exact))
     put(policy["pointing"], "top1_target_accuracy", _mean(f_top1))
 
-    def no_target_block(n: int, fp: list[Any], credit: list[Any]) -> dict[str, Any] | None:
-        if not n:
-            return None
-        block: dict[str, Any] = {"n": n}
-        rate = _mean(fp)
-        if rate is not None:
-            block["false_positive_rate"] = rate
-        credited = _mean(credit)
-        if credited is not None:
-            block["abstention_credit"] = credited
-        return block
-
-    block = no_target_block(len(nt_fp), nt_fp, nt_credit)
+    block = _no_target_block(len(nt_fp), nt_fp, nt_credit)
     if block is not None:
         policy["pointing"]["no_target"] = block
     put(policy["tool"], "exact_match_accuracy", _mean(t_exact))
-    block = no_target_block(len(t_nt_fp), t_nt_fp, t_nt_credit)
+    block = _no_target_block(len(t_nt_fp), t_nt_fp, t_nt_credit)
     if block is not None:
         policy["tool"]["no_target"] = block
     return {"perception": perception, "policy": policy}
@@ -402,6 +451,103 @@ def _add_group(bucket: dict[str, dict[str, Any]], key: str, r: dict[str, Any]) -
     judged = group["pass"] + group["fail"]
     if judged:
         group["pass_rate"] = {"value": round(group["pass"] / judged, 4), "n": judged}
+
+
+def _no_target_block(n: int, fp: list[Any], credit: list[Any]) -> dict[str, Any] | None:
+    """No-target-блок (FP-статистика + abstention credit); пустой → None."""
+    if not n:
+        return None
+    block: dict[str, Any] = {"n": n}
+    rate = _mean(fp)
+    if rate is not None:
+        block["false_positive_rate"] = rate
+    credited = _mean(credit)
+    if credited is not None:
+        block["abstention_credit"] = credited
+    return block
+
+
+def _variant_groups(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """Per-variant-группы (P6, Taiga #16) -- основа сравнения 18 вариантов.
+
+    Группировка по `variant_id` из meta раннера; прогон без варианта --
+    `(no variant)`. Метрики: pass, count MAE/exact, engaged MAE/exact,
+    pointing (top-2, freeform top-1, no-target abstention), сцены
+    (записаны, без вердикта), calls-per-case и задержка. Пустые группы
+    не пишутся (нет данных ≠ ноль).
+    """
+    acc: dict[str, dict[str, Any]] = {}
+    for r in per_case.values():
+        name = r.get("variant_id") or "(no variant)"
+        g = acc.setdefault(
+            name,
+            {
+                "n": 0,
+                "pass": 0,
+                "fail": 0,
+                "unjudged": 0,
+                "scene_recorded": 0,
+                "_count_errs": [],
+                "_count_exact": [],
+                "_eng_errs": [],
+                "_eng_exact": [],
+                "_top2": [],
+                "_top1": [],
+                "_fp": [],
+                "_credit": [],
+                "_calls": [],
+                "_latency": [],
+            },
+        )
+        g["n"] += 1
+        if r["pass"] is True:
+            g["pass"] += 1
+        elif r["pass"] is False:
+            g["fail"] += 1
+        else:
+            g["unjudged"] += 1
+        if r["kind"] == "scene-recorded":
+            g["scene_recorded"] += 1
+        p, pol = r["perception"], r["policy"]
+        g["_count_errs"].append(p.get("abs_error"))
+        g["_count_exact"].append(p.get("count_exact"))
+        g["_eng_errs"].append(p.get("engaged_abs_error"))
+        g["_eng_exact"].append(p.get("engaged_exact"))
+        g["_top2"].append(p.get("top2_hit"))
+        g["_top1"].append(pol.get("top1_correct"))
+        if r["kind"] == "pointing-no-target":
+            g["_fp"].append(pol.get("false_positive"))
+            g["_credit"].append(pol.get("abstention_credit"))
+        g["_calls"].append(r.get("calls"))
+        g["_latency"].append(r.get("latency_ms"))
+    groups: dict[str, Any] = {}
+    for name, g in acc.items():
+        block: dict[str, Any] = {
+            "n": g["n"],
+            "pass": g["pass"],
+            "fail": g["fail"],
+            "unjudged": g["unjudged"],
+            "scene_recorded": g["scene_recorded"],
+        }
+        judged = g["pass"] + g["fail"]
+        if judged:
+            block["pass_rate"] = {"value": round(g["pass"] / judged, 4), "n": judged}
+        _put_metric(block, "count_mae", _mean(g["_count_errs"]))
+        _put_metric(block, "count_exact_accuracy", _mean(g["_count_exact"]))
+        _put_metric(block, "engaged_mae", _mean(g["_eng_errs"]))
+        _put_metric(block, "engaged_exact_accuracy", _mean(g["_eng_exact"]))
+        pointing: dict[str, Any] = {}
+        _put_metric(pointing, "top2_recall", _mean(g["_top2"]))
+        _put_metric(pointing, "top1_target_accuracy", _mean(g["_top1"]))
+        nt = _no_target_block(len(g["_fp"]), g["_fp"], g["_credit"])
+        if nt is not None:
+            pointing["no_target"] = nt
+        if pointing:
+            block["pointing"] = pointing
+        _put_metric(block, "calls_per_case", _mean(g["_calls"]))
+        _put_metric(block, "latency_ms", _mean(g["_latency"]))
+        groups[name] = block
+    return groups
 
 
 def _slice_groups(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
@@ -452,6 +598,7 @@ def score_run(run_dir: str | Path, *, data_root: str | Path | None = None) -> di
                 "source": line.get("source"),
                 "track": line.get("track"),
                 "prompt_mode": None,
+                "variant_id": line.get("variant"),
                 "split_group_id": None,
                 "slices": {},
                 "status": line.get("status"),
@@ -459,6 +606,8 @@ def score_run(run_dir: str | Path, *, data_root: str | Path | None = None) -> di
                 "perception": {},
                 "policy": {},
                 "pass": None,
+                "calls": line.get("calls_per_case"),
+                "latency_ms": line.get("latency_ms"),
             }
             continue
         per_case[case_id] = score_case(case, case_dir, run_dir=run, data_root=root)
@@ -482,6 +631,7 @@ def score_run(run_dir: str | Path, *, data_root: str | Path | None = None) -> di
         "pass_counts": pass_counts,
         "per_case": per_case,
         "metrics": _aggregate(per_case),
+        "variants": _variant_groups(per_case),
         "slices": _slice_groups(per_case),
         "errors": errors,
     }
@@ -514,6 +664,8 @@ def _perception_summary(r: dict[str, Any]) -> str:
             parts.append(f"iou – ({p.get('box_iou_skipped', '?')})")
     if "count_pred" in p:
         parts.append(f"count {p['count_pred']}/{p['count_gold']}")
+    if "engaged_pred" in p:
+        parts.append(f"engaged {p['engaged_pred']}/{p['engaged_gold']}")
     return ", ".join(parts) if parts else "–"
 
 
@@ -582,6 +734,8 @@ _POINTING_PERCEPTION_ROWS: tuple[tuple[str, str], ...] = (
 _AUDIENCE_ROWS: tuple[tuple[str, str], ...] = (
     ("mae", "people count MAE"),
     ("exact_accuracy", "exact-count accuracy"),
+    ("engaged_mae", "engaged count MAE (facing camera)"),
+    ("engaged_exact_accuracy", "exact engaged-count accuracy"),
 )
 _POINTING_POLICY_ROWS: tuple[tuple[str, str], ...] = (
     ("top1_target_accuracy", "top-1 target (freeform answer)"),
@@ -608,10 +762,47 @@ def _group_table(title: str, groups: dict[str, dict[str, Any]]) -> list[str]:
     return out
 
 
+def _variant_block(vid: str, g: dict[str, Any]) -> list[str]:
+    """Один per-variant-блок отчёта (P6): метрики по трекам + calls + задержка."""
+    out = [f"### {vid}", ""]
+    out.append("| metric | value |")
+    out.append("|---|---|")
+    out.append(
+        f"| cases | {g['n']} (pass {g.get('pass', 0)}, fail {g.get('fail', 0)}, "
+        f"unjudged {g.get('unjudged', 0)}) |"
+    )
+    if "pass_rate" in g:
+        out.append(f"| pass rate | {_fmt_metric(g['pass_rate'])} |")
+    out.append(f"| scene cases (recorded, not judged) | {g.get('scene_recorded', 0)} |")
+    out.append(f"| count MAE | {_fmt_metric(g.get('count_mae'))} |")
+    out.append(f"| exact count | {_fmt_metric(g.get('count_exact_accuracy'))} |")
+    out.append(f"| engaged MAE | {_fmt_metric(g.get('engaged_mae'))} |")
+    out.append(f"| exact engaged | {_fmt_metric(g.get('engaged_exact_accuracy'))} |")
+    pointing = g.get("pointing") or {}
+    out.append(f"| pointing top-2 | {_fmt_metric(pointing.get('top2_recall'))} |")
+    out.append(
+        f"| pointing top-1 (freeform) | {_fmt_metric(pointing.get('top1_target_accuracy'))} |"
+    )
+    if "no_target" in pointing:
+        out.append(
+            f"| pointing no-target false positive | "
+            f"{_fmt_metric(pointing['no_target'].get('false_positive_rate'))} |"
+        )
+        out.append(
+            f"| pointing no-target abstention credit | "
+            f"{_fmt_metric(pointing['no_target'].get('abstention_credit'))} |"
+        )
+    out.append(f"| calls per case | {_fmt_metric(g.get('calls_per_case'))} |")
+    out.append(f"| latency (ms) | {_fmt_metric(g.get('latency_ms'))} |")
+    out.append("")
+    return out
+
+
 def build_report(score: dict[str, Any]) -> str:
     """Markdown-отчёт: перцепция и политика -- РАЗДЕЛЬНЫЕ секции.
 
-    Обязательное заявление `STATEMENT` -- всегда в шапке.
+    Обязательное заявление `STATEMENT` -- всегда в шапке. Per-variant-
+    секция (P6, Taiga #16) -- после срезов, перед ошибками.
     """
     lines: list[str] = []
     add = lines.append
@@ -649,6 +840,14 @@ def build_report(score: dict[str, Any]) -> str:
     lines.extend(_group_table("By split group", slices.get("by_split_group", {})))
     for key, table in slices.get("by_metadata", {}).items():
         lines.extend(_group_table(f"Metadata: {key}", table))
+    add("## Variants")
+    add("")
+    variants = score.get("variants") or {}
+    if not variants:
+        add("_нет данных_")
+        add("")
+    for vid, g in variants.items():
+        lines.extend(_variant_block(vid, g))
     if score.get("errors"):
         add("## Errors")
         add("")

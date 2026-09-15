@@ -9,7 +9,10 @@
   (freeform top-1, FP на no-target, abstention credit);
 - t4-count: MAE + exact accuracy;
 - t4-report: отчёт markdown + score.json, перцепция/политика отдельными
-  секциями, заявление «no final score».
+  секциями, заявление «no final score»;
+- p6-variant (Taiga #16): engaged-метрики (MAE/exact, exclusion без
+  gold/без извлечения), calls-per-case (single/cot_2pass/loop),
+  per-variant-группы в отчёте.
 """
 
 import json
@@ -18,7 +21,8 @@ import zlib
 from pathlib import Path
 
 import pytest
-from guide_robot_llm.eval.runner import MockBackend, run_manifest
+
+from guide_robot_llm.eval.runner import MockBackend, VariantSpec, run_manifest
 from guide_robot_llm.eval.schema import Case, MediaRef, PromptSpec, Provenance
 from guide_robot_llm.eval.scoring import (
     NO_TARGET_ID,
@@ -472,6 +476,173 @@ def test_scoring_tolerates_missing_meta(tmp_path: Path) -> None:
     # остальные кейсы судятся как обычно
     assert score["per_case"]["SC-C2"]["pass"] is True
     assert score["pass_counts"]["pass"] == 5  # 6 минус SC-P1
+
+
+# --- P6 (Taiga #16): engaged-метрики, calls, per-variant-группы --------------
+
+
+def _variant(execution: str) -> VariantSpec:
+    """Тестовый A-вариант: freeform, audience, инструкция-заглушка."""
+    return VariantSpec(
+        id={"single": "A1", "cot_2pass": "A2", "loop": "A3"}[execution],
+        skill="audience",
+        track="audience",
+        axis="direct",
+        technique="test",
+        source=None,
+        mode="freeform",
+        execution=execution,
+        text="Считай людей в кадре.",
+    )
+
+
+def _ff(answer: str, conf: float = 0.8) -> str:
+    """Freeform-ответ JSON-строкой (корень {answer, confidence, abstain})."""
+    return f'{{"answer": "{answer}", "confidence": {conf}, "abstain": false}}'
+
+
+FF_ENG_2 = _ff("Всего 3, готовы слушать 2")
+FF_ENG_1 = _ff("Всего 4, из них готовы слушать 1")
+FF_NO_ENG = _ff("Люди в зале, число трудно сказать", 0.4)
+FF_TOTAL_ONLY = _ff("Всего 2", 0.9)
+
+
+def test_engagement_metrics_hand_computed_and_exclusion(tmp_path: Path) -> None:
+    """Engaged MAE/exact по gold.engaged_count; без gold/без сигнала -- исключение."""
+    cases = [
+        _case("EV-1", source="pilot-cc", track="audience", mode="freeform",
+              gold={"type": "count", "count": 3, "engaged_count": 2}, candidates=()),
+        _case("EV-2", source="pilot-cc", track="audience", mode="freeform",
+              gold={"type": "count", "count": 4, "engaged_count": 2}, candidates=()),
+        # есть gold, но сигнал не извлекается → из метрик исключается, не 0
+        _case("EV-3", source="pilot-cc", track="audience", mode="freeform",
+              gold={"type": "count", "count": 2, "engaged_count": 1}, candidates=()),
+        # без gold.engaged_count → engaged-поля вообще не записываются
+        _case("EV-N", source="pilot-cc", track="audience", mode="freeform",
+              gold={"type": "count", "count": 2}, candidates=()),
+        # deployed: в замороженной грамматике наблюдения поля engaged нет
+        _case("EV-D", source="pilot-cc", track="audience",
+              gold={"type": "count", "count": 2, "engaged_count": 1},
+              candidates=()),
+    ]
+    responses = {
+        ("EV-1", "freeform"): FF_ENG_2,   # 2/2 → exact, err 0
+        ("EV-2", "freeform"): FF_ENG_1,   # 1/2 → err 1
+        ("EV-3", "freeform"): FF_NO_ENG,  # не извлекается
+        ("EV-N", "freeform"): FF_TOTAL_ONLY,
+        ("EV-D", "observation"): _obs_count(2),
+    }
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest(cases, MockBackend(responses), out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    e1 = score["per_case"]["EV-1"]["perception"]
+    e2 = score["per_case"]["EV-2"]["perception"]
+    e3 = score["per_case"]["EV-3"]["perception"]
+    en = score["per_case"]["EV-N"]["perception"]
+    ed = score["per_case"]["EV-D"]["perception"]
+    assert e1["engaged_pred"] == 2 and e1["engaged_gold"] == 2
+    assert e1["engaged_exact"] is True and e1["engaged_abs_error"] == 0
+    assert e2["engaged_pred"] == 1
+    assert e2["engaged_exact"] is False and e2["engaged_abs_error"] == 1
+    assert e3["engaged_pred"] is None
+    assert "engaged_exact" not in e3 and "engaged_abs_error" not in e3
+    # без gold -- engaged-ключей нет вовсе (не заполняем нулями)
+    assert not any(key.startswith("engaged") for key in en)
+    # deployed: gold записан, предсказания нет → исключается
+    assert ed["engaged_gold"] == 1 and ed["engaged_pred"] is None
+    assert "engaged_exact" not in ed
+    m = score["metrics"]["perception"]["audience"]
+    # MAE (0 + 1) / 2 = 0.5, n=2 (не 5): EV-3/EV-N/EV-D исключены
+    assert m["engaged_mae"] == {"value": 0.5, "n": 2}
+    assert m["engaged_exact_accuracy"] == {"value": 0.5, "n": 2}
+    # count-метрики не затронуты (freeform-кейсы без obs их не дают)
+    assert m["mae"] == {"value": 0.0, "n": 1}
+
+
+def test_variant_groups_calls_latency_and_report(tmp_path: Path) -> None:
+    """Per-variant-группы: single-выполнение, calls=1, engaged в отчёте."""
+    cases = [
+        _case("VG-1", source="pilot-cc", track="audience", mode="freeform",
+              gold={"type": "count", "count": 3, "engaged_count": 2}, candidates=()),
+        _case("VG-2", source="pilot-cc", track="audience", mode="freeform",
+              gold={"type": "count", "count": 4, "engaged_count": 2}, candidates=()),
+    ]
+    responses = {
+        ("VG-1", "freeform"): FF_ENG_2,
+        ("VG-2", "freeform"): FF_ENG_1,
+    }
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run_a1"
+    run_manifest(cases, MockBackend(responses), out, variant=_variant("single"),
+                 data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    assert score["per_case"]["VG-1"]["variant_id"] == "A1"
+    assert score["per_case"]["VG-1"]["calls"] == 1
+    assert score["per_case"]["VG-1"]["latency_ms"] is not None
+    g = score["variants"]["A1"]
+    assert g["n"] == 2 and g["unjudged"] == 2
+    assert "count_mae" not in g  # freeform: observation-фазы нет → count-метрик нет
+    assert g["engaged_mae"] == {"value": 0.5, "n": 2}
+    assert g["engaged_exact_accuracy"] == {"value": 0.5, "n": 2}
+    assert g["calls_per_case"] == {"value": 1.0, "n": 2}
+    assert g["latency_ms"]["n"] == 2
+    report = build_report(score)
+    assert STATEMENT in report
+    assert "## Variants" in report
+    assert "### A1" in report
+    assert "engaged MAE" in report
+    # engaged-строка и в общей Audience-таблице
+    assert "0.5 (n=2)" in report
+
+
+def test_cot_2pass_and_loop_calls_per_case(tmp_path: Path) -> None:
+    """calls: cot_2pass = 2 (сумма по фазам), loop = meta calls_per_case (K=3)."""
+    cases = [
+        _case("VG-2P", source="pilot-cc", track="audience", mode="freeform",
+              gold={"type": "count", "count": 3, "engaged_count": 2}, candidates=()),
+        _case("VG-L", source="pilot-cc", track="audience", mode="freeform",
+              gold={"type": "count", "count": 3, "engaged_count": 1}, candidates=()),
+    ]
+    responses = {
+        ("VG-2P", "freeform", "pass1"): "Считаю: один, два, три.",
+        ("VG-2P", "freeform", "pass2"): FF_ENG_2,
+        ("VG-L", "freeform"): FF_NO_ENG,  # без engaged-сигнала → стоп по K
+    }
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out_cot = tmp_path / "run_a2"
+    run_manifest(cases[:1], MockBackend(responses), out_cot,
+                 variant=_variant("cot_2pass"), data_root=tmp_path)
+    score_cot = score_run(out_cot, data_root=tmp_path)
+    assert score_cot["per_case"]["VG-2P"]["calls"] == 2
+    g = score_cot["variants"]["A2"]
+    assert g["calls_per_case"] == {"value": 2.0, "n": 1}
+    assert g["engaged_exact_accuracy"] == {"value": 1.0, "n": 1}
+    out_loop = tmp_path / "run_a3"
+    run_manifest(cases[1:], MockBackend(responses), out_loop,
+                 variant=_variant("loop"), data_root=tmp_path)
+    score_loop = score_run(out_loop, data_root=tmp_path)
+    assert score_loop["per_case"]["VG-L"]["calls"] == 3  # K=3, k_exhausted
+    g3 = score_loop["variants"]["A3"]
+    assert g3["calls_per_case"] == {"value": 3.0, "n": 1}
+    # engaged не извлекается → в группе нет engaged-метрик, а не 0
+    assert "engaged_mae" not in g3
+
+
+def test_no_variant_grouped_as_base(tmp_path: Path) -> None:
+    """Прогон без варианта: группа `(no variant)`, заяvek на месте."""
+    cases = [_case("VG-B", source="pilot-cc", track="audience", mode="freeform",
+                   gold={"type": "count", "count": 3, "engaged_count": 2}, candidates=())]
+    responses = {("VG-B", "freeform"): FF_ENG_2}
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run_base"
+    run_manifest(cases, MockBackend(responses), out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    assert set(score["variants"]) == {"(no variant)"}
+    assert score["variants"]["(no variant)"]["engaged_mae"] == {"value": 0.0, "n": 1}
+    report = build_report(score)
+    assert "### (no variant)" in report
+    assert STATEMENT in report
 
 
 def test_score_run_empty_metric_groups_do_not_crash(tmp_path: Path) -> None:
