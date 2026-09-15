@@ -21,12 +21,22 @@ harness, задают грамматика + host-парсер (общие с pr
 Токены: текущий `Backend.complete()` серверный `usage` не захватывает
 -- записываем `tokens: null` с пометкой (известный gap, расширение
 `llm_client` вне скоупа #10).
+
+Промпт-варианты (Taiga #16, P4): `--prompt-variant <id|all>` -- инструкция
+варианта из `prompt_variants.json` заменяет встроенную production-инструкцию
+фазы (моду `deployed`/`freeform` и execution `single`/`cot_2pass` задаёт
+вариант, не кейс); few-shot-примеры (`*4`) вставляются парами (кадр, ответ)
+до кейсовых сообщений; `cot_2pass` = проход 1 без грамматики (рассуждение)
++ проход 2 со строгой грамматикой и текстом прохода 1 в контексте
+(`PhaseRecord.cot_reason`, `calls=2`). `execution=loop` -- P5. Без флага --
+поведение байт-в-байт как production-базлиния (`*_base`).
 """
 
 from __future__ import annotations
 
 import argparse
 import base64
+import hashlib
 import json
 import mimetypes
 import time
@@ -155,10 +165,97 @@ def media_to_data_url(media_path: Path) -> str:
     return f"data:{mime};base64,{encoded}"
 
 
+def _candidate_suffix(candidates: tuple[str, ...]) -> str:
+    """Inline-список id кандидатов (production-формат, общий с вариантами)."""
+    ids = ", ".join(candidates) if candidates else "(список пуст -- отвечай пустым)"
+    return f"\nДоступные id экспонатов: {ids}."
+
+
 def _observation_instruction(candidates: tuple[str, ...]) -> str:
     """Инструкция фазы наблюдения с inline-списком id кандидатов."""
-    ids = ", ".join(candidates) if candidates else "(список пуст -- отвечай пустым)"
-    return _OBSERVATION_INSTRUCTION + f"\nДоступные id экспонатов: {ids}."
+    return _OBSERVATION_INSTRUCTION + _candidate_suffix(candidates)
+
+
+# --- Промпт-варианты (Taiga #16, P4) ---------------------------------------
+
+
+class PromptVariantError(ValueError):
+    """Некорректный манифест/спецификация промпт-варианта."""
+
+
+class LoopVariantNotImplemented(RuntimeError):
+    """`execution=loop` -- исполнитель цикла, P5 (#16); в P4 не реализован."""
+
+
+# Корень пакета `guide_robot_llm/` (каталог, в котором лежит `pilot/`):
+# медиа few-shot-примеров лежат в `pilot/media/cc/` относительно него.
+_PACKAGE_ROOT = Path(__file__).resolve().parents[2]
+_DEFAULT_VARIANTS_MANIFEST = Path(__file__).with_name("prompt_variants.json")
+
+
+@dataclass(frozen=True)
+class VariantSpec:
+    """Один промпт-вариант из `prompt_variants.json` (Taiga #16, P3)."""
+
+    id: str
+    skill: str
+    track: str  # кейсы какого трека вариант исполняет
+    axis: str
+    technique: str
+    source: str | None
+    mode: str  # "deployed" | "freeform" -- режим контракта (заменяет кейсовый)
+    execution: str  # "single" | "cot_2pass" | "loop"
+    text: str | None  # None → встроенная production-инструкция (`*_base`)
+    examples: tuple[dict[str, Any], ...] = ()
+
+
+def load_prompt_variants(
+    path: str | Path | None = None,
+    examples_root: str | Path | None = None,
+) -> dict[str, VariantSpec]:
+    """Манифест промпт-вариантов → `{id: VariantSpec}` (порядок -- как в файле).
+
+    Few-shot-примеры заморожены: медиа каждого примера обязано существовать
+    и совпадать по sha256 с манифестом -- рассинхронизация, как у кейсового
+    медиа, ошибка загрузки, а не предупреждение.
+    """
+    manifest_path = Path(path) if path is not None else _DEFAULT_VARIANTS_MANIFEST
+    data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    root = Path(examples_root) if examples_root is not None else _PACKAGE_ROOT
+    variants: dict[str, VariantSpec] = {}
+    for entry in data["variants"]:
+        vid = entry["id"]
+        if entry["mode"] not in ("deployed", "freeform"):
+            raise PromptVariantError(f"{vid}: mode '{entry['mode']}' не известен")
+        if entry["execution"] not in ("single", "cot_2pass", "loop"):
+            raise PromptVariantError(f"{vid}: execution '{entry['execution']}' не известен")
+        text: str | None = None
+        if entry.get("text") is not None:
+            text = (manifest_path.parent / entry["text"]).read_text(encoding="utf-8")
+        examples = tuple(entry.get("examples") or ())
+        for ex in examples:
+            media = ex["media"]
+            media_path = root / media["path"]
+            if not media_path.is_file():
+                raise PromptVariantError(f"{vid}: медиа примера {media['path']} не найдено")
+            digest = hashlib.sha256(media_path.read_bytes()).hexdigest()
+            if digest != media["sha256"]:
+                raise PromptVariantError(
+                    f"{vid}: sha256 медиа примера {media['path']} не совпадает"
+                )
+        variants[vid] = VariantSpec(
+            id=vid,
+            skill=entry["skill"],
+            track=entry["track"],
+            axis=entry["axis"],
+            technique=entry["technique"],
+            source=entry.get("source"),
+            mode=entry["mode"],
+            execution=entry["execution"],
+            text=text,
+            examples=examples,
+        )
+    return variants
 
 
 def _action_instruction(allowed_tools: tuple[str, ...]) -> str:
@@ -229,14 +326,33 @@ class MockBackend:
     сбой, а не молча пропускает кейс).
     """
 
-    def __init__(self, responses: dict[tuple[str, str], str] | None = None) -> None:
-        """`responses` -- словарь {(case_id, phase): text}; `None` -- пустой бэкенд."""
-        self._responses = dict(responses or {})
-        self._context: tuple[str, str] = ("", "")
+    def __init__(
+        self, responses: dict[tuple[str, str] | tuple[str, str, str], str] | None = None
+    ) -> None:
+        """Словарь предзаданных ответов `MockBackend`.
 
-    def set_context(self, case_id: str, phase: str) -> None:
-        """Указать кейс и фазу следующего вызова (осознанное состояние)."""
-        self._context = (case_id, phase)
+        `responses` -- словарь {(case_id, phase): text} и/или
+        {(case_id, phase, pass_label): text} (cot_2pass-проходы);
+        `None` -- пустой бэкенд.
+        """
+        self._responses = dict(responses or {})
+        self._context: tuple[str, str, str | None] = ("", "", None)
+
+    def set_context(self, case_id: str, phase: str, pass_label: str | None = None) -> None:
+        """Указать кейс и фазу следующего вызова (осознанное состояние).
+
+        `pass_label` (cot_2pass): ответ берётся по трёхчастному ключу,
+        с фолбэком на обычный `(case_id, phase)`.
+        """
+        self._context = (case_id, phase, pass_label)
+
+    def _lookup(self) -> str:
+        if self._context[2] is not None:
+            text = self._responses.get(self._context)
+            if text is not None:
+                return text
+            return self._responses.get((self._context[0], self._context[1]), "")
+        return self._responses.get(self._context[:2], "")
 
     def complete(
         self,
@@ -247,23 +363,31 @@ class MockBackend:
         temperature: float = 0.2,
         telemetry: ClientTelemetry | None = None,
     ) -> Any:
-        """Возвращает заготовленный текст для текущего (кейс, фаза)."""
+        """Возвращает заготовленный текст для текущего (кейс, фаза[, проход])."""
         from guide_robot_llm.llm_client.backend import CompletionResult
 
-        return CompletionResult(text=self._responses.get(self._context, ""), finish_reason="stop")
+        return CompletionResult(text=self._lookup(), finish_reason="stop")
 
 
 @dataclass
 class PhaseRecord:
-    """Результат одной фазы кейса (raw + parsed + тайминги + попытки)."""
+    """Результат одной фазы кейса (raw + parsed + тайминги + попытки).
+
+    `calls` -- логических вызовов модели в фазе (1 = single, 2 = cot_2pass);
+    `attempts` -- суммарных попыток транспорта (ретраи считаются). Для
+    cot_2pass `raw_text`/`parsed` -- результат прохода 2 (строгий ответ),
+    `cot_reason` -- raw прохода 1 (рассуждение, без грамматики).
+    """
 
     raw_text: str
     parsed: dict[str, Any] | None
-    parse_status: str  # "ok" | "failed"
+    parse_status: str  # "ok" | "failed" | "skipped" (проход без парсинга)
     finish_reason: str
     latency_ms: float
     attempts: int
     timings: dict[str, Any] = field(default_factory=dict)
+    cot_reason: str | None = None
+    calls: int = 1
 
 
 @dataclass
@@ -279,6 +403,7 @@ class CaseRun:
     action: PhaseRecord | None = None
     freeform: PhaseRecord | None = None
     error: str = ""
+    variant_id: str | None = None
 
 
 class _PhaseBackendError(RuntimeError):
@@ -294,8 +419,13 @@ def _run_phase(
     phase: str,
     max_attempts: int,
     parse_fn: Any,
+    pass_label: str | None = None,
 ) -> PhaseRecord:
-    """Одна фаза; ретрай только на сбое транспорта (не на парсинге)."""
+    """Одна фаза (или один проход cot_2pass); ретрай только на сбое транспорта.
+
+    `parse_fn=None` -- проход без парсинга (cot pass-1, `parse_status
+    "skipped"`); `pass_label` -- метка прохода для `MockBackend`.
+    """
     raw_text = ""
     finish_reason = ""
     telemetry = ClientTelemetry()
@@ -307,7 +437,7 @@ def _run_phase(
         attempts += 1
         try:
             if isinstance(llm, MockBackend):
-                llm.set_context(case_id, phase)
+                llm.set_context(case_id, phase, pass_label)
             completion = llm.complete(messages, grammar=grammar, telemetry=telemetry)
         except Exception as error:  # noqa: BLE001 -- любой сбой транспорта → ретрай/запись
             last_error = f"{type(error).__name__}: {error}"
@@ -322,8 +452,11 @@ def _run_phase(
 
     latency_ms = (time.monotonic() - phase_start) * 1000.0
     timings = telemetry.snapshot()
-    parsed = parse_fn(raw_text)
-    parse_status = "ok" if parsed is not None else "failed"
+    if parse_fn is None:
+        parsed, parse_status = None, "skipped"
+    else:
+        parsed = parse_fn(raw_text)
+        parse_status = "ok" if parsed is not None else "failed"
     return PhaseRecord(
         raw_text=raw_text,
         parsed=parsed,
@@ -335,17 +468,91 @@ def _run_phase(
     )
 
 
+def _merge_cot_passes(pass1: PhaseRecord, pass2: PhaseRecord) -> PhaseRecord:
+    """cot_2pass → одна запись фазы: ответ прохода 2 + рассуждение прохода 1."""
+    return PhaseRecord(
+        raw_text=pass2.raw_text,
+        parsed=pass2.parsed,
+        parse_status=pass2.parse_status,
+        finish_reason=pass2.finish_reason,
+        latency_ms=pass1.latency_ms + pass2.latency_ms,
+        attempts=pass1.attempts + pass2.attempts,
+        timings={"pass1": pass1.timings, "pass2": pass2.timings},
+        cot_reason=pass1.raw_text,
+        calls=2,
+    )
+
+
+def _cot_bridge_message(reason_text: str) -> dict:
+    """Сообщение прохода 2: рассуждение прохода 1 в контексте."""
+    return {
+        "role": "user",
+        "content": (
+            "Проход 1 (твоё рассуждение):\n"
+            f"{reason_text}\n\n"
+            "Теперь дай окончательный ответ строго в формате из инструкции."
+        ),
+    }
+
+
+def _variant_deployed_instruction(variant: VariantSpec | None, candidates: tuple[str, ...]) -> str:
+    """Инструкция observation-фазы: вариант или встроенная production."""
+    if variant is None or variant.text is None:
+        return _observation_instruction(candidates)
+    return variant.text + _candidate_suffix(candidates)
+
+
+def _variant_freeform_instruction(variant: VariantSpec | None) -> str:
+    """Инструкция freeform-фазы: вариант или встроенная production."""
+    if variant is None or variant.text is None:
+        return _FREEFORM_INSTRUCTION
+    return variant.text
+
+
+def _example_messages(variant: VariantSpec, examples_root: Path) -> list[dict]:
+    """Few-shot-пары (кадр примера, эталонный ответ) до кейсовых сообщений.
+
+    Вопрос примера = текст самого варианта (D4/P4/A4 -- тексты D1/P1/A1);
+    для deployed-примеров с кандидатами добавляется тот же inline-список id.
+    """
+    messages: list[dict] = []
+    text = variant.text or ""
+    for ex in variant.examples:
+        media_path = examples_root / ex["media"]["path"]
+        frame = media_to_data_url(media_path)
+        question = text
+        context = ex.get("context")
+        if variant.mode == "deployed" and isinstance(context, dict) and context.get("candidates"):
+            question = question + _candidate_suffix(tuple(context["candidates"]))
+        messages.append({"role": "user", "content": build_content(question, (frame,))})
+        messages.append({"role": "assistant", "content": ex["answer"]})
+    return messages
+
+
 def run_case(
     case: Case,
     llm: Llm,
     *,
     max_attempts: int = DEFAULT_MAX_ATTEMPTS,
     data_root: Path | None = None,
+    variant: VariantSpec | None = None,
+    examples_root: Path | None = None,
 ) -> CaseRun:
     """Прогнать один кейс (без записи -- см. `write_case_run`).
 
     `data_root` -- корень, относительно которого лежит `media.path`.
+    `variant` (Taiga #16, P4): режим (`deployed`/`freeform`) и execution
+    задаёт вариант, а не кейс; текст варианта заменяет встроенную
+    production-инструкцию фазы, `text=None` (`*_base`) -- тот же запрос,
+    что и без варианта. `examples_root` -- корень медиа few-shot-примеров
+    (по умолчанию корень пакета). `execution=loop` -- P5, не P4.
     """
+    if variant is not None and variant.execution == "loop":
+        raise LoopVariantNotImplemented(f"{variant.id}: execution=loop -- исполнитель P5")
+    mode = variant.mode if variant is not None else case.prompt.mode
+    execution = variant.execution if variant is not None else "single"
+    ex_root = Path(examples_root) if examples_root is not None else _PACKAGE_ROOT
+
     media_path = (data_root or Path(".")) / case.media.path
     frames = (media_to_data_url(media_path),) if media_path.is_file() else ()
 
@@ -354,24 +561,56 @@ def run_case(
         source=case.source,
         track=case.track,
         status="ok",
-        prompt_mode=case.prompt.mode,
+        prompt_mode=mode,
+        variant_id=variant.id if variant is not None else None,
     )
 
+    def _prepended_messages(instruction: str) -> list[dict]:
+        """Кейсовые сообщения фазы; few-shot-пары -- перед ними."""
+        messages: list[dict] = []
+        if variant is not None and variant.examples:
+            messages.extend(_example_messages(variant, ex_root))
+        messages.append({"role": "user", "content": build_content(case.prompt.user_text, frames)})
+        messages.append({"role": "user", "content": instruction})
+        return messages
+
     try:
-        if case.prompt.mode == "deployed":
-            base_messages = [
-                {"role": "user", "content": build_content(case.prompt.user_text, frames)},
-                {"role": "user", "content": _observation_instruction(case.candidates)},
-            ]
-            run.observation = _run_phase(
-                llm,
-                base_messages,
-                case_id=case.case_id,
-                grammar=build_observation_grammar(list(case.candidates)),
-                phase="observation",
-                max_attempts=max_attempts,
-                parse_fn=lambda text: _parse_observation(text, candidates=case.candidates),
+        if mode == "deployed":
+            base_messages = _prepended_messages(
+                _variant_deployed_instruction(variant, case.candidates)
             )
+            if execution == "cot_2pass":
+                pass1 = _run_phase(
+                    llm,
+                    base_messages,
+                    case_id=case.case_id,
+                    grammar=None,
+                    phase="observation",
+                    max_attempts=max_attempts,
+                    parse_fn=None,
+                    pass_label="pass1",
+                )
+                pass2 = _run_phase(
+                    llm,
+                    [*base_messages, _cot_bridge_message(pass1.raw_text)],
+                    case_id=case.case_id,
+                    grammar=build_observation_grammar(list(case.candidates)),
+                    phase="observation",
+                    max_attempts=max_attempts,
+                    parse_fn=lambda text: _parse_observation(text, candidates=case.candidates),
+                    pass_label="pass2",
+                )
+                run.observation = _merge_cot_passes(pass1, pass2)
+            else:
+                run.observation = _run_phase(
+                    llm,
+                    base_messages,
+                    case_id=case.case_id,
+                    grammar=build_observation_grammar(list(case.candidates)),
+                    phase="observation",
+                    max_attempts=max_attempts,
+                    parse_fn=lambda text: _parse_observation(text, candidates=case.candidates),
+                )
             observation: Observation | None = (
                 run.observation.parsed if run.observation is not None else None
             )
@@ -407,19 +646,39 @@ def run_case(
                     parse_fn=lambda text: _action_to_dict(parse_action(text)),
                 )
         else:
-            freeform_messages = [
-                {"role": "user", "content": build_content(case.prompt.user_text, frames)},
-                {"role": "user", "content": _FREEFORM_INSTRUCTION},
-            ]
-            run.freeform = _run_phase(
-                llm,
-                freeform_messages,
-                case_id=case.case_id,
-                grammar=build_freeform_answer_grammar(),
-                phase="freeform",
-                max_attempts=max_attempts,
-                parse_fn=parse_freeform_answer,
-            )
+            freeform_messages = _prepended_messages(_variant_freeform_instruction(variant))
+            if execution == "cot_2pass":
+                pass1 = _run_phase(
+                    llm,
+                    freeform_messages,
+                    case_id=case.case_id,
+                    grammar=None,
+                    phase="freeform",
+                    max_attempts=max_attempts,
+                    parse_fn=None,
+                    pass_label="pass1",
+                )
+                pass2 = _run_phase(
+                    llm,
+                    [*freeform_messages, _cot_bridge_message(pass1.raw_text)],
+                    case_id=case.case_id,
+                    grammar=build_freeform_answer_grammar(),
+                    phase="freeform",
+                    max_attempts=max_attempts,
+                    parse_fn=parse_freeform_answer,
+                    pass_label="pass2",
+                )
+                run.freeform = _merge_cot_passes(pass1, pass2)
+            else:
+                run.freeform = _run_phase(
+                    llm,
+                    freeform_messages,
+                    case_id=case.case_id,
+                    grammar=build_freeform_answer_grammar(),
+                    phase="freeform",
+                    max_attempts=max_attempts,
+                    parse_fn=parse_freeform_answer,
+                )
     except _PhaseBackendError as error:
         run.status = "backend_error"
         run.error = str(error)
@@ -463,15 +722,19 @@ def write_case_run(case: Case, run: CaseRun, out_dir: Path) -> Path:
         phases[phase_name] = {
             "latency_ms": round(record.latency_ms, 3),
             "attempts": record.attempts,
+            "calls": record.calls,
             "finish_reason": record.finish_reason,
             "parse_status": record.parse_status,
             "timings": record.timings,
         }
+        if record.cot_reason is not None:
+            phases[phase_name]["cot_reason"] = record.cot_reason
     meta = {
         "case_id": run.case_id,
         "source": run.source,
         "track": run.track,
         "prompt_mode": run.prompt_mode,
+        "variant_id": run.variant_id,
         "status": run.status,
         "error": run.error or None,
         "tokens": None,
@@ -493,17 +756,30 @@ def run_manifest(
     *,
     max_attempts: int = DEFAULT_MAX_ATTEMPTS,
     data_root: Path | None = None,
+    variant: VariantSpec | None = None,
+    examples_root: Path | None = None,
 ) -> list[dict[str, Any]]:
     """Прогнать список кейсов → run-директория + `run_manifest.json`.
 
     Возврат -- строки манифеста (одна на кейс: case_id, source, track,
-    status, pass=None, latency_ms, attempts). Сбои кейса не прерывают
-    прогон: записываются и фиксируются в отчёте.
+    status, pass=None, latency_ms, attempts, variant). Сбои кейса не
+    прерывают прогон: записываются и фиксируются в отчёте. С `variant`
+    (Taiga #16, P4) исполняются только кейсы трека варианта -- вариант
+    навыковой, инструкция чужого трека не имеет смысла.
     """
+    if variant is not None:
+        cases = [case for case in cases if case.track == variant.track]
     out_dir.mkdir(parents=True, exist_ok=True)
     lines: list[dict[str, Any]] = []
     for case in cases:
-        run = run_case(case, llm, max_attempts=max_attempts, data_root=data_root)
+        run = run_case(
+            case,
+            llm,
+            max_attempts=max_attempts,
+            data_root=data_root,
+            variant=variant,
+            examples_root=examples_root,
+        )
         write_case_run(case, run, out_dir)
         phases = _phase_dict(run)
         lines.append(
@@ -513,6 +789,7 @@ def run_manifest(
                 "track": run.track,
                 "status": run.status,
                 "pass": None,  # оценка -- T4
+                "variant": run.variant_id,
                 "latency_ms": round(sum(p["latency_ms"] for p in phases.values()), 3),
                 "attempts": sum(p["attempts"] for p in phases.values()),
             }
@@ -563,6 +840,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--mock-responses", help="JSON {case_id: {phase: text}}, прогон без сети")
     parser.add_argument("--data-root", default=".", help="корень путей media (по умолчанию CWD)")
     parser.add_argument("--max-attempts", type=int, default=DEFAULT_MAX_ATTEMPTS)
+    parser.add_argument(
+        "--prompt-variant",
+        help="id промпт-варианта из prompt_variants.json или 'all' (Taiga #16, P4)",
+    )
+    parser.add_argument(
+        "--examples-root",
+        help="корень медиа few-shot-примеров (по умолчанию корень пакета)",
+    )
     args = parser.parse_args(argv)
 
     from guide_robot_llm.eval.loader import load_manifest as _load_manifest
@@ -580,13 +865,38 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("нужен --backend-config или --mock-responses")
         return 2
 
-    lines = run_manifest(
-        cases,
-        llm,
-        out_dir,
+    common = dict(
         max_attempts=args.max_attempts,
         data_root=Path(args.data_root),
+        examples_root=Path(args.examples_root) if args.examples_root else None,
     )
+
+    if not args.prompt_variant:
+        lines = run_manifest(cases, llm, out_dir, **common)
+        failed = [line for line in lines if line["status"] != "ok"]
+        print(f"прогоно кейсов: {len(lines)}; сбоев: {len(failed)}; run: {out_dir}")
+        return 0
+
+    variants = load_prompt_variants(examples_root=common["examples_root"])
+    if args.prompt_variant == "all":
+        for spec in variants.values():
+            if spec.execution == "loop":
+                print(f"вариант {spec.id}: execution=loop -- пропущен (исполнитель P5)")
+                continue
+            sub_out = out_dir / spec.id
+            lines = run_manifest(cases, llm, sub_out, variant=spec, **common)
+            failed = [line for line in lines if line["status"] != "ok"]
+            print(
+                f"вариант {spec.id}: кейсов: {len(lines)}, сбоев: {len(failed)}; run: {sub_out}"
+            )
+        return 0
+
+    try:
+        spec = variants[args.prompt_variant]
+    except KeyError:
+        parser.error(f"вариант '{args.prompt_variant}' не найден в prompt_variants.json")
+        return 2
+    lines = run_manifest(cases, llm, out_dir, variant=spec, **common)
     failed = [line for line in lines if line["status"] != "ok"]
     print(f"прогоно кейсов: {len(lines)}; сбоев: {len(failed)}; run: {out_dir}")
     return 0
