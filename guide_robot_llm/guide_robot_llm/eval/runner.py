@@ -28,8 +28,16 @@ harness, задают грамматика + host-парсер (общие с pr
 вариант, не кейс); few-shot-примеры (`*4`) вставляются парами (кадр, ответ)
 до кейсовых сообщений; `cot_2pass` = проход 1 без грамматики (рассуждение)
 + проход 2 со строгой грамматикой и текстом прохода 1 в контексте
-(`PhaseRecord.cot_reason`, `calls=2`). `execution=loop` -- P5. Без флага --
-поведение байт-в-байт как production-базлиния (`*_base`).
+(`PhaseRecord.cot_reason`, `calls=2`). `execution=loop` (P5) -- контракт
+остановки F3: до K вызовов (дефолт 3, K -- все вызовы, включая первый),
+каждый вызов -- свежий прогон навыка на следующем кадре `slices.frames`
+(после исчерпания последовательности -- последний кадр; без последовательности
+-- кадр кейса), тик-бюджет B (дефолт 5, 1 кадр = 1 тик); остановка при
+engaged >= `slices.min_engaged` (дефолт 2; сигнал есть только в freeform)
+или исчерпании K/бюджета; финальное «запроси уточнение» -- terminal
+abstain=true (посетителя в бенчмарке нет); запись `calls_per_case`,
+`terminal_reason`, `loop.json`. Без флага -- поведение байт-в-байт как
+production-базлиния (`*_base`).
 """
 
 from __future__ import annotations
@@ -39,8 +47,9 @@ import base64
 import hashlib
 import json
 import mimetypes
+import re
 import time
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -183,8 +192,38 @@ class PromptVariantError(ValueError):
     """Некорректный манифест/спецификация промпт-варианта."""
 
 
-class LoopVariantNotImplemented(RuntimeError):
-    """`execution=loop` -- исполнитель цикла, P5 (#16); в P4 не реализован."""
+# Контракт остановки execution=loop (F3, Taiga #16, заморожен): K_max --
+# всего вызовов навыка на кейс (включая первый); B -- тик-бюджет (1 кадр =
+# 1 тик); N = slices.min_engaged (дефолт DEFAULT_MIN_ENGAGED).
+LOOP_MAX_CALLS = 3
+LOOP_BUDGET_TICKS = 5
+DEFAULT_MIN_ENGAGED = 2
+
+# «Готовы слушать» в freeform-ответе: число после слова «готов*»/«слуша*»
+# (короткий зазор), «N из M», либо «всего X, ... Y» (ровно два целых,
+# второе <= первого -- формат A2/A3).
+_ENGAGED_PATTERNS = (
+    re.compile(r"готов\w*[^0-9]{0,40}?(\d+)"),
+    re.compile(r"слуша\w*[^0-9]{0,40}?(\d+)"),
+    re.compile(r"(\d+)\s+из\s+\d+"),
+)
+
+
+def extract_engaged_freeform(text: str) -> int | None:
+    """Число «готовых слушать» из freeform-ответа; `None` -- не извлекается.
+
+    Детерминированный host-парсер: один и тот же для loop-стоп-проверки (F3)
+    и скоринга (P6). Устойчивая привязка числа к «готовым» обязательна --
+    ответ без неё (`None`) цикл не останавливает (стоп только по K/бюджету).
+    """
+    for pattern in _ENGAGED_PATTERNS:
+        match = pattern.search(text)
+        if match is not None:
+            return int(match.group(1))
+    numbers = [int(number) for number in re.findall(r"\d+", text)]
+    if len(numbers) == 2 and numbers[1] <= numbers[0]:
+        return numbers[1]
+    return None
 
 
 # Корень пакета `guide_robot_llm/` (каталог, в котором лежит `pilot/`):
@@ -341,8 +380,8 @@ class MockBackend:
     def set_context(self, case_id: str, phase: str, pass_label: str | None = None) -> None:
         """Указать кейс и фазу следующего вызова (осознанное состояние).
 
-        `pass_label` (cot_2pass): ответ берётся по трёхчастному ключу,
-        с фолбэком на обычный `(case_id, phase)`.
+        `pass_label` (cot_2pass: pass1/pass2; loop: call0..callN): ответ
+        берётся по трёхчастному ключу, с фолбэком на `(case_id, phase)`.
         """
         self._context = (case_id, phase, pass_label)
 
@@ -391,6 +430,36 @@ class PhaseRecord:
 
 
 @dataclass
+class LoopCallRecord:
+    """Один тик (вызов) в цикле execution=loop (F3, P5)."""
+
+    tick: int
+    frame: str  # путь кадра вызова (относительно data_root)
+    raw_text: str
+    parse_status: str  # "ok" | "failed" | "skipped"
+    engaged: int | None  # сигнал остановки (freeform); deployed -- None
+    latency_ms: float
+    attempts: int
+    finish_reason: str
+
+
+@dataclass
+class LoopResult:
+    """Итог кейса execution=loop (контракт F3).
+
+    `final` -- последний вызов (идёт в `run.observation`/`run.freeform`);
+    `calls` -- лог по тикам; `terminal_reason` -- путь остановки
+    (`engaged_threshold` | `k_exhausted` | `budget_exhausted`);
+    `terminal_abstain` -- финальное «запроси уточнение» → abstain.
+    """
+
+    final: PhaseRecord | None
+    calls: list[LoopCallRecord]
+    terminal_reason: str
+    terminal_abstain: bool | None
+
+
+@dataclass
 class CaseRun:
     """Итог прогона одного кейса (что пишется в run-директорию)."""
 
@@ -404,6 +473,12 @@ class CaseRun:
     freeform: PhaseRecord | None = None
     error: str = ""
     variant_id: str | None = None
+    # execution=loop (F3): число вызовов, путь остановки, терминальный
+    # «запроси уточнение» → abstain, лог по тикам.
+    calls_per_case: int | None = None
+    terminal_reason: str | None = None
+    terminal_abstain: bool | None = None
+    loop_calls: list[LoopCallRecord] | None = None
 
 
 class _PhaseBackendError(RuntimeError):
@@ -424,7 +499,8 @@ def _run_phase(
     """Одна фаза (или один проход cot_2pass); ретрай только на сбое транспорта.
 
     `parse_fn=None` -- проход без парсинга (cot pass-1, `parse_status
-    "skipped"`); `pass_label` -- метка прохода для `MockBackend`.
+    "skipped"`); `pass_label` -- метка прохода/вызова (cot_2pass: pass1/pass2;
+    loop: callN) для `MockBackend`.
     """
     raw_text = ""
     finish_reason = ""
@@ -529,6 +605,185 @@ def _example_messages(variant: VariantSpec, examples_root: Path) -> list[dict]:
     return messages
 
 
+def _phase_messages(
+    case: Case,
+    variant: VariantSpec | None,
+    ex_root: Path,
+    instruction: str,
+    frames: tuple[str, ...],
+) -> list[dict]:
+    """Кейсовые сообщения фазы: (few-shot-пары) + кадр(ы) кейса + инструкция."""
+    messages: list[dict] = []
+    if variant is not None and variant.examples:
+        messages.extend(_example_messages(variant, ex_root))
+    messages.append({"role": "user", "content": build_content(case.prompt.user_text, frames)})
+    messages.append({"role": "user", "content": instruction})
+    return messages
+
+
+def _frame_entry_ok(item: Any) -> bool:
+    """Правильная запись `slices.frames`: dict со строковым `path`."""
+    return isinstance(item, dict) and isinstance(item.get("path"), str)
+
+
+def _loop_frame_set(case: Case, data_root: Path) -> list[tuple[str, tuple[str, ...]]]:
+    """Кадры циклических вызовов: `(путь, data-URL)` для каждого тика.
+
+    `slices.frames` -- следующий кадр на каждый вызов; без последовательности
+    -- кадр кейса для каждого вызова. Отсутствующий файл -- вызов без кадра
+    (то же поведение, что у основного медиа).
+    """
+    raw_frames = case.slices.get("frames")
+    is_sequence = (
+        isinstance(raw_frames, list)
+        and bool(raw_frames)
+        and all(_frame_entry_ok(item) for item in raw_frames)
+    )
+    if is_sequence:
+        paths = [item["path"] for item in raw_frames]
+    else:
+        paths = [case.media.path]
+    result: list[tuple[str, tuple[str, ...]]] = []
+    for path in paths:
+        media_path = data_root / path
+        result.append((path, (media_to_data_url(media_path),) if media_path.is_file() else ()))
+    return result
+
+
+def _case_min_engaged(case: Case) -> int:
+    """Порог остановки N (F3): `slices.min_engaged`, иначе дефолт 2."""
+    value = case.slices.get("min_engaged")
+    if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+        return value
+    return DEFAULT_MIN_ENGAGED
+
+
+def _loop_engaged(record: PhaseRecord, mode: str) -> int | None:
+    """Сигнал остановки «engaged» по записи вызова (F3).
+
+    freeform -- извлекается из текста `answer` (`extract_engaged_freeform`);
+    deployed -- в замороженном контракте наблюдения поля engaged нет
+    (грамматики не трогаем) → `None`, остановка только по K/бюджету.
+    """
+    if mode != "freeform" or record.parsed is None:
+        return None
+    answer = record.parsed.get("answer")
+    if not isinstance(answer, str):
+        return None
+    return extract_engaged_freeform(answer)
+
+
+def _loop_terminal_abstain(record: PhaseRecord | None, mode: str) -> bool | None:
+    """Терминальное «запроси уточнение» → abstain (посетителя в бенчмарке нет).
+
+    freeform -- собственный `abstain` ответа модели; deployed -- в финальном
+    наблюдении нет уверенного кандидата (ровно один кандидат и evidence
+    "yes"), нераспарсенный финал → True; нераспарсенный freeform → `None`.
+    """
+    if record is None:
+        return None
+    if mode == "freeform":
+        if record.parsed is None:
+            return None
+        return bool(record.parsed["abstain"])
+    if record.parsed is None:
+        return True
+    return not (
+        len(record.parsed.exhibit_candidates) == 1
+        and record.parsed.pointing_evidence == "yes"
+    )
+
+
+def _run_loop(
+    llm: Llm,
+    case: Case,
+    variant: VariantSpec,
+    *,
+    ex_root: Path,
+    data_root: Path,
+    max_attempts: int,
+    max_calls: int,
+    budget_ticks: int,
+) -> LoopResult:
+    """Исполнитель execution=loop (контракт F3, P5).
+
+    Каждый вызов -- свежий прогон основной фазы навыка на своём кадре
+    (без кросс-вызовной истории: «повтори навык»). Остановка: engaged >= N
+    (сигнал только в freeform), исчерпание K (max_calls -- все вызовы,
+    включая первый) или тик-бюджета (1 вызов = 1 тик). Фаза действия в
+    цикл не входит (F3 о ней не договаривается; loop-варианты P3/A3 на
+    кейсах с gold action не исполняются).
+    """
+    mode = variant.mode
+    if mode == "deployed":
+        instruction = _variant_deployed_instruction(variant, case.candidates)
+        grammar = build_observation_grammar(list(case.candidates))
+    else:
+        instruction = _variant_freeform_instruction(variant)
+        grammar = build_freeform_answer_grammar()
+    frames = _loop_frame_set(case, data_root)
+    min_engaged = _case_min_engaged(case)
+
+    calls: list[LoopCallRecord] = []
+    final: PhaseRecord | None = None
+    terminal_reason = "budget_exhausted"
+    for tick in range(budget_ticks):
+        if tick >= max_calls:
+            terminal_reason = "k_exhausted"
+            break
+        frame_path, frame_urls = frames[min(tick, len(frames) - 1)]
+        messages = _phase_messages(case, variant, ex_root, instruction, frame_urls)
+        if mode == "deployed":
+            final = _run_phase(
+                llm,
+                messages,
+                case_id=case.case_id,
+                grammar=grammar,
+                phase="observation",
+                max_attempts=max_attempts,
+                parse_fn=lambda text: _parse_observation(text, candidates=case.candidates),
+                pass_label=f"call{tick}",
+            )
+        else:
+            final = _run_phase(
+                llm,
+                messages,
+                case_id=case.case_id,
+                grammar=grammar,
+                phase="freeform",
+                max_attempts=max_attempts,
+                parse_fn=parse_freeform_answer,
+                pass_label=f"call{tick}",
+            )
+        engaged = _loop_engaged(final, mode)
+        calls.append(
+            LoopCallRecord(
+                tick=tick,
+                frame=frame_path,
+                raw_text=final.raw_text,
+                parse_status=final.parse_status,
+                engaged=engaged,
+                latency_ms=final.latency_ms,
+                attempts=final.attempts,
+                finish_reason=final.finish_reason,
+            )
+        )
+        if engaged is not None and engaged >= min_engaged:
+            terminal_reason = "engaged_threshold"
+            break
+
+    terminal_abstain = _loop_terminal_abstain(final, mode)
+    if final is not None and mode == "deployed" and final.parsed is not None:
+        # Как в single-путе: запись -- плоский dict, не Observation.
+        final.parsed = _observation_to_dict(final.parsed)
+    return LoopResult(
+        final=final,
+        calls=calls,
+        terminal_reason=terminal_reason,
+        terminal_abstain=terminal_abstain,
+    )
+
+
 def run_case(
     case: Case,
     llm: Llm,
@@ -537,6 +792,8 @@ def run_case(
     data_root: Path | None = None,
     variant: VariantSpec | None = None,
     examples_root: Path | None = None,
+    loop_max_calls: int = LOOP_MAX_CALLS,
+    loop_budget_ticks: int = LOOP_BUDGET_TICKS,
 ) -> CaseRun:
     """Прогнать один кейс (без записи -- см. `write_case_run`).
 
@@ -545,10 +802,12 @@ def run_case(
     задаёт вариант, а не кейс; текст варианта заменяет встроенную
     production-инструкцию фазы, `text=None` (`*_base`) -- тот же запрос,
     что и без варианта. `examples_root` -- корень медиа few-shot-примеров
-    (по умолчанию корень пакета). `execution=loop` -- P5, не P4.
+    (по умолчанию корень пакета). `execution=loop` (P5, контракт F3):
+    `loop_max_calls` -- K (всего вызовов, дефолт `LOOP_MAX_CALLS`),
+    `loop_budget_ticks` -- B (тиков, дефолт `LOOP_BUDGET_TICKS`).
     """
-    if variant is not None and variant.execution == "loop":
-        raise LoopVariantNotImplemented(f"{variant.id}: execution=loop -- исполнитель P5")
+    if loop_max_calls < 1 or loop_budget_ticks < 1:
+        raise ValueError("loop_max_calls и loop_budget_ticks должны быть >= 1")
     mode = variant.mode if variant is not None else case.prompt.mode
     execution = variant.execution if variant is not None else "single"
     ex_root = Path(examples_root) if examples_root is not None else _PACKAGE_ROOT
@@ -565,19 +824,33 @@ def run_case(
         variant_id=variant.id if variant is not None else None,
     )
 
-    def _prepended_messages(instruction: str) -> list[dict]:
-        """Кейсовые сообщения фазы; few-shot-пары -- перед ними."""
-        messages: list[dict] = []
-        if variant is not None and variant.examples:
-            messages.extend(_example_messages(variant, ex_root))
-        messages.append({"role": "user", "content": build_content(case.prompt.user_text, frames)})
-        messages.append({"role": "user", "content": instruction})
-        return messages
-
     try:
-        if mode == "deployed":
-            base_messages = _prepended_messages(
-                _variant_deployed_instruction(variant, case.candidates)
+        if variant is not None and variant.execution == "loop":
+            loop = _run_loop(
+                llm,
+                case,
+                variant,
+                ex_root=ex_root,
+                data_root=data_root or Path("."),
+                max_attempts=max_attempts,
+                max_calls=loop_max_calls,
+                budget_ticks=loop_budget_ticks,
+            )
+            if mode == "deployed":
+                run.observation = loop.final
+            else:
+                run.freeform = loop.final
+            run.calls_per_case = len(loop.calls)
+            run.terminal_reason = loop.terminal_reason
+            run.terminal_abstain = loop.terminal_abstain
+            run.loop_calls = loop.calls
+        elif mode == "deployed":
+            base_messages = _phase_messages(
+                case,
+                variant,
+                ex_root,
+                _variant_deployed_instruction(variant, case.candidates),
+                frames,
             )
             if execution == "cot_2pass":
                 pass1 = _run_phase(
@@ -646,7 +919,9 @@ def run_case(
                     parse_fn=lambda text: _action_to_dict(parse_action(text)),
                 )
         else:
-            freeform_messages = _prepended_messages(_variant_freeform_instruction(variant))
+            freeform_messages = _phase_messages(
+                case, variant, ex_root, _variant_freeform_instruction(variant), frames
+            )
             if execution == "cot_2pass":
                 pass1 = _run_phase(
                     llm,
@@ -729,23 +1004,30 @@ def write_case_run(case: Case, run: CaseRun, out_dir: Path) -> Path:
         }
         if record.cot_reason is not None:
             phases[phase_name]["cot_reason"] = record.cot_reason
+    latency_ms, attempts = _case_totals(run)
     meta = {
         "case_id": run.case_id,
         "source": run.source,
         "track": run.track,
         "prompt_mode": run.prompt_mode,
         "variant_id": run.variant_id,
+        "calls_per_case": run.calls_per_case,
+        "terminal_reason": run.terminal_reason,
+        "terminal_abstain": run.terminal_abstain,
         "status": run.status,
         "error": run.error or None,
         "tokens": None,
         "tokens_note": TOKENS_NOTE,
         "phases": phases,
-        "latency_ms": round(sum(p["latency_ms"] for p in phases.values()), 3),
-        "attempts": sum(p["attempts"] for p in phases.values()),
+        "latency_ms": latency_ms,
+        "attempts": attempts,
         "case": case_to_dict(case),
     }
     with open(case_dir / "meta.json", "w", encoding="utf-8") as fh:
         json.dump(meta, fh, ensure_ascii=False, indent=2)
+    if run.loop_calls is not None:
+        with open(case_dir / "loop.json", "w", encoding="utf-8") as fh:
+            json.dump([asdict(call) for call in run.loop_calls], fh, ensure_ascii=False, indent=2)
     return case_dir
 
 
@@ -758,6 +1040,8 @@ def run_manifest(
     data_root: Path | None = None,
     variant: VariantSpec | None = None,
     examples_root: Path | None = None,
+    loop_max_calls: int = LOOP_MAX_CALLS,
+    loop_budget_ticks: int = LOOP_BUDGET_TICKS,
 ) -> list[dict[str, Any]]:
     """Прогнать список кейсов → run-директория + `run_manifest.json`.
 
@@ -779,9 +1063,11 @@ def run_manifest(
             data_root=data_root,
             variant=variant,
             examples_root=examples_root,
+            loop_max_calls=loop_max_calls,
+            loop_budget_ticks=loop_budget_ticks,
         )
         write_case_run(case, run, out_dir)
-        phases = _phase_dict(run)
+        latency_ms, attempts = _case_totals(run)
         lines.append(
             {
                 "case_id": run.case_id,
@@ -790,8 +1076,11 @@ def run_manifest(
                 "status": run.status,
                 "pass": None,  # оценка -- T4
                 "variant": run.variant_id,
-                "latency_ms": round(sum(p["latency_ms"] for p in phases.values()), 3),
-                "attempts": sum(p["attempts"] for p in phases.values()),
+                "calls_per_case": run.calls_per_case,
+                "terminal_reason": run.terminal_reason,
+                "terminal_abstain": run.terminal_abstain,
+                "latency_ms": latency_ms,
+                "attempts": attempts,
             }
         )
     with open(out_dir / "run_manifest.json", "w", encoding="utf-8") as fh:
@@ -814,6 +1103,20 @@ def _phase_dict(run: CaseRun) -> dict[str, dict[str, Any]]:
         if record is not None:
             result[name] = {"latency_ms": record.latency_ms, "attempts": record.attempts}
     return result
+
+
+def _case_totals(run: CaseRun) -> tuple[float, int]:
+    """Латентность/попытки кейса: для loop -- по всем тикам, иначе по фазам."""
+    if run.loop_calls is not None:
+        return (
+            round(sum(call.latency_ms for call in run.loop_calls), 3),
+            sum(call.attempts for call in run.loop_calls),
+        )
+    phases = _phase_dict(run)
+    return (
+        round(sum(p["latency_ms"] for p in phases.values()), 3),
+        sum(p["attempts"] for p in phases.values()),
+    )
 
 
 def build_backend_from_config(config: dict[str, Any]) -> Backend:
@@ -840,6 +1143,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--mock-responses", help="JSON {case_id: {phase: text}}, прогон без сети")
     parser.add_argument("--data-root", default=".", help="корень путей media (по умолчанию CWD)")
     parser.add_argument("--max-attempts", type=int, default=DEFAULT_MAX_ATTEMPTS)
+    parser.add_argument(
+        "--loop-max-calls",
+        type=int,
+        default=LOOP_MAX_CALLS,
+        help="F3: K_max -- всего вызовов навыка в execution=loop (дефолт 3)",
+    )
+    parser.add_argument(
+        "--loop-budget-ticks",
+        type=int,
+        default=LOOP_BUDGET_TICKS,
+        help="F3: B -- тик-бюджет execution=loop, 1 кадр = 1 тик (дефолт 5)",
+    )
     parser.add_argument(
         "--prompt-variant",
         help="id промпт-варианта из prompt_variants.json или 'all' (Taiga #16, P4)",
@@ -869,6 +1184,8 @@ def main(argv: list[str] | None = None) -> int:
         max_attempts=args.max_attempts,
         data_root=Path(args.data_root),
         examples_root=Path(args.examples_root) if args.examples_root else None,
+        loop_max_calls=args.loop_max_calls,
+        loop_budget_ticks=args.loop_budget_ticks,
     )
 
     if not args.prompt_variant:
@@ -880,9 +1197,6 @@ def main(argv: list[str] | None = None) -> int:
     variants = load_prompt_variants(examples_root=common["examples_root"])
     if args.prompt_variant == "all":
         for spec in variants.values():
-            if spec.execution == "loop":
-                print(f"вариант {spec.id}: execution=loop -- пропущен (исполнитель P5)")
-                continue
             sub_out = out_dir / spec.id
             lines = run_manifest(cases, llm, sub_out, variant=spec, **common)
             failed = [line for line in lines if line["status"] != "ok"]

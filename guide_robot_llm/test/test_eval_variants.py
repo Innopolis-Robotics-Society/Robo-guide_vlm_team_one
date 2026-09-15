@@ -13,11 +13,8 @@ import hashlib
 import json
 from pathlib import Path
 
-import pytest
-
 from guide_robot_llm.eval.runner import (
     _FREEFORM_INSTRUCTION,
-    LoopVariantNotImplemented,
     MockBackend,
     _observation_instruction,
     _variant_deployed_instruction,
@@ -265,17 +262,6 @@ def test_base_variants_match_production_instruction() -> None:
     # Без варианта -- та же production-инструкция (regression).
     assert _variant_deployed_instruction(None, ("a",)) == _observation_instruction(("a",))
     assert _variant_freeform_instruction(None) == _FREEFORM_INSTRUCTION
-
-
-def test_loop_variant_not_implemented_in_p4(tmp_path) -> None:
-    cases = {c.case_id: c for c in _load_cases(tmp_path)}
-    vs = _variants()
-    with pytest.raises(LoopVariantNotImplemented):
-        run_case(cases["VAR-POI-01"], MockBackend({}), variant=vs["P3"], data_root=tmp_path / "d")
-    with pytest.raises(LoopVariantNotImplemented):
-        run_case(
-            cases["VAR-AUD-01"], MockBackend({}), variant=vs["A3"], data_root=tmp_path / "d"
-        )
 
 
 def test_mock_backend_pass_label_and_fallback() -> None:
