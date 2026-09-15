@@ -6,12 +6,19 @@ pilot episodes plus the 50-case external mini-benchmark (DP 20, EgoPoint-Bench
 **Diagnostic only** — no final project score, no #11 model selection, no
 prompt/threshold tuning on the frozen sets.
 
-**Status (2026-09-16):** the external set ships as the 40-case bench
-(`eval_manifests/bench_40.jsonl`): EgoPoint-Bench 10 + AGHRI 15 + pilot-CC 15.
-DP/Deepoint is excluded (180 GB distribution, never downloaded locally) and
-YouRefIt was dropped by team decision 2026-09-16 (no data registration). The
-YouRefIt adapter (`eval/adapters/yourifit.py`, T8) remains in the tree with
-tests, but no data will ever be registered for it.
+**Status (2026-09-16, bench v2):** the external set ships as the 47-case bench
+(`eval_manifests/bench_47.jsonl`): EgoPoint-Bench 15 + AGHRI 25 + 7 TOL-CC
+tool-track cases from the pilot. Scope decisions: DP/Deepoint excluded (180 GB
+distribution, never downloaded locally); YouRefIt dropped (team decision
+2026-09-16, no data registration — the adapter `eval/adapters/yourifit.py`, T8,
+stays in the tree with tests, but no data will ever be registered for it); the
+pilot CC synthetic set was excluded from the bench (team decision 2026-09-16,
+CC not used), keeping only the 7 TOL-CC cases — the only source of gold tool
+calls. Expansion rules: EgoPoint 10→15 — min unselected MC `image_id` per
+dimension (first-appearance order in `STRATA`); AGHRI 15→25 — `plan
+--n-frames 25` over parts 1–3 (9 sequences, first 15 cases identical to v1).
+Bench v1 (40 cases, `eval_manifests/bench_40.jsonl`) is frozen as the input of
+the `eval_runs/2026-09-16-bench40-baseline/` live run.
 
 ## Placement (decision)
 

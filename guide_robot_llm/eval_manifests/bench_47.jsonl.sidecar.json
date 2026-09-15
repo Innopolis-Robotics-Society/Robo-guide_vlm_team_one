@@ -1,0 +1,28 @@
+{
+  "name": "bench_47.jsonl",
+  "n_cases": 47,
+  "generated": "2026-09-16 04:13:39 +07",
+  "scope_decision": "2026-09-15 (T10): DP excluded (180 GB); 2026-09-16: YouRefIt dropped (team decision); 2026-09-16: pilot-CC excluded from bench (team decision — CC synthetic not used), 7 TOL-CC kept (only gold tool-call source); EP 10→15, AGHRI 15→25 → 47 cases",
+  "slices": [
+    {
+      "source": "egopoint",
+      "file": "eval_manifests/egopoint_15.jsonl",
+      "sha256": "2c0916d9e7562be7b93679efc47b86d9dab800cb4e9f6f753297a3fc1533068c",
+      "n_cases": 15
+    },
+    {
+      "source": "aghri",
+      "file": "eval_manifests/aghri_25.jsonl",
+      "sha256": "e26ac32b22b90b18e0263ad8474855f85ef771a3963db4d949929cd6fcec9d38",
+      "n_cases": 25
+    },
+    {
+      "source": "pilot-cc",
+      "file": "pilot/manifest.jsonl",
+      "sha256": "4e131dcf2560613658f16c1a411d59c796078588bae8dec8a59373991a67c81d",
+      "n_cases": 7,
+      "filter": "TOL-CC-* only (decision 2026-09-16; остальные 8 CC-кейсов исключены)"
+    }
+  ],
+  "media_root": "корень пакета guide_robot_llm/ (раннер: --data-root . из каталога пакета)"
+}

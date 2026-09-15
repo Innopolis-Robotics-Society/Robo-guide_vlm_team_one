@@ -1,19 +1,29 @@
 #!/usr/bin/env python3
-"""Сборка манифеста bench-40 (Taiga #10, T10) + mock-ответы для dry-рана.
+"""Сборка сквозного бенч-манифеста (Taiga #10, T10) + mock-ответы для dry-рана.
 
-Состав (scope-решение 2026-09-15, пометка на T10):
-* EgoPoint-Bench 10 кейсов — ``eval_manifests/egopoint_10.jsonl`` (T7);
-* AGHRI 15 кейсов — ``eval_manifests/aghri_15.jsonl`` (T9);
-* пилот 15 кейсов — ``pilot/manifest.jsonl`` через ``load_pilot`` (T5).
+Состав bench v2 (2026-09-16, ``bench_47.jsonl``, 47 кейсов):
+* EgoPoint-Bench 15 кейсов — ``eval_manifests/egopoint_15.jsonl``
+  (T7 + расширение 2026-09-16: 11-й+ — min не-выбранного image_id по размерам);
+* AGHRI 25 кейсов — ``eval_manifests/aghri_25.jsonl``
+  (T9 + расширение 2026-09-16: ``plan --n-frames 25``, 9 seq, parts 1-3);
+* пилот CC: только 7 TOL-CC (tool-трек) — ``pilot/manifest.jsonl`` через
+  ``load_pilot`` (T5) + фильтр ``TOL-CC-*``.
 
-DP/Deepoint исключён (дистрибуция 180 GB, не скачивается локально),
-YouRefIt снят с плана командным решением 2026-09-16 (данные не регистрируются).
+История состава (scope-решения):
+* 2026-09-15 (T10): DP/Deepoint исключён (дистрибуция 180 GB, не скачивается);
+* 2026-09-16: YouRefIt снят с плана командным решением (данные не регистрируются);
+* 2026-09-16: пилот-CC исключён из бенча командным решением (CC-синтетика не
+  используется, кроме 7 TOL-CC — единственный источник gold tool-вызовов).
+
+ bench v1 (2026-09-16, EP 10 + AGHRI 15 + пилот 15 = 40) закреплён файлом
+ ``eval_manifests/bench_40.jsonl`` — вход live-прогона
+ ``eval_runs/2026-09-16-bench40-baseline/``; не редактировать.
 
 Запуск из каталога пакета ``guide_robot_llm/``:
 
-    uv run --with requests python eval_manifests/make_bench40.py manifest
-    uv run --with requests python eval_manifests/make_bench40.py mock \
-        --out .scratch/bench40_dry/mock_responses.json
+    uv run --with requests python eval_manifests/make_bench.py manifest
+    uv run --with requests python eval_manifests/make_bench.py mock \
+        --out .scratch/bench47_dry/mock_responses.json
 
 Путь медиа во всех слайсах -- относительно корня пакета, поэтому
 ``--data-root`` раннера -- корень пакета.
@@ -36,10 +46,12 @@ if str(_PKG_ROOT) not in sys.path:
 from guide_robot_llm.eval.loader import load_pilot  # noqa: E402
 from guide_robot_llm.eval.schema import case_to_dict  # noqa: E402
 
-EGOPPOINT = _PKG_ROOT / "eval_manifests" / "egopoint_10.jsonl"
-AGHRI = _PKG_ROOT / "eval_manifests" / "aghri_15.jsonl"
+EGOPPOINT = _PKG_ROOT / "eval_manifests" / "egopoint_15.jsonl"
+AGHRI = _PKG_ROOT / "eval_manifests" / "aghri_25.jsonl"
 PILOT = _PKG_ROOT / "pilot" / "manifest.jsonl"
-OUT = _PKG_ROOT / "eval_manifests" / "bench_40.jsonl"
+# из пилот-CC в бенч попадают только TOL-кейсы (tool-трек; решение 2026-09-16)
+PILOT_CASE_PREFIX = "TOL-CC-"
+OUT = _PKG_ROOT / "eval_manifests" / "bench_47.jsonl"
 
 
 def _sha256(path: Path) -> str:
@@ -47,11 +59,15 @@ def _sha256(path: Path) -> str:
 
 
 def build_manifest() -> list[dict[str, Any]]:
-    """Три слайса → единый список унифицированных кейсов (порядок: EPO, AGHRI, pilot)."""
+    """Три слайса → единый список унифицированных кейсов (порядок: EPO, AGHRI, TOL-CC)."""
     rows: list[dict[str, Any]] = []
     for path in (EGOPPOINT, AGHRI):
         rows.extend(json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
-    pilot = [case_to_dict(c) for c in load_pilot(PILOT, _PKG_ROOT, require_media=False)]
+    pilot = [
+        case_to_dict(c)
+        for c in load_pilot(PILOT, _PKG_ROOT, require_media=False)
+        if c.case_id.startswith(PILOT_CASE_PREFIX)
+    ]
     rows.extend(pilot)
     seen: set[str] = set()
     for row in rows:
@@ -70,11 +86,17 @@ def cmd_manifest(_args: argparse.Namespace) -> None:
         "name": OUT.name,
         "n_cases": len(rows),
         "generated": time.strftime("%Y-%m-%d %H:%M:%S %Z"),
-        "scope_decision": "2026-09-15 (T10): DP excluded (180 GB); 2026-09-16: YouRefIt dropped (team decision — bench stays at 40 cases)",
+        "scope_decision": (
+            "2026-09-15 (T10): DP excluded (180 GB); 2026-09-16: YouRefIt dropped "
+            "(team decision); 2026-09-16: pilot-CC excluded from bench (team "
+            "decision — CC synthetic not used), 7 TOL-CC kept (only gold "
+            "tool-call source); EP 10→15, AGHRI 15→25 → 47 cases"
+        ),
         "slices": [
-            {"source": "egopoint", "file": str(EGOPPOINT.relative_to(_PKG_ROOT)), "sha256": _sha256(EGOPPOINT), "n_cases": 10},
-            {"source": "aghri", "file": str(AGHRI.relative_to(_PKG_ROOT)), "sha256": _sha256(AGHRI), "n_cases": 15},
-            {"source": "pilot-cc", "file": str(PILOT.relative_to(_PKG_ROOT)), "sha256": _sha256(PILOT), "n_cases": 15},
+            {"source": "egopoint", "file": str(EGOPPOINT.relative_to(_PKG_ROOT)), "sha256": _sha256(EGOPPOINT), "n_cases": 15},
+            {"source": "aghri", "file": str(AGHRI.relative_to(_PKG_ROOT)), "sha256": _sha256(AGHRI), "n_cases": 25},
+            {"source": "pilot-cc", "file": str(PILOT.relative_to(_PKG_ROOT)), "sha256": _sha256(PILOT), "n_cases": 7,
+             "filter": "TOL-CC-* only (decision 2026-09-16; остальные 8 CC-кейсов исключены)"},
         ],
         "media_root": "корень пакета guide_robot_llm/ (раннер: --data-root . из каталога пакета)",
     }
@@ -104,7 +126,7 @@ def _mock_observation(gold: dict[str, Any]) -> dict[str, Any]:
 
 
 def cmd_mock(args: argparse.Namespace) -> None:
-    """Canned-ответы (строго грамматики) на каждый кейс bench-40."""
+    """Canned-ответы (строго грамматики) на каждый кейс bench_47.jsonl."""
     if not OUT.exists():
         raise SystemExit(f"нет {OUT.name} — сначала подкоманда `manifest`")
     canned: dict[str, dict[str, str]] = {}
@@ -148,7 +170,7 @@ def cmd_mock(args: argparse.Namespace) -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
-    sub.add_parser("manifest", help="собрать bench_40.jsonl + sidecar")
+    sub.add_parser("manifest", help="собрать bench_47.jsonl + sidecar")
     mock_p = sub.add_parser("mock", help="gold-верные canned-ответы для dry-рана")
     mock_p.add_argument("--out", required=True, type=Path, help="путь mock_responses.json")
     args = parser.parse_args(argv)

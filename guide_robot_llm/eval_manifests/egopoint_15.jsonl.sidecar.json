@@ -1,0 +1,116 @@
+{
+  "source": "egopoint",
+  "n_cases": 15,
+  "bench_file": "realdata_benchmark/pure_real_test.json",
+  "bench_sha256": "3cc3b6aa4e68621764624c76a3b1ed5a9e03ab8a8cd166c847c4b6b110db9e3b",
+  "total_rows": 1162,
+  "excluded_non_multiple_choice": 328,
+  "selection_rule": "10 фиксированных страт (dimension, deixis_level), по 2 на размер, min image_id в страте; только Multiple_Choice (единственный тип с замкнутым набором опций → кандидатная таблица id); расширение до 15: по размерам (порядок первого появления в STRATA) min не-выбранного image_id (2026-09-16, bench v2)",
+  "selected": [
+    {
+      "case_id": "EPO-REAL-0003",
+      "image_id": "3",
+      "dimension": "Basic Perception",
+      "deixis_level": "L1",
+      "answer_id": "epobj-3-c"
+    },
+    {
+      "case_id": "EPO-REAL-0008",
+      "image_id": "8",
+      "dimension": "Affordance & Function",
+      "deixis_level": "L1",
+      "answer_id": "epobj-8-d"
+    },
+    {
+      "case_id": "EPO-REAL-0013",
+      "image_id": "13",
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "answer_id": "epobj-13-a"
+    },
+    {
+      "case_id": "EPO-REAL-0027",
+      "image_id": "27",
+      "dimension": "Basic Perception",
+      "deixis_level": "L3",
+      "answer_id": "epobj-27-c"
+    },
+    {
+      "case_id": "EPO-REAL-0028",
+      "image_id": "28",
+      "dimension": "Context & Relation",
+      "deixis_level": "L1",
+      "answer_id": "epobj-28-c"
+    },
+    {
+      "case_id": "EPO-REAL-0036",
+      "image_id": "36",
+      "dimension": "Context & Relation",
+      "deixis_level": "L3",
+      "answer_id": "epobj-36-c"
+    },
+    {
+      "case_id": "EPO-REAL-0069",
+      "image_id": "69",
+      "dimension": "Affordance & Function",
+      "deixis_level": "L2",
+      "answer_id": "epobj-69-d"
+    },
+    {
+      "case_id": "EPO-REAL-0096",
+      "image_id": "96",
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "answer_id": "epobj-96-b"
+    },
+    {
+      "case_id": "EPO-REAL-0099",
+      "image_id": "99",
+      "dimension": "Affordance & Function",
+      "deixis_level": "L3",
+      "answer_id": "epobj-99-a"
+    },
+    {
+      "case_id": "EPO-REAL-0100",
+      "image_id": "100",
+      "dimension": "Context & Relation",
+      "deixis_level": "L2",
+      "answer_id": "epobj-100-a"
+    },
+    {
+      "case_id": "EPO-REAL-0103",
+      "image_id": "103",
+      "dimension": "OCR & Text",
+      "deixis_level": "L3",
+      "answer_id": "epobj-103-b"
+    },
+    {
+      "case_id": "EPO-REAL-0167",
+      "image_id": "167",
+      "dimension": "Basic Perception",
+      "deixis_level": "L2",
+      "answer_id": "epobj-167-a"
+    },
+    {
+      "case_id": "EPO-REAL-0405",
+      "image_id": "405",
+      "dimension": "Adversarial",
+      "deixis_level": "L3",
+      "answer_id": "epobj-405-d"
+    },
+    {
+      "case_id": "EPO-REAL-1204",
+      "image_id": "1204",
+      "dimension": "Adversarial",
+      "deixis_level": "L3",
+      "answer_id": "epobj-1204-d"
+    },
+    {
+      "case_id": "EPO-REAL-1270",
+      "image_id": "1270",
+      "dimension": "Adversarial",
+      "deixis_level": "L1",
+      "answer_id": "epobj-1270-a"
+    }
+  ]
+}

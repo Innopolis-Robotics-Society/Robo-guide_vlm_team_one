@@ -126,6 +126,58 @@ def test_selection_covers_strata_and_min_image_id(stub_rows: list[dict]) -> None
     assert not set(ids) & set(UNSELECTED_IDS)
 
 
+def _mc_row(
+    image_id: str, dimension: str, level: str = "L2", dataset: str | None = "realdata"
+) -> dict:
+    """Синтетическая валидная MC-строка (для тестов расширения)."""
+    return {
+        "image_id": image_id,
+        "dataset": dataset,
+        "dimension": dimension,
+        "deixis_level": level,
+        "question": "Q?",
+        "options": ["A. Alpha", "B. Beta", "C. Gamma", "D. Delta"],
+        "answer": "A. Alpha",
+        "image_path": f"test_img/{image_id}.jpg",
+        "type": "Multiple_Choice",
+    }
+
+
+def test_selection_extension_beyond_strata(stub_rows: list[dict]) -> None:
+    """Bench v2 (2026-09-16): 11-й+ кейсы — min не-выбранного image_id по размерам.
+
+    Порядок размеров — первое появление в STRATA: Context & Relation,
+    Affordance & Function, Basic Perception, OCR & Text, Adversarial.
+    """
+    extra = [
+        _mc_row("700", "Affordance & Function"),  # AF: 99/69 выбраны → 700
+        _mc_row("701", "Affordance & Function"),  # дубль в размере — не берётся
+        _mc_row("31", "Basic Perception", "L1"),  # BP: L1 не в STRATA; stub-21 вытесняет 31 (min id)
+        _mc_row("210", "OCR & Text"),  # OCR: 13/103 выбраны → 210
+        _mc_row("1204", "Adversarial"),  # ADV: 405/1270 выбраны → 1204
+        _mc_row("310", "Context & Relation"),  # CR: stub-строка 36 вытесняет 310
+    ]
+    selected = egopoint.select_mc_rows(stub_rows + extra, n_cases=15)
+    ids = [int(e["image_id"]) for e in selected]
+    # Первые 10 — стабильная стратная выборка (bench v1 не меняется)
+    assert ids[:10] == SELECTED_IDS
+    assert ids[10:] == [36, 700, 21, 210, 1204]
+
+
+def test_selection_extension_exhausted_dimension_raises(stub_rows: list[dict]) -> None:
+    """Нет не-выбранных MC-строк в размере — ошибка, а не тихий skip."""
+    # n_cases=12: CR закрывает 11-е (36), AF требует 12-е — но все AF-строки
+    # stub'а (99, 69) уже в стратной выборке → ошибка
+    with pytest.raises(egopoint.EgoPointAdapterError, match="все MC-строки"):
+        egopoint.select_mc_rows(stub_rows, n_cases=12)
+
+
+def test_selection_n_cases_out_of_range_raises(stub_rows: list[dict]) -> None:
+    """Максимум = len(STRATA) + число размеров = 15."""
+    with pytest.raises(egopoint.EgoPointAdapterError, match="вне диапазона"):
+        egopoint.select_mc_rows(stub_rows, n_cases=16)
+
+
 def test_selection_missing_stratum_raises(stub_rows: list[dict]) -> None:
     rows = [e for e in stub_rows if e["image_id"] != "103"]  # OCR & Text L3 пуста
     with pytest.raises(egopoint.EgoPointAdapterError, match="страта"):

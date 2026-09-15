@@ -153,9 +153,18 @@ def select_mc_rows(
     ``Open_Ended`` отбрасываются (нет замкнутого набора кандидатов в
     авторском протоколе). Нарушение формата или появление не-real строк
     — ошибка, а не тихий skip.
+
+    Расширение (2026-09-16, bench v2: 10 → 15): если ``n_cases`` >
+    ``len(STRATA)``, остаток берётся по размерам — для каждого
+    dimension (в порядке первого появления в ``STRATA``) строка с
+    минимальным ещё не выбранным ``image_id``. Чисто стратный путь для
+    пятого размера невозможен: страта ``Adversarial/L2`` пуста в
+    верифицированном файле, а дубликат страты дал бы дубликат case_id.
     """
-    if not 1 <= n_cases <= len(STRATA):
-        raise EgoPointAdapterError(f"n_cases={n_cases} вне диапазона 1..{len(STRATA)}")
+    dimensions = tuple(dict.fromkeys(d for d, _ in STRATA))
+    max_cases = len(STRATA) + len(dimensions)
+    if not 1 <= n_cases <= max_cases:
+        raise EgoPointAdapterError(f"n_cases={n_cases} вне диапазона 1..{max_cases}")
     mc_rows = []
     for entry in rows:
         if entry.get("type") != "Multiple_Choice":
@@ -163,6 +172,13 @@ def select_mc_rows(
         _validate_row(entry)
         mc_rows.append(entry)
     selected: list[dict[str, Any]] = []
+    selected_ids: set[int] = set()
+
+    def take(candidates: list[dict[str, Any]]) -> None:
+        pick = min(candidates, key=lambda e: int(str(e["image_id"])))
+        selected.append(pick)
+        selected_ids.add(int(str(pick["image_id"])))
+
     for dimension, level in STRATA[:n_cases]:
         candidates = [
             e
@@ -174,7 +190,21 @@ def select_mc_rows(
                 f"страта ({dimension}, {level}) пуста: файл отличается "
                 "от верифицированного или повреждён"
             )
-        selected.append(min(candidates, key=lambda e: int(str(e["image_id"]))))
+        take(candidates)
+    for dimension in dimensions:
+        if len(selected) >= n_cases:
+            break
+        candidates = [
+            e
+            for e in mc_rows
+            if e.get("dimension") == dimension and int(str(e["image_id"])) not in selected_ids
+        ]
+        if not candidates:
+            raise EgoPointAdapterError(
+                f"dimension {dimension!r}: все MC-строки уже выбраны — "
+                f"n_cases={n_cases} не укладывается"
+            )
+        take(candidates)
     return selected
 
 
@@ -299,6 +329,13 @@ def build_egopoint_cases(
             "deixis_level), по 2 на размер, min image_id в страте; "
             "только Multiple_Choice (единственный тип с замкнутым "
             "набором опций → кандидатная таблица id)"
+            + (
+                f"; расширение до {n_cases}: по размерам (порядок "
+                "первого появления в STRATA) min не-выбранного image_id "
+                "(2026-09-16, bench v2)"
+                if n_cases > len(STRATA)
+                else ""
+            )
         ),
         "selected": [
             {
