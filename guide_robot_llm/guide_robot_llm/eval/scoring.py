@@ -31,6 +31,13 @@ calls-per-case (loop -- meta `calls_per_case`, иначе сумма `calls` п�
 фазам: single = 1, cot_2pass = 2) и задержка.
 
 Модуль чистый Python (без `rclpy`), юнит-тесты -- фикстуры без сети.
+
+Bootstrap 95% CI (дизайн: "Bootstrap 95% confidence intervals grouped by
+recording session"): единица ресэмплинга -- `split_group_id` (сессия
+записи), headline-метрики (counts MAE/exact, pointing top-1, tool exact,
+no-target FPR, pass-rate); секция в отчёте + строки скоупа `ci` в
+`summary.csv`; `None` при <2 группах (детерминировано при зафиксированном
+seed).
 """
 
 from __future__ import annotations
@@ -39,8 +46,10 @@ import argparse
 import csv
 import io
 import json
+import random
 import re
 import struct
+from collections.abc import Callable
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -463,6 +472,183 @@ def _aggregate(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
     return {"perception": perception, "policy": policy}
 
 
+# --- bootstrap 95% CI, сгруппированный по сессии записи -----------------------
+
+
+def _ci_counts_mae(subset: list[dict[str, Any]]) -> tuple[float, int] | None:
+    errs = [
+        r["perception"].get("abs_error")
+        for r in subset
+        if r.get("kind") == "audience-count" and r["perception"].get("abs_error") is not None
+    ]
+    if not errs:
+        return None
+    return sum(errs) / len(errs), len(errs)
+
+
+def _ci_counts_exact(subset: list[dict[str, Any]]) -> tuple[float, int] | None:
+    xs = [
+        r["perception"].get("count_exact")
+        for r in subset
+        if r.get("kind") == "audience-count" and r["perception"].get("count_exact") is not None
+    ]
+    if not xs:
+        return None
+    return sum(1 for x in xs if x) / len(xs), len(xs)
+
+
+def _ci_engaged_mae(subset: list[dict[str, Any]]) -> tuple[float, int] | None:
+    errs = [
+        r["perception"].get("engaged_abs_error")
+        for r in subset
+        if r.get("kind") == "audience-count"
+        and r["perception"].get("engaged_abs_error") is not None
+    ]
+    if not errs:
+        return None
+    return sum(errs) / len(errs), len(errs)
+
+
+def _ci_engaged_exact(subset: list[dict[str, Any]]) -> tuple[float, int] | None:
+    xs = [
+        r["perception"].get("engaged_exact")
+        for r in subset
+        if r.get("kind") == "audience-count" and r["perception"].get("engaged_exact") is not None
+    ]
+    if not xs:
+        return None
+    return sum(1 for x in xs if x) / len(xs), len(xs)
+
+
+def _ci_pointing_top1(subset: list[dict[str, Any]]) -> tuple[float, int] | None:
+    xs = [
+        r["policy"].get("top1_correct")
+        for r in subset
+        if r.get("kind") == "pointing-target-freeform"
+        and r["policy"].get("top1_correct") is not None
+    ]
+    if not xs:
+        return None
+    return sum(1 for x in xs if x) / len(xs), len(xs)
+
+
+def _ci_tool_exact(subset: list[dict[str, Any]]) -> tuple[float, int] | None:
+    xs = [
+        r["policy"].get("exact_match")
+        for r in subset
+        if r.get("kind") == "tool-action" and r["policy"].get("exact_match") is not None
+    ]
+    if not xs:
+        return None
+    return sum(1 for x in xs if x) / len(xs), len(xs)
+
+
+def _ci_no_target_fpr(subset: list[dict[str, Any]]) -> tuple[float, int] | None:
+    xs = [
+        r["policy"].get("false_positive")
+        for r in subset
+        if r.get("kind") in ("pointing-no-target", "tool-abstention")
+        and r["policy"].get("false_positive") is not None
+    ]
+    if not xs:
+        return None
+    return sum(1 for x in xs if x) / len(xs), len(xs)
+
+
+def _ci_pass_rate(subset: list[dict[str, Any]]) -> tuple[float, int] | None:
+    judged = [r["pass"] for r in subset if r.get("pass") is not None]
+    if not judged:
+        return None
+    return sum(1 for p in judged if p) / len(judged), len(judged)
+
+
+def _bootstrap_ci(
+    per_case: dict[str, dict[str, Any]],
+    n_resamples: int = 1000,
+    seed: int = 0,
+) -> dict[str, Any] | None:
+    """Bootstrap-доверительные интервалы 95%, сгруппированные по сессии записи.
+
+    Единица ресэмплинга -- `split_group_id` (сессия записи / фото), а не
+    кейс: кейсы одной сессии коррелированы (те же люди, свет, камера),
+    ресэмплинг по кейсам даёт зауженный интервал. Возврат `None`, если
+    групп меньше двух (честный ответ, а не ложный интервал).
+
+    Headline-метрики пересчитываются на каждом ресэмплe из per-case-строк:
+    counts (MAE/exact), pointing top-1, tool exact, no-target FPR,
+    pass-rate. Детерминировано при зафиксированном `seed`.
+    """
+    rows = [r for r in per_case.values() if r.get("split_group_id")]
+    if not rows:
+        return None
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for r in rows:
+        groups.setdefault(r["split_group_id"], []).append(r)
+    if len(groups) < 2:
+        return None
+    excluded = len(per_case) - len(rows)
+
+    rng = random.Random(seed)
+    keys = list(groups)
+
+    def resample(
+        extract: Callable[[list[dict[str, Any]]], tuple[float, int] | None],
+    ) -> tuple[float, float] | None:
+        stats: list[float] = []
+        for _ in range(n_resamples):
+            subset: list[dict[str, Any]] = []
+            for key in rng.choices(keys, k=len(keys)):
+                subset.extend(groups[key])
+            got = extract(subset)
+            if got is not None:
+                stats.append(got[0])
+        if not stats:
+            return None
+        stats.sort()
+        low = stats[min(len(stats) - 1, int(0.025 * len(stats)))]
+        high = stats[min(len(stats) - 1, int(0.975 * len(stats)))]
+        return round(low, 4), round(high, 4)
+
+    metrics: dict[str, Any] = {}
+
+    def add(
+        family: str, name: str, extract: Callable[[list[dict[str, Any]]], tuple[float, int] | None]
+    ) -> None:
+        got = extract(rows)
+        if got is None:
+            return
+        value, n = got
+        band = resample(extract)
+        if band is None:
+            return
+        entry = {"value": round(value, 4), "ci_low": band[0], "ci_high": band[1], "n": n}
+        if family:
+            metrics.setdefault(family, {})[name] = entry
+        else:
+            metrics[name] = entry
+
+    add("counts", "mae", _ci_counts_mae)
+    add("counts", "exact_accuracy", _ci_counts_exact)
+    add("counts", "engaged_mae", _ci_engaged_mae)
+    add("counts", "engaged_exact_accuracy", _ci_engaged_exact)
+    add("policy", "pointing_top1_accuracy", _ci_pointing_top1)
+    add("policy", "tool_exact_match_accuracy", _ci_tool_exact)
+    add("policy", "no_target_false_positive_rate", _ci_no_target_fpr)
+    add("", "pass_rate", _ci_pass_rate)
+    if not metrics:
+        return None
+    return {
+        "method": "bootstrap",
+        "grouping": "split_group_id",
+        "n_groups": len(groups),
+        "n_cases": len(rows),
+        "cases_excluded_no_group": excluded,
+        "n_resamples": n_resamples,
+        "seed": seed,
+        "metrics": metrics,
+    }
+
+
 def _add_group(bucket: dict[str, dict[str, Any]], key: str, r: dict[str, Any]) -> None:
     group = bucket.setdefault(
         key, {"n": 0, "pass": 0, "fail": 0, "unjudged": 0, "_errs": []}
@@ -603,11 +789,20 @@ def _slice_groups(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
     return groups
 
 
-def score_run(run_dir: str | Path, *, data_root: str | Path | None = None) -> dict[str, Any]:
+def score_run(
+    run_dir: str | Path,
+    *,
+    data_root: str | Path | None = None,
+    n_resamples: int = 1000,
+    bootstrap_seed: int = 0,
+    bootstrap: bool = True,
+) -> dict[str, Any]:
     """Run-директория → score-словарь (структура -- в `score.json`).
 
     Кейс без `meta.json`/снапшота не роняет прогон: он фиксируется в
-    `errors` и не входит в судимые (AC #10).
+    `errors` и не входит в судимые (AC #10). `bootstrap` -- 95% CI,
+    сгруппированные по сессии записи (`split_group_id`); `None` в `ci`,
+    если групп меньше двух.
     """
     run = Path(run_dir)
     lines = json.loads((run / "run_manifest.json").read_text(encoding="utf-8"))
@@ -671,6 +866,7 @@ def score_run(run_dir: str | Path, *, data_root: str | Path | None = None) -> di
         "metrics": _aggregate(per_case),
         "variants": _variant_groups(per_case),
         "slices": _slice_groups(per_case),
+        "ci": _bootstrap_ci(per_case, n_resamples, bootstrap_seed) if bootstrap else None,
         "errors": errors,
     }
 
@@ -882,6 +1078,31 @@ def build_report(score: dict[str, Any], notes: str | None = None) -> str:
     add("")
     lines.extend(_metric_table("Pointing", policy.get("pointing", {}), _POINTING_POLICY_ROWS))
     lines.extend(_metric_table("Tool", policy.get("tool", {}), _TOOL_ROWS))
+    ci = score.get("ci")
+    if ci:
+        add("## Confidence intervals (session-grouped bootstrap)")
+        add("")
+        excluded = ci["cases_excluded_no_group"]
+        tail = f"; исключено без группы: {excluded}" if excluded else ""
+        add(
+            f"Единица ресэмплинга -- сессия записи (`{ci['grouping']}`), не кейс: "
+            f"кейсы одной сессии коррелированы. {ci['n_resamples']} ресэмплов, "
+            f"seed {ci['seed']}, групп {ci['n_groups']}, кейсов {ci['n_cases']}{tail}."
+        )
+        add("")
+        add("| metric | value | 95% CI | n |")
+        add("|---|---|---|---|")
+        for family, block in ci["metrics"].items():
+            if "value" in block:
+                items = [(family, block)]
+            else:
+                items = [(f"{family}: {name}", m) for name, m in block.items()]
+            for label, m in items:
+                add(
+                    f"| {label} | {m['value']:.4f} "
+                    f"| [{m['ci_low']:.4f}, {m['ci_high']:.4f}] | {m['n']} |"
+                )
+        add("")
     add("## Slices")
     add("")
     slices = score["slices"]
@@ -992,6 +1213,30 @@ def _summary_csv(score: dict[str, Any]) -> str:
             rows.extend(_flat_metric_rows("slice", f"metadata:{key}:{name}", group))
     for vid, block in (score.get("variants") or {}).items():
         rows.extend(_flat_metric_rows("variant", vid, block))
+    ci = score.get("ci")
+    if ci:
+        for key, value in (
+            ("method", ci["method"]),
+            ("grouping", ci["grouping"]),
+            ("n_groups", ci["n_groups"]),
+            ("n_cases", ci["n_cases"]),
+            ("cases_excluded_no_group", ci["cases_excluded_no_group"]),
+            ("n_resamples", ci["n_resamples"]),
+            ("seed", ci["seed"]),
+        ):
+            rows.append(["ci", "meta", key, value, ""])
+        for family, block in ci["metrics"].items():
+            if "value" in block:
+                for name, metric in ((family, block),):
+                    rows.append(["ci", "", name, metric["value"], metric["n"]])
+                    rows.append(["ci", "", f"{name}.ci_low", metric["ci_low"], ""])
+                    rows.append(["ci", "", f"{name}.ci_high", metric["ci_high"], ""])
+            else:
+                for name, metric in block.items():
+                    label = f"{family}.{name}"
+                    rows.append(["ci", "", label, metric["value"], metric["n"]])
+                    rows.append(["ci", "", f"{label}.ci_low", metric["ci_low"], ""])
+                    rows.append(["ci", "", f"{label}.ci_high", metric["ci_high"], ""])
     buf = io.StringIO()
     writer = csv.writer(buf, lineterminator="\n")
     writer.writerows(rows)
@@ -1040,9 +1285,34 @@ def main(argv: list[str] | None = None) -> int:
         default=None,
         help="markdown-пометки прогона (состав, исключения срезов) -- секция 'Run notes'",
     )
+    parser.add_argument(
+        "--n-resamples",
+        type=int,
+        default=1000,
+        help="bootstrap CI: число ресэмплов (по умолчанию 1000)",
+    )
+    parser.add_argument(
+        "--bootstrap-seed",
+        type=int,
+        default=0,
+        help="bootstrap CI: seed ГСЧ (детерминизм, по умолчанию 0)",
+    )
+    parser.add_argument(
+        "--no-bootstrap",
+        action="store_true",
+        help="не вычислять bootstrap CI по сессиям записи",
+    )
     args = parser.parse_args(argv)
+    if args.n_resamples < 1:
+        parser.error("--n-resamples должен быть >= 1 (для отключения -- --no-bootstrap)")
     run_dir = Path(args.run_dir)
-    score = score_run(run_dir, data_root=args.data_root)
+    score = score_run(
+        run_dir,
+        data_root=args.data_root,
+        n_resamples=args.n_resamples,
+        bootstrap_seed=args.bootstrap_seed,
+        bootstrap=not args.no_bootstrap,
+    )
     notes = Path(args.notes_file).read_text(encoding="utf-8") if args.notes_file else None
     write_outputs(run_dir, score, notes=notes)
     pc = score["pass_counts"]

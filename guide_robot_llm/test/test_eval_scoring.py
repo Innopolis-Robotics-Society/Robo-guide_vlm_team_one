@@ -29,6 +29,7 @@ from guide_robot_llm.eval.schema import Case, MediaRef, PromptSpec, Provenance
 from guide_robot_llm.eval.scoring import (
     NO_TARGET_ID,
     STATEMENT,
+    _bootstrap_ci,
     box_iou,
     build_report,
     image_size,
@@ -221,6 +222,114 @@ def _build_run(tmp_path: Path) -> Path:
     out = tmp_path / "run"
     run_manifest(cases, backend, out, data_root=tmp_path)
     return out
+
+
+# --- bootstrap 95% CI, сгруппированные по сессии записи ----------------------
+
+
+def _count_row(case_id: str, group: str, pred: int, gold: int, passed: bool | None) -> dict:
+    """Минимальная per-case-строка `audience-count` для bootstrap-тестов."""
+    return {
+        "case_id": case_id,
+        "split_group_id": group,
+        "kind": "audience-count",
+        "perception": {
+            "count_true": gold,
+            "count_pred": pred,
+            "abs_error": abs(pred - gold),
+            "count_exact": pred == gold,
+        },
+        "policy": {},
+        "pass": passed,
+    }
+
+
+def test_bootstrap_ci_hand_computed_and_deterministic() -> None:
+    """Три сессии по одному кейсу: MAE 2/3, exact 1/3, pass 1/3 (вручную).
+
+    Единица ресэмплинга -- сессия; тот же seed → идентичный результат;
+    интервал содержит точечную оценку; n записан.
+    """
+    per_case = {
+        "C1": _count_row("C1", "g1", 1, 2, False),
+        "C2": _count_row("C2", "g2", 3, 3, True),
+        "C3": _count_row("C3", "g3", 4, 3, False),
+    }
+    ci = _bootstrap_ci(per_case, n_resamples=1000, seed=0)
+    assert ci is not None
+    assert (ci["n_groups"], ci["n_cases"], ci["cases_excluded_no_group"]) == (3, 3, 0)
+    mae = ci["metrics"]["counts"]["mae"]
+    assert (mae["value"], mae["n"]) == (0.6667, 3)
+    exact = ci["metrics"]["counts"]["exact_accuracy"]
+    assert (exact["value"], exact["n"]) == (0.3333, 3)
+    assert ci["metrics"]["pass_rate"]["value"] == 0.3333
+    for block in ci["metrics"].values():
+        metrics = [block] if "value" in block else list(block.values())
+        for metric in metrics:
+            assert metric["ci_low"] <= metric["value"] <= metric["ci_high"]
+            assert 0.0 <= metric["ci_low"] and metric["ci_high"] <= 1.0
+    # детерминизм при зафиксированном seed
+    assert _bootstrap_ci(per_case, n_resamples=1000, seed=0) == ci
+
+
+def test_bootstrap_ci_degenerate_cases() -> None:
+    """Групп меньше двух или строк нет → `None` (честный ответ, не ложный интервал)."""
+    single_session = {
+        "C1": _count_row("C1", "g1", 1, 2, False),
+        "C2": _count_row("C2", "g1", 3, 3, True),  # та же сессия
+    }
+    assert _bootstrap_ci(single_session) is None
+    assert _bootstrap_ci({}) is None
+    no_groups = {"C1": dict(_count_row("C1", "g1", 1, 2, False), split_group_id=None)}
+    assert _bootstrap_ci(no_groups) is None
+
+
+def test_bootstrap_ci_excludes_rows_without_group() -> None:
+    per_case = {
+        "C1": _count_row("C1", "g1", 1, 2, False),
+        "C2": _count_row("C2", "g2", 3, 3, True),
+        "C3": _count_row("C3", "g3", 4, 3, False),
+        "C4": dict(_count_row("C4", "g4", 2, 2, True), split_group_id=None),
+    }
+    ci = _bootstrap_ci(per_case, n_resamples=1000, seed=0)
+    assert ci is not None
+    assert (ci["n_groups"], ci["n_cases"], ci["cases_excluded_no_group"]) == (3, 3, 1)
+    assert ci["metrics"]["counts"]["mae"]["n"] == 3
+
+
+def test_bootstrap_ci_in_report_csv_and_disable(tmp_path: Path) -> None:
+    """Секция в отчёте + скоуп `ci` в `summary.csv`; `bootstrap=False` отключает.
+
+    Ручные значения на фикстуре `_build_run`: MAE 0.5 (n=2, ошибки 1 и 0),
+    pass 6 из 11 судимых; каждый кейс фикстуры -- отдельная «сессия» (14 групп).
+    """
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    assert score["ci"] is not None
+    assert score["ci"]["n_groups"] == 14
+    assert score["ci"]["metrics"]["counts"]["mae"]["value"] == 0.5
+    assert score["ci"]["metrics"]["pass_rate"]["value"] == pytest.approx(6 / 11, abs=1e-4)
+    write_outputs(run_dir, score)
+    parsed = list(
+        csv.DictReader(io.StringIO((run_dir / "summary.csv").read_text(encoding="utf-8")))
+    )
+    by_key = {(r["scope"], r["group"], r["metric"]): r for r in parsed}
+    assert by_key[("ci", "meta", "grouping")]["value"] == "split_group_id"
+    assert by_key[("ci", "meta", "n_groups")]["value"] == "14"
+    assert by_key[("ci", "", "counts.mae")]["n"] == "2"
+    assert by_key[("ci", "", "counts.mae.ci_low")]["value"] != ""
+    assert by_key[("ci", "", "pass_rate")]["n"] == "11"
+    assert "## Confidence intervals (session-grouped bootstrap)" in build_report(score)
+
+    # отключение: ни секции, ни строк, `ci` -- `None`
+    score_off = score_run(run_dir, data_root=tmp_path, bootstrap=False)
+    assert score_off["ci"] is None
+    assert "Confidence intervals" not in build_report(score_off)
+    write_outputs(run_dir, score_off)
+    parsed_off = list(
+        csv.DictReader(io.StringIO((run_dir / "summary.csv").read_text(encoding="utf-8")))
+    )
+    assert not any(r["scope"] == "ci" for r in parsed_off)
 
 
 # --- примитивы: box IoU и размер картинки ------------------------------------

@@ -216,7 +216,20 @@ Outputs written by the scoring step (`score.json`, `results.jsonl`,
   (scopes: counts, perception/policy, slice, variant; nested blocks like
   `no_target` are dotted into `no_target.*`); missing values are empty cells;
 - `report.md` — human report; its header lists the frozen backend/manifest/
-  prompt from `run_config.json` when present (AC: freeze metadata).
+  prompt from `run_config.json` when present (AC: freeze metadata);
+- CI: `score.json` gets a `ci` block, `summary.csv` a `ci` scope
+  (`meta` + `<family>.<metric>[.ci_low|.ci_high]` rows), and `report.md` a
+  **Confidence intervals (session-grouped bootstrap)** section.
+
+**Bootstrap 95% confidence intervals, grouped by recording session.** The
+resampling unit is `split_group_id` (a recording session / photo), *not* the
+case: cases inside one session are correlated (same people, lighting,
+camera), so case-level resampling would give a too-narrow band. Headline
+metrics recomputed per resample: counts MAE/exact (+engaged for prompt
+variants), pointing top-1, tool exact, no-target FPR, pass rate. With fewer
+than two groups the CI is `null` — an honest absence, not a fake band.
+Deterministic for a fixed `--bootstrap-seed` (default 0, 1000 resamples);
+`--no-bootstrap` disables.
 
 - **Pointing** (perception + policy split):
   - perception: `pointing_evidence` accuracy vs gold presence,
