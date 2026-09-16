@@ -1,0 +1,37 @@
+{
+  "campaign": "taiga11-vlm-matrix",
+  "doc": "Матрица Taiga #11: 4 модели x 18 промпт-вариантов на замороженном bench_50. Драйвер: scripts/run_matrix.py. Служба: нативный llama-server (порт 11435), одна модель за раз; веса/контекст — в llm_server/config/models/<profile>.env (MODELS_DIR + MODEL_FILE + MM_PROJ + CTX_SIZE).",
+  "llama_server_bin": "/home/sinorin/llama.cpp/build-cuda/bin/llama-server",
+  "host": "127.0.0.1",
+  "port": 11435,
+  "manifest": "eval_manifests/bench_50.jsonl",
+  "read_timeout_s": 180.0,
+  "max_attempts": 2,
+  "health_timeout_s": 300,
+  "models": [
+    {
+      "id": "gemma4-e2b",
+      "enabled": true,
+      "profile": "config/models/gemma4-e2b.env",
+      "min_free_gb": 6
+    },
+    {
+      "id": "gemma4-e4b",
+      "enabled": true,
+      "profile": "config/models/gemma4-e4b.env",
+      "min_free_gb": 8
+    },
+    {
+      "id": "qwen3.5-4b",
+      "enabled": true,
+      "profile": "config/models/qwen3.5-4b.env",
+      "min_free_gb": 6
+    },
+    {
+      "id": "qwen3.5-9b",
+      "enabled": true,
+      "profile": "config/models/qwen3.5-9b.env",
+      "min_free_gb": 9
+    }
+  ]
+}

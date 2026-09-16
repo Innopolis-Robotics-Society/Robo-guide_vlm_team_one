@@ -1,0 +1,27 @@
+{
+ "name": "bench_50.jsonl",
+ "n_cases": 50,
+ "generated": "2026-09-16 09:01:30 +07",
+ "tracks": {
+  "pointing": 15,
+  "audience": 25,
+  "tool": 7,
+  "scene": 3
+ },
+ "scope_decision": "2026-09 (Taiga #11): bench_47 (47) + 3 SCN-CC scene-кейса пилота (SCN-CC-001/002/003) — единственный источник scene-трека для 6 scene-промпт-вариантов; решение 2026-09-16 об исключении CC-синтетики касалось диагностического бенча #10",
+ "slices": [
+  {
+   "source": "bench_47",
+   "file": "eval_manifests/bench_47.jsonl",
+   "sha256": "d0f51db3f118f6b10c533281f37a32aca88ce29965a61899c82afbbdb941339a",
+   "n_cases": 47
+  },
+  {
+   "source": "pilot-cc",
+   "file": "pilot/manifest.jsonl",
+   "sha256": "4e131dcf2560613658f16c1a411d59c796078588bae8dec8a59373991a67c81d",
+   "n_cases": 3,
+   "filter": "SCN-CC-* only (scene-трек, Taiga #11)"
+  }
+ ]
+}

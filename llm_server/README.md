@@ -38,7 +38,9 @@ curl -s localhost:8080/health   # {"status":"ok"}
 | `jetson-qwen3-1.7b` | Qwen3-1.7B Q4_K_M | альтернатива jetson-qwen2.5-1.5b на Jetson | `config/models/jetson-qwen3-1.7b.env` |
 | `jetson-qwen2.5-3b` | Qwen2.5-3B-Instruct Q4_K_M | верхняя планка на Jetson, пробовать после 1.5B/1.7B | `config/models/jetson-qwen2.5-3b.env` |
 | `gemma4-e2b` (пилот) | Gemma 4 E2B Q4_K_M + mmproj-F16 | VLM-пилот, baseline; ноут GPU ≥6GB свободных | `config/models/gemma4-e2b.env` |
+| `gemma4-e4b` (матрица #11) | Gemma 4 E4B Q4_K_M + mmproj-F16 | матрица Taiga #11; ноут GPU ≥8GB свободных | `config/models/gemma4-e4b.env` |
 | `qwen3.5-4b` (пилот) | Qwen3.5-4B Q4_K_M + mmproj-F16 | VLM-пилот, кандидат R2; ноут GPU ≥5GB свободных | `config/models/qwen3.5-4b.env` |
+| `qwen3.5-9b` (матрица #11) | Qwen3.5-9B Q4_K_M + mmproj-F16 | матрица Taiga #11, верхняя открытая полка на 24GB; GPU ≥9GB свободных | `config/models/qwen3.5-9b.env` |
 
 Официального `Llama-3.3-8B` от Meta не существует — Llama 3.3 выпущена только в 70B,
 8B есть в линейке 3.1. Профиль выше — `Llama-3.1-8B-Instruct`.
