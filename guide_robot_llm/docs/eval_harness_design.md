@@ -213,8 +213,10 @@ Outputs written by the scoring step (`score.json`, `results.jsonl`,
 - `results.jsonl` — one JSON line per judged episode, in manifest order,
   `pass` already filled in (AC: JSONL export);
 - `summary.csv` — flat aggregate export, columns `scope,group,metric,value,n`
-  (scopes: counts, perception/policy, slice, variant; nested blocks like
-  `no_target` are dotted into `no_target.*`); missing values are empty cells;
+  (scopes: counts, perception/policy, runner, calibration, slice, variant;
+  nested blocks like `no_target` are dotted into `no_target.*`, latency
+  percentiles into `latency_ms.p50/.p95`, calibration buckets into
+  `buckets[<range>].*`); missing values are empty cells;
 - `report.md` — human report; its header lists the frozen backend/manifest/
   prompt from `run_config.json` when present (AC: freeze metadata);
 - CI: `score.json` gets a `ci` block, `summary.csv` a `ci` scope
@@ -225,8 +227,8 @@ Outputs written by the scoring step (`score.json`, `results.jsonl`,
 resampling unit is `split_group_id` (a recording session / photo), *not* the
 case: cases inside one session are correlated (same people, lighting,
 camera), so case-level resampling would give a too-narrow band. Headline
-metrics recomputed per resample: counts MAE/exact (+engaged for prompt
-variants), pointing top-1, tool exact, no-target FPR, pass rate. With fewer
+metrics recomputed per resample: counts MAE/exact/within-1 (+engaged for
+prompt variants), pointing top-1, tool exact, no-target FPR, pass rate. With fewer
 than two groups the CI is `null` — an honest absence, not a fake band.
 Deterministic for a fixed `--bootstrap-seed` (default 0, 1000 resamples);
 `--no-bootstrap` disables.
@@ -239,7 +241,17 @@ Deterministic for a fixed `--bootstrap-seed` (default 0, 1000 resamples);
     mapped via candidate table), false-positive rate on no-target/ambiguous
     cases (gold `unknown` + model answered), abstention credit (gold
     `unknown` + model abstained).
-- **Audience**: `people_count` MAE + exact-count accuracy over 0–5.
+- **Audience**: `people_count` MAE + exact-count accuracy + within-1
+  accuracy over 0–5. Freeform answers are judged on count extracted from
+  the `answer` text (digit words/ordinals, "Всего N" totals); a refusal is
+  an honest unjudged, not a zero.
+- **Runner** (run-level block, not per-case): parse-failed / backend-error
+  rates (zero rates are omitted — absence, not zero) and latency
+  mean/p50/p95 in ms (nearest-rank percentiles, deterministic; no
+  interpolation).
+- **Confidence calibration**: freeform `confidence` vs outcome over judged
+  cases only (refusals excluded) — accuracy per 0.2-wide bucket plus ECE
+  (Σ n_b/N · |acc_b − mean_conf_b|); absent for deployed-only runs.
 - **Tool** (pilot TOL): exact `{tool, args}` match or justified abstention,
   per the existing gold semantics.
 - **Scene** (pilot SCN): claim support / unanswerable — recorded as-is

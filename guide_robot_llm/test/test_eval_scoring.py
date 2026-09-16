@@ -12,7 +12,10 @@
   секциями, заявление «no final score»;
 - p6-variant (Taiga #16): engaged-метрики (MAE/exact, exclusion без
   gold/без извлечения), calls-per-case (single/cot_2pass/loop),
-  per-variant-группы в отчёте.
+  per-variant-группы в отчёте;
+- bench_50 (Taiga #11): within-1 accuracy подсчёта, доля parse_failed +
+  перцентили задержки (блок `runner`), калибровка freeform-уверенности
+  (блок `calibration`: accuracy по бакетам + ECE).
 """
 
 import csv
@@ -541,13 +544,26 @@ def test_count_mae_and_exact_hand_computed(tmp_path: Path) -> None:
     score = score_run(run_dir, data_root=tmp_path)
     c1 = score["per_case"]["SC-C1"]["perception"]
     c2 = score["per_case"]["SC-C2"]["perception"]
-    assert c1 == {"count_pred": 1, "count_gold": 2, "count_exact": False, "abs_error": 1}
-    assert c2 == {"count_pred": 3, "count_gold": 3, "count_exact": True, "abs_error": 0}
+    assert c1 == {
+        "count_pred": 1,
+        "count_gold": 2,
+        "count_exact": False,
+        "abs_error": 1,
+        "within1": True,
+    }
+    assert c2 == {
+        "count_pred": 3,
+        "count_gold": 3,
+        "count_exact": True,
+        "abs_error": 0,
+        "within1": True,
+    }
     assert score["per_case"]["SC-C1"]["pass"] is False
     assert score["per_case"]["SC-C2"]["pass"] is True
     m = score["metrics"]["perception"]["audience"]
     assert m["mae"] == {"value": 0.5, "n": 2}  # (1 + 0) / 2
     assert m["exact_accuracy"] == {"value": 0.5, "n": 2}
+    assert m["within1_accuracy"] == {"value": 1.0, "n": 2}  # обе ошибки ≤ 1
 
 
 # --- Матричный прогон bench_50 (Taiga #11): mode-рассогласование + freeform count
@@ -653,6 +669,8 @@ def test_freeform_count_judged_from_answer_text(tmp_path: Path) -> None:
     m = score["metrics"]["perception"]["audience"]
     assert m["exact_accuracy"] == {"value": 0.5, "n": 2}  # FC-1 ✓, FC-3 ✗
     assert m["mae"] == {"value": 2.5, "n": 2}  # (0 + 5) / 2
+    # FC-1 |2-2|=0 ≤ 1, FC-3 |0-5|=5 > 1; FC-2 (отказ) не входит
+    assert m["within1_accuracy"] == {"value": 0.5, "n": 2}
     assert score["pass_counts"] == {"pass": 1, "fail": 1, "unjudged": 1}
 
 
@@ -725,6 +743,8 @@ def test_slices_by_source_and_metadata(tmp_path: Path) -> None:
         "fail": 1,
         "unjudged": 1,
         "pass_rate": {"value": 0.5, "n": 2},
+        "parse_failed": 1,  # SC-PF
+        "parse_failed_rate": {"value": round(1 / 3, 4), "n": 3},
     }
     assert by_source["aghri"] == {
         "n": 2,
@@ -733,6 +753,9 @@ def test_slices_by_source_and_metadata(tmp_path: Path) -> None:
         "unjudged": 0,
         "pass_rate": {"value": 0.5, "n": 2},
         "count_mae": {"value": 0.5, "n": 2},
+        "within1_accuracy": {"value": 1.0, "n": 2},  # ошибки 1 и 0
+        "parse_failed": 0,
+        "parse_failed_rate": {"value": 0.0, "n": 2},
     }
     assert by_source["egopoint"] == {
         "n": 3,
@@ -740,6 +763,8 @@ def test_slices_by_source_and_metadata(tmp_path: Path) -> None:
         "fail": 1,
         "unjudged": 0,
         "pass_rate": {"value": 0.6667, "n": 3},
+        "parse_failed": 0,
+        "parse_failed_rate": {"value": 0.0, "n": 3},
     }
     assert by_source["pilot-cc"]["n"] == 6
     assert by_source["pilot-cc"]["pass"] == 2
@@ -752,6 +777,8 @@ def test_slices_by_source_and_metadata(tmp_path: Path) -> None:
         "fail": 0,
         "unjudged": 0,
         "pass_rate": {"value": 1.0, "n": 2},
+        "parse_failed": 0,
+        "parse_failed_rate": {"value": 0.0, "n": 2},
     }
     assert meta["n_distractors"]["2"] == {
         "n": 1,
@@ -759,6 +786,8 @@ def test_slices_by_source_and_metadata(tmp_path: Path) -> None:
         "fail": 1,
         "unjudged": 0,
         "pass_rate": {"value": 0.0, "n": 1},
+        "parse_failed": 0,
+        "parse_failed_rate": {"value": 0.0, "n": 1},
     }
     assert meta["count_bucket"]["2"]["fail"] == 1
     assert meta["count_bucket"]["3"]["pass"] == 1
@@ -1080,12 +1109,20 @@ def test_variant_groups_calls_latency_and_report(tmp_path: Path) -> None:
     assert g["engaged_mae"] == {"value": 0.5, "n": 2}
     assert g["engaged_exact_accuracy"] == {"value": 0.5, "n": 2}
     assert g["calls_per_case"] == {"value": 1.0, "n": 2}
+    assert g["count_within1_accuracy"] == {"value": 1.0, "n": 2}  # обе точные
+    assert g["parse_failed"] == 0
+    assert g["parse_failed_rate"] == {"value": 0.0, "n": 2}
+    # задержка: среднее + перцентили (nearest-rank); порядок mean vs p50
+    # не гарантирован, инвариант -- p50 ≤ p95
     assert g["latency_ms"]["n"] == 2
+    assert g["latency_ms"]["value"] > 0
+    assert g["latency_ms"]["p50"] <= g["latency_ms"]["p95"]
     report = build_report(score)
     assert STATEMENT in report
     assert "## Variants" in report
     assert "### A1" in report
     assert "engaged MAE" in report
+    assert "latency p95 (ms)" in report
     # engaged-строка и в общей Audience-таблице
     assert "0.5 (n=2)" in report
 
@@ -1188,6 +1225,158 @@ def test_score_run_empty_metric_groups_do_not_crash(tmp_path: Path) -> None:
     report = build_report(score)
     assert STATEMENT in report
     assert "нет данных" in report
+
+
+# --- bench_50 (Taiga #11): runner-блок, калибровка, within-1 ----------------
+
+
+def test_latency_stats_hand_computed() -> None:
+    """Неarest-rank перцентили (без интерполяции): p95 из 20 -- 19-е значение."""
+    from guide_robot_llm.eval.scoring import _latency_stats
+
+    assert _latency_stats([]) is None
+    assert _latency_stats([None, None]) is None
+    s = _latency_stats([10.0, 20.0, 30.0])
+    assert s == {"value": 20.0, "p50": 20.0, "p95": 30.0, "n": 3}
+    vals = list(range(1, 21))
+    s20 = _latency_stats(vals)
+    assert s20["p50"] == 10
+    assert s20["p95"] == 19
+    assert s20["value"] == 10.5
+    s1 = _latency_stats([5.0])
+    assert s1 == {"value": 5.0, "p50": 5.0, "p95": 5.0, "n": 1}
+
+
+def test_runner_metrics_parse_failed_rate_and_latency(tmp_path: Path) -> None:
+    """Глобальный блок `runner`: доля parse_failed + среднее/p50/p95 задержки."""
+    run_dir = _build_run(tmp_path)
+    score = score_run(run_dir, data_root=tmp_path)
+    runner = score["metrics"]["runner"]
+    # единственный parse_failed на фикстуре -- SC-PF (1 из 14)
+    assert runner["parse_failed_rate"] == {"value": round(1 / 14, 4), "n": 14}
+    assert "backend_error_rate" not in runner  # нет данных ≠ ноль
+    lat = runner["latency_ms"]
+    assert lat["n"] == 14
+    assert lat["value"] > 0
+    assert lat["p50"] <= lat["p95"]
+    report = build_report(score)
+    assert "## Runner" in report
+    assert "latency p95 (ms)" in report
+    # flat-экспорт: перцентили -- подстроки latency_ms.*
+    write_outputs(run_dir, score)
+    parsed = list(
+        csv.DictReader(io.StringIO((run_dir / "summary.csv").read_text(encoding="utf-8")))
+    )
+    by_key = {(r["scope"], r["group"], r["metric"]): r for r in parsed}
+    assert by_key[("runner", "", "parse_failed_rate")]["value"] == str(round(1 / 14, 4))
+    assert by_key[("runner", "", "latency_ms")]["n"] == "14"
+    assert by_key[("runner", "", "latency_ms.p95")]["value"] != ""
+
+
+def test_confidence_calibration_hand_computed(tmp_path: Path) -> None:
+    """Калибровка freeform-уверенности: 5 бакетов по 0.2; unjudged не входят.
+
+    Ручной расчёт: N=3 (CC-4 -- отказ, не судим). Бакеты: [0.8-1.0] acc 1.0
+    (conf 0.9), [0.6-0.8] acc 0.0 (conf 0.6), [0.0-0.2] acc 1.0 (conf 0.1).
+    ECE = (1/3)·(0.1 + 0.6 + 0.9) = 0.5333.
+    """
+    cases = [
+        _case(
+            "CC-1",
+            track="audience",
+            mode="freeform",
+            source="aghri",
+            gold={"type": "count", "count": 2},
+            candidates=(),
+        ),
+        _case(
+            "CC-2",
+            track="audience",
+            mode="freeform",
+            source="aghri",
+            gold={"type": "count", "count": 3},
+            candidates=(),
+        ),
+        _case(
+            "CC-3",
+            track="audience",
+            mode="freeform",
+            source="aghri",
+            gold={"type": "count", "count": 5},
+            candidates=(),
+        ),
+        _case(
+            "CC-4",
+            track="audience",
+            mode="freeform",
+            source="aghri",
+            gold={"type": "count", "count": 2},
+            candidates=(),
+        ),
+    ]
+    responses = {
+        ("CC-1", "freeform"): '{"answer": "два человека", "confidence": 0.9,'  # ✓ 2
+        ' "abstain": false}',
+        ("CC-2", "freeform"): '{"answer": "двое", "confidence": 0.6,'  # ✗ 2 ≠ 3
+        ' "abstain": false}',
+        ("CC-3", "freeform"): '{"answer": "пять человек", "confidence": 0.1,'  # ✓ 5
+        ' "abstain": false}',
+        ("CC-4", "freeform"): '{"answer": "не могу определить", "confidence": 0.5,'
+        ' "abstain": false}',
+    }
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest(cases, MockBackend(responses), out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    # confidence записан на судимых freeform-кейсах
+    assert score["per_case"]["CC-1"]["confidence"] == 0.9
+    assert score["per_case"]["CC-4"]["pass"] is None  # отказ → unjudged
+    cal = score["metrics"]["calibration"]
+    assert cal["n"] == 3
+    assert cal["ece"] == pytest.approx(1.6 / 3, abs=1e-4)
+    by_range = {b["range"]: b for b in cal["buckets"]}
+    assert by_range["0.8-1.0"] == {
+        "range": "0.8-1.0",
+        "n": 1,
+        "accuracy": 1.0,
+        "mean_confidence": 0.9,
+    }
+    assert by_range["0.6-0.8"] == {
+        "range": "0.6-0.8",
+        "n": 1,
+        "accuracy": 0.0,
+        "mean_confidence": 0.6,
+    }
+    assert by_range["0.0-0.2"] == {
+        "range": "0.0-0.2",
+        "n": 1,
+        "accuracy": 1.0,
+        "mean_confidence": 0.1,
+    }
+    report = build_report(score)
+    assert "## Confidence calibration" in report
+    assert "**ECE**" in report
+
+
+def test_confidence_calibration_absent_without_freeform(tmp_path: Path) -> None:
+    """Deployed-прогон: freeform-ответов нет → блока `calibration` нет."""
+    cases = [
+        _case(
+            "DC-1",
+            track="audience",
+            source="aghri",
+            gold={"type": "count", "count": 2},
+            candidates=(),
+        ),
+    ]
+    backend = MockBackend({("DC-1", "observation"): _obs_count(2)})
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest(cases, backend, out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    assert "confidence" not in score["per_case"]["DC-1"]
+    assert "calibration" not in score["metrics"]
+    assert "Confidence calibration" not in build_report(score)
 
 
 if __name__ == "__main__":
