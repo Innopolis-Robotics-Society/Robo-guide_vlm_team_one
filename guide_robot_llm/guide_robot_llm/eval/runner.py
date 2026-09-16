@@ -231,6 +231,66 @@ def extract_engaged_freeform(text: str) -> int | None:
     return None
 
 
+# Число людей в freeform-ответе (audience-трек): цифра (первая) или первое
+# число-слова RU/EN. Отказные ответы ("не могу определить") не содержат ни
+# цифр, ни слов-чисел → `None` (отказ, не нуль). "нет"/"none" -- нуль.
+_COUNT_WORDS = {
+    "ноль": 0,
+    "none": 0,
+    "нет": 0,
+    "one": 1,
+    "одна": 1,
+    "одно": 1,
+    "одного": 1,
+    "одну": 1,
+    "один": 1,
+    "единственная": 1,
+    "единственный": 1,
+    "two": 2,
+    "двое": 2,
+    "двоих": 2,
+    "два": 2,
+    "две": 2,
+    "двух": 2,
+    "three": 3,
+    "трое": 3,
+    "трёх": 3,
+    "три": 3,
+    "four": 4,
+    "четыре": 4,
+    "five": 5,
+    "пять": 5,
+    "пяти": 5,
+    "six": 6,
+    "шесть": 6,
+    "seven": 7,
+    "семь": 7,
+    "eight": 8,
+    "восемь": 8,
+    "nine": 9,
+    "девять": 9,
+    "ten": 10,
+    "десять": 10,
+}
+
+
+def extract_count_freeform(text: str) -> int | None:
+    """Число людей из freeform-ответа; `None` -- не извлекается (отказ).
+
+    Детерминированный host-парсер для audience-трека в freeform-режиме
+    (матричный прогон bench_50): явная цифра побеждает (берётся первая),
+    без цифр -- первое число-слова по позиции в тексте. Один и тот же
+    парсер используется скорером (audience-count в freeform).
+    """
+    digits = re.findall(r"\d+", text)
+    if digits:
+        return int(digits[0])
+    for word in re.findall(r"[a-zа-яё]+", text.lower()):
+        if word in _COUNT_WORDS:
+            return _COUNT_WORDS[word]
+    return None
+
+
 # Корень пакета `guide_robot_llm/` (каталог, в котором лежит `pilot/`):
 # медиа few-shot-примеров лежат в `pilot/media/cc/` относительно него.
 _PACKAGE_ROOT = Path(__file__).resolve().parents[2]
@@ -699,8 +759,7 @@ def _loop_terminal_abstain(record: PhaseRecord | None, mode: str) -> bool | None
     if record.parsed is None:
         return True
     return not (
-        len(record.parsed.exhibit_candidates) == 1
-        and record.parsed.pointing_evidence == "yes"
+        len(record.parsed.exhibit_candidates) == 1 and record.parsed.pointing_evidence == "yes"
     )
 
 
@@ -1329,9 +1388,7 @@ def main(argv: list[str] | None = None) -> int:
             )
             lines = run_manifest(cases, llm, sub_out, variant=spec, **common)
             failed = [line for line in lines if line["status"] != "ok"]
-            print(
-                f"вариант {spec.id}: кейсов: {len(lines)}, сбоев: {len(failed)}; run: {sub_out}"
-            )
+            print(f"вариант {spec.id}: кейсов: {len(lines)}, сбоев: {len(failed)}; run: {sub_out}")
         return 0
 
     try:

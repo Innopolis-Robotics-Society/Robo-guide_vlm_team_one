@@ -54,7 +54,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-from guide_robot_llm.eval.runner import extract_engaged_freeform
+from guide_robot_llm.eval.runner import extract_count_freeform, extract_engaged_freeform
 from guide_robot_llm.eval.schema import Case, CaseError, case_from_dict
 
 # Gold-цель «нет цели / неоднозначно» для deployed-трека (в freeform
@@ -253,6 +253,10 @@ def score_case(
     meta_path = case_dir / "meta.json"
     if meta_path.is_file():
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    # Эффективный режим: `meta.prompt_mode` пишет раннер (вариант может
+    # переопределить кейсовый режим, а снапшот `case` сохраняет режим
+    # манифеста). Без meta -- снапшот (старые run-директории).
+    mode = meta.get("prompt_mode") or case.prompt.mode
     obs = _read_parsed(case_dir / "parsed_observation.json")
     act = _read_parsed(case_dir / "parsed_action.json")
     ff = _read_parsed(case_dir / "parsed_freeform.json")
@@ -260,7 +264,7 @@ def score_case(
         "case_id": case.case_id,
         "source": case.source,
         "track": case.track,
-        "prompt_mode": meta.get("prompt_mode", case.prompt.mode),
+        "prompt_mode": mode,
         "variant_id": meta.get("variant_id"),
         "split_group_id": case.split_group_id,
         "slices": dict(case.slices),
@@ -275,7 +279,7 @@ def score_case(
 
     if gtype == "target_box":
         no_target = gold.get("target_id") == NO_TARGET_ID
-        if case.prompt.mode == "deployed":
+        if mode == "deployed":
             result["kind"] = "pointing-no-target" if no_target else "pointing-target-deployed"
             if obs is not None:
                 evidence = obs.get("pointing_evidence")
@@ -323,6 +327,20 @@ def score_case(
             result["perception"]["count_exact"] = pred == gold_n
             result["perception"]["abs_error"] = abs(pred - gold_n)
             result["pass"] = bool(result["perception"]["count_exact"])
+        elif ff is not None:
+            # Freeform-подсчёт (матричный A-слайс bench_50): число людей из
+            # текста ответа. Неизвлекаемое (отказ) -- кейс остаётся unjudged.
+            answer = ff.get("answer")
+            if isinstance(answer, str):
+                pred = extract_count_freeform(answer)
+                gold_n = gold.get("count")
+                result["perception"]["count_pred"] = pred
+                result["perception"]["count_gold"] = gold_n
+                result["perception"]["count_pred_source"] = "freeform"
+                if pred is not None:
+                    result["perception"]["count_exact"] = pred == gold_n
+                    result["perception"]["abs_error"] = abs(pred - gold_n)
+                    result["pass"] = bool(pred == gold_n)
         # Engaged (P6): только кейсы с gold.engaged_count. Предсказание --
         # text-парсер freeform-ответа (один на loop-стоп и скоринг); в
         # deployed-грамматике поля нет (ff -- None) → предсказание None,
@@ -351,16 +369,13 @@ def score_case(
         else:
             result["kind"] = "tool-action"
             if act is not None:
-                exact = (
-                    act.get("tool") == gold.get("tool")
-                    and act.get("args") == gold.get("args")
-                )
+                exact = act.get("tool") == gold.get("tool") and act.get("args") == gold.get("args")
                 result["policy"]["tool"] = act.get("tool")
                 result["policy"]["exact_match"] = bool(exact)
                 result["policy"]["abstained"] = act.get("abstain") is True
                 result["pass"] = bool(exact) and not result["policy"]["abstained"]
     elif gtype == "unanswerable":
-        if case.prompt.mode == "freeform" and case.track == "pointing":
+        if mode == "freeform" and case.track == "pointing":
             # No-target кейс в авторском QA-протоколе: верный ответ -- отказ.
             result["kind"] = "pointing-no-target"
             if ff is not None:
@@ -650,9 +665,7 @@ def _bootstrap_ci(
 
 
 def _add_group(bucket: dict[str, dict[str, Any]], key: str, r: dict[str, Any]) -> None:
-    group = bucket.setdefault(
-        key, {"n": 0, "pass": 0, "fail": 0, "unjudged": 0, "_errs": []}
-    )
+    group = bucket.setdefault(key, {"n": 0, "pass": 0, "fail": 0, "unjudged": 0, "_errs": []})
     group["n"] += 1
     if r["pass"] is True:
         group["pass"] += 1
@@ -974,9 +987,7 @@ _AUDIENCE_ROWS: tuple[tuple[str, str], ...] = (
 _POINTING_POLICY_ROWS: tuple[tuple[str, str], ...] = (
     ("top1_target_accuracy", "top-1 target (freeform answer)"),
 )
-_TOOL_ROWS: tuple[tuple[str, str], ...] = (
-    ("exact_match_accuracy", "{tool, args} exact match"),
-)
+_TOOL_ROWS: tuple[tuple[str, str], ...] = (("exact_match_accuracy", "{tool, args} exact match"),)
 
 
 def _group_table(title: str, groups: dict[str, dict[str, Any]]) -> list[str]:
@@ -1126,9 +1137,7 @@ def build_report(score: dict[str, Any], notes: str | None = None) -> str:
         add("")
     add("## Per-case")
     add("")
-    add(
-        "| case | source | track | mode | status | perception | policy | pass |"
-    )
+    add("| case | source | track | mode | status | perception | policy | pass |")
     add("|---|---|---|---|---|---|---|---|")
     for r in score["per_case"].values():
         mode = r.get("prompt_mode") or "–"
@@ -1243,9 +1252,7 @@ def _summary_csv(score: dict[str, Any]) -> str:
     return buf.getvalue()
 
 
-def write_outputs(
-    run_dir: Path, score: dict[str, Any], notes: str | None = None
-) -> None:
+def write_outputs(run_dir: Path, score: dict[str, Any], notes: str | None = None) -> None:
     """`score.json` + `report.md` + `results.jsonl` + `summary.csv` + заполнение `pass`.
 
     `results.jsonl` -- построчный экспорт per-episode результатов (одна JSON-
@@ -1268,9 +1275,7 @@ def write_outputs(
         result = score["per_case"].get(line["case_id"])
         if result is not None:
             line["pass"] = result["pass"]
-    manifest_path.write_text(
-        json.dumps(lines, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    manifest_path.write_text(json.dumps(lines, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def main(argv: list[str] | None = None) -> int:
