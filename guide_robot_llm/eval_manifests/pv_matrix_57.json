@@ -1,0 +1,26 @@
+{
+ "name": "pv_matrix_57.jsonl",
+ "n_cases": 57,
+ "generated": "2026-09-16 16:41:25 ",
+ "purpose": "Taiga #16 P7: набор для матричного прогона 18 промпт-вариантов на production Qwen3.8-27B (campaign taiga16-pv-matrix-qwen3.8-27b). Конкатенация двух замороженных слайсов без изменений строк.",
+ "tracks": {
+  "pointing": 15,
+  "audience": 32,
+  "tool": 7,
+  "scene": 3
+ },
+ "slices": [
+  {
+   "source": "bench_50",
+   "file": "eval_manifests/bench_50.jsonl",
+   "sha256": "9b3e494ebe739e5f3c7330026b4dedd8b88533a5def5d5b5103eed9ede1a8e67",
+   "n_cases": 50
+  },
+  {
+   "source": "audience_engagement",
+   "file": "eval_manifests/audience_engagement.jsonl",
+   "sha256": "5e3903d75460c4fce31f5b7504d1253121e4197deee4f937cb82b28333fa33ab",
+   "n_cases": 7
+  }
+ ]
+}

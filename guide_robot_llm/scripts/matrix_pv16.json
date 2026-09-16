@@ -1,0 +1,19 @@
+{
+  "campaign": "taiga16-pv-matrix-qwen3.8-27b",
+  "doc": "Taiga #16 P7: 18 промпт-вариантов x 57 кейсов (bench_50 + audience_engagement) на production Qwen3.8-27B. Выделенный сервер (порт 11436), --reasoning off (бюджет генерации раннера 512 токенов). Драйвер: scripts/run_matrix.py --config scripts/matrix_pv16.json --campaign-dir eval_runs/2026-09-16-pv16-qwen3.8-27b. Перед прогоном вручную остановить llama-server на 11434 (27B, бэкенд агента, ~21GB VRAM); после — запустить обратно.",
+  "llama_server_bin": "/home/sinorin/llama.cpp/build-cuda/bin/llama-server",
+  "host": "127.0.0.1",
+  "port": 11436,
+  "manifest": "eval_manifests/pv_matrix_57.jsonl",
+  "read_timeout_s": 180.0,
+  "max_attempts": 2,
+  "health_timeout_s": 600,
+  "models": [
+    {
+      "id": "qwen3.8-27b",
+      "enabled": true,
+      "profile": "config/models/qwen3.8-27b.env",
+      "min_free_gb": 20
+    }
+  ]
+}
