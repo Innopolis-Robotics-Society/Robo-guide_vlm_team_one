@@ -5,7 +5,7 @@
 * берёт сетку моделей из ``scripts/matrix.json`` (по умолчанию 4 модели:
   gemma4-e2b, gemma4-e4b, qwen3.5-4b, qwen3.5-9b);
 * для КАЖДОЙ модели: проверяет свободную VRAM → поднимает нативный
-  ``llama-server`` (порт 11435, профиль из ``llm_server/config/models/``) →
+  ``llama-server`` (порт 11436, профиль из ``llm_server/config/models/``) →
   греет (warmup-запрос) → запускает #10-раннер
   ``python -m guide_robot_llm.eval.runner --prompt-variant all`` на
   замороженном ``eval_manifests/bench_50.jsonl`` (50 кейсов, все 18
@@ -26,14 +26,17 @@
     python3 scripts/run_matrix.py --dry-run
 
     # боевой прогон (llama-server на 11434 СТОП, свободна >=9GB VRAM):
-    nohup python3 scripts/run_matrix.py > /dev/null 2>&1 &
+    #   лог НЕ в /dev/null — неожиданный traceback иначе теряется:
+    nohup python3 scripts/run_matrix.py \
+        > eval_runs/<campaign>/nohup.log 2>&1 &
 
     # одна модель / один вариант (смоук перед полным прогоном):
     python3 scripts/run_matrix.py --models gemma4-e2b --variants P0
 
 Важно (безопасность хоста): драйвер НЕ трогает llama-server на 11434
 (бэкенд агента + 27B-референс) — только поднимает/убивает СВОЙ сервер
-на 11435. VRAM-проверка перед каждой моделью не даст начать, пока 11434
+на 11436 (11435 на хосте занят API Taiga). VRAM-проверка перед каждой
+моделью не даст начать, пока 11434
 не остановлен и карта не освобождена (переопределение: --allow-low-vram).
 
 Только stdlib; раннер запускается тем же интерпретатором (``requests``
@@ -165,7 +168,7 @@ def server_cmd(cfg: dict[str, Any], model: dict[str, Any], profile: dict[str, st
         "8192",
         "-ub",
         "2048",
-        "--fa",
+        "--flash-attn",
         "on",
     ]
     if profile.get("REASONING", "off").lower() == "off":
