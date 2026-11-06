@@ -34,4 +34,4 @@ Report-only change plus archive contents; no code behavior changes. The Septembe
 
 ## Open Questions
 
-- Count selection bias: option (a) disclose vs (b) AGHRI count holdout + campaign. Does not block tasks 1, 2, 4, 5 — only task 3.1.
+- ~~Count selection bias: option (a) disclose vs (b) AGHRI count holdout + campaign.~~ **Decided: option (a)** — a disclosure paragraph in the count section (no count holdout exists; no GPU campaign scheduled). Resolves task 3.1; tasks 3.2/3.3 are skipped.
