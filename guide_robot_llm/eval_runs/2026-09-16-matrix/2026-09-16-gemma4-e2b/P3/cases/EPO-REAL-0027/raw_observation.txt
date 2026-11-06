@@ -1,0 +1,16 @@
+{
+  "people_count": 1
+,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ]
+,
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "the_image_shows_a_display_of_poultry_pieces_likely_for_sale_or_display_in_a_market_setting_the_items_appear_to_be_various_cuts_of_meat_or_poultry_including_whole_birds_or_parts_of_birds_the_focus_is_on_the_meat_products_displayed_in_the_foreground_and_middle_ground"
+}

@@ -1,0 +1,181 @@
+{
+ "name": "pointing_holdout_15.jsonl",
+ "n_cases": 15,
+ "generated": "2026-11-05 19:27:56 +07",
+ "purpose": "W1-фикс: held-out подтверждение pointing-политики на кейсах, не участвовавших в выборе промпт-вариантов (оригинальный pointing-15 был в выборке P3/its)",
+ "source": "EgoPoint-Bench (realdata_benchmark/pure_real_test.json)",
+ "bench_sha256": "3cc3b6aa4e68621764624c76a3b1ed5a9e03ab8a8cd166c847c4b6b110db9e3b",
+ "license": "private-research-use",
+ "selection_rule": "8 фиксированных страт (dimension, deixis_level) минус Adversarial (размер исчерпан: 3 MC-строки 405/1204/1270 весь в замороженном бенче) + round-robin по размерам до 15; min image_id в страте; только Multiple_Choice; exclusion всех EgoPoint image_id из eval_manifests/*.jsonl",
+ "excluded_manifests": [
+  {
+   "file": "aghri_15.jsonl",
+   "sha256": "5f95de1821569bdc813fe531d43f75f10f44d13a214f635712cf357a8d3e2303",
+   "n_egopoint_ids": 0
+  },
+  {
+   "file": "aghri_25.jsonl",
+   "sha256": "e26ac32b22b90b18e0263ad8474855f85ef771a3963db4d949929cd6fcec9d38",
+   "n_egopoint_ids": 0
+  },
+  {
+   "file": "audience_engagement.jsonl",
+   "sha256": "5e3903d75460c4fce31f5b7504d1253121e4197deee4f937cb82b28333fa33ab",
+   "n_egopoint_ids": 0
+  },
+  {
+   "file": "bench_40.jsonl",
+   "sha256": "15bee97fd3a8bf38e01bf123be1300428973d13d1b0b0b49a3f848fd9a6280bd",
+   "n_egopoint_ids": 10
+  },
+  {
+   "file": "bench_47.jsonl",
+   "sha256": "d0f51db3f118f6b10c533281f37a32aca88ce29965a61899c82afbbdb941339a",
+   "n_egopoint_ids": 15
+  },
+  {
+   "file": "bench_50.jsonl",
+   "sha256": "9b3e494ebe739e5f3c7330026b4dedd8b88533a5def5d5b5103eed9ede1a8e67",
+   "n_egopoint_ids": 15
+  },
+  {
+   "file": "egopoint_10.jsonl",
+   "sha256": "20502730e9355b174f57418f053317a7f2c40bfd702861b18c87d06866609a9f",
+   "n_egopoint_ids": 10
+  },
+  {
+   "file": "egopoint_15.jsonl",
+   "sha256": "2c0916d9e7562be7b93679efc47b86d9dab800cb4e9f6f753297a3fc1533068c",
+   "n_egopoint_ids": 15
+  },
+  {
+   "file": "pv_matrix_57.jsonl",
+   "sha256": "02530da7e59e18268a7684b8d68851df41d3ddff52463d7ce828a84a25aa8ebe",
+   "n_egopoint_ids": 15
+  }
+ ],
+ "excluded_image_ids": [
+  3,
+  8,
+  13,
+  27,
+  28,
+  36,
+  69,
+  96,
+  99,
+  100,
+  103,
+  167,
+  405,
+  1204,
+  1270
+ ],
+ "selected": [
+  {
+   "case_id": "EPO-REAL-0004",
+   "image_id": "4",
+   "dimension": "Basic Perception",
+   "deixis_level": "L1",
+   "answer_id": "epobj-4-d"
+  },
+  {
+   "case_id": "EPO-REAL-0018",
+   "image_id": "18",
+   "dimension": "Affordance & Function",
+   "deixis_level": "L1",
+   "answer_id": "epobj-18-a"
+  },
+  {
+   "case_id": "EPO-REAL-0021",
+   "image_id": "21",
+   "dimension": "Affordance & Function",
+   "deixis_level": "L1",
+   "answer_id": "epobj-21-b"
+  },
+  {
+   "case_id": "EPO-REAL-0023",
+   "image_id": "23",
+   "dimension": "Basic Perception",
+   "deixis_level": "L1",
+   "answer_id": "epobj-23-d"
+  },
+  {
+   "case_id": "EPO-REAL-0055",
+   "image_id": "55",
+   "dimension": "Basic Perception",
+   "deixis_level": "L3",
+   "answer_id": "epobj-55-a"
+  },
+  {
+   "case_id": "EPO-REAL-0061",
+   "image_id": "61",
+   "dimension": "Context & Relation",
+   "deixis_level": "L3",
+   "answer_id": "epobj-61-b"
+  },
+  {
+   "case_id": "EPO-REAL-0092",
+   "image_id": "92",
+   "dimension": "Context & Relation",
+   "deixis_level": "L3",
+   "answer_id": "epobj-92-c"
+  },
+  {
+   "case_id": "EPO-REAL-0141",
+   "image_id": "141",
+   "dimension": "Context & Relation",
+   "deixis_level": "L3",
+   "answer_id": "epobj-141-d"
+  },
+  {
+   "case_id": "EPO-REAL-0162",
+   "image_id": "162",
+   "dimension": "OCR & Text",
+   "deixis_level": "L3",
+   "answer_id": "epobj-162-d"
+  },
+  {
+   "case_id": "EPO-REAL-0168",
+   "image_id": "168",
+   "dimension": "Context & Relation",
+   "deixis_level": "L2",
+   "answer_id": "epobj-168-a"
+  },
+  {
+   "case_id": "EPO-REAL-0187",
+   "image_id": "187",
+   "dimension": "Basic Perception",
+   "deixis_level": "L2",
+   "answer_id": "epobj-187-c"
+  },
+  {
+   "case_id": "EPO-REAL-0234",
+   "image_id": "234",
+   "dimension": "Affordance & Function",
+   "deixis_level": "L3",
+   "answer_id": "epobj-234-d"
+  },
+  {
+   "case_id": "EPO-REAL-0235",
+   "image_id": "235",
+   "dimension": "OCR & Text",
+   "deixis_level": "L1",
+   "answer_id": "epobj-235-c"
+  },
+  {
+   "case_id": "EPO-REAL-0242",
+   "image_id": "242",
+   "dimension": "OCR & Text",
+   "deixis_level": "L1",
+   "answer_id": "epobj-242-c"
+  },
+  {
+   "case_id": "EPO-REAL-0385",
+   "image_id": "385",
+   "dimension": "Affordance & Function",
+   "deixis_level": "L2",
+   "answer_id": "epobj-385-c"
+  }
+ ]
+}

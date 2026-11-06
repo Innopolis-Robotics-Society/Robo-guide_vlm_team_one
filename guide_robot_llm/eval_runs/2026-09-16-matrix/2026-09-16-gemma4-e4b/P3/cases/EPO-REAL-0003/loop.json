@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"the user is pointing towards the middle section of the refrigerated display case, specifically at a cluster of small, light-colored, round vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1987.715527007822,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the middle section of the refrigerated display case, specifically towards the cluster of light green/white vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1520.116630999837,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the middle section of the refrigerated display case, specifically at a cluster of small, light green, round vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1537.3178659938276,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

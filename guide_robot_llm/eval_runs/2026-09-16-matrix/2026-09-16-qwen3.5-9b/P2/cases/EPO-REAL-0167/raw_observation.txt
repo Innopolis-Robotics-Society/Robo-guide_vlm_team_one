@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "scene_facts": "The image shows a bakery aisle in a convenience store. A person's hand is pointing at a packaged loaf of bread on the shelf. The bread is light-colored with small dark specks visible through the clear plastic window of the packaging. To the left are other loaves — one yellowish and one darker brown. To the right are more packaged breads, including some labeled 'whole wheat' and 'super soft'. The pointing gesture is directed squarely at the loaf with dark specks, which matches the description of chocolate chip bread. The other loaves do not match the visual cues for chocolate chip (e.g., uniform dark color or no visible chips). Therefore, the exhibit being pointed to is epobj-167-c, which corresponds to the chocolate chip bread."
+}

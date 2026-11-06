@@ -1,0 +1,100 @@
+{
+  "case_id": "ENG-CC-004",
+  "source": "pilot-cc",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 6307.276,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.00344999716617167,
+              "upload_ms": 214.89453100366518,
+              "ttft_ms": 1123.6111990001518,
+              "full_ms": 5321.721546992194,
+              "parse_ready_ms": 5321.721546992194
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0041000021155923605,
+              "upload_ms": 42.700197984231636,
+              "ttft_ms": 259.15339498897083,
+              "full_ms": 985.4755619890057,
+              "parse_ready_ms": 985.4755619890057
+            }
+          ]
+        }
+      },
+      "cot_reason": "**Этап 1: Подсчёт всех людей в кадре**\n\nНа изображении видно 4 фигуры, стоящие в ряд перед зелёным экраном или доской. Каждая фигура имеет голову (круг), туловище (прямоугольник) и ноги — это типичное стилизованное изображение человека.\n\n→ **Всего людей: 4**\n\n---\n\n**Этап 2: Оценка готовности слушать дальше**\n\nКритерии:\n- **Близость к экрану** — все находятся примерно на одинаковом расстоянии.\n- **Взгляд** — только один человек (второй слева, в синей рубашке) смотрит прямо на экран (у него есть глаза, направленные вперёд). Остальные три — без глаз или с закрытыми/отсутствующими глазами, что может означать отсутствие внимания.\n- **Вовлечённость** — только тот, кто смотрит, демонстрирует вовлечённость. Остальные — пассивны, возможно, отвлечены или не заинтересованы.\n\nРазбор по каждому:\n\n1. **Первый слева (коричневая рубашка)** — нет глаз, спина к зрителю → не смотрит → **не готов слушать**\n2. **Второй слева (синяя рубашка)** — есть глаза, смотрит на экран → **готов слушать**\n3. **Третий слева (оранжевая рубашка)** — нет глаз, спина к зрителю → не смотрит → **не готов слушать**\n4. **Четвёртый справа (фиолетовая рубашка)** — нет глаз, спина к зрителю → не смотрит → **не готов слушать**\n\n→ **Готовых слушать: 1**\n\n---\n\n**Итог:**\n\nВсего людей: **4**  \nГотовых слушать: **1**"
+    }
+  },
+  "latency_ms": 6307.276,
+  "attempts": 2,
+  "case": {
+    "case_id": "ENG-CC-004",
+    "source": "pilot-cc",
+    "track": "audience",
+    "split_group_id": "g-eng-ENG-CC-004",
+    "media": {
+      "path": "pilot/media/cc/ENG-CC-004.png",
+      "sha256": "453ca08f8dbd6514cbfd0bf80b5abd1c55cd8b0165124845c4992ab9467bcaf0",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Посчитай людей на кадре и определи, сколько из них готовы слушать дальше.",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 4,
+      "engaged_count": 1
+    },
+    "provenance": {
+      "source": "pilot-cc",
+      "license": "self-generated synthetic (PIL, deterministic spec, seed 20260914); no real persons; no redistribution",
+      "version": "eng-manifest-v1 (2026-09-15, Taiga #16 F1)",
+      "rights_note": "synthetic, no real persons (rights_ledger: n/a)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec)",
+      "min_engaged": 2,
+      "count_bucket": "4"
+    }
+  }
+}

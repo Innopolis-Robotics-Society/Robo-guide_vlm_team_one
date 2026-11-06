@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a",
+    "epobj-3-b",
+    "epobj-3-c",
+    "epobj-3-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a refrigerated produce section in a grocery store. A person's arm (wearing a black sleeve) is pointing at a specific item on the middle shelf. The item being pointed at is a clear plastic clamshell container filled with small, round, pinkish-purple vegetables. To the left are similar containers with white/pale pink versions of the same vegetable. To the right are containers of green Brussels sprouts and white mushrooms. Below are leafy greens and herbs. The pointing gesture is directed squarely at one of the pink vegetable containers."
+}

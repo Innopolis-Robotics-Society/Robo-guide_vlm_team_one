@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/187.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-187-a\",\n    \"epobj-187-b\",\n    \"epobj-187-c\",\n    \"epobj-187-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"the image shows a classroom setting with desks and chairs. there is a large green board at the front.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1782.8865640040021,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/187.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-187-a\",\n\"epobj-187-b\",\n\"epobj-187-c\",\n\"epobj-187-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a classroom setting with desks and chairs. There is a large green board at the front.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1348.7328129995149,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/187.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-187-a\",\n\"epobj-187-b\",\n\"epobj-187-c\",\n\"epobj-187-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a classroom setting with desks and chairs. There is a large green board at the front.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1386.0262039816007,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

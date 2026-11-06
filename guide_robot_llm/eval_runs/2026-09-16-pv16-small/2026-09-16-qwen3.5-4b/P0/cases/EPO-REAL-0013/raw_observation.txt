@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.41,
+    0.35,
+    0.52,
+    0.6
+  ],
+  "scene_facts": "The person is pointing at a peach-colored box with Chinese characters '海之蓝' (Hǎi zhī lán), which translates to 'Ocean Blue'. This corresponds to option A in the provided choices."
+}

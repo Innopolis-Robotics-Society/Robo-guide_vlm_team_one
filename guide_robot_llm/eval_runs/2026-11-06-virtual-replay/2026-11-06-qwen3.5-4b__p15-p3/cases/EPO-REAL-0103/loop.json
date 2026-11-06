@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"uncertain\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a supermarket aisle with shelves stocked with various snack products. A person's hand is visible in the lower left corner, pointing towards a specific item on the shelf. The hand is pointing at a red package of chips, which appears to be Lay's brand based on the distinctive red packaging and logo visible on the package. The package is located on the bottom shelf of the aisle, towards the left side of the image. The surrounding packages include other chip brands and flavors, but the red Lay's package is the one being pointed at by the person's hand.\"\n  \n  }",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2834.6031389955897,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a shelf of snacks in a store. The hand is extended towards the lower shelves, specifically near the bottom row of products. The products appear to be various snack brands, including Lay's and others with colorful packaging. The person's finger is pointing at a specific item on the shelf, but it's difficult to determine exactly which product without more context or a clearer view. The shelf is well-stocked with different types of snacks, and the person seems to be selecting or examining one of them. The environment is a well-lit store with multiple shelves of products visible in the background.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2244.2133120202925,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"no change\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1314.6862169960514,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

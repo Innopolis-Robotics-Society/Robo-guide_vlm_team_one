@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-c"
+  ]
+,
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.52,
+    0.72,
+    0.61,
+    0.81
+  ]
+,
+  "scene_facts": "The image shows a bakery aisle in a store. A person's hand is pointing at a packaged loaf of bread on the shelf. The bread appears to be a light-colored loaf with visible dark specks or chunks inside, consistent with chocolate chip bread. The packaging is clear plastic with a white top, allowing the contents to be seen. The pointing gesture is directed specifically at this item, indicating it as the subject of interest."
+}

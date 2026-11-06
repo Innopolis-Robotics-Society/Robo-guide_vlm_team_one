@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person's hand pointing towards a display of packaged bakery items in a store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1918.7434070045128,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person's hand reaching towards a display of packaged bakery items. The hand is pointing towards one of the packages in the middle row of the display.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1585.571133007761,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  \n  ,\"pointing_evidence\": \"none\"\n  \n  ,\"pointing_box\": null\n  \n  ,\"scene_facts\": \"The image shows a person's hand pointing towards a display of packaged baked goods in a store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1467.5583910138812,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

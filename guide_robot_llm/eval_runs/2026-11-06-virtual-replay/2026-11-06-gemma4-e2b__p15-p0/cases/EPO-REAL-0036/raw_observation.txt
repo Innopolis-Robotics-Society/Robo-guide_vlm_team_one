@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-36-c"], "pointing_evidence": "none", "pointing_box": [1, 1, 1, 1], "scene_facts": "the_person_is_pointing_towards_a_display_in_the_foreground"}

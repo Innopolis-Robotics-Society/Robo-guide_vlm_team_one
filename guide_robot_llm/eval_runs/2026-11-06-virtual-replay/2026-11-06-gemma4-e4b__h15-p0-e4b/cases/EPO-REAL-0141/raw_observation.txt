@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-141-a", "epobj-141-b", "epobj-141-c", "epobj-141-d"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "The visitor is pointing towards the shelves of products in the store."}

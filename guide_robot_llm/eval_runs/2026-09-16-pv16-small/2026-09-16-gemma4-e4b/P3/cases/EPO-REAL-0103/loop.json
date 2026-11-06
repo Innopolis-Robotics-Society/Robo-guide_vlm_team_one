@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a retail store aisle with various snack products on shelves. A person is visible in the foreground, reaching towards the shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2049.3643440131564,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-103-a\",\n\"epobj-103-b\",\n\"epobj-103-c\",\n\"epobj-103-d\"\n],\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The user is in a supermarket aisle, looking at shelves of snacks.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1246.7783830070402,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"the visitor is looking at the shelves of snacks in the store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1538.0443780159112,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

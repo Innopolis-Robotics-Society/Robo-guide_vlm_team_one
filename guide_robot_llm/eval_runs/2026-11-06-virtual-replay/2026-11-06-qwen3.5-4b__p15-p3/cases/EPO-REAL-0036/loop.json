@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing towards a sign above a doorway. The sign appears to be illuminated and has Chinese characters on it. The person's hand is visible in the foreground, pointing upwards towards the sign. The background shows an indoor setting, possibly a hallway or corridor, with a door and some furniture visible. The sign is mounted on the wall above the doorway, and the person is pointing directly at it. The sign is the main focus of the image, and the person's gesture clearly indicates that they are drawing attention to it. The sign is likely a business sign or a directional sign, given its placement and the context of the image. The person's pointing action suggests they are either showing the sign to someone else or emphasizing its importance. The sign is the most prominent object in the image, and the person's gesture is directed towards it. The sign is likely the intended exhibit or point of interest in the image. The person's pointing action is the primary visual cue for identifying the exhibit. The sign is the only object that aligns with the person's pointing gesture. The sign is the most logical choice for the exhibit being pointed at. The sign is the only object that matches the person's pointing action. The sign is the most prominent object in the image, and the person's gesture is clearly directed towards it. The sign is the only object that aligns with the person's pointing action. The sign is the most logical choice for the exhibit being pointed at. The sign is the only object that matches the person's pointing gesture. The sign is the most prominent object in the image, and the person's gesture is clearly directed towards it. The sign is the only object that aligns with the person's pointing action. The sign is the most logical choice for the exhibit being pointed at. The sign is the only object that matches the person's pointing gesture. The sign is the most prominent object in the image,",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 4192.299666989129,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ]\n,\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.54,\n    0.49,\n    0.69,\n    0.65\n  ],\n  \"scene_facts\": \"The image shows a person pointing towards a sign above a doorway. The sign appears to be illuminated and is positioned directly above the entrance to what looks like a salon or similar establishment. The person's hand is clearly visible in the foreground, directing attention to the sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1770.8995550055988,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing towards a sign above a doorway in what appears to be a salon or barbershop. The sign has Chinese characters and is illuminated. There is also a barber pole visible next to the sign. The person's hand is in the foreground, pointing upwards towards the sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1824.4961529853754,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

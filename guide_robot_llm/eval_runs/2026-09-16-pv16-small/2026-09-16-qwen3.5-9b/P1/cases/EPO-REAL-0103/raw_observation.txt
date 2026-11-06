@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a single person in a supermarket aisle, reaching toward a shelf of snack products. The person’s hand is extended toward the lower-middle section of the shelf, specifically near packages with red and green branding that appear to be Pringles cans. The person is facing the shelf, and their gaze and gesture are directed at those specific items. There are no other people or robots visible. The scene is indoors, well-lit, and focused on the snack aisle."
+}

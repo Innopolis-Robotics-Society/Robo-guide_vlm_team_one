@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person's arm pointing at a packaged item hanging on a wire rack in a store aisle. The item appears to be a tea or coffee filter bag. To the left are socks and slippers; to the right are cleaning supplies and bottles. The pointing gesture is directed at the hanging package, which matches the description 'filter for tea'. However, no specific exhibit IDs are mapped to objects in the provided context, so we cannot assign an ID like epobj-8-c to the pointed object with certainty. Since the instruction says to refrain if only one candidate remains but it's not uniquely identifiable by ID, and since no mapping exists, we must withhold selection."
+}

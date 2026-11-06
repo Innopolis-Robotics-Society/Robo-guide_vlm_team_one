@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a display case filled with various packaged food items, likely snacks, noodles, or preserved foods. The items are packaged in clear plastic or paper wrappers and are arranged in rows. The visible labels and packaging suggest packaged food products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1881.3590289792046,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"the_image_shows_a_close_up_of_various_packaged_food_items_on_a_shelf_with_prices_visible_in_yen_the_items_appear_to_be_various_types_of_snacks_or_packaged_foods_some_look_like_noodles_or_processed_foods\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1631.8419619929045,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a display case filled with various packaged food items, likely snacks, dried goods, or instant meals. The items are packaged in plastic or paper wrappers and are arranged in rows on a shelf. The visible labels and packaging suggest packaged food products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1538.4529150032904,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

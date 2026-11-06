@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person in a store aisle, with their right arm extended and hand pointing toward a packaged item hanging on a display rack. The item appears to be a small, possibly fabric-based product (e.g., a pouch or bag) with an image of a woman on the packaging. The surrounding shelves contain household goods such as cleaning supplies, detergents, and personal care items. There is no visible robot, nor any explicit verbal input from the person. The pointing gesture is directed at the hanging packaged item, not at any of the labeled exhibits (epobj-8-a through epobj-8-d). Since none of the candidate exhibit IDs are visually identifiable or referenced in the scene, and no pointing evidence aligns with any specific exhibit ID, it is impossible to determine which exhibit the person is indicating."
+}

@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "The image displays a retail setting with numerous products arranged on shelves. The products appear to be bottles, jars, and various packaged goods, suggesting a focus on personal care, health, or possibly food/beverages, given the context of the previous question's options. The overall aesthetic is clean and focused on display and product presentation."
+}

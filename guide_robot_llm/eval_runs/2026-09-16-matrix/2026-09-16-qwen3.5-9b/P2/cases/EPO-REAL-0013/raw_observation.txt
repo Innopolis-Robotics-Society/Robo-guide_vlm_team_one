@@ -1,0 +1,14 @@
+{
+    "people_count": 1,
+    "exhibit_candidates": [
+        "epobj-13-c"
+    ]
+, "pointing_evidence": "uncertain",
+    "pointing_box": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "scene_facts": "The image shows a retail shelf with various boxed products. A gloved hand is pointing at an orange-colored box labeled '海之蓝' (Hai Zhi Lan). To the left are yellow boxes labeled '红星' (Hong Xing), and to the right are blue boxes labeled '梦之蓝' (Meng Zhi Lan). Below are smaller boxes in red and gold. The pointing gesture clearly targets the central orange box."
+}

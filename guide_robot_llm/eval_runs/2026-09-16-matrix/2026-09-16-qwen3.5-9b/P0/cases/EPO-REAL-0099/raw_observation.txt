@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a"
+  ]
+,
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.45,
+    0.72,
+    0.55,
+    0.85
+  ]
+,
+  "scene_facts": "The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be dumplings, noodles, and other ready-to-eat or cook meals. A person's hand is visible in the foreground, pointing towards a specific item on the bottom shelf. The item being pointed at is a yellow package, which appears to be a type of snack bar or energy bar, given its shape and packaging. The other items on the shelves include various types of noodles and dumplings, suggesting that this is a section for prepared foods or snacks. The price tags above the shelves indicate the cost of the items, with some prices visible as 3.99. The overall setting suggests a retail environment where customers can purchase food items. The pointing gesture indicates that the person is interested in or selecting the yellow package. The other items on the shelves are not being pointed at, suggesting that the yellow package is the primary focus of the person's attention. The packaging of the yellow package is distinct from the other items, which are mostly in clear plastic containers or bags. The yellow package appears to be a single-serving snack bar, which is a common type of food item found in such displays. The other items on the shelves are more likely to be prepared meals or ingredients for cooking, rather than single-serving snacks. The pointing gesture is directed specifically at the yellow package, indicating that it is the item of interest. The other items on the shelves are not being pointed at, suggesting that they are not the primary focus of the person's attention. The packaging of the yellow package is distinct from the other items, which are mostly in clear plastic containers or bags. The yellow package appears to be a single-serving snack bar, which is a common type of food item found in such displays. The other items on the shelves are more likely to be prepared meals or ingredients for cooking, rather than single-serving snacks. The pointing gesture is directed specifically at

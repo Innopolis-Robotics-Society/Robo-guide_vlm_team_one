@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре один человек — робот с оранжевым жилетом и маской. Он стоит на тропинке в парке, вокруг — деревья и трава. Никаких других людей рядом нет. Значит, людей рядом с роботом — 1. Готовых слушать — 0, так как нет других людей. Продолжаем ждать новых кадров.\"\n,\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 972.7076760027558,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей, которые готовы слушать. Продолжаем ждать.\",\n  \"confidence\": 0.0,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 445.17463800730184,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек в оранжевом жилете, который идёт по тропинке. Готовых слушателей пока недостаточно, поэтому не переходим к следующему шагу. Продолжаем анализировать новые кадры.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 681.1445830098819,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

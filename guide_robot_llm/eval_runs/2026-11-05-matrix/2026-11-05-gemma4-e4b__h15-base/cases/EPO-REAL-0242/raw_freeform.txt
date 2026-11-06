@@ -1,0 +1,1 @@
+{"answer": "C", "confidence": 0.95, "abstain": false}

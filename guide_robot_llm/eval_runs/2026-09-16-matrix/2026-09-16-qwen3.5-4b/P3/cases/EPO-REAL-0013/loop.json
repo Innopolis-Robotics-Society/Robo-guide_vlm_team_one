@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The user is pointing at a peach-colored box in the middle of the shelf. The box has Chinese characters on it. The characters appear to be '海之蓝' (Hǎi zhī lán). The other boxes are yellow (left) and blue (right). The user's finger is clearly directed at the peach-colored box. The peach-colored box is the third one from the left in the top row. The yellow boxes are epobj-13-a and epobj-13-b. The blue boxes are epobj-13-c and epobj-13-d. The peach-colored box is not in the list of exhibit candidates. This is a problem. I need to re-examine the image and the candidates. Let me look at the candidates again. epobj-13-a, epobj-13-b, epobj-13-c, epobj-13-d. These are likely the IDs for the boxes. Let me assume the order from left to right. epobj-13-a is the first yellow box. epobj-13-b is the second yellow box. epobj-13-c is the peach-colored box. epobj-13-d is the first blue box. The user is pointing at the peach-colored box. So the answer should be epobj-13-c. But wait, the user said 'pointing at the peach-colored box'. Let me check the image again. Yes, the user is pointing at the peach-colored box. So the answer is epobj-13-c. But I need to be sure. Let me check the other boxes. The yellow boxes are on the left. The blue boxes are on the right. The peach-colored box is in the middle. The user is pointing at the peach-colored box. So the answer is epobj-13-c. But I need to make sure that the peach-colored box is indeed epobj-13-c. Let me assume",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3823.74390802579,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The user is pointing at a peach-colored box with Chinese characters on it. The box is located between two yellow boxes and several blue boxes. The user's hand is wearing a black glove. The background shows a store ceiling with lights and a green exit sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1708.9432899956591,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The user is pointing at a peach-colored box in the middle of the shelf. The box has Chinese characters on it. The characters appear to be '海之蓝' (Hǎi zhī lán). The other boxes are yellow (left) and blue (right). The user's finger is clearly directed at the peach box. The peach box is the third one from the left in the top row. The blue boxes are on the right. The yellow boxes are on the left. The peach box is distinct from the others. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user's finger is clearly directed at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3763.565909990575,
+    "attempts": 1,
+    "finish_reason": "length"
+  }
+]

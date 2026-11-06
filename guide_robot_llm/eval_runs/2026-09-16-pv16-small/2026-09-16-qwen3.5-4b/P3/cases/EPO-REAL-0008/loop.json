@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.44,\n    0.52,\n    0.58,\n    0.64\n  ]\n,\n  \"scene_facts\": \"The person is pointing at a packaged item hanging on a display rack in what appears to be a store (possibly a supermarket or department store). The item is a clear plastic package containing a white, rectangular object with a red logo or design. It looks like a cleaning sponge or a similar household cleaning product. The surrounding shelves contain various household goods, including bottles, boxes, and other cleaning supplies. The item being pointed at is distinct from the other items on the rack, which include packaged clothing or bedding items to the left and hangers below. The item is clearly a cleaning sponge or similar product, not a beverage container, clothes hanger, or thermos. The person's hand is extended towards the item, indicating interest or selection. The item is packaged and ready for purchase. The store environment suggests a retail setting with organized displays. The item is likely a cleaning sponge or similar household cleaning product. The person is pointing at a packaged cleaning sponge or similar household cleaning product. The item is distinct from other items on the rack, which include packaged clothing or bedding items to the left and hangers below. The person's hand is extended towards the item, indicating interest or selection. The item is packaged and ready for purchase. The store environment suggests a retail setting with organized displays. The item is likely a cleaning sponge or similar household cleaning product. The person is pointing at a packaged cleaning sponge or similar household cleaning product. The item is distinct from other items on the rack, which include packaged clothing or bedding items to the left and hangers below. The person's hand is extended towards the item, indicating interest or selection. The item is packaged and ready for purchase. The store environment suggests a retail setting with organized displays. The item is likely a cleaning sponge or similar household cleaning product. The person is pointing at a packaged cleaning sponge or similar household cleaning product. The item is distinct from",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3696.524041995872,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.45,\n    0.52,\n    0.58,\n    0.65\n  ],\n  \"scene_facts\": \"The person is pointing at a packaged item hanging on a display rack in a store. The item appears to be a cleaning sponge or similar household product, packaged in clear plastic with a label. The surrounding shelves contain various household goods, including cleaning supplies and personal care items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1628.7561240023933,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store aisle. A person's arm is extended, pointing towards a packaged item hanging on a display rack. The item appears to be a package containing a white cloth or towel, possibly a washcloth or hand towel, with a picture of a woman on the packaging. The packaging has a red circular logo. The person is pointing at the right side of the package, near the bottom edge. The background shows shelves stocked with various household items, including bottles of cleaning products, tissues, and other packaged goods. The lighting is bright, typical of a retail environment. The person is wearing a black sleeve. The display rack is made of metal wire mesh. The item being pointed at is hanging from a hook on the rack. The package is transparent, allowing the white cloth inside to be seen. The cloth appears to be folded or rolled. The packaging has text and images on it, but the details are not clear. The person's hand is open, with fingers extended, indicating a pointing gesture. The arm is coming from the bottom right of the frame. The background shelves are filled with colorful products. The overall scene suggests a shopping environment, possibly a supermarket or department store. The person seems to be examining or selecting an item from the display. The item being pointed at is likely a cleaning cloth or towel, given its appearance and the context of the store. The packaging suggests it is a single-use or disposable item, possibly for cleaning or personal use. The red logo might be a brand name or a promotional symbol. The person's gesture indicates interest or selection of this specific item. The surrounding products suggest a focus on household and personal care items. The store layout is organized, with products neatly arranged on shelves and racks. The lighting is even, ensuring all products are visible. The person's arm is the only human element in the foreground, drawing attention to the item being pointed at. The background is slightly blurred, emphasizing the item in focus. The overall impression is of a customer browsing and considering a purchase. The item's packaging",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3559.8911010019947,
+    "attempts": 1,
+    "finish_reason": "length"
+  }
+]

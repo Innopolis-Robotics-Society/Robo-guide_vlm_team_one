@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The user is pointing at a peach-colored box in the middle of the shelf. The box has Chinese characters on it. The characters appear to be '海之蓝' (Hǎi zhī lán). The other boxes are yellow (left) and blue (right). The user's finger is clearly directed at the peach box. The peach box is the third one from the left in the top row. The blue boxes are on the right. The yellow boxes are on the left. The peach box is distinct from the others. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user's finger is clearly directed at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box is the only one being pointed at. The other boxes are not being pointed at. The user is pointing at the peach box. The peach box

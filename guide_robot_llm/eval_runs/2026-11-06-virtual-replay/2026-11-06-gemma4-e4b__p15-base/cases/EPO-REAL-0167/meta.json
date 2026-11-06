@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0167",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "freeform",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 613.359,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.003569992259144783,
+            "upload_ms": 61.11866098945029,
+            "ttft_ms": 448.77687201369554,
+            "full_ms": 613.3290400030091,
+            "parse_ready_ms": 613.3290400030091
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 613.359,
+  "attempts": 1,
+  "case": {
+    "case_id": "EPO-REAL-0167",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-167",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+      "sha256": "aa02e34dde859290df281491b77fda8662e231e44c49d5fcfb825f5bd6809f4d",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary flavor or ingredient indicated by the appearance of this bakery item?\nA. Red bean\nB. Whole wheat\nC. Milk\nD. Chocolate chip\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-167-a",
+      "epobj-167-b",
+      "epobj-167-c",
+      "epobj-167-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-167-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-167-b",
+        "epobj-167-c",
+        "epobj-167-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L2",
+      "n_distractors": 3,
+      "answer_map": {
+        "Red bean": "epobj-167-a",
+        "Whole wheat": "epobj-167-b",
+        "Milk": "epobj-167-c",
+        "Chocolate chip": "epobj-167-d"
+      }
+    }
+  }
+}

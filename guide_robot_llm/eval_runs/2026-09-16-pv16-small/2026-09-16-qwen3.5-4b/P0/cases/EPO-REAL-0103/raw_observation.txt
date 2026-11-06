@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a shelf of snacks in a store. The brand visible on the bottom shelf is Oishi (in Chinese characters 奥利奥, which is actually Oreo, but the packaging style matches Oishi's typical branding in China). However, looking closely at the bottom shelf, the red and yellow packages with Chinese text are characteristic of Oishi brand snacks (e.g., Oishi's spicy or sweet varieties). The person’s finger is directed toward one of these Oishi packages on the lower shelf."
+}

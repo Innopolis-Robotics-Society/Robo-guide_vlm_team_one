@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного кадра невозможно определить, сколько людей находится рядом с роботом, так как на изображении нет робота, и не видно других людей в непосредственной близости. Кроме того, я не могу \"  , \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 729.1736019833479,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как в предоставленном изображении не видно робота, и я не могу определить, сколько людей рядом с ним или сколько из них готовы слушать. Для выполнения этой задачи мне нужны кадры, на которых присутствует робот и люди, а также контекст о том, как определить \"\n   \n   , \"confidence\": 0.0\n  \n  , \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1144.7824370115995,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного кадра невозможно определить, сколько людей находится рядом с роботом, так как на изображении нет робота, и количество людей, готовых слушать, не может быть подсчитано.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 704.2891820019577,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

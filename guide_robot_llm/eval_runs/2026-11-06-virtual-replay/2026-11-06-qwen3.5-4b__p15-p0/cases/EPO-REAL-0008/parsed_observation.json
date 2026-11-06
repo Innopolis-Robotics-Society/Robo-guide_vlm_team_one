@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.47,
+    0.46,
+    0.57,
+    0.6
+  ],
+  "scene_facts": "The image shows a retail store aisle with various household items. A person's arm is pointing at a packaged item hanging on a display rack. The item appears to be a cleaning sponge or cloth in a clear plastic package, with a red logo or design visible on the packaging. The surrounding shelves contain cleaning supplies, laundry detergent, and other household goods."
+}

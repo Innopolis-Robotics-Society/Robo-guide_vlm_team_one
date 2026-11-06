@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a single person in a supermarket aisle, reaching toward a shelf of snack products. The person’s hand is extended toward the lower-middle section of the shelf, specifically near packages with red and green packaging that appear to be Pringles cans or similar cylindrical snack containers. The person is looking at the shelf, and their gesture indicates interest or selection of one of the items on that shelf. There are multiple product brands visible, including Lay's, Orion, Pringles, and Oishi, but the pointing action is directed at a specific group of items — likely Pringles, given the shape and branding style of the packages being reached for. However, without clear visibility of the exact item being pointed at (due to blur and angle), and since the question requires selecting from four specific exhibit IDs (epobj-103-a through d) which are not labeled in the image, it is impossible to definitively map the gesture to any of these IDs. Furthermore, the instruction states: if zero or multiple candidates are equally probable, do not guess — ask for clarification. Since we cannot determine which of the four exhibit IDs corresponds to the item being pointed at, and no additional context or labeling is provided, we must refrain from guessing."
+}

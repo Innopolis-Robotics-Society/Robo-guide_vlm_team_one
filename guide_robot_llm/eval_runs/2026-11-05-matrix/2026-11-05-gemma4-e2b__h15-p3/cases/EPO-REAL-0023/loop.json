@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/23.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-23-a\",\n\"epobj-23-b\",\n\"epobj-23-c\",\n\"epobj-23-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a close-up of various packaged food items, primarily dried ingredients or processed foods, displayed in jars and bags on shelves. The hand is pointing towards a package in the lower left area of the visible shelf section.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1536.964884988265,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/23.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-23-a\",\n\"epobj-23-b\",\n\"epobj-23-c\",\n\"epobj-23-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"the_package_shows_various_types_of_dried_foods_including_some_that_look_like_processed_ingredients_or_fungi_and_some_that_look_like_dried_vegetables_or_roots\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1304.5178759784903,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/23.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-23-a\",\n\"epobj-23-b\",\n\"epobj-23-c\",\n\"epobj-23-d\"\n],\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a shelf filled with various packaged food items, primarily dried goods, possibly mushrooms, herbs, or snacks. The items are packaged in clear plastic bags or containers. The hand is pointing towards a package in the bottom left area of the visible shelf section.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1405.2746550005395,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

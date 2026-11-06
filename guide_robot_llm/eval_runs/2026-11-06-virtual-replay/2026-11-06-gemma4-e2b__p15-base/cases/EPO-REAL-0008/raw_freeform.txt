@@ -1,0 +1,1 @@
+{"answer": "Продукты питания", "confidence": 1, "abstain": false}

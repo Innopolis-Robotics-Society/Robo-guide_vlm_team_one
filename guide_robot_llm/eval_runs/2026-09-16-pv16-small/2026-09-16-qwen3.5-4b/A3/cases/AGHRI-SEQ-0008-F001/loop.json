@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей рядом с роботом — робота вообще не видно. На изображении только зелёная трава, деревья, дорога и вдалеке — несколько машин. Следовательно, людей рядом с роботом — 0, готовых слушать — 0.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 766.8536769924685,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей рядом с роботом — робота вообще не видно. На изображении только трава, деревья, дорожка и фон с домами. Значит, людей рядом с роботом — 0, готовых слушать — тоже 0.\",\n  \"confidence\": 0.98,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 736.2159689946566,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — это просто пейзаж: тропинка, трава, деревья. Готовых слушателей пока нет. Продолжаю наблюдать на новых кадрах.\",\n  \"confidence\": 0.99,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 660.5644130031578,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

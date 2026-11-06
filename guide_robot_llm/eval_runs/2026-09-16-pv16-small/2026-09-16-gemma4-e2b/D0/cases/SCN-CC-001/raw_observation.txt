@@ -1,0 +1,1 @@
+{"people_count": 2, "exhibit_candidates": ["redbox-01", "cabinet-03", "vase-04"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "Two people are visible in a room with a light-colored wall and wooden floor. There are several objects on the floor and on display stands."}

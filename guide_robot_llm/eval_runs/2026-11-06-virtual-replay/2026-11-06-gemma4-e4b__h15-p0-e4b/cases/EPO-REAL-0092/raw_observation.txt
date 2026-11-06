@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-92-d"], "pointing_evidence": "yes", "pointing_box": [1, 1, 1, 1], "scene_facts": "The person is pointing towards the right side of the image, towards the area with the white sign that has an arrow pointing left."}

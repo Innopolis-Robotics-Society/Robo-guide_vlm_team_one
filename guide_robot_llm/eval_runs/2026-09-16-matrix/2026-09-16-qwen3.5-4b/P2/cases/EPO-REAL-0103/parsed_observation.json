@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.0,
+    0.6,
+    0.4,
+    0.9
+  ],
+  "scene_facts": "The image shows a supermarket aisle with shelves stocked with various snack products. A person's hand is visible in the lower left corner of the image, pointing towards a specific product on the shelf. The hand is extended and the index finger is directed at a red package of snacks located on the bottom shelf. The package appears to be a type of Japanese snack, possibly dorayaki or similar, based "
+}

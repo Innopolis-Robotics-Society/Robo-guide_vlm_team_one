@@ -1,0 +1,7 @@
+{
+"answer": "всего людей: 1, готовых: 1"
+,
+"confidence": 0.9
+,
+"abstain": false
+}

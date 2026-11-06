@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-23-a",
+    "epobj-23-b",
+    "epobj-23-c",
+    "epobj-23-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The visitor is pointing towards the lower shelves of the display, specifically at a package in the front row."
+}

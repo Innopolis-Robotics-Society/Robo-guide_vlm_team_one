@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ]
+, "pointing_evidence": "yes",
+  "pointing_box": [
+    0.45,
+    0.48,
+    0.5,
+    0.52
+  ]
+, "scene_facts": "The image shows a retail store aisle with shelves stocked with various household products. A person's arm, wearing a black glove, is extended and pointing towards a specific item on one of the middle shelves. The item being pointed at is a small, rectangular package with a predominantly yellow and white design, featuring cartoon-like illustrations. It is located next to other similar packages and below larger blue packages. The surrounding items include large plastic storage bins on the top shelf and various other packaged goods like tissues or wipes on adjacent shelves."
+}

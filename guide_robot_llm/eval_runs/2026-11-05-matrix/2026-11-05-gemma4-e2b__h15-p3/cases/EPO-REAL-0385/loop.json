@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/385.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-385-a\", \"epobj-385-b\", \"epobj-385-c\", \"epobj-385-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"the_image_shows_a_display_of_various_food_items_in_a_buffet_style_setting_the_focus_is_on_the_food_display_in_the_foreground_and_middle_ground_the_bottom_right_shows_a_large_quantity_of_round_orange_objects_which_appear_to_be_some_type_of_fruit_or_vegetable_possibly_tangerines_or_similar_citrus_fruits_there_are_also_items_in_the_middle_section_that_look_like_various_prepared_foods_or_snacks_the_question_asks_about_the_primary_ingredient_of_the_food_items_inside_a_bowl_the_bowl_is_not_clearly_isolated_but_the_context_is_a_food_stall_or_buffet_with_many_small_dishes_and_containers_the_visible_items_include_some_white_round_objects_and_yellowish_items_suggesting_starches_or_fried_foods_the_previous_question_asked_about_a_bowl_of_food_and_the_options_were_starches_corn_flour_wheat_flour_glutinous_rice_flour_potato_starch_this_context_is_consistent_with_a_food_preparation_setting_where_starches_are_common_the_visible_items_in_the_foreground_right_are_mostly_round_white_objects_and_some_yellowish_items_which_could_be_related_to_starch_based_products_\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3245.535258000018,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/385.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-385-a\", \"epobj-385-b\", \"epobj-385-c\", \"epobj-385-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"the_image_shows_a_display_of_various_food_items_in_trays_and_bowls_on_a_counter_suggesting_a_food_market_or_buffet_setting_the_focus_is_on_the_food_items_in_the_bowl_mentioned_in_the_previous_question_which_was_a_bowl_of_food_items_the_current_image_shows_many_different_types_of_prepared_foods_like_boiled_vegetables_various_fried_items_and_some_types_of_desserts_or_snacks_the_task_is_to_identify_an_exhibit_based_on_a_pointer_from_the_previous_context_or_the_current_image_itself_is_a_general_food_display_not_a_clear_pointer_to_one_specific_exhibit_from_the_list_epobj-385-a, epobj-385-b, epobj-385-c, epobj-385-d_the_previous_question_asked_about_the_primary_ingredient_of_food_items_inside_a_bowl_and_the_current_image_is_a_different_scene_a_food_display_the_instruction_is_to_determine_which_exhibit_a_visitor_is_pointing_to_based_on_a_gesture_the_current_image_does_not_show_a_visitor_pointing_to_any_specific_exhibit_from_thelist_therefore_no_determination_can_be_made_based_on_the_current_visual_evidence_and_the_previous_context_is_insufficient_for_a_definitive_answer_or_the_image_itself_does_not",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 2816.3009300187696,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/385.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-385-a\", \"epobj-385-b\", \"epobj-385-c\", \"epobj-385-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"the_image_shows_a_display_of_various_food_items_in_a_buffet_style_setting_the_focus_is_on_the_food_displays_in_the_foreground_and_middle_ground_the_bottom_right_shows_a_large_quantity_of_round_orange_objects_which_appear_to_be_some_type_of_fruit_or_vegetable_like_mandarins_or_similar_round_produce_the_center_and_left_show_various_prepared_food_items_in_trays_and_bowls_the_top_left_shows_a_display_of_light_colored_items_in_a_refrigerated_case_the_overall_scene_is_a_food_service_area_the_prompt_asks_about_the_primary_ingredient_of_the_food_items_inside_a_bowl_the_bowl_in_the_center_right_contains_white_round_objects_which_look_like_small_balls_or_pearls_the_bottom_right_contains_many_orange_round_objects_which_look_like_mandarins_or_similar_fruit_the_question_is_about_the_primary_ingredient_of_the_food_items_inside_this_bowl_the_bowl_in_question_is_the_one_containing_the_white_round_objects_in_the_center_right_of_the_lower_half_of_the_image_this_is_a_close_up_of_a_bowl_containing_white_spherical_items_the_other_options_are_starches_corn_starch_wheat_flour_glutinous_rice_flour_potato_starch_the_food_items_in_the_bowl_are_",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3332.3775149765424,
+    "attempts": 1,
+    "finish_reason": "length"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a",
+    "epobj-96-b",
+    "epobj-96-c",
+    "epobj-96-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person pointing at a building with a red sign that says 'UNIQLO'. The person is standing in front of a shopping area with multiple stores visible, including Nike and Uniqlo. The person's hand is clearly visible in the foreground, pointing towards the Uniqlo store. The Uniqlo store has a distinctive red sign with white lettering, which is clearly visible in the image. The person is standing in front of the Uniqlo store, and their hand is pointing directly at it. The Nike store is visible to the left of the Uniqlo store, but the person is not pointing at it. The H&M and Adidas stores are not visible in the image, so they cannot be the target of the pointing gesture. The person's hand is clearly visible in the foreground, pointing towards the Uniqlo store. The Uniqlo store has a distinctive red sign with white lettering, which is clearly visible in the image. The person is standing in front of the Uniqlo store, and their hand is pointing directly at it. The Nike store is visible to the left of the Uniqlo store, but the person is not pointing at it. The H&M and Adidas stores are not visible in the image, so they cannot be the target of the pointing gesture. The person's hand is clearly visible in the foreground, pointing towards the Uniqlo store. The Uniqlo store has a distinctive red sign with white lettering, which is clearly visible in the image. The person is standing in front of the Uniqlo store, and their hand is pointing directly at it. The Nike store is visible to the left of the Uniqlo store, but the person is not pointing at it. The H&M and Adidas stores are not visible in the image, so they cannot be the target of the pointing gesture. The person's hand is clearly visible in the foreground, pointing

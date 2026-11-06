@@ -1,0 +1,14 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-b"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.51,
+    0.48,
+    0.99,
+    0.99
+  ],
+  "scene_facts": "На улице видны два человека, один из которых указывает рукой на дорожный знак с надписью '15'."
+}

@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a small tin container filled with individually wrapped candies or snacks, located on the laptop's trackpad area."
+}

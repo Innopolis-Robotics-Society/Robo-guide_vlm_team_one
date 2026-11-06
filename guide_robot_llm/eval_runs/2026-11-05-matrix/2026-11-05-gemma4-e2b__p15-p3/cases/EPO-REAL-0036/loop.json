@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1\n,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a person's hand pointing towards a display or sign in the foreground. The background shows an interior space with what appears to be a hallway or room with doorways and furniture (chairs, possibly). The question asks where an object is located relative to a doorway, implying the object of interest is near a doorway.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2211.880918999668,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a person's hand pointing towards a display or sign located in the foreground, near a doorway or entrance area. The background shows an interior space with what appears to be a hallway or exhibition area with various displays and furniture.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1505.357310990803,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1\n,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a person's hand pointing towards a display or sign inside a room, which appears to be an exhibition space with several chairs and partitions. The question asks where an object is located relative to a doorway, and the options relate to attachment points or locations within a room. The visible elements are a person pointing, a doorway/opening, and interior furniture/displays.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1653.7801969971042,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

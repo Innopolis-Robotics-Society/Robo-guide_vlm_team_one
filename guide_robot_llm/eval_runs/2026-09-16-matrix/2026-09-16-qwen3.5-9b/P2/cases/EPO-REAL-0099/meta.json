@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0099",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 5504.506,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002600019797682762,
+              "upload_ms": 289.77363399462774,
+              "ttft_ms": 368.203978985548,
+              "full_ms": 2644.681274978211,
+              "parse_ready_ms": 2644.681274978211
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003110006218776107,
+              "upload_ms": 111.29478400107473,
+              "ttft_ms": 286.06601600768045,
+              "full_ms": 2859.752941993065,
+              "parse_ready_ms": 2859.752941993065
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест направлен на нижнюю полку холодильника, в центральный сектор, где находятся желтые пакетики с едой.\n\n(2) В этот сектор попадают: epobj-99-a (желтый пакетик), epobj-99-b (желтый пакетик рядом), epobj-99-c (желтый пакетик чуть правее), epobj-99-d (желтый пакетик ещё правее). Все они находятся в одной зоне, на которую указывает палец.\n\n(3) Слова посетителя: «Я хочу купить этот желтый пакетик». Это согласуется с тем, что он указывает на один из желтых пакетиков — но не уточняет, какой именно.\n\n(4) После шага (4) остаётся не один кандидат — четыре желтых пакетика в зоне указывания. Поскольку невозможно определить, какой именно из них имеется в виду, и нет дополнительных уточнений (например, «левый», «с надписью», «с изображением»), мы не можем однозначно выбрать один экспонат.\n\nОтвет: воздержись."
+    }
+  },
+  "latency_ms": 5504.506,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0099",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-99",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+      "sha256": "a0b311c61becdea34221cf18983db24bca4fe631adb102a7c9f4c4933268e009",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary intended use for this object?\nA. An ingredient for a meal.\nB. A single-serving snack bar.\nC. A cleaning product.\nD. A fresh noodle dish.\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-99-a",
+      "epobj-99-b",
+      "epobj-99-c",
+      "epobj-99-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-99-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-99-b",
+        "epobj-99-c",
+        "epobj-99-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Affordance & Function",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "An ingredient for a meal.": "epobj-99-a",
+        "A single-serving snack bar.": "epobj-99-b",
+        "A cleaning product.": "epobj-99-c",
+        "A fresh noodle dish.": "epobj-99-d"
+      }
+    }
+  }
+}

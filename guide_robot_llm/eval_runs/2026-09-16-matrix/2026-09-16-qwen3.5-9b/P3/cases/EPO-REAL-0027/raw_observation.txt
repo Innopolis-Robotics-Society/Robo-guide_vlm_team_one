@@ -1,0 +1,16 @@
+{
+  "people_count": 4,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.5,
+    0.6,
+    0.6,
+    0.7
+  ],
+  "scene_facts": "The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing towards the display case. The display case contains several types of poultry, including what appears to be whole chickens and possibly other cuts. The person's hand is extended, and their finger is pointing towards a specific item in the display case. The item being pointed at is located in the lower right section of the display case, near the front edge. It appears to be a whole chicken or a similar poultry product, packaged in clear plastic. The surrounding items include other whole chickens and possibly some cuts of meat. The person pointing is wearing a green jacket, and their hand is clearly visible in the foreground. The display case is well-lit, and the items are neatly arranged. The background shows other shoppers and supermarket shelves, indicating a busy retail environment. The person pointing seems to be selecting or indicating a specific product for purchase or examination. The item being pointed at is distinct from the others due to its position and packaging. It is located near the front of the display case, making it easily accessible. The surrounding items are similar in appearance, but the pointed item stands out due to its specific location and the action of pointing towards it. The overall scene suggests a typical shopping experience in a supermarket, with customers browsing and selecting products from the display cases. The person pointing is likely interested in the specific item they are indicating, possibly for purchase or further inspection. The display case is well-organized, with clear labels and pricing information visible. The lighting is bright, ensuring that all items are clearly visible to the customers. The background activity adds to the dynamic nature of the scene, with other shoppers moving around and interacting with the products. The person pointing is focused on the item they are indicating, suggesting a deliberate action. The item being pointed at is likely of interest to the person, possibly due to

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 0.0031999952625483274,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 0.0018700084183365107,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 0.0013500102795660496,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

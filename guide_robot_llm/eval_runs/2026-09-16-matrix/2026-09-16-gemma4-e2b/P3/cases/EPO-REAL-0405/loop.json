@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"the_image_shows_a_hand_pointing_at_a_small_yellow_object_on_a_plate_in_the_foreground_of_the_desk_setup\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1529.7921509773005,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. This object appears to be a piece of food or a small item being held up for inspection. There is no clear evidence of a computer mouse in the visible area.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1217.4014130141586,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. The object appears to be a small packet or item, possibly related to food or a small product. There is a white object in the foreground on the right that resembles a wireless mouse or a similar small electronic device.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1285.4490210011136,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

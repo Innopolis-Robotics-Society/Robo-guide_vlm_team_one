@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407158_733920459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей. В кадре видна только часть человека в оранжевом жилете слева, но он не находится рядом с роботом — скорее, это камера, установленная на нём или рядом. На заднем плане — поле, деревья, дорога, но других людей нет.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 796.4371870039031,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407158_733920459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей рядом с роботом — робот не виден, и вокруг только зелёная трава, деревья и тропинка. Следовательно, людей рядом с роботом — 0, и готовых слушать — 0.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 693.2162009761669,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407158_733920459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек в оранжевом жилете, который, судя по положению, идёт в сторону от камеры. Готовых слушателей пока недостаточно, поэтому не переходим к следующему шагу. Продолжаем наблюдать за новыми кадрами.\",\n  \"confidence\": 0.85,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 771.5871449909173,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом по предоставленному изображению. На изображении показан **пустой парк с тропой**, а **робота на нем не видно**. Поэтому я не могу выполнить ваш запрос.\"\n  ,\n  \"confidence\": 1\n  ,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 870.3029030002654,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом по предоставленному изображению. На изображении показан **тропинка в поле с деревьями**, а **робота на нем не видно**. Поэтому я не могу выполнить ваш запрос.\"\n  ,\n  \"confidence\": 1\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 607.611116982298,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом по предоставленному изображению. На изображении показан **путь** через поле с деревьями, а **робота не видно**.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 554.642032017,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

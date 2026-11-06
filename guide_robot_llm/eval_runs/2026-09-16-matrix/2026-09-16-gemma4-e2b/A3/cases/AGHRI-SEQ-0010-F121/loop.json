@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407089_019532459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом на предоставленном изображении. Изображение показывает дорогу, деревья и поле, но на нем нет людей или роботов, с которыми можно было бы взаимодействовать.\"\n  , \"confidence\": 1\n  , \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 970.6661900272593,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407089_019532459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом на основе предоставленного изображения. Изображение показывает тропинку в парке с деревьями, а робот на нем не виден. Для выполнения вашего запроса мне нужно изображение, на котором присутствует робот и люди.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 631.3914860074874,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407089_019532459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом на основе предоставленного изображения. Изображение показывает тропинку в парке с деревьями, а робот на нем не виден.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 559.4631760031916,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

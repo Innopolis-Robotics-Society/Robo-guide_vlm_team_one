@@ -1,0 +1,12 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    "epobj-21-a",
+    "epobj-21-b",
+    "epobj-21-c",
+    "epobj-21-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a bicycle parking area with multiple bicycles parked against walls and pillars. There is no person visible in the image, nor any indication of pointing or interaction with an exhibit. The scene appears to be a static indoor parking space for bicycles, possibly in a residential building (as suggested by room numbers like '327A' and '426A' on the walls). No exhibits are present or identifiable in the image."
+}

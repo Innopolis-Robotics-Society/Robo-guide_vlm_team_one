@@ -1,0 +1,18 @@
+{
+"people_count": 1
+,
+"exhibit_candidates": [
+"epobj-28-a"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "the_visitor_is_pointing_at_the_sign_with_the_speed_limit_15"
+}

@@ -1,0 +1,38 @@
+{
+ "started": "2026-09-16T17:47:45",
+ "updated": "2026-09-16T18:26:43",
+ "models": {
+  "gemma4-e2b": {
+   "status": "done",
+   "started": "2026-09-16T17:47:45",
+   "exit_code": 0,
+   "wall_s": 402.1,
+   "out": "eval_runs/2026-09-16-pv16-small/2026-09-16-gemma4-e2b",
+   "finished": "2026-09-16T17:54:27"
+  },
+  "gemma4-e4b": {
+   "status": "done",
+   "started": "2026-09-16T17:54:27",
+   "exit_code": 0,
+   "wall_s": 479.2,
+   "out": "eval_runs/2026-09-16-pv16-small/2026-09-16-gemma4-e4b",
+   "finished": "2026-09-16T18:02:27"
+  },
+  "qwen3.5-4b": {
+   "status": "done",
+   "started": "2026-09-16T18:02:27",
+   "exit_code": 0,
+   "wall_s": 622.6,
+   "out": "eval_runs/2026-09-16-pv16-small/2026-09-16-qwen3.5-4b",
+   "finished": "2026-09-16T18:12:50"
+  },
+  "qwen3.5-9b": {
+   "status": "done",
+   "started": "2026-09-16T18:12:51",
+   "exit_code": 0,
+   "wall_s": 832.8,
+   "out": "eval_runs/2026-09-16-pv16-small/2026-09-16-qwen3.5-9b",
+   "finished": "2026-09-16T18:26:43"
+  }
+ }
+}

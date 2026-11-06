@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n \"people_count\": 1,\n \"exhibit_candidates\": [\n  \"epobj-99-a\",\n  \"epobj-99-b\",\n  \"epobj-99-c\",\n  \"epobj-99-d\"\n ],\n \"pointing_evidence\": \"uncertain\"\n,\n \"pointing_box\": [\n  0,\n  0,\n  1,\n  0\n ],\n \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be instant noodles, dumplings, and other prepared meals. A person's hand is visible in the foreground, pointing towards a specific item on the lower shelf. The item being pointed at is a yellow package, which seems to be a type of instant noodle or similar food product. The person is wearing a green jacket. The background is slightly blurred, focusing attention on the person and the item they are pointing at. The lighting is bright, typical of a store environment.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2311.5095009852666,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n \"people_count\": 1,\n \"exhibit_candidates\": [\n  \"epobj-99-a\",\n  \"epobj-99-b\",\n  \"epobj-99-c\",\n  \"epobj-99-d\"\n ],\n \"pointing_evidence\": \"uncertain\",\n \"pointing_box\": [\n  0,\n  0,\n  1,\n  1\n ],\n \"scene_facts\": \"The scene shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be instant noodles, dumplings, and other prepared meals. A person's hand is visible in the foreground, pointing towards a specific item on the lower shelf. The item being pointed at is wrapped in yellow packaging and appears to be a single-serving snack or food product. The person is wearing a green jacket or sleeve. The lighting is bright, typical of a retail environment.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2026.51810599491,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n \"people_count\": 1,\n \"exhibit_candidates\": [\n  \"epobj-99-a\",\n  \"epobj-99-b\",\n  \"epobj-99-c\",\n  \"epobj-99-d\"\n ],\n \"pointing_evidence\": \"uncertain\"\n,\n \"pointing_box\": [\n  0,\n  0,\n  1,\n  1\n ]\n,\n \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be instant noodles, dumplings, and other prepared meals. A person's hand is visible in the foreground, pointing towards one of the items on the lower shelf. The person is wearing a green jacket. The lighting is bright, typical of a retail environment. The focus is on the food items and the person's pointing gesture.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1965.1167599949986,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

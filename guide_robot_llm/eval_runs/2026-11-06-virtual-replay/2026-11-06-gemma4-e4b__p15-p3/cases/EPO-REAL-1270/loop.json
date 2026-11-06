@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The user is pointing towards the lower shelves of the retail display, specifically towards the area where smaller packages are located.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2045.1198189985007,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is reaching towards the middle shelves of the display, specifically near the items priced at ¥9.90.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1649.6891190181486,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is reaching down towards the shelves, but the exact object they are pointing at or indicating is not clearly visible or identifiable among the candidates based on the current frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1765.0454720132984,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

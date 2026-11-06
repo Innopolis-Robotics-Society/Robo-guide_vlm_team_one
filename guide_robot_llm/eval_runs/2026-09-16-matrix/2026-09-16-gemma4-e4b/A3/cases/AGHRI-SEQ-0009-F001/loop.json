@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407333_557659459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения не видно ни одного человека рядом с роботом. На изображении показана дорожка в парковой зоне с деревьями и газоном. Следовательно, количество готовых слушателей равно нулю.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1013.1752849847544,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407333_557659459.png",
+    "raw_text": "{\"answer\": \"На предоставленном изображении не видно людей рядом с роботом. На изображении показана дорожка в парковой или лесной зоне с деревьями и газоном. Поэтому невозможно посчитать людей или определить, сколько готовы слушать.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 719.5117649971507,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407333_557659459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение не содержит людей рядом с роботом, и я не могу определить, сколько людей готовы слушать, так как нет контекста или информации о \"\n    \n    ,\n    \"confidence\": 0.9\n    \n    ,\n    \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 889.8038050101604,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

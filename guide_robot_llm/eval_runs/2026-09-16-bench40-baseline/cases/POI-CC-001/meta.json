@@ -1,0 +1,100 @@
+{
+  "case_id": "POI-CC-001",
+  "source": "pilot-cc",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 17024.951,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0036800047382712364,
+            "upload_ms": 434.47149501298554,
+            "ttft_ms": 15610.84370399476,
+            "full_ms": 17024.919471994508,
+            "parse_ready_ms": 17024.919471994508
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 17024.951,
+  "attempts": 1,
+  "case": {
+    "case_id": "POI-CC-001",
+    "source": "pilot-cc",
+    "track": "pointing",
+    "split_group_id": "g-cc-POI-CC-001",
+    "media": {
+      "path": "pilot/media/cc/POI-CC-001.png",
+      "sha256": "43fd0bd41dc0bb866ba0959891db8280a09f4b3721282c5ddf7b273eb5ebdbd4",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Что это за штука слева?",
+      "language": "ru"
+    },
+    "candidates": [
+      "cabinet-01",
+      "frame-02",
+      "poster-03"
+    ],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "target_box",
+      "target_id": "cabinet-01",
+      "box_px": [
+        120,
+        470,
+        380,
+        800
+      ],
+      "distractors": [
+        "frame-02",
+        "poster-03"
+      ]
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "n_distractors": 2,
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

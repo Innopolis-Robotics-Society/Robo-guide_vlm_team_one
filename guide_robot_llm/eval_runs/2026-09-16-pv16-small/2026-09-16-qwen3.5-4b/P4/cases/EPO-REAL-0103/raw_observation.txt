@@ -1,0 +1,11 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "one person is standing in front of a shelf with multiple items. the person is pointing at an item on the shelf. the item being pointed at is located on the lower shelf, towards the right side of the image. the item appears to be a small box or package. the person's hand is extended towards the item, indicating that they are pointing at it. the item is located at approximately the same height as the person's hand, which is consistent with the item being on the lower shelf. the item is located towards the right side of the image, which is consistent with the person's hand being extended towards the right side of the image. the item is located at approximately the same height as the person's hand, which is consistent with the item being on the lower shelf. the item is located towards the right side of the image, which is consistent with the person's hand being extended towards the right side of the image. the item is located at approximately the same height as the person's hand, which is consistent with the item being on the lower shelf. the item is located towards the right side of the image, which is consistent with the person's hand being extended towards the right side of the image. the item is located at approximately the same height as the person's hand, which is consistent with the item being on the lower shelf. the item is located towards the right side of the image, which is consistent with the person's hand being extended towards the right side of the image. the item is located at approximately the same height as the person's hand, which is consistent with the item being on the lower shelf. the item is located towards the right side of the image, which is consistent with the person's hand being extended towards the right side of the image. the item is located at approximately the same height as the person's hand, which is consistent with the item being on the lower shelf. the item is located towards the right side of the image, which is consistent with the person's hand

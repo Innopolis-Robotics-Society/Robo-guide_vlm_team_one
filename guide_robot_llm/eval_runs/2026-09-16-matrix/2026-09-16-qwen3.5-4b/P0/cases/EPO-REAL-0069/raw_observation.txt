@@ -1,0 +1,14 @@
+{
+  "people_count": 3,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ],
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "The image shows a retail display of skincare products, with shelves containing bottles and jars, and promotional posters featuring water imagery and Chinese text about sensitive skin hydration. There are multiple people in the store, including one person on the left wearing a light-colored jacket and dark pants, and others in the background. The setting appears to be a well-lit, modern retail environment, possibly a department store or cosmetics shop."
+}

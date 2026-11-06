@@ -1,0 +1,20 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-36-a",
+"epobj-36-b",
+"epobj-36-c",
+"epobj-36-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "the visitor is pointing towards a sign or display located near the doorway, specifically on the wall or structure framing the doorway."
+}

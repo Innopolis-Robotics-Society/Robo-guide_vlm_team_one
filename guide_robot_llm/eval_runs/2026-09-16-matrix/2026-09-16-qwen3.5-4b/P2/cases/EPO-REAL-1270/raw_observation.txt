@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person in a supermarket pointing at a shelf. The hand is wearing a black glove and the index finger is extended, pointing towards a row of packaged goods on the middle shelf. The packages appear to be wet wipes or tissues, with some being blue and others yellow. The person is pointing specifically at the blue packages. The question asks if the indicated object is a package of sanitary wet wipes. Based on the visual evidence, the blue packages are likely wet wipes, which matches the description in the question. Therefore, the answer is 'Yes'. The correct option is D, which states 'Yes, it is a blue package of wet wipes'. This aligns with the visual evidence and the question. The other options are incorrect: A is incorrect because the object is not a black metal shelf guard; B is incorrect because the object is not a yellow package of tissues; C is incorrect because the object is not a large plastic storage bin. Thus, the final answer is D."
+}

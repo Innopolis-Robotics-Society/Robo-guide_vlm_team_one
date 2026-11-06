@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0006-F316",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 4216.427,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003110006218776107,
+              "upload_ms": 177.3508390178904,
+              "ttft_ms": 235.12317999848165,
+              "full_ms": 3525.059136998607,
+              "parse_ready_ms": 3525.059136998607
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003169989213347435,
+              "upload_ms": 51.260917010949925,
+              "ttft_ms": 224.51351399649866,
+              "full_ms": 690.9743130090646,
+              "parse_ready_ms": 690.9743130090646
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nНа изображении виден один человек — слева, в чёрном пальто, синей шапке, стоящий на тропинке в парке. Никаких других людей не видно ни на переднем, ни на заднем плане.\n\n→ Всего людей: **1**\n\n---\n\nЭтап 2: Оценка готовности к слушанию\n\nКритерии:\n- Близость: человек находится рядом с камерой (предположительно, с роботом, если камера — часть робота или управляется им).\n- Взгляд: лицо частично скрыто шапкой и углом съёмки, но корпус тела направлен в сторону камеры/робота — возможно, он обращён к ней.\n- Вовлечённость: жест руки (сжатый кулак у груди) может указывать на эмоциональное состояние или реакцию — возможно, он что-то говорит или реагирует на робота.\n\nОднако:\n- Нет явного зрительного контакта с роботом (не видно лица).\n- Нет явных признаков активного слушания (например, открытая поза, наклон головы, взгляд в сторону робота).\n- Жест может быть интерпретирован как реакция, но не обязательно как готовность слушать.\n\nПоэтому, хотя человек физически рядом, его **готовность к слушанию** не подтверждается визуально.\n\n→ Готовых слушать: **0**\n\n---\n\nИтог:\n\nВсего людей: **1**  \nГотовых слушать: **0**"
+    }
+  },
+  "latency_ms": 4216.427,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0006-F316",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0006",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407399_127993459.png",
+      "sha256": "bb835e374e4a0e18535577a6f6297b6c9340dc31a0d1ef38cb48013e969020a4",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

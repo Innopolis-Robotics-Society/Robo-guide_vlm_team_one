@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\"\n  ]\n, \"pointing_evidence\": \"uncertain\", \"pointing_box\": [\n    0.44,\n    0.55,\n    0.52,\n    0.67\n  ]\n, \"scene_facts\": \"The image shows a hand wearing a black glove pointing at a shelf of boxed products in what appears to be a retail store. The boxes are arranged in rows, with different colors and designs. The hand is pointing towards the middle section of the shelf, specifically at a box that is orange or light brown in color. The surrounding boxes are yellow, blue, and red, indicating a variety of products on display. The setting suggests a commercial environment, likely a supermarket or specialty store, where these items are being sold.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3709.9215970083605,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ]\n, \"pointing_evidence\": \"uncertain\", \"pointing_box\": [\n    0.45,\n    0.55,\n    0.5,\n    0.65\n  ], \"scene_facts\": \"The image shows a retail shelf with various packaged goods. A gloved hand is pointing at a peach-colored box labeled '海之蓝' (Hai Zhi Lan). To the left are yellow boxes labeled '红星' (Hong Xing). To the right are blue boxes labeled '梦之蓝' (Meng Zhi Lan). The pointing gesture is directed specifically at the peach-colored box in the center.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2620.929946016986,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.46,\n    0.55,\n    0.52,\n    0.66\n  ],\n  \"scene_facts\": \"The image shows a hand wearing a black glove pointing at a shelf of boxed products in what appears to be a retail store. The boxes are arranged in rows, with different colors and designs. The hand is pointing towards a peach-colored box labeled with Chinese characters. The surrounding boxes include yellow ones with red text and blue ones with white text and graphics.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2247.07031698199,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

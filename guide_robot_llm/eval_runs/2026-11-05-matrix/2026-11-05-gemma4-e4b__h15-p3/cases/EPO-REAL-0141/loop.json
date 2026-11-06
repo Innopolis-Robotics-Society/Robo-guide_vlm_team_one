@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/141.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-141-a\",\n    \"epobj-141-b\",\n    \"epobj-141-c\",\n    \"epobj-141-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a wide aisle in a retail store, likely a pharmacy or health and beauty store, with shelves stocked with various products. There is one person visible in the foreground, seemingly browsing or moving through the aisle.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2206.637474009767,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/141.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-141-a\",\n    \"epobj-141-b\",\n    \"epobj-141-c\",\n    \"epobj-141-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person in a brightly lit indoor retail store, likely a pharmacy or beauty supply store, browsing the aisles of shelves stocked with various products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1659.9473370006308,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/141.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-141-a\",\n    \"epobj-141-b\",\n    \"epobj-141-c\",\n    \"epobj-141-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows an interior view of a retail store, likely a pharmacy or beauty supply store, with shelves stocked with various products. There is one person visible in the foreground, seemingly browsing or moving through the aisles.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1870.0502940046135,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

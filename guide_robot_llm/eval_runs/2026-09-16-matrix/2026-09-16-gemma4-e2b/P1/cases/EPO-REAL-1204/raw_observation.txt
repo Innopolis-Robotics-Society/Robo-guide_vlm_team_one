@@ -1,0 +1,7 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-1204-a", "epobj-1204-b", "epobj-1204-c", "epobj-1204-d"], "pointing_evidence": "none", "pointing_box": [
+  0,
+  0,
+  0,
+  0
+], "scene_facts": "the_person_is_pointing_at_the_bottom_right_shelf_with_their_finger"
+}

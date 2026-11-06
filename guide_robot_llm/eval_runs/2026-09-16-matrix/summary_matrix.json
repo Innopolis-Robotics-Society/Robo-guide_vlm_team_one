@@ -1,0 +1,763 @@
+{
+ "generated": "2026-09-16T14:38:45",
+ "models_wall_s": {
+  "gemma4-e2b": {
+   "status": "done",
+   "started": "2026-09-16T09:35:13",
+   "error": "model gemma4-e2b: свободна 3.2GB < 6GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)",
+   "exit_code": 0,
+   "wall_s": 388.5,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-gemma4-e2b",
+   "finished": "2026-09-16T09:41:42"
+  },
+  "gemma4-e4b": {
+   "status": "done",
+   "started": "2026-09-16T09:41:42",
+   "error": "model gemma4-e4b: свободна 3.2GB < 8GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)",
+   "exit_code": 0,
+   "wall_s": 433.2,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-gemma4-e4b",
+   "finished": "2026-09-16T09:48:56"
+  },
+  "qwen3.5-4b": {
+   "status": "done",
+   "started": "2026-09-16T09:48:56",
+   "error": "model qwen3.5-4b: свободна 3.2GB < 6GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)",
+   "exit_code": 0,
+   "wall_s": 600.2,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-qwen3.5-4b",
+   "finished": "2026-09-16T09:58:57"
+  },
+  "qwen3.5-9b": {
+   "status": "done",
+   "started": "2026-09-16T09:58:57",
+   "error": "model qwen3.5-9b: свободна 3.2GB < 9GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)",
+   "exit_code": 0,
+   "wall_s": 725.8,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-qwen3.5-9b",
+   "finished": "2026-09-16T10:11:03"
+  }
+ },
+ "rows": [
+  {
+   "model": "gemma4-e2b",
+   "variant": "A0",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 988.8,
+   "latency_median_ms": 984.0
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "A1",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 781.2,
+   "latency_median_ms": 723.6
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "A2",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1534.6,
+   "latency_median_ms": 1692.5
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "A3",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1954.5,
+   "latency_median_ms": 2021.3
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "A4",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 851.0,
+   "latency_median_ms": 805.4
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "A_base",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 447.5,
+   "latency_median_ms": 429.7
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "D0",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1765.9,
+   "latency_median_ms": 1498.4
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "D1",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1750.5,
+   "latency_median_ms": 1705.8
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "D2",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2669.0,
+   "latency_median_ms": 2430.8
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "D3",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1142.8,
+   "latency_median_ms": 1126.3
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "D4",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 918.7,
+   "latency_median_ms": 727.1
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "D_base",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 442.9,
+   "latency_median_ms": 398.2
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "P0",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1494.7,
+   "latency_median_ms": 1459.9
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "P1",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1228.8,
+   "latency_median_ms": 1222.2
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "P2",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1256.2,
+   "latency_median_ms": 1234.3
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "P3",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 4223.4,
+   "latency_median_ms": 4231.0
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "P4",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1705.5,
+   "latency_median_ms": 1647.5
+  },
+  {
+   "model": "gemma4-e2b",
+   "variant": "P_base",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 737.2,
+   "latency_median_ms": 734.3
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "A0",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1147.6,
+   "latency_median_ms": 993.8
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "A1",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1055.4,
+   "latency_median_ms": 881.6
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "A2",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1948.6,
+   "latency_median_ms": 1949.1
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "A3",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2641.4,
+   "latency_median_ms": 2605.1
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "A4",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1153.3,
+   "latency_median_ms": 1118.2
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "A_base",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 529.9,
+   "latency_median_ms": 530.6
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "D0",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1629.6,
+   "latency_median_ms": 1555.8
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "D1",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1677.5,
+   "latency_median_ms": 1621.5
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "D2",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2867.2,
+   "latency_median_ms": 3220.6
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "D3",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1985.4,
+   "latency_median_ms": 2070.8
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "D4",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1262.9,
+   "latency_median_ms": 1237.3
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "D_base",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 615.2,
+   "latency_median_ms": 649.4
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "P0",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1383.6,
+   "latency_median_ms": 1405.5
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "P1",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1314.8,
+   "latency_median_ms": 1318.3
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "P2",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1976.8,
+   "latency_median_ms": 1583.0
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "P3",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 4917.6,
+   "latency_median_ms": 5059.3
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "P4",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1764.3,
+   "latency_median_ms": 1647.7
+  },
+  {
+   "model": "gemma4-e4b",
+   "variant": "P_base",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1003.9,
+   "latency_median_ms": 980.7
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "A0",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 873.9,
+   "latency_median_ms": 864.2
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "A1",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 744.9,
+   "latency_median_ms": 592.2
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "A2",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 3198.4,
+   "latency_median_ms": 3317.1
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "A3",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2404.8,
+   "latency_median_ms": 2476.1
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "A4",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1568.3,
+   "latency_median_ms": 1546.4
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "A_base",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 343.4,
+   "latency_median_ms": 341.6
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "D0",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1820.8,
+   "latency_median_ms": 1789.1
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "D1",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2087.7,
+   "latency_median_ms": 2204.0
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "D2",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 3146.6,
+   "latency_median_ms": 3299.4
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "D3",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1934.2,
+   "latency_median_ms": 1933.0
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "D4",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1621.2,
+   "latency_median_ms": 1413.0
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "D_base",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 725.9,
+   "latency_median_ms": 772.0
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "P0",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2318.4,
+   "latency_median_ms": 2254.3
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "P1",
+   "n_cases": 15,
+   "n_ok": 12,
+   "n_parse_failed": 3,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2196.6,
+   "latency_median_ms": 1919.0
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "P2",
+   "n_cases": 15,
+   "n_ok": 13,
+   "n_parse_failed": 2,
+   "n_backend_error": 0,
+   "latency_mean_ms": 5273.2,
+   "latency_median_ms": 5118.5
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "P3",
+   "n_cases": 15,
+   "n_ok": 12,
+   "n_parse_failed": 3,
+   "n_backend_error": 0,
+   "latency_mean_ms": 6432.4,
+   "latency_median_ms": 5791.8
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "P4",
+   "n_cases": 15,
+   "n_ok": 14,
+   "n_parse_failed": 1,
+   "n_backend_error": 0,
+   "latency_mean_ms": 3120.3,
+   "latency_median_ms": 3088.3
+  },
+  {
+   "model": "qwen3.5-4b",
+   "variant": "P_base",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1000.7,
+   "latency_median_ms": 980.7
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "A0",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 727.7,
+   "latency_median_ms": 704.6
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "A1",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 640.8,
+   "latency_median_ms": 624.6
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "A2",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 3428.2,
+   "latency_median_ms": 3363.1
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "A3",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1396.4,
+   "latency_median_ms": 1406.8
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "A4",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2677.5,
+   "latency_median_ms": 2629.3
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "A_base",
+   "n_cases": 25,
+   "n_ok": 25,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 403.2,
+   "latency_median_ms": 404.4
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "D0",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2858.1,
+   "latency_median_ms": 2833.5
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "D1",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2819.7,
+   "latency_median_ms": 2663.2
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "D2",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 5372.2,
+   "latency_median_ms": 5321.3
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "D3",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2600.0,
+   "latency_median_ms": 2560.0
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "D4",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 3216.2,
+   "latency_median_ms": 3171.3
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "D_base",
+   "n_cases": 3,
+   "n_ok": 3,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1130.8,
+   "latency_median_ms": 1175.7
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "P0",
+   "n_cases": 15,
+   "n_ok": 14,
+   "n_parse_failed": 1,
+   "n_backend_error": 0,
+   "latency_mean_ms": 3766.7,
+   "latency_median_ms": 3659.4
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "P1",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2828.2,
+   "latency_median_ms": 2886.6
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "P2",
+   "n_cases": 15,
+   "n_ok": 14,
+   "n_parse_failed": 1,
+   "n_backend_error": 0,
+   "latency_mean_ms": 5567.2,
+   "latency_median_ms": 5237.4
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "P3",
+   "n_cases": 15,
+   "n_ok": 13,
+   "n_parse_failed": 2,
+   "n_backend_error": 0,
+   "latency_mean_ms": 8862.7,
+   "latency_median_ms": 8617.2
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "P4",
+   "n_cases": 15,
+   "n_ok": 13,
+   "n_parse_failed": 2,
+   "n_backend_error": 0,
+   "latency_mean_ms": 6598.3,
+   "latency_median_ms": 6231.3
+  },
+  {
+   "model": "qwen3.5-9b",
+   "variant": "P_base",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1314.8,
+   "latency_median_ms": 1338.7
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0008-F001",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3317.131,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0033999967854470015,
+              "upload_ms": 180.11927700717933,
+              "ttft_ms": 233.10012801084667,
+              "full_ms": 2589.013493008679,
+              "parse_ready_ms": 2589.013493008679
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029799994081258774,
+              "upload_ms": 154.59477601689287,
+              "ttft_ms": 293.11500300536864,
+              "full_ms": 727.7214789937716,
+              "parse_ready_ms": 727.7214789937716
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- На заднем плане, слева, у забора — один человек (виден силуэт, возможно, стоит или идёт).\n- В центре-справа, на траве, ближе к дереву — ещё один человек (стоит, возможно, разговаривает или наблюдает).\n- Вдалеке, справа, у дома — ещё один человек (маленькая фигура, но заметна).\n\nИтого: **3 человека**.\n\nЭтап 2: Оценим готовность каждого слушать по критериям (близость, взгляд, вовлечённость).\n\n1. Человек слева у забора:\n   - Близость: далеко (за пределами фокуса внимания камеры).\n   - Взгляд: не видно, но его поза не указывает на взаимодействие с роботом.\n   - Вовлечённость: низкая — стоит один, не обращён к центру.\n   → **Не готов слушать**.\n\n2. Человек в центре-справа:\n   - Близость: умеренная (на расстоянии нескольких метров).\n   - Взгляд: не видно, но его положение — стоит рядом с деревом, не смотрит на камеру или робот.\n   - Вовлечённость: средняя — может быть вовлечён в свою деятельность, но не явно взаимодействует с роботом.\n   → **Не готов слушать** (нет признаков вовлечения в диалог).\n\n3. Человек справа у дома:\n   - Близость: очень далеко.\n   - Взгляд: не видно.\n   - Вовлечённость: низкая — стоит у дома, не связан с активностью в центре.\n   → **Не готов слушать**.\n\nИтого готовых слушать: **0**.\n\nОтвет: **3 0**"
+    }
+  },
+  "latency_ms": 3317.131,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0008-F001",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0008",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+      "sha256": "3c37b1c5c8c5d3acce8fba09d111562daca19bf19d8c577734301bd80b99567c",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 0
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "0",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

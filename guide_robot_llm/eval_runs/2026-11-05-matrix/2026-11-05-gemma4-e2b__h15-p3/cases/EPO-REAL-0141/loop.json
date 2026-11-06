@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/141.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-141-a\", \"epobj-141-b\", \"epobj-141-c\", \"epobj-141-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows an indoor setting, specifically a brightly lit retail store aisle with shelves stocked with various products (likely toiletries or personal care items). The focus is on the merchandise displayed on the shelves. The context is clearly an indoor commercial space.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1511.057264986448,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/141.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-141-a\", \"epobj-141-b\", \"epobj-141-c\", \"epobj-141-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows an indoor setting, specifically a retail store aisle with many products displayed on shelves. The products appear to be various types of bottled liquids, possibly personal care items, cosmetics, or similar goods. This strongly suggests an indoor environment.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1280.1453869906254,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/141.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-141-a\", \"epobj-141-b\", \"epobj-141-c\", \"epobj-141-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows an indoor setting, specifically a retail store aisle with many products displayed on shelves. The products appear to be various types of bottled liquids, likely personal care or cosmetic items, which are typically used indoors.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1276.4054480066989,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

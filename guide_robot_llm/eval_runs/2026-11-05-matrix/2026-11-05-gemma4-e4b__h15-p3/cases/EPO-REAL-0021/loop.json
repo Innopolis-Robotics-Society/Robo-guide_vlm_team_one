@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/21.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-21-a\",\n    \"epobj-21-b\",\n    \"epobj-21-c\",\n    \"epobj-21-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows an indoor area with several bicycles parked. There is a sign on the wall with the number 327A.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2042.2476230014581,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/21.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-21-a\",\n    \"epobj-21-b\",\n    \"epobj-21-c\",\n    \"epobj-21-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a bicycle parking area with several bicycles parked against a wall. There is a sign with the number '327A' on the wall.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1678.8208300131373,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/21.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-21-a\",\n    \"epobj-21-b\",\n    \"epobj-21-c\",\n    \"epobj-21-d\"\n  ]\n  \n  ,\"pointing_evidence\": \"none\"\n  \n  ,\"pointing_box\": null\n  \n  ,\"scene_facts\": \"The image shows a bicycle parking area with several bicycles parked. There is a wall with a sign '327A' visible. No clear pointing gesture towards a specific exhibit is visible in the provided frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1667.3877509892918,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the middle section of the display, specifically at the orange/peach colored box among the group of boxes.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1891.5280090004671,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the middle section of the display, specifically at a box with an orange/peach color scheme and Chinese characters that appear to read '涂之盛' (Tu Zhi Sheng).\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1616.4005469763651,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the middle section of the display, specifically at the orange/peach colored box which is located between the yellow boxes (epobj-13-a/b) and the blue boxes (epobj-13-c/d).\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1713.768361019902,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

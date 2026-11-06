@@ -1,0 +1,17 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The scene shows a person pointing at a speed limit sign. The sign displays the number '15' inside a red circle, indicating a speed limit of 15 km/h or mph. The person's finger is clearly directed at this sign, which is mounted on a pole near a tree and a road. The background includes trees, a clear sky, and a parked car, suggesting an outdoor setting, possibly a park or roadside area. The sign is the focal point of the image, with the person's gesture emphasizing its content."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 5,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.0,\n    0.0,\n    0.0,\n    0.0\n  ],\n  \"scene_facts\": \"The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing towards a specific item in the refrigerated case. The pointed item appears to be a whole chicken or similar poultry product, packaged and placed among other similar items. The person's hand is extended, indicating interest or selection of this particular exhibit.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2601.39006699319,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 5,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.5,\n    0.6,\n    0.6,\n    0.7\n  ],\n  \"scene_facts\": \"The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing towards the display case. The display case contains several types of poultry, including what appears to be whole chickens and other cuts. The person's hand is extended towards the lower part of the display case, specifically towards a package that seems to contain a whole chicken or similar poultry product. The pointing gesture is directed at a specific item within the display case, but the exact item being pointed at is not entirely clear from the image alone. The person's hand is positioned in a way that suggests they are indicating a particular product, but the resolution and angle make it difficult to definitively identify the exact item being pointed at. The display case is well-lit, and the products are arranged in an organized manner, with labels and price tags visible. The person's gesture is clear, but the specific item they are pointing to is not immediately obvious without further clarification or a closer view of the display case.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3738.648951984942,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 6,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.6,\n    0.6,\n    0.8,\n    0.9\n  ],\n  \"scene_facts\": \"The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing towards a specific item in the refrigerated case. The pointed item appears to be a whole chicken or similar poultry product, packaged and placed among other similar items. The gesture is directed at one of the poultry products in the lower right section of the display case.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2419.811539002694,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

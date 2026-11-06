@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407399_127993459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом 1 человек. Он стоит на траве слева от тропинки, одет в тёмную куртку и шапку, смотрит в камеру — значит, готов слушать. Поскольку готовых достаточно, завершаю цикл.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 950.1883269986138,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407399_127993459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек в чёрном пальто и шапке, который стоит на траве слева от тропинки. Он не смотрит на камеру, не реагирует на робота и не выглядит готовым слушать — его взгляд направлен в сторону, поза расслаблена, но без вовлечённости. Поэтому сейчас недостаточно готовых слушателей. Продолжаем цикл — вызываем этот же навык на новых кадрах.\",\n  \"confidence\": 0.85,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 965.8732949756086,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407399_127993459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре один человек — он стоит рядом с роботом, но не взаимодействует с ним, не смотрит на него и не демонстрирует признаков готовности слушать. Следовательно, готовых слушателей — 0.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 694.7501590184402,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

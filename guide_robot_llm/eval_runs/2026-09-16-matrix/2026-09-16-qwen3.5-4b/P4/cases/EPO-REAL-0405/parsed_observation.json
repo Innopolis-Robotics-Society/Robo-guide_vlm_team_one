@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "Визуально не обнаружено указательного жеста, взгляда или других признаков того, что посетитель указывает на какой-либо экспонат. Все кандидаты (epobj-405-a, epobj-405-b, epobj-405-c, epobj-405-d) равновероятны без дополнительной информации."
+}

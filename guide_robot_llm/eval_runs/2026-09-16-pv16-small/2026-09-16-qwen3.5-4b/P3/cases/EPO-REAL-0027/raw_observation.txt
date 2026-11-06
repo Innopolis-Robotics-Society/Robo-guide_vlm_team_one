@@ -1,0 +1,17 @@
+{
+  "people_count": 4,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "scene_facts": "The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing at a packaged item in the lower shelf. The item appears to be a whole chicken or a similar poultry product, wrapped in clear plastic. The person is wearing a green jacket and is pointing towards the lower right section of the display case. The background shows other shoppers and staff, as well as refrigerated shelves with more products. The focus is on the item being pointed at, which is a packaged poultry product."
+}

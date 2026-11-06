@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "the_person_is_pointing_at_a_shelf_of_products_which_appear_to_be_packaged_goods_or_snacks"
+}

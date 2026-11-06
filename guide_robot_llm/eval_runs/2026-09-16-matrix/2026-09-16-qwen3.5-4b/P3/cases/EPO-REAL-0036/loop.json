@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing towards a sign above a doorway. The sign appears to be for a hair salon or barbershop, with Chinese characters on it. The person is standing in front of the doorway, and their finger is directed upwards towards the sign. The sign is mounted on the wall above the entrance to the salon. The environment looks like an indoor space, possibly a commercial area or a mall, with visible ceiling lights and other structural elements. The person's hand is in the foreground, and the sign is the focal point of the image. The sign is illuminated, making it stand out against the background. The overall setting suggests a modern, well-lit interior space. The person's gesture indicates that they are drawing attention to the sign above the doorway. The sign is the most prominent feature in the image, and the person's pointing action reinforces its importance. The sign is located above the doorway, which is a common placement for signage to ensure it is visible to people entering or exiting the area. The sign's position and the person's gesture suggest that it is the intended target of the pointing action. The sign is clearly visible and the person's hand is directed towards it, making it the most likely object of interest in the image. The sign is the only object in the image that is being pointed at, and its location above the doorway is consistent with typical signage placement. The sign is the most prominent feature in the image, and the person's gesture reinforces its importance. The sign is the only object in the image that is being pointed at, and its location above the doorway is consistent with typical signage placement. The sign is the most prominent feature in the image, and the person's gesture reinforces its importance. The sign is the only object in the image that is being pointed at, and its location above the doorway is consistent with typical signage placement. The sign is the most prominent feature in the image, and the person",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3639.6139959979337,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ]\n,\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.53,\n    0.49,\n    0.68,\n    0.67\n  ],\n  \"scene_facts\": \"The scene shows a hallway with a salon or barbershop entrance. There is a hand pointing towards a sign above the doorway. The sign has Chinese characters and appears to be illuminated. Inside the salon, there are mirrors and chairs. The ceiling has exposed ducts and lighting fixtures.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1640.7139569928404,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a hand pointing towards a sign above a doorway. The sign appears to be a business sign, possibly for a barbershop or similar establishment, given the barber pole visible to the left of the sign. The hand is pointing upwards towards the sign. The sign is located above the doorway, which is the entrance to the room or establishment. The sign is illuminated and appears to be made of light-up letters or a similar material. The room inside has mirrors and chairs, suggesting it is a place for services like haircuts or styling. The ceiling has exposed ductwork and lighting fixtures, indicating an industrial or commercial setting. The floor is smooth and reflective, possibly tiled or polished concrete. There are no other people visible in the image, and the focus is on the hand pointing at the sign. The sign is the most prominent feature in the image, and the hand is clearly directing attention to it. The sign is positioned above the doorway, making it easily visible to anyone entering the establishment. The sign's location and the hand's gesture suggest that it is the intended object of interest. The sign's content is not fully legible, but its placement and illumination indicate its importance as a business identifier. The overall scene suggests a commercial environment, likely a barbershop or similar service business, with the sign serving as the primary visual element for customers. The hand's gesture reinforces the sign's significance, drawing the viewer's attention to it as the focal point of the image. The sign's position above the doorway ensures it is seen by anyone approaching the entrance, making it a crucial element for branding and identification. The sign's design, with its bright, illuminated letters, is intended to be eye-catching and memorable, aiding in brand recognition. The sign's location and the hand's gesture together create a clear indication of its importance and relevance to the scene. The sign is the central element of the image, and the hand",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3536.386480991496,
+    "attempts": 1,
+    "finish_reason": "length"
+  }
+]

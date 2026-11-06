@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0009-F248",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3795.582,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0027809874154627323,
+              "upload_ms": 192.45014400803484,
+              "ttft_ms": 374.29426101152785,
+              "full_ms": 2895.738755003549,
+              "parse_ready_ms": 2895.738755003549
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029600050766021013,
+              "upload_ms": 49.580328981392086,
+              "ttft_ms": 227.32039698166773,
+              "full_ms": 899.4439399975818,
+              "parse_ready_ms": 899.4439399975818
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nНа изображении виден один человек — слева, в чёрной куртке и тёмных брюках, идущий по тропинке. Никаких других людей в кадре не видно.\n\n→ Всего людей: 1\n\nЭтап 2: Оценка готовности к слушанию\n\nКритерии:\n- Близость: человек находится рядом с камерой (предположительно, с роботом), но не стоит прямо перед ним — он движется параллельно или чуть впереди.\n- Взгляд: лицо не видно, но по позе и направлению движения он не обращён к камере/роботу — скорее, смотрит вперёд или по сторонам.\n- Вовлечённость: человек идёт, возможно, размышляет или просто прогуливается — нет признаков остановки, жеста, поворота головы или внимания к устройству.\n\nВывод: человек не готов слушать — он не вовлечён, не обращён к роботу, не остановился.\n\n→ Готовых людей: 0\n\nИтоговый ответ:\n\nВсего людей: 1  \nГотовых слушать: 0"
+    }
+  },
+  "latency_ms": 3795.582,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0009-F248",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0009",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407359_796641459.png",
+      "sha256": "01f683220032677309bfde1d628bebd1064e4168f2eccd10915197e8a214ed0b",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

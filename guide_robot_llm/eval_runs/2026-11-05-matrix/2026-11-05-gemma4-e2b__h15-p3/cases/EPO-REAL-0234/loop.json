@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/234.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-234-a\", \"epobj-234-b\", \"epobj-234-c\", \"epobj-234-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"the_object_is_a_low_barrier_or_railing_in_a_public_space_with_pedestrians_and_some_vehicles_visible_in_the_background_the_foreground_shows_a_concrete_barrier_or_edge_with_some_small_objects_or_markers_on_it_the_question_asks_about_vehicle_passage_ability\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1751.1763309885282,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/234.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-234-a\",\n    \"epobj-234-b\",\n    \"epobj-234-c\",\n    \"epobj-234-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"the_visitor_is_pointing_towards_the_foreground_object_which_is_a_large_sculpture_or_structure_in_the_lower_right_part_of_the_frame\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1507.3221669881605,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/234.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-234-a\", \"epobj-234-b\", \"epobj-234-c\", \"epobj-234-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows an outdoor public space with paved areas, some low barriers, and trees. There are no visible exhibits or specific objects that clearly point to any of the listed exhibit IDs.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1204.0578900196124,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

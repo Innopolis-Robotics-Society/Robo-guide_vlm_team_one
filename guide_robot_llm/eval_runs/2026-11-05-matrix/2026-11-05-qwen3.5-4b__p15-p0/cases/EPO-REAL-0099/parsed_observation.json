@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.35,
+    0.68,
+    0.45,
+    0.78
+  ],
+  "scene_facts": "The image shows a refrigerated display case in a store, likely a supermarket or convenience store, containing various packaged food items. A person's hand is pointing at a specific item on the bottom shelf. The items appear to be pre-packaged snacks or convenience foods, possibly including bread, pastries, or other ready-to-eat products. The person is selecting or indicating one of these items for"
+}

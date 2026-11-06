@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0008-F122",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3022.85,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002929999027401209,
+              "upload_ms": 170.03519998979755,
+              "ttft_ms": 297.2378220001701,
+              "full_ms": 2284.750268008793,
+              "parse_ready_ms": 2284.750268008793
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0034599797800183296,
+              "upload_ms": 137.4512610200327,
+              "ttft_ms": 288.12845901120454,
+              "full_ms": 737.7043760207016,
+              "parse_ready_ms": 737.7043760207016
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В центре кадра, по дорожке, идёт один человек в оранжевом жилете — это явно человек.\n- На заднем плане, слева, за деревьями, видна фигура человека, стоящего у забора или рядом с ним — это второй человек.\n- Справа, также на заднем плане, за деревьями, можно разглядеть ещё одну фигуру — возможно, человек, идущий или стоящий — это третий человек.\n- Вдалеке, за деревьями, справа, есть ещё одна тусклая фигура — возможно, человек, но он очень мал и нечёткий — считаем его четвёртым.\n\nИтого: 4 человека.\n\nЭтап 2: Оценим, кто из них готов слушать (по критериям: близость, взгляд, вовлечённость).\n\n- Человек в центре (в оранжевом жилете): он идёт спиной к камере, не смотрит на неё, не взаимодействует — не готов слушать.\n- Человек слева на заднем плане: стоит, но не обращён к камере, не видно лица или реакции — не готов слушать.\n- Человек справа на заднем плане: тоже не обращён к камере, не видно взаимодействия — не готов слушать.\n- Четвёртый человек вдалеке: слишком мал, нечёткий, невозможно определить его внимание или реакцию — не готов слушать.\n\nИтого: 0 человек готов слушать.\n\nОтвет: всего людей — 4, готовых — 0."
+    }
+  },
+  "latency_ms": 3022.85,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0008-F122",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0008",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407239_332517459.png",
+      "sha256": "b3e04334a4ed66dbf632714349af23ca5114650c0661dd85253d950924abfce9",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

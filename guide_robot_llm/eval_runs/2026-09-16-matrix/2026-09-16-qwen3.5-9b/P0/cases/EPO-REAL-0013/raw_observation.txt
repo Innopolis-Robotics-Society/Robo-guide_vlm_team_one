@@ -1,0 +1,16 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    "epobj-13-c"
+  ]
+,
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0.47,
+    0.55,
+    0.52,
+    0.67
+  ]
+,
+  "scene_facts": "The image shows a retail display of Chinese liquor boxes. A gloved hand is pointing at a peach-colored box labeled '海之蓝' (Hai Zhi Lan), which translates to 'Ocean Blue'. This is a well-known brand of Moutai liquor. The other visible brands include 'Red Star' (yellow boxes) and 'Dream Blue' (blue boxes). The pointing gesture clearly targets the 'Ocean Blue' box."
+}

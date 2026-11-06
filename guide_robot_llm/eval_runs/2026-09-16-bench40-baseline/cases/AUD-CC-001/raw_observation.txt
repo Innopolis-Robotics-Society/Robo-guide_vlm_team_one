@@ -1,0 +1,7 @@
+{
+"people_count": 2,
+"exhibit_candidates": [],
+"pointing_evidence": "none",
+"pointing_box": null,
+"scene_facts": "В кадре видны два человека, стоящие спиной к камере. Справа на стене висит картина или зеркало, отражающее силуэт человека."
+}

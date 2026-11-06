@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a laptop with a hand pointing at a round metal tin containing small yellow packets. The tin is placed on the laptop's keyboard area. To the right, there is a white computer mouse, but it is not being pointed at. The gesture clearly targets the tin, not the mouse or any other object in the scene."
+}

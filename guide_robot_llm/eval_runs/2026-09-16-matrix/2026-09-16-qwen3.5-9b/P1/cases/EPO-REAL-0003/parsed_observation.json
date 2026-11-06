@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a",
+    "epobj-3-b",
+    "epobj-3-c",
+    "epobj-3-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.38,
+    0.76,
+    0.42,
+    0.8
+  ],
+  "scene_facts": "The image shows a refrigerated vegetable display in a store. A person’s arm (wearing a black sleeve) is pointing at a specific package on the middle shelf. The package contains small, round, pinkish-white vegetables with green tops — consistent with radishes. To the left are packages of what appear to be garlic or shallots; to the right are Brussels sprouts and white mushrooms. The pointing gestur"
+}

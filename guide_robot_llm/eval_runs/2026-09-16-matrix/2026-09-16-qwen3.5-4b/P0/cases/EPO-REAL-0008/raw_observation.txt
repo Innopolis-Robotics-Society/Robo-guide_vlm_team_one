@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a packaged item hanging on a display rack in what appears to be a supermarket or department store. The item is wrapped in clear plastic and features an image of a woman wearing a red top and light-colored bottoms. It resembles a packaged garment, possibly lingerie or sleepwear, commonly found in such stores. The surrounding shelves contain various household and personal care products, including bottles, boxes, and other packaged goods. The environment is well-lit with overhead lighting, typical of retail spaces. The person’s hand is extended toward the item, indicating interest or selection. No other people are clearly visible in the immediate vicinity, though the presence of other shoppers cannot be entirely ruled out. The floor is clean and reflective, suggesting a well-maintained commercial space. The overall scene suggests a casual shopping experience focused on selecting a specific product."
+}

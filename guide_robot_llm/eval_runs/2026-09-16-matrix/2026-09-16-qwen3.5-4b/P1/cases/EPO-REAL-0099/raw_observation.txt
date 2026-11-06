@@ -1,0 +1,11 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The person is pointing at a yellow package in the bottom shelf of the refrigerator. The package appears to be a single-serving snack bar or similar food item. The other shelves contain various packaged foods, including noodles and other snacks. The person's hand is clearly visible, pointing towards the yellow package. The other packages are not being pointed at. The person is looking at the package they are pointing at. The person is wearing a green jacket. The refrigerator is well-lit and the packages are clearly visible. The person is standing in front of the refrigerator. The person is holding a phone in their other hand. The person is wearing a watch on their left wrist. The person is wearing a ring on their left hand. The person is wearing a bracelet on their left wrist. The person is wearing a necklace. The person is wearing a tie. The person is wearing a suit. The person is wearing a dress. The person is wearing a skirt. The person is wearing a blouse. The person is wearing a shirt. The person is wearing a jacket. The person is wearing a coat. The person is wearing a sweater. The person is wearing a hoodie. The person is wearing a vest. The person is wearing a scarf. The person is wearing a hat. The person is wearing a cap. The person is wearing a helmet. The person is wearing a mask. The person is wearing gloves. The person is wearing shoes. The person is wearing socks. The person is wearing pants. The person is wearing jeans. The person is wearing trousers. The person is wearing shorts. The person is wearing a swimsuit. The person is wearing a uniform. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person is wearing a costume. The person

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\"\n,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a bakery section in a store. There are several packaged bread items on the shelf. A person's hand is pointing at one of the bread packages. The package being pointed at appears to contain a light-colored bread with some inclusions, possibly chocolate chips or similar. There are other packages nearby, including one that looks like it might have red bean paste (based on the reddish-brown color) and another that looks like whole wheat bread (darker color). The package being pointed at is distinct from these others. The text on the packages is in Chinese, but it's not clearly legible enough to determine the exact flavor. However, the appearance of the bread being pointed at suggests it could be a chocolate chip or similar sweet bread. The other options like red bean, whole wheat, and milk don't seem to match the appearance of the bread being pointed at as well as chocolate chip does. The red bean option might be a distractor based on the reddish-brown package nearby. The whole wheat option might be a distractor based on the darker package nearby. The milk option doesn't seem to match any of the bread packages. Therefore, the most likely candidate is chocolate chip. However, without clearer text or a more definitive visual cue, there's still some uncertainty. The pointing hand is clearly indicating one of the packages, and the appearance of that package is consistent with a chocolate chip bread. The other packages are different and don't match the pointing hand's target as closely. Therefore, I'm leaning towards chocolate chip as the most likely answer, but I'm not 100% certain without more information. The pointing hand is clearly indicating one of the packages, and the appearance of that package is consistent with a chocolate chip bread. The other packages are different and don't match the pointing hand's target as closely. Therefore, I'm leaning towards chocolate chip as",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3776.9388669985346,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a packaged bread item on a shelf. The packaging is white with a clear window showing the bread inside. The bread appears to have a light brown or beige color with some darker spots or swirls, possibly indicating chocolate chips or another ingredient. The person's hand is extended towards the item, indicating interest or selection. The background shows a store setting with various other products on shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1887.469801993575,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The user is pointing at a packaged baked good on a shelf in a store. The package is white with a clear window showing the contents. The contents appear to be a slice of bread or cake with a brownish filling or topping. There are other similar packages next to it, and some bottles of milk on the left. The user's hand is extended towards the shelf, with fingers pointing at one of the packages.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1775.4998430027626,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

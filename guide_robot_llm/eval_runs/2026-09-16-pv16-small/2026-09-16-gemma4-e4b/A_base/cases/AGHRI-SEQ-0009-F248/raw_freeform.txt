@@ -1,0 +1,1 @@
+{"answer": "Неизвестно", "confidence": 0.1, "abstain": true}

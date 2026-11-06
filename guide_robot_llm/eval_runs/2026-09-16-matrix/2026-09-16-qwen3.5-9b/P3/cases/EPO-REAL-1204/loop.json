@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"В кадре видна полка с канцелярскими товарами. Рука человека указывает на стопку прозрачных файлов или папок, расположенных на нижней полке, ближе к центру-справа. На полке также видны другие товары: цветные файлы, тетради, папки. Указательный жест направлен именно на эту стопку прозрачных файлов.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2384.1570960066747,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"В кадре видна полка с канцелярскими товарами. Рука человека указывает на стопку прозрачных папок или файлов, расположенных на нижней полке, ближе к центру-справа. На полке также видны другие товары: слева — тетради и блокноты, справа — цветные пластиковые вставки для папок. Указательный жест направлен именно на стопку прозрачных папок с красными ленточками/зажимами.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2474.2736280022655,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.49,\n    0.85,\n    0.56,\n    0.93\n  ],\n  \"scene_facts\": \"В кадре видна полка с канцелярскими товарами. Рука человека указывает на стопку прозрачных папок или файлов, расположенную на нижней полке. На полке также видны другие товары: тетради, блокноты, цветные ручки в упаковке. Указательный жест направлен именно на эту стопку прозрачных папок.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2645.1155059912708,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

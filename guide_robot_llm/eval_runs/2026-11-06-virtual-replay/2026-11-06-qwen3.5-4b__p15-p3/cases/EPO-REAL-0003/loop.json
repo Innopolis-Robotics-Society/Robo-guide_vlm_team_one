@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"unconfirmed\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2107.9919770127162,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.37,\n    0.72,\n    0.42,\n    0.78\n  ],\n  \"scene_facts\": \"The person is pointing at a package of small, round, green vegetables on the middle shelf. These look like Brussels sprouts.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1565.2897219988517,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"uncertain\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1404.090953990817,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

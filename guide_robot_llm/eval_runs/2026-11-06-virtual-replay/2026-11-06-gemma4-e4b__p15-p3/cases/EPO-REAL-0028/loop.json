@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_scene_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1972.6040890091099,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_scene_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1461.8544910044875,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person in a car, pointing towards a signpost with traffic signs (a no-parking sign and a speed limit sign). There are no museum exhibits visible in the scene.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1662.5089089793619,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

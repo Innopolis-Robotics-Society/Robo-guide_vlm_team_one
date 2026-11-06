@@ -1,0 +1,20 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-96-a",
+"epobj-96-b",
+"epobj-96-c",
+"epobj-96-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "the_image_shows_a_large_storefront_with_logos_of_nike_and_uniqlo"
+}

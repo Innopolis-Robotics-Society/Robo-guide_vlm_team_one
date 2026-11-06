@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a",
+    "epobj-96-b",
+    "epobj-96-c",
+    "epobj-96-d"
+  ],
+  "pointing_evidence": "uncertain"
+,
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "scene_facts": "The person is pointing towards the Uniqlo store on the building."
+}

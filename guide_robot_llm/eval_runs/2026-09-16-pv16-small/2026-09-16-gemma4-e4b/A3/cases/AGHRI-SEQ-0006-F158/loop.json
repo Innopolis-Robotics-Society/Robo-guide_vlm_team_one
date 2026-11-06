@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение является статичным кадром, и у меня нет информации о том, сколько людей \"\n    \n    , \"confidence\": 0.95\n    \n    , \"abstain\": false\n    }",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1100.6755830021575,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное вами изображение является статичным кадром, а не видеопотоком. Для выполнения задачи, требующей цикла и анализа последовательных кадров (например, \"\n    \n    , \"confidence\": 0.0\n  \n  , \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 998.5366409819108,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\"answer\": \"Невозможно выполнить этот запрос. Предоставленное изображение является статичным кадром, и я не могу отслеживать динамику событий, вызывать навыки в цикле или определять \"\n   \n   , \"confidence\": 0.0, \"abstain\": true}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 746.8472019827459,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

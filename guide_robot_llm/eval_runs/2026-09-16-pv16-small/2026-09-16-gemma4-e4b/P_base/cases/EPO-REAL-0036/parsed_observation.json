@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.55,
+    0.68,
+    0.78,
+    0.98
+  ],
+  "scene_facts": "Человек указывает рукой в сторону интерьера помещения."
+}

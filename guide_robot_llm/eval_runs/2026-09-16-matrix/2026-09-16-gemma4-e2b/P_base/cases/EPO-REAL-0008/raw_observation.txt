@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-8-a", "epobj-8-b", "epobj-8-c", "epobj-8-d"], "pointing_evidence": "yes", "pointing_box": [0.57, 0.53, 0.99, 0.99], "scene_facts": "Человек указывает на ряды товаров в магазине."}

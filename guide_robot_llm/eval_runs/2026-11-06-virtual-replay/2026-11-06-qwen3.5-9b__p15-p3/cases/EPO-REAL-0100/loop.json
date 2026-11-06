@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-100-a\",\n    \"epobj-100-b\",\n    \"epobj-100-c\",\n    \"epobj-100-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a cluttered desk with various items including bottles, containers, and a red bag. There is a shelf unit to the left holding figurines and other objects. No person is visible in the image, so no pointing gesture can be observed. Therefore, no exhibit can be identified based on pointing evidence.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3395.426644012332,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-100-a\",\n    \"epobj-100-b\",\n    \"epobj-100-c\",\n    \"epobj-100-d\"\n  ]\n, \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a cluttered desk with various items such as bottles, containers, and electronic devices. There is no visible person in the image making a pointing gesture or indicating any specific exhibit. The scene appears to be a static shot of a workspace without any interactive elements or people present. Therefore, there is no evidence of pointing behavior to associate with any of the exhibit candidates.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2311.6928530216683,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\"people_count\": 0, \"exhibit_candidates\": [\"epobj-100-a\", \"epobj-100-b\", \"epobj-100-c\", \"epobj-100-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows a cluttered desk surface with various items such as bottles, containers, and a red bag. There is no visible person or gesture indicating pointing to any specific exhibit. The scene does not provide enough information to determine which exhibit is being pointed to. No candidates can be confidently selected based on the current visual evidence.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1907.8741139965132,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

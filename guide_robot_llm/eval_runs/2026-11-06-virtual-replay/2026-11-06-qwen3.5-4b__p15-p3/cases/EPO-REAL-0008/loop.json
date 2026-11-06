@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing at a packaged item hanging on a display rack in what appears to be a store. The item is wrapped in clear plastic and features an image of a woman on the packaging. The surrounding shelves contain various household goods, including bottles, containers, and other packaged products. The person's arm is extended towards the item, indicating interest or selection. The environment suggests a retail setting, possibly a department store or supermarket, with organized displays and bright lighting.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2538.190466002561,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store aisle. A person's arm is extended, pointing towards a packaged item hanging on a display rack. The item appears to be a package containing a white, possibly cloth or fabric product, with a red logo or design on the packaging. The background includes shelves stocked with various household goods, such as bottles of cleaning supplies, tissues, and other packaged items. The lighting is bright, typical of a retail environment. The person's hand is clearly visible, indicating a specific item of interest. The item being pointed at is hanging on a wire rack, which is common for displaying small household items in stores. The packaging suggests it could be a cleaning cloth, a sponge, or a similar household product. The surrounding items on the shelves include various cleaning products, tissues, and other household essentials, which provides context for the type of item being pointed at. The person's gesture is deliberate, suggesting they are highlighting a specific product for consideration or purchase. The overall scene is well-lit and organized, typical of a retail store setting. The item being pointed at is clearly visible and the focus of the person's attention. The surrounding items on the shelves provide additional context, but the specific item being pointed at is the main focus of the image. The person's hand is extended towards the item, indicating a clear intent to draw attention to it. The item appears to be a packaged product, likely a household item given the context of the store. The packaging is white with a red design, which stands out against the other items on the rack. The person's hand is positioned to point directly at the item, suggesting it is of particular interest. The surrounding items on the shelves include various cleaning products, tissues, and other household essentials, which provides context for the type of item being pointed at. The overall scene is well-lit and organized, typical of a retail store setting. The item being pointed at is clearly visible and the focus of the person's attention. The person's hand is extended towards the item, indicating a",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3723.0930690129753,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing at a packaged item hanging on a rack in what appears to be a store. The item is wrapped in clear plastic and has a picture of a woman on it, suggesting it might be a product like a bra or underwear. The person's hand is extended towards the item, indicating interest or selection. The background shows shelves stocked with various household goods, including cleaning supplies and personal care items. The lighting is bright, typical of a retail environment. The person is wearing a black sleeve, and the item they are pointing at is suspended from a metal rack, likely for display purposes. The packaging is designed to showcase the product clearly to potential buyers. The overall scene suggests a shopping context where the person is evaluating or choosing a product. The item's placement on the rack and its packaging indicate it is a commercial product available for purchase. The person's gesture implies they are either considering the item for purchase or are showing it to someone else. The surrounding products and the store layout provide context for the item's category and availability. The person's focus on the item suggests it is of particular interest to them. The item's packaging and the store's presentation aim to attract customers and facilitate the purchasing decision. The person's interaction with the item is a key moment in the shopping process, reflecting their engagement with the product. The store's environment and the item's placement are designed to enhance the shopping experience and guide customer choices. The person's pointing action is a clear indicator of their intent to either select or examine the item further. The item's packaging and the store's display are optimized to make the product appealing and easy to identify. The person's gesture and the item's presentation together create a narrative of consumer decision-making in a retail setting. The item's category and the store's layout suggest a focus on household and personal care products. The person's interaction with the item is a typical behavior in a shopping scenario, where",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3800.0968210108113,
+    "attempts": 1,
+    "finish_reason": "length"
+  }
+]

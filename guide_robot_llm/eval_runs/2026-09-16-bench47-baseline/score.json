@@ -1,0 +1,2173 @@
+{
+  "statement": "Diagnostic only — no final project score, no #11 selection.",
+  "run_dir": "eval_runs/2026-09-16-bench47-baseline",
+  "generated": "2026-09-16T00:31:26+00:00",
+  "n_cases": 47,
+  "status_counts": {
+    "ok": 47,
+    "parse_failed": 0,
+    "backend_error": 0
+  },
+  "pass_counts": {
+    "pass": 34,
+    "fail": 13,
+    "unjudged": 0
+  },
+  "run_config": null,
+  "per_case": {
+    "EPO-REAL-0003": {
+      "case_id": "EPO-REAL-0003",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-3",
+      "slices": {
+        "dimension": "Basic Perception",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "Garlic": "epobj-3-a",
+          "Brussels Sprouts": "epobj-3-b",
+          "Red Onion": "epobj-3-c",
+          "Radish": "epobj-3-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-3-c",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 19180.689
+    },
+    "EPO-REAL-0008": {
+      "case_id": "EPO-REAL-0008",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-8",
+      "slices": {
+        "dimension": "Affordance & Function",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "To store cold beverages for drinking": "epobj-8-a",
+          "To clean surfaces like a sponge": "epobj-8-b",
+          "To hang clothes for drying": "epobj-8-c",
+          "To provide warmth when filled with heated liquid": "epobj-8-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-8-c",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 17322.285
+    },
+    "EPO-REAL-0013": {
+      "case_id": "EPO-REAL-0013",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-13",
+      "slices": {
+        "dimension": "OCR & Text",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "Ocean Blue": "epobj-13-a",
+          "Red Star": "epobj-13-b",
+          "Dream Blue": "epobj-13-c",
+          "Golden Harvest": "epobj-13-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-13-c",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 26959.377
+    },
+    "EPO-REAL-0027": {
+      "case_id": "EPO-REAL-0027",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-27",
+      "slices": {
+        "dimension": "Basic Perception",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "Pork chop": "epobj-27-a",
+          "Yellow broiler chicken": "epobj-27-b",
+          "Silkie chicken": "epobj-27-c",
+          "Duck breast": "epobj-27-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-27-b",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 35534.26
+    },
+    "EPO-REAL-0028": {
+      "case_id": "EPO-REAL-0028",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-28",
+      "slices": {
+        "dimension": "Context & Relation",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "Below": "epobj-28-a",
+          "To the right": "epobj-28-b",
+          "Above": "epobj-28-c",
+          "To the left": "epobj-28-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-28-c",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 17331.255
+    },
+    "EPO-REAL-0036": {
+      "case_id": "EPO-REAL-0036",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-36",
+      "slices": {
+        "dimension": "Context & Relation",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "Attached to the side wall at eye level": "epobj-36-a",
+          "Inside the room on a desk": "epobj-36-b",
+          "Above the doorway": "epobj-36-c",
+          "On the floor in front of the doorway": "epobj-36-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-36-c",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 17618.284
+    },
+    "EPO-REAL-0069": {
+      "case_id": "EPO-REAL-0069",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-69",
+      "slices": {
+        "dimension": "Affordance & Function",
+        "deixis_level": "L2",
+        "n_distractors": 3,
+        "answer_map": {
+          "Stationery and office organization": "epobj-69-a",
+          "Household cleaning and sanitation": "epobj-69-b",
+          "Food and beverage consumption": "epobj-69-c",
+          "Skincare or cosmetic application": "epobj-69-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "D",
+        "mapped_target_id": "epobj-69-d",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 17302.543
+    },
+    "EPO-REAL-0096": {
+      "case_id": "EPO-REAL-0096",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-96",
+      "slices": {
+        "dimension": "OCR & Text",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "Nike": "epobj-96-a",
+          "Uniqlo": "epobj-96-b",
+          "H&M": "epobj-96-c",
+          "Adidas": "epobj-96-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-96-b",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 17307.32
+    },
+    "EPO-REAL-0099": {
+      "case_id": "EPO-REAL-0099",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-99",
+      "slices": {
+        "dimension": "Affordance & Function",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "An ingredient for a meal.": "epobj-99-a",
+          "A single-serving snack bar.": "epobj-99-b",
+          "A cleaning product.": "epobj-99-c",
+          "A fresh noodle dish.": "epobj-99-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "A",
+        "mapped_target_id": "epobj-99-a",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 17668.209
+    },
+    "EPO-REAL-0100": {
+      "case_id": "EPO-REAL-0100",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-100",
+      "slices": {
+        "dimension": "Context & Relation",
+        "deixis_level": "L2",
+        "n_distractors": 3,
+        "answer_map": {
+          "On the desk surface": "epobj-100-a",
+          "On the shelf": "epobj-100-b",
+          "Hanging from a cable": "epobj-100-c",
+          "Mounted on the wall": "epobj-100-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "A",
+        "mapped_target_id": "epobj-100-a",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 17345.865
+    },
+    "EPO-REAL-0103": {
+      "case_id": "EPO-REAL-0103",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-103",
+      "slices": {
+        "dimension": "OCR & Text",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "Lay's": "epobj-103-a",
+          "Orion": "epobj-103-b",
+          "Pringles": "epobj-103-c",
+          "Oishi": "epobj-103-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "A",
+        "mapped_target_id": "epobj-103-a",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 17841.753
+    },
+    "EPO-REAL-0167": {
+      "case_id": "EPO-REAL-0167",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-167",
+      "slices": {
+        "dimension": "Basic Perception",
+        "deixis_level": "L2",
+        "n_distractors": 3,
+        "answer_map": {
+          "Red bean": "epobj-167-a",
+          "Whole wheat": "epobj-167-b",
+          "Milk": "epobj-167-c",
+          "Chocolate chip": "epobj-167-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-167-b",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 17459.307
+    },
+    "EPO-REAL-0405": {
+      "case_id": "EPO-REAL-0405",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-405",
+      "slices": {
+        "dimension": "Adversarial",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "Unknown": "epobj-405-a",
+          "Yes": "epobj-405-b",
+          "Maybe": "epobj-405-c",
+          "No": "epobj-405-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-405-b",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 17619.386
+    },
+    "EPO-REAL-1204": {
+      "case_id": "EPO-REAL-1204",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-1204",
+      "slices": {
+        "dimension": "Adversarial",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "It prints labels automatically": "epobj-1204-a",
+          "It charges mobile devices": "epobj-1204-b",
+          "It scans documents digitally": "epobj-1204-c",
+          "It has no electronic functions": "epobj-1204-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "D",
+        "mapped_target_id": "epobj-1204-d",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 17617.699
+    },
+    "EPO-REAL-1270": {
+      "case_id": "EPO-REAL-1270",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-1270",
+      "slices": {
+        "dimension": "Adversarial",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "No, it is a black metal shelf guard": "epobj-1270-a",
+          "Yes, it is a yellow package of tissues": "epobj-1270-b",
+          "No, it is a large plastic storage bin": "epobj-1270-c",
+          "Yes, it is a blue package of wet wipes": "epobj-1270-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "D",
+        "mapped_target_id": "epobj-1270-d",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 24786.227
+    },
+    "AGHRI-SEQ-0001-F001": {
+      "case_id": "AGHRI-SEQ-0001-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0001",
+      "slices": {
+        "count_bucket": "2",
+        "declared_count": 2,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 2,
+        "count_gold": 2,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4457.429
+    },
+    "AGHRI-SEQ-0001-F040": {
+      "case_id": "AGHRI-SEQ-0001-F040",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0001",
+      "slices": {
+        "count_bucket": "2",
+        "declared_count": 2,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 2,
+        "count_gold": 2,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4149.667
+    },
+    "AGHRI-SEQ-0001-F079": {
+      "case_id": "AGHRI-SEQ-0001-F079",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0001",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 2,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4171.633
+    },
+    "AGHRI-SEQ-0004-F001": {
+      "case_id": "AGHRI-SEQ-0004-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0004",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 3,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4361.376
+    },
+    "AGHRI-SEQ-0004-F130": {
+      "case_id": "AGHRI-SEQ-0004-F130",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0004",
+      "slices": {
+        "count_bucket": "2",
+        "declared_count": 3,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 2,
+        "count_gold": 2,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3889.131
+    },
+    "AGHRI-SEQ-0004-F260": {
+      "case_id": "AGHRI-SEQ-0004-F260",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0004",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 3,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3884.876
+    },
+    "AGHRI-SEQ-0005-F001": {
+      "case_id": "AGHRI-SEQ-0005-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0005",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3778.878
+    },
+    "AGHRI-SEQ-0005-F125": {
+      "case_id": "AGHRI-SEQ-0005-F125",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0005",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4294.335
+    },
+    "AGHRI-SEQ-0005-F249": {
+      "case_id": "AGHRI-SEQ-0005-F249",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0005",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3849.627
+    },
+    "AGHRI-SEQ-0006-F001": {
+      "case_id": "AGHRI-SEQ-0006-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0006",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4184.281
+    },
+    "AGHRI-SEQ-0006-F158": {
+      "case_id": "AGHRI-SEQ-0006-F158",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0006",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3802.47
+    },
+    "AGHRI-SEQ-0006-F316": {
+      "case_id": "AGHRI-SEQ-0006-F316",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0006",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4261.062
+    },
+    "AGHRI-SEQ-0007-F001": {
+      "case_id": "AGHRI-SEQ-0007-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0007",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3816.152
+    },
+    "AGHRI-SEQ-0007-F131": {
+      "case_id": "AGHRI-SEQ-0007-F131",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0007",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3742.308
+    },
+    "AGHRI-SEQ-0007-F262": {
+      "case_id": "AGHRI-SEQ-0007-F262",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0007",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3977.492
+    },
+    "AGHRI-SEQ-0008-F001": {
+      "case_id": "AGHRI-SEQ-0008-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0008",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3751.624
+    },
+    "AGHRI-SEQ-0008-F122": {
+      "case_id": "AGHRI-SEQ-0008-F122",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0008",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4078.557
+    },
+    "AGHRI-SEQ-0008-F243": {
+      "case_id": "AGHRI-SEQ-0008-F243",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0008",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3722.602
+    },
+    "AGHRI-SEQ-0009-F001": {
+      "case_id": "AGHRI-SEQ-0009-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0009",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3443.674
+    },
+    "AGHRI-SEQ-0009-F124": {
+      "case_id": "AGHRI-SEQ-0009-F124",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0009",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3944.748
+    },
+    "AGHRI-SEQ-0009-F248": {
+      "case_id": "AGHRI-SEQ-0009-F248",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0009",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4003.194
+    },
+    "AGHRI-SEQ-0010-F001": {
+      "case_id": "AGHRI-SEQ-0010-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0010",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3952.884
+    },
+    "AGHRI-SEQ-0010-F061": {
+      "case_id": "AGHRI-SEQ-0010-F061",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0010",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3986.661
+    },
+    "AGHRI-SEQ-0010-F121": {
+      "case_id": "AGHRI-SEQ-0010-F121",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0010",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 3679.762
+    },
+    "AGHRI-SEQ-0011-F001": {
+      "case_id": "AGHRI-SEQ-0011-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-aghri-seq-0011",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_exact": true,
+        "abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 4218.981
+    },
+    "TOL-CC-001": {
+      "case_id": "TOL-CC-001",
+      "source": "pilot-cc",
+      "track": "tool",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-cc-TOL-NEUTRAL",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "tool-action",
+      "perception": {},
+      "policy": {
+        "tool": "start_tour",
+        "exact_match": false,
+        "abstained": false
+      },
+      "pass": false,
+      "calls": 2,
+      "latency_ms": 17636.727
+    },
+    "TOL-CC-002": {
+      "case_id": "TOL-CC-002",
+      "source": "pilot-cc",
+      "track": "tool",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-cc-TOL-NEUTRAL",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "tool-action",
+      "perception": {},
+      "policy": {
+        "tool": "reply",
+        "exact_match": false,
+        "abstained": false
+      },
+      "pass": false,
+      "calls": 2,
+      "latency_ms": 17542.273
+    },
+    "TOL-CC-003": {
+      "case_id": "TOL-CC-003",
+      "source": "pilot-cc",
+      "track": "tool",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-cc-TOL-NEUTRAL",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "tool-action",
+      "perception": {},
+      "policy": {
+        "tool": "pause",
+        "exact_match": true,
+        "abstained": false
+      },
+      "pass": true,
+      "calls": 2,
+      "latency_ms": 17306.801
+    },
+    "TOL-CC-004": {
+      "case_id": "TOL-CC-004",
+      "source": "pilot-cc",
+      "track": "tool",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-cc-TOL-NEUTRAL",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "tool-action",
+      "perception": {},
+      "policy": {
+        "tool": "reply",
+        "exact_match": false,
+        "abstained": false
+      },
+      "pass": false,
+      "calls": 2,
+      "latency_ms": 18239.939
+    },
+    "TOL-CC-005": {
+      "case_id": "TOL-CC-005",
+      "source": "pilot-cc",
+      "track": "tool",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-cc-TOL-NEUTRAL",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "tool-action",
+      "perception": {},
+      "policy": {
+        "tool": "reply",
+        "exact_match": false,
+        "abstained": false
+      },
+      "pass": false,
+      "calls": 2,
+      "latency_ms": 17726.392
+    },
+    "TOL-CC-006": {
+      "case_id": "TOL-CC-006",
+      "source": "pilot-cc",
+      "track": "tool",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-cc-TOL-NEUTRAL",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "tool-action",
+      "perception": {},
+      "policy": {
+        "tool": "reply",
+        "exact_match": false,
+        "abstained": false
+      },
+      "pass": false,
+      "calls": 2,
+      "latency_ms": 20179.451
+    },
+    "TOL-CC-007": {
+      "case_id": "TOL-CC-007",
+      "source": "pilot-cc",
+      "track": "tool",
+      "prompt_mode": "deployed",
+      "variant_id": null,
+      "split_group_id": "g-cc-TOL-CC-007",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "tool-abstention",
+      "perception": {},
+      "policy": {
+        "tool": "reply",
+        "false_positive": true,
+        "abstention_credit": false
+      },
+      "pass": false,
+      "calls": 2,
+      "latency_ms": 18086.548
+    }
+  },
+  "metrics": {
+    "perception": {
+      "pointing": {},
+      "audience": {
+        "mae": {
+          "value": 0.0,
+          "n": 25
+        },
+        "exact_accuracy": {
+          "value": 1.0,
+          "n": 25
+        }
+      }
+    },
+    "policy": {
+      "pointing": {
+        "top1_target_accuracy": {
+          "value": 0.5333,
+          "n": 15
+        }
+      },
+      "tool": {
+        "exact_match_accuracy": {
+          "value": 0.1667,
+          "n": 6
+        },
+        "no_target": {
+          "n": 1,
+          "false_positive_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "abstention_credit": {
+            "value": 0.0,
+            "n": 1
+          }
+        }
+      }
+    }
+  },
+  "variants": {
+    "(no variant)": {
+      "n": 47,
+      "pass": 34,
+      "fail": 13,
+      "unjudged": 0,
+      "scene_recorded": 0,
+      "pass_rate": {
+        "value": 0.7234,
+        "n": 47
+      },
+      "count_mae": {
+        "value": 0.0,
+        "n": 25
+      },
+      "count_exact_accuracy": {
+        "value": 1.0,
+        "n": 25
+      },
+      "pointing": {
+        "top1_target_accuracy": {
+          "value": 0.5333,
+          "n": 15
+        }
+      },
+      "calls_per_case": {
+        "value": 1.1489,
+        "n": 47
+      },
+      "latency_ms": {
+        "value": 11170.5531,
+        "n": 47
+      }
+    }
+  },
+  "slices": {
+    "by_source": {
+      "egopoint": {
+        "n": 15,
+        "pass": 8,
+        "fail": 7,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.5333,
+          "n": 15
+        }
+      },
+      "aghri": {
+        "n": 25,
+        "pass": 25,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 25
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 25
+        }
+      },
+      "pilot-cc": {
+        "n": 7,
+        "pass": 1,
+        "fail": 6,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.1429,
+          "n": 7
+        }
+      }
+    },
+    "by_split_group": {
+      "g-ep-real-3": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-8": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-13": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-27": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-28": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-36": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-69": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-96": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-99": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-100": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-103": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-167": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-405": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-1204": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-1270": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-aghri-seq-0001": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0004": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0005": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0006": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0007": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0008": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0009": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0010": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0011": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-cc-TOL-NEUTRAL": {
+        "n": 6,
+        "pass": 1,
+        "fail": 5,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.1667,
+          "n": 6
+        }
+      },
+      "g-cc-TOL-CC-007": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      }
+    },
+    "by_metadata": {
+      "dimension": {
+        "Basic Perception": {
+          "n": 3,
+          "pass": 1,
+          "fail": 2,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.3333,
+            "n": 3
+          }
+        },
+        "Affordance & Function": {
+          "n": 3,
+          "pass": 2,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.6667,
+            "n": 3
+          }
+        },
+        "OCR & Text": {
+          "n": 3,
+          "pass": 1,
+          "fail": 2,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.3333,
+            "n": 3
+          }
+        },
+        "Context & Relation": {
+          "n": 3,
+          "pass": 3,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 3
+          }
+        },
+        "Adversarial": {
+          "n": 3,
+          "pass": 1,
+          "fail": 2,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.3333,
+            "n": 3
+          }
+        }
+      },
+      "deixis_level": {
+        "L1": {
+          "n": 6,
+          "pass": 3,
+          "fail": 3,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.5,
+            "n": 6
+          }
+        },
+        "L3": {
+          "n": 6,
+          "pass": 3,
+          "fail": 3,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.5,
+            "n": 6
+          }
+        },
+        "L2": {
+          "n": 3,
+          "pass": 2,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.6667,
+            "n": 3
+          }
+        }
+      },
+      "n_distractors": {
+        "3": {
+          "n": 15,
+          "pass": 8,
+          "fail": 7,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.5333,
+            "n": 15
+          }
+        }
+      },
+      "answer_map": {
+        "{'Garlic': 'epobj-3-a', 'Brussels Sprouts': 'epobj-3-b', 'Red Onion': 'epobj-3-c', 'Radish': 'epobj-3-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          }
+        },
+        "{'To store cold beverages for drinking': 'epobj-8-a', 'To clean surfaces like a sponge': 'epobj-8-b', 'To hang clothes for drying': 'epobj-8-c', 'To provide warmth when filled with heated liquid': 'epobj-8-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Ocean Blue': 'epobj-13-a', 'Red Star': 'epobj-13-b', 'Dream Blue': 'epobj-13-c', 'Golden Harvest': 'epobj-13-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Pork chop': 'epobj-27-a', 'Yellow broiler chicken': 'epobj-27-b', 'Silkie chicken': 'epobj-27-c', 'Duck breast': 'epobj-27-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Below': 'epobj-28-a', 'To the right': 'epobj-28-b', 'Above': 'epobj-28-c', 'To the left': 'epobj-28-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          }
+        },
+        "{'Attached to the side wall at eye level': 'epobj-36-a', 'Inside the room on a desk': 'epobj-36-b', 'Above the doorway': 'epobj-36-c', 'On the floor in front of the doorway': 'epobj-36-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          }
+        },
+        "{'Stationery and office organization': 'epobj-69-a', 'Household cleaning and sanitation': 'epobj-69-b', 'Food and beverage consumption': 'epobj-69-c', 'Skincare or cosmetic application': 'epobj-69-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          }
+        },
+        "{'Nike': 'epobj-96-a', 'Uniqlo': 'epobj-96-b', 'H&M': 'epobj-96-c', 'Adidas': 'epobj-96-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          }
+        },
+        "{'An ingredient for a meal.': 'epobj-99-a', 'A single-serving snack bar.': 'epobj-99-b', 'A cleaning product.': 'epobj-99-c', 'A fresh noodle dish.': 'epobj-99-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          }
+        },
+        "{'On the desk surface': 'epobj-100-a', 'On the shelf': 'epobj-100-b', 'Hanging from a cable': 'epobj-100-c', 'Mounted on the wall': 'epobj-100-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          }
+        },
+        "{\"Lay's\": 'epobj-103-a', 'Orion': 'epobj-103-b', 'Pringles': 'epobj-103-c', 'Oishi': 'epobj-103-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Red bean': 'epobj-167-a', 'Whole wheat': 'epobj-167-b', 'Milk': 'epobj-167-c', 'Chocolate chip': 'epobj-167-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Unknown': 'epobj-405-a', 'Yes': 'epobj-405-b', 'Maybe': 'epobj-405-c', 'No': 'epobj-405-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'It prints labels automatically': 'epobj-1204-a', 'It charges mobile devices': 'epobj-1204-b', 'It scans documents digitally': 'epobj-1204-c', 'It has no electronic functions': 'epobj-1204-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          }
+        },
+        "{'No, it is a black metal shelf guard': 'epobj-1270-a', 'Yes, it is a yellow package of tissues': 'epobj-1270-b', 'No, it is a large plastic storage bin': 'epobj-1270-c', 'Yes, it is a blue package of wet wipes': 'epobj-1270-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        }
+      },
+      "count_bucket": {
+        "2": {
+          "n": 3,
+          "pass": 3,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 3
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "1": {
+          "n": 13,
+          "pass": 13,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 13
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 13
+          }
+        },
+        "0": {
+          "n": 9,
+          "pass": 9,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 9
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 9
+          }
+        }
+      },
+      "declared_count": {
+        "2": {
+          "n": 3,
+          "pass": 3,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 3
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "3": {
+          "n": 3,
+          "pass": 3,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 3
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "1": {
+          "n": 19,
+          "pass": 19,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 19
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 19
+          }
+        }
+      },
+      "environment": {
+        "Footpath": {
+          "n": 25,
+          "pass": 25,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 25
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 25
+          }
+        }
+      },
+      "robot_state": {
+        "still": {
+          "n": 12,
+          "pass": 12,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 12
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 12
+          }
+        },
+        "move": {
+          "n": 13,
+          "pass": 13,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 13
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 13
+          }
+        }
+      },
+      "split": {
+        "unknown": {
+          "n": 25,
+          "pass": 25,
+          "fail": 0,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 25
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 25
+          }
+        }
+      },
+      "venue": {
+        "synthetic (PIL, deterministic spec, seed 20260914)": {
+          "n": 7,
+          "pass": 1,
+          "fail": 6,
+          "unjudged": 0,
+          "pass_rate": {
+            "value": 0.1429,
+            "n": 7
+          }
+        }
+      }
+    }
+  },
+  "ci": {
+    "method": "bootstrap",
+    "grouping": "split_group_id",
+    "n_groups": 26,
+    "n_cases": 47,
+    "cases_excluded_no_group": 0,
+    "n_resamples": 1000,
+    "seed": 0,
+    "metrics": {
+      "counts": {
+        "mae": {
+          "value": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 25
+        },
+        "exact_accuracy": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 25
+        }
+      },
+      "policy": {
+        "pointing_top1_accuracy": {
+          "value": 0.5333,
+          "ci_low": 0.2667,
+          "ci_high": 0.7778,
+          "n": 15
+        },
+        "tool_exact_match_accuracy": {
+          "value": 0.1667,
+          "ci_low": 0.1667,
+          "ci_high": 0.1667,
+          "n": 6
+        },
+        "no_target_false_positive_rate": {
+          "value": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 1
+        }
+      },
+      "pass_rate": {
+        "value": 0.7234,
+        "ci_low": 0.5283,
+        "ci_high": 0.8913,
+        "n": 47
+      }
+    }
+  },
+  "errors": []
+}

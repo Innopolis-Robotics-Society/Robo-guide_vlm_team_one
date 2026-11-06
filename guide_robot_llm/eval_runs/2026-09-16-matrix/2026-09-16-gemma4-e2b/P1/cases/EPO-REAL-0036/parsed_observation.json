@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "the_visitor_is_pointing_towards_the_display_in_the_center_of_the_frame_which_is_a_large_sign_or_display_on_a_wall_or_partition_in_front_of_the_visitor_and_the_visitor_is_pointing_with_their_index_finger_towards_this_area."
+}

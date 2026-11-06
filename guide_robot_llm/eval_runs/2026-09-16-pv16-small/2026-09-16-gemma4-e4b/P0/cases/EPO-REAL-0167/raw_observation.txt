@@ -1,0 +1,17 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-167-c"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "the user is pointing at a bakery item"
+}

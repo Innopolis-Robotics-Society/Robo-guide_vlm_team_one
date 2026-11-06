@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a hand holding several small, wrapped items (possibly snacks or small packages) over a metal plate. There are no visible museum exhibits or display cases in the immediate vicinity that correspond to the provided candidate IDs.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2138.0750050011557,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person's hand holding some small, square, yellow/white packages over a metal tray. There are several other objects in the scene, including a laptop, books, and a white object that resembles a mouse or small electronic device.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1767.9748029913753,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_scene_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1467.6494770101272,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

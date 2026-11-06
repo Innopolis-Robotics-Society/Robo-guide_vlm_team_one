@@ -1,0 +1,7 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "Витрина с динозавром: экран белый, динозавр отсутствует, качество кадра низкое, люди отсутствуют, объектов нет."
+}

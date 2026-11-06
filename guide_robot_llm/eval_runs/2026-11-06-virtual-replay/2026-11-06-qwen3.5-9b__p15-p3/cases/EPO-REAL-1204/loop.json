@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"На изображении видна полка с канцелярскими товарами. Рука человека (посетителя) указывает на стопку прозрачных папок или файлов, расположенных на нижней полке, ближе к правому краю. На этих папках видны красные и зеленые ленты-застежки. Рядом с указываемой стопкой — другие папки, блокноты, ручки. Указательный жест направлен именно на эту группу предметов.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3730.2215450035874,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.5,\n    0.9,\n    0.6,\n    0.95\n  ],\n  \"scene_facts\": \"The image shows a hand reaching toward a shelf in what appears to be an office supply store. The hand is pointing at or touching a stack of clear plastic folders or document sleeves on the lower shelf. There are multiple shelves with various stationery items: notebooks, binders, pens, and other office supplies. The hand is specifically interacting with a group of transparent plastic folders that are stacked together, some with red ties or fasteners. The gesture suggests selection or examination of this particular item.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2951.5713669825345,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a hand reaching toward a shelf in what appears to be a stationery or office supply store. The hand is pointing at or touching a stack of clear plastic folders or document sleeves on the lower shelf. There are multiple shelves with various office supplies: notebooks, folders, pens, and other stationery items. The hand is clearly interacting with one specific item — the stack of clear plastic sleeves/folders on the bottom shelf, near the center-right of the frame. No other exhibits are being pointed at or interacted with. The gesture is direct and unambiguous: the finger is extended toward that particular stack. Based on the spatial layout, this item is likely labeled as epobj-1204-c (assuming standard labeling from top-left to bottom-right or similar convention). Since only one item is being interacted with and it’s clearly visible, we can confidently identify it without further clarification.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3369.062904996099,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

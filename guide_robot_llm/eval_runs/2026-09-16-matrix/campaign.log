@@ -1,0 +1,177 @@
+[2026-09-16 09:01:30] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 09:01:30] PLAN-предупреждение: отсутствующие веса:;   gemma4-e2b: /home/sinorin/models/pilot/gemma4-e2b/gemma4-e2b/gemma-4-E2B-it-Q4_K_M.gguf;   qwen3.5-4b: /home/sinorin/models/pilot/qwen3.5-4b/qwen3.5-4b/Qwen3.5-4B-Q4_K_M.gguf
+[2026-09-16 09:01:30] PLAN: манифест /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/bench_50.jsonl (50 кейсов), порт 11435, variant=all
+[2026-09-16 09:01:30]   RUN gemma4-e2b: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e2b/gemma4-e2b/gemma-4-E2B-it-Q4_K_M.gguf --host 127.0.0.1 --port 11435 --ctx-size 16384 -np 1 -b 8192 -ub 2048 --fa on --reasoning off
+[2026-09-16 09:01:30]   RUN gemma4-e4b: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e4b/gemma-4-E4B-it-Q4_K_M.gguf -mm /home/sinorin/models/pilot/gemma4-e4b/mmproj-F16.gguf --host 127.0.0.1 --port 11435 --ctx-size 16384 -np 1 -b 8192 -ub 2048 --fa on --reasoning off
+[2026-09-16 09:01:30]   RUN qwen3.5-4b: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-4b/qwen3.5-4b/Qwen3.5-4B-Q4_K_M.gguf --host 127.0.0.1 --port 11435 --ctx-size 16384 -np 1 -b 8192 -ub 2048 --fa on --reasoning off
+[2026-09-16 09:01:30]   RUN qwen3.5-9b: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-9b/Qwen3.5-9B-Q4_K_M.gguf -mm /home/sinorin/models/pilot/qwen3.5-9b/mmproj-F16.gguf --host 127.0.0.1 --port 11435 --ctx-size 16384 -np 1 -b 8192 -ub 2048 --fa on --reasoning off
+[2026-09-16 09:01:30] PLAN: раннер: /home/sinorin/miniconda3/bin/python3 -m guide_robot_llm.eval.runner --manifest ... --prompt-variant all (по 1 вызову на кейс+фазу; loop ≤3)
+[2026-09-16 09:03:16] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 09:03:16] PLAN: манифест /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/bench_50.jsonl (50 кейсов), порт 11435, variant=all
+[2026-09-16 09:03:16]   RUN gemma4-e2b: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e2b/gemma-4-E2B-it-Q4_K_M.gguf -a gemma-4-e2b-it-q4_k_m -mm /home/sinorin/models/pilot/gemma4-e2b/mmproj-F16.gguf --host 127.0.0.1 --port 11435 --ctx-size 16384 -np 1 -b 8192 -ub 2048 --fa on --reasoning off
+[2026-09-16 09:03:16]   RUN gemma4-e4b: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e4b/gemma-4-E4B-it-Q4_K_M.gguf -a gemma-4-e4b-it-q4_k_m -mm /home/sinorin/models/pilot/gemma4-e4b/mmproj-F16.gguf --host 127.0.0.1 --port 11435 --ctx-size 16384 -np 1 -b 8192 -ub 2048 --fa on --reasoning off
+[2026-09-16 09:03:16]   RUN qwen3.5-4b: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-4b/Qwen3.5-4B-Q4_K_M.gguf -a qwen3.5-4b-q4_k_m -mm /home/sinorin/models/pilot/qwen3.5-4b/mmproj-F16.gguf --host 127.0.0.1 --port 11435 --ctx-size 16384 -np 1 -b 8192 -ub 2048 --fa on --reasoning off
+[2026-09-16 09:03:16]   RUN qwen3.5-9b: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-9b/Qwen3.5-9B-Q4_K_M.gguf -a qwen3.5-9b-q4_k_m -mm /home/sinorin/models/pilot/qwen3.5-9b/mmproj-F16.gguf --host 127.0.0.1 --port 11435 --ctx-size 16384 -np 1 -b 8192 -ub 2048 --fa on --reasoning off
+[2026-09-16 09:03:16] PLAN: раннер: /home/sinorin/miniconda3/bin/python3 -m guide_robot_llm.eval.runner --manifest ... --prompt-variant all (по 1 вызову на кейс+фазу; loop ≤3)
+[2026-09-16 09:25:31] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 09:25:32] model gemma4-e2b: VRAM ok (24.0GB свободно, нужно 6GB)
+[2026-09-16 09:25:32] model gemma4-e2b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e2b/gemma-4-E2B-it-Q4_K_M.gguf (лог: server_gemma4-e2b.log)
+[2026-09-16 09:25:34] model gemma4-e2b: ОШИБКА: llama-server упал сразу после старта (1):
+error: invalid argument: --fa
+[2026-09-16 09:25:34] model gemma4-e4b: VRAM ok (24.0GB свободно, нужно 8GB)
+[2026-09-16 09:25:34] model gemma4-e4b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e4b/gemma-4-E4B-it-Q4_K_M.gguf (лог: server_gemma4-e4b.log)
+[2026-09-16 09:25:36] model gemma4-e4b: ОШИБКА: llama-server упал сразу после старта (1):
+error: invalid argument: --fa
+[2026-09-16 09:25:36] model qwen3.5-4b: VRAM ok (24.0GB свободно, нужно 6GB)
+[2026-09-16 09:25:36] model qwen3.5-4b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-4b/Qwen3.5-4B-Q4_K_M.gguf (лог: server_qwen3.5-4b.log)
+[2026-09-16 09:25:38] model qwen3.5-4b: ОШИБКА: llama-server упал сразу после старта (1):
+error: invalid argument: --fa
+[2026-09-16 09:25:38] model qwen3.5-9b: VRAM ok (24.0GB свободно, нужно 9GB)
+[2026-09-16 09:25:38] model qwen3.5-9b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-9b/Qwen3.5-9B-Q4_K_M.gguf (лог: server_qwen3.5-9b.log)
+[2026-09-16 09:25:40] model qwen3.5-9b: ОШИБКА: llama-server упал сразу после старта (1):
+error: invalid argument: --fa
+[2026-09-16 09:25:40] aggregate: run-директории с результатами не найдены
+[2026-09-16 09:25:40] кампания завершена: провалов моделей: 4; итоги: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/summary_matrix.csv
+[2026-09-16 09:26:02] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 09:26:02] model gemma4-e2b: VRAM ok (24.0GB свободно, нужно 6GB)
+[2026-09-16 09:26:02] model gemma4-e2b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e2b/gemma-4-E2B-it-Q4_K_M.gguf (лог: server_gemma4-e2b.log)
+[2026-09-16 09:26:04] model gemma4-e2b: ОШИБКА: llama-server упал сразу после старта (1):
+error: invalid argument: --fa
+error: invalid argument: --fa
+[2026-09-16 09:26:04] model gemma4-e4b: VRAM ok (24.0GB свободно, нужно 8GB)
+[2026-09-16 09:26:04] model gemma4-e4b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e4b/gemma-4-E4B-it-Q4_K_M.gguf (лог: server_gemma4-e4b.log)
+[2026-09-16 09:26:06] model gemma4-e4b: ОШИБКА: llama-server упал сразу после старта (1):
+error: invalid argument: --fa
+error: invalid argument: --fa
+[2026-09-16 09:26:06] model qwen3.5-4b: VRAM ok (24.0GB свободно, нужно 6GB)
+[2026-09-16 09:26:06] model qwen3.5-4b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-4b/Qwen3.5-4B-Q4_K_M.gguf (лог: server_qwen3.5-4b.log)
+[2026-09-16 09:26:08] model qwen3.5-4b: ОШИБКА: llama-server упал сразу после старта (1):
+error: invalid argument: --fa
+error: invalid argument: --fa
+[2026-09-16 09:26:08] model qwen3.5-9b: VRAM ok (24.0GB свободно, нужно 9GB)
+[2026-09-16 09:26:08] model qwen3.5-9b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-9b/Qwen3.5-9B-Q4_K_M.gguf (лог: server_qwen3.5-9b.log)
+[2026-09-16 09:26:10] model qwen3.5-9b: ОШИБКА: llama-server упал сразу после старта (1):
+error: invalid argument: --fa
+error: invalid argument: --fa
+[2026-09-16 09:26:10] aggregate: run-директории с результатами не найдены
+[2026-09-16 09:26:10] кампания завершена: провалов моделей: 4; итоги: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/summary_matrix.csv
+[2026-09-16 09:30:22] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 09:30:22] model gemma4-e2b: ОШИБКА: model gemma4-e2b: свободна 3.2GB < 6GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)
+[2026-09-16 09:30:22] model gemma4-e4b: ОШИБКА: model gemma4-e4b: свободна 3.2GB < 8GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)
+[2026-09-16 09:30:22] model qwen3.5-4b: ОШИБКА: model qwen3.5-4b: свободна 3.2GB < 6GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)
+[2026-09-16 09:30:22] model qwen3.5-9b: ОШИБКА: model qwen3.5-9b: свободна 3.2GB < 9GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)
+[2026-09-16 09:30:22] aggregate: run-директории с результатами не найдены
+[2026-09-16 09:30:22] кампания завершена: провалов моделей: 4; итоги: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/summary_matrix.csv
+[2026-09-16 09:35:13] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 09:35:13] model gemma4-e2b: VRAM ok (24.0GB свободно, нужно 6GB)
+[2026-09-16 09:35:13] model gemma4-e2b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e2b/gemma-4-E2B-it-Q4_K_M.gguf (лог: server_gemma4-e2b.log)
+[2026-09-16 09:35:51] health ok: {"status":"ok"}
+[2026-09-16 09:35:51] model gemma4-e2b: раннер: /home/sinorin/miniconda3/bin/python3 -m guide_robot_llm.eval.runner --manifest /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/bench_50.jsonl --out /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-gemma4-e2b --data-root /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm --prompt-variant all --max-attempts 2 --backend-config /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-gemma4-e2b/backend_gemma4-e2b.json
+[2026-09-16 09:41:42] model gemma4-e2b: остановка llama-server (pid 1459698)
+[2026-09-16 09:41:42] model gemma4-e2b: сервер остановлен
+[2026-09-16 09:41:42] model gemma4-e4b: VRAM ok (24.0GB свободно, нужно 8GB)
+[2026-09-16 09:41:42] model gemma4-e4b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/gemma4-e4b/gemma-4-E4B-it-Q4_K_M.gguf (лог: server_gemma4-e4b.log)
+[2026-09-16 09:41:47] health ok: {"status":"ok"}
+[2026-09-16 09:41:48] model gemma4-e4b: раннер: /home/sinorin/miniconda3/bin/python3 -m guide_robot_llm.eval.runner --manifest /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/bench_50.jsonl --out /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-gemma4-e4b --data-root /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm --prompt-variant all --max-attempts 2 --backend-config /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-gemma4-e4b/backend_gemma4-e4b.json
+[2026-09-16 09:48:56] model gemma4-e4b: остановка llama-server (pid 1486476)
+[2026-09-16 09:48:56] model gemma4-e4b: сервер остановлен
+[2026-09-16 09:48:56] model qwen3.5-4b: VRAM ok (24.0GB свободно, нужно 6GB)
+[2026-09-16 09:48:56] model qwen3.5-4b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-4b/Qwen3.5-4B-Q4_K_M.gguf (лог: server_qwen3.5-4b.log)
+[2026-09-16 09:49:28] health ok: {"status":"ok"}
+[2026-09-16 09:49:28] model qwen3.5-4b: раннер: /home/sinorin/miniconda3/bin/python3 -m guide_robot_llm.eval.runner --manifest /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/bench_50.jsonl --out /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-qwen3.5-4b --data-root /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm --prompt-variant all --max-attempts 2 --backend-config /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-qwen3.5-4b/backend_qwen3.5-4b.json
+[2026-09-16 09:58:57] model qwen3.5-4b: остановка llama-server (pid 1516506)
+[2026-09-16 09:58:57] model qwen3.5-4b: сервер остановлен
+[2026-09-16 09:58:57] model qwen3.5-9b: VRAM ok (24.0GB свободно, нужно 9GB)
+[2026-09-16 09:58:57] model qwen3.5-9b: сервер: /home/sinorin/llama.cpp/build-cuda/bin/llama-server -m /home/sinorin/models/pilot/qwen3.5-9b/Qwen3.5-9B-Q4_K_M.gguf (лог: server_qwen3.5-9b.log)
+[2026-09-16 09:59:02] health ok: {"status":"ok"}
+[2026-09-16 09:59:03] model qwen3.5-9b: раннер: /home/sinorin/miniconda3/bin/python3 -m guide_robot_llm.eval.runner --manifest /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/bench_50.jsonl --out /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-qwen3.5-9b --data-root /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm --prompt-variant all --max-attempts 2 --backend-config /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-qwen3.5-9b/backend_qwen3.5-9b.json
+[2026-09-16 10:11:03] model qwen3.5-9b: остановка llama-server (pid 1558066)
+[2026-09-16 10:11:04] model qwen3.5-9b: сервер остановлен
+[2026-09-16 10:11:04] scoring: 2026-09-16-gemma4-e2b/A0 ok
+[2026-09-16 10:11:04] scoring: 2026-09-16-gemma4-e2b/A1 ok
+[2026-09-16 10:11:04] scoring: 2026-09-16-gemma4-e2b/A2 ok
+[2026-09-16 10:11:04] scoring: 2026-09-16-gemma4-e2b/A3 ok
+[2026-09-16 10:11:04] scoring: 2026-09-16-gemma4-e2b/A4 ok
+[2026-09-16 10:11:04] scoring: 2026-09-16-gemma4-e2b/A_base ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/D0 ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/D1 ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/D2 ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/D3 ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/D4 ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/D_base ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/P0 ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/P1 ok
+[2026-09-16 10:11:05] scoring: 2026-09-16-gemma4-e2b/P2 ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e2b/P3 ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e2b/P4 ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e2b/P_base ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e4b/A0 ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e4b/A1 ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e4b/A2 ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e4b/A3 ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e4b/A4 ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e4b/A_base ok
+[2026-09-16 10:11:06] scoring: 2026-09-16-gemma4-e4b/D0 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/D1 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/D2 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/D3 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/D4 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/D_base ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/P0 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/P1 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/P2 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/P3 ok
+[2026-09-16 10:11:07] scoring: 2026-09-16-gemma4-e4b/P4 ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-gemma4-e4b/P_base ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/A0 ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/A1 ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/A2 ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/A3 ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/A4 ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/A_base ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/D0 ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/D1 ok
+[2026-09-16 10:11:08] scoring: 2026-09-16-qwen3.5-4b/D2 ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/D3 ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/D4 ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/D_base ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/P0 ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/P1 ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/P2 ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/P3 ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/P4 ok
+[2026-09-16 10:11:09] scoring: 2026-09-16-qwen3.5-4b/P_base ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/A0 ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/A1 ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/A2 ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/A3 ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/A4 ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/A_base ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/D0 ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/D1 ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/D2 ok
+[2026-09-16 10:11:10] scoring: 2026-09-16-qwen3.5-9b/D3 ok
+[2026-09-16 10:11:11] scoring: 2026-09-16-qwen3.5-9b/D4 ok
+[2026-09-16 10:11:11] scoring: 2026-09-16-qwen3.5-9b/D_base ok
+[2026-09-16 10:11:11] scoring: 2026-09-16-qwen3.5-9b/P0 ok
+[2026-09-16 10:11:11] scoring: 2026-09-16-qwen3.5-9b/P1 ok
+[2026-09-16 10:11:11] scoring: 2026-09-16-qwen3.5-9b/P2 ok
+[2026-09-16 10:11:11] scoring: 2026-09-16-qwen3.5-9b/P3 ok
+[2026-09-16 10:11:11] scoring: 2026-09-16-qwen3.5-9b/P4 ok
+[2026-09-16 10:11:11] scoring: 2026-09-16-qwen3.5-9b/P_base ok
+[2026-09-16 10:11:11] aggregate: 72 строк → summary_matrix.csv
+[2026-09-16 10:11:11] кампания завершена: провалов моделей: 0; итоги: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/summary_matrix.csv
+[2026-09-16 14:38:31] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 14:38:31] model gemma4-e2b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:31] model gemma4-e4b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:31] model qwen3.5-4b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:31] model qwen3.5-9b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:31] aggregate: 72 строк → summary_matrix.csv
+[2026-09-16 14:38:31] кампания завершена: провалов моделей: 0; итоги: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/summary_matrix.csv
+[2026-09-16 14:38:45] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 14:38:45] model gemma4-e2b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:45] model gemma4-e4b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:45] model qwen3.5-4b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:45] model qwen3.5-9b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:45] aggregate: 72 строк → summary_matrix.csv
+[2026-09-16 14:38:45] кампания завершена: провалов моделей: 0; итоги: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/summary_matrix.csv

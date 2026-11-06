@@ -1,0 +1,103 @@
+{
+  "case_id": "POI-CC-003",
+  "source": "pilot-cc",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 17500.72,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.003130000550299883,
+            "upload_ms": 470.55928199552,
+            "ttft_ms": 15640.143962984439,
+            "full_ms": 17500.67368100281,
+            "parse_ready_ms": 17500.67368100281
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 17500.72,
+  "attempts": 1,
+  "case": {
+    "case_id": "POI-CC-003",
+    "source": "pilot-cc",
+    "track": "pointing",
+    "split_group_id": "g-cc-POI-CC-003",
+    "media": {
+      "path": "pilot/media/cc/POI-CC-003.png",
+      "sha256": "68f2e4bec984bf7c08c230e69be5da0c324cc3cbe2f2f9a1abd91781d243789e",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "А табличка в углу, что на ней написано?",
+      "language": "ru"
+    },
+    "candidates": [
+      "plaque-01",
+      "tank-02",
+      "screen-03",
+      "vase-05",
+      "map-06"
+    ],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "target_box",
+      "target_id": "plaque-01",
+      "box_px": [
+        1330,
+        240,
+        1500,
+        330
+      ],
+      "distractors": [
+        "screen-03",
+        "map-06",
+        "vase-05"
+      ]
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "n_distractors": 3,
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

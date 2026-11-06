@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного кадра видно только одного человека, который идет по тропинке. Я не могу определить, сколько людей готовы слушать, так как это не информация, которую можно получить из изображения. Для выполнения вашей задачи мне потребуется видеопоток или последовательность кадров с дополнительной информацией о готовности людей слушать.\"\n, \"confidence\": 0.8, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1165.7154310087208,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение является статичным кадром, а не видеопотоком, и у меня нет информации о \"\n    \n    , \"confidence\": 0.9\n    \n    , \"abstain\": false\n    }",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 831.0594760114327,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\"answer\": \"Невозможно выполнить этот запрос. Я являюсь языковой моделью и не могу \"\n  \n  \t  \t  \t  \t  \t  \t  ,\n  \t  \t  \t  \t  \t  \t  \"confidence\": 0.0\n  \t  \t  \t  \t  \t  \t  \n  \t  \t  \t  \t  \t  \t  ,\n  \t  \t  \t  \t  \t  \t  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1339.6062339888886,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

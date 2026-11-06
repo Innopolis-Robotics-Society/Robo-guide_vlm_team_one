@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  ,\n  \"scene_facts\": \"a person is pointing towards a display of raw poultry, specifically what appears to be whole or partially processed birds/poultry cuts.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1695.8174869942013,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the_image_shows_a_display_of_poultry_pieces_likely_meat_cuts_or_whole_birds_in_a_market_setting_the_focus_is_on_the_meat_products_in_the_foreground\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1398.7725689949002,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the_image_shows_a_display_of_poultry_pieces_likely_for_sale_or_display_in_a_market_setting_the_items_appear_to_be_various_cuts_of_meat_or_poultry_including_whole_birds_or_parts_of_birds_the_focus_is_on_the_meat_products_displayed_in_the_foreground_and_middle_ground\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1512.0321050053462,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

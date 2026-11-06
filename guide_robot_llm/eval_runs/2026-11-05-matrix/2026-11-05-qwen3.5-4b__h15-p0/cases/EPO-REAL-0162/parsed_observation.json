@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-162-a",
+    "epobj-162-b",
+    "epobj-162-c",
+    "epobj-162-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a hallway with a water dispenser on the left. A person's hand is pointing at the water dispenser. The dispenser has Chinese characters on it, which likely indicate it provides hot water (开水区). There are no other exhibits visible in the immediate vicinity that the person is pointing at."
+}

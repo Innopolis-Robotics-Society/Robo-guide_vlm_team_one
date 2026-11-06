@@ -1,0 +1,120 @@
+{
+  "case_id": "EPO-REAL-0018",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P0",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1922.832,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.00266998540610075,
+            "upload_ms": 254.45505100651644,
+            "ttft_ms": 767.2013350238558,
+            "full_ms": 1922.6538380025886,
+            "parse_ready_ms": 1922.6538380025886
+          }
+        ]
+      }
+    },
+    "decision": {
+      "latency_ms": 342.897,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0030400115065276623,
+            "upload_ms": 128.68195699411444,
+            "ttft_ms": 225.0364010105841,
+            "full_ms": 342.67332500894554,
+            "parse_ready_ms": 342.67332500894554
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 2265.729,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0018",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-18",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/18.jpg",
+      "sha256": "be60d0be74ab101fbfbf379562013c2741c7a21dae5a495bbcded54a5f55caf2",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary function of the area I am pointing at?\nA. To designate a safe crossing path for pedestrians\nB. To separate opposing lanes of traffic\nC. To provide a parking space for electric scooters\nD. To mark a stopping line for vehicles at a traffic light\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-18-a",
+      "epobj-18-b",
+      "epobj-18-c",
+      "epobj-18-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-18-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-18-b",
+        "epobj-18-c",
+        "epobj-18-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Affordance & Function",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "To designate a safe crossing path for pedestrians": "epobj-18-a",
+        "To separate opposing lanes of traffic": "epobj-18-b",
+        "To provide a parking space for electric scooters": "epobj-18-c",
+        "To mark a stopping line for vehicles at a traffic light": "epobj-18-d"
+      }
+    }
+  }
+}

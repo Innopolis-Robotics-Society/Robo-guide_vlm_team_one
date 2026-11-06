@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/168.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-168-a\",\n    \"epobj-168-b\",\n    \"epobj-168-c\",\n    \"epobj-168-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"The image shows a person's finger pointing towards the train tracks in the foreground. The background consists of a grassy area, some trees, and multi-story residential buildings. This setting is characteristic of a public area, possibly a park or a residential area adjacent to infrastructure.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1601.0143749881536,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/168.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-168-a\",\n    \"epobj-168-b\",\n    \"epobj-168-c\",\n    \"epobj-168-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"The image shows a person's finger pointing towards a set of train tracks running through a grassy area, with multi-story residential buildings in the background. The environment appears to be a public space, possibly a park or a pathway adjacent to residential areas.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1310.340627009282,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/168.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-168-a\",\n    \"epobj-168-b\",\n    \"epobj-168-c\",\n    \"epobj-168-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"The image shows a person's finger pointing towards a set of train tracks running alongside a grassy area and a paved path. Buildings are visible in the background. The environment appears to be an outdoor area, possibly a park or a pathway adjacent to residential buildings.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1314.1427270020358,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

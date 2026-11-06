@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.27,
+    0.48,
+    0.35,
+    0.61
+  ],
+  "scene_facts": "The person is pointing at a sign above the doorway. The sign has Chinese characters and appears to be a business sign for a hair salon or similar establishment. The sign is illuminated and mounted on the wall above the entrance to the room. There is a barber pole next to the sign, further suggesting it's a hair salon. The person's hand is clearly gesturing towards the sign, indicating interest or direction towards it."
+}

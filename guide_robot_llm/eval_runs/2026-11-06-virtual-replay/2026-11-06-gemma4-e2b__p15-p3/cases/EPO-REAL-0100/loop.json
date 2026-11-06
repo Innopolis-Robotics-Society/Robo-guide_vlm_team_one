@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-100-a\", \"epobj-100-b\", \"epobj-100-c\", \"epobj-100-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"no\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1410.2511419914663,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-100-a\", \"epobj-100-b\", \"epobj-100-c\", \"epobj-100-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"no_scene_facts\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1097.8210440080147,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-100-a\", \"epobj-100-b\", \"epobj-100-c\", \"epobj-100-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"the_object_is_located_on_the_shelf_or_on_the_desk_surface\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1176.2709899921902,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0005-F125",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 5499.259,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0035410048440098763,
+              "upload_ms": 201.15144198643975,
+              "ttft_ms": 257.8840100031812,
+              "full_ms": 4728.287940000882,
+              "parse_ready_ms": 4728.287940000882
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0033700198400765657,
+              "upload_ms": 153.7927149911411,
+              "ttft_ms": 353.65010297391564,
+              "full_ms": 770.532115973765,
+              "parse_ready_ms": 770.532115973765
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nНа изображении видна одна фигура — человек в тёмной одежде и белой шапке, бегущий или идущий по тропинке в парке. Никаких других людей не видно ни на переднем, ни на заднем плане. Даже вдалеке за деревьями или у зданий — нет признаков присутствия других людей.\n\n→ Всего людей: **1**\n\n---\n\nЭтап 2: Оценка готовности слушать\n\nКритерии:\n- Близость: человек находится примерно в 10–15 метрах от камеры (предполагая, что робот — это камера или устройство, снимающее сцену). Это достаточно близко для устного общения.\n- Взгляд: человек смотрит вперёд, возможно, в сторону тропинки или вперёд по ней — не в камеру, но и не отвернулся полностью. Возможно, он не замечает робота, но и не игнорирует его активно.\n- Вовлечённость: человек движется, возможно, спешит или просто гуляет. Нет признаков того, что он готов остановиться и поговорить — но и нет признаков отчуждения (например, наушники, телефон, быстрый уход).\n\nОценка: человек **может быть готов слушать**, если робот подойдёт ближе или сделает обращение. Но в текущем моменте — он не обращает внимания. Однако по критерию «готов ли он слушать» — это субъективно. Если считать, что он не отвернулся и не занят чем-то другим — можно считать его потенциально готовым.\n\nНо строго по критериям:\n- Близость — да (умеренная)\n- Взгляд — частично (не в камеру, но и не в сторону)\n- Вовлечённость — низкая (движется, не взаимодействует)\n\n→ Готовых слушать: **0** (так как нет явных признаков внимания или готовности к общению)\n\n---\n\nИтог:\n\nВсего людей: **1**  \nГотовых слушать: **0**"
+    }
+  },
+  "latency_ms": 5499.259,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0005-F125",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0005",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408042_315830459.png",
+      "sha256": "ca3f55f69430ad127f8581f1a2529af4fe1e6a8aa8f7c8ac65b2fa1d9dc21ad2",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf with various packaged goods, primarily white and yellow/orange packages, suggesting a retail setting, possibly a supermarket or convenience store. the focus is on the products on the shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1754.5190009986982,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf stocked with various packaged goods, primarily white and yellow/orange packages, suggesting a retail setting, possibly a supermarket or convenience store. the hand in the foreground is pointing towards a specific item on the shelf. the items on the shelf appear to be various types of packaged food or personal care items, including some that look like small packets or boxes.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1720.3508529928513,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf with numerous white and colored packages, likely personal care or hygiene products, arranged in rectangular plastic containers on multiple shelves. the hand in the foreground is pointing towards the middle section of these products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1572.9302940017078,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a hand pointing towards a sign above a doorway. The sign appears to be a business sign, possibly for a barbershop or similar establishment, given the barber pole visible to the left of the sign. The hand is pointing upwards towards the sign. The sign is located above the doorway, which is the entrance to the room or establishment. The sign is illuminated and appears to be made of light-up letters or a similar material. The room inside has mirrors and chairs, suggesting it is a place for services like haircuts or styling. The ceiling has exposed ductwork and lighting fixtures, indicating an industrial or commercial setting. The floor is smooth and reflective, possibly tiled or polished concrete. There are no other people visible in the image, and the focus is on the hand pointing at the sign. The sign is the most prominent feature in the image, and the hand is clearly directing attention to it. The sign is positioned above the doorway, making it easily visible to anyone entering the establishment. The sign's location and the hand's gesture suggest that it is the intended object of interest. The sign's content is not fully legible, but its placement and illumination indicate its importance as a business identifier. The overall scene suggests a commercial environment, likely a barbershop or similar service business, with the sign serving as the primary visual element for customers. The hand's gesture reinforces the sign's significance, drawing the viewer's attention to it as the focal point of the image. The sign's position above the doorway ensures it is seen by anyone approaching the entrance, making it a crucial element for branding and identification. The sign's design, with its bright, illuminated letters, is intended to be eye-catching and memorable, aiding in brand recognition. The sign's location and the hand's gesture together create a clear indication of its importance and relevance to the scene. The sign is the central element of the image, and the hand

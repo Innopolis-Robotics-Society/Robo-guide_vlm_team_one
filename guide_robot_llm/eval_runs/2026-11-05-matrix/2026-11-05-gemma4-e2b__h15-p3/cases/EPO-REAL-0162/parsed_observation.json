@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-162-a",
+    "epobj-162-b",
+    "epobj-162-c",
+    "epobj-162-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The visitor is pointing at a machine that dispenses water. The text on the machine is in Chinese. The options provided are A. Ice cubes, B. Cold beverages, C. Coffee, D. Boiling water. The machine appears to be a water dispenser."
+}

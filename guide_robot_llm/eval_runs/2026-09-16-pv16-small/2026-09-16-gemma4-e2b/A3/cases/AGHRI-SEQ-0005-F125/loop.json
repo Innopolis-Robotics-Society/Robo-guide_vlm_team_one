@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408042_315830459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. Изображение показывает дорогу с деревьями и полем, но на нем нет людей, с которыми можно было бы взаимодействовать или оценить их готовность слушать.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 668.3420940244105,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408042_315830459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом по предоставленному изображению. На изображении виден только **один человек**, и невозможно оценить, готов ли он слушать, или сколько других людей находится поблизости.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 655.4654490028042,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408042_315830459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом на основе предоставленного изображения. Изображение показывает тропинку в поле с деревьями, а робота на нем не видно.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 588.3900659973733,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

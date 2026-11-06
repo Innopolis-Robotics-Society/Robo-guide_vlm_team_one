@@ -1,0 +1,16 @@
+{
+  "people_count": 1
+,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ]
+,
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "the image shows a close-up of a shelf stocked with various packaged goods, primarily white and yellow/orange packages, suggesting a retail environment, likely a supermarket or convenience store. the hand in the foreground is pointing towards the middle section of the visible shelves. the question asks if the object indicated is a package of sanitary wet wipes, and the options refer to different objects (shelf guard, tissues, storage bin, wet wipes). the visible items are primarily packaged goods, some of which could be wet wipes, but the specific item being pointed to is not clearly identifiable as a 'package of sanitary wet wipes' from this angle alone."
+}

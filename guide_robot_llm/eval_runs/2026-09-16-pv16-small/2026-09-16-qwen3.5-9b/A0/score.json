@@ -1,0 +1,2140 @@
+{
+  "statement": "Diagnostic only — no final project score, no #11 selection.",
+  "run_dir": "eval_runs/2026-09-16-pv16-small/2026-09-16-qwen3.5-9b/A0",
+  "generated": "2026-09-16T18:26:50+07:00",
+  "n_cases": 32,
+  "status_counts": {
+    "ok": 32,
+    "parse_failed": 0,
+    "backend_error": 0
+  },
+  "pass_counts": {
+    "pass": 29,
+    "fail": 3,
+    "unjudged": 0
+  },
+  "run_config": {
+    "generated": "2026-09-16T18:21:13+07:00",
+    "manifest": {
+      "path": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/pv_matrix_57.jsonl",
+      "sha256": "02530da7e59e18268a7684b8d68851df41d3ddff52463d7ce828a84a25aa8ebe",
+      "n_cases": 32
+    },
+    "backend": {
+      "kind": "http",
+      "base_url": "http://127.0.0.1:11436/v1",
+      "model_name": "qwen3.5-9b-q4_k_m",
+      "multimodal_enabled": true,
+      "max_images": 4,
+      "api_key_set": false
+    },
+    "prompt": {
+      "variant_id": "A0",
+      "examples_root": null,
+      "temperature": 0.2
+    },
+    "params": {
+      "max_attempts": 2,
+      "loop_max_calls": 3,
+      "loop_budget_ticks": 5,
+      "data_root": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm"
+    }
+  },
+  "per_case": {
+    "AGHRI-SEQ-0001-F001": {
+      "case_id": "AGHRI-SEQ-0001-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0001",
+      "slices": {
+        "count_bucket": "2",
+        "declared_count": 2,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 2,
+        "count_gold": 2,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 686.671,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0001-F040": {
+      "case_id": "AGHRI-SEQ-0001-F040",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0001",
+      "slices": {
+        "count_bucket": "2",
+        "declared_count": 2,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 2,
+        "count_gold": 2,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 677.29,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0001-F079": {
+      "case_id": "AGHRI-SEQ-0001-F079",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0001",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 2,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 680.445,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0004-F001": {
+      "case_id": "AGHRI-SEQ-0004-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0004",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 3,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 766.153,
+      "confidence": 0.99
+    },
+    "AGHRI-SEQ-0004-F130": {
+      "case_id": "AGHRI-SEQ-0004-F130",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0004",
+      "slices": {
+        "count_bucket": "2",
+        "declared_count": 3,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 2,
+        "count_gold": 2,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 704.21,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0004-F260": {
+      "case_id": "AGHRI-SEQ-0004-F260",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0004",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 3,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 700.468,
+      "confidence": 0.95
+    },
+    "AGHRI-SEQ-0005-F001": {
+      "case_id": "AGHRI-SEQ-0005-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0005",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 859.576,
+      "confidence": 1.0
+    },
+    "AGHRI-SEQ-0005-F125": {
+      "case_id": "AGHRI-SEQ-0005-F125",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0005",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 789.32,
+      "confidence": 1.0
+    },
+    "AGHRI-SEQ-0005-F249": {
+      "case_id": "AGHRI-SEQ-0005-F249",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0005",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 818.381,
+      "confidence": 0.999999999999
+    },
+    "AGHRI-SEQ-0006-F001": {
+      "case_id": "AGHRI-SEQ-0006-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0006",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 711.266,
+      "confidence": 0.9
+    },
+    "AGHRI-SEQ-0006-F158": {
+      "case_id": "AGHRI-SEQ-0006-F158",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0006",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 691.037,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0006-F316": {
+      "case_id": "AGHRI-SEQ-0006-F316",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0006",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 804.94,
+      "confidence": 0.9
+    },
+    "AGHRI-SEQ-0007-F001": {
+      "case_id": "AGHRI-SEQ-0007-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0007",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 686.541,
+      "confidence": 0.95
+    },
+    "AGHRI-SEQ-0007-F131": {
+      "case_id": "AGHRI-SEQ-0007-F131",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0007",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 693.168,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0007-F262": {
+      "case_id": "AGHRI-SEQ-0007-F262",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0007",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 707.455,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0008-F001": {
+      "case_id": "AGHRI-SEQ-0008-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0008",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 700.335,
+      "confidence": 0.99
+    },
+    "AGHRI-SEQ-0008-F122": {
+      "case_id": "AGHRI-SEQ-0008-F122",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0008",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 655.006,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0008-F243": {
+      "case_id": "AGHRI-SEQ-0008-F243",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0008",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 706.256,
+      "confidence": 0.99
+    },
+    "AGHRI-SEQ-0009-F001": {
+      "case_id": "AGHRI-SEQ-0009-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0009",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 859.73,
+      "confidence": 0.9
+    },
+    "AGHRI-SEQ-0009-F124": {
+      "case_id": "AGHRI-SEQ-0009-F124",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0009",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 896.812,
+      "confidence": 0.9
+    },
+    "AGHRI-SEQ-0009-F248": {
+      "case_id": "AGHRI-SEQ-0009-F248",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0009",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 690.79,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0010-F001": {
+      "case_id": "AGHRI-SEQ-0010-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0010",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 1112.617,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0010-F061": {
+      "case_id": "AGHRI-SEQ-0010-F061",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0010",
+      "slices": {
+        "count_bucket": "1",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 744.293,
+      "confidence": 0.8
+    },
+    "AGHRI-SEQ-0010-F121": {
+      "case_id": "AGHRI-SEQ-0010-F121",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0010",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "still",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 735.77,
+      "confidence": 0.99
+    },
+    "AGHRI-SEQ-0011-F001": {
+      "case_id": "AGHRI-SEQ-0011-F001",
+      "source": "aghri",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-aghri-seq-0011",
+      "slices": {
+        "count_bucket": "0",
+        "declared_count": 1,
+        "environment": "Footpath",
+        "robot_state": "move",
+        "split": "unknown"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 827.375,
+      "confidence": 0.999999999999
+    },
+    "ENG-CC-001": {
+      "case_id": "ENG-CC-001",
+      "source": "pilot-cc",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-eng-ENG-CC-001",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec)",
+        "min_engaged": 2,
+        "count_bucket": "3"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 3,
+        "count_gold": 3,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true,
+        "engaged_gold": 2,
+        "engaged_pred": 3,
+        "engaged_exact": false,
+        "engaged_abs_error": 1
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 1564.621,
+      "confidence": 0.95
+    },
+    "ENG-CC-002": {
+      "case_id": "ENG-CC-002",
+      "source": "pilot-cc",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-eng-ENG-CC-002",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec)",
+        "min_engaged": 2,
+        "count_bucket": "1"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 1,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true,
+        "engaged_gold": 1,
+        "engaged_pred": null
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 1599.281,
+      "confidence": 1.0
+    },
+    "ENG-CC-003": {
+      "case_id": "ENG-CC-003",
+      "source": "pilot-cc",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-eng-ENG-CC-003",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec)",
+        "min_engaged": 2,
+        "count_bucket": "0"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 0,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true,
+        "engaged_gold": 0,
+        "engaged_pred": null
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 1439.473,
+      "confidence": 1.0
+    },
+    "ENG-CC-004": {
+      "case_id": "ENG-CC-004",
+      "source": "pilot-cc",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-eng-ENG-CC-004",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec)",
+        "min_engaged": 2,
+        "count_bucket": "4"
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 4,
+        "count_gold": 4,
+        "count_pred_source": "freeform",
+        "count_exact": true,
+        "abs_error": 0,
+        "within1": true,
+        "engaged_gold": 1,
+        "engaged_pred": 1,
+        "engaged_exact": true,
+        "engaged_abs_error": 0
+      },
+      "policy": {},
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 1965.291,
+      "confidence": 0.95
+    },
+    "SEQ-CC-001": {
+      "case_id": "SEQ-CC-001",
+      "source": "pilot-cc",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-eng-SEQ-CC-001",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec)",
+        "min_engaged": 2,
+        "count_bucket": "3",
+        "sequence": "SEQ-CC-001",
+        "n_frames": 3,
+        "frames": [
+          {
+            "path": "pilot/media/cc/SEQ-CC-001_f0.png",
+            "sha256": "cf9b613c4bf67fb8a22638a9a5a7d9f70f56b3d3450e6de2e84b1597b9c81408",
+            "format": "png"
+          },
+          {
+            "path": "pilot/media/cc/SEQ-CC-001_f1.png",
+            "sha256": "270268d97cc0041499ffe6c29b5a7cf4ad7095947897c8a083aaaf01504d7015",
+            "format": "png"
+          },
+          {
+            "path": "pilot/media/cc/SEQ-CC-001_f2.png",
+            "sha256": "eda6206fc0954cd603bfb1c14fc4831e83d0be0ebb34ac6640a3604814bb234c",
+            "format": "png"
+          }
+        ]
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 1,
+        "count_gold": 3,
+        "count_pred_source": "freeform",
+        "count_exact": false,
+        "abs_error": 2,
+        "within1": false,
+        "engaged_gold": 3,
+        "engaged_pred": null
+      },
+      "policy": {},
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 2154.043,
+      "confidence": 0.95
+    },
+    "SEQ-CC-002": {
+      "case_id": "SEQ-CC-002",
+      "source": "pilot-cc",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-eng-SEQ-CC-002",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec)",
+        "min_engaged": 2,
+        "count_bucket": "3",
+        "sequence": "SEQ-CC-002",
+        "n_frames": 3,
+        "frames": [
+          {
+            "path": "pilot/media/cc/SEQ-CC-002_f0.png",
+            "sha256": "99473468e72a08b75d788d8af8462762bfcefb457868b7862131dc995c1c5f54",
+            "format": "png"
+          },
+          {
+            "path": "pilot/media/cc/SEQ-CC-002_f1.png",
+            "sha256": "cf9b613c4bf67fb8a22638a9a5a7d9f70f56b3d3450e6de2e84b1597b9c81408",
+            "format": "png"
+          },
+          {
+            "path": "pilot/media/cc/SEQ-CC-002_f2.png",
+            "sha256": "ae668c624f1afd23f977acc90383e7611dc3415711bd834cd710793b3640395d",
+            "format": "png"
+          }
+        ]
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 0,
+        "count_gold": 3,
+        "count_pred_source": "freeform",
+        "count_exact": false,
+        "abs_error": 3,
+        "within1": false,
+        "engaged_gold": 2,
+        "engaged_pred": null
+      },
+      "policy": {},
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 765.464,
+      "confidence": 0.95
+    },
+    "SEQ-CC-003": {
+      "case_id": "SEQ-CC-003",
+      "source": "pilot-cc",
+      "track": "audience",
+      "prompt_mode": "freeform",
+      "variant_id": "A0",
+      "split_group_id": "g-eng-SEQ-CC-003",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec)",
+        "min_engaged": 2,
+        "count_bucket": "3",
+        "sequence": "SEQ-CC-003",
+        "n_frames": 3,
+        "frames": [
+          {
+            "path": "pilot/media/cc/SEQ-CC-003_f0.png",
+            "sha256": "9607c59d4b77d20cf217720dd81c9ddd2e815ba01ad6e6dc7d53db65b4147441",
+            "format": "png"
+          },
+          {
+            "path": "pilot/media/cc/SEQ-CC-003_f1.png",
+            "sha256": "9607c59d4b77d20cf217720dd81c9ddd2e815ba01ad6e6dc7d53db65b4147441",
+            "format": "png"
+          },
+          {
+            "path": "pilot/media/cc/SEQ-CC-003_f2.png",
+            "sha256": "430547334fcb58b29789e6eb1b66f9045daa143f2d892325b33a764a8ae333c1",
+            "format": "png"
+          }
+        ]
+      },
+      "status": "ok",
+      "kind": "audience-count",
+      "perception": {
+        "count_pred": 2,
+        "count_gold": 3,
+        "count_pred_source": "freeform",
+        "count_exact": false,
+        "abs_error": 1,
+        "within1": true,
+        "engaged_gold": 1,
+        "engaged_pred": null
+      },
+      "policy": {},
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 1558.925,
+      "confidence": 0.95
+    }
+  },
+  "metrics": {
+    "perception": {
+      "pointing": {},
+      "audience": {
+        "mae": {
+          "value": 0.1875,
+          "n": 32
+        },
+        "exact_accuracy": {
+          "value": 0.9062,
+          "n": 32
+        },
+        "within1_accuracy": {
+          "value": 0.9375,
+          "n": 32
+        },
+        "engaged_mae": {
+          "value": 0.5,
+          "n": 2
+        },
+        "engaged_exact_accuracy": {
+          "value": 0.5,
+          "n": 2
+        }
+      }
+    },
+    "policy": {
+      "pointing": {},
+      "tool": {}
+    },
+    "runner": {
+      "latency_ms": {
+        "value": 936.031,
+        "p50": 744.293,
+        "p95": 1965.291,
+        "n": 32
+      }
+    },
+    "calibration": {
+      "n": 32,
+      "ece": 0.0003,
+      "buckets": [
+        {
+          "range": "0.8-1.0",
+          "n": 32,
+          "accuracy": 0.9062,
+          "mean_confidence": 0.9066
+        }
+      ]
+    }
+  },
+  "variants": {
+    "A0": {
+      "n": 32,
+      "pass": 29,
+      "fail": 3,
+      "unjudged": 0,
+      "scene_recorded": 0,
+      "pass_rate": {
+        "value": 0.9062,
+        "n": 32
+      },
+      "count_mae": {
+        "value": 0.1875,
+        "n": 32
+      },
+      "count_exact_accuracy": {
+        "value": 0.9062,
+        "n": 32
+      },
+      "count_within1_accuracy": {
+        "value": 0.9375,
+        "n": 32
+      },
+      "engaged_mae": {
+        "value": 0.5,
+        "n": 2
+      },
+      "engaged_exact_accuracy": {
+        "value": 0.5,
+        "n": 2
+      },
+      "calls_per_case": {
+        "value": 1.0,
+        "n": 32
+      },
+      "parse_failed": 0,
+      "parse_failed_rate": {
+        "value": 0.0,
+        "n": 32
+      },
+      "latency_ms": {
+        "value": 936.031,
+        "p50": 744.293,
+        "p95": 1965.291,
+        "n": 32
+      }
+    }
+  },
+  "slices": {
+    "by_source": {
+      "aghri": {
+        "n": 25,
+        "pass": 25,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 25
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 25
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 25
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 25
+        }
+      },
+      "pilot-cc": {
+        "n": 7,
+        "pass": 4,
+        "fail": 3,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.5714,
+          "n": 7
+        },
+        "count_mae": {
+          "value": 0.8571,
+          "n": 7
+        },
+        "within1_accuracy": {
+          "value": 0.7143,
+          "n": 7
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 7
+        }
+      }
+    },
+    "by_split_group": {
+      "g-aghri-seq-0001": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 3
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0004": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 3
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0005": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 3
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0006": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 3
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0007": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 3
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0008": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 3
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0009": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 3
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0010": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 3
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 3
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 3
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      },
+      "g-aghri-seq-0011": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 1
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-eng-ENG-CC-001": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 1
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-eng-ENG-CC-002": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 1
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-eng-ENG-CC-003": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 1
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-eng-ENG-CC-004": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 0.0,
+          "n": 1
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-eng-SEQ-CC-001": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 2.0,
+          "n": 1
+        },
+        "within1_accuracy": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-eng-SEQ-CC-002": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 3.0,
+          "n": 1
+        },
+        "within1_accuracy": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-eng-SEQ-CC-003": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "count_mae": {
+          "value": 1.0,
+          "n": 1
+        },
+        "within1_accuracy": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      }
+    },
+    "by_metadata": {
+      "count_bucket": {
+        "2": {
+          "n": 3,
+          "pass": 3,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 3
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 3
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "1": {
+          "n": 14,
+          "pass": 14,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 14
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 14
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 14
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 14
+          }
+        },
+        "0": {
+          "n": 10,
+          "pass": 10,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 10
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 10
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 10
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 10
+          }
+        },
+        "3": {
+          "n": 4,
+          "pass": 1,
+          "fail": 3,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.25,
+            "n": 4
+          },
+          "count_mae": {
+            "value": 1.5,
+            "n": 4
+          },
+          "within1_accuracy": {
+            "value": 0.5,
+            "n": 4
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 4
+          }
+        },
+        "4": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 1
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        }
+      },
+      "declared_count": {
+        "2": {
+          "n": 3,
+          "pass": 3,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 3
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 3
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "3": {
+          "n": 3,
+          "pass": 3,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 3
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 3
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "1": {
+          "n": 19,
+          "pass": 19,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 19
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 19
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 19
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 19
+          }
+        }
+      },
+      "environment": {
+        "Footpath": {
+          "n": 25,
+          "pass": 25,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 25
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 25
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 25
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 25
+          }
+        }
+      },
+      "robot_state": {
+        "still": {
+          "n": 12,
+          "pass": 12,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 12
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 12
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 12
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 12
+          }
+        },
+        "move": {
+          "n": 13,
+          "pass": 13,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 13
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 13
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 13
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 13
+          }
+        }
+      },
+      "split": {
+        "unknown": {
+          "n": 25,
+          "pass": 25,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 25
+          },
+          "count_mae": {
+            "value": 0.0,
+            "n": 25
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 25
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 25
+          }
+        }
+      },
+      "venue": {
+        "synthetic (PIL, deterministic spec)": {
+          "n": 7,
+          "pass": 4,
+          "fail": 3,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.5714,
+            "n": 7
+          },
+          "count_mae": {
+            "value": 0.8571,
+            "n": 7
+          },
+          "within1_accuracy": {
+            "value": 0.7143,
+            "n": 7
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 7
+          }
+        }
+      },
+      "min_engaged": {
+        "2": {
+          "n": 7,
+          "pass": 4,
+          "fail": 3,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.5714,
+            "n": 7
+          },
+          "count_mae": {
+            "value": 0.8571,
+            "n": 7
+          },
+          "within1_accuracy": {
+            "value": 0.7143,
+            "n": 7
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 7
+          }
+        }
+      },
+      "sequence": {
+        "SEQ-CC-001": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "count_mae": {
+            "value": 2.0,
+            "n": 1
+          },
+          "within1_accuracy": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "SEQ-CC-002": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "count_mae": {
+            "value": 3.0,
+            "n": 1
+          },
+          "within1_accuracy": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "SEQ-CC-003": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "count_mae": {
+            "value": 1.0,
+            "n": 1
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        }
+      },
+      "n_frames": {
+        "3": {
+          "n": 3,
+          "pass": 0,
+          "fail": 3,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 3
+          },
+          "count_mae": {
+            "value": 2.0,
+            "n": 3
+          },
+          "within1_accuracy": {
+            "value": 0.3333,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        }
+      },
+      "frames": {
+        "[{'path': 'pilot/media/cc/SEQ-CC-001_f0.png', 'sha256': 'cf9b613c4bf67fb8a22638a9a5a7d9f70f56b3d3450e6de2e84b1597b9c81408', 'format': 'png'}, {'path': 'pilot/media/cc/SEQ-CC-001_f1.png', 'sha256': '270268d97cc0041499ffe6c29b5a7cf4ad7095947897c8a083aaaf01504d7015', 'format': 'png'}, {'path': 'pilot/media/cc/SEQ-CC-001_f2.png', 'sha256': 'eda6206fc0954cd603bfb1c14fc4831e83d0be0ebb34ac6640a3604814bb234c', 'format': 'png'}]": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "count_mae": {
+            "value": 2.0,
+            "n": 1
+          },
+          "within1_accuracy": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "[{'path': 'pilot/media/cc/SEQ-CC-002_f0.png', 'sha256': '99473468e72a08b75d788d8af8462762bfcefb457868b7862131dc995c1c5f54', 'format': 'png'}, {'path': 'pilot/media/cc/SEQ-CC-002_f1.png', 'sha256': 'cf9b613c4bf67fb8a22638a9a5a7d9f70f56b3d3450e6de2e84b1597b9c81408', 'format': 'png'}, {'path': 'pilot/media/cc/SEQ-CC-002_f2.png', 'sha256': 'ae668c624f1afd23f977acc90383e7611dc3415711bd834cd710793b3640395d', 'format': 'png'}]": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "count_mae": {
+            "value": 3.0,
+            "n": 1
+          },
+          "within1_accuracy": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "[{'path': 'pilot/media/cc/SEQ-CC-003_f0.png', 'sha256': '9607c59d4b77d20cf217720dd81c9ddd2e815ba01ad6e6dc7d53db65b4147441', 'format': 'png'}, {'path': 'pilot/media/cc/SEQ-CC-003_f1.png', 'sha256': '9607c59d4b77d20cf217720dd81c9ddd2e815ba01ad6e6dc7d53db65b4147441', 'format': 'png'}, {'path': 'pilot/media/cc/SEQ-CC-003_f2.png', 'sha256': '430547334fcb58b29789e6eb1b66f9045daa143f2d892325b33a764a8ae333c1', 'format': 'png'}]": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "count_mae": {
+            "value": 1.0,
+            "n": 1
+          },
+          "within1_accuracy": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        }
+      }
+    }
+  },
+  "ci": {
+    "method": "bootstrap",
+    "grouping": "split_group_id",
+    "n_groups": 16,
+    "n_cases": 32,
+    "cases_excluded_no_group": 0,
+    "n_resamples": 1000,
+    "seed": 0,
+    "metrics": {
+      "counts": {
+        "mae": {
+          "value": 0.1875,
+          "ci_low": 0.0,
+          "ci_high": 0.5,
+          "n": 32
+        },
+        "exact_accuracy": {
+          "value": 0.9062,
+          "ci_low": 0.7667,
+          "ci_high": 1.0,
+          "n": 32
+        },
+        "within1_accuracy": {
+          "value": 0.9375,
+          "ci_low": 0.8214,
+          "ci_high": 1.0,
+          "n": 32
+        },
+        "engaged_mae": {
+          "value": 0.5,
+          "ci_low": 0.0,
+          "ci_high": 1.0,
+          "n": 2
+        },
+        "engaged_exact_accuracy": {
+          "value": 0.5,
+          "ci_low": 0.0,
+          "ci_high": 1.0,
+          "n": 2
+        }
+      },
+      "pass_rate": {
+        "value": 0.9062,
+        "ci_low": 0.7667,
+        "ci_high": 1.0,
+        "n": 32
+      }
+    }
+  },
+  "errors": []
+}

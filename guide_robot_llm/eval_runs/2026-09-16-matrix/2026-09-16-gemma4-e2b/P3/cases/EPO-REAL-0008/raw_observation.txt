@@ -1,0 +1,20 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-8-a",
+"epobj-8-b",
+"epobj-8-c",
+"epobj-8-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "The image shows a display of various packaged goods, likely food or household items, arranged on shelves. The items appear to be packaged snacks, drinks, or similar consumer products. The person is pointing towards a section of these products on the right side of the frame."
+}

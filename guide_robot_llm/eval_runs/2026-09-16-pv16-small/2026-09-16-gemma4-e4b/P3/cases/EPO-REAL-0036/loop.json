@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-36-a\", \"epobj-36-b\", \"epobj-36-c\", \"epobj-36-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards the interior of the room, specifically towards the area where the chairs are located, but the exact object is not clearly isolated.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1587.3070450033993,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-36-a\", \"epobj-36-b\", \"epobj-36-c\", \"epobj-36-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards the interior of the room/area visible through the doorway/opening.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1062.1691110136453,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-36-a\", \"epobj-36-b\", \"epobj-36-c\", \"epobj-36-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards the interior of the room visible through the doorway/opening.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1059.7631100099534,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

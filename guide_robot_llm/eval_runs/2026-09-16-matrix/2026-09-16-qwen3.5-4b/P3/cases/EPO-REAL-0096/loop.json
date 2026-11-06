@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ]\n,\n  \"scene_facts\": \"The user is pointing at a building with multiple store signs. The most prominent sign being pointed at is the red square sign with white text 'UNIQLO' in reverse (mirrored). There is also a Nike swoosh logo visible on the left side of the building, but the finger is directed towards the Uniqlo sign. The text 'UNIQLO' is clearly visible on the upper right part of the building facade, and the pointing gesture is directed towards this area. The Nike logo is on the lower left, and the finger is not pointing at it. The other options (H&M, Adidas) are not visible on the building in the image.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2332.8570050070994,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The person is pointing at a building with a large red sign that says 'UNIQLO' in white letters. The sign is on the upper part of the building, to the right of the center. There is also a Nike store visible on the left side of the building, but the person is pointing towards the Uniqlo sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1604.2073589924257,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing towards a building with a large red sign that says 'UNIQLO' in white letters. The person is wearing a dark jacket and is standing in an open plaza area. There are other people and buildings in the background, but the focus is on the Uniqlo store. The person's hand is clearly visible in the foreground, pointing towards the Uniqlo sign on the building.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1854.7165819909424,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

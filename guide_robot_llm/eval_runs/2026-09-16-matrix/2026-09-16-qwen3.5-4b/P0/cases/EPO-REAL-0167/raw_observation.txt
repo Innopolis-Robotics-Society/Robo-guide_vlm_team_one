@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.58,
+    0.66,
+    0.68,
+    0.78
+  ],
+  "scene_facts": "The person is pointing at a packaged baked good on the shelf. The item appears to be a slice of bread or cake with a light-colored interior and visible chunks, possibly chocolate or fruit. It is located in the middle of the shelf, next to other packaged items."
+}

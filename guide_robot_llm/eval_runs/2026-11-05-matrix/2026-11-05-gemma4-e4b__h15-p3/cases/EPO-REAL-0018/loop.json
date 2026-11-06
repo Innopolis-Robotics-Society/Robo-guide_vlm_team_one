@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/18.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-18-a\",\n    \"epobj-18-b\",\n    \"epobj-18-c\",\n    \"epobj-18-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_clear_object_pointed_at\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2060.9611939871684,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/18.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-18-a\",\n\"epobj-18-b\",\n\"epobj-18-c\",\n\"epobj-18-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"no facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1315.715356002329,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/18.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-18-a\",\n\"epobj-18-b\",\n\"epobj-18-c\",\n\"epobj-18-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"no_scene_context\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1335.9081060043536,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

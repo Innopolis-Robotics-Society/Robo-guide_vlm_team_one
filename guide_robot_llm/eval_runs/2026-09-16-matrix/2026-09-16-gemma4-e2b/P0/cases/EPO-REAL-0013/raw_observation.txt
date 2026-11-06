@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-13-a", "epobj-13-b", "epobj-13-c", "epobj-13-d"], "pointing_evidence": "none", "pointing_box": [1, 1, 1, 1], "scene_facts": "the_person_is_pointing_at_a_display_of_products_which_appear_to_be_packaged_goods_or_items_for_sale_in_a_store_setting"}

@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-96-c"], "pointing_evidence": "none", "pointing_box": [1, 1, 1, 1], "scene_facts": "the_person_is_pointing_at_a_sign_with_the_logo_of_nike"}

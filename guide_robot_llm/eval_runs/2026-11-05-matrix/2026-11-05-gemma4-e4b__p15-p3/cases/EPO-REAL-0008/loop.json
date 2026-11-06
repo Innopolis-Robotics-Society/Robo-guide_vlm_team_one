@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-8-a\",\n\"epobj-8-b\",\n\"epobj-8-c\",\n\"epobj-8-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a retail store aisle with various products on shelves. The visitor's hand is visible in the lower right, pointing towards the shelves of products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1863.925254001515,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-8-a\",\n\"epobj-8-b\",\n\"epobj-8-c\",\n\"epobj-8-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The visitor is pointing towards the middle section of the display shelves, specifically towards a white/light-colored plastic bag or package located on a shelf unit near the center of the image.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1453.13174900366,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person in a store aisle, pointing towards the shelves of various products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1534.8608570056967,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

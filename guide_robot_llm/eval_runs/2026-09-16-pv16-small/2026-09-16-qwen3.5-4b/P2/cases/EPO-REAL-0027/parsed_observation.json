@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.58,
+    0.57,
+    0.79,
+    0.71
+  ],
+  "scene_facts": "The person is pointing at a packaged chicken in the lower section of the refrigerated display case. The chicken appears to be a whole bird, likely a yellow broiler chicken, based on its color and shape. The other options (pork chop, silkie chicken, duck breast) do not match the visual evidence. The pointing gesture is directed specifically at this item, making it the only valid candidate."
+}

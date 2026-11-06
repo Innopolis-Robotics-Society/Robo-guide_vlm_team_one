@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "A person is reaching for an item on a shelf in what appears to be a stationery store. The shelf contains various office supplies such as folders, pens, and notebooks. The person's hand is extended towards a stack of clear plastic folders or sleeves on one of the shelves."
+}

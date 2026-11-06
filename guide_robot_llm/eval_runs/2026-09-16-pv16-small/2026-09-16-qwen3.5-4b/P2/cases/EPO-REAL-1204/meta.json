@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-1204",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "parse_failed",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 7069.84,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "length",
+      "parse_status": "failed",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0024399778340011835,
+              "upload_ms": 282.9891150176991,
+              "ttft_ms": 342.0926690159831,
+              "full_ms": 3307.3674460174516,
+              "parse_ready_ms": 3307.3674460174516
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029999937396496534,
+              "upload_ms": 104.90799302351661,
+              "ttft_ms": 273.7933010212146,
+              "full_ms": 3762.390174000757,
+              "parse_ready_ms": 3762.390174000757
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово.\n\n---\n\n**(1) Куда направлен жест?**\n\nНа изображении видна рука, которая касается или указывает на стопку прозрачных пластиковых файлов/папок, расположенных на нижней полке (четвертая снизу). Жест направлен прямо на эту стопку — пальцы касаются её края, будто выбирая или показывая именно этот объект.\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nСектор — это нижняя полка, где находятся:\n\n- Слева: стопки книг, блокнотов, папок с красными резинками.\n- По центру: стопка прозрачных файлов (те, на которые указывает рука).\n- Справа: ещё несколько папок и possibly other items.\n\nИз доступных кандидатов:  \nepobj-1204-a, epobj-1204-b, epobj-1204-c, epobj-1204-d\n\nПредположим, что каждый из них соответствует одному из экспонатов на полке. Поскольку рука указывает на **центральную стопку прозрачных файлов**, скорее всего, это один из кандидатов, соответствующий именно этому объекту.\n\n---\n\n**(3) Согласуются ли слова посетителя?**\n\nВопрос: «Which of the following electronic functions does this item perform?» — но в контексте задачи мы не имеем слов посетителя, кроме того, что указано в инструкции: «учитывай вместе: направление руки/жеста, куда смотрит человек, слова посетителя...»\n\nОднако в самом вопросе нет слов посетителя — только вопрос к системе. Возможно, здесь подразумевается, что «слова посетителя» — это сам вопрос, и он не содержит указания на конкретный экспонат, а лишь просит определить функцию.\n\nНо поскольку в задании сказано: «если после шага (4) кандидатов не один — воздержись», и у нас есть 4 кандидата, нужно ещё раз проверить.\n\n---\n\n**(4) Остался ли ровно один кандидат?**\n\nЕсли предположить, что:\n\n- epobj-1204-a — верхняя полка (не та, куда указывает рука)\n- epobj-1204-b — средняя полка (там есть ручки, но не файлы)\n- epobj-1204-c — нижняя полка, стопка прозрачных"
+    }
+  },
+  "latency_ms": 7069.84,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-1204",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-1204",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+      "sha256": "5ff6c11cd3405a622e04722eee308ccc1d71ee18e374982df7106ae913a78ab2",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Which of the following electronic functions does this item perform?\nA. It prints labels automatically\nB. It charges mobile devices\nC. It scans documents digitally\nD. It has no electronic functions\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-1204-a",
+      "epobj-1204-b",
+      "epobj-1204-c",
+      "epobj-1204-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-1204-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-1204-a",
+        "epobj-1204-b",
+        "epobj-1204-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "It prints labels automatically": "epobj-1204-a",
+        "It charges mobile devices": "epobj-1204-b",
+        "It scans documents digitally": "epobj-1204-c",
+        "It has no electronic functions": "epobj-1204-d"
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"people_count": 2, "exhibit_candidates": ["poster-01", "frame-03"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "Два человека стоят спиной к камере, перед ними — фиолетовый плакат и желтый фрейм. Слева — зелёное дерево. Жестов нет."}

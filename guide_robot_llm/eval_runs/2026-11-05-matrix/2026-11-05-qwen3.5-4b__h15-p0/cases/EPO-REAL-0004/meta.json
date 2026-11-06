@@ -1,0 +1,120 @@
+{
+  "case_id": "EPO-REAL-0004",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P0",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 2070.671,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.002100015990436077,
+            "upload_ms": 168.26566599775106,
+            "ttft_ms": 570.8063769852743,
+            "full_ms": 2070.636003976688,
+            "parse_ready_ms": 2070.636003976688
+          }
+        ]
+      }
+    },
+    "decision": {
+      "latency_ms": 292.557,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.004959991201758385,
+            "upload_ms": 79.91705200402066,
+            "ttft_ms": 179.496308992384,
+            "full_ms": 292.5208850065246,
+            "parse_ready_ms": 292.5208850065246
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 2363.228,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0004",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-4",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/4.jpg",
+      "sha256": "6b8d0d5ed3d053d6a9133b1cf73bb937197f28069aafd81ee22e7aef2c9d1ce5",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary color of the packaging for the item I am pointing at?\nA. Green\nB. Black\nC. Blue\nD. Red\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-4-a",
+      "epobj-4-b",
+      "epobj-4-c",
+      "epobj-4-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-4-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-4-a",
+        "epobj-4-b",
+        "epobj-4-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Green": "epobj-4-a",
+        "Black": "epobj-4-b",
+        "Blue": "epobj-4-c",
+        "Red": "epobj-4-d"
+      }
+    }
+  }
+}

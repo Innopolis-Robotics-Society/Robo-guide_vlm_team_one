@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "a person is reaching towards a shelf in what appears to be a stationery store. The hand is positioned near a stack of clear plastic folders or sleeves on one of the lower shelves. There are no visible pointing gestures (e.g., finger pointing, laser pointer) or explicit selection indicators in the image. The person’s hand is open and appears to be either selecting or placing an item, but not specifically pointing at one candidate over another."
+}

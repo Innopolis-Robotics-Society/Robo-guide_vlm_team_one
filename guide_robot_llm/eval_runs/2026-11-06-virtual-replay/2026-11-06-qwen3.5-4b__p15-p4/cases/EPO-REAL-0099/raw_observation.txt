@@ -1,0 +1,11 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "1. There is one person in the image, standing in front of a refrigerated display case in what appears to be a grocery store or supermarket.\n2. The person is pointing with their right hand toward a specific item on the bottom shelf of the display case.\n3. The item being pointed at is a yellow package containing a single serving of food, likely a snack bar or similar ready-to-eat product.\n4. The display case contains various packaged food items, including what appear to be noodles, dumplings, and other prepared meals.\n5. The person's gesture is clear and deliberate, indicating they are specifically interested in the yellow package they are pointing at.\n6. The yellow package is positioned in the center-left area of the bottom shelf, surrounded by other packaged food items.\n7. The person's body orientation and pointing direction are both focused on this specific item.\n8. The item appears to be a single-serving snack bar based on its packaging and size relative to the person's hand.\n9. The context of the refrigerated display case suggests this is a prepared food item meant for immediate consumption.\n10. The person's action of pointing indicates they are either selecting this item for purchase or drawing attention to it for some reason.\n11. The yellow package is distinct from other items on the shelf due to its bright color and different packaging style.\n12. The person's hand is extended directly toward the yellow package, with their finger clearly indicating this specific item.\n13. The item appears to be a single-serving snack bar based on its packaging and size relative to the person's hand.\n14. The context of the refrigerated display case suggests this is a prepared food item meant for immediate consumption.\n15. The person's action of pointing indicates they are either selecting this item for purchase or drawing attention to it for some reason.\n16. The yellow package is distinct from other items on the shelf due to its bright color and different packaging

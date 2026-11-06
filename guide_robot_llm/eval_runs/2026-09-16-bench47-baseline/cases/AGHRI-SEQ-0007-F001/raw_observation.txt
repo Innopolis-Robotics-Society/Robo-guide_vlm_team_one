@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": [], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "В кадре виден один человек в оранжевой куртке и чёрных штанах, идущий по тропинке в парке. На заднем плане видны деревья, трава и здания."}

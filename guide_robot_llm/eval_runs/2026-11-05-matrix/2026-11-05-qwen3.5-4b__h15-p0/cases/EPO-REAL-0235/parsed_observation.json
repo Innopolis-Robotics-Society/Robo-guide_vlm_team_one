@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-235-a",
+    "epobj-235-b",
+    "epobj-235-c",
+    "epobj-235-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The image shows a hand pointing at a book on a shelf. The book being pointed to has Chinese text on its spine. The visible text includes 'C 程序设计' which translates to 'C Programming Design'. The other books nearby include titles like 'University Physics', 'Engineering Drawing', and 'Analog Electronics Technique', but the finger is clearly indicating the red book with 'C Programming Design' on its s"
+}

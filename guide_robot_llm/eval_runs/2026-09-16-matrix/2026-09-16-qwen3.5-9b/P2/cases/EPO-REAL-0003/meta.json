@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0003",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 5198.226,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002289976691827178,
+              "upload_ms": 233.27775500365533,
+              "ttft_ms": 312.55585100734606,
+              "full_ms": 3363.3301370136905,
+              "parse_ready_ms": 3363.3301370136905
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0042199972085654736,
+              "upload_ms": 118.0727589817252,
+              "ttft_ms": 306.73054698854685,
+              "full_ms": 1834.8119879956357,
+              "parse_ready_ms": 1834.8119879956357
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест направлен на упаковку с розовыми/белыми круглыми овощами, расположенную в центре полки, между желтыми корнеплодами слева и зелеными кочанчиками справа.\n\n(2) Кандидаты, попадающие в этот сектор:\n- epobj-3-a: Garlic — нет, чеснок обычно белый/бежевый, не розовый, и не в такой упаковке.\n- epobj-3-b: Brussels Sprouts — нет, они зеленые и находятся справа от указываемой упаковки.\n- epobj-3-c: Red Onion — возможно, но красные луковицы обычно имеют форму луковиц, а не идеально круглых, как на фото.\n- epobj-3-d: Radish — да, особенно мини-редис или японский редис (дайкон-редис), который часто бывает розовым/белым и круглым, и продается в таких упаковках.\n\n(3) Слова посетителя: «What type of vegetable is contained in the package I am pointing at?» — вопрос о типе овоща в указываемой упаковке. Не указано название, но визуально это соответствует редису.\n\n(4) После анализа: только epobj-3-d (Radish) точно соответствует визуальному изображению — розовые/белые круглые овощи в прозрачной упаковке. Остальные не подходят по цвету, форме или расположению.\n\nОтвет: D"
+    }
+  },
+  "latency_ms": 5198.226,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0003",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-3",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+      "sha256": "7381d4ba2fa05ae09c74a65cc9bdfaa681d7c7c74b82dc198774d32efd8d88c8",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What type of vegetable is contained in the package I am pointing at?\nA. Garlic\nB. Brussels Sprouts\nC. Red Onion\nD. Radish\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-3-a",
+      "epobj-3-b",
+      "epobj-3-c",
+      "epobj-3-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-3-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-3-a",
+        "epobj-3-b",
+        "epobj-3-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Garlic": "epobj-3-a",
+        "Brussels Sprouts": "epobj-3-b",
+        "Red Onion": "epobj-3-c",
+        "Radish": "epobj-3-d"
+      }
+    }
+  }
+}

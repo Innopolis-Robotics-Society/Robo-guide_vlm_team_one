@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.33,
+    0.55,
+    0.5,
+    0.72
+  ],
+  "scene_facts": "The image shows a bakery section in a supermarket. A person's hand is pointing at a packaged bread item on the shelf. The item being pointed to has a dark brown color, suggesting chocolate or possibly red bean filling. Other items on the shelf include lighter-colored breads and milk products. The text on the shelf includes Chinese characters, indicating this is likely a Chinese supermarket. The person is wearing a white shirt and appears to be examining the products closely."
+}

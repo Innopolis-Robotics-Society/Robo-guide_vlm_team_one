@@ -1,0 +1,117 @@
+{
+  "case_id": "SCN-CC-001",
+  "source": "pilot-cc",
+  "track": "scene",
+  "prompt_mode": "deployed",
+  "variant_id": "D2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 2730.225,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029600050766021013,
+              "upload_ms": 31.03280600043945,
+              "ttft_ms": 58.35456700879149,
+              "full_ms": 1225.370895001106,
+              "parse_ready_ms": 1225.370895001106
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003870984073728323,
+              "upload_ms": 40.1177320163697,
+              "ttft_ms": 99.34632701333612,
+              "full_ms": 1504.7793030098546,
+              "parse_ready_ms": 1504.7793030098546
+            }
+          ]
+        }
+      },
+      "cot_reason": "**Перечень видимых элементов:**\n\n1.  **Фон:** Светлая стена (бежево-розовая).\n2.  **Пол:** Деревянный пол (коричневый).\n3.  **Человек 1 (Слева):** Фигура в зеленом костюме, стоящая у стола.\n4.  **Объект 1 (Слева, на полу):** Красный прямоугольный объект (похож на пьедестал или коробку).\n5.  **Объект 2 (В центре, на полу):** Белый прямоугольный объект (похож на пьедестал или коробку).\n6.  **Объект 3 (Справа, на полу):** Большой синий прямоугольный объект.\n7.  **Человек 2 (Справа):** Фигура в зеленом костюме, стоящая рядом с синим объектом.\n\n**Описание сцены:**\n\nНа сцене, оформленной светлой стеной и деревянным полом, изображены две фигуры в зеленых костюмах. Одна фигура стоит у стола, а другая находится справа, рядом с крупным синим прямоугольным объектом. На полу расположены несколько геометрических объектов: красный прямоугольник слева, белый прямоугольник в центре, и большой синий прямоугольник справа."
+    }
+  },
+  "latency_ms": 2730.225,
+  "attempts": 2,
+  "case": {
+    "case_id": "SCN-CC-001",
+    "source": "pilot-cc",
+    "track": "scene",
+    "split_group_id": "g-cc-SCN-CC-001",
+    "media": {
+      "path": "pilot/media/cc/SCN-CC-001.png",
+      "sha256": "907f79e1c8e5dd998d5801d5de0392241032cc3834219c7ba56af055fff6734e",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Что ты видишь перед собой?",
+      "language": "ru"
+    },
+    "candidates": [
+      "redbox-01",
+      "cabinet-03",
+      "vase-04"
+    ],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "claims",
+      "claims": [
+        "на полке стоит красная коробка",
+        "справа стоит синий шкаф",
+        "на столе стоит белая ваза",
+        "в кадре один человек",
+        "стены светлые, пол деревянный"
+      ]
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

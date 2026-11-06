@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-1204",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 8959.496,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003969995304942131,
+              "upload_ms": 291.88290698220953,
+              "ttft_ms": 372.5620390032418,
+              "full_ms": 5386.831898998935,
+              "parse_ready_ms": 5386.831898998935
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003130000550299883,
+              "upload_ms": 85.8701909892261,
+              "ttft_ms": 317.1430059883278,
+              "full_ms": 3572.581836982863,
+              "parse_ready_ms": 3572.581836982863
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест направлен на нижнюю полку, в сторону стопки прозрачных папок с красными ленточками — именно туда указывает палец.\n\n(2) В этом секторе находятся:\n- epobj-1204-a (вероятно, верхняя часть стопки или сама стопка)\n- epobj-1204-b (нижняя часть стопки или соседний элемент)\n- epobj-1204-c и epobj-1204-d — находятся на других полках или в других зонах (например, слева или выше), не в фокусе жеста.\n\n(3) Слова посетителя: «Я хочу взять эти папки» — множественное число, что согласуется с тем, что он указывает на целую стопку, а не на один объект.\n\n(4) После анализа: жест точно указывает на стопку папок на нижней полке. Из доступных кандидатов только epobj-1204-a и epobj-1204-b могут быть частью этой стопки. Однако, поскольку жест направлен именно на всю стопку, и если предположить, что каждый кандидат — это отдельный экземпляр папки, то наиболее вероятным является тот, который находится в центре внимания жеста — то есть epobj-1204-a (верхняя/основная часть стопки). Но если epobj-1204-b — это нижняя часть той же стопки, то оба попадают в сектор.\n\nОднако, по правилам: если после шага (4) кандидатов не один — воздержись.\n\nВ данном случае, поскольку жест указывает на стопку, а не на один конкретный объект, и если epobj-1204-a и epobj-1204-b — это разные части одной стопки, то оба попадают в сектор. Следовательно, кандидатов больше одного.\n\nНо давайте уточним: если epobj-1204-a — это сама стопка (как единый объект), а epobj-1204-b — что-то другое рядом, тогда только один кандидат.\n\nИз контекста и типичного распределения: обычно в таких задачах каждый epobj — это отдельный физический объект. Стопка папок — это несколько объектов. Жест указывает на всю стопку, значит, все папки в ней — кандидаты.\n\nНо в"
+    }
+  },
+  "latency_ms": 8959.496,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-1204",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-1204",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+      "sha256": "5ff6c11cd3405a622e04722eee308ccc1d71ee18e374982df7106ae913a78ab2",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Which of the following electronic functions does this item perform?\nA. It prints labels automatically\nB. It charges mobile devices\nC. It scans documents digitally\nD. It has no electronic functions\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-1204-a",
+      "epobj-1204-b",
+      "epobj-1204-c",
+      "epobj-1204-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-1204-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-1204-a",
+        "epobj-1204-b",
+        "epobj-1204-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "It prints labels automatically": "epobj-1204-a",
+        "It charges mobile devices": "epobj-1204-b",
+        "It scans documents digitally": "epobj-1204-c",
+        "It has no electronic functions": "epobj-1204-d"
+      }
+    }
+  }
+}

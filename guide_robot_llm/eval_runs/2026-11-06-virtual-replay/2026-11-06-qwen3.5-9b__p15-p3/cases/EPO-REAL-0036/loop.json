@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.5,\n    0.5,\n    0.5,\n    0.5\n  ],\n  \"scene_facts\": \"The image shows a person's hand pointing towards a brightly lit sign above a doorway. The sign appears to be mounted on the wall or ceiling structure directly above the entrance to what looks like a salon or service area. There are no other exhibits visible in the immediate vicinity that the person could be pointing at.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3313.232974993298,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.52,\n    0.51,\n    0.79,\n    0.99\n  ],\n  \"scene_facts\": \"The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be mounted on the wall or ceiling structure directly above the entrance to what looks like a salon or service room. The hand is in the foreground, and the sign is in the mid-ground, clearly associated with the doorway it is positioned over. There are no other objects being pointed at; the gesture is directed specifically at the illuminated signage above the door frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2375.561931025004,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.56,\n    0.52,\n    0.68,\n    0.75\n  ]\n,\n  \"scene_facts\": \"The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be for a business, possibly a salon or shop, with Chinese characters. The hand is in the foreground, and the sign is in the background, above the entrance to the room. The sign is mounted on the wall or ceiling structure above the doorway, not on a desk, floor, or side wall at eye level.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2436.5160029847175,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

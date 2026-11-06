@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0036",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 4670.72,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028600043151527643,
+              "upload_ms": 278.1073160003871,
+              "ttft_ms": 357.8467390034348,
+              "full_ms": 2438.2571119931526,
+              "parse_ready_ms": 2438.2571119931526
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0034399854484945536,
+              "upload_ms": 107.87928799982183,
+              "ttft_ms": 270.8987029909622,
+              "full_ms": 2232.3976359912194,
+              "parse_ready_ms": 2232.3976359912194
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест: рука указывает вверх, в сторону светящейся вывески с китайскими иероглифами над входом в помещение (вероятно, салон красоты или аналогичное заведение).\n\n(2) Кандидаты, попадающие в сектор указывания: только epobj-36-c — это именно та вывеска, на которую указывает палец. Остальные объекты (epobj-36-a, epobj-36-b, epobj-36-d) находятся в других местах — например, на стене слева, внутри комнаты или на полу — и не попадают в зону указывания.\n\n(3) Слова посетителя: если предположить, что посетитель говорит «вот вывеска» или «смотрите на вывеску», то это согласуется с направлением жеста.\n\n(4) После шага (4) остался ровно один кандидат — epobj-36-c.\n\nОтвет: epobj-36-c"
+    }
+  },
+  "latency_ms": 4670.72,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0036",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-36",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+      "sha256": "d28e9042ff1dc487e6578452b97da8450d3b72239a09cbaa34cdb0740853b9cb",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Where is this object located relative to the doorway?\nA. Attached to the side wall at eye level\nB. Inside the room on a desk\nC. Above the doorway\nD. On the floor in front of the doorway\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-36-a",
+      "epobj-36-b",
+      "epobj-36-c",
+      "epobj-36-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-36-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-36-a",
+        "epobj-36-b",
+        "epobj-36-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Context & Relation",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Attached to the side wall at eye level": "epobj-36-a",
+        "Inside the room on a desk": "epobj-36-b",
+        "Above the doorway": "epobj-36-c",
+        "On the floor in front of the doorway": "epobj-36-d"
+      }
+    }
+  }
+}

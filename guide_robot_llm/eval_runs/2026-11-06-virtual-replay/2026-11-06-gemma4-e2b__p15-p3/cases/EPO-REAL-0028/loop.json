@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n\"people_count\": 1\n,\n\"exhibit_candidates\": [\n\"epobj-28-a\",\n\"epobj-28-b\",\n\"epobj-28-c\",\n\"epobj-28-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_visitor_is_pointing_at_a_sign_with_a_speed_limit_of_15_and_a_prohibitory_sign_for_vehicles_on_the_road\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2181.6879130201414,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-28-a\",\n\"epobj-28-b\",\n\"epobj-28-c\",\n\"epobj-28-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_image_shows_a_person_pointing_at_a_traffic_sign_with_a_speed_limit_of_15_and_a_prohibitory_sign_for_vehicles_on_the_road_next_to_a_tree_and_a_car\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1566.9410249975044,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-28-a\",\n\"epobj-28-b\",\n\"epobj-28-c\",\n\"epobj-28-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_image_shows_a_person_pointing_their_finger_towards_a_speed_limit_sign_which_is_part_of_the_roadside_infrastructure\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1473.84893198614,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

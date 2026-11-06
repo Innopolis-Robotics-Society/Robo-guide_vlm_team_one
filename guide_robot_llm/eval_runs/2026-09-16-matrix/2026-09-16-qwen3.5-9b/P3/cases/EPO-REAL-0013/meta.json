@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0013",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P3",
+  "calls_per_case": 3,
+  "terminal_reason": "k_exhausted",
+  "terminal_abstain": true,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 2351.253,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.003310007741674781,
+            "upload_ms": 83.56295397970825,
+            "ttft_ms": 118.88442898634821,
+            "full_ms": 2351.218200987205,
+            "parse_ready_ms": 2351.218200987205
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 7769.401,
+  "attempts": 3,
+  "case": {
+    "case_id": "EPO-REAL-0013",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-13",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+      "sha256": "78272cc7068500f6a0fb12acc361ad40866b94ea0c1cb01a82ed557ab24b8843",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the English translation of the brand name written on the object I am pointing to?\nA. Ocean Blue\nB. Red Star\nC. Dream Blue\nD. Golden Harvest\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-13-a",
+      "epobj-13-b",
+      "epobj-13-c",
+      "epobj-13-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-13-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-13-b",
+        "epobj-13-c",
+        "epobj-13-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Ocean Blue": "epobj-13-a",
+        "Red Star": "epobj-13-b",
+        "Dream Blue": "epobj-13-c",
+        "Golden Harvest": "epobj-13-d"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor's hand is pointing towards the lower shelves of the display, specifically towards the area where smaller packaged goods are located.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2029.1466859926004,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is reaching into the shelf, but the hand is not clearly pointing at a specific, single object among the candidates.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1673.5160660173278,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the lower shelves of the display, specifically towards the area containing colorful packages.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1621.4620719838422,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

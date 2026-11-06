@@ -1,0 +1,120 @@
+{
+  "case_id": "TOL-CC-004",
+  "source": "pilot-cc",
+  "track": "tool",
+  "prompt_mode": "deployed",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 15914.652,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0029400107450783253,
+            "upload_ms": 456.85995399253443,
+            "ttft_ms": 15643.999158986844,
+            "full_ms": 15914.620907977223,
+            "parse_ready_ms": 15914.620907977223
+          }
+        ]
+      }
+    },
+    "action": {
+      "latency_ms": 1321.949,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0028999929782003164,
+            "upload_ms": 101.25240599154495,
+            "ttft_ms": 673.7290529999882,
+            "full_ms": 1321.9138770073187,
+            "parse_ready_ms": 1321.9138770073187
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 17236.601,
+  "attempts": 2,
+  "case": {
+    "case_id": "TOL-CC-004",
+    "source": "pilot-cc",
+    "track": "tool",
+    "split_group_id": "g-cc-TOL-NEUTRAL",
+    "media": {
+      "path": "pilot/media/cc/TOL-NEUTRAL.png",
+      "sha256": "933dec73ea446503fa5d93497a3752e46813ad2cb52926f4ac3c2fdaf965f26d",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "А потом забери меня в кафе, ладно?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [
+      "reply",
+      "stop_tour",
+      "pause",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "guide_to"
+    ],
+    "gold": {
+      "type": "action",
+      "tool": "ask_visitor",
+      "args": {
+        "question": "Прервём экскурсию и поедем в кафе?",
+        "on_yes": {
+          "tool": "guide_to",
+          "args": {
+            "location_id": "loc-cafe"
+          }
+        },
+        "on_no": "Остаёмся в туре, продолжим."
+      }
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

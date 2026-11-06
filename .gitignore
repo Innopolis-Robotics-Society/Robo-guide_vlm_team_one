@@ -28,10 +28,10 @@ guide_robot_navigation/generated_config/
 odom_test_runs/
 asr_takes/
 
-# VLM eval harness (Taiga #10): large external datasets and run outputs are
-# never committed; the frozen manifests under eval_manifests/ ARE committed
+# VLM eval harness (Taiga #10): large external datasets are never committed;
+# the frozen manifests under eval_manifests/ AND the recorded campaign
+# artifacts under eval_runs/ ARE committed (they substantiate the report)
 guide_robot_llm/eval_data/
-guide_robot_llm/eval_runs/
 
 # System files
 .DS_Store

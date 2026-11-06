@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0007-F001",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 1444.279,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0027799978852272034,
+              "upload_ms": 50.88487299508415,
+              "ttft_ms": 75.49601700156927,
+              "full_ms": 814.9553359835409,
+              "parse_ready_ms": 814.9553359835409
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0030800001695752144,
+              "upload_ms": 39.71058499882929,
+              "ttft_ms": 102.56118301185779,
+              "full_ms": 628.912276995834,
+              "parse_ready_ms": 628.912276995834
+            }
+          ]
+        }
+      },
+      "cot_reason": "Я не могу выполнить ваш запрос, так как предоставленное изображение не содержит достаточного количества людей для точного подсчета и анализа по заданным критериям.\n\nНа изображении виден только один человек (фотограф/снимающий), который находится в кадре, но нет явного робота, а также нет других людей, с которыми можно было бы оценить их готовность слушать.\n\n**Этап 1: Подсчет людей в кадре**\n*   **Всего людей:** 1 (человек на переднем плане).\n\n**Этап 2: Оценка готовности слушать**\n*   Поскольку нет робота и нет других людей для оценки, невозможно определить, готов ли кто-либо слушать.\n\n**Ответ:**\n*   **Всего людей:** 1\n*   **Готовых людей:** 0"
+    }
+  },
+  "latency_ms": 1444.279,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0007-F001",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0007",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407158_733920459.png",
+      "sha256": "6b03347f019a45cb335b30b34da774d7b99e48713aacfb51ce44489acf50ad55",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

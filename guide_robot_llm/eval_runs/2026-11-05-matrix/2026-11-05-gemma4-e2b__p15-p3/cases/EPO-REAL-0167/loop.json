@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"A person's hand is reaching towards a packaged food item on a shelf. The item appears to be a rectangular, light brown/tan colored product, possibly a type of pastry, bread, or snack, packaged in clear plastic. The packaging suggests a baked good or a similar food item.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1776.2819199997466,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"a person's hand is pointing towards a package of what appears to be a baked good or pastry in the foreground. The packaging is brown/tan and appears to be a type of bread or pastry. The background shows various other packaged goods, including some that look like dried goods or other bakery items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1745.1638320053462,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-167-a\", \"epobj-167-b\", \"epobj-167-c\", \"epobj-167-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"no information provided\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1274.3726339831483,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

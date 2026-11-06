@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "scene_facts": "The image shows a hand pointing towards a brightly lit sign with Chinese characters mounted above a doorway. The sign is clearly visible and is the focal point of the gesture. The hand is extended, with the index finger directed upwards towards the sign. The sign is positioned above the entrance to what appears to be a salon or shop. The surrounding area includes a hallway and interior of the shop with chairs and mirrors, but the pointing gesture is specifically directed at the sign above the door. The sign is not on the floor, not inside the room on a desk, and not attached to the side wall at eye level; it is distinctly above the doorway. The hand's position and direction confirm the target is the sign above the door. The sign is the only object in the immediate vicinity that matches the pointing gesture. The other options (side wall, inside room, floor) do not align with the visual evidence of the pointing hand. Therefore, the correct answer is C. Above the doorway. The sign is the only object that fits the description and the pointing gesture. The other options are incorrect based on the visual evidence. The sign is clearly above the doorway, making C the correct choice. The other options do not match the visual evidence. The sign is the only object that fits the description and the pointing gesture. The other options are incorrect based on the visual evidence. The sign is clearly above the doorway, making C the correct choice. The other options do not match the visual evidence. The sign is the only object that fits the description and the pointing gesture. The other options are incorrect based on the visual evidence. The sign is clearly above the doorway, making C the correct choice. The other options do not match the visual evidence. The sign is the only object that fits the description and the pointing gesture. The other options are incorrect based on the visual evidence. The sign is clearly above the doorway, making C the

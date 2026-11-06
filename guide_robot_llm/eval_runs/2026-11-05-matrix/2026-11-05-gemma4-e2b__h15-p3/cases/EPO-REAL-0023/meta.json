@@ -1,0 +1,120 @@
+{
+  "case_id": "EPO-REAL-0023",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P3",
+  "calls_per_case": 3,
+  "terminal_reason": "k_exhausted",
+  "terminal_abstain": true,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1405.275,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0041199964471161366,
+            "upload_ms": 89.64288199786097,
+            "ttft_ms": 120.90986801194958,
+            "full_ms": 1405.24117500172,
+            "parse_ready_ms": 1405.24117500172
+          }
+        ]
+      }
+    },
+    "decision": {
+      "latency_ms": 171.349,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0031600065995007753,
+            "upload_ms": 51.77733598975465,
+            "ttft_ms": 99.72903699963354,
+            "full_ms": 171.31729199900292,
+            "parse_ready_ms": 171.31729199900292
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 4246.757,
+  "attempts": 3,
+  "case": {
+    "case_id": "EPO-REAL-0023",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-23",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/23.jpg",
+      "sha256": "9c7bc765ade62602b9cab3acb7b03c4a8525c0f08c40603f6d67c51f9e52d199",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary ingredient contained in the package I am pointing at?\nA. Dried Bean Curd Sticks\nB. Dried Daylilies\nC. Dried Lily Bulbs\nD. White Fungus (Tremella)\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-23-a",
+      "epobj-23-b",
+      "epobj-23-c",
+      "epobj-23-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-23-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-23-a",
+        "epobj-23-b",
+        "epobj-23-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Dried Bean Curd Sticks": "epobj-23-a",
+        "Dried Daylilies": "epobj-23-b",
+        "Dried Lily Bulbs": "epobj-23-c",
+        "White Fungus (Tremella)": "epobj-23-d"
+      }
+    }
+  }
+}

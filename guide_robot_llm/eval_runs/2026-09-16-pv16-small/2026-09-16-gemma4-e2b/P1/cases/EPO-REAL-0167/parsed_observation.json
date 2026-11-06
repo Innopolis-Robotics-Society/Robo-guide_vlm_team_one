@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "the_person_is_pointing_at_a_bakery_item_in_the_foreground_with_their_hand_towards_the_center_of_the_image"
+}

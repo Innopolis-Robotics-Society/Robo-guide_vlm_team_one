@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a retail store with various products displayed on shelves. There are several people in the store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1908.1306949956343,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a retail store with various products displayed on shelves. There are several people in the store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1545.3070630028378,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n  \n  ,\"pointing_evidence\": \"none\"\n  \n  ,\"pointing_box\": null\n  \n  ,\"scene_facts\": \"the visitor is looking at the display shelves, but is not clearly pointing at any specific item.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1507.0671569847036,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

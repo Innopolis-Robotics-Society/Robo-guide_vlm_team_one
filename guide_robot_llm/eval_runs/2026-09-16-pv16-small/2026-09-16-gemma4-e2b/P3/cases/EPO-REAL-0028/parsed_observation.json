@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "the_image_shows_a_person_pointing_at_a_traffic_sign_with_a_speed_limit_of_15_and_a_prohibition_sign_for_vehicles_indicating_a_restriction_on_movement_or_parking_near_the_sign_the_context_is_a_road_scene"
+}

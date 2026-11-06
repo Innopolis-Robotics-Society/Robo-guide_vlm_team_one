@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n\"people_count\": 1\n,\n\"exhibit_candidates\": [\n\"epobj-1204-a\",\n\"epobj-1204-b\",\n\"epobj-1204-c\",\n\"epobj-1204-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"A person's hand is pointing towards a stack of documents or files on a shelf. The hand is positioned near the middle-right section of the visible shelf area.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1508.506807993399,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-1204-a\", \"epobj-1204-b\", \"epobj-1204-c\", \"epobj-1204-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows a person's hand pointing towards a stack of documents or files on a shelf. The context is a library or archive setting with many organized folders and documents. The electronic functions listed in the previous question (A. It prints labels automatically, B. It charges mobile devices, C. It scans documents digitally, D. It has no electronic functions) are irrelevant to the physical action shown in the image, which is pointing at physical documents.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1349.3374079989735,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-1204-a\", \"epobj-1204-b\", \"epobj-1204-c\", \"epobj-1204-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"a person's hand is pointing towards a stack of clear plastic folders containing documents on a shelf.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1009.0817210148089,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

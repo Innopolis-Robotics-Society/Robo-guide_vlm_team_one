@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.38,
+    0.75,
+    0.45,
+    0.82
+  ],
+  "scene_facts": "Видна одна рука, указывающая на упакованные овощи на полке магазина."
+}

@@ -1,0 +1,19 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-103-a",
+"epobj-103-b",
+"epobj-103-c",
+"epobj-103-d"
+],
+"pointing_evidence": "yes"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "The visitor is pointing at an exhibit."
+}

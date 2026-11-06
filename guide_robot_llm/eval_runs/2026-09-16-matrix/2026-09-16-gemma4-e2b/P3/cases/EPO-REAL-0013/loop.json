@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n],\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various boxes, likely products, with Chinese characters on them. The hand is pointing towards a box in the center-right of the visible area. The text on the pointed box is partially visible. The options provided are English brand names: A. Ocean Blue, B. Red Star, C. Dream Blue, D. Golden Harvest. The task is to identify the brand name written on the object being pointed to.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1688.7788029853255,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various boxes, likely products. A finger is pointing towards a box in the center-right. The text on the pointed box is partially visible in Chinese characters. The options provided are English brand names: A. Ocean Blue, B. Red Star, C. Dream Blue, D. Golden Harvest. The task is to identify the brand name written on the object being pointed to.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1461.9758060143795,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely products from a store or market. The focus is on several boxes with colorful designs. The hand is pointing towards a central orange/peach-colored box in the middle of the frame.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1189.5948339952156,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

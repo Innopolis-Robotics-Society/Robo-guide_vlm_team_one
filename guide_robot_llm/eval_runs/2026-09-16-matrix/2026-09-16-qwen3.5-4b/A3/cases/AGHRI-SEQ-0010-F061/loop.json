@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек, который идёт по тропинке. Он не готов слушать, так как не взаимодействует с роботом и не обращает на него внимания. Поскольку нет готовых слушателей, я не перехожу к следующему шагу и продолжу анализировать новые кадры.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 945.7265739911236,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек, который находится в движении и не взаимодействует с ним. Готовых слушателей — 0. Поскольку их недостаточно, не переходим к следующему шагу. Продолжаем анализировать новые кадры.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 711.8125810229685,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек в кадре, и он не готов слушать. Продолжаем цикл.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 579.0985750209074,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

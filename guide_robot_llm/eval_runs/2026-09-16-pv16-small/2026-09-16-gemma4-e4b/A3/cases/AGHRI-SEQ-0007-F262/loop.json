@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\"answer\": \"Недостаточно информации. Пожалуйста, предоставьте кадры для анализа.\"\n, \"confidence\": 0.0, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 519.8317879985552,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как вы не предоставили мне кадры для анализа. Пожалуйста, предоставьте изображения, чтобы я мог посчитать людей и определить, сколько из них готовы слушать.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 661.3978119858075,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\"answer\": \"Извините, я не могу выполнить этот запрос, так как предоставленное изображение является статичным кадром. Для выполнения задачи, требующей отслеживания динамики (поиск людей, подсчет и ожидание, пока наберётся достаточно слушателей), мне необходим видеопоток или последовательность кадров, а не один снимок.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 852.1270189958159,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

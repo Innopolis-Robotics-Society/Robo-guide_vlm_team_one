@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a single person pointing with their right hand toward a brightly lit sign above a doorway. The sign appears to be mounted on the wall or ceiling structure directly over the entrance to what looks like a salon or service area. The person’s gesture is directed upward and slightly forward, indicating the sign above the doorway. There are no other visible exhibits in the immediate vicinity that match the pointing direction. The sign itself is not labeled with an ID, but based on spatial context, it corresponds to one of the candidate exhibits located above the doorway."
+}

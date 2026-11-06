@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person pointing at a speed limit sign (15) on a pole. The sign is located below a no-vehicle sign. The person's hand is extended towards the speed limit sign, indicating it specifically. There are no other exhibits or objects clearly indicated by the gesture in the image."
+}

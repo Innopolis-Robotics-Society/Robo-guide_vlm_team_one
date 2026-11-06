@@ -1,0 +1,8 @@
+nohup: ignoring input
+[2026-09-16 14:38:45] кампания: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix (mock=False, variant=all)
+[2026-09-16 14:38:45] model gemma4-e2b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:45] model gemma4-e4b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:45] model qwen3.5-4b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:45] model qwen3.5-9b: done — пропускаю (переопределение: --force)
+[2026-09-16 14:38:45] aggregate: 72 строк → summary_matrix.csv
+[2026-09-16 14:38:45] кампания завершена: провалов моделей: 0; итоги: /home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/summary_matrix.csv

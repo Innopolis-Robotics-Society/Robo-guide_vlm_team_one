@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/242.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-242-a\",\n\"epobj-242-b\",\n\"epobj-242-c\",\n\"epobj-242-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a close-up of a red circular marker on the ground, with white alphanumeric characters painted on it. The visible characters are 'J155' on one marker and 'J154' on another marker in the foreground. The question asks for the code painted in white on the surface of the object the visitor is pointing at. The visitor's finger is pointing towards the marker with 'J155'.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1967.2820740088355,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/242.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-242-a\",\n\"epobj-242-b\",\n\"epobj-242-c\",\n\"epobj-242-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1]\n,\n\"scene_facts\": \"Посетитель указывает на круглый объект на земле, который имеет цифры. На земле видны круглые темные плиты с белыми цифрами. На одном из таких объектов видна цифра '1154'. На другом объекте видна цифра '1155'. На третьем объекте видна цифра '1153'. На четвертом объекте видна цифра '1153'. На вопрос 'Какой буквенно-цифровой код нарисован белым на поверхности объекта, на который указывает посетитель?', варианты: A. JISS, B. J154, C. J155, D. T155.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1733.5429469821975,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/242.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-242-a\",\n\"epobj-242-b\",\n\"epobj-242-c\",\n\"epobj-242-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a group of circular markers on the ground in the foreground. One of these markers clearly displays the alphanumeric code 'J155' painted in white on a red surface. Another marker visible in the bottom left displays 'J154'.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1471.9692369981203,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

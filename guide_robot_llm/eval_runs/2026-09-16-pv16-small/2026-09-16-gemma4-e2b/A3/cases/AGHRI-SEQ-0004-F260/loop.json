@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593537_383302047.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. Изображение показывает дорогу с деревьями и несколькими людьми, но нет информации о том, готовы ли они слушать, или о каком-либо процессе вызова слушателей.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 698.1662149773911,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593537_383302047.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. На изображении виден один человек, и нет информации о том, готовы ли другие люди слушать.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 607.9434379935265,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593537_383302047.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. Изображение показывает дорогу с деревьями и одним человеком, и нет информации о том, какие люди готовы слушать или сколько их сейчас рядом с роботом.\"\n  , \"confidence\": 1\n  , \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 783.4517910087015,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-100-a",
+    "epobj-100-b",
+    "epobj-100-c",
+    "epobj-100-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a cluttered desk with various items such as bottles, containers, and electronic devices. There is no person visible in the image, so there is no hand gesture, gaze direction, or verbal input from a visitor to analyze. Additionally, there are no labeled exhibits (epobj-100-a through epobj-100-d) visible in the scene. Without any identifiable exhibits or a person to indicate interest, it is impossible to determine which exhibit the visitor is referring to."
+}

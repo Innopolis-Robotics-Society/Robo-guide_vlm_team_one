@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.45,\n    0.5,\n    0.6,\n    0.7\n  ]\n,\n  \"scene_facts\": \"The image shows a retail shelf stocked with various consumer goods, primarily personal care items like wet wipes and tissues. A person's arm, wearing a black glove, is extended into the frame, pointing towards a specific product on the middle shelf. The hand is clearly indicating a blue and white package located between yellow packages on the left and pink/purple packages on the right. The package being pointed at appears to be a standard-sized pack of wet wipes, commonly found in such aisles. The packaging design includes blue and white colors, which are typical for hygiene products. The surrounding products include yellow packages (likely tissues or wipes) and other colorful packages, suggesting a well-stocked aisle dedicated to household or personal care items. The pointing gesture is deliberate and directed at a specific item, indicating the person is either selecting or highlighting that particular product.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3650.1762619882356,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.48,\n    0.5,\n    0.52,\n    0.54\n  ],\n  \"scene_facts\": \"The image shows a retail shelf stocked with various household products, including plastic storage bins on the top shelf and multiple packages of wet wipes or tissues on lower shelves. A person's arm, wearing a black glove, is extended toward the middle shelf, pointing at a specific item. The pointed item appears to be a small, rectangular package with yellow and pink packaging, located between blue packages on the left and other colorful packages on the right. The exact nature of the product is not fully clear from the image alone, but it resembles a package of wet wipes or similar consumable goods.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2925.405105983373,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n, \"pointing_evidence\": \"yes\", \"pointing_box\": [\n    0.45,\n    0.5,\n    0.55,\n    0.55\n  ], \"scene_facts\": \"The image shows a retail store aisle with shelves stocked with various household products. A person's arm, wearing a black glove, is extended and pointing towards a specific item on the middle shelf. The item being pointed at is a blue package, which appears to be a pack of wet wipes or similar hygiene product. The surrounding shelves contain other products like plastic storage bins on the top shelf and various tissue or wipe packages in different colors (yellow, green, pink) on lower shelves. The pointing gesture is clear and directed at the blue package.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2791.0712140146643,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

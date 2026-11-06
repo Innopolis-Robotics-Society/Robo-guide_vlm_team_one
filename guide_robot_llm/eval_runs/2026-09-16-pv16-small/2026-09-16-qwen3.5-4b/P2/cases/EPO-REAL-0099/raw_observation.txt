@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person pointing at a refrigerated display case in a store. The hand is extended downward, with the index finger pointing toward a specific item on the lower shelf. The item being pointed at appears to be a packaged food product, likely a snack or ready-to-eat meal, given its packaging and placement in the fridge. The surrounding items include various packaged foods, such as bread, pastries, and other snacks. The person's gesture is clear and deliberate, indicating a specific choice or selection from the available options. The context suggests that the person is shopping and has decided on a particular product to purchase. The pointing action is the primary indicator of the intended selection, and the surrounding items provide context for the type of product being chosen. The image does not show any additional people or significant background details that would alter the interpretation of the pointing action. The focus remains on the person's hand and the item they are pointing at, which is the key element in determining the intended selection. The pointing action is the most salient feature in the image, and it clearly indicates the person's choice among the available options. The surrounding items provide context but do not change the primary focus of the pointing action. The image is well-lit, and the details of the products and the person's hand are clearly visible, allowing for a confident interpretation of the pointing action. The person's hand is positioned in a way that suggests they are making a deliberate choice, and the item they are pointing at is the most likely candidate for the intended selection. The surrounding items provide context but do not alter the primary focus of the pointing action. The image is well-lit, and the details of the products and the person's hand are clearly visible, allowing for a confident interpretation of the pointing action. The person's hand is positioned in a way that suggests they are making a deliberate choice, and the item they are pointing at is the most likely candidate for the

@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0234",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "freeform",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 840.926,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.003289984306320548,
+            "upload_ms": 183.30735599738546,
+            "ttft_ms": 696.2323519983329,
+            "full_ms": 840.8966429997236,
+            "parse_ready_ms": 840.8966429997236
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 840.926,
+  "attempts": 1,
+  "case": {
+    "case_id": "EPO-REAL-0234",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-234",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/234.jpg",
+      "sha256": "043a1e2ea3e2d101a21b49a1d5ecad279094cc6fd7ed27f7a9acbc834bee9319",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is this object currently in a position that allows vehicles to pass?\nA. Yes, it is fully open.\nB. It is designed only for pedestrians.\nC. It is partially open.\nD. No, it is blocking the path.\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-234-a",
+      "epobj-234-b",
+      "epobj-234-c",
+      "epobj-234-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-234-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-234-a",
+        "epobj-234-b",
+        "epobj-234-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Affordance & Function",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Yes, it is fully open.": "epobj-234-a",
+        "It is designed only for pedestrians.": "epobj-234-b",
+        "It is partially open.": "epobj-234-c",
+        "No, it is blocking the path.": "epobj-234-d"
+      }
+    }
+  }
+}

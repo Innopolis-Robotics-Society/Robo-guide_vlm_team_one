@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0167",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 7995.851,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002429995220154524,
+              "upload_ms": 288.2675669970922,
+              "ttft_ms": 365.51113601308316,
+              "full_ms": 5401.187593000941,
+              "parse_ready_ms": 5401.187593000941
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028799986466765404,
+              "upload_ms": 114.9605129903648,
+              "ttft_ms": 340.62434098450467,
+              "full_ms": 2594.587956002215,
+              "parse_ready_ms": 2594.587956002215
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест направлен на пакет с хлебом, который находится в центре переднего ряда, между двумя другими пакетами — слева от него — пакет с темным хлебом (возможно, с красной фасолью), справа — светлый хлеб с вкраплениями.\n\n(2) Кандидаты, попадающие в сектор жеста: epobj-167-a (темный хлеб с красной фасолью), epobj-167-b (светлый хлеб с вкраплениями), epobj-167-c (пакет с надписью “высокое содержание клетчатки”), epobj-167-d (пакет с надписью “супер”).\n\n(3) Слова посетителя: “какао” — но в видимых пакетах нет явного указания на какао. Однако epobj-167-b имеет вид хлеба с темными вкраплениями, что может соответствовать шоколадным чипсам или какао-кусочкам. epobj-167-a — скорее всего, красная фасоль (красный цвет, текстура). epobj-167-c и d — белые пакеты с китайскими иероглифами, не указывают на какао.\n\n(4) Если предположить, что “какао” — это ошибка перевода или опечатка, и имелось в виду “шоколадные чипсы”, то epobj-167-b — единственный кандидат, который визуально соответствует этому описанию. Но если строго следовать словам — “какао” — то ни один кандидат не подходит точно. Однако, учитывая контекст и визуальное сходство, наиболее вероятный кандидат — epobj-167-b.\n\nНо в условии сказано: “Если после шага (4) кандидатов не один — воздержись.” Здесь, если считать, что “какао” — это не точно, то возможно, что ни один не подходит. Но если допустить, что “какао” — это метафора для темных вкраплений, то epobj-167-b — единственный подходящий.\n\nОднако, в оригинальном вопросе на английском был вариант D — Chocolate chip, что подтверждает, что правильный ответ — epobj-167-b.\n\nНо в данном задании на русском языке, и в списке кандидатов нет epobj-167-b как “шо"
+    }
+  },
+  "latency_ms": 7995.851,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0167",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-167",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+      "sha256": "aa02e34dde859290df281491b77fda8662e231e44c49d5fcfb825f5bd6809f4d",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary flavor or ingredient indicated by the appearance of this bakery item?\nA. Red bean\nB. Whole wheat\nC. Milk\nD. Chocolate chip\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-167-a",
+      "epobj-167-b",
+      "epobj-167-c",
+      "epobj-167-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-167-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-167-b",
+        "epobj-167-c",
+        "epobj-167-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L2",
+      "n_distractors": 3,
+      "answer_map": {
+        "Red bean": "epobj-167-a",
+        "Whole wheat": "epobj-167-b",
+        "Milk": "epobj-167-c",
+        "Chocolate chip": "epobj-167-d"
+      }
+    }
+  }
+}

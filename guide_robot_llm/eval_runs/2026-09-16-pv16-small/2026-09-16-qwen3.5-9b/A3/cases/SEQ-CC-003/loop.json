@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/SEQ-CC-003_f0.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 2 человека. Оба смотрят прямо на зелёный блок — значит, оба готовы слушать дальше. Условие выполнено: достаточно готовых слушателей. Останавливаем цикл.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 980.1388430059887,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/SEQ-CC-003_f1.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 2 человека. Оба смотрят прямо на экран — значит, оба готовы слушать дальше. Условие выполнено: достаточно готовых слушателей. Процесс завершён.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 809.6984579751734,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/SEQ-CC-003_f2.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 3 человека. Из них только 1 (в центре) смотрит на экран — значит, готов слушать. Остальные 2 отворачиваются — не готовы. Готовых недостаточно. Продолжаю анализировать следующие кадры.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 2,
+    "latency_ms": 1973.8148429896683,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

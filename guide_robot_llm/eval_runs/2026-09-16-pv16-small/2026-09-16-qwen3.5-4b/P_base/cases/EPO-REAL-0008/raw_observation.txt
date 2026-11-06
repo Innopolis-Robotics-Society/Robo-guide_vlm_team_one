@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.45,
+    0.62,
+    0.73,
+    0.97
+  ],
+  "scene_facts": "В магазине человек указывает на упаковку товара на вешалке."
+}

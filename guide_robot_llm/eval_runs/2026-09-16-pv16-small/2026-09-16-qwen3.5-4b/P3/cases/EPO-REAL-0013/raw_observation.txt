@@ -1,0 +1,11 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The person is pointing at a peach-colored box with Chinese characters on it. The box is located between two yellow boxes and several blue boxes. The text on the box appears to be '海之蓝' (Hai Zhi Lan). The person is wearing a black glove and is pointing with their right hand. The background shows a store setting with shelves and other products. There is a green exit sign above the boxes. The lighting is bright, likely from overhead store lights. The person's hand is in the foreground, and the boxes are on a shelf behind it. The person's face is not visible, but their arm and hand are clearly in the frame. The boxes are arranged in a row, and the person is pointing at one of them. The text on the box is in Chinese characters, and the box has a distinct peach color. The person's hand is extended towards the box, indicating a clear pointing gesture. The background includes other products and store fixtures, but the focus is on the box being pointed at. The person's hand is the most prominent feature in the foreground, drawing attention to the box. The box is centrally located in the frame relative to the pointing hand. The text on the box is the main feature of the box being pointed at. The person's hand is positioned to the left of the box, with the index finger extended towards it. The box is on a shelf, and there are other boxes around it. The person's hand is the only human element in the image, and it is clearly interacting with the box. The box is the main object of interest in the scene, as indicated by the pointing gesture. The person's hand is the only visible part of the person, and it is positioned to point at the box. The box is the only object being interacted with in the image. The person's hand is the only human element in the image, and it is clearly pointing at the box. The box is the only object being pointed at in the image. The person

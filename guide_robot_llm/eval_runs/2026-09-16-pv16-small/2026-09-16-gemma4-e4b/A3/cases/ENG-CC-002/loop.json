@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/ENG-CC-002.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре присутствует **1** человек. Поскольку нет дополнительной информации о его готовности слушать, я не могу определить, сколько из них готовы. Для продолжения цикла мне необходимы новые кадры или дополнительная информация о критериях \"\n    \n    \t   \t   \t   \t   , \"confidence\": 0.95\n    \n    \t   \t   \t   \t   , \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1629.6821649884805,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/ENG-CC-002.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре я вижу только одного человека. Поскольку нет информации о том, сколько людей должно быть \"\n   \n   , \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 629.4429130211938,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/ENG-CC-002.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре я вижу **1** человека. Поскольку в вашем запросе не указано, сколько слушателей считается \"\n   \n   ,\n   \"confidence\": 0.95\n  \n  ,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 860.2773020102177,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-4-a",
+    "epobj-4-b",
+    "epobj-4-c",
+    "epobj-4-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person pointing at a red cigarette pack in a display case. The pack is located on the lower shelf, among other cigarette brands. The pointing finger is clearly directed at this specific red-packaged item."
+}

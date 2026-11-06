@@ -1,0 +1,11 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a",
+    "epobj-96-b",
+    "epobj-96-c",
+    "epobj-96-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The user is pointing at a large building complex. The building has multiple store fronts. One store has a large Nike logo. Another store has a large Uniqlo logo. The user's finger is pointing towards the Uniqlo store, specifically at the red sign with the white 'UNIQLO' text. The finger is clearly directed at the Uniqlo sign on the building facade. The Nike store is to the left of the Uniqlo store, and the user's finger is not pointing at it. The user's finger is pointing at the Uniqlo sign on the building facade. The Uniqlo sign is a large red rectangle with the white text 'UNIQLO' written vertically. The user's finger is pointing directly at this sign. The Nike store is to the left of the Uniqlo store, and the user's finger is not pointing at it. The user's finger is pointing at the Uniqlo sign on the building facade. The Uniqlo sign is a large red rectangle with the white text 'UNIQLO' written vertically. The user's finger is pointing directly at this sign. The Nike store is to the left of the Uniqlo store, and the user's finger is not pointing at it. The user's finger is pointing at the Uniqlo sign on the building facade. The Uniqlo sign is a large red rectangle with the white text 'UNIQLO' written vertically. The user's finger is pointing directly at this sign. The Nike store is to the left of the Uniqlo store, and the user's finger is not pointing at it. The user's finger is pointing at the Uniqlo sign on the building facade. The Uniqlo sign is a large red rectangle with the white text 'UNIQLO' written vertically. The user's finger is pointing directly at this sign. The Nike store is to the left of the Uniqlo store, and the user's finger is not pointing at it. The user's finger is

@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The person is pointing at a blue package of wet wipes on the shelf."
+}

@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a"
+  ]
+,
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.52,
+    0.51,
+    0.71,
+    0.99
+  ]
+,
+  "scene_facts": "The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be for a business, possibly a salon or shop, with Chinese characters. The hand is in the foreground, and the sign is in the background, above the entrance to the room. The setting seems to be an indoor commercial space, possibly a mall or office building. The hand is pointing directly at the sign, indicating interest or direction towards it."
+}

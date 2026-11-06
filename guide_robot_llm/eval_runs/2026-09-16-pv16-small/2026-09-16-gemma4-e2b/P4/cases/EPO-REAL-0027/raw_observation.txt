@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-27-a",
+"epobj-27-b",
+"epobj-27-c",
+"epobj-27-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "The person is standing in front of a display case with various packaged food items. The person is looking towards the display. No specific gesture is clearly pointing to a single item."
+}

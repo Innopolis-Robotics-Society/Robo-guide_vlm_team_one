@@ -1,0 +1,23 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-55-a",
+    "epobj-55-b",
+    "epobj-55-c",
+    "epobj-55-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ]
+  
+  ,
+  "scene_facts": "The image shows a close-up of a hand pointing towards a silver, round, shallow utensil hanging on a rack. The utensil appears to be a type of strainer or a small bowl/scoop. The context is a display of kitchen utensils."
+}

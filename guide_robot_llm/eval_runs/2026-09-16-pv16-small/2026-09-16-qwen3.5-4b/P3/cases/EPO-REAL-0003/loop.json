@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"unconfirmed\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1578.9041579992045,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a package of radishes on the shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1284.2270419932902,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"unconfirmed\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1279.0986509935465,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

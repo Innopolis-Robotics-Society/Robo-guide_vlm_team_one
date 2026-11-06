@@ -1,0 +1,15 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ]
+,
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "The image shows a retail store display, likely in a department store or supermarket. There are multiple shelves with various products, including bottles and jars, which appear to be skincare or cosmetic items. The display has signs with Chinese text, suggesting it's a section for beauty or personal care products. There are people browsing the items, and the overall setting is well-lit and organized, typical of a retail environment."
+}

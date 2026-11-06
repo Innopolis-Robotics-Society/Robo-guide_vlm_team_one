@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/162.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-162-a\",\n    \"epobj-162-b\",\n    \"epobj-162-c\",\n    \"epobj-162-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the machine in the foreground, which is labeled '开水区' (Hot Water Area).\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2012.004308984615,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/162.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-162-a\",\n    \"epobj-162-b\",\n    \"epobj-162-c\",\n    \"epobj-162-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a hallway with a water dispenser ('开水区') on the left. There are several framed pictures on the right wall.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1687.802542001009,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/162.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-162-a\",\n    \"epobj-162-b\",\n    \"epobj-162-c\",\n    \"epobj-162-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is not pointing at any specific exhibit.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1473.3681269863155,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

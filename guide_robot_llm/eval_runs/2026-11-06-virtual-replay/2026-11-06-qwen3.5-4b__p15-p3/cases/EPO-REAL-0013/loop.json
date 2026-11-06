@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The user is pointing at a peach-colored box with Chinese characters on it. The box is located between two yellow boxes and several blue boxes. The user's hand is wearing a black glove. The pointing gesture is directed at the peach-colored box. The text on the box appears to be '海之蓝' (Hai Zhi Lan). The user is in a store setting, likely a liquor store, given the types of boxes. The user is pointing at the box with their right hand, which is wearing a black glove. The box is standing upright on a shelf. The user's finger is extended towards the box. The box is part of a display of various liquor boxes. The user is likely selecting or examining the box. The user's gaze is directed at the box. The user's hand is positioned in front of the box. The box is clearly visible and the user's pointing gesture is directed at it. The user is likely interested in the product. The user's hand is steady and the pointing gesture is deliberate. The box is part of a larger display of products. The user is likely shopping for liquor. The user's hand is positioned in a way that suggests they are pointing at the box to draw attention to it. The user's gaze is focused on the box. The user's hand is in the foreground, while the box is in the background. The user is likely pointing at the box to indicate their choice or interest. The user's hand is positioned in a way that suggests they are pointing at the box to draw attention to it. The user's gaze is focused on the box. The user's hand is in the foreground, while the box is in the background. The user is likely pointing at the box to indicate their choice or interest. The user's hand is positioned in a way that suggests they are pointing at the box to draw attention to it. The user's gaze is focused on the box. The user's hand is in the foreground, while the box is in the background.",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 4365.512388991192,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The user is pointing at a peach-colored box with Chinese characters on it. The box is located between two yellow boxes and several blue boxes. The user's hand is wearing a black glove. The background shows a store ceiling with lights and an exit sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1710.6805210059974,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The user is pointing at a peach-colored box with Chinese characters on it. The box is located between two yellow boxes on the left and several blue boxes on the right. The user's gloved hand is clearly visible, with the index finger extended towards the peach-colored box. The peach-colored box has the characters '海之蓝' written on it, which translates to 'Ocean Blue'. The other boxes have different colors and designs. The yellow boxes have red characters, and the blue boxes have white and red designs. The user's pointing gesture is directed specifically at the peach-colored box, not the surrounding boxes. The user's hand is in the foreground, and the boxes are on a shelf in the background. The user's hand is positioned in a way that suggests they are indicating the peach-colored box. The user's hand is not pointing at any other box. The user's hand is not pointing at the ceiling or any other object. The user's hand is not pointing at the floor or any other object. The user's hand is not pointing at the user's own body or any other part of the user. The user's hand is not pointing at the camera or any other object. The user's hand is not pointing at the user's own face or any other part of the user's body. The user's hand is not pointing at the user's own clothes or any other part of the user's attire. The user's hand is not pointing at the user's own hair or any other part of the user's appearance. The user's hand is not pointing at the user's own eyes or any other part of the user's face. The user's hand is not pointing at the user's own mouth or any other part of the user's face. The user's hand is not pointing at the user's own nose or any other part of the user's face. The user's hand is not pointing at the user's own ears or any other part of the user's head. The user's hand is not pointing",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3756.3410400180146,
+    "attempts": 1,
+    "finish_reason": "length"
+  }
+]

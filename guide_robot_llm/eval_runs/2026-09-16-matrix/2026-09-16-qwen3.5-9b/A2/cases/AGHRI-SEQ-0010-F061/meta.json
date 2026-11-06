@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0010-F061",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 4180.678,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0026999914553016424,
+              "upload_ms": 182.51268999301828,
+              "ttft_ms": 239.29845402017236,
+              "full_ms": 3387.659928004723,
+              "parse_ready_ms": 3387.659928004723
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0033199903555214405,
+              "upload_ms": 46.276470995508134,
+              "ttft_ms": 215.96125198993832,
+              "full_ms": 792.5331300066318,
+              "parse_ready_ms": 792.5331300066318
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: подсчёт людей в кадре\n\nНа изображении видна одна женщина, идущая по тропинке в парке. Она одета в тёмное пальто, держит в руках что-то синее (возможно, телефон или бутылку), и её взгляд направлен в сторону камеры или чуть мимо неё. На заднем плане — деревья, трава, дорога, но других людей не видно.\n\n→ Всего людей в кадре: **1**\n\n---\n\nЭтап 2: оценка готовности слушать\n\nКритерии:\n- Близость: человек находится рядом с камерой (предполагаем, что робот — это камера или устройство, снимающее видео).\n- Взгляд: женщина смотрит примерно в сторону камеры, возможно, замечает её.\n- Вовлечённость: она идёт, но не спешит, не отворачивается резко — может быть восприимчива к обращению.\n\nОценка:\n- Близость — высокая (она прямо перед камерой).\n- Взгляд — умеренный (не прямо в объектив, но близко).\n- Вовлечённость — средняя (идёт, но не игнорирует полностью).\n\nС учётом этих факторов — она **готова слушать**, если к ней обратиться.\n\n→ Готовых людей: **1**\n\n---\n\nИтог:\n\nВсего людей: **1**  \nГотовых слушать: **1**"
+    }
+  },
+  "latency_ms": 4180.678,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0010-F061",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0010",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+      "sha256": "01ade5682820d257d40a19a2fd759e5b0e519354e73e2745e64b3306066e76aa",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

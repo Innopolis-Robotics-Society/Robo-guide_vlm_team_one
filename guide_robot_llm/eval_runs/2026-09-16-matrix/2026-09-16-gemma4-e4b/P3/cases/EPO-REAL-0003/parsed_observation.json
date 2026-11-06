@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a",
+    "epobj-3-b",
+    "epobj-3-c",
+    "epobj-3-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The visitor is pointing towards the middle section of the refrigerated display case, specifically at a cluster of small, light green, round vegetables."
+}

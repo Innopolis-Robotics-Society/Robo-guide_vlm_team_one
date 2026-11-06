@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение не содержит информации о том, кто \"\n   \n   \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t, \"confidence\": 0.0, \"abstain\": true}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 855.1783649891149,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения я вижу только одного человека, который находится рядом с роботом (или устройством, которое может быть роботом). Я не могу определить, сколько людей готовы слушать, так как у меня нет информации о намерениях других людей или о том, как определяется \"\n   \n                  , \"confidence\": 0.95\n  \n  , \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1275.5411360121798,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение не содержит робота, и я не могу определить, сколько людей \"\n    \n    ,\"confidence\": 0.95\n    \n    ,\"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 826.607632014202,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a supermarket aisle with shelves stocked with various snack products. A person's arm is visible in the foreground, pointing at a specific product on the lower shelf. The pointed item appears to be a red and yellow packaged snack, likely a type of instant noodle or similar food item, positioned among other colorful packages. The surrounding environment includes multiple rows of snacks, including recognizable brands like Lay's and Oishi, indicating a well-stocked retail setting. The pointing gesture suggests the person is selecting or highlighting this particular product for attention or purchase."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. Изображение показывает тропинку в парке, а не людей, взаимодействующих с роботом или готовых слушать.\",\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 739.1654840030242,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. Изображение показывает тропинку в парке, и на нем нет людей, взаимодействующих с роботом или явно готовых слушать.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 589.8878120060544,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. Изображение показывает тропинку в парке, а не людей, взаимодействующих с роботом или готовых слушать.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 570.5408939975314,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

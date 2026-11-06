@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"no\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1340.560723998351,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store, likely a department store or a cosmetics store, with shelves displaying various products. There are people browsing the items. The shelves are organized with different types of products, possibly skincare or beauty products, given the packaging and the context of the store. The lighting is bright, and the store appears clean and well-organized. There are signs and labels on the shelves, but the text is not clearly legible in the image. The overall atmosphere suggests a shopping environment where customers are selecting items from the shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1722.4999119935092,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"The image shows a retail store display, likely in a department store or supermarket. There are multiple shelves with various products, including bottles and jars, which appear to be skincare or cosmetic items. The display has signs with Chinese text, suggesting it's a section for beauty or personal care products. There are people browsing the items, and the overall setting is well-lit and organized, typical of a retail environment.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1700.925865006866,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

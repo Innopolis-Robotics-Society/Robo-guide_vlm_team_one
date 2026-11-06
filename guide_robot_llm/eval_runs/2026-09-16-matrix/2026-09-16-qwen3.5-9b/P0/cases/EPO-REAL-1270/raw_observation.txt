@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.45,
+    0.49,
+    0.51,
+    0.53
+  ],
+  "scene_facts": "The image shows a retail store aisle with shelves stocked with various household products, including wet wipes, tissues, and storage bins. A person’s arm, wearing a black glove, is extended and pointing directly at a specific item on the middle shelf. The pointed item is a small, rectangular package with yellow and pink packaging, located between blue packages on the left and other colorful packages on the right. The surrounding items include large translucent plastic storage bins on the top shelf and multiple brands of wet wipes and tissues below. The pointing gesture is clear and intentional, indicating the person is drawing attention to that particular product."
+}

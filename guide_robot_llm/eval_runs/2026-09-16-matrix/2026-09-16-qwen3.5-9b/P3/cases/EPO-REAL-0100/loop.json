@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-100-a\",\n    \"epobj-100-b\",\n    \"epobj-100-c\",\n    \"epobj-100-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a cluttered desk surface with various items including bottles, containers, and a red bag. There is a shelf unit to the left holding figurines and other objects. No person is visible in the image making a pointing gesture or indicating any specific exhibit. The scene appears to be a static shot of a workspace without any interactive elements or people present.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2417.348160990514,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-100-a\",\n    \"epobj-100-b\",\n    \"epobj-100-c\",\n    \"epobj-100-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a cluttered desk with various items such as bottles, containers, and a red bag. There is no visible person or gesture indicating pointing at any specific exhibit. The scene appears to be a static view of a workspace without any interactive elements or indicators of selection.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2018.5432440193836,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\n  \"people_count\": 0,\n  \"exhibit_candidates\": [\n    \"epobj-100-a\",\n    \"epobj-100-b\",\n    \"epobj-100-c\",\n    \"epobj-100-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a cluttered desk surface with various items such as bottles, containers, a phone, and other small objects. There is also a shelf unit to the left containing additional items like a figurine, a water bottle, and miscellaneous supplies. No person is visible in the image, and therefore no pointing gesture or indication can be observed. The scene appears to be a static shot of a workspace without any interactive elements or human presence.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2302.0953869854566,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

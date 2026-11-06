@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек, идущий по тропинке. Он не смотрит на камеру, не реагирует на робота и не готов слушать. Поэтому переходим к следующему кадру.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 843.357785983244,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре — один человек, идущий по тропинке. Он одет в тёмную куртку, носит маску и смотрит прямо в камеру — значит, готов слушать. Больше людей рядом нет. Значит, готовых слушателей — 1. Если требуется больше — ждём следующего кадра.\"\n,\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 1,
+    "latency_ms": 830.6125139934011,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек, идущий по тропинке. Он не смотрит на камеру, не реагирует на робота и не выглядит готовым слушать. Значит, пока не набралось достаточно готовых слушателей. Продолжаем цикл — вызываем этот же навык на новых кадрах.\",\n  \"confidence\": 0.9,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 838.5513639950659,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

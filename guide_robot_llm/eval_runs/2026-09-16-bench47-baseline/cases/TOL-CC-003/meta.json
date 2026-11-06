@@ -1,0 +1,111 @@
+{
+  "case_id": "TOL-CC-003",
+  "source": "pilot-cc",
+  "track": "tool",
+  "prompt_mode": "deployed",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 16221.643,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.003130000550299883,
+            "upload_ms": 527.423061983427,
+            "ttft_ms": 15564.709134981968,
+            "full_ms": 16221.608703985112,
+            "parse_ready_ms": 16221.608703985112
+          }
+        ]
+      }
+    },
+    "action": {
+      "latency_ms": 1085.158,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.003469991497695446,
+            "upload_ms": 104.73181001725607,
+            "ttft_ms": 669.2114910110831,
+            "full_ms": 1085.1253000146244,
+            "parse_ready_ms": 1085.1253000146244
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 17306.801,
+  "attempts": 2,
+  "case": {
+    "case_id": "TOL-CC-003",
+    "source": "pilot-cc",
+    "track": "tool",
+    "split_group_id": "g-cc-TOL-NEUTRAL",
+    "media": {
+      "path": "pilot/media/cc/TOL-NEUTRAL.png",
+      "sha256": "933dec73ea446503fa5d93497a3752e46813ad2cb52926f4ac3c2fdaf965f26d",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Мне нужно на минуту отойти.",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [
+      "reply",
+      "stop_tour",
+      "pause",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "guide_to"
+    ],
+    "gold": {
+      "type": "action",
+      "tool": "pause",
+      "args": {}
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

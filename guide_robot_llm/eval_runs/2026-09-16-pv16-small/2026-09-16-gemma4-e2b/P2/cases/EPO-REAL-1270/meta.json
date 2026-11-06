@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-1270",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1273.675,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003410008503124118,
+              "upload_ms": 58.52986598620191,
+              "ttft_ms": 92.59217299404554,
+              "full_ms": 169.840718008345,
+              "parse_ready_ms": 169.840718008345
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0035199918784201145,
+              "upload_ms": 52.179605001583695,
+              "ttft_ms": 88.6520319909323,
+              "full_ms": 1103.7730209936853,
+              "parse_ready_ms": 1103.7730209936853
+            }
+          ]
+        }
+      },
+      "cot_reason": "Пожалуйста, предоставьте изображение, о котором идет речь. Я не вижу никакого изображения."
+    }
+  },
+  "latency_ms": 1273.675,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-1270",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-1270",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+      "sha256": "efe7154936623f238698b6f0986a297f9839b131a2cb2eb4a4aa8978327e7669",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is the object indicated here a package of sanitary wet wipes?\nA. No, it is a black metal shelf guard\nB. Yes, it is a yellow package of tissues\nC. No, it is a large plastic storage bin\nD. Yes, it is a blue package of wet wipes\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-1270-a",
+      "epobj-1270-b",
+      "epobj-1270-c",
+      "epobj-1270-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-1270-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-1270-b",
+        "epobj-1270-c",
+        "epobj-1270-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "No, it is a black metal shelf guard": "epobj-1270-a",
+        "Yes, it is a yellow package of tissues": "epobj-1270-b",
+        "No, it is a large plastic storage bin": "epobj-1270-c",
+        "Yes, it is a blue package of wet wipes": "epobj-1270-d"
+      }
+    }
+  }
+}

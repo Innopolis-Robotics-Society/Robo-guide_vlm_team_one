@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.54,\n    0.52,\n    0.71,\n    0.99\n  ],\n  \"scene_facts\": \"The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be for a business, possibly a salon or shop, given the interior visible through the doorway. The hand is in the foreground, and the sign is in the background, above the entrance. The pointing gesture is directed at the sign, but the exact object being pointed at is not entirely clear due to the angle and lighting. The sign is the most prominent feature in the direction of the pointing gesture.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2624.0287289838307,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.5,\n    0.5,\n    0.5,\n    0.5\n  ],\n  \"scene_facts\": \"The image shows a person's hand pointing towards a brightly lit sign above a doorway. The sign appears to be mounted on the wall or ceiling structure directly above the entrance to what looks like a salon or similar business. There are no other exhibits visible in the frame that could be pointed at. The gesture is directed upward and slightly forward, aligning with the position of the illuminated sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2217.286586004775,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.52,\n    0.51,\n    0.71,\n    0.99\n  ]\n,\n  \"scene_facts\": \"The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be for a business, possibly a salon or shop, with Chinese characters. The hand is in the foreground, and the sign is in the background, above the entrance to the room. The setting seems to be an indoor commercial space, possibly a mall or office building. The hand is pointing directly at the sign, indicating interest or direction towards it.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2541.4706430165097,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

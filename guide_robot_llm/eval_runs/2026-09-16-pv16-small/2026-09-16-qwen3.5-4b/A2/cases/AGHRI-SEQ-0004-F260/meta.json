@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0004-F260",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 2524.458,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028900103643536568,
+              "upload_ms": 182.45049499091692,
+              "ttft_ms": 234.27338298643008,
+              "full_ms": 1908.7259549996816,
+              "parse_ready_ms": 1908.7259549996816
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0034200202208012342,
+              "upload_ms": 36.58266697311774,
+              "ttft_ms": 161.7204229987692,
+              "full_ms": 615.3869970003143,
+              "parse_ready_ms": 615.3869970003143
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В центре кадра, по центру тропинки, идёт человек в оранжевом жилете — это один человек.\n- На заднем плане, справа, у здания, видна ещё одна фигура — возможно, человек, но он очень мал и нечёткий. Однако, учитывая контекст (например, если это демонстрация робота), можно предположить, что это второй человек.\n- Но если быть строгим: только один человек чётко виден и находится в фокусе. Второй — слишком размыт и неясен.\n\n→ Итого: **1 человек** (чётко видимый).\n\nЭтап 2: Оценим готовность каждого человека слушать.\n\n- Единственный человек в кадре — идёт прямо на камеру, взгляд направлен вперёд (на камеру/робота), что указывает на внимание и вовлечённость. Он, скорее всего, наблюдает за роботом или участвует в его демонстрации.\n- Его поза (ходьба, ориентация) и положение (в центре, на пути к камере) предполагают, что он готов слушать или взаимодействовать.\n\n→ Готовых слушать: **1 человек**\n\n---\n\n**Ответ:**  \nВсего людей: **1**  \nГотовых слушать: **1**"
+    }
+  },
+  "latency_ms": 2524.458,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0004-F260",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0004",
+    "media": {
+      "path": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593537_383302047.png",
+      "sha256": "8a891215ed16e95403cec35eda1691af1337735bea9e216bdaa818a55df32854",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 3,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-405-a",
+"epobj-405-b",
+"epobj-405-c",
+"epobj-405-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. This object appears to be a piece of food or a small item, not a computer mouse."
+}

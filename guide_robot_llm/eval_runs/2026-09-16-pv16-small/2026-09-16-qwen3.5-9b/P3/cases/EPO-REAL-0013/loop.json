@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    1,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a retail shelf with various boxed products, likely alcohol or gift items. A gloved hand is pointing at one of the boxes. The box being pointed to is peach-colored and has Chinese characters on it. To the left are yellow boxes with red circular logos containing Chinese characters. To the right are blue boxes with white and gold designs. Above the shelf is an exit sign. The hand is pointing directly at the peach-colored box in the center of the frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2875.401891011279,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 0,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a retail shelf with various boxed products, likely liquor or gift sets. A gloved hand is pointing at one specific box. The box being pointed to is peach-colored and has Chinese characters on it. To the left are yellow boxes with red circular logos containing the characters '红星' (Hongxing). To the right are blue boxes with white circular logos containing the characters '梦之蓝' (Mengzhi Lan). The hand is clearly indicating the peach-colored box in the middle.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2387.652027013246,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.45,\n    0.55,\n    0.52,\n    0.65\n  ],\n  \"scene_facts\": \"The image shows a retail shelf with various boxed products, likely alcohol or gift items. A gloved hand is pointing at one of the boxes. The box being pointed to is peach-colored with Chinese characters on it. To the left are yellow boxes with red circular logos. To the right are blue boxes with white and red designs. Above the shelf is an exit sign. The hand is clearly indicating the peach-colored box in the center.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2390.072592999786,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

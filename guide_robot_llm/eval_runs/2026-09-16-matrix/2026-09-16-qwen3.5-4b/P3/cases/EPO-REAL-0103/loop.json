@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing at a shelf of snacks in a store. The person is wearing a black sleeve and is pointing towards a red package of chips on the lower shelf. The brand name on the package is not clearly visible, but it appears to be a popular snack brand. The shelf is well-stocked with various types of chips and snacks. The lighting in the store is bright, and the shelves are neatly organized. The person seems to be selecting a product from the shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2047.5876730051823,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person's hand pointing at a shelf of snacks in a store. The hand is pointing at a package of chips, but it's not clear which specific package or brand is being pointed at. The packages on the shelf are of various brands and types of chips, making it difficult to determine exactly which one is being pointed at.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1761.8999819969758,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n,\n  \"scene_facts\": \"The image shows a supermarket aisle with shelves stocked with various snack products. A person's hand is visible in the foreground, pointing towards a specific product on the lower shelf. The product being pointed at appears to be a bag of chips or snacks, but the exact brand or type is not clearly identifiable due to the angle and resolution. The shelves are filled with different snack brands, including what looks like Lay's and other local brands. The lighting is bright, typical of a supermarket environment, and the floor is clean and reflective. The person's hand is extended towards the shelf, indicating interest or selection of a product. The overall scene suggests a shopping context where the individual is considering a purchase. The focus is on the interaction between the person and the product on the shelf, highlighting the decision-making process in a retail setting.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2358.2852730178274,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

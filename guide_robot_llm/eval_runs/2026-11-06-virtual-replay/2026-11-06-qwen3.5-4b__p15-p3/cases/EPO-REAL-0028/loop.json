@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"no\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2055.6328920065425,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n,\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at the speed limit sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1454.4015180144925,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"no\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1348.4710690099746,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

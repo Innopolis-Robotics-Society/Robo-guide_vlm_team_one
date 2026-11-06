@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-27-a",
+"epobj-27-b",
+"epobj-27-c",
+"epobj-27-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "the_person_is_pointing_towards_the_bottom_right_display_which_contains_whole_birds"
+}

@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "redbox-01",
+    "cabinet-03",
+    "vase-04"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  ,
+  "scene_facts": "There is one person standing in a room with three exhibits: a red box on a brown stand (left), a white vase on a brown stand (center), and a blue cabinet (right). The person is facing the white vase, but not pointing at it. No explicit pointing gesture is visible."
+  
+  }

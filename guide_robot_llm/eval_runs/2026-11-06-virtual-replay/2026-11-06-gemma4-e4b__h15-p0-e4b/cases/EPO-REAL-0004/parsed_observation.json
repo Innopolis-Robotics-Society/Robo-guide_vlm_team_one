@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-4-a",
+    "epobj-4-b",
+    "epobj-4-c",
+    "epobj-4-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The user is pointing at an item in a refrigerated display case."
+}

@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a retail store aisle with shelves stocked with various household and personal care products. A person's arm is extended, pointing directly at a packaged item hanging on a display rack in the center of the frame. The item appears to be a clear plastic package containing what looks like a garment or textile product, possibly underwear or a small piece of clothing, with a red logo and an image of a woman on the packaging. The surrounding shelves contain bottles of cleaning supplies, boxes of tissues, and other packaged goods. The pointing gesture is clearly directed at this specific hanging package, not at the shelves behind it or other items nearby. The context suggests the person is asking about the function or purpose of this particular object they are pointing at. The options provided seem to be testing understanding of the object's function, but none of the options directly match the visible item (a packaged garment). However, given the options, the most plausible interpretation is that the object is related to clothing or textiles, and option C ('To hang clothes for drying') might be the intended answer if the object is a hanger or similar item, though the image shows a packaged item. Alternatively, if the object is a specific type of clothing item, none of the options fit perfectly, but option C is the closest in terms of clothing-related function. The key is to match the pointing evidence with the most relevant option based on the visible context. The pointing is clear, and the object is a packaged item, likely related to clothing or textiles. Given the options, option C is the most reasonable choice, as it relates to clothing, even if the specific item is packaged. The other options (A, B, D) are clearly unrelated to the visible object. Therefore, the answer is C, as it is the only option that aligns with the clothing-related context of the pointing evidence. The final answer is C, based on the pointing evidence and the most plausible interpretation of the object's function in the

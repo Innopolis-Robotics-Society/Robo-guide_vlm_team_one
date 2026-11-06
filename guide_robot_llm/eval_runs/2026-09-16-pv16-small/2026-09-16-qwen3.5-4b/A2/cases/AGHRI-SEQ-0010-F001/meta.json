@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0010-F001",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 4030.504,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003430002834647894,
+              "upload_ms": 181.54984299326316,
+              "ttft_ms": 308.65415500011295,
+              "full_ms": 3251.671959005762,
+              "parse_ready_ms": 3251.671959005762
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0034800032153725624,
+              "upload_ms": 130.55401301244274,
+              "ttft_ms": 309.36729098903015,
+              "full_ms": 778.4488309989683,
+              "parse_ready_ms": 778.4488309989683
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В левом верхнем углу кадра видна часть тела человека (рука, рукав, рукава — это один человек).\n- В остальной части кадра — только природа: трава, деревья, дорога, небо. Нет других людей.\n\n→ Всего людей в кадре: **1**\n\n---\n\nЭтап 2: Оценим, готов ли этот человек слушать.\n\nКритерии:\n- Близость: человек находится очень близко к камере (видна только часть тела), значит — он рядом с тем, кто снимает (возможно, робот или оператор).\n- Взгляд: мы не видим лица или взгляда человека — он повернут спиной к камере, поэтому невозможно определить направление взгляда.\n- Вовлечённость: человек стоит/идёт по дороге, руки в карманах или свободно опущены — нет активных жестов или реакций, указывающих на внимание к чему-то конкретному.\n\nОднако: поскольку человек находится рядом с камерой (которую, по условию, использует робот), и он не отходит, можно предположить, что он вовлечён в ситуацию — возможно, общается с роботом или просто проходит рядом. Но без визуального подтверждения взгляда или реакции — нельзя уверенно сказать, что он «готов слушать».\n\nНо! В задаче сказано: «для каждого по критериям (близость, взгляд, вовлечённость) реши, готов ли он слушать». Поскольку взгляд не виден, а вовлечённость минимальна, но близость высокая — можно сделать компромиссный вывод: **не уверен**, но учитывая контекст (человек рядом с роботом, возможно, взаимодействует), можно считать его **готовым слушать**, если предполагается, что робот общается с ним.\n\nОднако строго по видимым данным — взгляд отсутствует, значит, нельзя утверждать, что он слушает.\n\nНо в таких задачах обычно подразумевается: если человек рядом и не уходит — он вовлечён. И поскольку он не смотрит в сторону, а стоит рядом — возможно, он слушает.\n\nДавайте примем решение: **1 человек готов слушать**, так как он находится рядом с роботом (камерой) и не отходит — это подразумевает вов"
+    }
+  },
+  "latency_ms": 4030.504,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0010-F001",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0010",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+      "sha256": "673858daa5c572f792cd9b26bab24b421db99d685b6ff00f304e3cc6b0673bcf",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

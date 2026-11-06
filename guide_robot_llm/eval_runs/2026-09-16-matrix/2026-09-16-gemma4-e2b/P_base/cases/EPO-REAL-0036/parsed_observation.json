@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-b"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.57,
+    0.54,
+    0.72,
+    0.64
+  ],
+  "scene_facts": "Человек указывает на объект, расположенный в дверном проеме."
+}

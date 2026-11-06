@@ -1,0 +1,22 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/ENG-CC-001.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 3 человека. Все они смотрят на экран, значит — все готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 634.9233330111019,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/ENG-CC-001.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 3 человека. Все они смотрят на экран, что указывает на готовность слушать. Значит, 3 готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 3,
+    "latency_ms": 564.9227160029113,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,19 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-13-a",
+"epobj-13-b",
+"epobj-13-c",
+"epobj-13-d"
+],
+"pointing_evidence": "none"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "The image shows a display of various packaged goods, likely products from a store or market. The focus is on several boxes with colorful designs. The hand is pointing towards a box in the center-right of the visible area. The text on the pointed box is not clearly legible in English, but it appears to be Chinese characters. The options provided are English brand names: A. Ocean Blue, B. Red Star, C. Dream Blue, D. Golden Harvest. Since the visible text is not an English brand name, I cannot definitively match it to any of the options based solely on the text visible in the image and the provided options."
+}

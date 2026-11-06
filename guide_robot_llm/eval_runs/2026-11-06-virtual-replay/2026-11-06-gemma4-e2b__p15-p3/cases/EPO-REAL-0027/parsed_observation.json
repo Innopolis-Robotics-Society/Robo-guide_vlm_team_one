@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "the_image_shows_a_display_of_poultry_pieces_likely_meat_products_with_a_person_looking_at_them"
+}

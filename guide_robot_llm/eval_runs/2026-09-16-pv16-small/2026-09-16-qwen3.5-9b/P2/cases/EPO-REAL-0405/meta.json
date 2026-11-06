@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0405",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 7864.694,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028600043151527643,
+              "upload_ms": 285.6841809989419,
+              "ttft_ms": 363.66165400249884,
+              "full_ms": 5401.834482996492,
+              "parse_ready_ms": 5401.834482996492
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0027500209398567677,
+              "upload_ms": 86.11452899640426,
+              "ttft_ms": 313.18289498449303,
+              "full_ms": 2462.780912988819,
+              "parse_ready_ms": 2462.780912988819
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест: палец указывает прямо на круглую металлическую коробку с желтыми пакетиками внутри — она находится на клавиатуре ноутбука, в центре кадра, и является фокусом внимания.\n\n(2) Кандидаты, попадающие в этот сектор: из списка epobj-405-a, epobj-405-b, epobj-405-c, epobj-405-d — только один из них может быть этой коробкой. Поскольку в задании не указаны конкретные описания для каждого ID, мы полагаемся на визуальное соответствие: жест точно указывает на коробку с пакетиками.\n\n(3) Слова посетителя: хотя в тексте вопроса нет прямых слов посетителя, контекст подразумевает, что жест — это указание на конкретный объект. Если предположить, что слова посетителя (например, «это коробка с пакетиками») согласуются с тем, что указывает палец — да, они согласуются.\n\n(4) Остался ли ровно один кандидат? Да — только один объект (коробка с пакетиками) попадает в зону указывающего жеста. Остальные объекты (ноутбук, книги, мышь, банка) не являются целью жеста.\n\nСледовательно, ответ — тот кандидат, который соответствует коробке с пакетиками. Поскольку в задании не дано дополнительных данных для различения epobj-405-a/b/c/d по внешнему виду, но в оригинальном английском вопросе был вариант «D. No» — что противоречит логике, — однако в данном русском задании требуется выбрать из четырёх ID.\n\nНо обратите внимание: в оригинальном английском вопросе был вопрос «Is this object a computer mouse?» и ответ D. No — потому что объект — это коробка с пакетиками, а не мышь.\n\nВ русском задании же просится определить, на какой экспонат указывает посетитель, и даны 4 ID. Поскольку в условии не указано, какой из ID соответствует коробке, но в контексте задачи (и исходя из логики оригинального вопроса) — объект НЕ является мышью, значит, если бы мы выбирали по смыслу, то не мышь.\n\nОднако в русском задании сказано: «НИКОГДА не возвращай content_id, которого нет в списке кандидатов». И список кандидатов — epobj-405"
+    }
+  },
+  "latency_ms": 7864.694,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0405",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-405",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+      "sha256": "f8ed04121ad637b1a510895e78adc62e78916651b3c531d47b6ae23957c0fe82",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is this object a computer mouse?\nA. Unknown\nB. Yes\nC. Maybe\nD. No\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-405-a",
+      "epobj-405-b",
+      "epobj-405-c",
+      "epobj-405-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-405-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-405-a",
+        "epobj-405-b",
+        "epobj-405-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Unknown": "epobj-405-a",
+        "Yes": "epobj-405-b",
+        "Maybe": "epobj-405-c",
+        "No": "epobj-405-d"
+      }
+    }
+  }
+}

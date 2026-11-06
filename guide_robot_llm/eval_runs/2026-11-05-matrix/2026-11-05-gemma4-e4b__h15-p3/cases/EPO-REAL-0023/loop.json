@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/23.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-23-a\", \"epobj-23-b\", \"epobj-23-c\", \"epobj-23-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards the lower shelves of the display case.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1569.219743978465,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/23.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-23-a\", \"epobj-23-b\", \"epobj-23-c\", \"epobj-23-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards the lower shelves of the display case.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1188.221248012269,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/23.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-23-a\", \"epobj-23-b\", \"epobj-23-c\", \"epobj-23-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards the lower shelves of the display, specifically at a package in the front row.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1212.8137639956549,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

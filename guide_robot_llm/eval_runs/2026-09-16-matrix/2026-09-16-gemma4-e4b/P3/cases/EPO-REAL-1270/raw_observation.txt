@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "The visitor's hand is pointing towards the lower shelves of the display, specifically towards the area where the colorful packages are located."
+}

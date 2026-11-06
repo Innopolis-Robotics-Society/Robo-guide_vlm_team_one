@@ -1,0 +1,7 @@
+{
+  "answer": "People are not visible in the image, so the count is 0. Therefore, no one is ready to continue the tour."
+,
+  "confidence": 0.9
+,
+  "abstain": false
+}

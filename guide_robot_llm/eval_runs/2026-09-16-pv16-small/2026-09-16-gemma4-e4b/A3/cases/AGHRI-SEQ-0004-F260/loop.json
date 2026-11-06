@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593537_383302047.png",
+    "raw_text": "{\"answer\": \"Недостаточно данных для выполнения запроса. Пожалуйста, предоставьте кадры для анализа.\"\n, \"confidence\": 0.0, \"abstain\": true}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 885.5003180215135,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593537_383302047.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как в предоставленном вами изображении нет робота, и я не могу определить, сколько людей готовы слушать, так как у меня нет информации о намерениях людей.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 697.5126350007486,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593537_383302047.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как у меня нет информации о том, кто является \"\n    \n    , \"confidence\": 0.0\n    \n    , \"abstain\": true\n    }",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 715.8587799931411,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

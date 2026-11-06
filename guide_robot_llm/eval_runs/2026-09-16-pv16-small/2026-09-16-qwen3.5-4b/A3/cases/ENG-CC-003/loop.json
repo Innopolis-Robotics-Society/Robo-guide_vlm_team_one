@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/ENG-CC-003.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 0 человек. Готовых слушать — 0. Продолжаем цикл.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 597.0938089885749,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/ENG-CC-003.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 0 человек. Готовых слушать — 0. Не переходим к следующему шагу.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 501.0634000063874,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/ENG-CC-003.png",
+    "raw_text": "{\n  \"answer\": \"На кадре нет людей — только зелёный прямоугольник на фоне. Следовательно, количество людей: 0. Готовых слушать — тоже 0.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 628.901894990122,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

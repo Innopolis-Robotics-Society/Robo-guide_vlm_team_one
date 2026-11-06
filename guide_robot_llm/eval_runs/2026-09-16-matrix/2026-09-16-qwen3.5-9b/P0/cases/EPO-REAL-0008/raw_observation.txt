@@ -1,0 +1,12 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a retail store aisle with shelves stocked with various household and personal care products. A person's arm is visible in the foreground, pointing toward a hanging display of packaged items — likely socks or similar small apparel — on a wire rack. The pointed item is not one of the four listed exhibit IDs (epobj-8-a to epobj-8-d), as those appear to refer to specific known exhibits not present or identifiable in this context. Since no exhibit from the given list is being pointed at, and the pointing evidence is directed at a generic retail product, the correct response is that no valid exhibit from the provided list is indicated."
+}

@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.52,
+    0.49,
+    0.54,
+    0.67
+  ],
+  "scene_facts": "The person is pointing at a speed limit sign showing '15'."
+}

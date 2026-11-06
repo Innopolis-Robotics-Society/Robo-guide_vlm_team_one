@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407399_127993459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. На изображении виден один человек, и нет информации о том, готовы ли другие люди слушать.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 580.3848629875574,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407399_127993459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. Изображение показывает одного человека, и нет информации о том, готовы ли другие люди слушать.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 548.9126190077513,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407399_127993459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. Изображение показывает одного человека, и нет информации о том, готовы ли другие люди слушать.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 560.3082830202766,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408027_558267459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей рядом с роботом — робота на изображении вообще не видно. Это пейзаж с тропинкой, деревьями и полями. Следовательно, людей рядом с роботом — 0, и готовых слушать — тоже 0.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 914.0528360148892,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408027_558267459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей рядом с роботом — робота в изображении вообще нет. Это пейзаж с дорожкой, травой и деревьями. Следовательно, количество людей рядом с роботом — 0, и количество готовых слушать — тоже 0. Поскольку нет робота и людей, условие «готовых недостаточно» выполняется сразу, и цикл не запускается. Прекращение: нет робота, нет слушателей, нет необходимости в дальнейших кадрах.\",\n  \"confidence\": 0.99,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 904.9486810108647,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408027_558267459.png",
+    "raw_text": "{\n  \"answer\": \"На данный момент рядом с роботом нет людей. Поскольку готовых слушателей недостаточно, я не перехожу к следующему шагу и продолжу наблюдать за новыми кадрами.\",\n  \"confidence\": 0.9,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 605.097335006576,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

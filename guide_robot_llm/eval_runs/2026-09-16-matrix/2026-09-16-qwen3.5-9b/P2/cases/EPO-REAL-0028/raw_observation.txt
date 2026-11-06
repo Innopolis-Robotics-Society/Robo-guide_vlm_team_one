@@ -1,0 +1,16 @@
+{
+    "people_count": 1,
+    "exhibit_candidates": [
+        "epobj-28-a",
+        "epobj-28-b",
+        "epobj-28-c",
+        "epobj-28-d"
+    ],
+    "pointing_evidence": "none",
+    "pointing_box": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "scene_facts": "The image shows a person's hand pointing at a traffic sign. The sign is circular with a red border and contains the number '15' in black, indicating a speed limit of 15 km/h. Above this sign is another circular sign with a red border and a car symbol with a diagonal line through it, indicating no entry for vehicles. The hand is clearly pointing at the lower sign with the number '15'. The background includes trees, a road, and parked cars, suggesting an outdoor setting near a road or parking area. The person's gesture is directed specifically at the lower sign, not the upper one. The upper sign is positioned directly above the lower sign on the same post. The hand is extended from the bottom right of the frame, pointing towards the center of the image where the signs are located. The lower sign is the primary focus of the pointing gesture. The upper sign is secondary and not the target of the gesture. The scene is well-lit, likely during the day, with clear visibility of the signs and the hand. The hand appears to be belonging to an adult, based on its size and shape. The signs are mounted on a metal post, which is visible behind them. The road surface is asphalt, and there are some markings on it. The parked cars are white and dark-colored, and they are positioned to the right of the signs. The trees in the background are tall and have sparse foliage, suggesting it might be late autumn or early spring. The sky is clear and blue, indicating good weather conditions. The overall composition of the image emphasizes the interaction between the person and the traffic signs, with the hand gesture being the central element. The signs are clearly visible and legible, making it easy to identify their meaning. The upper sign is a standard 'no entry' sign for vehicles, while the lower sign is a speed limit sign. The combination of these signs suggests that the

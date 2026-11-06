@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n,\n  \"scene_facts\": \"The image shows a refrigerated produce section in a grocery store. A person's arm, wearing a black sleeve, is pointing at a specific item on the shelf. The item being pointed at is a clear plastic clamshell container filled with small, round, pinkish-purple vegetables. These vegetables are clustered together and have a distinct bulbous shape with a slightly pointed top, characteristic of certain root vegetables. To the left of the pointed item are similar containers with white or pale pink round vegetables (likely shallots or small onions). To the right are containers of green, round vegetables (Brussels sprouts) and white, round vegetables (likely garlic bulbs). The overall setting is a well-lit supermarket aisle with green signage above the shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3030.0533559930045,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ]\n,\n  \"scene_facts\": \"The image shows a refrigerated produce section in a grocery store. A person's arm (wearing a black sleeve) is pointing at a specific item on the shelf. The item being pointed at is a clear plastic clamshell container filled with small, round, pinkish-red vegetables. These vegetables are clustered together and have a distinct bulbous shape with a slightly pointed top, characteristic of radishes (specifically, they appear to be baby radishes or cherry radishes). To the left of the pointed item are similar containers with white/pale pink radishes. To the right are green Brussels sprouts and white mushrooms. The pointing gesture is directed squarely at the container of pink radishes.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2845.0636630004738,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\"\n  ]\n, \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.38,\n    0.75,\n    0.42,\n    0.8\n  ]\n, \"scene_facts\": \"The image shows a refrigerated produce section in a grocery store. A person's arm (wearing a black sleeve) is pointing at a specific item on the middle shelf. The item being pointed at is a clear plastic container filled with small, round, pinkish-purple vegetables. To the left of this item are similar containers with lighter pink/white round vegetables (likely onions or turnips). To the right are containers of green round vegetables (Brussels sprouts) and white round vegetables (garlic). The pointing gesture is directed squarely at the container of pinkish-purple round vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2664.655464992393,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

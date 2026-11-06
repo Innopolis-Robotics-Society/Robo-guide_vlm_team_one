@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0405",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 4798.304,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028199865482747555,
+              "upload_ms": 279.6944710134994,
+              "ttft_ms": 338.3503849909175,
+              "full_ms": 3297.4307670083363,
+              "parse_ready_ms": 3297.4307670083363
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003030989319086075,
+              "upload_ms": 104.09509501187131,
+              "ttft_ms": 270.6201080000028,
+              "full_ms": 1500.8006000134628,
+              "parse_ready_ms": 1500.8006000134628
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово.\n\nШаг (1): Куда направлен жест?\nНа изображении видна рука, которая указывает пальцем на круглую металлическую тарелку или контейнер, расположенный на клавиатуре ноутбука. В этой тарелке находятся маленькие пакетики с чем-то (похоже на конфеты или жевательную резинку).\n\nШаг (2): Какие кандидаты попадают в этот сектор?\nСписок кандидатов: epobj-405-a, epobj-405-b, epobj-405-c, epobj-405-d.\nНа самом деле, в предоставленном списке кандидатов нет информации о том, что именно представляют собой эти объекты. Однако, судя по контексту задачи, мы должны выбрать один из них, указывая на тарелку с конфетами. Поскольку в списке кандидатов нет прямого указания на тарелку, мы должны предположить, что один из этих идентификаторов соответствует этому объекту.\n\nШаг (3): Согласуются ли с этим слова посетителя?\nВопрос не содержит слов посетителя, но мы можем предположить, что посетитель хочет указать на тарелку с конфетами.\n\nШаг (4): Остался ли ровно один кандидат?\nПоскольку в списке кандидатов нет прямого указания на тарелку с конфетами, мы не можем точно определить, какой из кандидатов соответствует этому объекту. Однако, если мы предположим, что один из кандидатов (например, epobj-405-a) соответствует тарелке с конфетами, то мы можем выбрать его.\n\nОднако, поскольку в списке кандидатов нет прямого указания на тарелку с конфетами, мы не можем точно определить, какой из кандидатов соответствует этому объекту. Поэтому, если мы предположим, что один из кандидатов (например, epobj-405-a) соответствует тарелке с конфетами, то мы можем выбрать его.\n\nНо поскольку в списке кандидатов нет прямого указания на тарелку с конфетами, мы не можем точно определить, какой из кандидатов соответствует этому объекту. Поэтому, если мы предположим, что один из кандидатов (например, epobj-405-a) соответствует тарелке с конфетами, то мы можем выбрать его.\n\nОднако, поскольку в списке кандидатов нет прямого указания на тарелку"
+    }
+  },
+  "latency_ms": 4798.304,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0405",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-405",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+      "sha256": "f8ed04121ad637b1a510895e78adc62e78916651b3c531d47b6ae23957c0fe82",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is this object a computer mouse?\nA. Unknown\nB. Yes\nC. Maybe\nD. No\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-405-a",
+      "epobj-405-b",
+      "epobj-405-c",
+      "epobj-405-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-405-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-405-a",
+        "epobj-405-b",
+        "epobj-405-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Unknown": "epobj-405-a",
+        "Yes": "epobj-405-b",
+        "Maybe": "epobj-405-c",
+        "No": "epobj-405-d"
+      }
+    }
+  }
+}

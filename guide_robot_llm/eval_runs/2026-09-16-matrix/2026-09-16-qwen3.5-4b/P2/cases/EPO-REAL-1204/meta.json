@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-1204",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 3890.408,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029400107450783253,
+              "upload_ms": 274.675483989995,
+              "ttft_ms": 334.5370369788725,
+              "full_ms": 2469.493031996535,
+              "parse_ready_ms": 2469.493031996535
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028400099836289883,
+              "upload_ms": 109.58438497618772,
+              "ttft_ms": 256.70321998768486,
+              "full_ms": 1420.8443789975718,
+              "parse_ready_ms": 1420.8443789975718
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово:\n\n(1) **Куда направлен жест?**  \nНа изображении видна рука, которая касается или указывает на стопку прозрачных папок/файлов на нижней полке. Жест направлен прямо на эту стопку — именно на неё указывает палец/ладонь.\n\n(2) **Какие кандидаты попадают в этот сектор?**  \nСектор — это нижняя полка, где находятся стопки папок. Из списка кандидатов:\n- epobj-1204-a — вероятно, верхняя полка (по положению в кадре)\n- epobj-1204-b — средняя полка\n- epobj-1204-c — нижняя полка (там, где рука)\n- epobj-1204-d — ещё ниже или на другой полке? Но в кадре видно, что рука касается именно нижней видимой полки с папками.\n\nТаким образом, кандидат, попадающий в сектор жеста — **epobj-1204-c**.\n\n(3) **Согласуются ли слова посетителя?**  \nВопрос не содержит слов посетителя — только визуальный анализ. Но если предположить, что «посетитель» — это человек, делающий жест, то его внимание сосредоточено на папках на нижней полке. Значит, кандидат должен быть именно там.\n\n(4) **Остался ли ровно один кандидат?**  \nДа, только epobj-1204-c попадает в зону жеста. Остальные кандидаты находятся на других полках и не затрагиваются жестом.\n\n✅ Следовательно, правильный ответ:\n\n**C**"
+    }
+  },
+  "latency_ms": 3890.408,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-1204",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-1204",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+      "sha256": "5ff6c11cd3405a622e04722eee308ccc1d71ee18e374982df7106ae913a78ab2",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Which of the following electronic functions does this item perform?\nA. It prints labels automatically\nB. It charges mobile devices\nC. It scans documents digitally\nD. It has no electronic functions\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-1204-a",
+      "epobj-1204-b",
+      "epobj-1204-c",
+      "epobj-1204-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-1204-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-1204-a",
+        "epobj-1204-b",
+        "epobj-1204-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "It prints labels automatically": "epobj-1204-a",
+        "It charges mobile devices": "epobj-1204-b",
+        "It scans documents digitally": "epobj-1204-c",
+        "It has no electronic functions": "epobj-1204-d"
+      }
+    }
+  }
+}

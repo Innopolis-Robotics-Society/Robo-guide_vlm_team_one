@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-162-a",
+    "epobj-162-b",
+    "epobj-162-c",
+    "epobj-162-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "The visitor is not pointing at any specific exhibit."
+}

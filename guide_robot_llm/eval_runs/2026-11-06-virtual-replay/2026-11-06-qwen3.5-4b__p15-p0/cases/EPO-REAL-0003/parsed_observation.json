@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a",
+    "epobj-3-b",
+    "epobj-3-c",
+    "epobj-3-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The person is pointing at a package of red onions on the middle shelf of the vegetable display."
+}

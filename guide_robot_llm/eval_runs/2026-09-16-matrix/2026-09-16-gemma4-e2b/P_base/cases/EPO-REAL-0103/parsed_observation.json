@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.54,
+    0.65,
+    0.68,
+    0.75
+  ],
+  "scene_facts": "Человек указывает на упаковку продукта на полке."
+}

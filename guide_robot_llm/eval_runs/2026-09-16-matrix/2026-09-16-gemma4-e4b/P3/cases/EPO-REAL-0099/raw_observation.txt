@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "The visitor is pointing towards the lower shelf of the refrigerated display case, specifically towards a small, yellow-packaged item in the middle of the visible section."
+}

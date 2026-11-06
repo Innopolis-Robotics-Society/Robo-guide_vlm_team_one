@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "scene_facts": "The image shows a bakery section in a store. A hand is pointing at a packaged bread item on the shelf. The bread appears to be a sliced loaf with visible dark specks or chunks inside, likely chocolate chips or similar inclusions. The packaging is clear plastic with a white top, and the bread inside has a light-colored crumb with darker spots. Other items on the shelf include milk bottles and other packaged breads, but the pointed item is clearly a sliced loaf with visible inclusions."
+}

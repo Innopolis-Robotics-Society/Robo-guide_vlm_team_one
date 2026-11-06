@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0001-F079",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3824.743,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0025400076992809772,
+              "upload_ms": 196.93982001626864,
+              "ttft_ms": 256.3688319933135,
+              "full_ms": 3089.1949020151515,
+              "parse_ready_ms": 3089.1949020151515
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0030200171750038862,
+              "upload_ms": 38.91811799257994,
+              "ttft_ms": 201.1192139761988,
+              "full_ms": 735.0610159919597,
+              "parse_ready_ms": 735.0610159919597
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nНа изображении видна одна женщина, стоящая слева на траве, рядом с дорожкой. Она одета в светлую куртку и тёмные брюки, смотрит в сторону камеры или чуть вправо. Никаких других людей в кадре не видно — ни на заднем плане, ни вдали по дорожке, ни за деревьями.\n\n→ Всего людей: **1**\n\n---\n\nЭтап 2: Оценка готовности к слушанию\n\nКритерии:\n- Близость: женщина находится в непосредственной близости от камеры (предположительно, от робота, если камера — это робот).\n- Взгляд: она смотрит примерно в сторону камеры/робота — возможно, на него.\n- Вовлечённость: её поза расслабленная, но она не отворачивается, не уходит — может быть, ожидает или реагирует на что-то.\n\nХотя она не явно обращена к роботу (например, не говорит, не жестикулирует), её положение и взгляд указывают на то, что она *может* быть готова слушать — особенно если робот только начал говорить или приближается.\n\n→ Готовых слушать: **1**\n\n---\n\nИтог:\n\nВсего людей: **1**  \nГотовых слушать: **1**"
+    }
+  },
+  "latency_ms": 3824.743,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0001-F079",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0001",
+    "media": {
+      "path": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409275_471044459.png",
+      "sha256": "b43cc747e27f347512ef6be7a7adb035a2c66326fcdbf27d4fb5995f7b6d17af",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 2,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

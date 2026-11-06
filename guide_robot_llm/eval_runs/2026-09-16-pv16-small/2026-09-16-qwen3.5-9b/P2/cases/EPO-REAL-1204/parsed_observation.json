@@ -1,0 +1,9 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a store shelf with various stationery items. A hand is pointing at a stack of clear plastic folders with red ribbons on the lower shelf. The gesture is directed specifically at this stack. The available exhibit IDs are epobj-1204-a, epobj-1204-b, epobj-1204-c, and epobj-1204-d. Based on the gesture and typical object distribution, epobj-1204-a is the most likely candidate as it rep"
+}

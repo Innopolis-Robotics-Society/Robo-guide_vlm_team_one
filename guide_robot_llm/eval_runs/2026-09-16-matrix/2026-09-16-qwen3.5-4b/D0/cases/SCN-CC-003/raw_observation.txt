@@ -1,0 +1,11 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    		]
+  ,
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "none"
+}

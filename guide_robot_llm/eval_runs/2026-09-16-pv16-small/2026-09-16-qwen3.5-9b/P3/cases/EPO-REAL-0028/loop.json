@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a person's hand pointing at a traffic sign. The sign is circular with a red border and contains the number '15' in black, indicating a speed limit of 15 km/h. The hand is clearly directed towards this specific sign, which is mounted on a pole next to a tree. There are other signs visible in the background, but the gesture is unambiguously focused on the '15' speed limit sign. The scene appears to be outdoors on a sunny day, with trees and parked cars visible. The person pointing is wearing a light-colored top and dark pants. Another person is walking away in the background on the left side of the image. The overall setting suggests a public area, possibly a park or a roadside near a park. The sky is clear and blue. The ground is paved, and there are some grassy areas around the signpost. The lighting indicates it is daytime, likely midday given the shadows. The image quality is good, allowing for clear identification of the sign and the pointing gesture. The sign itself is standard for indicating a maximum speed limit in many countries. The number '15' is prominently displayed in the center of the sign. The red circle with a white background is a common design for regulatory signs. The pole holding the sign is metallic and appears to be rusted in some areas. The tree next to the sign has green needles, suggesting it might be a coniferous tree. The parked cars are modern, with one being white and another being dark-colored. The person in the background is wearing casual clothing and appears to be walking alone. The overall composition of the image focuses on the interaction between the person and the traffic sign, with the background providing context to the location. The image does not show any other significant objects or people that would distract from the main subject. The pointing gesture is clear and deliberate, indicating a specific interest in the speed limit sign. The image does not contain any text other than the number '15'",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 5718.050453986507,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a person's hand pointing at a traffic sign. The sign is circular with a red border and contains the number '15' in black on a white background. This is a speed limit sign indicating 15 km/h. The sign is mounted on a pole next to a tree. In the background, there are other trees, a road, and some parked cars. The sky is clear and blue, suggesting it is daytime. The person pointing is wearing a light-colored long-sleeved shirt. The hand is extended towards the sign, with the index finger clearly indicating it. The sign is positioned at eye level relative to the person pointing. The surrounding environment appears to be a park or a roadside area with limited traffic. The sign is the main focus of the image, with the hand drawing attention to it. The overall scene is calm and orderly, with no signs of congestion or hazards. The sign's placement and the person's gesture suggest that the individual is either informing others about the speed limit or emphasizing its importance. The background elements, such as the trees and parked cars, provide context but do not distract from the main subject. The lighting is bright, indicating good visibility, which is typical for daytime scenes. The image captures a moment of interaction with the environment, highlighting the role of traffic signs in regulating behavior. The person's action of pointing adds a dynamic element to the otherwise static scene. The sign's design is standard, with clear and legible text, ensuring that drivers can easily understand the speed restriction. The presence of other signs in the background suggests that this area has multiple traffic regulations in place. The overall composition of the image emphasizes the importance of adhering to traffic rules for safety and order. The person's gesture could be interpreted as an educational or cautionary act, reminding viewers of the speed limit. The image effectively communicates the message of the sign through the combination of visual elements and human interaction. The background details, such as the parked cars and the road, reinforce the setting as a place where",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 5454.1924170043785,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a person's hand pointing at a traffic sign on a pole. The sign has two circular signs: the top one is a 'no motor vehicles' symbol (red circle with a car and a diagonal line), and the bottom one is a speed limit sign showing '15'. The hand is pointing directly at the lower sign, which displays the number '15'. There are no other exhibits visible in the image that could be pointed to. The background includes trees, a road, and parked cars, but no other signs or objects are being indicated by the gesture.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2593.7919480202254,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

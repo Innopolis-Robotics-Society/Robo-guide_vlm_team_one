@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-96-a\",\n\"epobj-96-b\",\n\"epobj-96-c\",\n\"epobj-96-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_image_shows_a_building_with_logos_of_nike_and_uniqlo\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1495.2184899884742,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n,\n  \"scene_facts\": \"The image shows a storefront with branding. The visible logos are Nike (on the left) and UNIQLO (on the right). The question asks to identify a brand displayed on a building. The options provided in the previous turn were Nike, Uniqlo, H&M, Adidas. The building clearly displays the UNIQLO logo prominently.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1514.7792939969804,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-96-a\",\n\"epobj-96-b\",\n\"epobj-96-c\",\n\"epobj-96-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_image_shows_a_large_storefront_with_logos_of_nike_and_uniqlo\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1171.9075700093526,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407333_557659459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное вами изображение не содержит людей рядом с роботом. На изображении показана дорожка в парковой или лесной зоне.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 980.0932100042701,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407333_557659459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как на предоставленном изображении не видно людей рядом с роботом. На изображении показана дорожка в парковой или лесной зоне с деревьями и травой, но нет видимых роботов или людей.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 742.0990680111572,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407333_557659459.png",
+    "raw_text": "{\"answer\": \"Невозможно посчитать людей рядом с роботом, так как на предоставленном изображении нет робота, и людей рядом с ним не видно. Изображение представляет собой пейзаж с дорожкой и деревьями.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 676.670915010618,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

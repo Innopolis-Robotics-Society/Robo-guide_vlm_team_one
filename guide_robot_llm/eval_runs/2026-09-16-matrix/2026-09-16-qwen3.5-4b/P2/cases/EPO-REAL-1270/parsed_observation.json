@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person in a supermarket pointing at a shelf. The hand is wearing a black glove and the index finger is extended, pointing towards a row of packaged goods on the middle shelf. The packages appear to be wet wipes or tissues, with some being blue and others yellow. The person is pointing specifically at the blue packages. The question asks if the indicated object is a package of san"
+}

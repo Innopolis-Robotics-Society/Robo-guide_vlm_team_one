@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a supermarket or butcher shop counter with various meat products displayed in refrigerated cases. A customer (man in blue shirt) is standing in front of the counter, looking at the display. There are several meat items visible, including what appears to be pork chops (or similar cuts) and whole poultry/meat pieces.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2322.263414011104,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 4,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor in the blue shirt is looking towards the refrigerated display case, but is not clearly pointing at a specific item.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1591.7197870148811,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor in the center is looking towards the refrigerated display cases. His hand is extended towards the display, but it is not clearly pointing at a specific item.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1590.860727999825,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

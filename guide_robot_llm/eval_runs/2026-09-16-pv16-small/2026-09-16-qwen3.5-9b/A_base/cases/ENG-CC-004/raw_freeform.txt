@@ -1,0 +1,1 @@
+{"answer": "4 человека, 1 готов слушать дальше", "confidence": 0.95, "abstain": false}

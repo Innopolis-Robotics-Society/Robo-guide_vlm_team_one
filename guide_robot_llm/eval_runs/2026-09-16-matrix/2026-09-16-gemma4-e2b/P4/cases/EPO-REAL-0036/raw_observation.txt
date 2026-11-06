@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ]
+  ,
+  "pointing_evidence": "none"
+  ,
+  "pointing_box": null
+  ,
+  "scene_facts": "The image shows a person pointing towards a sign or display mounted on a wall, which is located near a doorway. The person's hand is pointing towards the area where the sign is visible."
+}

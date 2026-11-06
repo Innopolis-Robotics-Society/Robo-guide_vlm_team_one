@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/SEQ-CC-002_f0.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей — только зелёный прямоугольник на фоне. Следовательно, количество людей: 0. Готовых слушать — тоже 0.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 648.9050110103562,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/SEQ-CC-002_f1.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 1 человек. Он смотрит вверх, на экран — значит, готов слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 594.1222249821294,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/SEQ-CC-002_f2.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 3 человека. Все трое смотрят на зелёный экран — значит, все готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1025.4730530141387,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

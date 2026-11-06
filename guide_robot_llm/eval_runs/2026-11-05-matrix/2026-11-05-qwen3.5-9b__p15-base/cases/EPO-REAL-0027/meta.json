@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0027",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "freeform",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 1476.596,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0033399846870452166,
+            "upload_ms": 214.3320949980989,
+            "ttft_ms": 1265.2377790072933,
+            "full_ms": 1476.5680440177675,
+            "parse_ready_ms": 1476.5680440177675
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 1476.596,
+  "attempts": 1,
+  "case": {
+    "case_id": "EPO-REAL-0027",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-27",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+      "sha256": "e845c66a2c1c8e928b002975ec4fd0688ba59285a814cd0d4715f2a303476915",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What type of poultry is this?\nA. Pork chop\nB. Yellow broiler chicken\nC. Silkie chicken\nD. Duck breast\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-27-a",
+      "epobj-27-b",
+      "epobj-27-c",
+      "epobj-27-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-27-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-27-a",
+        "epobj-27-b",
+        "epobj-27-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Pork chop": "epobj-27-a",
+        "Yellow broiler chicken": "epobj-27-b",
+        "Silkie chicken": "epobj-27-c",
+        "Duck breast": "epobj-27-d"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-234-a",
+    "epobj-234-b",
+    "epobj-234-c",
+    "epobj-234-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows an outdoor plaza with a large, abstract sculpture in the foreground. The sculpture appears to be made of metal or stone and has a curved, flowing form. In the background, there are trees, buildings, and people walking around. The sky is clear and blue, indicating a sunny day. The sculpture is positioned on a paved area, and there are some barriers and cones around it, suggesting it might be part of an art installation or exhibition. The overall setting seems to be a public space, possibly a park or a museum grounds."
+}

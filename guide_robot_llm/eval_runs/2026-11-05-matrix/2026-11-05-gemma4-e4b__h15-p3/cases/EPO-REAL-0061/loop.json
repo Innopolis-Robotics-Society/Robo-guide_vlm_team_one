@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/61.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-61-a\", \"epobj-61-b\", \"epobj-61-c\", \"epobj-61-d\"], \"pointing_evidence\": \"yes\", \"pointing_box\": [1, 1, 1, 1], \"scene_facts\": \"The visitor is pointing towards the bust on the pedestal.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1552.34031699365,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/61.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-61-a\", \"epobj-61-b\", \"epobj-61-c\", \"epobj-61-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards the exhibit on the right side of the image.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1114.3694670172408,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/61.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-61-a\", \"epobj-61-b\", \"epobj-61-c\", \"epobj-61-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards the bust on the pedestal.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1089.8806360200979,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

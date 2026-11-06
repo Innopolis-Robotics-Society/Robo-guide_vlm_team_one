@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.55,
+    0.65,
+    0.85,
+    0.95
+  ],
+  "scene_facts": "На снимке виден человек, указывающий пальцем на дорожные знаки возле дерева."
+}

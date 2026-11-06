@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-100-a",
+    "epobj-100-b",
+    "epobj-100-c",
+    "epobj-100-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "none"
+}

@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a"
+  ]
+,
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.38,
+    0.75,
+    0.42,
+    0.78
+  ]
+,
+  "scene_facts": "The image shows a refrigerated produce section in a grocery store. A person's arm (wearing a black sleeve) is pointing at a specific item on the middle shelf. The item being pointed at is a clear plastic container filled with small, round, pinkish-white vegetables. To the left of this item are similar containers with slightly larger pink bulbs (likely red onions or shallots). To the right are containers of green Brussels sprouts and white garlic bulbs. The pointing gesture is directed squarely at the container of small pink/white round vegetables."
+}

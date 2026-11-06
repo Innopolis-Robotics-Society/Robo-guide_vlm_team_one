@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-234-a",
+    "epobj-234-b",
+    "epobj-234-c",
+    "epobj-234-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows an outdoor public space with paved areas, some low barriers, and trees. There are no visible exhibits or specific objects that clearly point to any of the listed exhibit IDs."
+}

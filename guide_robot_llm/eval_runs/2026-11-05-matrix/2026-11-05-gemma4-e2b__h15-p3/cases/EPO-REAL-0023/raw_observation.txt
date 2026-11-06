@@ -1,0 +1,19 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-23-a",
+"epobj-23-b",
+"epobj-23-c",
+"epobj-23-d"
+],
+"pointing_evidence": "none"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "The image shows a shelf filled with various packaged food items, primarily dried goods, possibly mushrooms, herbs, or snacks. The items are packaged in clear plastic bags or containers. The hand is pointing towards a package in the bottom left area of the visible shelf section."
+}

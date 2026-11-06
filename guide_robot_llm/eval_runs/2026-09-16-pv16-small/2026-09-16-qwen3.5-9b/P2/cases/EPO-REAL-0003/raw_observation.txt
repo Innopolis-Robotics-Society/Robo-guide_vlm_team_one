@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a",
+    "epobj-3-b",
+    "epobj-3-c",
+    "epobj-3-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.38,
+    0.75,
+    0.42,
+    0.8
+  ],
+  "scene_facts": "The image shows a refrigerated produce section in a grocery store. A person's arm, wearing a black sleeve, is extended forward with their index finger pointing at a specific packaged item on the middle shelf. The shelf contains various pre-packaged vegetables. To the left of the pointed item are packages of what appear to be yellowish root vegetables (possibly ginger or similar). To the right are green Brussels sprouts and white mushrooms. The pointed item itself contains small, round, pinkish-white bulbs. Below the shelf are leafy greens and herbs. Above the shelf is a green wall with a sign that has Chinese characters. The lighting is bright, typical of a supermarket. The focus is on the act of pointing at the specific package among many options."
+}

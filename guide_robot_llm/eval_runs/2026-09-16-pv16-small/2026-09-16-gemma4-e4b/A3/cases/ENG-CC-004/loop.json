@@ -1,0 +1,22 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/ENG-CC-004.png",
+    "raw_text": "{\"answer\": \"Пожалуйста, предоставьте мне кадры, чтобы я мог выполнить ваш запрос. Я готов действовать в цикле, как вы описали, как только получу изображения.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 976.1966439837124,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/ENG-CC-004.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре я вижу 4 человека. Все 4 человека стоят и смотрят в сторону зеленой доски, что может указывать на готовность слушать. Поскольку в вашем запросе не указано, сколько \"\n    \n                    , \"confidence\": 0.9\n    \n                    , \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": 4,
+    "latency_ms": 1237.9789100086782,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

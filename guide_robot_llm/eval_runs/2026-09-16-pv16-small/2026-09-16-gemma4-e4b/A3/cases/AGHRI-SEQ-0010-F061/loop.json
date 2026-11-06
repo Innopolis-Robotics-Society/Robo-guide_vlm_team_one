@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как в предоставленном изображении нет робота, и я не могу определить, сколько людей готовы слушать, так как нет контекста или информации о \"\n    \n    , \"confidence\": 0.95\n    \n    , \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1232.259176991647,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение не содержит информации о том, кто \"\n   \n   , \"confidence\": 0.0\n  \n  , \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 748.2628209982067,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как в предоставленном изображении нет робота, и я не могу определить, сколько людей готовы слушать, так как нет контекста или информации о \"\n    \n    ,\n    \"confidence\": 0.9\n    \n    ,\n    \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 860.2834159974009,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0013",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 2628.361,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0031399831641465425,
+              "upload_ms": 65.5906880274415,
+              "ttft_ms": 119.64389702188782,
+              "full_ms": 1549.2537620011717,
+              "parse_ready_ms": 1549.2537620011717
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.004770001396536827,
+              "upload_ms": 67.99939798656851,
+              "ttft_ms": 151.45141299581155,
+              "full_ms": 1079.0205420053098,
+              "parse_ready_ms": 1079.0205420053098
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест посетителя направлен на группу экспонатов, расположенных в центральной части витрины, в районе, где находится коробка с оранжевой/коричневой этикеткой.\n(2) В этом секторе находятся экспонаты epobj-13-c и epobj-13-d (и, возможно, часть epobj-13-b, но жест явно указывает на центральный элемент).\n(3) Слова посетителя (в данном случае, это вопрос, требующий выбора из вариантов A, B, C, D, что подразумевает выбор одного конкретного предмета) согласуются с указанием на один из центральных предметов.\n(4) Жест указывает на один из центральных предметов, который соответствует одному из вариантов. Если предположить, что посетитель указывает на центральный, самый заметный предмет в этой группе, это epobj-13-c.\n\nНа основании визуального указания, посетитель указывает на экспонат **epobj-13-c**."
+    }
+  },
+  "latency_ms": 2628.361,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0013",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-13",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+      "sha256": "78272cc7068500f6a0fb12acc361ad40866b94ea0c1cb01a82ed557ab24b8843",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the English translation of the brand name written on the object I am pointing to?\nA. Ocean Blue\nB. Red Star\nC. Dream Blue\nD. Golden Harvest\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-13-a",
+      "epobj-13-b",
+      "epobj-13-c",
+      "epobj-13-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-13-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-13-b",
+        "epobj-13-c",
+        "epobj-13-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Ocean Blue": "epobj-13-a",
+        "Red Star": "epobj-13-b",
+        "Dream Blue": "epobj-13-c",
+        "Golden Harvest": "epobj-13-d"
+      }
+    }
+  }
+}

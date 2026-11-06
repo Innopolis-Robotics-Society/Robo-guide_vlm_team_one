@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-55-a",
+    "epobj-55-b",
+    "epobj-55-c",
+    "epobj-55-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a small metal mesh strainer hanging on the rack. The strainer is located to the right of the larger ladles and spoons, and to the left of the silicone spatulas. It is a cylindrical mesh tool used for straining liquids or small particles from food."
+}

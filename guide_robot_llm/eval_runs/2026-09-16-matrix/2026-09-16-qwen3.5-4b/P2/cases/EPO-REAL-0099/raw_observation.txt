@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person pointing at a yellow packaged item on the bottom shelf of a refrigerated display case. The item appears to be a single-serving snack bar or similar food product. The question asks for the primary intended use of the object being pointed at. Based on the visual evidence, the object is a snack bar, which aligns with option B. The other options (ingredient, cleaning product, fresh noodle dish) do not match the visual evidence. Therefore, the correct answer is B."
+}

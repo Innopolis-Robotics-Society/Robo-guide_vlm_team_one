@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-405-a\", \"epobj-405-b\", \"epobj-405-c\", \"epobj-405-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": [0, 0, 0, 0], \"scene_facts\": \"В кадре видна рука, указывающая на круглую металлическую коробку с желтыми пакетиками внутри. На экране ноутбука запущена программа для записи видео. На столе разложены различные предметы: книги, пакеты с лекарствами, белый компьютерный мышь и другие вещи. Указательный палец направлен прямо на коробку с пакетиками, что является явным жестом указывания на этот объект.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2399.881180986995,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"В кадре один человек (видна рука и палец), указывающий на круглую металлическую коробку с маленькими пакетиками внутри. На столе рядом — ноутбук, книги, мышь, другие предметы. Указательный жест направлен прямо на коробку с пакетиками.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2146.9310829997994,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"На изображении видна рука человека, указывающая пальцем на круглую металлическую коробку с маленькими пакетиками (вероятно, чай или конфеты). Коробка находится на клавиатуре ноутбука. Вокруг — другие предметы: пакеты с лекарствами, книги, компьютерная мышь, декоративный элемент в виде лапы. Указательный жест направлен именно на коробку с пакетиками.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2450.1683420094196,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

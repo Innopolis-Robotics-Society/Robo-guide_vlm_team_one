@@ -1,0 +1,12 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a road scene with two traffic signs mounted on a pole: a 'no motor vehicles' sign (top) and a '15 km/h speed limit' sign (bottom). A person's hand is pointing directly at the bottom sign (the speed limit sign). The question asks which exhibit the visitor is pointing to. Since the hand is clearly indicating the lower sign, and assuming the exhibits correspond to the visible signs in order from top to bottom, the correct exhibit is epobj-28-b (the speed limit sign). The other options (epobj-28-a, epobj-28-c, epobj-28-d) likely refer to other elements not being pointed at or are distractors. There are no people in the image except for the pointing hand, which is part of the foreground action. The background includes trees, parked cars, and a distant pedestrian, but they are not the focus of the pointing gesture."
+}

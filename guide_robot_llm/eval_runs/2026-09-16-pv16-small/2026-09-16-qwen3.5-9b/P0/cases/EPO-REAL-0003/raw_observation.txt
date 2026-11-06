@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a",
+    "epobj-3-b",
+    "epobj-3-c",
+    "epobj-3-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a refrigerated display case in a grocery store, containing various pre-packaged vegetables. A person's arm (wearing a black sleeve) is pointing at a specific package on the middle shelf. The package being pointed at contains small, round, pinkish-red vegetables. To the left are packages of what appear to be garlic or shallots. To the right are packages of green Brussels sprouts and white mushrooms. Below are leafy greens and herbs. The pointing action is directed squarely at the package of pink/red round vegetables."
+}

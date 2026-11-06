@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.32,\n    0.85,\n    0.45,\n    0.95\n  ]\n,\n  \"scene_facts\": \"The image shows a supermarket aisle with shelves stocked with various snack products. A person's hand is visible pointing towards the lower shelves, specifically at a row of colorful snack packages. The pointing gesture is directed at the bottom shelf, where multiple brands are displayed, including Lay's and others. The hand is positioned near the center-left of the frame, indicating interest in the products on that shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2496.051077003358,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.42,\n    0.89,\n    0.46,\n    0.93\n  ],\n  \"scene_facts\": \"The image shows a supermarket aisle with shelves stocked with various snack products. A person's arm is visible in the lower center of the frame, pointing toward the bottom shelf. The pointing gesture is directed at a red package among other snacks on that shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1971.8281620007474,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a hand pointing at a shelf of snacks in a supermarket. The hand is pointing towards the lower shelves, specifically at packages that appear to be Pringles or similar cylindrical chip containers. The packages are colorful and have distinct branding. The hand is clearly indicating one of the products on the shelf, but the specific product is not entirely clear due to the angle and resolution of the image. The pointing gesture suggests the person is interested in or selecting one of the items on the lower shelves. The surrounding shelves are stocked with various snack products, including bags of chips and other packaged goods. The lighting is bright, typical of a supermarket environment, and the shelves are well-organized. The hand is positioned in such a way that it is likely pointing at a specific product, but the exact item is not definitively identifiable from the image alone. The pointing gesture is the primary action in the image, and it is directed towards the lower shelves where the Pringles or similar products are located. The other shelves contain a variety of snacks, but the focus is on the lower shelves where the hand is pointing. The image does not provide enough detail to determine the exact product being pointed at, but the gesture is clear and intentional. The surrounding products are also visible, but the pointing action is the main focus of the image. The hand is positioned in a way that suggests the person is either selecting or drawing attention to a specific product on the lower shelves. The image does not show any other people or actions, and the focus is solely on the hand and the products it is pointing at. The lighting and organization of the shelves are consistent with a typical supermarket setting, and the products are neatly arranged. The pointing gesture is the key element in the image, and it is directed towards the lower shelves where the Pringles or similar products are located. The other shelves contain a variety of snacks, but the focus is on the lower shelves where the hand is pointing. The image does not provide enough detail to determine the exact product being pointed at, but",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 5473.402406001696,
+    "attempts": 1,
+    "finish_reason": "length"
+  }
+]

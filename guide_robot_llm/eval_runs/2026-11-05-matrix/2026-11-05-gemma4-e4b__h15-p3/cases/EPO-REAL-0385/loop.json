@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/385.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-385-a\",\n    \"epobj-385-b\",\n    \"epobj-385-c\",\n    \"epobj-385-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is not pointing at any specific exhibit.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1982.3502450017259,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/385.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-385-a\",\n    \"epobj-385-b\",\n    \"epobj-385-c\",\n    \"epobj-385-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the display case containing various food items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1604.901650978718,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/385.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-385-a\",\n    \"epobj-385-b\",\n    \"epobj-385-c\",\n    \"epobj-385-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is not pointing at any specific exhibit in the current frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1559.46058902191,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

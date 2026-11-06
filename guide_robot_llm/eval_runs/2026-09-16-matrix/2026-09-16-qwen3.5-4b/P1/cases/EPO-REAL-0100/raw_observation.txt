@@ -1,0 +1,13 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-100-a",
+    "epobj-100-b",
+    "epobj-100-c",
+    "epobj-100-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null
+,
+  "scene_facts": "The image shows a cluttered desk with various items including bottles, tubes, and small containers. There is a small shelf on the left side of the desk with more items on it. A person's hand is visible at the bottom right, reaching towards or interacting with items on the desk surface. The hand appears to be near a small container or bottle. There is no clear indication of which specific exhibit (from the provided list) is being pointed to or interacted with, as the hand is not clearly directed at any specific object that matches the exhibit candidates. The scene is chaotic and lacks clear context for identifying a specific exhibit from the given list."
+}

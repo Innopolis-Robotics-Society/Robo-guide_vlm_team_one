@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0004-F130",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 5205.113,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0035199918784201145,
+              "upload_ms": 186.43060998874716,
+              "ttft_ms": 241.87179299769923,
+              "full_ms": 4438.778642012039,
+              "parse_ready_ms": 4438.778642012039
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0035609991755336523,
+              "upload_ms": 157.48626500135288,
+              "ttft_ms": 352.45789799955674,
+              "full_ms": 765.9397670067847,
+              "parse_ready_ms": 765.9397670067847
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\n1. Человек в оранжевом жилете (вид сзади, идёт по тропинке) — человек №1  \n2. Человек в тёмной одежде с маской (идёт впереди, тоже по тропинке) — человек №2  \n\nВсего людей в кадре: **2**\n\n---\n\nЭтап 2: Оценка готовности к слушанию (по критериям: близость, взгляд, вовлечённость)\n\nКритерии:\n- Близость: находится ли рядом с роботом (предполагаем, что камера — это робот или от его лица).\n- Взгляд: смотрит ли на робота/в его сторону.\n- Вовлечённость: идёт ли в одном направлении, взаимодействует ли, проявляет ли интерес.\n\nЧеловек №1 (в оранжевом жилете):\n- Близость: очень близко, идёт сразу за камерой/роботом.\n- Взгляд: не видно лица, но по позе (шаг, направление) — движется в том же направлении, возможно, следит за роботом.\n- Вовлечённость: высокая — идёт рядом, не отходит, вероятно, сопровождает или охраняет.\n→ Готов слушать: **да**\n\nЧеловек №2 (в тёмной одежде):\n- Близость: дальше, идёт впереди по той же тропинке.\n- Взгляд: не видно, но по позе — идёт вперёд, не оборачивается.\n- Вовлечённость: средняя — идёт в одном направлении, но не взаимодействует напрямую.\n→ Готов слушать: **нет** (слишком далеко, не вовлечён, не смотрит назад)\n\n---\n\nИтог:\n\nВсего людей: **2**  \nГотовых слушать: **1**\n\nОтвет: **2 1**"
+    }
+  },
+  "latency_ms": 5205.113,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0004-F130",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0004",
+    "media": {
+      "path": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593528_237095047.png",
+      "sha256": "1034e05a135140e819dfebb240c2f040bbb1e676d53edf5df958d771fcc48ce6",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 2
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "2",
+      "declared_count": 3,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "case_id": "TOL-CC-006",
+  "source": "pilot-cc",
+  "track": "tool",
+  "prompt_mode": "deployed",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 16790.389,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.004909990821033716,
+            "upload_ms": 465.53844600566663,
+            "ttft_ms": 15651.9175870053,
+            "full_ms": 16790.351912000915,
+            "parse_ready_ms": 16790.351912000915
+          }
+        ]
+      }
+    },
+    "action": {
+      "latency_ms": 3389.062,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0036199926398694515,
+            "upload_ms": 51.091872999677435,
+            "ttft_ms": 630.3097959898878,
+            "full_ms": 3389.026599994395,
+            "parse_ready_ms": 3389.026599994395
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 20179.451,
+  "attempts": 2,
+  "case": {
+    "case_id": "TOL-CC-006",
+    "source": "pilot-cc",
+    "track": "tool",
+    "split_group_id": "g-cc-TOL-NEUTRAL",
+    "media": {
+      "path": "pilot/media/cc/TOL-NEUTRAL.png",
+      "sha256": "933dec73ea446503fa5d93497a3752e46813ad2cb52926f4ac3c2fdaf965f26d",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Что-нибудь про динозавров расскажешь?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "action",
+      "tool": "search_content",
+      "args": {
+        "query": "динозавры"
+      }
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

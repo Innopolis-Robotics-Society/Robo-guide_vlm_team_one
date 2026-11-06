@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-1270-d"], "pointing_evidence": "yes", "pointing_box": [0.54, 0.71, 0.75, 0.81], "scene_facts": "Человек указывает на упаковку влажных салфеток."}

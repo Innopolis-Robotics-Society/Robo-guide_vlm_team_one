@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0027",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 5118.464,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.004469999112188816,
+              "upload_ms": 302.13319399626926,
+              "ttft_ms": 361.5923520119395,
+              "full_ms": 2971.647870988818,
+              "parse_ready_ms": 2971.647870988818
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0038600119296461344,
+              "upload_ms": 106.3418629928492,
+              "ttft_ms": 263.7159150035586,
+              "full_ms": 2146.7268749838695,
+              "parse_ready_ms": 2146.7268749838695
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово:\n\n---\n\n**(1) Куда направлен жест?**\n\nНа изображении видна рука (в зелёной куртке), указывающая пальцем на товар в холодильной витрине. Палец направлен прямо на **целую курицу**, упакованную в прозрачную плёнку, которая находится в нижнем ряду, справа от центра. Это не кусок мяса (как в pork chop или duck breast), а целое тушка птицы.\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nРассмотрим варианты:\n\n- **A. Pork chop** — это свинина, не птица. В витрине нет свинины, и жест не указывает на неё → исключаем.\n- **B. Yellow broiler chicken** — желтая курица-бройлер. На фото видны целые курицы светло-желтого цвета, что соответствует описанию. Жест указывает именно на одну из таких куриц.\n- **C. Silkie chicken** — сикейская курица. У них чёрные перья, белые лапки, часто с фиолетовым оттенком. На фото нет таких птиц — все курицы светлые. → исключаем.\n- **D. Duck breast** — грудка утки. Это кусок мяса, а не целая тушка. В витрине нет утки, и жест не указывает на кусок мяса. → исключаем.\n\n---\n\n**(3) Согласуются ли с этим слова посетителя?**\n\nВопрос: «What type of poultry is this?» — «Какой породы птица это?»\n\nПосетитель указывает на целую курицу, значит, он спрашивает именно о виде птицы, а не о части туши. Только вариант **B** — «Yellow broiler chicken» — описывает целую птицу, а не кусок мяса.\n\n---\n\n**(4) Остался ли ровно один кандидат?**\n\nДа, после исключения A, C, D остаётся только **B**.\n\n---\n\n✅ Ответ: **B**"
+    }
+  },
+  "latency_ms": 5118.464,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0027",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-27",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+      "sha256": "e845c66a2c1c8e928b002975ec4fd0688ba59285a814cd0d4715f2a303476915",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What type of poultry is this?\nA. Pork chop\nB. Yellow broiler chicken\nC. Silkie chicken\nD. Duck breast\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-27-a",
+      "epobj-27-b",
+      "epobj-27-c",
+      "epobj-27-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-27-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-27-a",
+        "epobj-27-b",
+        "epobj-27-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Pork chop": "epobj-27-a",
+        "Yellow broiler chicken": "epobj-27-b",
+        "Silkie chicken": "epobj-27-c",
+        "Duck breast": "epobj-27-d"
+      }
+    }
+  }
+}

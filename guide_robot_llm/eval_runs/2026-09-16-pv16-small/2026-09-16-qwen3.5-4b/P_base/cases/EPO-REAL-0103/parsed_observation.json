@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.33,
+    0.86,
+    0.45,
+    0.94
+  ],
+  "scene_facts": "В супермаркете видны полки с чипсами и другими снеками, рука человека указывает на нижнюю полку."
+}

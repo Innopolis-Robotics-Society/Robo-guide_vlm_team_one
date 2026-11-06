@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0005-F125",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 1602.264,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0033800024539232254,
+              "upload_ms": 50.95438001444563,
+              "ttft_ms": 87.76028899592347,
+              "full_ms": 974.4301410100888,
+              "parse_ready_ms": 974.4301410100888
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0030800001695752144,
+              "upload_ms": 45.3688369889278,
+              "ttft_ms": 118.75731000327505,
+              "full_ms": 627.407663007034,
+              "parse_ready_ms": 627.407663007034
+            }
+          ]
+        }
+      },
+      "cot_reason": "**Этап 1: Подсчет людей в кадре**\n\nНа предоставленном изображении я вижу **одного** человека.\n\n**Этап 2: Оценка готовности слушать**\n\n*   **Человек 1:** Он находится вдали от робота (если робот подразумевается как объект, который должен быть в кадре, но его нет). Он стоит, кажется, в движении или в позе, которая не указывает на активное слушание. Его взгляд направлен вперед, не на предполагаемый объект взаимодействия.\n\n**Итоговый ответ:**\n\nВсего людей: **1**\nГотовых слушать: **0**"
+    }
+  },
+  "latency_ms": 1602.264,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0005-F125",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0005",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408042_315830459.png",
+      "sha256": "ca3f55f69430ad127f8581f1a2529af4fe1e6a8aa8f7c8ac65b2fa1d9dc21ad2",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

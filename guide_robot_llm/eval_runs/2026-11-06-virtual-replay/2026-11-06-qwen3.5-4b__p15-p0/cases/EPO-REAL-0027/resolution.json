@@ -1,0 +1,41 @@
+{
+  "status": "resolved",
+  "content_id": "epobj-27-b",
+  "geometry_leader": "epobj-27-b",
+  "model_content_id": "epobj-27-b",
+  "box_iou": 0.03314045239347715,
+  "scores": [
+    {
+      "content_id": "epobj-27-a",
+      "score": 0.300882,
+      "in_image": true,
+      "visible": true,
+      "geometry": 0.00126,
+      "language": 1.0
+    },
+    {
+      "content_id": "epobj-27-b",
+      "score": 0.798239,
+      "in_image": true,
+      "visible": true,
+      "geometry": 0.71177,
+      "language": 1.0
+    },
+    {
+      "content_id": "epobj-27-c",
+      "score": 0.314506,
+      "in_image": true,
+      "visible": true,
+      "geometry": 0.020722,
+      "language": 1.0
+    },
+    {
+      "content_id": "epobj-27-d",
+      "score": 0.315312,
+      "in_image": true,
+      "visible": true,
+      "geometry": 0.021874,
+      "language": 1.0
+    }
+  ]
+}

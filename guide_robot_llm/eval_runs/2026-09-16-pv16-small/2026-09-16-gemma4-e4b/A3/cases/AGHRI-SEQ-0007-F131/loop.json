@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения я вижу только одного человека, стоящего рядом с тем, что может быть роботом (или просто человеком в яркой жилетке). На изображении нет других людей, которые явно готовы слушать.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 753.5301730094943,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить эту задачу, так как предоставленное изображение не содержит робота, и я не могу определить, сколько людей \"\n    ,\"confidence\": 0.95\n  \n  ,\"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 788.4829840040766,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения видно только одного человека, который находится рядом с роботом (или, по крайней мере, рядом с объектом, который может быть роботом, судя по контексту).\", \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 634.2829519999214,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

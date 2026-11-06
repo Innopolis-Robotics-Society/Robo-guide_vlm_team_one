@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0028",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "freeform",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 884.644,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0033999967854470015,
+            "upload_ms": 210.44041798450053,
+            "ttft_ms": 733.9792599959765,
+            "full_ms": 884.4614049885422,
+            "parse_ready_ms": 884.4614049885422
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 884.644,
+  "attempts": 1,
+  "case": {
+    "case_id": "EPO-REAL-0028",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-28",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+      "sha256": "830cdd9ece6d58d1e8160d7b14c932229e524a2377fcc0f3ea1eafc4ec703712",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is the object indicated by my finger located above or below the speed limit sign?\nA. Below\nB. To the right\nC. Above\nD. To the left\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-28-a",
+      "epobj-28-b",
+      "epobj-28-c",
+      "epobj-28-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-28-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-28-a",
+        "epobj-28-b",
+        "epobj-28-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Context & Relation",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Below": "epobj-28-a",
+        "To the right": "epobj-28-b",
+        "Above": "epobj-28-c",
+        "To the left": "epobj-28-d"
+      }
+    }
+  }
+}

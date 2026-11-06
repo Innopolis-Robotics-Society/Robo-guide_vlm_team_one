@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-3-a", "epobj-3-b", "epobj-3-c", "epobj-3-d"], "pointing_evidence": "yes", "pointing_box": [0.32, 0.58, 0.45, 0.69], "scene_facts": "Человек указывает на ящики с овощами в холодильной витрине."}

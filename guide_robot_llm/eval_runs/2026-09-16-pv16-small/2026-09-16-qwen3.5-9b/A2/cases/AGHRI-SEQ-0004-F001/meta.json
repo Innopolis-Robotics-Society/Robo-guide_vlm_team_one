@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0004-F001",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3390.899,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028900103643536568,
+              "upload_ms": 188.88622499071062,
+              "ttft_ms": 246.10902299173176,
+              "full_ms": 2768.093613005476,
+              "parse_ready_ms": 2768.093613005476
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029200164135545492,
+              "upload_ms": 50.294909975491464,
+              "ttft_ms": 210.8035029959865,
+              "full_ms": 622.4191859946586,
+              "parse_ready_ms": 622.4191859946586
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nНа изображении — пейзаж с тропинкой, деревьями, зданиями на заднем плане. На переднем плане — листья на земле, трава, небо. Вдали — несколько фигур, но они слишком размыты и малы, чтобы точно определить их как людей. Даже если предположить, что это люди (например, на заднем плане у здания или за забором), их количество невозможно точно определить — возможно, 0–3 нечёткие фигуры, но без уверенности.\n\nВывод этапа 1: **0 человек** чётко видны и идентифицируемы как люди рядом с «роботом» (которого вообще нет на изображении — это просто пейзаж).\n\n---\n\nЭтап 2: Оценка готовности слушать\n\nПоскольку людей нет, вопрос о том, кто готов слушать, не применим. Нет ни одного человека, который мог бы быть вовлечён, смотреть или находиться в близости.\n\nВывод этапа 2: **0 человек** готовы слушать.\n\n---\n\nИтоговый ответ:\n\n**Всего людей: 0**  \n**Готовых слушать: 0**"
+    }
+  },
+  "latency_ms": 3390.899,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0004-F001",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0004",
+    "media": {
+      "path": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593519_022185047.png",
+      "sha256": "d357c00c51003b59142452a13a8c11c96c92d9fac743c3800569788d3db038ed",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 0
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "0",
+      "declared_count": 3,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

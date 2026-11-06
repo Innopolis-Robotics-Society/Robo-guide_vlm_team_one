@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the_image_shows_a_display_of_poultry_cuts_or_whole_birds_in_a_supermarket_setting_the_focus_is_on_the_meat_products_in_the_foreground\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1663.1418089964427,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the_image_shows_a_display_of_poultry_pieces_likely_meat_cuts_with_a_person_pointing_towards_some_of_the_pieces\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1302.5297860149294,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a display of raw poultry, specifically whole birds, which are typically associated with chicken or duck. the options provided are pork chop, yellow broiler chicken, silkie chicken, and duck breast. the visible items are whole, uncooked poultry, most resembling chickens or ducks.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1292.365941015305,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

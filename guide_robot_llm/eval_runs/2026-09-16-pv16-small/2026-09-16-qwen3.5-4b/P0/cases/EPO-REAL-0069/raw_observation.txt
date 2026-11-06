@@ -1,0 +1,12 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a retail display in what appears to be a department store or cosmetics shop. There are multiple shelves stocked with bottles and jars, likely skincare or beauty products. The signage includes Chinese text mentioning 'sensitive skin' and 'hydration series'. A person is browsing the display, but no specific exhibit is being pointed at by anyone in the image."
+}

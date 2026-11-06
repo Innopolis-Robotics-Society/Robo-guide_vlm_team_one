@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.45,
+    0.5,
+    0.55,
+    0.6
+  ],
+  "scene_facts": "The image shows a person in a store aisle pointing with their right hand (wearing a black glove) toward a shelf. The hand is extended forward and slightly upward, indicating an object on the middle shelf. The pointed-at object is a blue package of wet wipes, located between yellow packages on the left and pink/white packages on the right. The person’s gaze aligns with the direction of the pointing gesture. No other objects are being indicated or discussed."
+}

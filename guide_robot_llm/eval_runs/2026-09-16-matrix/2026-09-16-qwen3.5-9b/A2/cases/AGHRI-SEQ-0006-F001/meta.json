@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0006-F001",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3267.248,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0031800009310245514,
+              "upload_ms": 212.23304700106382,
+              "ttft_ms": 268.7559299811255,
+              "full_ms": 2601.8103899841662,
+              "parse_ready_ms": 2601.8103899841662
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0035199918784201145,
+              "upload_ms": 36.308720998931676,
+              "ttft_ms": 192.53722499706782,
+              "full_ms": 664.8000499990303,
+              "parse_ready_ms": 664.8000499990303
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nНа изображении видно только одно человеческое тело — частично, слева в кадре: рука и часть рукава чёрной куртки. Никаких других людей не видно ни на переднем, ни на среднем, ни на заднем плане. Деревья, трава, дорожка, забор, дом вдали — всё это не содержит признаков присутствия других людей.\n\n→ Всего людей в кадре: **1**\n\n---\n\nЭтап 2: Оценка готовности к слушанию\n\nЕдинственный видимый человек — его рука и часть тела. Он не обращён к камере или роботу, не смотрит в сторону, не жестикулирует, не взаимодействует с чем-либо. Его поза и положение не указывают на вовлечённость в диалог или внимание к собеседнику. Даже если предположить, что он стоит рядом с роботом (что не подтверждается визуально), его ориентация и поведение не свидетельствуют о готовности слушать.\n\n→ Готовых слушать: **0**\n\n---\n\nИтоговый ответ:\n\n**1 0**"
+    }
+  },
+  "latency_ms": 3267.248,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0006-F001",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0006",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407367_142145459.png",
+      "sha256": "1a0b137c6b642b4be3dfa9115517a8920b7971123107269a679ee9ba4ca10076",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

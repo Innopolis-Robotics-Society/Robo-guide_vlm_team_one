@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a"
+  ]
+,
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.58,
+    0.64,
+    0.62,
+    0.68
+  ]
+,
+  "scene_facts": "The image shows a person pointing towards a building with a large red 'UNIQLO' sign on it. The person is wearing a black jacket and has their right arm extended, pointing with their index finger. The background includes other buildings and people walking around."
+}

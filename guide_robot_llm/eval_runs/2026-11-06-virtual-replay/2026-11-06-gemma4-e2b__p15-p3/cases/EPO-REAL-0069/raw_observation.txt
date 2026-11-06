@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-69-a",
+"epobj-69-b",
+"epobj-69-c",
+"epobj-69-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "The image displays a retail setting with numerous products arranged on shelves. The products appear to be small bottles or containers, suggesting personal care items, cosmetics, or perhaps skincare products. The overall aesthetic is clean and focused on product display."
+}

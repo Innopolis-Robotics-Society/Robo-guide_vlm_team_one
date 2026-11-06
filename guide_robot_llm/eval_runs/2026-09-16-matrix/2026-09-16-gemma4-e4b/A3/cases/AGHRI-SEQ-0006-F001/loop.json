@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407367_142145459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение не содержит информации о людях, которые готовы слушать. На изображении показана природная сцена (дорожка в парке с деревьями), и я не могу определить количество людей или их готовность слушать.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1132.9237309983,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407367_142145459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения не видно ни одного человека рядом с роботом. Следовательно, количество готовых слушателей равно 0.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 593.1941639864817,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407367_142145459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить эту задачу, так как предоставленное вами изображение не содержит информации о людях, которые готовы слушать. На изображении виден пейзаж с деревьями и тропинкой, а не группа людей, участвующих в каком-либо мероприятии.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 775.1470080111176,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

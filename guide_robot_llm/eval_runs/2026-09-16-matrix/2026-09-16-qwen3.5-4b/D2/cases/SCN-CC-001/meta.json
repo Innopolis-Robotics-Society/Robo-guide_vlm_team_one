@@ -1,0 +1,117 @@
+{
+  "case_id": "SCN-CC-001",
+  "source": "pilot-cc",
+  "track": "scene",
+  "prompt_mode": "deployed",
+  "variant_id": "D2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 3605.528,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0023900065571069717,
+              "upload_ms": 206.01643601548858,
+              "ttft_ms": 278.05476999492384,
+              "full_ms": 1767.79413499753,
+              "parse_ready_ms": 1767.79413499753
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.00323000131174922,
+              "upload_ms": 84.13720299722627,
+              "ttft_ms": 230.905084987171,
+              "full_ms": 1837.6681639929302,
+              "parse_ready_ms": 1837.6681639929302
+            }
+          ]
+        }
+      },
+      "cot_reason": "**Пункты наблюдения:**\n- Люди: один человек (зелёная рубашка, синие штаны, круглая голова) стоит справа от центра, лицом к стене.\n- Объекты:\n  - redbox-01: красный прямоугольный объект на коричневой подставке — слева, на уровне стены.\n  - cabinet-03: коричневый низкий шкаф с белой дверцей — в центре, рядом с человеком.\n  - vase-04: не обнаружен в кадре.\n- Качество кадра: плоская 2D-графика, минималистичный стиль, без теней и деталей, характерный для простых визуальных тестов или игр.\n\n**Связное краткое описание:**  \nПеред собой — минималистичная сцена в стиле 2D-иллюстрации: один человек стоит справа от центра, рядом с низким коричневым шкафом (cabinet-03) с белой дверцей. Слева на стене висит красный прямоугольный объект (redbox-01) на коричневой подставке. В кадре нет вазы (vase-04). Всё выполнено в плоском, бездетализированном стиле."
+    }
+  },
+  "latency_ms": 3605.528,
+  "attempts": 2,
+  "case": {
+    "case_id": "SCN-CC-001",
+    "source": "pilot-cc",
+    "track": "scene",
+    "split_group_id": "g-cc-SCN-CC-001",
+    "media": {
+      "path": "pilot/media/cc/SCN-CC-001.png",
+      "sha256": "907f79e1c8e5dd998d5801d5de0392241032cc3834219c7ba56af055fff6734e",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Что ты видишь перед собой?",
+      "language": "ru"
+    },
+    "candidates": [
+      "redbox-01",
+      "cabinet-03",
+      "vase-04"
+    ],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "claims",
+      "claims": [
+        "на полке стоит красная коробка",
+        "справа стоит синий шкаф",
+        "на столе стоит белая ваза",
+        "в кадре один человек",
+        "стены светлые, пол деревянный"
+      ]
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

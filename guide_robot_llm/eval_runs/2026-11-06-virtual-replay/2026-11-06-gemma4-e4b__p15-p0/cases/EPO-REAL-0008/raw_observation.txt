@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-8-a", "epobj-8-b", "epobj-8-c", "epobj-8-d"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "The image shows a retail store aisle with shelves stocked with various products. The visitor is pointing towards a display area in the middle ground, which contains packaged goods and possibly some hanging items."}

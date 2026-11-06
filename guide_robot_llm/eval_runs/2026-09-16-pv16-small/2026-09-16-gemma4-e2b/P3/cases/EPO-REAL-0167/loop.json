@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a person's hand reaching towards a packaged food item displayed in a bakery or grocery setting. The item being pointed at is a rectangular, light brown, somewhat dense-looking baked good, possibly a loaf or a slice of bread/cake. The packaging is white and brown. The background shows various other packaged goods, suggesting a supermarket or bakery aisle.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1762.8872120112646,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"a person's hand is pointing towards a packaged food item in the foreground. The item appears to be a rectangular, light-colored baked good, possibly a pastry or bread, wrapped in clear plastic. The packaging suggests a bakery or grocery setting.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1303.0800260021351,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"a person's hand is pointing towards a packaged food item in the foreground. The item appears to be a type of baked good or pastry, possibly a loaf or a layered item, with a brown/tan color. The packaging suggests a bakery or grocery setting.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1362.6924790150952,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

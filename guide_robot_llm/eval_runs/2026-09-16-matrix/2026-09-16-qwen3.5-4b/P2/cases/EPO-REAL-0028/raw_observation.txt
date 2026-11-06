@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "scene_facts": "The image shows a hand pointing at a traffic sign with the number '15' on it, which is a speed limit sign. The sign is mounted on a pole next to a tree. There are other signs nearby, including one that appears to be a no-entry sign for vehicles. The background includes trees, a road, and some buildings. The lighting suggests it is daytime, and the environment looks like a park or residential area near a road."
+}

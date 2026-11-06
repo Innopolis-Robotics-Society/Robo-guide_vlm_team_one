@@ -1,0 +1,22 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/SEQ-CC-001_f0.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре я вижу **1** человека. Поскольку нет информации о том, сколько людей должно быть \"\n   \n                  ,\n   \"confidence\": 0.8,\n   \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1171.98042201926,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/SEQ-CC-001_f1.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре я вижу 2 человека. Оба человека стоят и смотрят вперед, что может указывать на готовность слушать. Таким образом, я считаю, что 2 человека готовы слушать.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": 2,
+    "latency_ms": 1075.9508310002275,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a large modern building with several retail storefronts. There are multiple brands visible, including Nike and UNIQLO. The visitor's hand is visible in the foreground, but it is not clearly pointing at any specific exhibit or object within the building that corresponds to the provided exhibit IDs.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2322.510179015808,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-96-a\",\n\"epobj-96-b\",\n\"epobj-96-c\",\n\"epobj-96-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"no_scene_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1302.1439969888888,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-96-a\",\n\"epobj-96-b\",\n\"epobj-96-c\",\n\"epobj-96-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"no_scene_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1386.4581670204643,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. The object appears to be a small packet or item, possibly related to food or a small product. The surrounding context is a desk setup with a laptop, keyboard, and various papers/items. There is a white object resembling a mouse on the right side of the frame, but the hand is pointing at the item in the plate.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1832.1903690230101,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, rectangular, yellow object resting on a silver plate in front of a laptop. The object appears to be some kind of small food item or perhaps a piece of packaging. There is no clear indication of a computer mouse in the image.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1569.5133469998837,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. This object appears to be a piece of food or a small item, not a computer mouse.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1388.6276230041403,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

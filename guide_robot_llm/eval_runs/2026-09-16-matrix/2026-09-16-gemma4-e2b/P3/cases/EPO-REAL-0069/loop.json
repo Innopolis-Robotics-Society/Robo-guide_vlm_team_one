@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-69-a\",\n\"epobj-69-b\",\n\"epobj-69-c\",\n\"epobj-69-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a retail display with numerous small bottles and containers, likely related to personal care or wellness products, displayed on shelves. The products appear to be skincare or similar items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1445.5866829957813,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-69-a\",\n\"epobj-69-b\",\n\"epobj-69-c\",\n\"epobj-69-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a retail display with numerous small bottles and containers, likely related to personal care or skincare products, given the context of the previous question's options (skincare or cosmetic application). The display features various products arranged on shelves, and people are interacting with them. The items appear to be cosmetic or beauty products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1259.0032949810848,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"the_image_shows_a_store_display_with_many_small_bottles_or_containers_arranged_on_shelves_in_a_retail_setting_the_products_appear_to_be_cosmetics_or_skincare_items_the_packaging_is_uniform_and_the_display_is_well_lit_the_items_are_primarily_white_or_light_colored_and_suggest_a_beauty_product_range\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1636.7395479755942,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

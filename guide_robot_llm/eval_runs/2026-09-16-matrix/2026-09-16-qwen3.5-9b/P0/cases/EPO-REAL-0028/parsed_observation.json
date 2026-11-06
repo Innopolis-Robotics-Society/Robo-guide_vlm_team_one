@@ -1,0 +1,10 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a road scene with two circular traffic signs mounted vertically on a pole. The top sign is a 'No Motor Vehicles' sign (red circle with a car and diagonal line). The bottom sign is a speed limit sign showing '15'. A person's hand is pointing directly at the lower sign (the speed limit sign). In the background, there are trees, parked cars, and another person walking away. The sky is"
+}

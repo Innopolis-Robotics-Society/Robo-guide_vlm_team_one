@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "scene_facts": "The image shows a hand pointing at a traffic sign. The sign has two parts: the top part is a red circle with a car and a slash through it (no vehicles), and the bottom part is a red circle with the number '15' inside it (speed limit). The hand is pointing directly at the bottom part of the sign, which is the speed limit sign. There is no other object being pointed at. The question asks whether the object indicated by the finger is located above or below the speed limit sign. Since the finger is pointing at the speed limit sign itself, the object indicated is the speed limit sign. Therefore, the object indicated is not above or below the speed limit sign; it is the speed limit sign. However, if we interpret the question as asking about the relative position of the two signs, the speed limit sign (15) is below the no vehicles sign. But the question specifically asks about the object indicated by the finger, which is the speed limit sign. Given the options, the most logical interpretation is that the question is asking about the position of the speed limit sign relative to the no vehicles sign. The speed limit sign is below the no vehicles sign. Therefore, the answer is 'Below'. However, the question is phrased as 'Is the object indicated by my finger located above or below the speed limit sign?', which is confusing because the object indicated is the speed limit sign itself. To resolve this, we can assume that the question is asking about the position of the speed limit sign relative to the no vehicles sign. The speed limit sign is below the no vehicles sign. Therefore, the answer is 'Below'. But since the question is asking about the object indicated by the finger, which is the speed limit sign, and the speed limit sign is not above or below itself, the question might be flawed. However, given the options

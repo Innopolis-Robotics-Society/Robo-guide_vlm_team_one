@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The user is pointing at a pink box labeled with Chinese characters that translate to 'Ocean Blue'. The other boxes are yellow (Red Sun Star) and blue (Dream Blue). Only the pink box matches the pointing gesture and the question about the brand name's English translation."
+}

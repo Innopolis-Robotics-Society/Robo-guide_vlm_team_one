@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.49,\n    0.73,\n    0.58,\n    0.82\n  ],\n  \"scene_facts\": \"The image shows a bakery section in a store with various packaged breads and dairy products. A hand is pointing at one of the packaged bread items on the shelf. The pointed item appears to be a loaf of bread with visible dark specks or chunks inside, suggesting it might contain chocolate chips or similar inclusions. Other items include milk bottles and other types of bread, but the focus is clearly on the bread being pointed at.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3873.764910007594,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a bakery section in a store with various packaged breads and dairy products on shelves. A person's hand is visible in the foreground, pointing towards one of the packaged bread items. The packaging is clear plastic with a white top, allowing the contents to be seen. The bread appears to have visible chunks or pieces inside, which could indicate an ingredient like chocolate chips, nuts, or fruit. The surrounding area includes other bread packages, some labeled with Chinese characters, and a bottle of milk on the left side. The lighting is bright, typical of a retail environment, and the overall scene suggests a shopping experience where the person is selecting a product.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3111.3302809826564,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a bakery aisle in a store. A hand is pointing at a packaged bread item on the shelf. The bread appears to be sliced and has visible dark specks or chunks inside, suggesting it might contain chocolate chips or similar inclusions. The packaging is clear plastic with a white top, and the bread itself looks like a loaf of sliced bread with embedded ingredients. The surrounding items include milk bottles and other packaged goods, but the focus is on the bread being pointed at. The hand is clearly indicating one specific product among several similar ones on the shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2840.236109972466,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

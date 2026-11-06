@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 4,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.53,\n    0.62,\n    0.78,\n    0.78\n  ],\n  \"scene_facts\": \"The scene is a supermarket meat section. A person is pointing at a packaged whole chicken in a refrigerated display case. The chicken is pale yellow/white, typical of a broiler chicken. There are other packaged poultry items nearby, including what looks like duck breasts or other cuts. The person's finger is clearly pointing at the whole chicken in the lower right section of the display case.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2069.8461919964757,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 5,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a supermarket meat section with various poultry products on display. A person is pointing at a packaged item in the lower shelf, which appears to be a whole chicken or similar poultry product. The exact type of poultry cannot be determined from the image alone, as the resolution is low and the item is partially obscured by packaging and other items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1801.962691009976,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 4,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    0\n  ],\n  \"scene_facts\": \"The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing at a packaged item in the lower shelf. The item appears to be a whole chicken or a similar poultry product, wrapped in clear plastic. The person is wearing a green jacket and is pointing towards the lower right section of the display case. The background shows other shoppers and staff, as well as refrigerated shelves with more products. The focus is on the item being pointed at, which is a packaged poultry product.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1974.6415360132232,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

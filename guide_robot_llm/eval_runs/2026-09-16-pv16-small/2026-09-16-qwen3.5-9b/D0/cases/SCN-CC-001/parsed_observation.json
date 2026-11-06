@@ -1,0 +1,11 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "redbox-01",
+    "cabinet-03",
+    "vase-04"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "На кадрах с камеры виден один человек, стоящий у прилавка. На прилавке — белый объект (возможно, ваза vase-04). На полке слева — красный ящик (redbox-01). Справа — синий шкаф (cabinet-03). Никто не указывает на экспонаты."
+}

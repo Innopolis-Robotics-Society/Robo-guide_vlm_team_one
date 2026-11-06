@@ -1,0 +1,100 @@
+{
+  "case_id": "ENG-CC-002",
+  "source": "pilot-cc",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 2886.903,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0030800001695752144,
+              "upload_ms": 212.69613702315837,
+              "ttft_ms": 669.1386559978127,
+              "full_ms": 2099.3949469993822,
+              "parse_ready_ms": 2099.3949469993822
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0032809912227094173,
+              "upload_ms": 75.72873399476521,
+              "ttft_ms": 214.35845099040307,
+              "full_ms": 787.4405820039101,
+              "parse_ready_ms": 787.4405820039101
+            }
+          ]
+        }
+      },
+      "cot_reason": "**Этап 1: Посчитай всех людей в кадре по одному.**\n\n- В центре кадра, у стены, стоит один человек.\n- У него круглая голова, тело прямоугольное, ноги — две вертикальные линии.\n- Никаких других людей на фоне, в углу, за стеной или в отражении — их нет.\n- **Итого: 1 человек.**\n\n---\n\n**Этап 2: Оцени готовность слушать.**\n\nКритерии:\n- **Близость**: человек находится в центре кадра, близко к «экрану» (зелёному прямоугольнику, который можно считать источником информации/речи).\n- **Взгляд**: его глаза направлены прямо вверх — на зелёный блок, что указывает на внимание к источнику.\n- **Вовлечённость**: стоит неподвижно, без признаков ухода или отвлечения — выглядит сосредоточенным.\n\n→ Все три критерия выполнены.\n\n**Итого: 1 человек готов слушать.**\n\n---\n\n**Ответ:**  \nВсего людей: **1**  \nГотовых слушать: **1**"
+    }
+  },
+  "latency_ms": 2886.903,
+  "attempts": 2,
+  "case": {
+    "case_id": "ENG-CC-002",
+    "source": "pilot-cc",
+    "track": "audience",
+    "split_group_id": "g-eng-ENG-CC-002",
+    "media": {
+      "path": "pilot/media/cc/ENG-CC-002.png",
+      "sha256": "d0c4cd2dbca1026326175a82b68d3a388f3ac7b5a7992248d9d770e96b8486a3",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Посчитай людей на кадре и определи, сколько из них готовы слушать дальше.",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1,
+      "engaged_count": 1
+    },
+    "provenance": {
+      "source": "pilot-cc",
+      "license": "self-generated synthetic (PIL, deterministic spec, seed 20260914); no real persons; no redistribution",
+      "version": "eng-manifest-v1 (2026-09-15, Taiga #16 F1)",
+      "rights_note": "synthetic, no real persons (rights_ledger: n/a)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec)",
+      "min_engaged": 2,
+      "count_bucket": "1"
+    }
+  }
+}

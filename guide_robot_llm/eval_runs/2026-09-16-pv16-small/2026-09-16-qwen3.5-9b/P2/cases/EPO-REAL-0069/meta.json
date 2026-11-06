@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0069",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 5893.471,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0026799971237778664,
+              "upload_ms": 282.98413500306197,
+              "ttft_ms": 363.79973602015525,
+              "full_ms": 3099.1783200006466,
+              "parse_ready_ms": 3099.1783200006466
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002749991836026311,
+              "upload_ms": 111.21124599594623,
+              "ttft_ms": 287.19623800134286,
+              "full_ms": 2794.215155998245,
+              "parse_ready_ms": 2794.215155998245
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест посетителя: рука указывает вниз, в сторону нижней полки витрины, где находятся белые тюбики/баночки и пакетики.\n\n(2) Кандидаты в этом секторе: epobj-69-a, epobj-69-b, epobj-69-c, epobj-69-d — все они расположены на нижней полке или рядом с ней, в зоне, куда указывает рука.\n\n(3) Слова посетителя: «показывай мне то, что для лица» — это указывает на косметические средства для ухода за кожей лица, что соответствует типу товаров на нижней полке (кремы, сыворотки, маски и т.д.).\n\n(4) После анализа направления жеста, взгляда, слов и расположения экспонатов — все четыре кандидата находятся в одной зоне, но только один из них точно соответствует слову «для лица» и находится в фокусе жеста. Однако, поскольку в задании не указаны конкретные названия экспонатов, а только их ID, и все они находятся в одной зоне, невозможно однозначно выделить один кандидат без дополнительной информации.\n\nНо согласно инструкции: «Если после шага (4) кандидатов не один — воздержись».\n\nВ данном случае — кандидатов несколько, и нет оснований выбрать только один.\n\nОтвет: воздержись."
+    }
+  },
+  "latency_ms": 5893.471,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0069",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-69",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+      "sha256": "341ec15954f8b022966ecab47f3c48cf64e470b7646600dea421a029cac7fd0d",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary function of the items located here?\nA. Stationery and office organization\nB. Household cleaning and sanitation\nC. Food and beverage consumption\nD. Skincare or cosmetic application\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-69-a",
+      "epobj-69-b",
+      "epobj-69-c",
+      "epobj-69-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-69-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-69-a",
+        "epobj-69-b",
+        "epobj-69-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Affordance & Function",
+      "deixis_level": "L2",
+      "n_distractors": 3,
+      "answer_map": {
+        "Stationery and office organization": "epobj-69-a",
+        "Household cleaning and sanitation": "epobj-69-b",
+        "Food and beverage consumption": "epobj-69-c",
+        "Skincare or cosmetic application": "epobj-69-d"
+      }
+    }
+  }
+}

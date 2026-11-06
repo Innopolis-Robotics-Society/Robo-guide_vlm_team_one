@@ -1,0 +1,17 @@
+{
+  "people_count": 4,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.58,
+    0.61,
+    0.77,
+    0.75
+  ],
+  "scene_facts": "The image shows a supermarket or grocery store setting with a refrigerated display case containing packaged poultry products. A person in the foreground is pointing at a specific item in the display case. The item being pointed at appears to be a whole raw chicken, likely a yellow broiler chicken, based on its color and shape. The other options (pork chop, silkie chicken, duck breast) do not match"
+}

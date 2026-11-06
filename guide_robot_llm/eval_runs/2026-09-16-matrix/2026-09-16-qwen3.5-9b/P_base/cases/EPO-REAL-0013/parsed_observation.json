@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-c"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.38,
+    0.35,
+    0.52,
+    0.68
+  ],
+  "scene_facts": "В кадре видны полки с коробками, на одной из которых — надпись «海之蓝» (Ocean Blue). Рука в чёрной перчатке указывает на эту коробку."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\"answer\": \"Недостаточно информации. Пожалуйста, предоставьте кадры для анализа.\"\n, \"confidence\": 0.0, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 827.3844919749536,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\"answer\": \"Недостаточно информации. Пожалуйста, предоставьте кадры для анализа.\"\n, \"confidence\": 0.0, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 498.4315359906759,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407081_473709459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение не содержит информации о том, сколько людей готовы слушать. Я могу только посчитать видимых людей на изображении.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 684.2368989891838,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

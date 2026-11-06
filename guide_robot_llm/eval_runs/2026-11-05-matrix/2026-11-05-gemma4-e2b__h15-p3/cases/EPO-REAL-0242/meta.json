@@ -1,0 +1,120 @@
+{
+  "case_id": "EPO-REAL-0242",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P3",
+  "calls_per_case": 3,
+  "terminal_reason": "k_exhausted",
+  "terminal_abstain": true,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1471.969,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.003169989213347435,
+            "upload_ms": 59.83762801042758,
+            "ttft_ms": 94.61957201710902,
+            "full_ms": 1471.9360670133028,
+            "parse_ready_ms": 1471.9360670133028
+          }
+        ]
+      }
+    },
+    "decision": {
+      "latency_ms": 244.99,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.003289984306320548,
+            "upload_ms": 60.43981900438666,
+            "ttft_ms": 138.68183101294562,
+            "full_ms": 244.96124699362554,
+            "parse_ready_ms": 244.96124699362554
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 5172.794,
+  "attempts": 3,
+  "case": {
+    "case_id": "EPO-REAL-0242",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-242",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/242.jpg",
+      "sha256": "f7652b1df865e623ee590bff81f1fc1c067c8908b713cdfe83fa1806b4b64a77",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What specific alphanumeric code is painted in white on the surface of the object I am pointing at?\nA. JISS\nB. J154\nC. J155\nD. T155\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-242-a",
+      "epobj-242-b",
+      "epobj-242-c",
+      "epobj-242-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-242-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-242-a",
+        "epobj-242-b",
+        "epobj-242-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "JISS": "epobj-242-a",
+        "J154": "epobj-242-b",
+        "J155": "epobj-242-c",
+        "T155": "epobj-242-d"
+      }
+    }
+  }
+}

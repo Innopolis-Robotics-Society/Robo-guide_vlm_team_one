@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0103",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 4690.848,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002869986928999424,
+              "upload_ms": 289.66441002557985,
+              "ttft_ms": 348.41846601921134,
+              "full_ms": 3313.5133880132344,
+              "parse_ready_ms": 3313.5133880132344
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002700020559132099,
+              "upload_ms": 99.84859998803586,
+              "ttft_ms": 262.95440600370057,
+              "full_ms": 1377.2610549931414,
+              "parse_ready_ms": 1377.2610549931414
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово:\n\n---\n\n**(1) Куда направлен жест?**\n\nНа изображении видна рука человека (внизу слева), которая указывает пальцем на нижнюю полку магазина. Палец направлен вправо-вниз, примерно на ряд пакетов с красной и зелёной упаковкой — это, скорее всего, чипсы или снеки.\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nИз списка кандидатов:  \n- **epobj-103-a** — вероятно, верхняя полка (по положению в пространстве)  \n- **epobj-103-b** — средняя полка  \n- **epobj-103-c** — нижняя полка (ближе к камере/руке)  \n- **epobj-103-d** — ещё одна позиция, возможно, тоже на нижней или средней полке\n\nПоскольку рука указывает на **нижнюю полку**, кандидаты, которые находятся в этом секторе — это те, что визуально расположены там же. Судя по расположению на полке, это пакеты с логотипом “Oishi” (красные и зелёные пакеты с изображением лица).\n\n---\n\n**(3) Согласуются ли слова посетителя?**\n\nВопрос: “Based on the text on the package, what is the brand name of this product?” — то есть, нужно определить бренд по надписи на упаковке.\n\nНа нижних полках видны пакеты с логотипом **Oishi** (например, красный пакет с желтым лицом — это Oishi Chicken Flavor или подобное). Также есть пакеты Lay’s, но они выше.\n\nЕсли человек говорит (или подразумевается, что он спрашивает про продукт, на который указывает), то он указывает именно на Oishi.\n\n---\n\n**(4) Остался ли ровно один кандидат?**\n\nИз кандидатов:\n- epobj-103-a — верхняя полка → не подходит\n- epobj-103-b — средняя полка → Lay’s, не Oishi\n- epobj-103-c — нижняя полка, Oishi → подходит\n- epobj-103-d — возможно, тоже Oishi? Но если это отдельный объект, нужно проверить.\n\nОднако, поскольку рука указывает на конкретный ряд, и там видны пакеты Oishi, а также"
+    }
+  },
+  "latency_ms": 4690.848,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0103",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-103",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+      "sha256": "c02a34846757feafff001a36ebd9d70a73aa7088869e285635aa468069a741dc",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Based on the text on the package, what is the brand name of this product?\nA. Lay's\nB. Orion\nC. Pringles\nD. Oishi\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-103-a",
+      "epobj-103-b",
+      "epobj-103-c",
+      "epobj-103-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-103-b",
+      "box_px": null,
+      "distractors": [
+        "epobj-103-a",
+        "epobj-103-c",
+        "epobj-103-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Lay's": "epobj-103-a",
+        "Orion": "epobj-103-b",
+        "Pringles": "epobj-103-c",
+        "Oishi": "epobj-103-d"
+      }
+    }
+  }
+}

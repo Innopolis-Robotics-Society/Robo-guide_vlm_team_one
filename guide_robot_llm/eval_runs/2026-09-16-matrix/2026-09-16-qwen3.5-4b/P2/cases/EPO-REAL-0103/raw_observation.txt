@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.0,
+    0.6,
+    0.4,
+    0.9
+  ],
+  "scene_facts": "The image shows a supermarket aisle with shelves stocked with various snack products. A person's hand is visible in the lower left corner of the image, pointing towards a specific product on the shelf. The hand is extended and the index finger is directed at a red package of snacks located on the bottom shelf. The package appears to be a type of Japanese snack, possibly dorayaki or similar, based on its design and the context of the store. The person's hand is clearly indicating this particular item, suggesting they are either selecting it or drawing attention to it. The surrounding shelves contain other snack products, but the focus is clearly on the red package being pointed at by the hand. The lighting in the store is bright, typical of a retail environment, and the shelves are well-stocked with a variety of products. The person's hand is the only human element in the image, and its gesture is the primary action taking place. The product being pointed at is distinct from the others on the shelf due to its color and placement on the bottom shelf. The overall scene suggests a moment of selection or identification of a specific snack item in a retail setting."
+}

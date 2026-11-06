@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a hand pointing at a shelf of packaged goods in what appears to be a retail store. The hand is wearing a black glove and is pointing directly at a peach-colored box labeled with Chinese characters. To the left are yellow boxes, and to the right are blue boxes. The scene is indoors with overhead lighting."
+}

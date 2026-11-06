@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely products from a store or market. The focus is on several boxes with colorful designs. The hand is pointing towards a central orange/peach-colored box.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1433.1156089901924,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely products from a store or market. The focus is on several boxes with colorful designs. The hand is pointing towards a box in the center-right foreground.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1234.4678809749894,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n],\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely products from a store or market. The focus is on several boxes with colorful designs. The hand is pointing towards a box in the center-right of the visible area. The text on the pointed box is not clearly legible in English, but it appears to be Chinese characters. The options provided are English brand names: A. Ocean Blue, B. Red Star, C. Dream Blue, D. Golden Harvest. Since the visible text is not an English brand name, I cannot definitively match it to any of the options based solely on the text visible in the image and the provided options.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1576.0897790023591,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

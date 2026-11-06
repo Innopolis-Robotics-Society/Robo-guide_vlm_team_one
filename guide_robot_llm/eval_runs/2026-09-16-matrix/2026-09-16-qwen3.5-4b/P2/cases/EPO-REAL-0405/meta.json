@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0405",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 4802.411,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003330002073198557,
+              "upload_ms": 298.0361189984251,
+              "ttft_ms": 356.3868450000882,
+              "full_ms": 3317.6824010151904,
+              "parse_ready_ms": 3317.6824010151904
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029900111258029938,
+              "upload_ms": 120.89925000327639,
+              "ttft_ms": 289.0693689987529,
+              "full_ms": 1484.6529869828373,
+              "parse_ready_ms": 1484.6529869828373
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово:\n\n---\n\n**(1) Куда направлен жест?**\n\nНа изображении видна рука, указывающая пальцем на **круглую металлическую тарелку**, внутри которой лежат маленькие пакетики с едой (вероятно, конфеты или снеки). Жест направлен прямо на эту тарелку.\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nИз списка кандидатов:  \n- epobj-405-a  \n- epobj-405-b  \n- epobj-405-c  \n- epobj-405-d  \n\nНам нужно сопоставить их с объектами на изображении. Поскольку в задании не дано прямое описание каждого экспоната, мы должны использовать контекст и визуальное соответствие.\n\nПредположим, что:\n- epobj-405-a — тарелка с едой (так как это центральный объект, на который указывает рука)\n- epobj-405-b — что-то другое, например, ноутбук или книги\n- epobj-405-c — возможно, мышка или другие предметы\n- epobj-405-d — ещё один объект\n\nНо поскольку в задании сказано: «Учитывай вместе: направление руки/жеста, куда смотрит человек, слова посетителя...» — а слов посетителя нет в тексте вопроса, значит, мы опираемся только на визуальный жест.\n\nЖест направлен на **тарелку с едой**. Если предположить, что epobj-405-a — это именно она, то кандидат один.\n\n---\n\n**(3) Согласуются ли с этим слова посетителя?**\n\nВ тексте вопроса нет слов посетителя — только инструкция. Значит, мы не можем проверять согласование с речью. Но поскольку жест ясен, и только один объект попадает в зону указывания, можно считать, что кандидат согласуется.\n\n---\n\n**(4) Остался ли ровно один кандидат?**\n\nЕсли epobj-405-a — тарелка, то да, только один кандидат попадает в зону жеста.\n\n---\n\n✅ **Ответ: B. Yes**\n\n(Потому что жест указывает на один конкретный объект — тарелку, и если этот объект соответствует epobj-405-a, то кандидат один.)\n\n---\n\n**Финальный"
+    }
+  },
+  "latency_ms": 4802.411,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0405",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-405",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+      "sha256": "f8ed04121ad637b1a510895e78adc62e78916651b3c531d47b6ae23957c0fe82",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is this object a computer mouse?\nA. Unknown\nB. Yes\nC. Maybe\nD. No\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-405-a",
+      "epobj-405-b",
+      "epobj-405-c",
+      "epobj-405-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-405-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-405-a",
+        "epobj-405-b",
+        "epobj-405-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Unknown": "epobj-405-a",
+        "Yes": "epobj-405-b",
+        "Maybe": "epobj-405-c",
+        "No": "epobj-405-d"
+      }
+    }
+  }
+}

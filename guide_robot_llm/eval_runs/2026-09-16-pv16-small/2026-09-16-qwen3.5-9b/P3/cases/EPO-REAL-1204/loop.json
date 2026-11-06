@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a person's hand reaching toward a shelf in what appears to be a stationery or office supply store. The hand is positioned near the bottom shelf, touching or about to touch a stack of clear plastic folders or binders with red and green accents. There are multiple shelves above and below, filled with various office supplies like notebooks, folders, and pens. The hand is clearly interacting with one specific item on the lower shelf — a stack of clear plastic sleeves or folders with colored tabs or bindings. No other items are being touched or pointed at. The gesture is direct and focused on that single stack of items. There is no ambiguity about which item is being selected — it’s the one the hand is physically contacting. No additional clarification is needed because the action is unambiguous and localized to one exhibit. The scene does not show any other candidate items being interacted with, so no further candidates need to be considered. The pointing evidence is sufficient to identify the target exhibit without needing to request clarification or additional frames. The exhibit being pointed to is the stack of clear plastic folders/binders with red and green accents on the lower shelf, which corresponds to epobj-1204-c based on typical cataloging of such items in this context. The other candidates (epobj-1204-a, epobj-1204-b, epobj-1204-d) refer to other items on different shelves or types of products not being interacted with. Therefore, the final answer is epobj-1204-c.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 4745.40414402145,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"На изображении видна полка с канцелярскими товарами. Рука человека указывает на стопку прозрачных папок или файлов, расположенную на нижней полке, ближе к центру. На полке также видны другие товары: тетради, папки, цветные ручки в упаковке. Указательный палец направлен именно на стопку прозрачных папок с красными и зелеными ленточками или зажимами.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2352.8048130101524,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.48,\n    0.87,\n    0.54,\n    0.93\n  ],\n  \"scene_facts\": \"В кадре видна полка с канцелярскими товарами. Рука человека указывает на стопку прозрачных папок или файлов, расположенных на нижней полке. На полке также видны другие товары: блокноты, цветные ручки, пластиковые органайзеры. Указательный жест направлен именно на эту стопку прозрачных папок.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2657.274792989483,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

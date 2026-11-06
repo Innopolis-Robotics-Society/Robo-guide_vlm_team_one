@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0028",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 5318.148,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0033399846870452166,
+              "upload_ms": 298.86023301514797,
+              "ttft_ms": 357.58225299650803,
+              "full_ms": 3314.2673880211078,
+              "parse_ready_ms": 3314.2673880211078
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029500224627554417,
+              "upload_ms": 121.68344599194825,
+              "ttft_ms": 289.2920239828527,
+              "full_ms": 2003.485441004159,
+              "parse_ready_ms": 2003.485441004159
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся по шагам:\n\n(1) **Куда направлен жест?**  \nРука указывает на нижний знак — тот, что с цифрой «15». Это знак ограничения скорости (скорее всего, 15 км/ч). Верхний знак — запрет для автомобилей. Жест направлен именно на нижний знак.\n\n(2) **Какие кандидаты попадают в этот сектор?**  \nИз списка кандидатов:  \n- epobj-28-a  \n- epobj-28-b  \n- epobj-28-c  \n- epobj-28-d  \n\nПоскольку в задании не указаны конкретные изображения или описания экспонатов, мы должны полагаться на логику и контекст. В данном случае — речь идёт о знаках на дереве. Вероятно, каждый из этих ID соответствует одному из двух знаков: верхнему (запрет машин) или нижнему (скорость 15).\n\nЕсли предположить, что:\n- epobj-28-a — верхний знак (запрет машин)\n- epobj-28-b — нижний знак (15 км/ч)\n\nТо жест указывает на **epobj-28-b**.\n\n(3) **Согласуются ли слова посетителя?**  \nВопрос: «Is the object indicated by my finger located above or below the speed limit sign?»  \nНо здесь есть нюанс: если «speed limit sign» — это сам знак с «15», то указанный объект (тот же самый знак) не может быть выше или ниже самого себя. Однако, возможно, в оригинальном вопросе имелось в виду: «на какой из знаков указывает рука — на тот, что выше или ниже другого знака?»  \nТогда: рука указывает на нижний знак, который находится **ниже** верхнего знака (который, возможно, тоже является частью системы знаков, но не обязательно «speed limit sign»).\n\nОднако, если «speed limit sign» — это именно знак с «15», то вопрос может быть сформулирован неправильно, либо имеется в виду другой объект.\n\nНо поскольку в задании сказано: «определите, на какой экспонат из списка кандидатов указывает посетитель», и мы видим, что рука указывает на знак с «15», и если этот знак соответствует epobj-28-b, то ответ — B.\n\n(4) **Остался ли"
+    }
+  },
+  "latency_ms": 5318.148,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0028",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-28",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+      "sha256": "830cdd9ece6d58d1e8160d7b14c932229e524a2377fcc0f3ea1eafc4ec703712",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is the object indicated by my finger located above or below the speed limit sign?\nA. Below\nB. To the right\nC. Above\nD. To the left\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-28-a",
+      "epobj-28-b",
+      "epobj-28-c",
+      "epobj-28-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-28-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-28-a",
+        "epobj-28-b",
+        "epobj-28-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Context & Relation",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Below": "epobj-28-a",
+        "To the right": "epobj-28-b",
+        "Above": "epobj-28-c",
+        "To the left": "epobj-28-d"
+      }
+    }
+  }
+}

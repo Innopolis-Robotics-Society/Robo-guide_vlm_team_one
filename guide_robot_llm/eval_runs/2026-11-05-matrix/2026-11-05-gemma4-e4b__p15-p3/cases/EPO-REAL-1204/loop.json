@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person's hand reaching towards the lower shelves of a display case containing various items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2083.8842959783506,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person's hand reaching towards the shelves of a display case, but no specific object is clearly indicated by a pointing gesture.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1697.6399699924514,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is reaching towards the lower shelves of the display case.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1566.2575009919237,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

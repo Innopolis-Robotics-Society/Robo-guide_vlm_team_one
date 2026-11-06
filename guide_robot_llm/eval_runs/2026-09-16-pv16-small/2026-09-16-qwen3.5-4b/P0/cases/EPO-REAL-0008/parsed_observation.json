@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.48,
+    0.46,
+    0.57,
+    0.62
+  ],
+  "scene_facts": "The person is pointing at a packaged item hanging on a display rack in a store. The item appears to be a cleaning sponge or similar household product, as indicated by its shape and packaging. The surrounding shelves contain various household goods, including cleaning supplies and personal care items."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-28-a\", \"epobj-28-b\", \"epobj-28-c\", \"epobj-28-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": [0, 0, 0, 0], \"scene_facts\": \"The image shows a hand pointing at a speed limit sign (15 km/h) mounted on a pole. The sign is circular with a red border and white background, displaying the number '15' in black. Above it is another circular sign with a red border and a car symbol crossed out, indicating no motor vehicles allowed. The hand is pointing directly at the lower sign (the speed limit sign).\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2266.8136930151377,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a person's hand pointing at a speed limit sign (15 km/h) on a pole. There is another sign above it showing no cars allowed. The background includes trees, a road, and parked cars. The person is standing on the side of the road, facing the signs. The hand is clearly indicating the lower sign with the number 15.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2246.178161993157,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.47,\n    0.42,\n    0.56,\n    0.51\n  ]\n,\n  \"scene_facts\": \"The image shows a hand pointing at a speed limit sign (15 km/h) on a pole. The sign is located below a no-parking sign. The background includes trees, a road, and parked cars. The hand is clearly indicating the speed limit sign, which is positioned below the no-parking sign. The scene is outdoors during the daytime with clear weather.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2373.7324529793113,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

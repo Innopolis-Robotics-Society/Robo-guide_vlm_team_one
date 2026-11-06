@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image does not contain enough information to determine which exhibit the visitor is pointing to."
+}

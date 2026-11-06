@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0167",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 3813.369,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0037999998312443495,
+              "upload_ms": 80.06062699132599,
+              "ttft_ms": 134.19361499836668,
+              "full_ms": 2528.7215400021523,
+              "parse_ready_ms": 2528.7215400021523
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.004059984348714352,
+              "upload_ms": 56.20442199870013,
+              "ttft_ms": 162.92101601720788,
+              "full_ms": 1284.5665350032505,
+              "parse_ready_ms": 1284.5665350032505
+            }
+          ]
+        }
+      },
+      "cot_reason": "На основе предоставленного изображения и инструкций, я проведу пошаговый анализ:\n\n**(1) Куда направлен жест:** Посетитель указывает рукой на группу упакованных товаров, расположенных в центральной части витрины, в районе, где находятся три белые упаковки с коричневым содержимым.\n\n**(2) Какие кандидаты попадают в этот сектор:** В этом секторе находятся следующие экспонаты (судя по расположению на изображении):\n*   epobj-167-a (вероятно, левая упаковка с печеньем/выпечкой)\n*   epobj-167-b (центральная упаковка с коричневым содержимым)\n*   epobj-167-c (правая упаковка с коричневым содержимым)\n*   epobj-167-d (может относиться к товарам справа от центральной группы, но жест явно направлен на центральную группу).\n\n**(3) Согласуются ли с этим слова посетителя:** В вашем запросе **отсутствуют слова посетителя**. Следовательно, этот шаг не может быть выполнен для подтверждения выбора.\n\n**(4) Остался ли ровно один кандидат:** Поскольку нет слов посетителя для дополнительной фильтрации, и жест направлен на группу из нескольких схожих по виду упаковок (epobj-167-a, epobj-167-b, epobj-167-c), невозможно однозначно выделить ровно один кандидат.\n\n**Вывод:** Поскольку после шага (4) кандидатов не один (или невозможно определить единственного кандидата из-за отсутствия слов), я воздерживаюсь от ответа."
+    }
+  },
+  "latency_ms": 3813.369,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0167",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-167",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+      "sha256": "aa02e34dde859290df281491b77fda8662e231e44c49d5fcfb825f5bd6809f4d",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary flavor or ingredient indicated by the appearance of this bakery item?\nA. Red bean\nB. Whole wheat\nC. Milk\nD. Chocolate chip\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-167-a",
+      "epobj-167-b",
+      "epobj-167-c",
+      "epobj-167-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-167-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-167-b",
+        "epobj-167-c",
+        "epobj-167-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L2",
+      "n_distractors": 3,
+      "answer_map": {
+        "Red bean": "epobj-167-a",
+        "Whole wheat": "epobj-167-b",
+        "Milk": "epobj-167-c",
+        "Chocolate chip": "epobj-167-d"
+      }
+    }
+  }
+}

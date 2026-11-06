@@ -1,0 +1,16 @@
+{
+  "people_count": 1
+,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ]
+,
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "the image shows a close-up of a shelf with numerous white and colored packages, likely personal care or hygiene products, arranged in rectangular plastic containers on multiple shelves. the hand in the foreground is pointing towards the middle section of these products."
+}

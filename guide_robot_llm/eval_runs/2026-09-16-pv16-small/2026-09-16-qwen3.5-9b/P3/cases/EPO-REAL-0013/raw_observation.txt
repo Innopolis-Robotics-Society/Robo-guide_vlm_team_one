@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a"
+  ]
+,
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.45,
+    0.55,
+    0.52,
+    0.65
+  ],
+  "scene_facts": "The image shows a retail shelf with various boxed products, likely alcohol or gift items. A gloved hand is pointing at one of the boxes. The box being pointed to is peach-colored with Chinese characters on it. To the left are yellow boxes with red circular logos. To the right are blue boxes with white and red designs. Above the shelf is an exit sign. The hand is clearly indicating the peach-colored box in the center."
+}

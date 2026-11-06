@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.57,\n    0.64,\n    0.6,\n    0.68\n  ],\n  \"scene_facts\": \"The image shows a person pointing towards a building with a large red sign that reads 'UNIQLO'. The building is part of a larger complex with other visible brands like Nike. The person's hand is extended, and the index finger is clearly directed at the Uniqlo sign on the building. The background includes a clear sky and other urban elements, but the focus is on the Uniqlo store. The pointing gesture is unambiguous, and the target is clearly the Uniqlo sign on the building.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3037.067995988764,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\"\n,\n  \"pointing_box\": [\n    0.57,\n    0.64,\n    0.62,\n    0.69\n  ]\n,\n  \"scene_facts\": \"The image shows a person pointing at a building with a large red logo that reads 'UNIQLO' on it. The building is part of a larger complex with other brands like Nike visible. The person's hand is extended towards the UNIQLO sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2200.27822299744,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing with their right hand toward a large building complex. The building has multiple brand logos visible: a Nike swoosh on the left side, and a red Uniqlo logo on the upper right side of the building. The person is pointing directly at the Uniqlo logo, which is clearly visible on the facade of the building. The Nike logo is also present but is not the focus of the gesture. The scene appears to be an outdoor shopping area with other buildings and people in the background.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2416.0399380198214,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

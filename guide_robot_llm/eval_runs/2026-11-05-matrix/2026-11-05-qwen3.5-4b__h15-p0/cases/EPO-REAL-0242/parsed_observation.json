@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-242-a",
+    "epobj-242-b",
+    "epobj-242-c",
+    "epobj-242-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The image shows a modern building with glass windows and a metal railing. In the foreground, there are three red circular manhole covers on the ground. One of them has white alphanumeric text painted on it, which appears to be 'J155'. A person's finger is pointing at this manhole cover. The surrounding area includes grass, trees, and a paved walkway leading to the building entrance."
+}

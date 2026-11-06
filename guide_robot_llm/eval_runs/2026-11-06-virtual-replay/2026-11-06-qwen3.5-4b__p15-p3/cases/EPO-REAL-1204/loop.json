@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"none\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1841.7535580229014,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"no nones\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1374.072075006552,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"a person is reaching towards a shelf in what appears to be a stationery store. The hand is positioned near a stack of clear plastic folders or sleeves on one of the lower shelves. There are no visible pointing gestures (e.g., finger pointing, laser pointer) or explicit selection indicators in the image. The person’s hand is open and appears to be either selecting or placing an item, but not specifically pointing at one candidate over another.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1842.9442910128273,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

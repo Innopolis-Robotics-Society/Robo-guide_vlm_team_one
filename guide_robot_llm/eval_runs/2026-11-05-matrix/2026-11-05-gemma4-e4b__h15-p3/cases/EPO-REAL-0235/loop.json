@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/235.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-235-a\",\n    \"epobj-235-b\",\n    \"epobj-235-c\",\n    \"epobj-235-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards a stack of books on a shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1964.3124919966795,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/235.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-235-a\",\n    \"epobj-235-b\",\n    \"epobj-235-c\",\n    \"epobj-235-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards a stack of books on a shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1570.17235798412,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/235.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-235-a\",\n    \"epobj-235-b\",\n    \"epobj-235-c\",\n    \"epobj-235-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The user is pointing towards a shelf of books.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1593.139192002127,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

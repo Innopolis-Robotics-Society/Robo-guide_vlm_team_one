@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0001-F079",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 2693.68,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0027999922167509794,
+              "upload_ms": 198.3207690063864,
+              "ttft_ms": 251.43339502392337,
+              "full_ms": 2051.574540004367,
+              "parse_ready_ms": 2051.574540004367
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0031199888326227665,
+              "upload_ms": 50.822635006625205,
+              "ttft_ms": 183.0942689848598,
+              "full_ms": 641.7140520061366,
+              "parse_ready_ms": 641.7140520061366
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В левой части кадра стоит одна женщина в светлой куртке и чёрных брюках. Она стоит на траве, рядом с тропинкой.\n- В остальной части кадра (справа, вдали, на заднем плане) нет других людей.\n\nИтого: всего людей — 1.\n\nЭтап 2: Оценим готовность этого человека слушать.\n\n- Близость: женщина находится в пределах видимости камеры, но не слишком близко — стоит на некотором расстоянии от тропинки, где, вероятно, находится робот (предполагается, что робот находится на тропинке или рядом с ней). Это можно считать умеренной близостью — она не слишком далеко, но и не вплотную.\n- Взгляд: женщина смотрит прямо в камеру, что может означать, что она осознанно обращает внимание на то, что происходит перед ней — возможно, на робота. Это указывает на вовлечённость.\n- Вовлечённость: её поза расслабленная, руки в карманах, но она не отворачивается — это может свидетельствовать о том, что она готова взаимодействовать или хотя бы наблюдать.\n\nСуммируем: 1 человек, и он готов слушать (или хотя бы внимателен к происходящему).\n\nИтого: готовых — 1.\n\nОтвет: 1 1"
+    }
+  },
+  "latency_ms": 2693.68,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0001-F079",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0001",
+    "media": {
+      "path": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409275_471044459.png",
+      "sha256": "b43cc747e27f347512ef6be7a7adb035a2c66326fcdbf27d4fb5995f7b6d17af",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 2,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

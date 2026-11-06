@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ]
+  
+  ,"pointing_evidence": "none"
+  
+  ,"pointing_box": null
+  
+  ,"scene_facts": "the visitor is looking at the display shelves, but is not clearly pointing at any specific item."
+}

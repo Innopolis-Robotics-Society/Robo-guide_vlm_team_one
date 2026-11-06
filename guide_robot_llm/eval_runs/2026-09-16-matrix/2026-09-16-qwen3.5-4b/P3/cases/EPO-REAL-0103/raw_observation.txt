@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ]
+,
+  "scene_facts": "The image shows a supermarket aisle with shelves stocked with various snack products. A person's hand is visible in the foreground, pointing towards a specific product on the lower shelf. The product being pointed at appears to be a bag of chips or snacks, but the exact brand or type is not clearly identifiable due to the angle and resolution. The shelves are filled with different snack brands, including what looks like Lay's and other local brands. The lighting is bright, typical of a supermarket environment, and the floor is clean and reflective. The person's hand is extended towards the shelf, indicating interest or selection of a product. The overall scene suggests a shopping context where the individual is considering a purchase. The focus is on the interaction between the person and the product on the shelf, highlighting the decision-making process in a retail setting."
+}

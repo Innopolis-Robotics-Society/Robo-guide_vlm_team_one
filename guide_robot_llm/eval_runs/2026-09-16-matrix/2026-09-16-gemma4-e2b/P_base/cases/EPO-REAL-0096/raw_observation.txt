@@ -1,0 +1,1 @@
+{"people_count": 4, "exhibit_candidates": ["epobj-96-a", "epobj-96-b", "epobj-96-c", "epobj-96-d"], "pointing_evidence": "yes", "pointing_box": [0.54, 0.54, 0.73, 0.66], "scene_facts": "Человек указывает пальцем на здание с логотипом Nike."}

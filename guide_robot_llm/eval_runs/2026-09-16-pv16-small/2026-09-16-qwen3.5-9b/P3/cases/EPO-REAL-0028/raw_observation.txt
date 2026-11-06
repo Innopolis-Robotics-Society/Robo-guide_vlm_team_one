@@ -1,0 +1,12 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person's hand pointing at a traffic sign on a pole. The sign has two circular signs: the top one is a 'no motor vehicles' symbol (red circle with a car and a diagonal line), and the bottom one is a speed limit sign showing '15'. The hand is pointing directly at the lower sign, which displays the number '15'. There are no other exhibits visible in the image that could be pointed to. The background includes trees, a road, and parked cars, but no other signs or objects are being indicated by the gesture."
+}

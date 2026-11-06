@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0069",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "parse_failed",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 6941.178,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "length",
+      "parse_status": "failed",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002929999027401209,
+              "upload_ms": 258.4379329928197,
+              "ttft_ms": 316.51320299715735,
+              "full_ms": 3282.850650983164,
+              "parse_ready_ms": 3282.850650983164
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0038599828258156776,
+              "upload_ms": 109.06030400656164,
+              "ttft_ms": 276.3728020072449,
+              "full_ms": 3658.2368410017807,
+              "parse_ready_ms": 3658.2368410017807
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово, как указано в инструкции.\n\n---\n\n**(1) Куда направлен жест?**\n\nНа изображении видна женщина слева, которая стоит у витрины с косметическими товарами. Она держит в руках небольшой предмет (возможно, флакон или упаковку) и смотрит на него, а также на товары на полках. Её взгляд и внимание сосредоточены на **нижних полках** витрины, где расположены бутылочки, пакеты и другие косметические средства.\n\nОна не указывает пальцем на конкретный объект — её жест скорее имитирует выбор или рассмотрение товара. Но если мы интерпретируем «жест» как направление внимания, то он направлен на **нижние уровни витрины**, особенно на ряды с бутылочками и пакетами.\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nДоступные экспонаты:  \n- epobj-69-a  \n- epobj-69-b  \n- epobj-69-c  \n- epobj-69-d  \n\nПоскольку мы не видим меток или подписей к каждому объекту, нужно логически предположить, что они соответствуют разным зонам витрины. Обычно в таких задачах:\n\n- epobj-69-a — верхняя часть витрины / логотип / декор  \n- epobj-69-b — средний уровень, возможно, рекламные плакаты  \n- epobj-69-c — нижние полки, бутылочки, пакеты  \n- epobj-69-d — ещё один элемент, возможно, справа или на другом уровне  \n\nНо поскольку на фото видны **нижние полки с бутылочками и пакетами**, и женщина смотрит туда, то наиболее вероятный кандидат — **epobj-69-c**, если он соответствует нижней части витрины.\n\n---\n\n**(3) Согласуются ли слова посетителя?**\n\nВопрос: «Определи, на какой экспонат из списка кандидатов указывает посетитель.»\n\nСлово «указывает» может быть метафоричным — она не физически указывает пальцем, но её внимание направлено на нижние полки. Если мы считаем, что «указывает» = «смотрит и рассматривает», то да, она рассматривает нижние полки"
+    }
+  },
+  "latency_ms": 6941.178,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0069",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-69",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+      "sha256": "341ec15954f8b022966ecab47f3c48cf64e470b7646600dea421a029cac7fd0d",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary function of the items located here?\nA. Stationery and office organization\nB. Household cleaning and sanitation\nC. Food and beverage consumption\nD. Skincare or cosmetic application\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-69-a",
+      "epobj-69-b",
+      "epobj-69-c",
+      "epobj-69-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-69-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-69-a",
+        "epobj-69-b",
+        "epobj-69-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Affordance & Function",
+      "deixis_level": "L2",
+      "n_distractors": 3,
+      "answer_map": {
+        "Stationery and office organization": "epobj-69-a",
+        "Household cleaning and sanitation": "epobj-69-b",
+        "Food and beverage consumption": "epobj-69-c",
+        "Skincare or cosmetic application": "epobj-69-d"
+      }
+    }
+  }
+}

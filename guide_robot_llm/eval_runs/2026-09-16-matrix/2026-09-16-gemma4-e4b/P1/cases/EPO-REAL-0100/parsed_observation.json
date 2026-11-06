@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-100-a",
+    "epobj-100-b",
+    "epobj-100-c",
+    "epobj-100-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The visitor is pointing towards the shelf on the left side of the image, specifically towards the glass jar on the top shelf. The robot is positioned to the right of the shelf. The visitor's gaze is directed towards the shelf area."
+}

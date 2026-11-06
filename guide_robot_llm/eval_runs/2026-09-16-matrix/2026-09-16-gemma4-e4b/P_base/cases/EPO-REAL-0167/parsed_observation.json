@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.45,
+    0.75,
+    0.65,
+    0.95
+  ],
+  "scene_facts": "Человек держит пакет с продуктами, стоя у прилавка с выпечкой."
+}

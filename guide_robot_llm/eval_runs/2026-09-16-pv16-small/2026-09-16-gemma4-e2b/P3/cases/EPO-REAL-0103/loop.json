@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-103-a\", \"epobj-103-b\", \"epobj-103-c\", \"epobj-103-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"no\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1183.2700509985443,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-103-a\", \"epobj-103-b\", \"epobj-103-c\", \"epobj-103-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"no\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 936.8666890077293,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-103-a\", \"epobj-103-b\", \"epobj-103-c\", \"epobj-103-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"no_scene_facts\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 933.2218749914318,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

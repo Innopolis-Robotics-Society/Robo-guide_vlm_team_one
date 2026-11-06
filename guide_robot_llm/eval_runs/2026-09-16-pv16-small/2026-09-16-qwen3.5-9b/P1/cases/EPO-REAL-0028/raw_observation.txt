@@ -1,0 +1,12 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ]
+  ,
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The scene shows two people: one standing on the left side of the road, and another person whose arm is visible in the foreground, pointing toward a signpost. The signpost has two circular signs: the top one is a 'no motor vehicles' symbol (red circle with a car and a diagonal line), and the bottom one is a speed limit sign showing '15'. The person’s hand is pointing directly at the lower sign (the '15' speed limit sign). The upper sign is above the lower one. Therefore, the object indicated by the finger is below the speed limit sign — but wait: the question asks whether the indicated object is above or below the speed limit sign. Since the finger is pointing at the '15' sign, which IS the speed limit sign, then the indicated object IS the speed limit sign. But the question says: 'Is the object indicated by my finger located above or below the speed limit sign?' — implying that the indicated object is different from the speed limit sign. However, in this image, the finger is pointing at the speed limit sign itself. So if we interpret 'the object indicated' as the thing being pointed at, then it is the speed limit sign — so it is neither above nor below, it is the sign. But the options are 'Above', 'Below', 'To the right', 'To the left'. This suggests that perhaps the 'object indicated' is meant to be something else — but there is no other object being pointed at. Alternatively, maybe the question is misphrased, and it should be asking: 'Is the object indicated by my finger the speed limit sign?' — but that’s not what it says. Given the ambiguity, and since the finger is pointing at the '15' sign, which is the speed limit sign, then the indicated object is the speed limit sign. Therefore, it is not above or below — it is the sign. But the options don’t include 'it is the sign'. So

@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0001-F079",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 4190.016,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0043199979700148106,
+              "upload_ms": 186.50777600123547,
+              "ttft_ms": 241.96685801143758,
+              "full_ms": 3416.9134920230135,
+              "parse_ready_ms": 3416.9134920230135
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002949993358924985,
+              "upload_ms": 55.315150995738804,
+              "ttft_ms": 223.09407099965028,
+              "full_ms": 772.6656819868367,
+              "parse_ready_ms": 772.6656819868367
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nНа изображении видна одна женщина, стоящая слева на траве, рядом с дорожкой. Она одета в светлую куртку и тёмные брюки, смотрит в сторону камеры или чуть вправо. Никаких других людей в кадре не видно — ни на заднем плане, ни вдали по дорожке, ни за деревьями.\n\n→ Всего людей: **1**\n\n---\n\nЭтап 2: Оценка готовности слушать (по критериям: близость, взгляд, вовлечённость)\n\n- **Близость**: Женщина находится в непосредственной близости от камеры (предположительно — от робота, если камера установлена на роботе). Это соответствует критерию «близость».\n- **Взгляд**: Она смотрит примерно в сторону камеры / вперёд — возможно, на робота. Это соответствует критерию «взгляд».\n- **Вовлечённость**: Она стоит спокойно, руки в карманах, выражение лица нейтральное, но не отстранённое. Нет признаков того, что она занята чем-то другим (например, разговаривает с кем-то, смотрит в телефон). Это можно интерпретировать как умеренную вовлечённость — она готова к взаимодействию.\n\n→ Готовых слушать: **1**\n\n---\n\nИтог:\n\nВсего людей: **1**  \nГотовых слушать: **1**"
+    }
+  },
+  "latency_ms": 4190.016,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0001-F079",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0001",
+    "media": {
+      "path": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409275_471044459.png",
+      "sha256": "b43cc747e27f347512ef6be7a7adb035a2c66326fcdbf27d4fb5995f7b6d17af",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 2,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

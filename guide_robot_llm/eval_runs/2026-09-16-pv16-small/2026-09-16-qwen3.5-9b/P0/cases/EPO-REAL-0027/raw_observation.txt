@@ -1,0 +1,19 @@
+{
+  "people_count": 4,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ]
+,
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ]
+,
+  "scene_facts": "The image shows a supermarket meat section. A person in the foreground is pointing at a whole chicken in a refrigerated display case. The chicken is pale yellow/white, consistent with a broiler chicken. There are other chickens and poultry products visible in the case. The pointing gesture is directed specifically at one of the whole chickens in the lower right portion of the display case."
+}

@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": [], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "На столе лежат несколько предметов, включая ноутбук и небольшую металлическую миску с предметами."}

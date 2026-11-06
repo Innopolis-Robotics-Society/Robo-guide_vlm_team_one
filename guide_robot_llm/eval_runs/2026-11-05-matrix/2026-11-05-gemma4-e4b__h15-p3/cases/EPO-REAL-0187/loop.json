@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/187.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-187-a\",\n    \"epobj-187-b\",\n    \"epobj-187-c\",\n    \"epobj-187-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a classroom setting with desks and chairs. There are no visible exhibits in the scene that correspond to the provided candidate IDs.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2035.3866719815414,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/187.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-187-a\",\n    \"epobj-187-b\",\n    \"epobj-187-c\",\n    \"epobj-187-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_scene_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1515.1072400039993,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/187.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-187-a\",\n\"epobj-187-b\",\n\"epobj-187-c\",\n\"epobj-187-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"no\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1355.610502010677,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

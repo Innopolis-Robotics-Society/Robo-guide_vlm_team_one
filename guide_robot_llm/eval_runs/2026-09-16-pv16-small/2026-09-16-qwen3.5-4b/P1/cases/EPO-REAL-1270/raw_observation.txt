@@ -1,0 +1,11 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "A person wearing a black glove is pointing with their right hand towards a shelf in a store. The hand is extended forward, and the index finger is directed at a specific item on the middle shelf. The items on the shelf include various packaged goods, including what appear to be wet wipes or tissues in different colors (yellow, blue, white). The person's gaze and the direction of the pointing finger are focused on a blue package located on the shelf, slightly to the right of the center of the image. The package is part of a row of similar blue packages. The surrounding environment suggests a retail setting, likely a supermarket or convenience store, with shelves stocked with various products. The lighting is bright, typical of indoor retail spaces. The person's arm is visible, extending from the bottom right of the frame towards the shelf. The background shows more shelves with additional products, indicating a well-stocked store. The person's gesture is clear and deliberate, indicating a specific item of interest. The blue package is distinct from the other items on the shelf due to its color and packaging design. The person's hand is positioned in a way that suggests they are highlighting or selecting the blue package. The overall scene is consistent with a customer browsing and selecting products in a store. The person's hand is the primary focus of the image, drawing attention to the item they are pointing at. The blue package is the most likely candidate for the item being pointed at, given its location and the direction of the pointing finger. The other items on the shelf are less likely to be the focus of the pointing gesture. The person's hand is positioned in a way that suggests they are highlighting or selecting the blue package. The overall scene is consistent with a customer browsing and selecting products in a store. The person's hand is the primary focus of the image, drawing attention to the item they are pointing at. The blue package is the most likely candidate for the item being pointed at, given its location and the direction of the pointing

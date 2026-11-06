@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    0\n  ],\n  \"scene_facts\": \"none\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1623.7048890034202,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"no nones\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1309.3875710037537,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing at a shelf in a store. The person is wearing a black glove and pointing towards a blue package of wet wipes on the middle shelf. The shelf is stocked with various products, including tissues, wet wipes, and storage bins. The person's finger is clearly directed at the blue package of wet wipes.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1888.0377360037528,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

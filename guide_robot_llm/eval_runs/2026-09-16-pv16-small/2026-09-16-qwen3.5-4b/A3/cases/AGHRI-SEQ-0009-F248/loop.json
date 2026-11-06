@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407359_796641459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре сейчас 1 человек рядом с роботом. Он одет в чёрную куртку и идёт по тропинке. Готовых слушателей пока недостаточно — нужно продолжить наблюдение на новых кадрах.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 769.086384010734,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407359_796641459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре сейчас один человек — он идёт по тропинке, одет в тёмную куртку и шапку. Он не смотрит на камеру, не реагирует на речь — значит, не готов слушать. Пока что готовых слушателей нет. Продолжим наблюдение на новых кадрах.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 770.0250549823977,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407359_796641459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре один человек — он идёт по тропинке, одет в тёмную куртку и шапку. Он не смотрит на камеру, не реагирует на неё, не показывает признаков готовности слушать. Значит, готовых слушателей — 0.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 748.6381320049986,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

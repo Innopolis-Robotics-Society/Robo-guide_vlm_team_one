@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0005-F125",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 4218.037,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002549990313127637,
+              "upload_ms": 174.98734800028615,
+              "ttft_ms": 231.4149480080232,
+              "full_ms": 3330.0424570043106,
+              "parse_ready_ms": 3330.0424570043106
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0034200202208012342,
+              "upload_ms": 35.07878998061642,
+              "ttft_ms": 205.20297597977333,
+              "full_ms": 887.5758259964641,
+              "parse_ready_ms": 887.5758259964641
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nНа изображении видна одна фигура — человек в тёмной одежде и белой шапке, идущий по тропинке в парке. Никаких других людей не видно ни на переднем, ни на заднем плане. Значит:\n\n→ Всего людей в кадре: **1**\n\n---\n\nЭтап 2: Оценка готовности к общению (по критериям: близость, взгляд, вовлечённость)\n\n- **Близость**: Человек находится примерно в 10–15 метрах от камеры (предполагая, что робот — это камера или устройство, с которого сделан снимок). Это расстояние можно считать «средним» — не слишком близко, но и не слишком далеко.\n  \n- **Взгляд**: Человек смотрит вперёд, возможно, немного в сторону, но не в камеру. Нет явного контакта глаз.\n\n- **Вовлечённость**: Человек идёт, возможно, размышляет или просто прогуливается. Нет признаков того, что он ожидает общения или реагирует на присутствие робота.\n\nСуммируя: хотя человек физически присутствует, он не демонстрирует признаков готовности к общению (нет взгляда, нет остановки, нет жеста).\n\n→ Готовых слушать: **0**\n\n---\n\nИтоговый ответ:\n\n**Всего людей: 1**  \n**Готовых слушать: 0**"
+    }
+  },
+  "latency_ms": 4218.037,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0005-F125",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0005",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408042_315830459.png",
+      "sha256": "ca3f55f69430ad127f8581f1a2529af4fe1e6a8aa8f7c8ac65b2fa1d9dc21ad2",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

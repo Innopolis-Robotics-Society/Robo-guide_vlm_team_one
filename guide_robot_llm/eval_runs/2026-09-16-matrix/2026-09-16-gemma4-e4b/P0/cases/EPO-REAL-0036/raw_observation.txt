@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-36-b"], "pointing_evidence": "yes", "pointing_box": [1, 0, 1, 0], "scene_facts": "The visitor is pointing towards the exhibit epobj-36-b."}

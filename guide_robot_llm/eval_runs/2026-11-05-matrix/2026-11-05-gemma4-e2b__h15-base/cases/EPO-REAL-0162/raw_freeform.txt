@@ -1,0 +1,1 @@
+{"answer": "фильтр для воды", "confidence": 1, "abstain": false}

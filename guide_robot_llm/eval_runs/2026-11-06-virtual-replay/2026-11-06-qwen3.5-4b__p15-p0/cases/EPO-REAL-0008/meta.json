@@ -1,0 +1,120 @@
+{
+  "case_id": "EPO-REAL-0008",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P0",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 2496.939,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0042000028770416975,
+            "upload_ms": 289.33311099535786,
+            "ttft_ms": 829.4287849857938,
+            "full_ms": 2496.8837129999883,
+            "parse_ready_ms": 2496.8837129999883
+          }
+        ]
+      }
+    },
+    "decision": {
+      "latency_ms": 369.883,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.004489993443712592,
+            "upload_ms": 131.46168302046135,
+            "ttft_ms": 235.422258003382,
+            "full_ms": 369.84245100757107,
+            "parse_ready_ms": 369.84245100757107
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 2866.822,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0008",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-8",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+      "sha256": "72927c622d1e6c56fa18e2c20ac65f50fc9b5eb4e1e50bbe941bf2f7d94de4e0",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary function of the object I am pointing at?\nA. To store cold beverages for drinking\nB. To clean surfaces like a sponge\nC. To hang clothes for drying\nD. To provide warmth when filled with heated liquid\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-8-a",
+      "epobj-8-b",
+      "epobj-8-c",
+      "epobj-8-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-8-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-8-a",
+        "epobj-8-b",
+        "epobj-8-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Affordance & Function",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "To store cold beverages for drinking": "epobj-8-a",
+        "To clean surfaces like a sponge": "epobj-8-b",
+        "To hang clothes for drying": "epobj-8-c",
+        "To provide warmth when filled with heated liquid": "epobj-8-d"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение является статичным и не содержит информации о том, кто \"\n  \n  ,\n  \"confidence\": 0.0\n  \n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 778.6167399899568,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить эту задачу, так как вы не предоставили мне кадры для анализа. Пожалуйста, загрузите изображения, чтобы я мог посчитать людей и определить, сколько из них готовы слушать, действуя в заданном цикле.\"\n, \"confidence\": 0.0, \"abstain\": true}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 725.4469890031032,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения я вижу **двух** людей. Один человек стоит слева, а другой — в центре, немного дальше по тропинке. Я не могу определить, сколько из них готовы слушать, так как у меня нет информации о их намерениях или контексте взаимодействия с роботом.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 913.1764180201571,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

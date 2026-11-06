@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ]
+, "pointing_evidence": "uncertain", "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ], "scene_facts": "The image shows a first-person perspective of someone in a retail store aisle. The person's right arm is extended forward, with their index finger pointing directly at a packaged item hanging on a display rack. The item appears to be a white, rectangular object wrapped in clear plastic packaging with some red and blue branding. To the left are shelves with socks and slippers. To the right are shelves stocked with various household cleaning products, detergents, and bottles. The ceiling has exposed pipes and lighting fixtures. The overall setting is a well-lit supermarket or department store."
+}

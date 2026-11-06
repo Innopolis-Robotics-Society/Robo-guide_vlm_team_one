@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.38,\n    0.75,\n    0.42,\n    0.78\n  ],\n  \"scene_facts\": \"The image shows a refrigerated produce section in a grocery store. A person's arm (wearing a black sleeve) is pointing at a specific item on the middle shelf. The item being pointed at is a clear plastic clamshell container filled with small, round, pinkish-white vegetables. To the left of this item are similar containers with darker red/purple round vegetables (likely radishes). To the right are containers of green Brussels sprouts and white mushrooms. The pointing gesture is directed squarely at the container of pinkish-white round vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 4115.760808024788,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ]\n, \"pointing_evidence\": \"uncertain\", \"pointing_box\": [\n    0.38,\n    0.76,\n    0.42,\n    0.81\n  ], \"scene_facts\": \"На изображении показана полка с овощами в супермаркете. Рука человека указывает на упаковку с розовыми/белыми круглыми овощами. Справа от них — зеленые овощи (брюссельская капуста), слева — другие виды овощей. Указательный палец направлен точно на упаковку с розовыми/белыми овощами.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2504.5907059975434,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.38,\n    0.75,\n    0.42,\n    0.8\n  ],\n  \"scene_facts\": \"The image shows a refrigerated produce section in a grocery store. A person's arm (wearing a black sleeve) is pointing at a specific item on the middle shelf. The item being pointed at is a clear plastic container filled with small, round, pinkish-white vegetables. To the left of this item are similar containers with slightly larger pink bulbs (likely red onions or shallots). To the right are containers of green Brussels sprouts and white garlic bulbs. The pointing gesture is directed squarely at the container of small pink/white round vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2907.9922579985578,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

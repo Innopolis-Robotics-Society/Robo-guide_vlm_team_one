@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.37,
+    0.76,
+    0.51,
+    0.87
+  ],
+  "scene_facts": "Человек указывает на товары в холодильной витрине с продуктами."
+}

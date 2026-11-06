@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The user is pointing towards a section of vegetables in the refrigerated display case. The pointing gesture is directed towards the middle-right section of the visible vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1999.0446290175896,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The user is pointing towards a section of vegetables in the refrigerated display case.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1497.3083559889346,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The user is pointing towards a section of the refrigerated display case containing various vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1522.0948469941504,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a"
+  ]
+,
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ]
+,
+  "scene_facts": "The image shows a person pointing at a large building with a prominent Nike logo. The person is the only individual in the foreground, and the exhibit is clearly visible as the Nike store."
+}

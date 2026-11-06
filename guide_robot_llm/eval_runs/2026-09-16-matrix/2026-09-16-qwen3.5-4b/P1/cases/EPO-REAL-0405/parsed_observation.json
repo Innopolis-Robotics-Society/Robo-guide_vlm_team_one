@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a first-person perspective of a desk with a laptop, various items (candies, books, a paw-shaped object), and a hand reaching into a small tin of candies. There is no robot or exhibit clearly being pointed at or interacted with in a way that matches the provided exhibit IDs. The hand is interacting with a tin of candies, not an exhibit from the list."
+}

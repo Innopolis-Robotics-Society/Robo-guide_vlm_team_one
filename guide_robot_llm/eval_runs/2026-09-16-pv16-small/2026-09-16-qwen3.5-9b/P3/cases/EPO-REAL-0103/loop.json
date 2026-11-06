@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a supermarket aisle with shelves stocked with various snack products. A person's arm is visible in the lower center of the frame, pointing toward a specific product on the shelf. The pointing gesture is directed at a red package located on the bottom shelf, among other colorful snack packages. The hand is extended and clearly indicates one particular item among many.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2318.134628003463,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.38,\n    0.85,\n    0.45,\n    0.92\n  ],\n  \"scene_facts\": \"The image shows a supermarket aisle with shelves stocked with various snack products. A person's arm is visible in the foreground, pointing towards the lower shelf. The pointing gesture is directed at a specific product on the shelf, but the exact product is not clearly identifiable due to the angle and resolution of the image. The person is wearing a dark-colored sleeve, and their hand is extended towards the shelf. The shelf contains multiple brands and types of snacks, including chips and other packaged goods. The pointing action suggests that the person is indicating a particular item, but the specific details of the item are not clear from the image alone.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2744.8543249920476,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.42,\n    0.85,\n    0.46,\n    0.9\n  ]\n,\n  \"scene_facts\": \"The image shows a hand pointing at a shelf in a supermarket aisle. The hand is located near the bottom center of the image, pointing towards a package on the lower shelf. The package being pointed at appears to be a red and yellow snack bag with Chinese characters on it. The shelf is stocked with various snack products, including bags of chips and other snacks. The hand is clearly indicating a specific product on the shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2324.2369170184247,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

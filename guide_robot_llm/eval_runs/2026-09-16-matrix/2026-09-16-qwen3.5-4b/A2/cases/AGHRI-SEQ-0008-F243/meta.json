@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0008-F243",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3498.189,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003530003596097231,
+              "upload_ms": 199.9928440200165,
+              "ttft_ms": 328.81924899993464,
+              "full_ms": 2754.667055007303,
+              "parse_ready_ms": 2754.667055007303
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0031599774956703186,
+              "upload_ms": 133.42230199486949,
+              "ttft_ms": 299.21792799723335,
+              "full_ms": 743.045602022903,
+              "parse_ready_ms": 743.045602022903
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В левой части кадра, на заднем плане, за забором, видна фигура человека — это 1 человек.\n- В правой части кадра, также на заднем плане, у забора, ещё одна фигура — это 2-й человек.\n- В центре, на самой тропинке, ближе к среднему плану, видна ещё одна фигура — это 3-й человек.\n- Вдалеке, справа, за деревьями, можно различить ещё одну тусклую фигуру — это 4-й человек.\n\nИтого: всего 4 человека в кадре.\n\nЭтап 2: Оценим готовность каждого человека слушать по критериям (близость, взгляд, вовлечённость).\n\n- Человек 1 (слева, за забором): находится далеко, не смотрит на камеру или тропинку, вероятно, занят своими делами. Не вовлечён в ситуацию. → Не готов слушать.\n- Человек 2 (справа, за забором): тоже далеко, не обращает внимания на центр кадра. Скорее всего, не слушает. → Не готов слушать.\n- Человек 3 (на тропинке, ближе к центру): находится на уровне внимания камеры, но его лицо не видно, и нет признаков взаимодействия. Возможно, просто проходит мимо. → Не готов слушать (нет вовлечённости).\n- Человек 4 (вдалеке справа): слишком далеко, не видно деталей, нет признаков внимания к камере или ситуации. → Не готов слушать.\n\nНи один человек не демонстрирует признаков готовности слушать: нет близости, нет взгляда на камеру/ситуацию, нет вовлечённости.\n\nИтого: готовых слушать — 0.\n\nОтвет: всего людей — 4, готовых слушать — 0."
+    }
+  },
+  "latency_ms": 3498.189,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0008-F243",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0008",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407249_551879459.png",
+      "sha256": "de12e277b548bd6d66a5948a3c03e2a6fd7bf73513cff1aeae39041a6453f5ab",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 0
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "0",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

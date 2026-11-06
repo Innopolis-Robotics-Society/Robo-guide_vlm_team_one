@@ -1,0 +1,17 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.0,
+    0.0,
+    1.0,
+    1.0
+  ],
+  "scene_facts": "The person is pointing at a traffic sign that shows a car with a red circle and slash (no vehicles) above a speed limit sign showing '15'. The hand is clearly indicating the lower sign with the number 15."
+}

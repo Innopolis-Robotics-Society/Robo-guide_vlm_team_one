@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.45,
+    0.48,
+    0.52,
+    0.55
+  ],
+  "scene_facts": "The image shows a retail store aisle with shelves stocked with various household products, including wet wipes, tissues, and storage bins. A person’s arm wearing a black glove is extended, pointing directly at a specific product on the middle shelf. The pointed item is a blue package of wet wipes, clearly visible among other similar products. The packaging features branding and product information typical of consumer goods in a supermarket or convenience store setting. The surrounding items include yellow packages of wipes, green tissue boxes, and large translucent plastic storage containers on the top shelf. Price tags are visible below each product, indicating a commercial retail environment. The person’s gesture is deliberate and focused, suggesting they are highlighting or selecting this particular item for attention or purchase."
+}

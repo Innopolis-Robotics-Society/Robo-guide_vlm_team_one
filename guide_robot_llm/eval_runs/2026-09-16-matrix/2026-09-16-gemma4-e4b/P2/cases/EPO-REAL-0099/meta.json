@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0099",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 2835.524,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003029999788850546,
+              "upload_ms": 88.72970298398286,
+              "ttft_ms": 143.23516198783182,
+              "full_ms": 1687.4266210070346,
+              "parse_ready_ms": 1687.4266210070346
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0041199964471161366,
+              "upload_ms": 70.01901700277813,
+              "ttft_ms": 158.72952601057477,
+              "full_ms": 1148.0302440177184,
+              "parse_ready_ms": 1148.0302440177184
+            }
+          ]
+        }
+      },
+      "cot_reason": "Пошаговое рассуждение:\n\n1. **Куда направлен жест:** Посетитель указывает рукой на нижний ящик витрины, в котором находится желтая упаковка (или группа упаковок) в центральной части этого ящика.\n2. **Какие кандидаты попадают в этот сектор:** В нижнем ящике видны несколько упаковок. Желтая упаковка, на которую указывает посетитель, соответствует экспонату `epobj-99-b` (судя по расположению и внешнему виду, если предположить, что желтая упаковка является целевым объектом).\n3. **Согласуются ли с этим слова посетителя:** Поскольку посетитель не произносит слов, этот шаг не может быть использован для исключения или подтверждения.\n4. **Остался ли ровно один кандидат:** На основе визуального указания, наиболее вероятным кандидатом является `epobj-99-b`.\n\n**Вывод:** На основании жеста посетитель указывает на экспонат `epobj-99-b`.\n\nepobj-99-b"
+    }
+  },
+  "latency_ms": 2835.524,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0099",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-99",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+      "sha256": "a0b311c61becdea34221cf18983db24bca4fe631adb102a7c9f4c4933268e009",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary intended use for this object?\nA. An ingredient for a meal.\nB. A single-serving snack bar.\nC. A cleaning product.\nD. A fresh noodle dish.\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-99-a",
+      "epobj-99-b",
+      "epobj-99-c",
+      "epobj-99-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-99-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-99-b",
+        "epobj-99-c",
+        "epobj-99-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Affordance & Function",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "An ingredient for a meal.": "epobj-99-a",
+        "A single-serving snack bar.": "epobj-99-b",
+        "A cleaning product.": "epobj-99-c",
+        "A fresh noodle dish.": "epobj-99-d"
+      }
+    }
+  }
+}

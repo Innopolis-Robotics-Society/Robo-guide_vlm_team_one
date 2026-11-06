@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a display of raw poultry, specifically whole birds, which are typical of chicken or duck. the options provided are pork chop, yellow broiler chicken, silkie chicken, and duck breast. the visible items are whole, uncooked birds, most resembling standard broiler chickens or ducks, rather than a specific cut like a pork chop or duck breast. without closer inspection or clearer labeling, it is difficult to definitively distinguish between the options based solely on this wide shot of raw poultry.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2196.6013179917354,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"a person in a purple shirt is pointing towards a display of raw poultry, specifically what appears to be whole birds or cuts of meat, in a supermarket or market setting.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1672.3481599765364,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the_image_shows_a_display_of_poultry_pieces_likely_meat_products_with_a_person_looking_at_them\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1719.4845940102823,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

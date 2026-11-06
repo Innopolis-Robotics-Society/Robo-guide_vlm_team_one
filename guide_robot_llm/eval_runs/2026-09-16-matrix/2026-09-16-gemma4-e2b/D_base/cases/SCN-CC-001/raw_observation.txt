@@ -1,0 +1,1 @@
+{"people_count": 2, "exhibit_candidates": ["redbox-01", "cabinet-03"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "На переднем плане стоят два человека. Один из них стоит возле какого-то объекта, другой — ближе к центру."}

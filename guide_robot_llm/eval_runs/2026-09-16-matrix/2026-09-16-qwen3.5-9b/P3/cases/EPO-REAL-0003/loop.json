@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a refrigerated produce section in a grocery store. A person's arm, wearing a black sleeve, is pointing at a specific item on the middle shelf. The item being pointed at is a clear plastic container filled with small, round, pinkish-white vegetables. To the left of this container are other similar containers with what appear to be shallots or small onions (some pink, some white). To the right of the pointed item are containers of green Brussels sprouts and then containers of white mushrooms. The pointing finger is directly touching or hovering over the container of pinkish-white round vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3093.389693996869,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.0,\n    0.0,\n    0.0,\n    0.0\n  ],\n  \"scene_facts\": \"The image shows a refrigerated produce section in a grocery store. A person's arm (wearing a black sleeve) is pointing at a specific item on the middle shelf. The item being pointed at is a clear plastic container filled with small, round, pinkish-white vegetables. To the left of this item are containers of similar-looking pink/white round vegetables (possibly radishes or turnips). To the right are containers of green Brussels sprouts and white mushrooms. Below the shelf being pointed at are leafy greens and herbs. Above the shelf is a green wall with a sign that appears to be an organic certification label. The pointing gesture is directed squarely at the container of pink/white round vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3139.36239699251,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.38,\n    0.75,\n    0.42,\n    0.78\n  ]\n,\n  \"scene_facts\": \"The image shows a refrigerated produce section in a grocery store. A person's arm (wearing a black sleeve) is pointing at a specific item on the middle shelf. The item being pointed at is a clear plastic container filled with small, round, pinkish-white vegetables. To the left of this item are similar containers with slightly larger pink bulbs (likely red onions or shallots). To the right are containers of green Brussels sprouts and white garlic bulbs. The pointing gesture is directed squarely at the container of small pink/white round vegetables.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2637.341377994744,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

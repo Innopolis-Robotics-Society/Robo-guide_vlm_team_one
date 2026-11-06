@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\"answer\": \"Невозможно определить количество людей, готовых слушать, по предоставленному изображению. На изображении виден один человек, и нет информации о том, готовы ли другие люди слушать или сколько их будет готово.\"\n  , \"confidence\": 0.95,\n  \"abstain\": true}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 565.9050469985232,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить, сколько людей сейчас рядом с роботом, основываясь только на предоставленном изображении. На изображении виден один человек, и нет робота.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 535.1205890183337,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407171_621575459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить, сколько людей сейчас рядом с роботом, основываясь только на предоставленном изображении. На изображении виден один человек, и нет робота.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 531.1084630084224,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

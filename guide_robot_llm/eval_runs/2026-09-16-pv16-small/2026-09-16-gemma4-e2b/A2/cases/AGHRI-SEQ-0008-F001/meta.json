@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0008-F001",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 997.916,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0026600027922540903,
+              "upload_ms": 36.64303998812102,
+              "ttft_ms": 61.29270500969142,
+              "full_ms": 257.3203000065405,
+              "parse_ready_ms": 257.3203000065405
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0024600012693554163,
+              "upload_ms": 38.629862014204264,
+              "ttft_ms": 90.61418901546858,
+              "full_ms": 740.2544440119527,
+              "parse_ready_ms": 740.2544440119527
+            }
+          ]
+        }
+      },
+      "cot_reason": "К сожалению, предоставленное изображение **не содержит людей**, рядом с роботом или где-либо еще.\n\nПоэтому:\n\n* **Всего людей в кадре:** 0\n* **Готовых слушать:** 0"
+    }
+  },
+  "latency_ms": 997.916,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0008-F001",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0008",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+      "sha256": "3c37b1c5c8c5d3acce8fba09d111562daca19bf19d8c577734301bd80b99567c",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 0
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "0",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

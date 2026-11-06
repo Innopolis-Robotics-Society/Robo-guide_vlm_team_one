@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"yes\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1560.2961030090228,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The scene shows a supermarket or retail store aisle with shelves stocked with various household and personal care products. A person's arm, wearing a black glove, is pointing at a specific item on one of the shelves. The items on the shelves include packages of tissues, wet wipes, and other similar products. The person is pointing at a blue package that appears to be a pack of wet wipes or similar hygiene product. The shelves are well-organized, and the products are neatly arranged. The lighting is bright, typical of a retail environment. The person's gesture is clear and deliberate, indicating they are specifically pointing at the blue package of wet wipes. The surrounding products include yellow and green packages, but the focus is on the blue package. The shelves are metal wire racks, and the products are in plastic packaging. The overall setting suggests a well-stocked store with a variety of consumer goods available for purchase.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2554.634394997265,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person's arm pointing at a shelf in a store. The shelf contains various packaged goods, including what appear to be tissues, wet wipes, and other household items. The person is wearing a black glove and is pointing towards a blue package on the shelf. The background shows more shelves with similar products. The lighting is bright, typical of a retail environment. The person's arm is extended towards the shelf, indicating a specific item of interest.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1857.2684039827436,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

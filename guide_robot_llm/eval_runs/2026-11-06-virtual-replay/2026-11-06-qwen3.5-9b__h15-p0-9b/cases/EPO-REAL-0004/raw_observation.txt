@@ -1,0 +1,17 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-4-a",
+    "epobj-4-b",
+    "epobj-4-c",
+    "epobj-4-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    0.78,
+    0.2,
+    0.87
+  ],
+  "scene_facts": "The image shows a retail display case filled with various cigarette packs. A person's hand is pointing at one specific pack in the lower section of the case. The pack being pointed at is predominantly red with some gold or yellow accents and Chinese characters on it. It is located on the bottom shelf of the glass display case, towards the left side of the frame. The person pointing is wearing a dark jacket and a light-colored shirt cuff is visible. In the background, another person is standing near a shopping cart, and shelves with other products are visible."
+}

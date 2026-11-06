@@ -1,0 +1,209 @@
+{
+ "EPO-REAL-0003": {
+  "freeform": "{\"answer\": \"epobj-3-c\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-3-c\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0008": {
+  "freeform": "{\"answer\": \"epobj-8-d\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-8-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0013": {
+  "freeform": "{\"answer\": \"epobj-13-a\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-13-a\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0027": {
+  "freeform": "{\"answer\": \"epobj-27-c\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-27-c\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0028": {
+  "freeform": "{\"answer\": \"epobj-28-c\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-28-c\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0036": {
+  "freeform": "{\"answer\": \"epobj-36-c\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-36-c\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0069": {
+  "freeform": "{\"answer\": \"epobj-69-d\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-69-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0096": {
+  "freeform": "{\"answer\": \"epobj-96-b\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-96-b\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0099": {
+  "freeform": "{\"answer\": \"epobj-99-a\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-99-a\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0100": {
+  "freeform": "{\"answer\": \"epobj-100-a\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-100-a\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0103": {
+  "freeform": "{\"answer\": \"epobj-103-b\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-103-b\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0167": {
+  "freeform": "{\"answer\": \"epobj-167-a\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-167-a\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-0405": {
+  "freeform": "{\"answer\": \"epobj-405-d\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-405-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-1204": {
+  "freeform": "{\"answer\": \"epobj-1204-d\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-1204-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "EPO-REAL-1270": {
+  "freeform": "{\"answer\": \"epobj-1270-a\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-1270-a\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0001-F001": {
+  "freeform": "{\"answer\": \"2\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 2, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0001-F040": {
+  "freeform": "{\"answer\": \"2\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 2, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0001-F079": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0004-F001": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0004-F130": {
+  "freeform": "{\"answer\": \"2\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 2, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0004-F260": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0005-F001": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0005-F125": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0005-F249": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0006-F001": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0006-F158": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0006-F316": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0007-F001": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0007-F131": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0007-F262": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0008-F001": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0008-F122": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0008-F243": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0009-F001": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0009-F124": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0009-F248": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0010-F001": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0010-F061": {
+  "freeform": "{\"answer\": \"1\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0010-F121": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "AGHRI-SEQ-0011-F001": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "TOL-CC-001": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}",
+  "action": "{\"tool\": \"start_tour\", \"args\": {\"tour_id\": \"tour-lab-01\"}, \"confidence\": 1, \"abstain\": false}"
+ },
+ "TOL-CC-002": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}",
+  "action": "{\"tool\": \"hold_position\", \"args\": {}, \"confidence\": 1, \"abstain\": false}"
+ },
+ "TOL-CC-003": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}",
+  "action": "{\"tool\": \"pause\", \"args\": {}, \"confidence\": 1, \"abstain\": false}"
+ },
+ "TOL-CC-004": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}",
+  "action": "{\"tool\": \"ask_visitor\", \"args\": {\"question\": \"Прервём экскурсию и поедем в кафе?\", \"on_yes\": {\"tool\": \"guide_to\", \"args\": {\"location_id\": \"loc-cafe\"}}, \"on_no\": \"Остаёмся в туре, продолжим.\"}, \"confidence\": 1, \"abstain\": false}"
+ },
+ "TOL-CC-005": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}",
+  "action": "{\"tool\": \"finish_answer\", \"args\": {\"outcome\": 0}, \"confidence\": 1, \"abstain\": false}"
+ },
+ "TOL-CC-006": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}",
+  "action": "{\"tool\": \"search_content\", \"args\": {\"query\": \"динозавры\"}, \"confidence\": 1, \"abstain\": false}"
+ },
+ "TOL-CC-007": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}",
+  "action": "{\"tool\": \"reply\", \"args\": {\"text\": \"mock abstention\"}, \"confidence\": 0.9, \"abstain\": true}"
+ },
+ "SCN-CC-001": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "SCN-CC-002": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 1, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ },
+ "SCN-CC-003": {
+  "freeform": "{\"answer\": \"mock\", \"confidence\": 1, \"abstain\": false}",
+  "observation": "{\"people_count\": 0, \"exhibit_candidates\": [], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"mock dry run (gold-faithful)\"}"
+ }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"В кадре видна витрина с косметическими средствами (кремы, лосьоны, флаконы) в магазине. На переднем плане — женщина в белой куртке, стоящая слева от витрины. Справа — частично видимая фигура человека в красной одежде. В центре композиции — рекламные панели с изображением рук, моющих лицо водой, и текстом на китайском языке: 'Чувствительная кожа, базовое увлажнение'. Витрина содержит множество продуктов для ухода за кожей. Жест указывания отсутствует — никто не указывает на конкретный экспонат. Кадр статичен, без динамики жеста.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2992.7438590093516,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store aisle with skincare products on display. Two people are visible: one in the foreground (left) and another further back (right). Neither person is pointing at any exhibit. There is no gesture indicating selection or indication of a specific item.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1922.4774210015312,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store aisle with skincare products on display. There are two people visible: one person in a white coat on the left side of the frame, and another person partially visible on the right side. Neither person is pointing at any exhibit. The scene is static with no active gesturing or indication of selection.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2102.976468973793,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

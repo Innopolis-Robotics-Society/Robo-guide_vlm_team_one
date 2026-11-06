@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a"
+  ]
+,
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.53,
+    0.51,
+    0.76,
+    0.99
+  ]
+,
+  "scene_facts": "The image shows an indoor commercial space, likely a salon or barbershop, with visible styling chairs and mirrors. A person’s hand is pointing upward toward a brightly lit sign above the entrance. The sign appears to be mounted on the wall or ceiling structure directly above the doorway, not on a desk, floor, or side wall at eye level. The pointing gesture clearly targets the illuminated signage above the entrance."
+}

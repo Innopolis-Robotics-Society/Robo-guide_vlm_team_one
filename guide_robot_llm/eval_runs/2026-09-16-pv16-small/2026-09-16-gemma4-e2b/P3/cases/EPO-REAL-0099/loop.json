@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a display case filled with various packaged food items, likely snacks or instant meals. The items appear to be various types of dried goods, noodles, or packaged snacks. The hand in the foreground is pointing towards a specific item in the middle section of the display. The items are packaged in clear plastic or paper wrappers, with visible labels and prices (e.g., '3.99').\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1950.040562020149,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a refrigerated display case filled with various packaged food items, likely snacks, noodles, or ready-to-eat meals. The items are packaged in plastic or paper wrappers and are arranged in rows. The visible labels and packaging suggest processed food products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1363.583397003822,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a display of packaged food items, likely snacks or instant meals, arranged in rows on a shelf. The items appear to be various types of dried goods, noodles, or prepared food packaged in plastic or paper wrappers. The focus is on the variety of packaged food products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1370.7863830204587,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The visitor's hand is visible in the foreground, pointing towards the interior of the room/area behind the counter/signage. The pointing gesture is directed towards the area where the chairs and interior space are visible, but it is not clearly pointing at a specific, distinct object among the candidates."
+}

@@ -1,0 +1,234 @@
+{
+  "statement": "Diagnostic only — no final project score, no #11 selection.",
+  "run_dir": "eval_runs/2026-09-16-pv16-small/2026-09-16-qwen3.5-4b/D3",
+  "generated": "2026-09-16T18:26:49+07:00",
+  "n_cases": 3,
+  "status_counts": {
+    "ok": 3,
+    "parse_failed": 0,
+    "backend_error": 0
+  },
+  "pass_counts": {
+    "pass": 0,
+    "fail": 0,
+    "unjudged": 3
+  },
+  "run_config": {
+    "generated": "2026-09-16T18:02:51+07:00",
+    "manifest": {
+      "path": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/pv_matrix_57.jsonl",
+      "sha256": "02530da7e59e18268a7684b8d68851df41d3ddff52463d7ce828a84a25aa8ebe",
+      "n_cases": 3
+    },
+    "backend": {
+      "kind": "http",
+      "base_url": "http://127.0.0.1:11436/v1",
+      "model_name": "qwen3.5-4b-q4_k_m",
+      "multimodal_enabled": true,
+      "max_images": 4,
+      "api_key_set": false
+    },
+    "prompt": {
+      "variant_id": "D3",
+      "examples_root": null,
+      "temperature": 0.2
+    },
+    "params": {
+      "max_attempts": 2,
+      "loop_max_calls": 3,
+      "loop_budget_ticks": 5,
+      "data_root": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm"
+    }
+  },
+  "per_case": {
+    "SCN-CC-001": {
+      "case_id": "SCN-CC-001",
+      "source": "pilot-cc",
+      "track": "scene",
+      "prompt_mode": "deployed",
+      "variant_id": "D3",
+      "split_group_id": "g-cc-SCN-CC-001",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "scene-recorded",
+      "perception": {},
+      "policy": {},
+      "pass": null,
+      "calls": 1,
+      "latency_ms": 1456.384,
+      "recorded": {
+        "gold_type": "claims",
+        "scene_facts": "Сцена представляет собой минималистичную композицию с тремя объектами и одним человеком. Уверенность в каждом факте указана отдельно.",
+        "claims": [
+          "на полке стоит красная коробка",
+          "справа стоит синий шкаф",
+          "на столе стоит белая ваза",
+          "в кадре один человек",
+          "стены светлые, пол деревянный"
+        ]
+      }
+    },
+    "SCN-CC-002": {
+      "case_id": "SCN-CC-002",
+      "source": "pilot-cc",
+      "track": "scene",
+      "prompt_mode": "deployed",
+      "variant_id": "D3",
+      "split_group_id": "g-cc-SCN-CC-002",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "scene-recorded",
+      "perception": {},
+      "policy": {},
+      "pass": null,
+      "calls": 1,
+      "latency_ms": 1637.139,
+      "recorded": {
+        "gold_type": "claims",
+        "scene_facts": "На фото изображена сцена с двумя людьми и двумя экспонатами. Один человек стоит перед фиолетовым прямоугольным объектом, другой — перед желтым квадратным объектом. Оба объекта находятся на уровне пола, но не прикреплены к стене. Слева от них стоит зеленый круглый объект, похожий на дерево или скульптуру. Все объекты имеют простые геометрические формы и яркие цвета. Сцена выглядит как часть интерак",
+        "claims": [
+          "на стене тёмно-розовый постер",
+          "слева зелёное растение в горшке",
+          "справа жёлтая рама",
+          "в кадре два человека",
+          "один человек стоит перед постером"
+        ]
+      }
+    },
+    "SCN-CC-003": {
+      "case_id": "SCN-CC-003",
+      "source": "pilot-cc",
+      "track": "scene",
+      "prompt_mode": "deployed",
+      "variant_id": "D3",
+      "split_group_id": "g-cc-SCN-CC-003",
+      "slices": {
+        "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+      },
+      "status": "ok",
+      "kind": "scene-recorded",
+      "perception": {},
+      "policy": {},
+      "pass": null,
+      "calls": 1,
+      "latency_ms": 1577.499,
+      "recorded": {
+        "gold_type": "unanswerable",
+        "scene_facts": "Сцена представляет собой минималистичный интерьер с нейтральными тонами. В центре композиции расположен прямоугольный объект коричневого цвета, установленный на полу из светлых деревянных панелей. Над объектом находится белая стена или потолок, разделенный от пола тонкой темной горизонтальной линией. Объект имеет тень под собой, что указывает на наличие источника света сверху. Общая атмосфера спок"
+      }
+    }
+  },
+  "metrics": {
+    "perception": {
+      "pointing": {},
+      "audience": {}
+    },
+    "policy": {
+      "pointing": {},
+      "tool": {}
+    },
+    "runner": {
+      "latency_ms": {
+        "value": 1557.007,
+        "p50": 1577.499,
+        "p95": 1637.139,
+        "n": 3
+      }
+    }
+  },
+  "variants": {
+    "D3": {
+      "n": 3,
+      "pass": 0,
+      "fail": 0,
+      "unjudged": 3,
+      "scene_recorded": 3,
+      "calls_per_case": {
+        "value": 1.0,
+        "n": 3
+      },
+      "parse_failed": 0,
+      "parse_failed_rate": {
+        "value": 0.0,
+        "n": 3
+      },
+      "latency_ms": {
+        "value": 1557.007,
+        "p50": 1577.499,
+        "p95": 1637.139,
+        "n": 3
+      }
+    }
+  },
+  "slices": {
+    "by_source": {
+      "pilot-cc": {
+        "n": 3,
+        "pass": 0,
+        "fail": 0,
+        "unjudged": 3,
+        "parse_failed": 0,
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 3
+        }
+      }
+    },
+    "by_split_group": {
+      "g-cc-SCN-CC-001": {
+        "n": 1,
+        "pass": 0,
+        "fail": 0,
+        "unjudged": 1,
+        "parse_failed": 0,
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-cc-SCN-CC-002": {
+        "n": 1,
+        "pass": 0,
+        "fail": 0,
+        "unjudged": 1,
+        "parse_failed": 0,
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-cc-SCN-CC-003": {
+        "n": 1,
+        "pass": 0,
+        "fail": 0,
+        "unjudged": 1,
+        "parse_failed": 0,
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      }
+    },
+    "by_metadata": {
+      "venue": {
+        "synthetic (PIL, deterministic spec, seed 20260914)": {
+          "n": 3,
+          "pass": 0,
+          "fail": 0,
+          "unjudged": 3,
+          "parse_failed": 0,
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        }
+      }
+    }
+  },
+  "ci": null,
+  "errors": []
+}

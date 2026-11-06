@@ -1,0 +1,17 @@
+{
+  "people_count": 6,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a supermarket meat section with refrigerated display cases. A person in the foreground is pointing at a whole chicken inside a plastic package. Other poultry products are visible, including packaged chicken parts and possibly duck or other birds. The setting includes shoppers, staff, and price tags."
+}

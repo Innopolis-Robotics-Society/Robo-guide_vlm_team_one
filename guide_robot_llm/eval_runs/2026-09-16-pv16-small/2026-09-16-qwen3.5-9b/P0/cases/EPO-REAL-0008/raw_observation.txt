@@ -1,0 +1,11 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    "epobj-8-a"
+  ]
+,
+  "pointing_evidence": "none",
+  "pointing_box": null
+,
+  "scene_facts": "The image shows a retail store aisle with shelves stocked with household items such as socks, slippers, cleaning supplies, and water bottles. A person’s arm is visible in the foreground, pointing toward a packaged item hanging on a display rack. The item being pointed at appears to be a clear plastic package containing what looks like a reusable cloth or sponge, possibly for cleaning purposes. There are no people other than the arm visible, and no other exhibits are clearly indicated by pointing."
+}

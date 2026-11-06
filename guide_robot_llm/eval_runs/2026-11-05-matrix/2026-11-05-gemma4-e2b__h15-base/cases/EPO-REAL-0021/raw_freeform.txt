@@ -1,0 +1,1 @@
+{"answer": "руль велосипеда", "confidence": 0.95, "abstain": false}

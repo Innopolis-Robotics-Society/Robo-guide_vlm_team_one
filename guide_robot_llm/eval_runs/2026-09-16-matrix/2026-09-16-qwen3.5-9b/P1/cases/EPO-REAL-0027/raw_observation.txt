@@ -1,0 +1,12 @@
+{
+  "people_count": 4,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a supermarket meat section with refrigerated display cases containing various poultry products. A person in the foreground is pointing with their right hand toward a specific item in the lower part of the display case. The person is wearing a green jacket and their hand is extended toward a packaged whole chicken or similar poultry product located in the bottom row of the display case. Other shoppers are visible in the background, but they are not interacting with the display case. The display case contains multiple types of poultry, including what appears to be whole chickens, chicken parts, and possibly duck or other poultry. The person's gesture is clearly directed at one specific item in the lower section of the display case."
+}

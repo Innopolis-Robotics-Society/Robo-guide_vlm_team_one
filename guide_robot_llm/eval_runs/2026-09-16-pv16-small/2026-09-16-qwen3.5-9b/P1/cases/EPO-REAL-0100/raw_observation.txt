@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-100-a",
+    "epobj-100-b",
+    "epobj-100-c",
+    "epobj-100-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a cluttered desk with various items such as bottles, containers, and electronic devices. There is no person visible in the image, so there is no hand gesture, gaze direction, or verbal indication to determine which exhibit is being pointed to. Additionally, there are no robots or other interactive elements present that could be part of the pointing context. The scene appears to be a static photograph of a workspace without any active interaction or selection being made."
+}

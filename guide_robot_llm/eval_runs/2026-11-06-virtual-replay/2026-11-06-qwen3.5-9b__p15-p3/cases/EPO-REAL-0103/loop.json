@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a single person's arm and hand reaching toward a shelf of snack products in a supermarket. The hand is pointing at or touching a package on the lower shelf, specifically near the bottom row, among red and green packages with Chinese characters. The exact product being pointed at is not fully visible due to the angle and blur, but it appears to be one of the smaller bags in the front row of the lower shelf section. There are multiple brands visible: Lay's (blue/yellow/red packaging), Oishi (green/red/yellow packaging with cartoon characters), and others. The pointing gesture is directed at a specific item in the lower-middle area of the leftmost shelf unit.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3977.6951849926263,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ]\n,\n  \"scene_facts\": \"The image shows a supermarket aisle with shelves stocked with various snack products. A person's hand is visible in the lower center of the frame, reaching toward a product on the bottom shelf. The hand is pointing at or touching a red package with Chinese characters and an image of what appears to be a snack (possibly chips or crackers). The package being touched is clearly visible and is one of the items on the shelf. The other products on the shelf are different brands and types of snacks. The person is not pointing at any other exhibit in the scene. The hand is clearly indicating the red package on the bottom shelf. The other products on the shelf are not being pointed at or touched by the person. The person is not pointing at any other exhibit in the scene. The hand is clearly indicating the red package on the bottom shelf. The other products on the shelf are not being pointed at or touched by the person. The person is not pointing at any other exhibit in the scene. The hand is clearly indicating the red package on the bottom shelf. The other products on the shelf are not being pointed at or touched by the person. The person is not pointing at any other exhibit in the scene. The hand is clearly indicating the red package on the bottom shelf. The other products on the shelf are not being pointed at or touched by the person. The person is not pointing at any other exhibit in the scene. The hand is clearly indicating the red package on the bottom shelf. The other products on the shelf are not being pointed at or touched by the person. The person is not pointing at any other exhibit in the scene. The hand is clearly indicating the red package on the bottom shelf. The other products on the shelf are not being pointed at or touched by the person. The person is not pointing at any other exhibit in the scene. The hand is clearly indicating the red package on the bottom shelf. The other products on the shelf are not being pointed at or touched by the person. The person is not pointing at any other exhibit in the scene. The hand",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 5542.471379012568,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a supermarket aisle with shelves stocked with various snack products. A person's hand is visible in the lower center of the frame, reaching toward or touching a product on the bottom shelf. The hand appears to be interacting with a red and yellow packaged item, possibly a chip or snack bag. The surrounding environment includes multiple rows of snacks, including recognizable brands like Lay's and Pringles, but the focus is on the specific product being touched.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2232.2598499886226,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

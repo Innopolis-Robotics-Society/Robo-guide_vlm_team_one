@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely products from a store or market. The focus is on several boxes with colorful designs. The hand is pointing towards a box in the center-right area of the visible display.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1935.1910399855115,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various boxes, likely products, with Chinese characters on them. The hand is pointing towards a box in the center-right of the visible display. The text on the pointed box appears to be in Chinese characters. The options provided are English brand names: A. Ocean Blue, B. Red Star, C. Dream Blue, D. Golden Harvest. Since the question asks for the English translation of a brand name written on the object, and the object is a product box with Chinese text, I need to identify which box corresponds to the intended answer based on the previous question's context, or if the current task is independent. Given the structure, I must assume the previous question's context is relevant, or that the current image is a new prompt. Since the current prompt is a completely new task about pointing, I must analyze the current image.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2103.4802270005457,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-13-a\",\n\"epobj-13-b\",\n\"epobj-13-c\",\n\"epobj-13-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely products from a store or market. The focus is on several boxes with colorful designs. The hand is pointing towards a box in the center-right of the visible area. The text on the pointed box is partially visible in Chinese characters. The options provided are English brand names: A. Ocean Blue, B. Red Star, C. Dream Blue, D. Golden Harvest. Since the question asks for the English translation of the brand name on the object being pointed to, and the options are English, the object pointed to must have an English brand name written on it, or the question implies that one of the options is the correct translation of the Chinese text on the object. However, the visible text on the pointed object is not clearly legible enough to definitively match any of the provided English options. Therefore, I need a clearer view or context to make an accurate identification based on the provided options.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1915.096710989019,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

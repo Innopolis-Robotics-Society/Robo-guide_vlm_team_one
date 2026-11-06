@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person's hand pointing at a shelf in what appears to be a stationery or office supply store. The shelves are stocked with various items such as notebooks, folders, and other office supplies. The person is likely indicating a specific item on the shelf, possibly for purchase or information."
+}

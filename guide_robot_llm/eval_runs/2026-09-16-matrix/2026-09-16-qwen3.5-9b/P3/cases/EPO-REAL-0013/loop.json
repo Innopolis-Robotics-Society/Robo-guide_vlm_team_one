@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.46,\n    0.55,\n    0.52,\n    0.65\n  ],\n  \"scene_facts\": \"The image shows a hand wearing a black glove pointing at a shelf of boxed products. The finger is directed toward the center of the frame, specifically at a peach-colored box with Chinese characters on it. To the left are yellow boxes with red circular logos, and to the right are blue boxes with white and gold designs. The pointing gesture is clearly aimed at the peach-colored box, which is positioned between the yellow and blue boxes.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2583.64765701117,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\",\n    \"epobj-13-b\",\n    \"epobj-13-c\",\n    \"epobj-13-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.45,\n    0.55,\n    0.68,\n    0.99\n  ],\n  \"scene_facts\": \"The image shows a retail shelf with various boxed products, likely alcoholic beverages. A gloved hand is pointing at one of the boxes. The box being pointed at is peach-colored and has Chinese characters on it. To the left are yellow boxes with red circular logos containing Chinese characters. To the right are blue boxes with white and red designs, including the character '囍' (double happiness). The hand is clearly indicating the peach-colored box in the center of the shelf row.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2834.5003679860383,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-13-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.45,\n    0.55,\n    0.52,\n    0.65\n  ]\n,\n  \"scene_facts\": \"The image shows a retail display of boxed products, likely liquor or gift items. A gloved hand is pointing at one specific box in the center of the frame. The box being pointed to is peach-colored with Chinese characters on it. To its left are yellow boxes with red circular logos. To its right are blue boxes with white and red designs. The pointing gesture is directed squarely at the peach-colored box.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2351.2533830071334,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

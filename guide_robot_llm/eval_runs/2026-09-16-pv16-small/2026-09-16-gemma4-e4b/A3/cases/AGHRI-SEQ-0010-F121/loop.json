@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407089_019532459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как на предоставленном изображении не видно ни одного робота, ни одного человека. Следовательно, я не могу посчитать людей или определить, сколько из них готовы слушать.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1019.9094910058193,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407089_019532459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как на предоставленном изображении нет робота и людей. Поэтому я не могу посчитать людей, определить, сколько готовы слушать, или действовать в цикле, как вы просили.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 695.4154459817801,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407089_019532459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как на предоставленном изображении нет робота и людей. На изображении показана лесная тропинка в парковой зоне.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 621.8554119986948,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"the image shows a close-up of a shelf stocked with various packaged goods, primarily white and yellow/orange packages, suggesting a retail setting, likely a supermarket or convenience store. the hand in the foreground is pointing towards a specific item on the shelf. the items on the shelf appear to be various types of packaged food or personal care items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1696.6257540043443,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf with many white plastic containers and packages, likely containing various products. the hand is pointing towards the middle-right section of the visible shelf, specifically towards a white plastic container/package.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1244.9018800107297,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf stocked with various packaged goods, primarily white and yellow/orange packages, suggesting a retail environment, likely a supermarket or convenience store. the hand in the foreground is pointing towards the middle section of the visible shelves, specifically towards a stack of white, rectangular packages.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1289.4911440089345,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

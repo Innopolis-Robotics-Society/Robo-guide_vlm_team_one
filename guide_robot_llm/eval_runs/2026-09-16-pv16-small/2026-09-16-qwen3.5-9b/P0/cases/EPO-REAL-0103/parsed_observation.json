@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a hand pointing at a shelf of snacks in a store. The hand is pointing at a package of Pringles chips, which is identifiable by its distinctive cylindrical canister shape and branding. The package is located on the lower shelf, among other snack products. The pointing action is directed specifically at this Pringles package, indicating it as the subject of interest."
+}

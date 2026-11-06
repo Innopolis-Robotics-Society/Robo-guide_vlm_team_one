@@ -1,0 +1,19 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "redbox-01",
+    "cabinet-03",
+    "vase-04"
+  ],
+  "pointing_evidence": "none"
+  
+  ,"pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ]
+  
+  ,"scene_facts":
+  "The scene is indoors. (высокая) \nThere is a light-colored wall. (высокая) \nThere is a floor with vertical paneling. (высокая) \nThere is one person present. (высокая) \nThere is a red object on a stand. (высокая) \nThere is a wooden stand/pedestal in the foreground. (высокая) \nThere is a large blue rectangular object on the floor. (высокая)"
+}

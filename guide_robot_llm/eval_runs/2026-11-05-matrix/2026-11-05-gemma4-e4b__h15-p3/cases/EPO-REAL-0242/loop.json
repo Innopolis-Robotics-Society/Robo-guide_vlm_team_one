@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/242.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-242-a\",\n\"epobj-242-b\",\n\"epobj-242-c\",\n\"epobj-242-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The user is pointing towards a set of circular objects on the ground in the foreground. These objects have alphanumeric codes painted on them. The visible codes are J115, J154, and J155.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1933.4620530134998,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/242.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-242-a\", \"epobj-242-b\", \"epobj-242-c\", \"epobj-242-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows a person pointing towards a series of circular objects on the ground in front of a modern building. These objects have alphanumeric codes painted on them.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1333.4365139889996,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/242.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-242-a\",\n    \"epobj-242-b\",\n    \"epobj-242-c\",\n    \"epobj-242-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person pointing towards a series of circular objects embedded in the ground in front of a modern building. These objects have alphanumeric codes painted on them.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1653.3497979980893,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

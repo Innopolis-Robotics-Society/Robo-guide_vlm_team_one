@@ -1,0 +1,18 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [],
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ]
+  
+  ,
+  "scene_facts":
+  "The scene consists of a plain interior space. (высокая)"
+  
+  }

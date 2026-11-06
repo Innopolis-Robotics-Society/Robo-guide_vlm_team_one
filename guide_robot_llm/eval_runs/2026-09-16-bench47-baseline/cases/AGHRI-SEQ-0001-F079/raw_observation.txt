@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": [], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "На изображении видна одна женщина, стоящая на траве рядом с тропинкой в парке. Вокруг деревья и открытое пространство."}

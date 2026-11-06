@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf stocked with various packaged goods, primarily white and yellow/orange packages, suggesting a retail environment, likely a supermarket or convenience store. the focus is on the products on the shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1667.2898700053338,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf stocked with various packaged goods, primarily white and yellow/orange packages, suggesting a retail environment, likely a supermarket or convenience store. the hand in the foreground is pointing towards a specific item on the shelf. the items on the shelf appear to be various types of packaged goods, possibly food items, snacks, or personal care products, given the variety of packaging styles and colors (white, yellow, blue). the question asks if the object indicated is a package of sanitary wet wipes, and the options provided are A, B, C, D, which refer to different objects (metal shelf guard, yellow tissues, storage bin, blue wet wipes). the image itself does not clearly isolate a single object that definitively matches one of the options, nor does it clearly show a package of sanitary wet wipes being pointed at.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2199.5183999824803,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf stocked with various packaged goods, primarily white and yellow/orange packages, suggesting a retail environment, likely a supermarket or convenience store. the hand in the foreground is pointing towards the middle section of the visible shelves. the question asks if the object indicated is a package of sanitary wet wipes, and the options refer to different objects (shelf guard, tissues, storage bin, wet wipes). the visible items are primarily packaged goods, some of which could be wet wipes, but the specific item being pointed to is not clearly identifiable as a 'package of sanitary wet wipes' from this angle alone.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1651.7421629978344,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

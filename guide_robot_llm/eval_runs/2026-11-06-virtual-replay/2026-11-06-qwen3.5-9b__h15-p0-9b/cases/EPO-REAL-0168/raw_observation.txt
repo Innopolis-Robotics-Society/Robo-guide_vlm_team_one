@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-168-a"
+  ]
+,
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ]
+,
+  "scene_facts": "The image shows a person pointing at a railway track in a park-like setting. The track is the central object of interest, surrounded by grass, trees, and urban buildings in the background. The pointing gesture indicates the person is directing attention to the railway track as an exhibit or feature within this environment."
+}

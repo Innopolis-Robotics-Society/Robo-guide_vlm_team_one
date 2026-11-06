@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+  "epobj-27-a",
+  "epobj-27-b",
+  "epobj-27-c",
+  "epobj-27-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "the_person_is_looking_at_the_display_with_their_hand_pointing_towards_the_center_of_the_display"
+}

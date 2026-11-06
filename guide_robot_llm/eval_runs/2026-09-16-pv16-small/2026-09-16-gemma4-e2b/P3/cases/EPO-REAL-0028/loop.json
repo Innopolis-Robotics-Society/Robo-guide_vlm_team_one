@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-28-a\",\n\"epobj-28-b\",\n\"epobj-28-c\",\n\"epobj-28-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_image_shows_a_person_pointing_their_finger_towards_a_traffic_sign_with_a_speed_limit_of_15_and_a_prohibitory_sign_for_vehicles_on_the_road_the_sign_is_located_on_a_pole_next_to_a_tree_and_a_car_is_visible_to_the_right_the_question_asks_if_the_object_indicated_by_the_finger_is_above_or_below_the_speed_limit_sign\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2000.0152720022015,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-28-a\", \"epobj-28-b\", \"epobj-28-c\", \"epobj-28-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": [1, 1, 1, 1], \"scene_facts\": \"The image shows a road with a speed limit sign (15) on the right side of the road. A person's finger is pointing towards the speed limit sign. The question asks whether the object indicated by the finger is located above or below the speed limit sign. The finger is pointing at the sign itself or slightly below it, but the context implies an interaction with the sign. Since the question asks about the *location* relative to the sign, and the finger is pointing near the sign, we need to determine if the finger is above or below the sign. Based on the visual, the finger is pointing at the sign from below or near the bottom edge of the sign structure, suggesting it is below the top edge of the sign.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1622.5662369979545,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-28-a\",\n\"epobj-28-b\",\n\"epobj-28-c\",\n\"epobj-28-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_image_shows_a_person_pointing_at_a_traffic_sign_with_a_speed_limit_of_15_and_a_prohibition_sign_for_vehicles_indicating_a_restriction_on_movement_or_parking_near_the_sign_the_context_is_a_road_scene\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1400.9421259979717,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

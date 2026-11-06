@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a packaged item hanging on a display rack in what appears to be a supermarket or department store. The item is a clear plastic bag containing a white, flat object with a red logo or design. It looks like a cleaning sponge or scrubbing pad. The surrounding shelves contain household items like detergents, tissues, and other cleaning supplies."
+}

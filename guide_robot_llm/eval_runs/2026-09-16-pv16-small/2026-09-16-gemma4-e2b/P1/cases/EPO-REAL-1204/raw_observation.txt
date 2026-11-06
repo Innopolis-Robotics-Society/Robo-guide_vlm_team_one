@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-1204-a",
+"epobj-1204-b",
+"epobj-1204-c",
+"epobj-1204-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "The image shows a person's hand pointing towards the bottom right section of the display case, specifically towards a collection of colored plastic items (likely pens, pencils, or similar stationery) in the bottom right shelf. The person is looking at this area. The surrounding items are various documents and folders."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/SEQ-CC-003_f0.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 2 человека. Оба смотрят на зелёный прямоугольник — значит, оба готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 641.5885220048949,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/SEQ-CC-003_f1.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 2 человека. Оба смотрят на зелёный экран — значит, оба готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 453.6266179929953,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/SEQ-CC-003_f2.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 3 человека. Готовы слушать: 1 (центральный, с открытым ртом).\",\n  \"confidence\": 0.85,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 1,
+    "latency_ms": 1057.9264659900218,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

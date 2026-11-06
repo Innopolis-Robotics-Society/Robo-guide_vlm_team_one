@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a person's hand reaching towards a packaged food item displayed in a supermarket or bakery setting. The packaging is brown/tan, suggesting a baked good, perhaps a loaf or a pastry. The focus is on the hand interacting with the product.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1639.3458140082657,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"a person's hand is pointing towards a package of food in the foreground. The package appears to contain some kind of baked goods or snacks, possibly some kind of pastry or bread. The focus is on the hand pointing towards the center-right of the image.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1299.7882879863027,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-167-a\", \"epobj-167-b\", \"epobj-167-c\", \"epobj-167-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"no_scene_facts\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1013.3504149853252,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

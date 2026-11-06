@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a person's hand pointing at a speed limit sign (15 km/h) on a pole. There is another sign above it showing no cars allowed. The person is pointing directly at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit sign. The upper sign is above the speed limit sign. The person is not pointing at the upper sign. The person is pointing at the lower sign, which is the speed limit",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 6758.856492000632,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\"people_count\": 2, \"exhibit_candidates\": [\"epobj-28-a\", \"epobj-28-b\", \"epobj-28-c\", \"epobj-28-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": [0, 0, 0, 0], \"scene_facts\": \"The image shows a person's hand pointing at a speed limit sign (15 km/h) mounted on a pole. The sign is located below a no-parking sign (car with red circle and slash). The background includes trees, a road, parked cars, and a pedestrian walking away. The pointing gesture is directed toward the lower sign (speed limit), not the upper one.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2060.641481017228,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a person's hand pointing at a speed limit sign (15 km/h) mounted on a pole. The sign is located outdoors, near a road with trees and parked cars. There is no clear indication of which exhibit from the list the person is pointing to, as the image does not show any exhibits or their locations relative to the sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2225.0602830026764,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

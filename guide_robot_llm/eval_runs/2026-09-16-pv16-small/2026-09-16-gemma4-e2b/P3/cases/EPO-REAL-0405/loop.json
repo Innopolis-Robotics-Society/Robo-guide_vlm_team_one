@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. The object appears to be a small packet or item, possibly related to food or a small accessory. The context is a desk setup with a laptop, keyboard, and various other items. There is no clear visual evidence of a computer mouse in the frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1597.0565020106733,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"A person's finger is pointing at a small, yellow, rectangular object in a silver plate in the foreground. The background shows a laptop screen, keyboard, and various items on a desk. The object being pointed at is small, yellow, and rectangular, resembling a small piece of candy or a small electronic component, but it is not clearly identifiable as a computer mouse.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1276.9450859923381,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. This object appears to be a piece of food or a small item being held up for inspection. There is no clear indication of a computer mouse or any other specific object that would definitively identify one of the listed exhibits.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1261.476245999802,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

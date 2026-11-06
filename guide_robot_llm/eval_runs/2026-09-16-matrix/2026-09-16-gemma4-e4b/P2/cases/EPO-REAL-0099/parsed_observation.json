@@ -1,0 +1,9 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-b"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The visitor is pointing towards a yellow package in the bottom shelf of the display case."
+}

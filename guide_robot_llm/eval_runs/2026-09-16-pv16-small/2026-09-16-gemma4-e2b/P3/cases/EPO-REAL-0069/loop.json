@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-69-a\",\n\"epobj-69-b\",\n\"epobj-69-c\",\n\"epobj-69-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a retail display with numerous small bottles and jars, likely containing skincare or cosmetic products, given the context of such displays in modern retail environments. The items are arranged neatly on shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1460.211588011589,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a retail display with numerous bottles and products, likely related to personal care or skincare, given the context of the previous question's options (skincare or cosmetic application). The products are arranged in rows on shelves, and there are large promotional images featuring hands interacting with the products. The overall setting is that of a beauty or wellness store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1479.3047729763202,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image displays a retail setting with numerous products arranged on shelves. The products appear to be bottles, jars, and various packaged goods, suggesting a focus on personal care, health, or possibly food/beverages, given the context of the previous question's options. The overall aesthetic is clean and focused on display and product presentation.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1425.5828189780004,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

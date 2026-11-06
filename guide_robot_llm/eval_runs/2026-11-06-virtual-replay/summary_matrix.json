@@ -1,0 +1,331 @@
+{
+ "generated": "2026-11-06T04:30:30",
+ "models_wall_s": {
+  "gemma4-e2b__p15-base": {
+   "status": "done",
+   "started": "2026-11-06T03:36:08",
+   "exit_code": 0,
+   "wall_s": 85.1,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e2b__p15-base",
+   "finished": "2026-11-06T03:37:33"
+  },
+  "gemma4-e4b__p15-base": {
+   "status": "done",
+   "started": "2026-11-06T03:37:34",
+   "exit_code": 0,
+   "wall_s": 53.9,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e4b__p15-base",
+   "finished": "2026-11-06T03:38:28"
+  },
+  "qwen3.5-4b__p15-base": {
+   "status": "done",
+   "started": "2026-11-06T03:38:28",
+   "exit_code": 0,
+   "wall_s": 24.5,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-4b__p15-base",
+   "finished": "2026-11-06T03:38:53"
+  },
+  "qwen3.5-9b__p15-base": {
+   "status": "done",
+   "started": "2026-11-06T03:38:53",
+   "exit_code": 0,
+   "wall_s": 36.9,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-9b__p15-base",
+   "finished": "2026-11-06T03:39:30"
+  },
+  "gemma4-e2b__p15-p0": {
+   "status": "done",
+   "started": "2026-11-06T03:39:31",
+   "exit_code": 0,
+   "wall_s": 31.6,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e2b__p15-p0",
+   "finished": "2026-11-06T03:40:02"
+  },
+  "gemma4-e4b__p15-p0": {
+   "status": "done",
+   "started": "2026-11-06T03:40:03",
+   "exit_code": 0,
+   "wall_s": 32.6,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e4b__p15-p0",
+   "finished": "2026-11-06T03:40:35"
+  },
+  "qwen3.5-4b__p15-p0": {
+   "status": "done",
+   "started": "2026-11-06T03:40:36",
+   "exit_code": 0,
+   "wall_s": 44.1,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-4b__p15-p0",
+   "finished": "2026-11-06T03:41:20"
+  },
+  "qwen3.5-9b__p15-p0": {
+   "status": "done",
+   "started": "2026-11-06T03:41:21",
+   "exit_code": 0,
+   "wall_s": 66.3,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-9b__p15-p0",
+   "finished": "2026-11-06T03:42:27"
+  },
+  "gemma4-e2b__p15-p3": {
+   "status": "done",
+   "started": "2026-11-06T03:42:28",
+   "exit_code": 0,
+   "wall_s": 80.9,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e2b__p15-p3",
+   "finished": "2026-11-06T03:43:48"
+  },
+  "gemma4-e4b__p15-p3": {
+   "status": "done",
+   "started": "2026-11-06T03:43:49",
+   "exit_code": 0,
+   "wall_s": 87.3,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e4b__p15-p3",
+   "finished": "2026-11-06T03:45:16"
+  },
+  "qwen3.5-4b__p15-p3": {
+   "status": "done",
+   "started": "2026-11-06T03:45:17",
+   "exit_code": 0,
+   "wall_s": 104.2,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-4b__p15-p3",
+   "finished": "2026-11-06T03:47:01"
+  },
+  "qwen3.5-9b__p15-p3": {
+   "status": "done",
+   "started": "2026-11-06T03:47:02",
+   "exit_code": 0,
+   "wall_s": 155.3,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-9b__p15-p3",
+   "finished": "2026-11-06T03:49:37"
+  },
+  "gemma4-e2b__p15-p4": {
+   "status": "done",
+   "started": "2026-11-06T03:49:38",
+   "exit_code": 0,
+   "wall_s": 36.8,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e2b__p15-p4",
+   "finished": "2026-11-06T03:50:14"
+  },
+  "gemma4-e4b__p15-p4": {
+   "status": "done",
+   "started": "2026-11-06T03:50:15",
+   "exit_code": 0,
+   "wall_s": 37.9,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e4b__p15-p4",
+   "finished": "2026-11-06T03:50:53"
+  },
+  "qwen3.5-4b__p15-p4": {
+   "status": "done",
+   "started": "2026-11-06T03:50:53",
+   "exit_code": 0,
+   "wall_s": 56.2,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-4b__p15-p4",
+   "finished": "2026-11-06T03:51:49"
+  },
+  "qwen3.5-9b__p15-p4": {
+   "status": "done",
+   "started": "2026-11-06T03:51:50",
+   "exit_code": 0,
+   "wall_s": 114.9,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-9b__p15-p4",
+   "finished": "2026-11-06T03:53:45"
+  },
+  "qwen3.5-9b__h15-p0-9b": {
+   "status": "done",
+   "started": "2026-11-06T04:28:52",
+   "exit_code": 0,
+   "wall_s": 65.3,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-9b__h15-p0-9b",
+   "finished": "2026-11-06T04:29:57"
+  },
+  "gemma4-e4b__h15-p0-e4b": {
+   "status": "done",
+   "started": "2026-11-06T04:29:57",
+   "exit_code": 0,
+   "wall_s": 31.9,
+   "out": "eval_runs/2026-11-06-virtual-replay/2026-11-06-gemma4-e4b__h15-p0-e4b",
+   "finished": "2026-11-06T04:30:29"
+  }
+ },
+ "rows": [
+  {
+   "model": "gemma4-e2b__p15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 514.6,
+   "latency_median_ms": 501.4
+  },
+  {
+   "model": "gemma4-e2b__p15-p0",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1753.4,
+   "latency_median_ms": 1675.7
+  },
+  {
+   "model": "gemma4-e2b__p15-p3",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 4850.6,
+   "latency_median_ms": 4836.4
+  },
+  {
+   "model": "gemma4-e2b__p15-p4",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2100.8,
+   "latency_median_ms": 2081.4
+  },
+  {
+   "model": "gemma4-e4b__h15-p0-e4b",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1777.0,
+   "latency_median_ms": 1777.7
+  },
+  {
+   "model": "gemma4-e4b__p15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 633.9,
+   "latency_median_ms": 619.5
+  },
+  {
+   "model": "gemma4-e4b__p15-p0",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1813.8,
+   "latency_median_ms": 1794.1
+  },
+  {
+   "model": "gemma4-e4b__p15-p3",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 5211.1,
+   "latency_median_ms": 5302.0
+  },
+  {
+   "model": "gemma4-e4b__p15-p4",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2171.1,
+   "latency_median_ms": 2057.0
+  },
+  {
+   "model": "qwen3.5-4b__p15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 886.1,
+   "latency_median_ms": 888.7
+  },
+  {
+   "model": "qwen3.5-4b__p15-p0",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2788.1,
+   "latency_median_ms": 2858.6
+  },
+  {
+   "model": "qwen3.5-4b__p15-p3",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 12,
+   "n_parse_failed": 3,
+   "n_backend_error": 0,
+   "latency_mean_ms": 6509.1,
+   "latency_median_ms": 6185.4
+  },
+  {
+   "model": "qwen3.5-4b__p15-p4",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 14,
+   "n_parse_failed": 1,
+   "n_backend_error": 0,
+   "latency_mean_ms": 3595.2,
+   "latency_median_ms": 3406.2
+  },
+  {
+   "model": "qwen3.5-9b__h15-p0-9b",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 3988.3,
+   "latency_median_ms": 3874.8
+  },
+  {
+   "model": "qwen3.5-9b__p15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1497.4,
+   "latency_median_ms": 1495.6
+  },
+  {
+   "model": "qwen3.5-9b__p15-p0",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 4064.0,
+   "latency_median_ms": 3985.3
+  },
+  {
+   "model": "qwen3.5-9b__p15-p3",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 9549.2,
+   "latency_median_ms": 9528.3
+  },
+  {
+   "model": "qwen3.5-9b__p15-p4",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 11,
+   "n_parse_failed": 4,
+   "n_backend_error": 0,
+   "latency_mean_ms": 7302.6,
+   "latency_median_ms": 7006.8
+  }
+ ]
+}

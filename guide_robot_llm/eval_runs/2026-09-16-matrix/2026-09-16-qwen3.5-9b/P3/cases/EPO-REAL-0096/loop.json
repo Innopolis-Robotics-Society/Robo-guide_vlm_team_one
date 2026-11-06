@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\"\n,\n  \"pointing_box\": [\n    0.57,\n    0.64,\n    0.61,\n    0.68\n  ]\n,\n  \"scene_facts\": \"The image shows a person pointing with their right hand toward a building complex. The building has multiple storefronts, including a prominent Nike store on the left and a Uniqlo store on the right. The person is pointing toward the central part of the building, which appears to be an entrance or main area between the Nike and Uniqlo stores. There are no other specific exhibits visible in the image that the person could be pointing at. The pointing gesture is directed at the building itself, not at a specific exhibit within it.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2802.0164199988358,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.57,\n    0.64,\n    0.6,\n    0.67\n  ],\n  \"scene_facts\": \"The image shows a person's hand pointing towards a building with a large red logo that reads 'UNIQLO'. The building is part of a larger complex with other visible brands like Nike and TAIKO. The sky is clear and blue, indicating a sunny day. There are several people walking around the plaza in front of the building.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2516.784136998467,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ]\n,\n  \"scene_facts\": \"The image shows a person pointing at a building with a large Nike logo on it. The person is wearing a black jacket and has their arm extended. The background includes other buildings and people walking around.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1816.9156140065752,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

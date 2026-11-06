@@ -1,0 +1,42 @@
+{
+ "started": "2026-09-16T09:25:31",
+ "updated": "2026-09-16T10:11:03",
+ "models": {
+  "gemma4-e2b": {
+   "status": "done",
+   "started": "2026-09-16T09:35:13",
+   "error": "model gemma4-e2b: свободна 3.2GB < 6GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)",
+   "exit_code": 0,
+   "wall_s": 388.5,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-gemma4-e2b",
+   "finished": "2026-09-16T09:41:42"
+  },
+  "gemma4-e4b": {
+   "status": "done",
+   "started": "2026-09-16T09:41:42",
+   "error": "model gemma4-e4b: свободна 3.2GB < 8GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)",
+   "exit_code": 0,
+   "wall_s": 433.2,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-gemma4-e4b",
+   "finished": "2026-09-16T09:48:56"
+  },
+  "qwen3.5-4b": {
+   "status": "done",
+   "started": "2026-09-16T09:48:56",
+   "error": "model qwen3.5-4b: свободна 3.2GB < 6GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)",
+   "exit_code": 0,
+   "wall_s": 600.2,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-qwen3.5-4b",
+   "finished": "2026-09-16T09:58:57"
+  },
+  "qwen3.5-9b": {
+   "status": "done",
+   "started": "2026-09-16T09:58:57",
+   "error": "model qwen3.5-9b: свободна 3.2GB < 9GB — не запускаю сервер (вероятно, на карте занят llama-server 11434/27B; остановьте его вручную или используйте --allow-low-vram)",
+   "exit_code": 0,
+   "wall_s": 725.8,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-09-16-matrix/2026-09-16-qwen3.5-9b",
+   "finished": "2026-09-16T10:11:03"
+  }
+ }
+}

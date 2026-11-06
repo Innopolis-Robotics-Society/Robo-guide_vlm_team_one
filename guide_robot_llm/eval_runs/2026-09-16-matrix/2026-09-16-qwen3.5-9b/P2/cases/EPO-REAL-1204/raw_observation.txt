@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "scene_facts": "The image shows a hand pointing at a stack of transparent folders with red elastic bands on a lower shelf in a stationery store. The gesture is directed specifically at this stack, which appears to be the only item being indicated. The other candidates (epobj-1204-b, epobj-1204-c, epobj-1204-d) are either not visible or not in the direction of the gesture. Therefore, only epobj-1204-a fits the pointing evidence."
+}

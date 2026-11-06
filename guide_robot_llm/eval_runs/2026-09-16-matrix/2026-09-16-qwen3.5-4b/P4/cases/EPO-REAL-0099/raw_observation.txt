@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person pointing at a shelf with various packaged food items. The person is wearing a green jacket and is pointing with their right hand. The shelf contains multiple products, including what appears to be a yellow package in the center of the pointing area. The background includes other shelves with different food items. The lighting is bright, suggesting an indoor setting, possibly a store or supermarket. The person's gesture indicates they are selecting or indicating a specific product on the shelf."
+}

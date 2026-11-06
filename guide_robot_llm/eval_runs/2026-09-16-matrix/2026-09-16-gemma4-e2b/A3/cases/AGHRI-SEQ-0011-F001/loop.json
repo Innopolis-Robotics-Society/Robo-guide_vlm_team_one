@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_yj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407286_009154459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом, основываясь только на предоставленном изображении. Изображение показывает дорогу, зеленую лужайку и деревья, но на нем нет робота и людей, с которыми можно было бы взаимодействовать.\"\n  ,\n  \"confidence\": 0.95\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 870.7373270008247,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_yj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407286_009154459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить количество людей рядом с роботом на основе предоставленного изображения. Изображение показывает дорогу, зеленую лужайку и деревья, но на нем нет видимых людей или роботов.\"\n  ,\n  \"confidence\": 1\n  ,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 583.3510190132074,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_yj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407286_009154459.png",
+    "raw_text": "{\n  \"answer\": \"Ich kann die Anzahl der Menschen, die sich derzeit in der Nähe des Roboters befinden, nicht bestimmen. Das Bild zeigt einen Weg in einer ländlichen Umgebung mit Bäumen und Wiesen, aber es sind keine Personen sichtbar, die mit einem Roboter interagieren oder in seiner Nähe sind.\"\n  ,\n  \"confidence\": 1\n  ,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 850.0531390018295,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

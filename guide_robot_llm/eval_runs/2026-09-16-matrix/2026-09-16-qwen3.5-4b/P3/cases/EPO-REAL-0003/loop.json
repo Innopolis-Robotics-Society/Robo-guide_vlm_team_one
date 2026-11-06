@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing at a package of small, round, purple vegetables on a refrigerated shelf. The vegetables appear to be radishes or possibly small onions, but the exact type is not clearly identifiable from the image alone.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1827.1483769931365,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a package of small, round, purple vegetables on the middle shelf. These look like red onions or shallots. The packages are arranged in rows. The person's finger is pointing directly at one of these packages. The packages are in clear plastic containers. There are other vegetables nearby, such as Brussels sprouts and garlic, but the pointing is clearly directed at the purple round vegetables. The packages are on the middle shelf, below the top shelf which has some other vegetables. The person is wearing a black sleeve. The background is a green wall. There is a sign on the wall. The lighting is bright. The person is standing in front of the shelf. The packages are neatly arranged. The person is looking at the packages. The packages are on a metal shelf. The person is pointing at the packages with their right hand. The packages are in the middle of the shelf. The person is pointing at the packages with their index finger. The packages are in clear plastic containers. The packages are on the middle shelf. The person is pointing at the packages with their right hand. The packages are in the middle of the shelf. The person is pointing at the packages with their index finger. The packages are in clear plastic containers. The packages are on the middle shelf. The person is pointing at the packages with their right hand. The packages are in the middle of the shelf. The person is pointing at the packages with their index finger. The packages are in clear plastic containers. The packages are on the middle shelf. The person is pointing at the packages with their right hand. The packages are in the middle of the shelf. The person is pointing at the packages with their index finger. The packages are in clear plastic containers. The packages are on the middle shelf. The person is pointing at the packages with their right hand. The packages are in the middle of the shelf. The person is pointing at the packages with their index finger.",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3513.0706499912776,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-3-a\",\n    \"epobj-3-b\",\n    \"epobj-3-c\",\n    \"epobj-3-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"unconfirmed\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1357.3892130225431,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

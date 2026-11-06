@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.51,
+    0.86,
+    0.64,
+    0.97
+  ],
+  "scene_facts": "The person is pointing at a stack of clear plastic document folders on the lower shelf. The folders are organized and have red ties. This matches the description of epobj-1204-d, which is a stack of clear plastic folders with red ties."
+}

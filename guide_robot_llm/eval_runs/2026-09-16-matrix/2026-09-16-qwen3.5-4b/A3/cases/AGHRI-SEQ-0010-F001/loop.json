@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей рядом с роботом — только один человек, идущий по тропинке, и он не взаимодействует с роботом. Следовательно, количество готовых слушателей — 0.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 799.4851330004167,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек, чья фигура частично видна слева. Готовых слушателей пока недостаточно, поэтому продолжаем анализировать новые кадры.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 663.9567500096746,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей. В кадре видна только часть человека слева — его рука и часть тела, но он не взаимодействует с роботом и не готов слушать. Поскольку готовых слушателей недостаточно, не переходим к следующему шагу. Продолжаем анализировать текущий кадр.\",\n  \"confidence\": 0.85\n,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 796.3931890262756,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-385-a",
+    "epobj-385-b",
+    "epobj-385-c",
+    "epobj-385-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The visitor is not pointing at any specific exhibit in the current frame."
+}

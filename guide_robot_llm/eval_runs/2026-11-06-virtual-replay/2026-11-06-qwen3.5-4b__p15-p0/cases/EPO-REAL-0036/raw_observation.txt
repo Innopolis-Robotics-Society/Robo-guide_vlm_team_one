@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.55,
+    0.48,
+    0.75,
+    0.68
+  ],
+  "scene_facts": "The image shows a person pointing at a barber shop sign above the entrance. The sign has Chinese characters and is illuminated. Inside the shop, there are barber chairs and mirrors. The ceiling has exposed ductwork and lighting fixtures."
+}

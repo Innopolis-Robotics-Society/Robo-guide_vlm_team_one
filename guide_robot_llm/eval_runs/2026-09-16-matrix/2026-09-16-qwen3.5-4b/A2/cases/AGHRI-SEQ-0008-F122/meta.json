@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0008-F122",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 4032.921,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0033600081223994493,
+              "upload_ms": 195.69755799602717,
+              "ttft_ms": 324.5486580126453,
+              "full_ms": 3274.661881994689,
+              "parse_ready_ms": 3274.661881994689
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.004419998731464148,
+              "upload_ms": 159.35762602020986,
+              "ttft_ms": 337.40323202800937,
+              "full_ms": 757.7549380075652,
+              "parse_ready_ms": 757.7549380075652
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В центре кадра, по дорожке, идёт один человек в оранжевом жилете — это явно человек.\n- На заднем плане, слева, за деревьями и забором, видна фигура человека, стоящего у машины или транспорта — это второй человек.\n- Справа, также на заднем плане, за деревьями, можно заметить ещё одну тусклую фигуру — возможно, человек, но он очень размыт и нечёткий. Однако, учитывая контекст (парк, дорога, наличие других людей), разумно предположить, что это человек.\n- Вдоль правой стороны дороги, ближе к переднему плану, на траве, видна ещё одна маленькая фигура — возможно, ребёнок или человек, идущий рядом с роботом. Но она очень малая и нечёткая. Учитывая, что робот (если он есть) обычно взаимодействует с людьми, и что это похоже на демонстрацию или тестирование, можно считать, что это человек.\n\nИтого: 4 человека в кадре.\n\nЭтап 2: Оценим готовность каждого к слушанию по критериям: близость, взгляд, вовлечённость.\n\n1. Человек в оранжевом жилете — идёт прямо от камеры, спиной к ней. Он не смотрит на камеру, не взаимодействует с ней. Вероятно, он не готов слушать — он занят своим маршрутом. → **Не готов**\n\n2. Человек на заднем плане слева — стоит у машины, не обращает внимания на камеру. Нет признаков вовлечённости. → **Не готов**\n\n3. Человек справа на заднем плане — слишком размыт, невозможно определить взгляд или реакцию. Но если он стоит рядом с другими людьми и в парке, возможно, он наблюдатель. Однако без чётких признаков — лучше считать его не вовлечённым. → **Не готов**\n\n4. Маленькая фигура справа — если это человек, он может быть рядом с роботом, но его лицо и взгляд не видны. Если он стоит близко к роботу и смотрит на него — мог бы быть готов. Но из-за нечёткости — нельзя уверенно сказать. В контексте задачи (робот, люди рядом) — возможно, это человек, который взаимодействует с роботом. Допустим, он"
+    }
+  },
+  "latency_ms": 4032.921,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0008-F122",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0008",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407239_332517459.png",
+      "sha256": "b3e04334a4ed66dbf632714349af23ca5114650c0661dd85253d950924abfce9",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

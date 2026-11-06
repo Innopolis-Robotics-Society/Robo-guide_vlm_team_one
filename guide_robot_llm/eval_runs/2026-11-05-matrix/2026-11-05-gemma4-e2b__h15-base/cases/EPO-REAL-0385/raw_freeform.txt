@@ -1,0 +1,1 @@
+{"answer": "Glutinous rice flour", "confidence": 0.95, "abstain": false}

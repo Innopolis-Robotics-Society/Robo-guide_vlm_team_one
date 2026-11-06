@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\"answer\": \"На предоставленном изображении я вижу **4 человека** (включая одну женщину, стоящую слева, и трех мужчин, идущих по тропинке).\", \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 766.9751030043699,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить, сколько людей сейчас рядом с роботом, основываясь только на предоставленном изображении. На изображении видны несколько людей, но нет явного робота, с которым можно было бы напрямую связать взаимодействие.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 496.1912879953161,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\n  \"answer\": \"Невозможно определить, сколько людей сейчас рядом с роботом, основываясь только на предоставленном изображении. На изображении видны несколько людей, но нет явного робота, с которым можно было бы напрямую связать взаимодействие.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 484.48584700236097,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-141-a",
+    "epobj-141-b",
+    "epobj-141-c",
+    "epobj-141-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a retail store aisle with shelves stocked with various household and personal care products. A person's hand is visible in the foreground, pointing towards a specific item on the shelf. The item being pointed at appears to be a blue bottle or container, likely a cleaning product or similar household item, located on the middle shelf of the left-hand display unit. The setting is clearly indoors, within a well-lit store environment."
+}

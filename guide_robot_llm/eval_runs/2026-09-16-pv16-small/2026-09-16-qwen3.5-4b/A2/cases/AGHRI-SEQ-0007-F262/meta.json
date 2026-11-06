@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0007-F262",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 2276.81,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0033199903555214405,
+              "upload_ms": 185.4236230137758,
+              "ttft_ms": 312.18392599839717,
+              "full_ms": 1668.5383550066035,
+              "parse_ready_ms": 1668.5383550066035
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003930006641894579,
+              "upload_ms": 38.335997000103816,
+              "ttft_ms": 173.60643899883144,
+              "full_ms": 607.7797219913919,
+              "parse_ready_ms": 607.7797219913919
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В центре кадра, по центру тропинки, идёт один человек в оранжевом жилете и маске — это робот (или человек в костюме робота). Он — единственный видимый человек в кадре.\n\n→ Всего людей: **1**\n\nЭтап 2: Оценим, готов ли он слушать.\n\n- Близость: Человек находится в центре кадра, относительно близко к камере (которую можно считать «слушателем» или наблюдателем).\n- Взгляд: Он смотрит прямо на камеру — значит, его внимание направлено на того, кто снимает или общается с ним.\n- Вовлечённость: Он идёт по тропинке, но не отвлекается — его поза и взгляд указывают на то, что он вовлечён в ситуацию (например, в демонстрацию или общение).\n\n→ Готов слушать: **1**\n\nОтвет: всего людей — 1, готовых слушать — 1.\n\n**1 1**"
+    }
+  },
+  "latency_ms": 2276.81,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0007-F262",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0007",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407186_847902459.png",
+      "sha256": "450ea13bba46e02acab4cb349c803abcbcb9dbcaa74dd9f5a0dd29ad2ff34f18",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "still",
+      "split": "unknown"
+    }
+  }
+}

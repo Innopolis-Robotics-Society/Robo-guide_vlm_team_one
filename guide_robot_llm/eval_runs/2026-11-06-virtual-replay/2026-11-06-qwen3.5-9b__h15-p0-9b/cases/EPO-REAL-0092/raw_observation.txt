@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-92-a"
+  ]
+,
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a first-person perspective of a hand pointing towards an exhibit in what appears to be a museum or exhibition space. The exhibit is labeled with the ID 'epobj-92-a'. The scene includes other exhibits and informational displays, suggesting a well-organized exhibition environment."
+}

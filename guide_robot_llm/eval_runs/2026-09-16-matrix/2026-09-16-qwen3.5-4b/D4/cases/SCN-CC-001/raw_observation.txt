@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["redbox-01", "cabinet-03", "vase-04"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "Светлая комната: человек у белого предмета, красный прямоугольник на коричневой подставке, синий шкаф"}

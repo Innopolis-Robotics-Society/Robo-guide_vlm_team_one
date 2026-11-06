@@ -1,0 +1,302 @@
+scope,group,metric,value,n
+counts,,n_cases,15,
+counts,,status_ok,15,
+counts,,status_parse_failed,0,
+counts,,status_backend_error,0,
+counts,,pass,2,
+counts,,fail,7,
+counts,,unjudged,6,
+perception,pointing,evidence_accuracy,0.5333,15
+perception,pointing,target_in_candidates,1.0,15
+perception,pointing,top2_recall,0.3333,15
+perception,pointing,box_iou_not_computed,15,
+policy,pointing,final_choice_accuracy,0.2222,9
+policy,pointing,abstention_rate,0.4,15
+runner,,latency_ms,2662.267,15
+runner,,latency_ms.p50,2683.843,
+runner,,latency_ms.p95,3015.692,
+slice,source:egopoint,n,15,
+slice,source:egopoint,pass,2,
+slice,source:egopoint,fail,7,
+slice,source:egopoint,unjudged,6,
+slice,source:egopoint,parse_failed,0,
+slice,source:egopoint,pass_rate,0.2222,9
+slice,source:egopoint,parse_failed_rate,0.0,15
+slice,split_group:g-ep-real-4,n,1,
+slice,split_group:g-ep-real-4,pass,0,
+slice,split_group:g-ep-real-4,fail,1,
+slice,split_group:g-ep-real-4,unjudged,0,
+slice,split_group:g-ep-real-4,parse_failed,0,
+slice,split_group:g-ep-real-4,pass_rate,0.0,1
+slice,split_group:g-ep-real-4,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-18,n,1,
+slice,split_group:g-ep-real-18,pass,0,
+slice,split_group:g-ep-real-18,fail,0,
+slice,split_group:g-ep-real-18,unjudged,1,
+slice,split_group:g-ep-real-18,parse_failed,0,
+slice,split_group:g-ep-real-18,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-21,n,1,
+slice,split_group:g-ep-real-21,pass,0,
+slice,split_group:g-ep-real-21,fail,0,
+slice,split_group:g-ep-real-21,unjudged,1,
+slice,split_group:g-ep-real-21,parse_failed,0,
+slice,split_group:g-ep-real-21,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-23,n,1,
+slice,split_group:g-ep-real-23,pass,0,
+slice,split_group:g-ep-real-23,fail,1,
+slice,split_group:g-ep-real-23,unjudged,0,
+slice,split_group:g-ep-real-23,parse_failed,0,
+slice,split_group:g-ep-real-23,pass_rate,0.0,1
+slice,split_group:g-ep-real-23,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-55,n,1,
+slice,split_group:g-ep-real-55,pass,0,
+slice,split_group:g-ep-real-55,fail,1,
+slice,split_group:g-ep-real-55,unjudged,0,
+slice,split_group:g-ep-real-55,parse_failed,0,
+slice,split_group:g-ep-real-55,pass_rate,0.0,1
+slice,split_group:g-ep-real-55,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-61,n,1,
+slice,split_group:g-ep-real-61,pass,0,
+slice,split_group:g-ep-real-61,fail,1,
+slice,split_group:g-ep-real-61,unjudged,0,
+slice,split_group:g-ep-real-61,parse_failed,0,
+slice,split_group:g-ep-real-61,pass_rate,0.0,1
+slice,split_group:g-ep-real-61,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-92,n,1,
+slice,split_group:g-ep-real-92,pass,0,
+slice,split_group:g-ep-real-92,fail,0,
+slice,split_group:g-ep-real-92,unjudged,1,
+slice,split_group:g-ep-real-92,parse_failed,0,
+slice,split_group:g-ep-real-92,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-141,n,1,
+slice,split_group:g-ep-real-141,pass,0,
+slice,split_group:g-ep-real-141,fail,1,
+slice,split_group:g-ep-real-141,unjudged,0,
+slice,split_group:g-ep-real-141,parse_failed,0,
+slice,split_group:g-ep-real-141,pass_rate,0.0,1
+slice,split_group:g-ep-real-141,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-162,n,1,
+slice,split_group:g-ep-real-162,pass,0,
+slice,split_group:g-ep-real-162,fail,1,
+slice,split_group:g-ep-real-162,unjudged,0,
+slice,split_group:g-ep-real-162,parse_failed,0,
+slice,split_group:g-ep-real-162,pass_rate,0.0,1
+slice,split_group:g-ep-real-162,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-168,n,1,
+slice,split_group:g-ep-real-168,pass,0,
+slice,split_group:g-ep-real-168,fail,0,
+slice,split_group:g-ep-real-168,unjudged,1,
+slice,split_group:g-ep-real-168,parse_failed,0,
+slice,split_group:g-ep-real-168,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-187,n,1,
+slice,split_group:g-ep-real-187,pass,0,
+slice,split_group:g-ep-real-187,fail,0,
+slice,split_group:g-ep-real-187,unjudged,1,
+slice,split_group:g-ep-real-187,parse_failed,0,
+slice,split_group:g-ep-real-187,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-234,n,1,
+slice,split_group:g-ep-real-234,pass,0,
+slice,split_group:g-ep-real-234,fail,0,
+slice,split_group:g-ep-real-234,unjudged,1,
+slice,split_group:g-ep-real-234,parse_failed,0,
+slice,split_group:g-ep-real-234,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-235,n,1,
+slice,split_group:g-ep-real-235,pass,1,
+slice,split_group:g-ep-real-235,fail,0,
+slice,split_group:g-ep-real-235,unjudged,0,
+slice,split_group:g-ep-real-235,parse_failed,0,
+slice,split_group:g-ep-real-235,pass_rate,1.0,1
+slice,split_group:g-ep-real-235,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-242,n,1,
+slice,split_group:g-ep-real-242,pass,1,
+slice,split_group:g-ep-real-242,fail,0,
+slice,split_group:g-ep-real-242,unjudged,0,
+slice,split_group:g-ep-real-242,parse_failed,0,
+slice,split_group:g-ep-real-242,pass_rate,1.0,1
+slice,split_group:g-ep-real-242,parse_failed_rate,0.0,1
+slice,split_group:g-ep-real-385,n,1,
+slice,split_group:g-ep-real-385,pass,0,
+slice,split_group:g-ep-real-385,fail,1,
+slice,split_group:g-ep-real-385,unjudged,0,
+slice,split_group:g-ep-real-385,parse_failed,0,
+slice,split_group:g-ep-real-385,pass_rate,0.0,1
+slice,split_group:g-ep-real-385,parse_failed_rate,0.0,1
+slice,metadata:dimension:Basic Perception,n,4,
+slice,metadata:dimension:Basic Perception,pass,0,
+slice,metadata:dimension:Basic Perception,fail,3,
+slice,metadata:dimension:Basic Perception,unjudged,1,
+slice,metadata:dimension:Basic Perception,parse_failed,0,
+slice,metadata:dimension:Basic Perception,pass_rate,0.0,3
+slice,metadata:dimension:Basic Perception,parse_failed_rate,0.0,4
+slice,metadata:dimension:Affordance & Function,n,4,
+slice,metadata:dimension:Affordance & Function,pass,0,
+slice,metadata:dimension:Affordance & Function,fail,1,
+slice,metadata:dimension:Affordance & Function,unjudged,3,
+slice,metadata:dimension:Affordance & Function,parse_failed,0,
+slice,metadata:dimension:Affordance & Function,pass_rate,0.0,1
+slice,metadata:dimension:Affordance & Function,parse_failed_rate,0.0,4
+slice,metadata:dimension:Context & Relation,n,4,
+slice,metadata:dimension:Context & Relation,pass,0,
+slice,metadata:dimension:Context & Relation,fail,2,
+slice,metadata:dimension:Context & Relation,unjudged,2,
+slice,metadata:dimension:Context & Relation,parse_failed,0,
+slice,metadata:dimension:Context & Relation,pass_rate,0.0,2
+slice,metadata:dimension:Context & Relation,parse_failed_rate,0.0,4
+slice,metadata:dimension:OCR & Text,n,3,
+slice,metadata:dimension:OCR & Text,pass,2,
+slice,metadata:dimension:OCR & Text,fail,1,
+slice,metadata:dimension:OCR & Text,unjudged,0,
+slice,metadata:dimension:OCR & Text,parse_failed,0,
+slice,metadata:dimension:OCR & Text,pass_rate,0.6667,3
+slice,metadata:dimension:OCR & Text,parse_failed_rate,0.0,3
+slice,metadata:deixis_level:L1,n,6,
+slice,metadata:deixis_level:L1,pass,2,
+slice,metadata:deixis_level:L1,fail,2,
+slice,metadata:deixis_level:L1,unjudged,2,
+slice,metadata:deixis_level:L1,parse_failed,0,
+slice,metadata:deixis_level:L1,pass_rate,0.5,4
+slice,metadata:deixis_level:L1,parse_failed_rate,0.0,6
+slice,metadata:deixis_level:L3,n,6,
+slice,metadata:deixis_level:L3,pass,0,
+slice,metadata:deixis_level:L3,fail,4,
+slice,metadata:deixis_level:L3,unjudged,2,
+slice,metadata:deixis_level:L3,parse_failed,0,
+slice,metadata:deixis_level:L3,pass_rate,0.0,4
+slice,metadata:deixis_level:L3,parse_failed_rate,0.0,6
+slice,metadata:deixis_level:L2,n,3,
+slice,metadata:deixis_level:L2,pass,0,
+slice,metadata:deixis_level:L2,fail,1,
+slice,metadata:deixis_level:L2,unjudged,2,
+slice,metadata:deixis_level:L2,parse_failed,0,
+slice,metadata:deixis_level:L2,pass_rate,0.0,1
+slice,metadata:deixis_level:L2,parse_failed_rate,0.0,3
+slice,metadata:n_distractors:3,n,15,
+slice,metadata:n_distractors:3,pass,2,
+slice,metadata:n_distractors:3,fail,7,
+slice,metadata:n_distractors:3,unjudged,6,
+slice,metadata:n_distractors:3,parse_failed,0,
+slice,metadata:n_distractors:3,pass_rate,0.2222,9
+slice,metadata:n_distractors:3,parse_failed_rate,0.0,15
+slice,"metadata:answer_map:{'Green': 'epobj-4-a', 'Black': 'epobj-4-b', 'Blue': 'epobj-4-c', 'Red': 'epobj-4-d'}",n,1,
+slice,"metadata:answer_map:{'Green': 'epobj-4-a', 'Black': 'epobj-4-b', 'Blue': 'epobj-4-c', 'Red': 'epobj-4-d'}",pass,0,
+slice,"metadata:answer_map:{'Green': 'epobj-4-a', 'Black': 'epobj-4-b', 'Blue': 'epobj-4-c', 'Red': 'epobj-4-d'}",fail,1,
+slice,"metadata:answer_map:{'Green': 'epobj-4-a', 'Black': 'epobj-4-b', 'Blue': 'epobj-4-c', 'Red': 'epobj-4-d'}",unjudged,0,
+slice,"metadata:answer_map:{'Green': 'epobj-4-a', 'Black': 'epobj-4-b', 'Blue': 'epobj-4-c', 'Red': 'epobj-4-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Green': 'epobj-4-a', 'Black': 'epobj-4-b', 'Blue': 'epobj-4-c', 'Red': 'epobj-4-d'}",pass_rate,0.0,1
+slice,"metadata:answer_map:{'Green': 'epobj-4-a', 'Black': 'epobj-4-b', 'Blue': 'epobj-4-c', 'Red': 'epobj-4-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'To designate a safe crossing path for pedestrians': 'epobj-18-a', 'To separate opposing lanes of traffic': 'epobj-18-b', 'To provide a parking space for electric scooters': 'epobj-18-c', 'To mark a stopping line for vehicles at a traffic light': 'epobj-18-d'}",n,1,
+slice,"metadata:answer_map:{'To designate a safe crossing path for pedestrians': 'epobj-18-a', 'To separate opposing lanes of traffic': 'epobj-18-b', 'To provide a parking space for electric scooters': 'epobj-18-c', 'To mark a stopping line for vehicles at a traffic light': 'epobj-18-d'}",pass,0,
+slice,"metadata:answer_map:{'To designate a safe crossing path for pedestrians': 'epobj-18-a', 'To separate opposing lanes of traffic': 'epobj-18-b', 'To provide a parking space for electric scooters': 'epobj-18-c', 'To mark a stopping line for vehicles at a traffic light': 'epobj-18-d'}",fail,0,
+slice,"metadata:answer_map:{'To designate a safe crossing path for pedestrians': 'epobj-18-a', 'To separate opposing lanes of traffic': 'epobj-18-b', 'To provide a parking space for electric scooters': 'epobj-18-c', 'To mark a stopping line for vehicles at a traffic light': 'epobj-18-d'}",unjudged,1,
+slice,"metadata:answer_map:{'To designate a safe crossing path for pedestrians': 'epobj-18-a', 'To separate opposing lanes of traffic': 'epobj-18-b', 'To provide a parking space for electric scooters': 'epobj-18-c', 'To mark a stopping line for vehicles at a traffic light': 'epobj-18-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'To designate a safe crossing path for pedestrians': 'epobj-18-a', 'To separate opposing lanes of traffic': 'epobj-18-b', 'To provide a parking space for electric scooters': 'epobj-18-c', 'To mark a stopping line for vehicles at a traffic light': 'epobj-18-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{""To turn on the bicycle's headlight"": 'epobj-21-a', 'To alert pedestrians or other vehicles': 'epobj-21-b', 'To measure the speed of the bicycle': 'epobj-21-c', 'To shift gears on the bicycle': 'epobj-21-d'}",n,1,
+slice,"metadata:answer_map:{""To turn on the bicycle's headlight"": 'epobj-21-a', 'To alert pedestrians or other vehicles': 'epobj-21-b', 'To measure the speed of the bicycle': 'epobj-21-c', 'To shift gears on the bicycle': 'epobj-21-d'}",pass,0,
+slice,"metadata:answer_map:{""To turn on the bicycle's headlight"": 'epobj-21-a', 'To alert pedestrians or other vehicles': 'epobj-21-b', 'To measure the speed of the bicycle': 'epobj-21-c', 'To shift gears on the bicycle': 'epobj-21-d'}",fail,0,
+slice,"metadata:answer_map:{""To turn on the bicycle's headlight"": 'epobj-21-a', 'To alert pedestrians or other vehicles': 'epobj-21-b', 'To measure the speed of the bicycle': 'epobj-21-c', 'To shift gears on the bicycle': 'epobj-21-d'}",unjudged,1,
+slice,"metadata:answer_map:{""To turn on the bicycle's headlight"": 'epobj-21-a', 'To alert pedestrians or other vehicles': 'epobj-21-b', 'To measure the speed of the bicycle': 'epobj-21-c', 'To shift gears on the bicycle': 'epobj-21-d'}",parse_failed,0,
+slice,"metadata:answer_map:{""To turn on the bicycle's headlight"": 'epobj-21-a', 'To alert pedestrians or other vehicles': 'epobj-21-b', 'To measure the speed of the bicycle': 'epobj-21-c', 'To shift gears on the bicycle': 'epobj-21-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Dried Bean Curd Sticks': 'epobj-23-a', 'Dried Daylilies': 'epobj-23-b', 'Dried Lily Bulbs': 'epobj-23-c', 'White Fungus (Tremella)': 'epobj-23-d'}",n,1,
+slice,"metadata:answer_map:{'Dried Bean Curd Sticks': 'epobj-23-a', 'Dried Daylilies': 'epobj-23-b', 'Dried Lily Bulbs': 'epobj-23-c', 'White Fungus (Tremella)': 'epobj-23-d'}",pass,0,
+slice,"metadata:answer_map:{'Dried Bean Curd Sticks': 'epobj-23-a', 'Dried Daylilies': 'epobj-23-b', 'Dried Lily Bulbs': 'epobj-23-c', 'White Fungus (Tremella)': 'epobj-23-d'}",fail,1,
+slice,"metadata:answer_map:{'Dried Bean Curd Sticks': 'epobj-23-a', 'Dried Daylilies': 'epobj-23-b', 'Dried Lily Bulbs': 'epobj-23-c', 'White Fungus (Tremella)': 'epobj-23-d'}",unjudged,0,
+slice,"metadata:answer_map:{'Dried Bean Curd Sticks': 'epobj-23-a', 'Dried Daylilies': 'epobj-23-b', 'Dried Lily Bulbs': 'epobj-23-c', 'White Fungus (Tremella)': 'epobj-23-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Dried Bean Curd Sticks': 'epobj-23-a', 'Dried Daylilies': 'epobj-23-b', 'Dried Lily Bulbs': 'epobj-23-c', 'White Fungus (Tremella)': 'epobj-23-d'}",pass_rate,0.0,1
+slice,"metadata:answer_map:{'Dried Bean Curd Sticks': 'epobj-23-a', 'Dried Daylilies': 'epobj-23-b', 'Dried Lily Bulbs': 'epobj-23-c', 'White Fungus (Tremella)': 'epobj-23-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Mesh strainer': 'epobj-55-a', 'Soup ladle': 'epobj-55-b', 'Frying pan': 'epobj-55-c', 'Silicone spatula': 'epobj-55-d'}",n,1,
+slice,"metadata:answer_map:{'Mesh strainer': 'epobj-55-a', 'Soup ladle': 'epobj-55-b', 'Frying pan': 'epobj-55-c', 'Silicone spatula': 'epobj-55-d'}",pass,0,
+slice,"metadata:answer_map:{'Mesh strainer': 'epobj-55-a', 'Soup ladle': 'epobj-55-b', 'Frying pan': 'epobj-55-c', 'Silicone spatula': 'epobj-55-d'}",fail,1,
+slice,"metadata:answer_map:{'Mesh strainer': 'epobj-55-a', 'Soup ladle': 'epobj-55-b', 'Frying pan': 'epobj-55-c', 'Silicone spatula': 'epobj-55-d'}",unjudged,0,
+slice,"metadata:answer_map:{'Mesh strainer': 'epobj-55-a', 'Soup ladle': 'epobj-55-b', 'Frying pan': 'epobj-55-c', 'Silicone spatula': 'epobj-55-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Mesh strainer': 'epobj-55-a', 'Soup ladle': 'epobj-55-b', 'Frying pan': 'epobj-55-c', 'Silicone spatula': 'epobj-55-d'}",pass_rate,0.0,1
+slice,"metadata:answer_map:{'Mesh strainer': 'epobj-55-a', 'Soup ladle': 'epobj-55-b', 'Frying pan': 'epobj-55-c', 'Silicone spatula': 'epobj-55-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Yes, it stands on its own feet': 'epobj-61-a', 'No, it is mounted on a pedestal': 'epobj-61-b', 'No, it is hanging from the ceiling': 'epobj-61-c', 'Yes, it is a floor mat': 'epobj-61-d'}",n,1,
+slice,"metadata:answer_map:{'Yes, it stands on its own feet': 'epobj-61-a', 'No, it is mounted on a pedestal': 'epobj-61-b', 'No, it is hanging from the ceiling': 'epobj-61-c', 'Yes, it is a floor mat': 'epobj-61-d'}",pass,0,
+slice,"metadata:answer_map:{'Yes, it stands on its own feet': 'epobj-61-a', 'No, it is mounted on a pedestal': 'epobj-61-b', 'No, it is hanging from the ceiling': 'epobj-61-c', 'Yes, it is a floor mat': 'epobj-61-d'}",fail,1,
+slice,"metadata:answer_map:{'Yes, it stands on its own feet': 'epobj-61-a', 'No, it is mounted on a pedestal': 'epobj-61-b', 'No, it is hanging from the ceiling': 'epobj-61-c', 'Yes, it is a floor mat': 'epobj-61-d'}",unjudged,0,
+slice,"metadata:answer_map:{'Yes, it stands on its own feet': 'epobj-61-a', 'No, it is mounted on a pedestal': 'epobj-61-b', 'No, it is hanging from the ceiling': 'epobj-61-c', 'Yes, it is a floor mat': 'epobj-61-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Yes, it stands on its own feet': 'epobj-61-a', 'No, it is mounted on a pedestal': 'epobj-61-b', 'No, it is hanging from the ceiling': 'epobj-61-c', 'Yes, it is a floor mat': 'epobj-61-d'}",pass_rate,0.0,1
+slice,"metadata:answer_map:{'Yes, it stands on its own feet': 'epobj-61-a', 'No, it is mounted on a pedestal': 'epobj-61-b', 'No, it is hanging from the ceiling': 'epobj-61-c', 'Yes, it is a floor mat': 'epobj-61-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Navigation': 'epobj-92-a', 'Advertising': 'epobj-92-b', 'Safety': 'epobj-92-c', 'Decoration': 'epobj-92-d'}",n,1,
+slice,"metadata:answer_map:{'Navigation': 'epobj-92-a', 'Advertising': 'epobj-92-b', 'Safety': 'epobj-92-c', 'Decoration': 'epobj-92-d'}",pass,0,
+slice,"metadata:answer_map:{'Navigation': 'epobj-92-a', 'Advertising': 'epobj-92-b', 'Safety': 'epobj-92-c', 'Decoration': 'epobj-92-d'}",fail,0,
+slice,"metadata:answer_map:{'Navigation': 'epobj-92-a', 'Advertising': 'epobj-92-b', 'Safety': 'epobj-92-c', 'Decoration': 'epobj-92-d'}",unjudged,1,
+slice,"metadata:answer_map:{'Navigation': 'epobj-92-a', 'Advertising': 'epobj-92-b', 'Safety': 'epobj-92-c', 'Decoration': 'epobj-92-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Navigation': 'epobj-92-a', 'Advertising': 'epobj-92-b', 'Safety': 'epobj-92-c', 'Decoration': 'epobj-92-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Only in vehicles': 'epobj-141-a', 'Indoors': 'epobj-141-b', 'Only underwater': 'epobj-141-c', 'Outdoors': 'epobj-141-d'}",n,1,
+slice,"metadata:answer_map:{'Only in vehicles': 'epobj-141-a', 'Indoors': 'epobj-141-b', 'Only underwater': 'epobj-141-c', 'Outdoors': 'epobj-141-d'}",pass,0,
+slice,"metadata:answer_map:{'Only in vehicles': 'epobj-141-a', 'Indoors': 'epobj-141-b', 'Only underwater': 'epobj-141-c', 'Outdoors': 'epobj-141-d'}",fail,1,
+slice,"metadata:answer_map:{'Only in vehicles': 'epobj-141-a', 'Indoors': 'epobj-141-b', 'Only underwater': 'epobj-141-c', 'Outdoors': 'epobj-141-d'}",unjudged,0,
+slice,"metadata:answer_map:{'Only in vehicles': 'epobj-141-a', 'Indoors': 'epobj-141-b', 'Only underwater': 'epobj-141-c', 'Outdoors': 'epobj-141-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Only in vehicles': 'epobj-141-a', 'Indoors': 'epobj-141-b', 'Only underwater': 'epobj-141-c', 'Outdoors': 'epobj-141-d'}",pass_rate,0.0,1
+slice,"metadata:answer_map:{'Only in vehicles': 'epobj-141-a', 'Indoors': 'epobj-141-b', 'Only underwater': 'epobj-141-c', 'Outdoors': 'epobj-141-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Ice cubes': 'epobj-162-a', 'Cold beverages': 'epobj-162-b', 'Coffee': 'epobj-162-c', 'Boiling water': 'epobj-162-d'}",n,1,
+slice,"metadata:answer_map:{'Ice cubes': 'epobj-162-a', 'Cold beverages': 'epobj-162-b', 'Coffee': 'epobj-162-c', 'Boiling water': 'epobj-162-d'}",pass,0,
+slice,"metadata:answer_map:{'Ice cubes': 'epobj-162-a', 'Cold beverages': 'epobj-162-b', 'Coffee': 'epobj-162-c', 'Boiling water': 'epobj-162-d'}",fail,1,
+slice,"metadata:answer_map:{'Ice cubes': 'epobj-162-a', 'Cold beverages': 'epobj-162-b', 'Coffee': 'epobj-162-c', 'Boiling water': 'epobj-162-d'}",unjudged,0,
+slice,"metadata:answer_map:{'Ice cubes': 'epobj-162-a', 'Cold beverages': 'epobj-162-b', 'Coffee': 'epobj-162-c', 'Boiling water': 'epobj-162-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Ice cubes': 'epobj-162-a', 'Cold beverages': 'epobj-162-b', 'Coffee': 'epobj-162-c', 'Boiling water': 'epobj-162-d'}",pass_rate,0.0,1
+slice,"metadata:answer_map:{'Ice cubes': 'epobj-162-a', 'Cold beverages': 'epobj-162-b', 'Coffee': 'epobj-162-c', 'Boiling water': 'epobj-162-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'A park or green space': 'epobj-168-a', 'A busy urban street': 'epobj-168-b', 'A construction site': 'epobj-168-c', 'An industrial complex': 'epobj-168-d'}",n,1,
+slice,"metadata:answer_map:{'A park or green space': 'epobj-168-a', 'A busy urban street': 'epobj-168-b', 'A construction site': 'epobj-168-c', 'An industrial complex': 'epobj-168-d'}",pass,0,
+slice,"metadata:answer_map:{'A park or green space': 'epobj-168-a', 'A busy urban street': 'epobj-168-b', 'A construction site': 'epobj-168-c', 'An industrial complex': 'epobj-168-d'}",fail,0,
+slice,"metadata:answer_map:{'A park or green space': 'epobj-168-a', 'A busy urban street': 'epobj-168-b', 'A construction site': 'epobj-168-c', 'An industrial complex': 'epobj-168-d'}",unjudged,1,
+slice,"metadata:answer_map:{'A park or green space': 'epobj-168-a', 'A busy urban street': 'epobj-168-b', 'A construction site': 'epobj-168-c', 'An industrial complex': 'epobj-168-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'A park or green space': 'epobj-168-a', 'A busy urban street': 'epobj-168-b', 'A construction site': 'epobj-168-c', 'An industrial complex': 'epobj-168-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Chair': 'epobj-187-a', 'Whiteboard': 'epobj-187-b', 'Desk': 'epobj-187-c', 'Table': 'epobj-187-d'}",n,1,
+slice,"metadata:answer_map:{'Chair': 'epobj-187-a', 'Whiteboard': 'epobj-187-b', 'Desk': 'epobj-187-c', 'Table': 'epobj-187-d'}",pass,0,
+slice,"metadata:answer_map:{'Chair': 'epobj-187-a', 'Whiteboard': 'epobj-187-b', 'Desk': 'epobj-187-c', 'Table': 'epobj-187-d'}",fail,0,
+slice,"metadata:answer_map:{'Chair': 'epobj-187-a', 'Whiteboard': 'epobj-187-b', 'Desk': 'epobj-187-c', 'Table': 'epobj-187-d'}",unjudged,1,
+slice,"metadata:answer_map:{'Chair': 'epobj-187-a', 'Whiteboard': 'epobj-187-b', 'Desk': 'epobj-187-c', 'Table': 'epobj-187-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Chair': 'epobj-187-a', 'Whiteboard': 'epobj-187-b', 'Desk': 'epobj-187-c', 'Table': 'epobj-187-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Yes, it is fully open.': 'epobj-234-a', 'It is designed only for pedestrians.': 'epobj-234-b', 'It is partially open.': 'epobj-234-c', 'No, it is blocking the path.': 'epobj-234-d'}",n,1,
+slice,"metadata:answer_map:{'Yes, it is fully open.': 'epobj-234-a', 'It is designed only for pedestrians.': 'epobj-234-b', 'It is partially open.': 'epobj-234-c', 'No, it is blocking the path.': 'epobj-234-d'}",pass,0,
+slice,"metadata:answer_map:{'Yes, it is fully open.': 'epobj-234-a', 'It is designed only for pedestrians.': 'epobj-234-b', 'It is partially open.': 'epobj-234-c', 'No, it is blocking the path.': 'epobj-234-d'}",fail,0,
+slice,"metadata:answer_map:{'Yes, it is fully open.': 'epobj-234-a', 'It is designed only for pedestrians.': 'epobj-234-b', 'It is partially open.': 'epobj-234-c', 'No, it is blocking the path.': 'epobj-234-d'}",unjudged,1,
+slice,"metadata:answer_map:{'Yes, it is fully open.': 'epobj-234-a', 'It is designed only for pedestrians.': 'epobj-234-b', 'It is partially open.': 'epobj-234-c', 'No, it is blocking the path.': 'epobj-234-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Yes, it is fully open.': 'epobj-234-a', 'It is designed only for pedestrians.': 'epobj-234-b', 'It is partially open.': 'epobj-234-c', 'No, it is blocking the path.': 'epobj-234-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'University Physics': 'epobj-235-a', 'Analog Electronics Technique': 'epobj-235-b', 'C Programming Design': 'epobj-235-c', 'Engineering Drawing': 'epobj-235-d'}",n,1,
+slice,"metadata:answer_map:{'University Physics': 'epobj-235-a', 'Analog Electronics Technique': 'epobj-235-b', 'C Programming Design': 'epobj-235-c', 'Engineering Drawing': 'epobj-235-d'}",pass,1,
+slice,"metadata:answer_map:{'University Physics': 'epobj-235-a', 'Analog Electronics Technique': 'epobj-235-b', 'C Programming Design': 'epobj-235-c', 'Engineering Drawing': 'epobj-235-d'}",fail,0,
+slice,"metadata:answer_map:{'University Physics': 'epobj-235-a', 'Analog Electronics Technique': 'epobj-235-b', 'C Programming Design': 'epobj-235-c', 'Engineering Drawing': 'epobj-235-d'}",unjudged,0,
+slice,"metadata:answer_map:{'University Physics': 'epobj-235-a', 'Analog Electronics Technique': 'epobj-235-b', 'C Programming Design': 'epobj-235-c', 'Engineering Drawing': 'epobj-235-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'University Physics': 'epobj-235-a', 'Analog Electronics Technique': 'epobj-235-b', 'C Programming Design': 'epobj-235-c', 'Engineering Drawing': 'epobj-235-d'}",pass_rate,1.0,1
+slice,"metadata:answer_map:{'University Physics': 'epobj-235-a', 'Analog Electronics Technique': 'epobj-235-b', 'C Programming Design': 'epobj-235-c', 'Engineering Drawing': 'epobj-235-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'JISS': 'epobj-242-a', 'J154': 'epobj-242-b', 'J155': 'epobj-242-c', 'T155': 'epobj-242-d'}",n,1,
+slice,"metadata:answer_map:{'JISS': 'epobj-242-a', 'J154': 'epobj-242-b', 'J155': 'epobj-242-c', 'T155': 'epobj-242-d'}",pass,1,
+slice,"metadata:answer_map:{'JISS': 'epobj-242-a', 'J154': 'epobj-242-b', 'J155': 'epobj-242-c', 'T155': 'epobj-242-d'}",fail,0,
+slice,"metadata:answer_map:{'JISS': 'epobj-242-a', 'J154': 'epobj-242-b', 'J155': 'epobj-242-c', 'T155': 'epobj-242-d'}",unjudged,0,
+slice,"metadata:answer_map:{'JISS': 'epobj-242-a', 'J154': 'epobj-242-b', 'J155': 'epobj-242-c', 'T155': 'epobj-242-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'JISS': 'epobj-242-a', 'J154': 'epobj-242-b', 'J155': 'epobj-242-c', 'T155': 'epobj-242-d'}",pass_rate,1.0,1
+slice,"metadata:answer_map:{'JISS': 'epobj-242-a', 'J154': 'epobj-242-b', 'J155': 'epobj-242-c', 'T155': 'epobj-242-d'}",parse_failed_rate,0.0,1
+slice,"metadata:answer_map:{'Corn starch': 'epobj-385-a', 'Wheat flour': 'epobj-385-b', 'Glutinous rice flour': 'epobj-385-c', 'Potato starch': 'epobj-385-d'}",n,1,
+slice,"metadata:answer_map:{'Corn starch': 'epobj-385-a', 'Wheat flour': 'epobj-385-b', 'Glutinous rice flour': 'epobj-385-c', 'Potato starch': 'epobj-385-d'}",pass,0,
+slice,"metadata:answer_map:{'Corn starch': 'epobj-385-a', 'Wheat flour': 'epobj-385-b', 'Glutinous rice flour': 'epobj-385-c', 'Potato starch': 'epobj-385-d'}",fail,1,
+slice,"metadata:answer_map:{'Corn starch': 'epobj-385-a', 'Wheat flour': 'epobj-385-b', 'Glutinous rice flour': 'epobj-385-c', 'Potato starch': 'epobj-385-d'}",unjudged,0,
+slice,"metadata:answer_map:{'Corn starch': 'epobj-385-a', 'Wheat flour': 'epobj-385-b', 'Glutinous rice flour': 'epobj-385-c', 'Potato starch': 'epobj-385-d'}",parse_failed,0,
+slice,"metadata:answer_map:{'Corn starch': 'epobj-385-a', 'Wheat flour': 'epobj-385-b', 'Glutinous rice flour': 'epobj-385-c', 'Potato starch': 'epobj-385-d'}",pass_rate,0.0,1
+slice,"metadata:answer_map:{'Corn starch': 'epobj-385-a', 'Wheat flour': 'epobj-385-b', 'Glutinous rice flour': 'epobj-385-c', 'Potato starch': 'epobj-385-d'}",parse_failed_rate,0.0,1
+variant,P0,n,15,
+variant,P0,pass,2,
+variant,P0,fail,7,
+variant,P0,unjudged,6,
+variant,P0,scene_recorded,0,
+variant,P0,pass_rate,0.2222,9
+variant,P0,pointing.top2_recall,0.3333,15
+variant,P0,pointing.top1_target_accuracy,0.2222,9
+variant,P0,calls_per_case,2.0,15
+variant,P0,parse_failed,0,
+variant,P0,parse_failed_rate,0.0,15
+variant,P0,latency_ms,2662.267,15
+variant,P0,latency_ms.p50,2683.843,
+variant,P0,latency_ms.p95,3015.692,
+ci,meta,method,bootstrap,
+ci,meta,grouping,split_group_id,
+ci,meta,n_groups,15,
+ci,meta,n_cases,15,
+ci,meta,cases_excluded_no_group,0,
+ci,meta,n_resamples,1000,
+ci,meta,seed,0,
+ci,,pass_rate,0.2222,9
+ci,,pass_rate.ci_low,0.0,
+ci,,pass_rate.ci_high,0.5455,

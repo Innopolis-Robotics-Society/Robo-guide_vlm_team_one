@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a",
+    "epobj-3-b",
+    "epobj-3-c",
+    "epobj-3-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The person is pointing at a package of red onions on the middle shelf. The packages are arranged in rows, and the person's finger is clearly directed at one of the red onion packages. The other options (garlic, brussels sprouts, radish) are not being pointed at. The red onion packages are located in the middle section of the shelf, and the person's hand is positioned over them. The other vegetables are either on different shelves or not in the direction of the pointing gesture."
+}

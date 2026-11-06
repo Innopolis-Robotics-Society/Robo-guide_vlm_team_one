@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-100-a\",\n    \"epobj-100-b\",\n    \"epobj-100-c\",\n    \"epobj-100-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1955.2427370217629,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-100-a\",\n    \"epobj-100-b\",\n    \"epobj-100-c\",\n    \"epobj-100-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_relevant_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1579.6176620060578,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-100-a\",\n    \"epobj-100-b\",\n    \"epobj-100-c\",\n    \"epobj-100-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_specific_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1579.3595400173217,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

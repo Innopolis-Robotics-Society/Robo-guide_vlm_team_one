@@ -1,0 +1,94 @@
+{
+  "case_id": "SCN-CC-002",
+  "source": "pilot-cc",
+  "track": "scene",
+  "prompt_mode": "deployed",
+  "variant_id": "D1",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 2709.273,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.00344999716617167,
+            "upload_ms": 207.54437800496817,
+            "ttft_ms": 305.20616698777303,
+            "full_ms": 2709.2376299842726,
+            "parse_ready_ms": 2709.2376299842726
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 2709.273,
+  "attempts": 1,
+  "case": {
+    "case_id": "SCN-CC-002",
+    "source": "pilot-cc",
+    "track": "scene",
+    "split_group_id": "g-cc-SCN-CC-002",
+    "media": {
+      "path": "pilot/media/cc/SCN-CC-002.png",
+      "sha256": "5cb25b8c6e4093488dcf20752a0781fe3985463107c08251a5432104def82fb7",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Опиши, что на фото",
+      "language": "ru"
+    },
+    "candidates": [
+      "poster-01",
+      "frame-03"
+    ],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "claims",
+      "claims": [
+        "на стене тёмно-розовый постер",
+        "слева зелёное растение в горшке",
+        "справа жёлтая рама",
+        "в кадре два человека",
+        "один человек стоит перед постером"
+      ]
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

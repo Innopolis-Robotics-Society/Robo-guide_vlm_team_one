@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0008-F001",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 2593.501,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003530003596097231,
+              "upload_ms": 188.68510899483226,
+              "ttft_ms": 247.174523974536,
+              "full_ms": 1967.6161039969884,
+              "parse_ready_ms": 1967.6161039969884
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003470981027930975,
+              "upload_ms": 39.48276900337078,
+              "ttft_ms": 174.72533200634643,
+              "full_ms": 625.4817980225198,
+              "parse_ready_ms": 625.4817980225198
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Подсчёт людей в кадре\n\nВ предоставленном изображении — это пейзаж парка или открытого пространства с тропинкой, деревьями, травой и листьями. На изображении **нет видимых людей**. Нет ни одного человека, стоящего, идущего, сидящего или находящегося в любом другом состоянии рядом с роботом (которого тоже нет на изображении).\n\n→ Всего людей: **0**\n\n---\n\nЭтап 2: Оценка готовности к общению\n\nПоскольку людей вообще нет в кадре, невозможно применить критерии близости, взгляда или вовлечённости. Нет объектов для анализа.\n\n→ Готовых слушать: **0**\n\n---\n\n**Итоговый ответ:**\n\nВсего людей: **0**  \nГотовых слушать: **0**"
+    }
+  },
+  "latency_ms": 2593.501,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0008-F001",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0008",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+      "sha256": "3c37b1c5c8c5d3acce8fba09d111562daca19bf19d8c577734301bd80b99567c",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 0
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "0",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

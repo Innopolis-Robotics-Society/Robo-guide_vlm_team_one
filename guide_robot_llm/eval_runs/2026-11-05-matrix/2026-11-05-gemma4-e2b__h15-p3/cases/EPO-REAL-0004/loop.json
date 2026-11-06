@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/4.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-4-a\",\n    \"epobj-4-b\",\n    \"epobj-4-c\",\n    \"epobj-4-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the visitor is pointing at a small box or item in the bottom right section of the image, which contains various small packaged goods, predominantly in shades of red, orange, and green.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1769.9645520187914,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/4.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-4-a\",\n    \"epobj-4-b\",\n    \"epobj-4-c\",\n    \"epobj-4-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the visitor is pointing at a box in the bottom right section of the image.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1161.9847010006197,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/4.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-4-a\",\n    \"epobj-4-b\",\n    \"epobj-4-c\",\n    \"epobj-4-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"The image shows a close-up of various packaged goods, likely in a store setting. A hand is pointing towards the bottom center of the visible display area. The items in the foreground are predominantly red and gold packaging. The background shows shelves with various products.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1399.5807419996709,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

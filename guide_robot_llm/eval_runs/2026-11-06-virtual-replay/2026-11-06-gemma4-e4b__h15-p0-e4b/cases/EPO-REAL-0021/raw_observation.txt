@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-21-a", "epobj-21-b", "epobj-21-c", "epobj-21-d"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "The user is pointing at an object in the image."}

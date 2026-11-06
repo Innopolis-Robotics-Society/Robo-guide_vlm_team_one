@@ -1,0 +1,17 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    "epobj-167-a"
+  ]
+,
+  "pointing_evidence": "none"
+,
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ]
+,
+  "scene_facts": "The image shows a bakery aisle in a convenience store or supermarket. A hand is pointing at a packaged bread item on the shelf. The bread appears to be a slice of white bread with visible dark specks or chunks inside, consistent with chocolate chips. Other items on the shelf include milk bottles and other breads, but the one being pointed at clearly contains chocolate chips."
+}

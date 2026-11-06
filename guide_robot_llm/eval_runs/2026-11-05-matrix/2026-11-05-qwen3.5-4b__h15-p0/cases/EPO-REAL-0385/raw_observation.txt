@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-385-a",
+    "epobj-385-b",
+    "epobj-385-c",
+    "epobj-385-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "scene_facts": "The person is pointing at a small purple bowl containing white round balls, likely glutinous rice balls (tangyuan or similar). This bowl is located in front of a food display case with various items like sausages, fried foods, and eggs. The context suggests a food stall or cafeteria setting."
+}

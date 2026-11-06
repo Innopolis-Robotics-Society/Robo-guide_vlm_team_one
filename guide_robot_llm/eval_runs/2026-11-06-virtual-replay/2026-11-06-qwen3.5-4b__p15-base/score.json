@@ -1,0 +1,1225 @@
+{
+  "statement": "Diagnostic only — no final project score, no #11 selection.",
+  "run_dir": "eval_runs/2026-11-06-virtual-replay/2026-11-06-qwen3.5-4b__p15-base",
+  "generated": "2026-11-06T03:53:46+07:00",
+  "n_cases": 15,
+  "status_counts": {
+    "ok": 15,
+    "parse_failed": 0,
+    "backend_error": 0
+  },
+  "pass_counts": {
+    "pass": 7,
+    "fail": 8,
+    "unjudged": 0
+  },
+  "run_config": {
+    "generated": "2026-11-06T03:38:39+07:00",
+    "manifest": {
+      "path": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/egopoint_15.jsonl",
+      "sha256": "cbf233b41d3e42ffcb67f72e8dec00d2052b9b1b5ce8ca1f59961f674957da25",
+      "n_cases": 15
+    },
+    "backend": {
+      "kind": "http",
+      "base_url": "http://127.0.0.1:11436/v1",
+      "model_name": "qwen3.5-4b-q4_k_m",
+      "multimodal_enabled": true,
+      "max_images": 4,
+      "api_key_set": false
+    },
+    "prompt": {
+      "variant_id": null,
+      "examples_root": null,
+      "temperature": 0.2
+    },
+    "params": {
+      "max_attempts": 2,
+      "loop_max_calls": 3,
+      "loop_budget_ticks": 5,
+      "data_root": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm"
+    },
+    "geometry": {
+      "path": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/egopoint_15.geometry.json",
+      "sha256": "faa95d53d2450f6a8b416e0d59a4fa017b4fdc7542acc8feddab2f716d64da1a"
+    }
+  },
+  "per_case": {
+    "EPO-REAL-0003": {
+      "case_id": "EPO-REAL-0003",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-3",
+      "slices": {
+        "dimension": "Basic Perception",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "Garlic": "epobj-3-a",
+          "Brussels Sprouts": "epobj-3-b",
+          "Red Onion": "epobj-3-c",
+          "Radish": "epobj-3-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "D",
+        "mapped_target_id": "epobj-3-d",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 934.855,
+      "confidence": 0.9
+    },
+    "EPO-REAL-0008": {
+      "case_id": "EPO-REAL-0008",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-8",
+      "slices": {
+        "dimension": "Affordance & Function",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "To store cold beverages for drinking": "epobj-8-a",
+          "To clean surfaces like a sponge": "epobj-8-b",
+          "To hang clothes for drying": "epobj-8-c",
+          "To provide warmth when filled with heated liquid": "epobj-8-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-8-c",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 889.532,
+      "confidence": 0.95
+    },
+    "EPO-REAL-0013": {
+      "case_id": "EPO-REAL-0013",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-13",
+      "slices": {
+        "dimension": "OCR & Text",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "Ocean Blue": "epobj-13-a",
+          "Red Star": "epobj-13-b",
+          "Dream Blue": "epobj-13-c",
+          "Golden Harvest": "epobj-13-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "A",
+        "mapped_target_id": "epobj-13-a",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 885.743,
+      "confidence": 0.95
+    },
+    "EPO-REAL-0027": {
+      "case_id": "EPO-REAL-0027",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-27",
+      "slices": {
+        "dimension": "Basic Perception",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "Pork chop": "epobj-27-a",
+          "Yellow broiler chicken": "epobj-27-b",
+          "Silkie chicken": "epobj-27-c",
+          "Duck breast": "epobj-27-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-27-b",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 884.617,
+      "confidence": 0.9
+    },
+    "EPO-REAL-0028": {
+      "case_id": "EPO-REAL-0028",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-28",
+      "slices": {
+        "dimension": "Context & Relation",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "Below": "epobj-28-a",
+          "To the right": "epobj-28-b",
+          "Above": "epobj-28-c",
+          "To the left": "epobj-28-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-28-c",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 880.663,
+      "confidence": 0.95
+    },
+    "EPO-REAL-0036": {
+      "case_id": "EPO-REAL-0036",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-36",
+      "slices": {
+        "dimension": "Context & Relation",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "Attached to the side wall at eye level": "epobj-36-a",
+          "Inside the room on a desk": "epobj-36-b",
+          "Above the doorway": "epobj-36-c",
+          "On the floor in front of the doorway": "epobj-36-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-36-c",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 846.138,
+      "confidence": 0.95
+    },
+    "EPO-REAL-0069": {
+      "case_id": "EPO-REAL-0069",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-69",
+      "slices": {
+        "dimension": "Affordance & Function",
+        "deixis_level": "L2",
+        "n_distractors": 3,
+        "answer_map": {
+          "Stationery and office organization": "epobj-69-a",
+          "Household cleaning and sanitation": "epobj-69-b",
+          "Food and beverage consumption": "epobj-69-c",
+          "Skincare or cosmetic application": "epobj-69-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "D",
+        "mapped_target_id": "epobj-69-d",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 888.662,
+      "confidence": 0.95
+    },
+    "EPO-REAL-0096": {
+      "case_id": "EPO-REAL-0096",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-96",
+      "slices": {
+        "dimension": "OCR & Text",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "Nike": "epobj-96-a",
+          "Uniqlo": "epobj-96-b",
+          "H&M": "epobj-96-c",
+          "Adidas": "epobj-96-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-96-b",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 870.973,
+      "confidence": 0.95
+    },
+    "EPO-REAL-0099": {
+      "case_id": "EPO-REAL-0099",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-99",
+      "slices": {
+        "dimension": "Affordance & Function",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "An ingredient for a meal.": "epobj-99-a",
+          "A single-serving snack bar.": "epobj-99-b",
+          "A cleaning product.": "epobj-99-c",
+          "A fresh noodle dish.": "epobj-99-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-99-b",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 894.096,
+      "confidence": 0.95
+    },
+    "EPO-REAL-0100": {
+      "case_id": "EPO-REAL-0100",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-100",
+      "slices": {
+        "dimension": "Context & Relation",
+        "deixis_level": "L2",
+        "n_distractors": 3,
+        "answer_map": {
+          "On the desk surface": "epobj-100-a",
+          "On the shelf": "epobj-100-b",
+          "Hanging from a cable": "epobj-100-c",
+          "Mounted on the wall": "epobj-100-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-100-b",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 842.392,
+      "confidence": 0.9
+    },
+    "EPO-REAL-0103": {
+      "case_id": "EPO-REAL-0103",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-103",
+      "slices": {
+        "dimension": "OCR & Text",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "Lay's": "epobj-103-a",
+          "Orion": "epobj-103-b",
+          "Pringles": "epobj-103-c",
+          "Oishi": "epobj-103-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "D",
+        "mapped_target_id": "epobj-103-d",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 863.817,
+      "confidence": 0.9
+    },
+    "EPO-REAL-0167": {
+      "case_id": "EPO-REAL-0167",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-167",
+      "slices": {
+        "dimension": "Basic Perception",
+        "deixis_level": "L2",
+        "n_distractors": 3,
+        "answer_map": {
+          "Red bean": "epobj-167-a",
+          "Whole wheat": "epobj-167-b",
+          "Milk": "epobj-167-c",
+          "Chocolate chip": "epobj-167-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "C",
+        "mapped_target_id": "epobj-167-c",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 897.857,
+      "confidence": 0.85
+    },
+    "EPO-REAL-0405": {
+      "case_id": "EPO-REAL-0405",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-405",
+      "slices": {
+        "dimension": "Adversarial",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "Unknown": "epobj-405-a",
+          "Yes": "epobj-405-b",
+          "Maybe": "epobj-405-c",
+          "No": "epobj-405-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "B",
+        "mapped_target_id": "epobj-405-b",
+        "top1_correct": false
+      },
+      "pass": false,
+      "calls": 1,
+      "latency_ms": 897.847,
+      "confidence": 0.95
+    },
+    "EPO-REAL-1204": {
+      "case_id": "EPO-REAL-1204",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-1204",
+      "slices": {
+        "dimension": "Adversarial",
+        "deixis_level": "L3",
+        "n_distractors": 3,
+        "answer_map": {
+          "It prints labels automatically": "epobj-1204-a",
+          "It charges mobile devices": "epobj-1204-b",
+          "It scans documents digitally": "epobj-1204-c",
+          "It has no electronic functions": "epobj-1204-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "D",
+        "mapped_target_id": "epobj-1204-d",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 901.511,
+      "confidence": 0.95
+    },
+    "EPO-REAL-1270": {
+      "case_id": "EPO-REAL-1270",
+      "source": "egopoint",
+      "track": "pointing",
+      "prompt_mode": "freeform",
+      "variant_id": null,
+      "split_group_id": "g-ep-real-1270",
+      "slices": {
+        "dimension": "Adversarial",
+        "deixis_level": "L1",
+        "n_distractors": 3,
+        "answer_map": {
+          "No, it is a black metal shelf guard": "epobj-1270-a",
+          "Yes, it is a yellow package of tissues": "epobj-1270-b",
+          "No, it is a large plastic storage bin": "epobj-1270-c",
+          "Yes, it is a blue package of wet wipes": "epobj-1270-d"
+        }
+      },
+      "status": "ok",
+      "kind": "pointing-target-freeform",
+      "perception": {},
+      "policy": {
+        "answer": "D",
+        "mapped_target_id": "epobj-1270-d",
+        "top1_correct": true
+      },
+      "pass": true,
+      "calls": 1,
+      "latency_ms": 912.11,
+      "confidence": 0.95
+    }
+  },
+  "metrics": {
+    "perception": {
+      "pointing": {},
+      "audience": {}
+    },
+    "policy": {
+      "pointing": {
+        "top1_target_accuracy": {
+          "value": 0.4667,
+          "n": 15
+        }
+      },
+      "tool": {}
+    },
+    "runner": {
+      "latency_ms": {
+        "value": 886.054,
+        "p50": 888.662,
+        "p95": 934.855,
+        "n": 15
+      }
+    },
+    "calibration": {
+      "n": 15,
+      "ece": 0.4633,
+      "buckets": [
+        {
+          "range": "0.8-1.0",
+          "n": 15,
+          "accuracy": 0.4667,
+          "mean_confidence": 0.93
+        }
+      ]
+    }
+  },
+  "variants": {
+    "(no variant)": {
+      "n": 15,
+      "pass": 7,
+      "fail": 8,
+      "unjudged": 0,
+      "scene_recorded": 0,
+      "pass_rate": {
+        "value": 0.4667,
+        "n": 15
+      },
+      "pointing": {
+        "top1_target_accuracy": {
+          "value": 0.4667,
+          "n": 15
+        }
+      },
+      "calls_per_case": {
+        "value": 1.0,
+        "n": 15
+      },
+      "parse_failed": 0,
+      "parse_failed_rate": {
+        "value": 0.0,
+        "n": 15
+      },
+      "latency_ms": {
+        "value": 886.054,
+        "p50": 888.662,
+        "p95": 934.855,
+        "n": 15
+      }
+    }
+  },
+  "slices": {
+    "by_source": {
+      "egopoint": {
+        "n": 15,
+        "pass": 7,
+        "fail": 8,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.4667,
+          "n": 15
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 15
+        }
+      }
+    },
+    "by_split_group": {
+      "g-ep-real-3": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-8": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-13": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-27": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-28": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-36": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-69": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-96": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-99": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-100": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-103": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-167": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-405": {
+        "n": 1,
+        "pass": 0,
+        "fail": 1,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 0.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-1204": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      },
+      "g-ep-real-1270": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "unjudged": 0,
+        "parse_failed": 0,
+        "pass_rate": {
+          "value": 1.0,
+          "n": 1
+        },
+        "parse_failed_rate": {
+          "value": 0.0,
+          "n": 1
+        }
+      }
+    },
+    "by_metadata": {
+      "dimension": {
+        "Basic Perception": {
+          "n": 3,
+          "pass": 0,
+          "fail": 3,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "Affordance & Function": {
+          "n": 3,
+          "pass": 1,
+          "fail": 2,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.3333,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "OCR & Text": {
+          "n": 3,
+          "pass": 2,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.6667,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "Context & Relation": {
+          "n": 3,
+          "pass": 2,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.6667,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        },
+        "Adversarial": {
+          "n": 3,
+          "pass": 2,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.6667,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        }
+      },
+      "deixis_level": {
+        "L1": {
+          "n": 6,
+          "pass": 4,
+          "fail": 2,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.6667,
+            "n": 6
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 6
+          }
+        },
+        "L3": {
+          "n": 6,
+          "pass": 2,
+          "fail": 4,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.3333,
+            "n": 6
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 6
+          }
+        },
+        "L2": {
+          "n": 3,
+          "pass": 1,
+          "fail": 2,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.3333,
+            "n": 3
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 3
+          }
+        }
+      },
+      "n_distractors": {
+        "3": {
+          "n": 15,
+          "pass": 7,
+          "fail": 8,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.4667,
+            "n": 15
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 15
+          }
+        }
+      },
+      "answer_map": {
+        "{'Garlic': 'epobj-3-a', 'Brussels Sprouts': 'epobj-3-b', 'Red Onion': 'epobj-3-c', 'Radish': 'epobj-3-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'To store cold beverages for drinking': 'epobj-8-a', 'To clean surfaces like a sponge': 'epobj-8-b', 'To hang clothes for drying': 'epobj-8-c', 'To provide warmth when filled with heated liquid': 'epobj-8-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Ocean Blue': 'epobj-13-a', 'Red Star': 'epobj-13-b', 'Dream Blue': 'epobj-13-c', 'Golden Harvest': 'epobj-13-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Pork chop': 'epobj-27-a', 'Yellow broiler chicken': 'epobj-27-b', 'Silkie chicken': 'epobj-27-c', 'Duck breast': 'epobj-27-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Below': 'epobj-28-a', 'To the right': 'epobj-28-b', 'Above': 'epobj-28-c', 'To the left': 'epobj-28-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Attached to the side wall at eye level': 'epobj-36-a', 'Inside the room on a desk': 'epobj-36-b', 'Above the doorway': 'epobj-36-c', 'On the floor in front of the doorway': 'epobj-36-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Stationery and office organization': 'epobj-69-a', 'Household cleaning and sanitation': 'epobj-69-b', 'Food and beverage consumption': 'epobj-69-c', 'Skincare or cosmetic application': 'epobj-69-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Nike': 'epobj-96-a', 'Uniqlo': 'epobj-96-b', 'H&M': 'epobj-96-c', 'Adidas': 'epobj-96-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'An ingredient for a meal.': 'epobj-99-a', 'A single-serving snack bar.': 'epobj-99-b', 'A cleaning product.': 'epobj-99-c', 'A fresh noodle dish.': 'epobj-99-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'On the desk surface': 'epobj-100-a', 'On the shelf': 'epobj-100-b', 'Hanging from a cable': 'epobj-100-c', 'Mounted on the wall': 'epobj-100-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{\"Lay's\": 'epobj-103-a', 'Orion': 'epobj-103-b', 'Pringles': 'epobj-103-c', 'Oishi': 'epobj-103-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Red bean': 'epobj-167-a', 'Whole wheat': 'epobj-167-b', 'Milk': 'epobj-167-c', 'Chocolate chip': 'epobj-167-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'Unknown': 'epobj-405-a', 'Yes': 'epobj-405-b', 'Maybe': 'epobj-405-c', 'No': 'epobj-405-d'}": {
+          "n": 1,
+          "pass": 0,
+          "fail": 1,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 0.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'It prints labels automatically': 'epobj-1204-a', 'It charges mobile devices': 'epobj-1204-b', 'It scans documents digitally': 'epobj-1204-c', 'It has no electronic functions': 'epobj-1204-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        },
+        "{'No, it is a black metal shelf guard': 'epobj-1270-a', 'Yes, it is a yellow package of tissues': 'epobj-1270-b', 'No, it is a large plastic storage bin': 'epobj-1270-c', 'Yes, it is a blue package of wet wipes': 'epobj-1270-d'}": {
+          "n": 1,
+          "pass": 1,
+          "fail": 0,
+          "unjudged": 0,
+          "parse_failed": 0,
+          "pass_rate": {
+            "value": 1.0,
+            "n": 1
+          },
+          "parse_failed_rate": {
+            "value": 0.0,
+            "n": 1
+          }
+        }
+      }
+    }
+  },
+  "ci": {
+    "method": "bootstrap",
+    "grouping": "split_group_id",
+    "n_groups": 15,
+    "n_cases": 15,
+    "cases_excluded_no_group": 0,
+    "n_resamples": 1000,
+    "seed": 0,
+    "metrics": {
+      "policy": {
+        "pointing_top1_accuracy": {
+          "value": 0.4667,
+          "ci_low": 0.2,
+          "ci_high": 0.7333,
+          "n": 15
+        }
+      },
+      "pass_rate": {
+        "value": 0.4667,
+        "ci_low": 0.2,
+        "ci_high": 0.7333,
+        "n": 15
+      }
+    }
+  },
+  "errors": []
+}

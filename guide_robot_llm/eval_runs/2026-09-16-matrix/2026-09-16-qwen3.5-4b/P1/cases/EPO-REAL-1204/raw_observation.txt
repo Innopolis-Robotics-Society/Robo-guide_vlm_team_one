@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "A person is standing in front of a shelving unit filled with office supplies. The person's hand is visible, reaching towards the lower shelves, specifically touching or pointing at a stack of clear plastic folders or sleeves. The shelves are organized with various items like pens, folders, and notebooks. There are no visible robots or other people in the immediate vicinity. The person appears to be selecting or examining an item on the shelf."
+}

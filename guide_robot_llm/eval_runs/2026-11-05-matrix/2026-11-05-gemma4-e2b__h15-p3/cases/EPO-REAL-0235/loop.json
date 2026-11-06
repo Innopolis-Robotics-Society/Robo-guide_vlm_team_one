@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/235.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-235-a\",\n\"epobj-235-b\",\n\"epobj-235-c\",\n\"epobj-235-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a hand pointing towards a book on a shelf. The spine of the book being pointed at is visible. The text on the spine is partially visible. The options provided are: A. University Physics, B. Analog Electronics Technique, C. C Programming Design, D. Engineering Drawing.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1989.2906470049638,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/235.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-235-a\",\n\"epobj-235-b\",\n\"epobj-235-c\",\n\"epobj-235-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a hand pointing towards a book on a shelf. The spine of the book being pointed at is visible. The text on the spine is partially visible. The options provided are: A. University Physics, B. Analog Electronics Technique, C. C Programming Design, D. Engineering Drawing.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1581.872385024326,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/235.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-235-a\",\n\"epobj-235-b\",\n\"epobj-235-c\",\n\"epobj-235-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a hand pointing towards a book on a shelf. The spine of the book being pointed at has text that is partially visible. The options provided are A. University Physics, B. Analog Electronics Technique, C. C Programming Design, D. Engineering Drawing. The visible text on the spine appears to be related to '大学物理' (University Physics) or similar academic subjects, which aligns best with option A.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1618.9653660112526,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

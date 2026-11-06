@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\"\n,\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ]\n,\n  \"scene_facts\": \"The user is pointing at a large building complex in an outdoor shopping area. The building features multiple store fronts, including a Nike store on the left and a Uniqlo store on the right. The user's finger is directed towards the Uniqlo store, specifically at the red sign with the white 'UNIQLO' text on the upper right section of the building.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1961.4890510274563,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The user is pointing at a large building in an outdoor shopping area. The building has multiple store fronts, including a Nike store on the left and a Uniqlo store on the right. The user's finger is pointing towards the Uniqlo store, specifically at the red sign with the white 'UNIQLO' text. The user is wearing a dark jacket and appears to be standing in a paved plaza. There are other people in the background, some walking and some standing. The sky is clear and blue, suggesting it is a sunny day. The overall scene is a busy shopping district with modern architecture.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2117.9428460018244,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The user is pointing at a building with a large red sign that says 'UNIQLO' in white letters. There is also a Nike store visible to the left, but the finger is clearly directed towards the Uniqlo sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1552.8008919791318,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

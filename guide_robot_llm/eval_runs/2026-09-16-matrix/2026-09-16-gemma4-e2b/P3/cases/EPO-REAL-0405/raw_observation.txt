@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-405-a",
+"epobj-405-b",
+"epobj-405-c",
+"epobj-405-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. The object appears to be a small packet or item, possibly related to food or a small product. There is a white object in the foreground on the right that resembles a wireless mouse or a similar small electronic device."
+}

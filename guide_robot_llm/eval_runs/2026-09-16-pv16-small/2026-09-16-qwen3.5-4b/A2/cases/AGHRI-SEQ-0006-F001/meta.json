@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0006-F001",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3264.14,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003490014933049679,
+              "upload_ms": 168.38728199945763,
+              "ttft_ms": 296.58931598532945,
+              "full_ms": 2528.0129079765175,
+              "parse_ready_ms": 2528.0129079765175
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0031199888326227665,
+              "upload_ms": 145.00444001168944,
+              "ttft_ms": 302.6089610066265,
+              "full_ms": 735.7287270133384,
+              "parse_ready_ms": 735.7287270133384
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В левой части кадра видна часть тела человека (рука, рукав куртки, часть ноги) — это один человек.\n- Вдалеке, за забором, справа, можно заметить силуэт человека, стоящего рядом с машиной — это второй человек.\n- Никаких других людей в кадре не видно.\n\nИтого: всего людей — 2.\n\nЭтап 2: Оценим готовность каждого к слушанию по критериям (близость, взгляд, вовлечённость).\n\n1. Человек слева:\n   - Близость: очень близко к камере (видна рука и часть тела).\n   - Взгляд: не видно лица, но по позе (рука опущена, тело повернуто в сторону дороги) можно предположить, что он смотрит вдаль или в сторону — возможно, слушает или думает.\n   - Вовлечённость: не активно взаимодействует с роботом, но находится в поле зрения — вероятно, готов к общению.\n   → Вероятно, готов слушать.\n\n2. Человек вдалеке справа:\n   - Близость: далеко, за забором, за машиной.\n   - Взгляд: не видно, но стоит рядом с машиной — возможно, наблюдает или ждёт.\n   - Вовлечённость: не взаимодействует с роботом напрямую, но находится в кадре.\n   → Маловероятно, что он сейчас готов слушать — слишком далеко и не вовлечён в процесс.\n\nИтого готовых слушать: 1 (только человек слева).\n\nОтвет: всего людей — 2, готовых слушать — 1."
+    }
+  },
+  "latency_ms": 3264.14,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0006-F001",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0006",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407367_142145459.png",
+      "sha256": "1a0b137c6b642b4be3dfa9115517a8920b7971123107269a679ee9ba4ca10076",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

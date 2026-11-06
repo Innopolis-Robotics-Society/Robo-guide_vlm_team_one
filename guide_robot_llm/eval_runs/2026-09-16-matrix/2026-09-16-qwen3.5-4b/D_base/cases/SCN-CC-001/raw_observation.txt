@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["redbox-01", "cabinet-03", "vase-04"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "В комнате стоит человек, рядом с ним на полу лежит белый прямоугольный объект, а на стене висит красный прямоугольный объект."}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing at a packaged item on a retail shelf. The item appears to be a cleaning sponge or similar household product, based on its shape and packaging. The surrounding shelves contain various household goods, including cleaning supplies and personal care items. The person's hand is extended towards the item, indicating interest or selection. The environment suggests a well-lit retail store, possibly a supermarket or department store, with organized shelving and clear product displays.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2084.3018959858455,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a packaged item hanging on a display rack in what appears to be a store. The item is in a clear plastic bag with a red and white label featuring a woman's image. It looks like a packaged product, possibly a cleaning sponge or similar household item, given the context of the surrounding shelves which contain cleaning supplies and other household goods. The packaging suggests it's a single unit, not a bulk item. The person's hand is extended towards this specific hanging package, indicating interest or selection. The surrounding environment includes shelves stocked with various products, including bottles and containers, suggesting a retail setting like a supermarket or department store. The item being pointed at is distinct from the other hanging items, which appear to be different products. The focus is clearly on the packaged item in the clear plastic bag with the red and white label. The person's gesture is deliberate, suggesting they are either examining or selecting this particular item. The surrounding context of the store, with its organized shelves and variety of products, supports the idea that this is a retail environment where customers browse and select items. The item's packaging and the way it's displayed suggest it's a commercial product available for purchase. The person's hand position and the direction of their gaze further emphasize the item's importance in the current context. The overall scene suggests a typical shopping experience where a customer is considering a specific product. The item's packaging and the store's layout provide clues about its nature and purpose. The person's interaction with the item indicates a level of engagement, possibly due to its features, price, or relevance to their needs. The surrounding products and the store's organization suggest a well-stocked retail environment. The item's placement on the display rack and its visibility to the customer highlight its potential appeal. The person's hand gesture and the item's packaging are key elements in understanding the context of the interaction. The overall scene suggests a typical shopping scenario where a customer",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3761.521607026225,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a packaged item hanging on a display rack in what appears to be a supermarket or department store. The item is a clear plastic bag containing a white, flat object with a red logo or design. It looks like a cleaning sponge or scrubbing pad. The surrounding shelves contain household items like detergents, tissues, and other cleaning supplies.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1778.8246989948675,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

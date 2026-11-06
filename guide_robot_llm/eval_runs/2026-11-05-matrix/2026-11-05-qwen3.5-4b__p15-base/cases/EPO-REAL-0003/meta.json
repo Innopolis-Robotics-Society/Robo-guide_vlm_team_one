@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0003",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "freeform",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 926.26,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0023900065571069717,
+            "upload_ms": 186.209332983708,
+            "ttft_ms": 780.2391959994566,
+            "full_ms": 926.2246209837031,
+            "parse_ready_ms": 926.2246209837031
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 926.26,
+  "attempts": 1,
+  "case": {
+    "case_id": "EPO-REAL-0003",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-3",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+      "sha256": "7381d4ba2fa05ae09c74a65cc9bdfaa681d7c7c74b82dc198774d32efd8d88c8",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What type of vegetable is contained in the package I am pointing at?\nA. Garlic\nB. Brussels Sprouts\nC. Red Onion\nD. Radish\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-3-a",
+      "epobj-3-b",
+      "epobj-3-c",
+      "epobj-3-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-3-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-3-a",
+        "epobj-3-b",
+        "epobj-3-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Basic Perception",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Garlic": "epobj-3-a",
+        "Brussels Sprouts": "epobj-3-b",
+        "Red Onion": "epobj-3-c",
+        "Radish": "epobj-3-d"
+      }
+    }
+  }
+}

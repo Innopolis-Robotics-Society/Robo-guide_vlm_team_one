@@ -1,0 +1,13 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "none"
+,
+  "pointing_box": null,
+  "scene_facts": "The image shows a person's hand reaching towards a shelf in what appears to be a stationery store. The hand is positioned near a stack of clear plastic folders or sleeves on one of the lower shelves. There are no visible pointing gestures, such as a finger pointing at a specific item. The person seems to be selecting or examining an item rather than pointing at one. The shelves contain various office supplies, including folders, pens, and notebooks. The hand is interacting with the items on the shelf, possibly picking up or arranging them. There is no clear indication of pointing at a specific exhibit from the provided candidates."
+}

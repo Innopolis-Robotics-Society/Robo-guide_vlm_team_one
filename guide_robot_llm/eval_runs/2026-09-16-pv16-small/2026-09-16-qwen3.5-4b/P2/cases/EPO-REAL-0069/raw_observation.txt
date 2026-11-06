@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "scene_facts": "The image shows a retail environment, likely a department store or cosmetics section. A woman is standing on the left side of the frame, facing a display unit with shelves containing various products. The shelves appear to hold bottles, tubes, and other personal care items. The woman is looking at the products on the lower shelves of the display unit. There are no visible signs or labels indicating specific product categories or brands. The display unit has multiple shelves, with the lower shelves containing smaller items like bottles and tubes. The woman's attention is directed towards these lower shelves. The background shows more of the store interior, including other display units and possibly clothing racks further back. The lighting is bright, typical of a retail environment. There are no other people clearly visible in the immediate vicinity of the woman, though there may be others in the background. The overall scene suggests a shopping environment where customers are browsing products. The woman appears to be examining the products on the lower shelves, possibly considering a purchase. There are no obvious signs of interaction with a specific product, such as picking it up or pointing at it. The woman's posture and gaze suggest she is focused on the items on the lower shelves. The display unit is well-organized, with products neatly arranged on the shelves. The background elements, such as other display units and store fixtures, provide context for the retail setting. The woman's clothing and the store's decor suggest a modern, possibly upscale retail environment. The overall impression is of a typical shopping experience where customers browse and consider products. The woman's attention is clearly directed towards the lower shelves of the display unit, which contain various personal care items. There are no other people in the immediate vicinity who might be interacting with the products or the woman. The store appears to be well-lit and clean, with a focus on product display and customer experience. The woman's posture and gaze suggest she is actively considering the products on the lower shelves. The

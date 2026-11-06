@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n,\n  \"scene_facts\": \"The image shows a person pointing towards a building with a large red and white logo that reads 'UNIQLO'. The building is part of a larger complex with other visible brands like Nike. The person's hand is extended, indicating direction towards the UNIQLO store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3278.7389479926787,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\",\n    \"epobj-96-b\",\n    \"epobj-96-c\",\n    \"epobj-96-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"На изображении виден городской пейзаж с несколькими зданиями. На переднем плане видна рука, указывающая на одно из зданий. На здании слева виден логотип Nike. На здании справа виден логотип Uniqlo. На заднем плане видны другие здания и люди. Небесная сфера ясная и голубая.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2303.441001975443,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-96-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.58,\n    0.64,\n    0.62,\n    0.68\n  ]\n,\n  \"scene_facts\": \"The image shows a person pointing towards a building with a large red 'UNIQLO' sign on it. The person is wearing a black jacket and has their right arm extended, pointing with their index finger. The background includes other buildings and people walking around.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2141.8351019965485,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "scene_facts": "The image shows a retail store display, likely in a department store or cosmetics section. There are multiple shelves with various products, including bottles, tubes, and packets. The display has signage in Chinese, indicating it's for sensitive skin and basic hydration products. There are two people visible in the image: one person on the left wearing a light-colored jacket and dark pants, and another person partially visible on the right. The person on the left appears to be looking at the display, but there is no clear pointing gesture or specific focus on one particular item. The display itself is well-organized with multiple products arranged neatly on shelves. The overall scene suggests a typical retail environment where customers browse and select products from a variety of options available on the shelves."
+}

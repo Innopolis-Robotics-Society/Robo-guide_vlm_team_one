@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ]
+, "pointing_evidence": "yes", "pointing_box": [
+    0.45,
+    0.42,
+    0.54,
+    0.64
+  ], "scene_facts": "The image shows a retail store aisle with shelves stocked with household and personal care items. A person's arm is extended, pointing at a packaged item hanging on a display rack in the center of the frame. The item appears to be a disposable or reusable cloth product, possibly a cleaning cloth or towel, based on its packaging and context within the store (near other cleaning supplies like detergents and sponges). The surrounding products include laundry detergents, cleaning cloths, and other household goods, reinforcing the likelihood that the pointed item is related to cleaning or household maintenance."}

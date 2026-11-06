@@ -1,0 +1,1 @@
+{"people_count": 0, "exhibit_candidates": [], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "На столе разложены предметы: баночки, флаконы, телефон. На полке — фигурка, бутылка, желтая игрушка. Камера не показывает людей или жестов."}

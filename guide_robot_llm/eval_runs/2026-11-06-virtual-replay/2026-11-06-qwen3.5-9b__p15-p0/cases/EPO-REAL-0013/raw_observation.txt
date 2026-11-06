@@ -1,0 +1,12 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a retail shelf with various packaged goods, likely alcoholic beverages or gift sets. A gloved hand is pointing at one of the boxes. The box being pointed at is peach-colored with Chinese characters and a circular logo. The surrounding boxes are yellow (with red star logos), blue (with 'Dream Blue' branding), and others in red and green. No people are visible except for the gloved hand, which is not a full person. The scene is indoors, likely in a store or supermarket."
+}

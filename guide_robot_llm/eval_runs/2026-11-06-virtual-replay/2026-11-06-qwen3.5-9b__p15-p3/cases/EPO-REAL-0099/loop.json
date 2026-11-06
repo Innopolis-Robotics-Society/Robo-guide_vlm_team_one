@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n, \"pointing_evidence\": \"uncertain\", \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ], \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items. On the top shelf, there are packages of what appear to be dumplings or wontons (some labeled with Chinese characters like '手擀面' which means hand-pulled noodles, and others that look like flatbreads or dumpling wrappers). The middle shelf contains packages of instant noodles or ramen, identifiable by the pictures of cooked noodles with eggs on the packaging. The bottom shelf holds an assortment of individually wrapped snacks, including what looks like meat jerky, cookies, or other savory snacks. A person's hand, wearing a green sleeve, is pointing directly at a yellow package on the bottom shelf. The package being pointed at appears to be a small, rectangular snack, possibly a type of dried meat or jerky, given its color and texture visible through the clear plastic. The other items on the bottom shelf include brown packages (possibly another type of jerky or meat), green packages (possibly vegetables or another snack), and white packages (possibly cheese or another dairy product). The pointing gesture is directed specifically at one of the yellow packages among the various snacks on the bottom shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 5404.443537001498,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items. On the top shelf, there are packages of what appear to be dumplings or buns (some labeled with Chinese characters like 'hand-pulled noodles' and 'dumplings'). The middle shelf contains packages of instant noodles or similar prepared dishes. The bottom shelf holds smaller, individually wrapped items, possibly snacks or single-serving meals. A person's hand is visible in the foreground, pointing towards one of the items on the bottom shelf. The item being pointed at is a yellow package, which appears to be a single-serving snack bar or similar food product. The other items on the bottom shelf include various packaged goods, some in green wrappers and others in clear plastic. The overall scene suggests a retail environment where customers can select pre-packaged food items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3574.607503018342,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.45,\n    0.71,\n    0.5,\n    0.77\n  ],\n  \"scene_facts\": \"The image shows a refrigerated shelf in a grocery store containing various packaged food items. A person's hand is pointing at a specific item on the bottom shelf. The item being pointed at is a small, yellow-packaged product. To the left of the yellow package are several silver-wrapped items that appear to be meat or jerky. To the right of the yellow package are green packages and then white trays containing what looks like cheese sticks or similar dairy products. The yellow package has some text and an image on it, but it is not clearly legible. The surrounding items suggest this is a section for ready-to-eat or semi-prepared foods, possibly snacks or small meals. The pointing gesture is directed specifically at the yellow package, distinguishing it from the adjacent products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3403.7335029861424,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

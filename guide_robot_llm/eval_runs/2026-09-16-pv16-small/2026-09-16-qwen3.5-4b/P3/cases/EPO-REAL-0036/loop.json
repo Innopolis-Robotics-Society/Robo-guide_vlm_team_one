@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ]\n,\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.54,\n    0.48,\n    0.66,\n    0.63\n  ]\n,\n  \"scene_facts\": \"The image shows a person pointing with their right hand towards a brightly lit sign above a doorway. The sign appears to be for a business, possibly a barbershop or salon, given the barber pole visible on the left side of the entrance. The person's finger is directed upwards towards the sign. The sign is mounted on the wall above the doorway, not on the floor, desk, or side wall at eye level. The sign is clearly above the doorway, as indicated by the person's pointing gesture and the spatial arrangement of the elements in the image.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2216.9805070152506,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ]\n,\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The scene shows a hand pointing upwards towards a brightly lit sign with Chinese characters mounted above what appears to be a doorway or entrance to a salon or similar establishment. The sign is positioned high on the wall, directly above the opening. There is no desk, floor object, or side wall attachment visible at eye level that matches the pointing gesture. The hand is clearly directing attention to the illuminated sign above the doorway.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1820.9172220085748,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\",\n    \"epobj-36-b\",\n    \"epobj-36-c\",\n    \"epobj-36-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a person pointing towards a sign above a doorway. The sign appears to be illuminated and has Chinese characters on it. The person's hand is in the foreground, and the background shows an indoor setting, possibly a hallway or entrance area. The sign is mounted above the doorway, which is a common placement for signs or signs indicating the entrance to a room or establishment. The person's pointing gesture suggests they are drawing attention to the sign or the area above the doorway. The sign itself is the most prominent object in the image, and it is clearly positioned above the doorway. The person's pointing gesture is directed towards the sign, indicating that it is the object of interest. The sign is illuminated, which makes it stand out against the background. The sign has Chinese characters, which suggests that the location might be in a Chinese-speaking region or that the establishment has a Chinese theme. The overall setting appears to be a modern, well-lit interior, possibly a commercial or public space. The person's pointing gesture is clear and deliberate, indicating that they are intentionally directing attention to the sign. The sign is the most prominent object in the image, and it is clearly positioned above the doorway. The person's pointing gesture is directed towards the sign, indicating that it is the object of interest. The sign is illuminated, which makes it stand out against the background. The sign has Chinese characters, which suggests that the location might be in a Chinese-speaking region or that the establishment has a Chinese theme. The overall setting appears to be a modern, well-lit interior, possibly a commercial or public space. The person's pointing gesture is clear and deliberate, indicating that they are intentionally directing attention to the sign. The sign is the most prominent object in the image, and it is clearly positioned above the doorway. The person's pointing gesture is directed towards the sign, indicating that it is the object of interest. The sign is illuminated, which makes it stand out against the background. The sign has Chinese characters, which suggests that the location",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3531.9565600075293,
+    "attempts": 1,
+    "finish_reason": "length"
+  }
+]

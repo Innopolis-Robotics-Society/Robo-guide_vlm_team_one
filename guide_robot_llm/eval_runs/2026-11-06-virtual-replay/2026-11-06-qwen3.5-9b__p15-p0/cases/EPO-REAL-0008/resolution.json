@@ -1,0 +1,41 @@
+{
+  "status": "resolved",
+  "content_id": "epobj-8-a",
+  "geometry_leader": "epobj-8-a",
+  "model_content_id": "epobj-8-a",
+  "box_iou": 0.0,
+  "scores": [
+    {
+      "content_id": "epobj-8-a",
+      "score": 0.536999,
+      "in_image": true,
+      "visible": true,
+      "geometry": 0.33857,
+      "language": 1.0
+    },
+    {
+      "content_id": "epobj-8-b",
+      "score": 0.0,
+      "in_image": true,
+      "visible": false,
+      "geometry": 0.33857,
+      "language": 1.0
+    },
+    {
+      "content_id": "epobj-8-c",
+      "score": 0.0,
+      "in_image": true,
+      "visible": false,
+      "geometry": 0.33857,
+      "language": 1.0
+    },
+    {
+      "content_id": "epobj-8-d",
+      "score": 0.0,
+      "in_image": true,
+      "visible": false,
+      "geometry": 0.33857,
+      "language": 1.0
+    }
+  ]
+}

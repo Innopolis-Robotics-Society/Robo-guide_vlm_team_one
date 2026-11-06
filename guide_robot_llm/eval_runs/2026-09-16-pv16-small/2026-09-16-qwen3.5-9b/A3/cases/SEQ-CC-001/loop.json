@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/SEQ-CC-001_f0.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 1: 1 человек, готовых слушать — 0. Продолжаем.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 774.6882259962149,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/SEQ-CC-001_f1.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 2 человека. Оба смотрят прямо вперёд, что указывает на готовность слушать. Достаточно.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1718.7633090070449,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/SEQ-CC-001_f2.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 3 человека. Все 3 смотрят на зелёный объект (возможно, экран или доску), что указывает на то, что они готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 3,
+    "latency_ms": 1781.2687370169442,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

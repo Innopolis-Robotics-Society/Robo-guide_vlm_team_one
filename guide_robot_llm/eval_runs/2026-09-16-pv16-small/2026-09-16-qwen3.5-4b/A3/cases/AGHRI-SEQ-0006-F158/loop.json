@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом — один человек. Он идёт по тропинке, одет в тёмную куртку и маску, и смотрит прямо на камеру. Готов слушать — да, он прямо сейчас обращён к роботу, его взгляд и поза указывают на внимание. Поскольку готовых достаточно (один человек), переходим к следующему шагу.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1052.5020659842994,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей — только один человек, идущий по тропинке. Он не готов слушать, так как находится в движении и не взаимодействует с роботом. Продолжаем цикл: вызываем навык на новых кадрах.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 737.3824010137469,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре один человек — женщина в маске, идущая по тропинке. Она смотрит прямо на камеру, что может указывать на готовность к общению или слушанию. Поскольку это единственный человек и он обращён к камере (как будто к собеседнику), можно считать его готовым слушать. Если требуется больше людей — нужно ждать новых кадров.\",\n  \"confidence\": 0.85,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 795.1831240206957,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

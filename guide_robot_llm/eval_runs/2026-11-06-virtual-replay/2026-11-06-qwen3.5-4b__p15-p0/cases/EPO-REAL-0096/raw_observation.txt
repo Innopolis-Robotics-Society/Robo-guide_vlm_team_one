@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a",
+    "epobj-96-b",
+    "epobj-96-c",
+    "epobj-96-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.57,
+    0.64,
+    0.68,
+    0.81
+  ],
+  "scene_facts": "The person is pointing at a building with a large red sign that says 'UNIQLO' in white letters. The brand is clearly visible on the upper part of the building structure."
+}

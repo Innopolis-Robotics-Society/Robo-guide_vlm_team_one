@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/55.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-55-a\",\n    \"epobj-55-b\",\n    \"epobj-55-c\",\n    \"epobj-55-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of various kitchen utensils hanging on a rack. The hand is pointing towards a silver, round utensil in the foreground, which appears to be a strainer or a similar type of scoop/sieve.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1946.1471090035047,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/55.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-55-a\",\n\"epobj-55-b\",\n\"epobj-55-c\",\n\"epobj-55-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_image_shows_a_person_pointing_at_a_silver_colored_utensil_which_resembles_a_small_bowl_or_scoop_in_the_foreground_of_the_image\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1545.7663889974356,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/55.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-55-a\",\n    \"epobj-55-b\",\n    \"epobj-55-c\",\n    \"epobj-55-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a hand pointing towards a silver, round, shallow utensil hanging on a rack. The utensil appears to be a type of strainer or a small bowl/scoop. The context is a display of kitchen utensils.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1747.1381289942656,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

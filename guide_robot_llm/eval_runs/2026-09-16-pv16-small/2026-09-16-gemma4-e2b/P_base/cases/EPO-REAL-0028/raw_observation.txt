@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-28-d"], "pointing_evidence": "yes", "pointing_box": [0.55, 0.65, 0.75, 0.85], "scene_facts": "Человек указывает пальцем на знак ограничения скорости."}

@@ -1,0 +1,14 @@
+{
+  "people_count": 15,
+  "exhibit_candidates": [
+    "epobj-96-a"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.57,
+    0.64,
+    0.64,
+    0.71
+  ],
+  "scene_facts": "На фото виден торговый центр с вывесками Nike и Uniqlo. Рука в кадре указывает на здание с логотипом Uniqlo."
+}

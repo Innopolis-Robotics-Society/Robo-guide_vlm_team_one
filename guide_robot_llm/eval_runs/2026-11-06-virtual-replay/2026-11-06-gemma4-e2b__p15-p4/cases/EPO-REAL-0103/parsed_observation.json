@@ -1,0 +1,9 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-c"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "the_person_is_pointing_towards_the_center_of_the_image_and_the_exhibits_are_arranged_in_a_line"
+}

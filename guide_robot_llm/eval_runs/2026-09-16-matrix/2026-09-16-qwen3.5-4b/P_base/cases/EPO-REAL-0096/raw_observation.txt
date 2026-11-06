@@ -1,0 +1,12 @@
+{
+  "people_count": 15,
+  "exhibit_candidates": [],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.57,
+    0.63,
+    0.71,
+    0.81
+  ],
+  "scene_facts": "Видна улица с торговыми центрами, включая Nike и Uniqlo, человек указывает на здание Uniqlo."
+}

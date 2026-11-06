@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"На данный момент рядом с роботом нет людей. Следовательно, количество готовых слушателей — 0. Поскольку готовых слушателей недостаточно, переходим к следующему шагу — вызываем этот же навык на новых кадрах.\",\n  \"confidence\": 0.9,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 827.9953659803141,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"{\\n    \\\"people_near_robot\\\": 0,\\n    \\\"ready_to_listen\\\": 0\\n  }\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 475.9451730060391,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\n  \"answer\": \"На текущем кадре людей рядом с роботом нет — в кадре только пейзаж: тропинка, поле, деревья и дома на фоне. Робота в кадре не видно, поэтому и людей рядом с ним — 0. Готовых слушателей — 0. Поскольку готовых недостаточно, переходим к следующему шагу — вызываем этот же навык на новых кадрах.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 883.8057999964803,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

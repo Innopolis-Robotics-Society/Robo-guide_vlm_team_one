@@ -1,0 +1,16 @@
+{
+  "people_count": 1
+,
+  "exhibit_candidates": [
+    "epobj-168-a",
+    "epobj-168-b",
+    "epobj-168-c",
+    "epobj-168-d"
+  ]
+,
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "The image shows a person's finger pointing towards a set of train tracks running alongside a grassy area and a paved path. Buildings are visible in the background. The environment appears to be an outdoor area, possibly a park or a pathway adjacent to residential buildings."
+}

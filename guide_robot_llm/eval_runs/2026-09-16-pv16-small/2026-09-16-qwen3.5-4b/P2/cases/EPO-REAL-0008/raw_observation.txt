@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a packaged item on a rack. The item appears to be a sponge or cleaning pad inside a clear plastic bag. The surrounding items include hangers, slippers, and various household products. The context suggests a retail store setting, likely a department store or supermarket. The person's gesture is directed specifically at the packaged sponge-like object, indicating it as the subject of interest. The question asks about the primary function of the object being pointed at, which aligns with the visual evidence of a cleaning sponge. The answer options provided (A, B, C, D) correspond to different household items, and option B ('To clean surfaces like a sponge') matches the visual evidence of the object being pointed at. The other options (A, C, D) do not align with the visual evidence of the object being pointed at. Therefore, the correct answer is B. The pointing evidence is clear and consistent with the visual evidence of the object being pointed at. The answer options provided (A, B, C, D) correspond to different household items, and option B ('To clean surfaces like a sponge') matches the visual evidence of the object being pointed at. The other options (A, C, D) do not align with the visual evidence of the object being pointed at. Therefore, the correct answer is B. The pointing evidence is clear and consistent with the visual evidence of the object being pointed at. The answer options provided (A, B, C, D) correspond to different household items, and option B ('To clean surfaces like a sponge') matches the visual evidence of the object being pointed at. The other options (A, C, D) do not align with the visual evidence of the object being pointed at. Therefore, the correct answer is B. The pointing evidence is clear and consistent with the visual evidence of the object being pointed at. The answer options provided (A, B, C, D) correspond to different household items,

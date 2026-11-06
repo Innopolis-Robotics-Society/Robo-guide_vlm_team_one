@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n, \"pointing_evidence\": \"uncertain\", \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ]\n, \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items. On the top shelf, there are packages of what appear to be dumplings or wontons. The middle shelf contains packages of instant noodles or similar prepared meals. The bottom shelf holds smaller, individually wrapped items, possibly snacks or single-serving meals. A person's hand is visible in the foreground, pointing towards the bottom shelf. The pointing gesture is directed at a specific item among the yellow and green packages on the lower shelf. The packages being pointed at seem to be small, rectangular, and individually wrapped, consistent with single-serving snacks or meals. The other items on the shelves are larger and appear to be different types of food products, such as dumplings or noodle dishes. The context suggests that the person is selecting a specific item from the available options in the refrigerated section. The pointing action indicates interest or selection of one of the items on the bottom shelf. The items on the bottom shelf are distinct from those on the upper shelves, which are larger and have different packaging. The yellow and green packages on the bottom shelf are more likely to be single-serving snacks or meals, given their size and packaging style. The other items, such as the dumplings and noodle dishes, are clearly labeled and packaged differently, indicating they are different types of food products. The pointing gesture is directed at a specific item among the yellow and green packages, suggesting that the person is interested in or selecting one of these items. The other items on the shelves are not the focus of the pointing gesture, indicating that they are not the intended target of the selection. The context of the image, with the refrigerated display case and the variety of packaged food items, supports the idea that the person is choosing a specific item from the available options. The pointing gesture is a clear indication of selection, and the item being pointed",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 5689.407253987156,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.45,\n    0.72,\n    0.52,\n    0.78\n  ],\n  \"scene_facts\": \"The image shows a refrigerated display case in a grocery store, stocked with various packaged food items. A person's hand is visible in the foreground, pointing towards a specific product on the lower shelf. The product being pointed at is a small, yellow-packaged item, which appears to be a single-serving snack bar or similar convenience food. The packaging is distinct from the surrounding items, which include larger packages of noodles, dumplings, and other prepared foods. The pointing gesture is directed specifically at this yellow package, indicating interest or selection of that particular item. The surrounding products are clearly labeled and organized, suggesting a well-stocked retail environment. The focus of the gesture is on the yellow package, which stands out due to its color and size relative to the other items on the shelf. The person's hand is positioned in a way that suggests they are either selecting the item or drawing attention to it for purchase or inspection. The overall scene conveys a typical shopping experience where a consumer is browsing and selecting items from a refrigerated section. The pointing action is a common behavior in retail settings, used to indicate a specific product of interest. The yellow package is the central object of attention, and its packaging suggests it is a ready-to-eat or easy-to-prepare food item, likely intended for quick consumption. The surrounding products provide context, indicating that the yellow package is part of a broader selection of convenience foods available in this section of the store. The pointing gesture is clear and deliberate, emphasizing the yellow package as the primary subject of interest. The image captures a moment of decision-making in a retail environment, where the consumer is actively engaging with the products on display. The yellow package's distinct appearance and the focused gesture suggest it is a notable item within the context of the shopping experience. The surrounding products, while varied, do not detract from the focus on the yellow",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 5515.29082498746,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n, \"pointing_evidence\": \"uncertain\", \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ], \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be dumplings, noodles, and other ready-to-eat or quick-cook meals. A person's hand is visible in the foreground, pointing towards a specific item on the lower shelf. The item being pointed at is a small, yellow-packaged product. The packaging has some text and an image on it, but it's not entirely clear from this distance. The surrounding items include green-wrapped packages that look like sausages or meat sticks, and white packages that could be cheese or other dairy products. The overall setting suggests a retail environment where customers can browse and select food items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3207.6496639929246,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

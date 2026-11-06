@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-b"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.5,
+    0.6,
+    0.6,
+    0.7
+  ],
+  "scene_facts": "The image shows a person pointing towards a building with a prominent red UNIQLO logo on its facade. The gesture is directed at the upper right portion of the building, where the UNIQLO sign is clearly visible. Other brands like Nike are present on adjacent buildings but are not the focus of the pointing gesture. The scene includes multiple people in the background, but only one person is actively pointing. The environment appears to be an outdoor shopping area with clear skies and modern architecture."
+}

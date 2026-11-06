@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a hand wearing a black glove pointing at a peach-colored box labeled '海之蓝' (Hai Zhi Lan). The hand is clearly directing attention to this specific box, which is positioned between yellow boxes on the left and blue boxes on the right. The gesture is unambiguous: the index finger is extended toward the peach-colored box, indicating it as the subject of interest."
+}

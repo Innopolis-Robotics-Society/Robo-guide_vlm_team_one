@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-3-a"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.37,
+    0.74,
+    0.43,
+    0.8
+  ],
+  "scene_facts": "Видна одна рука, указывающая на упаковку с красными луковичками на полке в магазине."
+}

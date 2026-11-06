@@ -1,0 +1,9 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a supermarket aisle with snack products. A person's hand is pointing at the lower shelf, specifically at red and green packages of Oishi brand chips. The pointing gesture is directed toward the red package (epobj-103-a) on the bottom shelf, which is the most prominent and closest object in the pointing direction. Other Oishi packages (green, yellow, orange) are also visible on the "
+}

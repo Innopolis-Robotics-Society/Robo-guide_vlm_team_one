@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "The image shows a supermarket aisle with various packaged snacks on shelves. A person is visible in the foreground, reaching towards the lower shelves."
+}

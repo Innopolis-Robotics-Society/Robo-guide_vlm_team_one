@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. The object appears to be a small packet or item, possibly a candy or a small electronic component. The surrounding context is a desk setup with a laptop, keyboard, and various papers/items. There is a white object resembling a mouse on the right side of the frame, but the hand is pointing at the item in the plate.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2037.4405279872008,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a hand pointing at a small, yellow, rectangular object in a silver plate. The background includes a laptop, keyboard, and various other items. The object being pointed at is small and rectangular, consistent with the shape of a mouse, but the context is not clear enough to definitively identify it as a computer mouse among the given options without further context or a clearer view of the object's features.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1707.7293719921727,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-405-a\",\n\"epobj-405-b\",\n\"epobj-405-c\",\n\"epobj-405-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The image shows a person's finger pointing towards a small, round, metallic object resting on a plate in the foreground. This object appears to be a small, yellow/gold-colored item, possibly a piece of food or a small accessory. The background shows a laptop screen displaying some content, and various other items are scattered around. There is no clear, definitive indication of a computer mouse among the visible objects.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1694.6552979934495,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

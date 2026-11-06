@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n, \"pointing_evidence\": \"uncertain\", \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ], \"scene_facts\": \"The image shows a refrigerated shelf in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be dumplings, noodles, and other ready-to-eat or ready-to-cook meals. A person's hand is visible in the foreground, pointing towards a specific item on the lower shelf. The item being pointed at is a small, yellow-packaged product. The packaging has some text and an image on it, but the details are not entirely clear from this distance. The surrounding items include larger packages of what look like dumplings or buns on the upper shelves, and various other packaged foods on the lower shelves. The overall setting suggests a retail environment where customers can select food items.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3343.580643006135,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items. On the top shelf, there are packages of what appear to be dumplings or buns (some labeled with Chinese characters like 'hand-pulled noodles' and 'dumplings'). The middle shelf contains instant noodle cups and other packaged meals. The bottom shelf holds smaller, individually wrapped items, possibly snacks or single-serving meals. A person's hand is visible in the foreground, pointing towards the bottom shelf, specifically at a yellow package among other similar-looking items. The pointing gesture is directed at the lower shelf, not the upper ones. The items on the bottom shelf seem to be small, pre-packaged food products, possibly snacks or single-serving meals. The yellow package being pointed at appears to be one of these items. The context suggests a retail environment where customers select food items. The pointing action indicates interest or selection of a specific product on the bottom shelf. The other shelves contain different types of food, but the focus is clearly on the bottom shelf where the hand is pointing. The items on the bottom shelf are distinct from those on the upper shelves, which are larger packages of noodles and dumplings. The yellow package being pointed at is part of a group of similar small packages, suggesting it's a type of snack or single-serving meal. The overall scene is consistent with a customer browsing and selecting food items in a store. The pointing gesture is clear and directed at a specific item on the bottom shelf. The other items on the shelves are not being pointed at, indicating they are not the focus of the action. The image provides enough context to understand that the person is selecting a food item from the bottom shelf. The specific item being pointed at is a yellow package, which is part of a group of similar packages. The other packages on the bottom shelf are of different colors",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 5473.321488010697,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.45,\n    0.71,\n    0.56,\n    0.83\n  ],\n  \"scene_facts\": \"The image shows a refrigerated display case in a grocery store, stocked with various packaged food items. A person's hand is visible in the foreground, pointing towards a specific item on the bottom shelf. The item being pointed at is a yellow package containing what appears to be a single-serving snack bar or similar food product. The surrounding items include other packaged foods like dumplings, noodles, and possibly meat products. The setting is clearly a retail environment, not a kitchen or dining area. The gesture is a clear pointing action directed at one specific product among many.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2573.064181022346,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

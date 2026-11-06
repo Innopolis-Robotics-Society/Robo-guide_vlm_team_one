@@ -1,0 +1,22 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593528_237095047.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом 2 человека. Готовых слушателей — 0. Продолжаю цикл.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 770.3254489751998,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593528_237095047.png",
+    "raw_text": "{\n  \"answer\": \"В кадре видно двух людей: один в оранжевом жилете с надписью 'UK POLICE', другой — в темной одежде, идущий по тропинке. Оба находятся рядом с роботом (который, вероятно, находится в центре кадра, хотя не виден напрямую). Оба выглядят внимательными и, судя по позе и направлению взгляда, готовы слушать. Таким образом, готовых слушателей — 2.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 2,
+    "latency_ms": 953.6636569828261,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

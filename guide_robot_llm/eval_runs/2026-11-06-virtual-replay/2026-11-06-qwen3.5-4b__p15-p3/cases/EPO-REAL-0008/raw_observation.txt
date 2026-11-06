@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person pointing at a packaged item hanging on a rack in what appears to be a store. The item is wrapped in clear plastic and has a picture of a woman on it, suggesting it might be a product like a bra or underwear. The person's hand is extended towards the item, indicating interest or selection. The background shows shelves stocked with various household goods, including cleaning supplies and personal care items. The lighting is bright, typical of a retail environment. The person is wearing a black sleeve, and the item they are pointing at is suspended from a metal rack, likely for display purposes. The packaging is designed to showcase the product clearly to potential buyers. The overall scene suggests a shopping context where the person is evaluating or choosing a product. The item's placement on the rack and its packaging indicate it is a commercial product available for purchase. The person's gesture implies they are either considering the item for purchase or are showing it to someone else. The surrounding products and the store layout provide context for the item's category and availability. The person's focus on the item suggests it is of particular interest to them. The item's packaging and the store's presentation aim to attract customers and facilitate the purchasing decision. The person's interaction with the item is a key moment in the shopping process, reflecting their engagement with the product. The store's environment and the item's placement are designed to enhance the shopping experience and guide customer choices. The person's pointing action is a clear indicator of their intent to either select or examine the item further. The item's packaging and the store's display are optimized to make the product appealing and easy to identify. The person's gesture and the item's presentation together create a narrative of consumer decision-making in a retail setting. The item's category and the store's layout suggest a focus on household and personal care products. The person's interaction with the item is a typical behavior in a shopping scenario, where

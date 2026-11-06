@@ -1,0 +1,23 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ]
+  
+  ,
+  "scene_facts": "The image shows a close-up of a display case filled with various packaged food items, primarily noodles, snacks, and possibly other processed foods. The items are arranged in rows and are clearly food products. The hand in the foreground is pointing towards a package in the lower middle section of the display. The options provided are: A. An ingredient for a meal. B. A single-serving snack bar. C. A cleaning product. D. A fresh noodle dish."
+}

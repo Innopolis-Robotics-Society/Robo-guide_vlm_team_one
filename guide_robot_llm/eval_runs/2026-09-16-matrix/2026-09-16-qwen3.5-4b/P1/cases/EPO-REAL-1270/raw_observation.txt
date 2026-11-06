@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "scene_facts": "The image shows a person in a supermarket aisle, pointing with their gloved hand towards a shelf stocked with various household and personal care products. The person is wearing a black glove and is reaching out to indicate a specific item on the middle shelf. The items on the shelf include packages of tissues, wet wipes, and other hygiene products. The person's gesture is directed at a blue package of wet wipes located on the shelf. The surrounding environment is a well-lit supermarket with shelves filled with various products. The person's hand is clearly pointing at the blue package of wet wipes, which is one of the exhibit candidates. The other candidates (yellow tissues, green tissues, and other items) are not being pointed at by the person. The person's focus and gesture are directed specifically at the blue package of wet wipes, making it the most likely exhibit being indicated. The other candidates are not being pointed at by the person, and the person's gesture is clearly directed at the blue package of wet wipes. The person's hand is pointing at the blue package of wet wipes, which is one of the exhibit candidates. The other candidates (yellow tissues, green tissues, and other items) are not being pointed at by the person. The person's focus and gesture are directed specifically at the blue package of wet wipes, making it the most likely exhibit being indicated. The other candidates are not being pointed at by the person, and the person's gesture is clearly directed at the blue package of wet wipes. The person's hand is pointing at the blue package of wet wipes, which is one of the exhibit candidates. The other candidates (yellow tissues, green tissues, and other items) are not being pointed at by the person. The person's focus and gesture are directed specifically at the blue package of wet wipes, making it the most likely exhibit being indicated. The other

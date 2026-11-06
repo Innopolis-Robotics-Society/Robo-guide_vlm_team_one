@@ -1,0 +1,11 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "a person is reaching for an item on a shelf in what appears to be a stationery store. The shelf contains various office supplies such as folders, binders, and pens. The person's hand is extended towards a stack of clear plastic folders or sleeves on one of the shelves. There are no visible pointing gestures or specific focus on a single item that can be definitively identified from the image alone. The person's hand is near a stack of items, but it is not clear which specific item they are selecting or pointing at. The items on the shelf include various types of folders and stationery, but without more context or a clearer view of the person's action, it is difficult to determine exactly which item is being pointed at or selected. The person's hand is positioned near a stack of clear plastic folders, but it is not certain if they are pointing at or selecting a specific item from that stack. The surrounding items include various types of folders and stationery, but without more context, it is challenging to pinpoint the exact item of interest. The person's hand is reaching towards a stack of items, but the specific item being pointed at or selected is not clearly identifiable from the current view. The items on the shelf include various types of folders and stationery, but without more context or a clearer view of the person's action, it is difficult to determine exactly which item is being pointed at or selected. The person's hand is positioned near a stack of clear plastic folders, but it is not certain if they are pointing at or selecting a specific item from that stack. The surrounding items include various types of folders and stationery, but without more context, it is challenging to pinpoint the exact item of interest. The person's hand is reaching towards a stack of items, but the specific item being pointed at or selected is not clearly identifiable from the current view. The items on the shelf include various types of folders and stationery, but without more context or a clearer view of the person's action

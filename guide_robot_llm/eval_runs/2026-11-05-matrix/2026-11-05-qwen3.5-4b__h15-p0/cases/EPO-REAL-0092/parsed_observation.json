@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-92-a",
+    "epobj-92-b",
+    "epobj-92-c",
+    "epobj-92-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The person is pointing at a white sign with Chinese text and an arrow, which appears to be an informational or directional sign for a store (likely 'Hema Fresh' / 盒马鲜生). There is no clear indication that this is one of the listed exhibit IDs (epobj-92-a through epobj-92-d), as those IDs do not correspond to visible exhibits in the image. The scene shows a commercial area with shops like Starbucks,"
+}

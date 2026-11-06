@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    0,
+    0,
+    1
+  ],
+  "scene_facts": "The person is pointing at a small round tin containing individually wrapped candies or snacks. The tin is placed on the laptop's trackpad area. The objects on the desk include a laptop, a deck of cards, tubes of ointment, books, and a computer mouse. The person's finger is clearly directed toward the tin with the candies."
+}

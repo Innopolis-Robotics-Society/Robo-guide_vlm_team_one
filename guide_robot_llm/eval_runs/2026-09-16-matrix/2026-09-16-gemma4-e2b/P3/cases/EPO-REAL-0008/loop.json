@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-8-a\",\n\"epobj-8-b\",\n\"epobj-8-c\",\n\"epobj-8-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely food or household items, arranged on shelves. The items appear to be packaged snacks, drinks, or similar consumer products. The person is pointing towards a section of these products on the right side of the frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1670.2543210121803,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-8-a\",\n\"epobj-8-b\",\n\"epobj-8-c\",\n\"epobj-8-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely food or household items, arranged on shelves. The items appear to be packaged snacks, drinks, or similar consumer products. The person is pointing towards a section of these products on the right side of the image.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1286.32514399942,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-8-a\",\n\"epobj-8-b\",\n\"epobj-8-c\",\n\"epobj-8-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a display of various packaged goods, likely food or household items, arranged on shelves. The items appear to be packaged snacks, drinks, or similar consumer products. The person is pointing towards a section of these products on the right side of the frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1310.315983981127,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

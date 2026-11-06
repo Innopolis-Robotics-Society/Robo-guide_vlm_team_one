@@ -1,0 +1,1 @@
+{"people_count": 0, "exhibit_candidates": [], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "На изображении видна пустая тропинка в парке, покрытая опавшими листьями, с деревьями и зданиями на заднем плане. Людей в кадре нет."}

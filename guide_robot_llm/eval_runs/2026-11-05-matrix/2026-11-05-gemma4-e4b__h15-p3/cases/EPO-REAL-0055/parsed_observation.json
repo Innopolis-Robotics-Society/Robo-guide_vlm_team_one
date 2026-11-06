@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-55-a",
+    "epobj-55-b",
+    "epobj-55-c",
+    "epobj-55-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The visitor is pointing towards a group of kitchen utensils displayed on a shelf. The utensils include ladles, strainers, and spatulas."
+}

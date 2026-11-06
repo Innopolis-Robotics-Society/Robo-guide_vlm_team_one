@@ -1,0 +1,295 @@
+{
+ "generated": "2026-11-05T20:06:15",
+ "models_wall_s": {
+  "gemma4-e2b__p15-p3": {
+   "status": "done",
+   "started": "2026-11-05T19:47:21",
+   "exit_code": 0,
+   "wall_s": 152.2,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e2b__p15-p3",
+   "finished": "2026-11-05T19:49:53"
+  },
+  "gemma4-e4b__p15-p3": {
+   "status": "done",
+   "started": "2026-11-05T19:50:13",
+   "exit_code": 0,
+   "wall_s": 176.5,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e4b__p15-p3",
+   "finished": "2026-11-05T19:53:10"
+  },
+  "qwen3.5-4b__p15-p0": {
+   "status": "done",
+   "started": "2026-11-05T19:53:11",
+   "exit_code": 0,
+   "wall_s": 97.8,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-4b__p15-p0",
+   "finished": "2026-11-05T19:54:48"
+  },
+  "qwen3.5-9b__p15-p4": {
+   "status": "done",
+   "started": "2026-11-05T19:54:49",
+   "exit_code": 0,
+   "wall_s": 219.3,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-9b__p15-p4",
+   "finished": "2026-11-05T19:58:28"
+  },
+  "gemma4-e2b__p15-base": {
+   "status": "done",
+   "started": "2026-11-05T19:58:29",
+   "exit_code": 0,
+   "wall_s": 13.1,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e2b__p15-base",
+   "finished": "2026-11-05T19:58:42"
+  },
+  "gemma4-e4b__p15-base": {
+   "status": "done",
+   "started": "2026-11-05T19:58:42",
+   "exit_code": 0,
+   "wall_s": 14.9,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e4b__p15-base",
+   "finished": "2026-11-05T19:58:57"
+  },
+  "qwen3.5-4b__p15-base": {
+   "status": "done",
+   "started": "2026-11-05T19:58:58",
+   "exit_code": 0,
+   "wall_s": 15.5,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-4b__p15-base",
+   "finished": "2026-11-05T19:59:13"
+  },
+  "qwen3.5-9b__p15-base": {
+   "status": "done",
+   "started": "2026-11-05T19:59:14",
+   "exit_code": 0,
+   "wall_s": 27.5,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-9b__p15-base",
+   "finished": "2026-11-05T19:59:41"
+  },
+  "gemma4-e2b__h15-p3": {
+   "status": "done",
+   "started": "2026-11-05T19:59:42",
+   "exit_code": 0,
+   "wall_s": 82.4,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e2b__h15-p3",
+   "finished": "2026-11-05T20:01:04"
+  },
+  "gemma4-e4b__h15-p3": {
+   "status": "done",
+   "started": "2026-11-05T20:01:04",
+   "exit_code": 0,
+   "wall_s": 83.0,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e4b__h15-p3",
+   "finished": "2026-11-05T20:02:27"
+  },
+  "qwen3.5-4b__h15-p0": {
+   "status": "done",
+   "started": "2026-11-05T20:02:28",
+   "exit_code": 0,
+   "wall_s": 42.2,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-4b__h15-p0",
+   "finished": "2026-11-05T20:03:10"
+  },
+  "qwen3.5-9b__h15-p4": {
+   "status": "done",
+   "started": "2026-11-05T20:03:11",
+   "exit_code": 0,
+   "wall_s": 111.1,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-9b__h15-p4",
+   "finished": "2026-11-05T20:05:02"
+  },
+  "gemma4-e2b__h15-base": {
+   "status": "done",
+   "started": "2026-11-05T20:05:02",
+   "exit_code": 0,
+   "wall_s": 13.0,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e2b__h15-base",
+   "finished": "2026-11-05T20:05:15"
+  },
+  "gemma4-e4b__h15-base": {
+   "status": "done",
+   "started": "2026-11-05T20:05:16",
+   "exit_code": 0,
+   "wall_s": 14.7,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e4b__h15-base",
+   "finished": "2026-11-05T20:05:30"
+  },
+  "qwen3.5-4b__h15-base": {
+   "status": "done",
+   "started": "2026-11-05T20:05:31",
+   "exit_code": 0,
+   "wall_s": 14.9,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-4b__h15-base",
+   "finished": "2026-11-05T20:05:46"
+  },
+  "qwen3.5-9b__h15-base": {
+   "status": "done",
+   "started": "2026-11-05T20:05:46",
+   "exit_code": 0,
+   "wall_s": 26.7,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-9b__h15-base",
+   "finished": "2026-11-05T20:06:13"
+  }
+ },
+ "rows": [
+  {
+   "model": "gemma4-e2b__h15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 512.9,
+   "latency_median_ms": 502.2
+  },
+  {
+   "model": "gemma4-e2b__h15-p3",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 14,
+   "n_parse_failed": 1,
+   "n_backend_error": 0,
+   "latency_mean_ms": 4947.7,
+   "latency_median_ms": 4462.6
+  },
+  {
+   "model": "gemma4-e2b__p15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 520.5,
+   "latency_median_ms": 513.8
+  },
+  {
+   "model": "gemma4-e2b__p15-p3",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 4973.0,
+   "latency_median_ms": 4795.8
+  },
+  {
+   "model": "gemma4-e4b__h15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 628.5,
+   "latency_median_ms": 616.1
+  },
+  {
+   "model": "gemma4-e4b__h15-p3",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 4912.8,
+   "latency_median_ms": 4982.7
+  },
+  {
+   "model": "gemma4-e4b__p15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 636.1,
+   "latency_median_ms": 624.8
+  },
+  {
+   "model": "gemma4-e4b__p15-p3",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 5115.0,
+   "latency_median_ms": 5213.5
+  },
+  {
+   "model": "qwen3.5-4b__h15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 848.3,
+   "latency_median_ms": 863.0
+  },
+  {
+   "model": "qwen3.5-4b__h15-p0",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2662.3,
+   "latency_median_ms": 2683.8
+  },
+  {
+   "model": "qwen3.5-4b__p15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 877.9,
+   "latency_median_ms": 875.8
+  },
+  {
+   "model": "qwen3.5-4b__p15-p0",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 2757.1,
+   "latency_median_ms": 2795.7
+  },
+  {
+   "model": "qwen3.5-9b__h15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1428.5,
+   "latency_median_ms": 1461.2
+  },
+  {
+   "model": "qwen3.5-9b__h15-p4",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 13,
+   "n_parse_failed": 2,
+   "n_backend_error": 0,
+   "latency_mean_ms": 7051.7,
+   "latency_median_ms": 6703.8
+  },
+  {
+   "model": "qwen3.5-9b__p15-base",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 15,
+   "n_parse_failed": 0,
+   "n_backend_error": 0,
+   "latency_mean_ms": 1479.0,
+   "latency_median_ms": 1482.2
+  },
+  {
+   "model": "qwen3.5-9b__p15-p4",
+   "variant": "-",
+   "n_cases": 15,
+   "n_ok": 8,
+   "n_parse_failed": 7,
+   "n_backend_error": 0,
+   "latency_mean_ms": 8069.1,
+   "latency_median_ms": 8652.5
+  }
+ ]
+}

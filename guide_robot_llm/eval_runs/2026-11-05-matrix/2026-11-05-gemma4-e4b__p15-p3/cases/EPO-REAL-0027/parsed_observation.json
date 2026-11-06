@@ -1,0 +1,12 @@
+{
+  "people_count": 3,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The visitor in the center is looking towards the refrigerated display cases. His hand is extended towards the display, but it is not clearly pointing at a specific item."
+}

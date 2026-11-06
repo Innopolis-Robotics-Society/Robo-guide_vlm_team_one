@@ -1,0 +1,27 @@
+{
+  "generated": "2026-09-16T17:58:04+07:00",
+  "manifest": {
+    "path": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_manifests/pv_matrix_57.jsonl",
+    "sha256": "02530da7e59e18268a7684b8d68851df41d3ddff52463d7ce828a84a25aa8ebe",
+    "n_cases": 32
+  },
+  "backend": {
+    "kind": "http",
+    "base_url": "http://127.0.0.1:11436/v1",
+    "model_name": "gemma-4-e4b-it-q4_k_m",
+    "multimodal_enabled": true,
+    "max_images": 4,
+    "api_key_set": false
+  },
+  "prompt": {
+    "variant_id": "A0",
+    "examples_root": null,
+    "temperature": 0.2
+  },
+  "params": {
+    "max_attempts": 2,
+    "loop_max_calls": 3,
+    "loop_budget_ticks": 5,
+    "data_root": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm"
+  }
+}

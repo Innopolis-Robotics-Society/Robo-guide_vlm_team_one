@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a supermarket refrigerated section with various poultry products. A person in a green jacket is pointing at a whole chicken in the lower right section of the display case. The chicken appears to be a standard broiler chicken, which is typically yellowish in color when raw. There are no signs of it being a silkie chicken (which would have black feathers) or duck breast (which would be a piece of meat, not a whole bird). The person's gesture clearly indicates they are asking about the type of poultry shown, which is a whole chicken, specifically a yellow broiler chicken."
+}

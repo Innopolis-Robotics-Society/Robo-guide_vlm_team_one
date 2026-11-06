@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a red bag of chips on the bottom shelf of the snack aisle. The brand visible on the bag is Oishi (in Japanese characters: おいし). This matches option D in the original multiple-choice question, but here we are selecting from exhibit IDs."
+}

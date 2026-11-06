@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как на предоставленном изображении нет робота и людей, которых можно было бы посчитать или оценить их готовность слушать.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 960.7088989869226,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как на предоставленном изображении нет робота и людей, а также нет информации о том, сколько людей готовы слушать.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 627.1689219865948,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407229_115676459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения невозможно определить, сколько людей находится рядом с роботом, так как на изображении нет робота и нет видимых людей в непосредственной близости от него. Кроме того, я не могу выполнять действия в цикле, так как я являюсь языковой моделью и не могу \"\n  \n                    , \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1121.7416810104623,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

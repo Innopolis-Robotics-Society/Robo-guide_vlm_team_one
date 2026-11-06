@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a packaged bread item on the shelf. The bread has a light-colored crust with visible dark specks, consistent with chocolate chips or similar inclusions. The packaging and appearance suggest a sweet or enriched bread, possibly chocolate chip or similar flavor."
+}

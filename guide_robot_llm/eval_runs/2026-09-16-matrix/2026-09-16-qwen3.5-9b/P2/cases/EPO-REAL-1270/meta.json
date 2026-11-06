@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-1270",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 6273.452,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003110006218776107,
+              "upload_ms": 263.39237598585896,
+              "ttft_ms": 341.2336769979447,
+              "full_ms": 3331.4862310071476,
+              "parse_ready_ms": 3331.4862310071476
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0034399854484945536,
+              "upload_ms": 99.50401002424769,
+              "ttft_ms": 296.9758060062304,
+              "full_ms": 2941.88480701996,
+              "parse_ready_ms": 2941.88480701996
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест направлен на полку, где находятся упаковки влажных салфеток — в частности, на синюю упаковку с изображением лица и текстом, расположенную в центре нижней части изображения, под рукой.\n\n(2) Кандидаты, попадающие в этот сектор:\n- epobj-1270-a: синяя упаковка влажных салфеток (под рукой)\n- epobj-1270-b: желтая упаковка (слева от синей)\n- epobj-1270-c: прозрачные пластиковые контейнеры (на верхней полке)\n- epobj-1270-d: розовые/белые упаковки (справа от синей)\n\n(3) Слова посетителя: «Is the object indicated here a package of sanitary wet wipes?» — вопрос о том, является ли указанный объект пакетом гигиенических влажных салфеток. Синяя упаковка (epobj-1270-a) соответствует этому описанию — она типична для влажных салфеток, имеет соответствующую графику и расположение в отделе.\n\n(4) Только один кандидат (epobj-1270-a) точно попадает в зону жеста и соответствует описанию «package of sanitary wet wipes». Остальные либо не в зоне жеста, либо не соответствуют типу продукта.\n\nОтвет: epobj-1270-a"
+    }
+  },
+  "latency_ms": 6273.452,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-1270",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-1270",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+      "sha256": "efe7154936623f238698b6f0986a297f9839b131a2cb2eb4a4aa8978327e7669",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is the object indicated here a package of sanitary wet wipes?\nA. No, it is a black metal shelf guard\nB. Yes, it is a yellow package of tissues\nC. No, it is a large plastic storage bin\nD. Yes, it is a blue package of wet wipes\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-1270-a",
+      "epobj-1270-b",
+      "epobj-1270-c",
+      "epobj-1270-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-1270-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-1270-b",
+        "epobj-1270-c",
+        "epobj-1270-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "No, it is a black metal shelf guard": "epobj-1270-a",
+        "Yes, it is a yellow package of tissues": "epobj-1270-b",
+        "No, it is a large plastic storage bin": "epobj-1270-c",
+        "Yes, it is a blue package of wet wipes": "epobj-1270-d"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-92-a",
+    "epobj-92-b",
+    "epobj-92-c",
+    "epobj-92-d"
+  ]
+  
+  ,"pointing_evidence": "none"
+  
+  ,"pointing_box": null
+  
+  ,"scene_facts": "The image shows a person pointing towards a sign or area in the foreground, which is related to directions or information, not a specific museum exhibit from the provided list."
+}

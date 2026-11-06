@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-61-a",
+    "epobj-61-b",
+    "epobj-61-c",
+    "epobj-61-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.64,
+    0.74,
+    0.88,
+    0.98
+  ],
+  "scene_facts": "The image shows a bronze bust of a person mounted on a golden pedestal in what appears to be a museum or exhibition hall. A hand is pointing toward the base of the pedestal, indicating the exhibit. The text on the wall suggests it is a commemorative display, possibly related to a historical figure. The exhibit is clearly the central focus of the pointing gesture."
+}

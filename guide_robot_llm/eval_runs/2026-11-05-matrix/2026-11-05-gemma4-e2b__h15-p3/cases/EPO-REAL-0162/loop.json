@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/162.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-162-a\",\n\"epobj-162-b\",\n\"epobj-162-c\",\n\"epobj-162-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The visitor is pointing towards a machine that dispenses water. The text on the machine includes the characters '开水' (kāishu), which means 'boiling water'. This strongly suggests the machine provides hot water.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1665.0316820014268,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/162.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-162-a\",\n\"epobj-162-b\",\n\"epobj-162-c\",\n\"epobj-162-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The visitor is pointing towards a machine labeled '开水区' (kāishuǐ qū), which translates to 'boiling water area' or 'hot water area'. The machine itself appears to be a dispenser or a station for hot water.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1251.9947090186179,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/162.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-162-a\",\n\"epobj-162-b\",\n\"epobj-162-c\",\n\"epobj-162-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The visitor is pointing at a machine that dispenses water. The text on the machine is in Chinese. The options provided are A. Ice cubes, B. Cold beverages, C. Coffee, D. Boiling water. The machine appears to be a water dispenser.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1222.4078059953172,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

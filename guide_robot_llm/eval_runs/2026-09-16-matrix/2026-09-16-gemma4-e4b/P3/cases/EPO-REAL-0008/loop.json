@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-8-a\", \"epobj-8-b\", \"epobj-8-c\", \"epobj-8-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The user is pointing towards the middle section of the shelving unit, specifically at a white/light-colored plastic bag or package hanging from the metal rack.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1552.6937200047541,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person in a supermarket aisle, pointing towards the shelves of various products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1507.1652320038993,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person in a supermarket aisle, pointing towards the shelves of various products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1518.1717530067544,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

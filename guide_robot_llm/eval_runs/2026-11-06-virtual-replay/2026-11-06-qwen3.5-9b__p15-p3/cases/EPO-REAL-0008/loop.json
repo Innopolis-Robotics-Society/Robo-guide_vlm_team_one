@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n, \"pointing_evidence\": \"uncertain\", \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ], \"scene_facts\": \"The image shows a retail store aisle with shelves stocked with various household and personal care items. On the left, there are packaged undergarments and slippers. In the center, a person's arm is extended, pointing towards a hanging display of what appears to be reusable cloth bags or pouches. To the right, shelves are filled with cleaning supplies, detergents, and other household goods. The pointing gesture is directed at the hanging items in the middle of the frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3855.313763982849,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n, \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.45,\n    0.62,\n    0.55,\n    0.68\n  ]\n, \"scene_facts\": \"The image shows a retail store aisle with shelves stocked with various household items. On the left, there are packages of underwear and slippers. In the center, a person's arm is extended, pointing towards a hanging display of what appears to be fabric or textile products. The packaging includes images of people wearing the items, suggesting they are clothing or accessories. To the right, shelves are filled with cleaning supplies, detergents, and other household goods. The ceiling has exposed pipes and lighting fixtures typical of a commercial space.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2831.313394010067,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n, \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.45,\n    0.41,\n    0.55,\n    0.66\n  ],\n  \"scene_facts\": \"The image shows a retail store aisle with shelves stocked with household and personal care items. A person’s arm is extended, pointing toward a packaged item hanging on a display rack. The pointed object appears to be a plastic-wrapped product, possibly a cleaning cloth or sponge, given its shape and packaging. Surrounding products include socks, slippers, detergents, and bottles — typical of a general merchandise or supermarket setting.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2556.875025999034,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

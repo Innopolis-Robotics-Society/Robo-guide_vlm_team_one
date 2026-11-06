@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person pointing at an exhibit on a shelf. The exhibit is a stack of clear plastic folders or document holders, with some colorful pens or markers nearby. The person's hand is visible in the lower right corner, indicating the exhibit."
+}

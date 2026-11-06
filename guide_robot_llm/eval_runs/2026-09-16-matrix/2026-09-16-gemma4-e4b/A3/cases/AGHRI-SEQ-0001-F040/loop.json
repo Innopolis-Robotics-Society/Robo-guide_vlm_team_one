@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409268_859984459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как в предоставленном изображении нет робота, и я не могу определить, сколько людей готовы слушать.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 649.7038989909925,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409268_859984459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как в предоставленном вами изображении нет робота, и я не могу определить, сколько людей готовы слушать.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 640.9921379818115,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409268_859984459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного кадра я вижу **двух** людей. Один человек находится слева, а второй человек находится в центре, ближе к тропинке. Я не могу определить, сколько из них готовы слушать, так как у меня нет информации о их намерениях или контексте взаимодействия с роботом.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 891.725358000258,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": [], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "Видна часть человека слева в кадре (рука и тёмная одежда), на фоне — парк с тропинкой, деревьями и травой."}

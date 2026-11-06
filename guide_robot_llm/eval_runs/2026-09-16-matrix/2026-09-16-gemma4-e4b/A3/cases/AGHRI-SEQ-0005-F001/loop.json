@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408027_558267459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как на предоставленном изображении нет робота и людей. Изображение представляет собой пейзаж с дорогой и деревьями.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 956.734912993852,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408027_558267459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как на предоставленном изображении нет робота и людей, а также нет информации о том, сколько людей готовы слушать.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 623.4178250015248,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_ht+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731408027_558267459.png",
+    "raw_text": "{\"answer\": \"Невозможно выполнить этот запрос. Предоставленное изображение является статичным кадром, и я не могу отслеживать изменения во времени или в реальном времени, чтобы \"\n  \n                    , \"confidence\": 0.95\n  \n                    , \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1318.2126799947582,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

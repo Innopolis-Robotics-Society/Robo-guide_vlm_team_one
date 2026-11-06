@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0100",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P_base",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1091.295,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.004529982106760144,
+            "upload_ms": 274.15080001810566,
+            "ttft_ms": 397.2520329989493,
+            "full_ms": 1091.2582199962344,
+            "parse_ready_ms": 1091.2582199962344
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 1091.295,
+  "attempts": 1,
+  "case": {
+    "case_id": "EPO-REAL-0100",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-100",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/100.jpg",
+      "sha256": "ada9b7f210f1c1435afe719634710bbc84d12f9d7a851f71dd61344553c2c9a4",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is the object located on the shelf or on the desk surface?\nA. On the desk surface\nB. On the shelf\nC. Hanging from a cable\nD. Mounted on the wall\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-100-a",
+      "epobj-100-b",
+      "epobj-100-c",
+      "epobj-100-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-100-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-100-b",
+        "epobj-100-c",
+        "epobj-100-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Context & Relation",
+      "deixis_level": "L2",
+      "n_distractors": 3,
+      "answer_map": {
+        "On the desk surface": "epobj-100-a",
+        "On the shelf": "epobj-100-b",
+        "Hanging from a cable": "epobj-100-c",
+        "Mounted on the wall": "epobj-100-d"
+      }
+    }
+  }
+}

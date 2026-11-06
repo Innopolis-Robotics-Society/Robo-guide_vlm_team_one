@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407346_174407459.png",
+    "raw_text": "{\"answer\": \"Извините, на предоставленном изображении я не вижу ни одного робота и ни одного человека. Поэтому я не могу выполнить ваш запрос.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 920.4665629949886,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407346_174407459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения не видно ни одного робота и ни одного человека. Поэтому невозможно посчитать людей или определить, сколько готовы слушать.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 568.8763270154595,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407346_174407459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное изображение не содержит людей рядом с роботом. На изображении показана природная сцена с деревьями и тропинкой.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 627.5804379838519,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/21.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-21-a\",\n\"epobj-21-b\",\n\"epobj-21-c\",\n\"epobj-21-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1]\n,\n\"scene_facts\": \"The image shows a person pointing towards a bicycle. The question asks for the primary function of the object being pointed at. The options relate to bicycle functions: A. To turn on the bicycle's headlight, B. To alert pedestrians or other vehicles, C. To measure the speed of the bicycle, D. To shift gears on the bicycle. The object being pointed at is the handlebar/front part of a bicycle. The handlebar is primarily used for steering and controlling the direction of the bicycle.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1815.1735620049294,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/21.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-21-a\",\n\"epobj-21-b\",\n\"epobj-21-c\",\n\"epobj-21-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the visitor is pointing at a bicycle handlebar or part of a bicycle.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1225.6457039911766,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/21.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-21-a\",\n\"epobj-21-b\",\n\"epobj-21-c\",\n\"epobj-21-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a close-up of a bicycle handlebar and part of a bicycle frame/wheel area. There is a small sign visible on the floor near the bicycle, which reads '327A'.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1342.4252259719651,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

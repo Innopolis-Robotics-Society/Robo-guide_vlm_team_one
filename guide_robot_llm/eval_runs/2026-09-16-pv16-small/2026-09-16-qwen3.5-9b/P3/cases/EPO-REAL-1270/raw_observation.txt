@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ]
+, "pointing_evidence": "yes", "pointing_box": [
+    0.45,
+    0.5,
+    0.55,
+    0.55
+  ], "scene_facts": "The image shows a retail store aisle with shelves stocked with various household products. A person's arm, wearing a black glove, is extended and pointing towards a specific item on the middle shelf. The item being pointed at is a blue package, which appears to be a pack of wet wipes or similar hygiene product. The surrounding shelves contain other products like plastic storage bins on the top shelf and various tissue or wipe packages in different colors (yellow, green, pink) on lower shelves. The pointing gesture is clear and directed at the blue package."}

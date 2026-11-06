@@ -1,0 +1,412 @@
+0.00.061.644 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.169.142 W srv  llama_server: -----------------
+0.00.169.144 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.169.145 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.169.145 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.169.145 W srv  llama_server: -----------------
+0.00.170.505 I srv    load_model: loading model '/home/sinorin/models/pilot/qwen3.5-4b/Qwen3.5-4B-Q4_K_M.gguf'
+0.01.532.754 I cmn          init: llama threadpool init, n_threads = 16
+0.01.577.149 W load_hparams: Qwen-VL models require at minimum 1024 image tokens to function correctly on grounding tasks
+0.01.577.152 W load_hparams: if you encounter problems with accuracy, try adding --image-min-tokens 1024
+0.01.577.152 W load_hparams: more info: https://github.com/ggml-org/llama.cpp/issues/16842
+
+0.01.781.396 I srv    load_model: loaded multimodal model, '/home/sinorin/models/pilot/qwen3.5-4b/mmproj-F16.gguf'
+0.01.792.151 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 16384, kv_unified = 'false'
+0.01.795.989 I srv  llama_server: model loaded
+0.01.795.994 I srv  llama_server: listening on http://127.0.0.1:11436
+0.01.941.532 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.01.941.650 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.02.001.856 I slot print_timing: id  0 | task 0 | prompt eval time =      53.29 ms /    13 tokens (    4.10 ms per token,   243.94 tokens per second)
+0.02.001.860 I slot print_timing: id  0 | task 0 |        eval time =       6.89 ms /     2 tokens (    6.89 ms per token,   145.20 tokens per second)
+0.02.001.860 I slot print_timing: id  0 | task 0 |       total time =      60.18 ms /    15 tokens
+0.02.001.863 I slot print_timing: id  0 | task 0 |    graphs reused =          1
+0.02.001.886 I slot      release: id  0 | task 0 | stop processing: n_tokens = 14, truncated = 0
+0.02.347.922 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 250612045168
+0.02.401.668 I slot launch_slot_: id  0 | task 4 | processing task, is_child = 0
+0.02.661.671 W find_slot: non-consecutive token position 110 after 109 for sequence 0 with 1400 new tokens
+0.02.662.118 W find_slot: non-consecutive token position 110 after 109 for sequence 0 with 1400 new tokens
+0.02.701.239 W find_slot: non-consecutive token position 190 after 110 for sequence 0 with 31 new tokens
+0.02.701.268 W find_slot: non-consecutive token position 190 after 110 for sequence 0 with 31 new tokens
+0.03.121.025 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.03.121.495 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.03.161.027 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.03.161.124 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.03.551.373 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.03.551.846 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.03.597.070 W find_slot: non-consecutive token position 648 after 513 for sequence 0 with 86 new tokens
+0.03.597.118 W find_slot: non-consecutive token position 648 after 513 for sequence 0 with 86 new tokens
+0.04.029.972 W find_slot: non-consecutive token position 649 after 648 for sequence 0 with 1530 new tokens
+0.04.030.484 W find_slot: non-consecutive token position 649 after 648 for sequence 0 with 1530 new tokens
+0.04.062.586 W find_slot: non-consecutive token position 696 after 649 for sequence 0 with 3 new tokens
+0.04.062.606 W find_slot: non-consecutive token position 696 after 649 for sequence 0 with 3 new tokens
+0.05.696.314 I slot print_timing: id  0 | task 4 | prompt eval time =    1970.35 ms /  6369 tokens (    0.31 ms per token,  3232.42 tokens per second)
+0.05.696.317 I slot print_timing: id  0 | task 4 |        eval time =    1324.28 ms /   162 tokens (    8.23 ms per token,   121.58 tokens per second)
+0.05.696.317 I slot print_timing: id  0 | task 4 |       total time =    3294.63 ms /  6531 tokens
+0.05.696.318 I slot print_timing: id  0 | task 4 |    graphs reused =        160
+0.05.696.355 I slot      release: id  0 | task 4 | stop processing: n_tokens = 6530, truncated = 0
+0.05.940.632 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.956 (> 0.100 thold), f_keep = 0.974
+0.05.940.846 I slot launch_slot_: id  0 | task 174 | processing task, is_child = 0
+0.06.177.999 I slot print_timing: id  0 | task 174 | prompt eval time =     127.06 ms /   424 tokens (    0.30 ms per token,  3336.98 tokens per second)
+0.06.178.002 I slot print_timing: id  0 | task 174 |        eval time =     110.07 ms /    20 tokens (    5.79 ms per token,   172.61 tokens per second)
+0.06.178.002 I slot print_timing: id  0 | task 174 |       total time =     237.13 ms /   444 tokens
+0.06.178.003 I slot print_timing: id  0 | task 174 |    graphs reused =        178
+0.06.178.056 I slot      release: id  0 | task 174 | stop processing: n_tokens = 6675, truncated = 0
+0.06.433.889 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.729 (> 0.100 thold), f_keep = 0.697
+0.06.434.170 I slot launch_slot_: id  0 | task 197 | processing task, is_child = 0
+0.06.632.155 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.06.632.624 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.06.672.469 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.06.672.545 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.07.052.627 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.07.053.097 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.07.093.959 W find_slot: non-consecutive token position 664 after 513 for sequence 0 with 102 new tokens
+0.07.094.015 W find_slot: non-consecutive token position 664 after 513 for sequence 0 with 102 new tokens
+0.07.517.628 W find_slot: non-consecutive token position 665 after 664 for sequence 0 with 1530 new tokens
+0.07.518.136 W find_slot: non-consecutive token position 665 after 664 for sequence 0 with 1530 new tokens
+0.07.550.056 W find_slot: non-consecutive token position 712 after 665 for sequence 0 with 3 new tokens
+0.07.550.074 W find_slot: non-consecutive token position 712 after 665 for sequence 0 with 3 new tokens
+0.09.462.118 I slot print_timing: id  0 | task 197 | prompt eval time =    1447.27 ms /  4844 tokens (    0.30 ms per token,  3347.00 tokens per second)
+0.09.462.121 I slot print_timing: id  0 | task 197 |        eval time =    1580.66 ms /   200 tokens (    7.94 ms per token,   125.90 tokens per second)
+0.09.462.121 I slot print_timing: id  0 | task 197 |       total time =    3027.93 ms /  5044 tokens
+0.09.462.122 I slot print_timing: id  0 | task 197 |    graphs reused =        375
+0.09.462.161 I slot      release: id  0 | task 197 | stop processing: n_tokens = 6584, truncated = 0
+0.09.720.862 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.955 (> 0.100 thold), f_keep = 0.969
+0.09.721.080 I slot launch_slot_: id  0 | task 403 | processing task, is_child = 0
+0.09.965.978 I slot print_timing: id  0 | task 403 | prompt eval time =     128.83 ms /   434 tokens (    0.30 ms per token,  3368.68 tokens per second)
+0.09.965.981 I slot print_timing: id  0 | task 403 |        eval time =     116.05 ms /    21 tokens (    5.80 ms per token,   172.35 tokens per second)
+0.09.965.981 I slot print_timing: id  0 | task 403 |       total time =     244.88 ms /   455 tokens
+0.09.965.982 I slot print_timing: id  0 | task 403 |    graphs reused =        394
+0.09.966.034 I slot      release: id  0 | task 403 | stop processing: n_tokens = 6702, truncated = 0
+0.10.221.086 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.730 (> 0.100 thold), f_keep = 0.695
+0.10.221.366 I slot launch_slot_: id  0 | task 427 | processing task, is_child = 0
+0.10.418.840 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.10.419.328 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.10.459.230 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.10.459.305 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.10.836.054 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.10.836.530 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.10.877.303 W find_slot: non-consecutive token position 652 after 513 for sequence 0 with 90 new tokens
+0.10.877.355 W find_slot: non-consecutive token position 652 after 513 for sequence 0 with 90 new tokens
+0.11.295.842 W find_slot: non-consecutive token position 653 after 652 for sequence 0 with 1530 new tokens
+0.11.296.366 W find_slot: non-consecutive token position 653 after 652 for sequence 0 with 1530 new tokens
+0.11.329.588 W find_slot: non-consecutive token position 700 after 653 for sequence 0 with 3 new tokens
+0.11.329.609 W find_slot: non-consecutive token position 700 after 653 for sequence 0 with 3 new tokens
+0.12.998.301 I slot print_timing: id  0 | task 427 | prompt eval time =    1429.81 ms /  4836 tokens (    0.30 ms per token,  3382.27 tokens per second)
+0.12.998.304 I slot print_timing: id  0 | task 427 |        eval time =    1347.11 ms /   171 tokens (    7.92 ms per token,   126.20 tokens per second)
+0.12.998.304 I slot print_timing: id  0 | task 427 |       total time =    2776.91 ms /  5007 tokens
+0.12.998.305 I slot print_timing: id  0 | task 427 |    graphs reused =        562
+0.12.998.342 I slot      release: id  0 | task 427 | stop processing: n_tokens = 6547, truncated = 0
+0.13.276.642 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.954 (> 0.100 thold), f_keep = 0.973
+0.13.276.887 I slot launch_slot_: id  0 | task 604 | processing task, is_child = 0
+0.13.524.304 I slot print_timing: id  0 | task 604 | prompt eval time =     127.56 ms /   442 tokens (    0.29 ms per token,  3465.17 tokens per second)
+0.13.524.310 I slot print_timing: id  0 | task 604 |        eval time =     119.82 ms /    21 tokens (    5.99 ms per token,   166.92 tokens per second)
+0.13.524.311 I slot print_timing: id  0 | task 604 |       total time =     247.38 ms /   463 tokens
+0.13.524.312 I slot print_timing: id  0 | task 604 |    graphs reused =        581
+0.13.524.387 I slot      release: id  0 | task 604 | stop processing: n_tokens = 6698, truncated = 0
+0.13.751.667 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.731 (> 0.100 thold), f_keep = 0.695
+0.13.751.918 I slot launch_slot_: id  0 | task 628 | processing task, is_child = 0
+0.13.951.058 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.13.951.538 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.13.990.887 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.13.990.961 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.14.369.016 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.14.369.486 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.14.410.684 W find_slot: non-consecutive token position 644 after 513 for sequence 0 with 82 new tokens
+0.14.410.767 W find_slot: non-consecutive token position 644 after 513 for sequence 0 with 82 new tokens
+0.14.825.549 W find_slot: non-consecutive token position 645 after 644 for sequence 0 with 1530 new tokens
+0.14.826.251 W find_slot: non-consecutive token position 645 after 644 for sequence 0 with 1530 new tokens
+0.14.859.352 W find_slot: non-consecutive token position 692 after 645 for sequence 0 with 3 new tokens
+0.14.859.384 W find_slot: non-consecutive token position 692 after 645 for sequence 0 with 3 new tokens
+0.16.332.896 I slot print_timing: id  0 | task 628 | prompt eval time =    1437.73 ms /  4828 tokens (    0.30 ms per token,  3358.08 tokens per second)
+0.16.332.899 I slot print_timing: id  0 | task 628 |        eval time =    1143.23 ms /   109 tokens (   10.59 ms per token,    94.47 tokens per second)
+0.16.332.900 I slot print_timing: id  0 | task 628 |       total time =    2580.96 ms /  4937 tokens
+0.16.332.901 I slot print_timing: id  0 | task 628 |    graphs reused =        687
+0.16.332.941 I slot      release: id  0 | task 628 | stop processing: n_tokens = 6477, truncated = 0
+0.16.584.380 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.964 (> 0.100 thold), f_keep = 0.982
+0.16.584.627 I slot launch_slot_: id  0 | task 743 | processing task, is_child = 0
+0.16.782.065 I slot print_timing: id  0 | task 743 | prompt eval time =     109.63 ms /   371 tokens (    0.30 ms per token,  3384.23 tokens per second)
+0.16.782.068 I slot print_timing: id  0 | task 743 |        eval time =      87.79 ms /    16 tokens (    5.85 ms per token,   170.86 tokens per second)
+0.16.782.069 I slot print_timing: id  0 | task 743 |       total time =     197.42 ms /   387 tokens
+0.16.782.069 I slot print_timing: id  0 | task 743 |    graphs reused =        701
+0.16.782.119 I slot      release: id  0 | task 743 | stop processing: n_tokens = 6614, truncated = 0
+0.17.023.921 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.730 (> 0.100 thold), f_keep = 0.704
+0.17.024.204 I slot launch_slot_: id  0 | task 762 | processing task, is_child = 0
+0.17.217.665 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.17.218.155 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.17.257.719 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.17.257.804 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.17.638.065 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.17.638.545 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.17.678.869 W find_slot: non-consecutive token position 650 after 513 for sequence 0 with 88 new tokens
+0.17.678.919 W find_slot: non-consecutive token position 650 after 513 for sequence 0 with 88 new tokens
+0.18.098.563 W find_slot: non-consecutive token position 651 after 650 for sequence 0 with 1530 new tokens
+0.18.099.081 W find_slot: non-consecutive token position 651 after 650 for sequence 0 with 1530 new tokens
+0.18.131.302 W find_slot: non-consecutive token position 698 after 651 for sequence 0 with 3 new tokens
+0.18.131.318 W find_slot: non-consecutive token position 698 after 651 for sequence 0 with 3 new tokens
+0.19.485.667 I slot print_timing: id  0 | task 762 | prompt eval time =    1434.80 ms /  4834 tokens (    0.30 ms per token,  3369.11 tokens per second)
+0.19.485.670 I slot print_timing: id  0 | task 762 |        eval time =    1026.64 ms /   106 tokens (    9.78 ms per token,   102.27 tokens per second)
+0.19.485.671 I slot print_timing: id  0 | task 762 |       total time =    2461.44 ms /  4940 tokens
+0.19.485.672 I slot print_timing: id  0 | task 762 |    graphs reused =        804
+0.19.485.708 I slot      release: id  0 | task 762 | stop processing: n_tokens = 6480, truncated = 0
+0.19.716.651 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.964 (> 0.100 thold), f_keep = 0.983
+0.19.716.918 I slot launch_slot_: id  0 | task 874 | processing task, is_child = 0
+0.19.922.311 I slot print_timing: id  0 | task 874 | prompt eval time =     118.37 ms /   371 tokens (    0.32 ms per token,  3134.21 tokens per second)
+0.19.922.314 I slot print_timing: id  0 | task 874 |        eval time =      87.00 ms /    16 tokens (    5.80 ms per token,   172.41 tokens per second)
+0.19.922.314 I slot print_timing: id  0 | task 874 |       total time =     205.37 ms /   387 tokens
+0.19.922.315 I slot print_timing: id  0 | task 874 |    graphs reused =        818
+0.19.922.364 I slot      release: id  0 | task 874 | stop processing: n_tokens = 6620, truncated = 0
+0.20.162.505 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.729 (> 0.100 thold), f_keep = 0.703
+0.20.162.791 I slot launch_slot_: id  0 | task 893 | processing task, is_child = 0
+0.20.360.550 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.20.361.043 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.20.400.519 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.20.400.598 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.20.782.770 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.20.783.252 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.20.824.103 W find_slot: non-consecutive token position 661 after 513 for sequence 0 with 99 new tokens
+0.20.824.165 W find_slot: non-consecutive token position 661 after 513 for sequence 0 with 99 new tokens
+0.21.249.198 W find_slot: non-consecutive token position 662 after 661 for sequence 0 with 1530 new tokens
+0.21.249.717 W find_slot: non-consecutive token position 662 after 661 for sequence 0 with 1530 new tokens
+0.21.281.467 W find_slot: non-consecutive token position 709 after 662 for sequence 0 with 3 new tokens
+0.21.281.484 W find_slot: non-consecutive token position 709 after 662 for sequence 0 with 3 new tokens
+0.22.648.405 I slot print_timing: id  0 | task 893 | prompt eval time =    1443.92 ms /  4845 tokens (    0.30 ms per token,  3355.44 tokens per second)
+0.22.648.408 I slot print_timing: id  0 | task 893 |        eval time =    1041.67 ms /   106 tokens (    9.92 ms per token,   100.80 tokens per second)
+0.22.648.409 I slot print_timing: id  0 | task 893 |       total time =    2485.60 ms /  4951 tokens
+0.22.648.409 I slot print_timing: id  0 | task 893 |    graphs reused =        921
+0.22.648.453 I slot      release: id  0 | task 893 | stop processing: n_tokens = 6491, truncated = 0
+0.22.877.702 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.964 (> 0.100 thold), f_keep = 0.983
+0.22.877.967 I slot launch_slot_: id  0 | task 1005 | processing task, is_child = 0
+0.23.087.203 I slot print_timing: id  0 | task 1005 | prompt eval time =     110.42 ms /   371 tokens (    0.30 ms per token,  3359.93 tokens per second)
+0.23.087.206 I slot print_timing: id  0 | task 1005 |        eval time =      98.80 ms /    14 tokens (    7.60 ms per token,   131.58 tokens per second)
+0.23.087.206 I slot print_timing: id  0 | task 1005 |       total time =     209.22 ms /   385 tokens
+0.23.087.207 I slot print_timing: id  0 | task 1005 |    graphs reused =        933
+0.23.087.257 I slot      release: id  0 | task 1005 | stop processing: n_tokens = 6629, truncated = 0
+0.23.343.539 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.729 (> 0.100 thold), f_keep = 0.702
+0.23.343.840 I slot launch_slot_: id  0 | task 1022 | processing task, is_child = 0
+0.23.539.509 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.23.540.003 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.23.580.129 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.23.580.217 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.23.961.149 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.23.961.659 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.24.002.955 W find_slot: non-consecutive token position 655 after 513 for sequence 0 with 93 new tokens
+0.24.003.021 W find_slot: non-consecutive token position 655 after 513 for sequence 0 with 93 new tokens
+0.24.417.905 W find_slot: non-consecutive token position 656 after 655 for sequence 0 with 1530 new tokens
+0.24.418.434 W find_slot: non-consecutive token position 656 after 655 for sequence 0 with 1530 new tokens
+0.24.451.486 W find_slot: non-consecutive token position 703 after 656 for sequence 0 with 3 new tokens
+0.24.451.508 W find_slot: non-consecutive token position 703 after 656 for sequence 0 with 3 new tokens
+0.26.687.434 I slot print_timing: id  0 | task 1022 | prompt eval time =    1432.10 ms /  4839 tokens (    0.30 ms per token,  3378.96 tokens per second)
+0.26.687.437 I slot print_timing: id  0 | task 1022 |        eval time =    1911.48 ms /   256 tokens (    7.50 ms per token,   133.40 tokens per second)
+0.26.687.437 I slot print_timing: id  0 | task 1022 |       total time =    3343.57 ms /  5095 tokens
+0.26.687.438 I slot print_timing: id  0 | task 1022 |    graphs reused =       1186
+0.26.687.478 I slot      release: id  0 | task 1022 | stop processing: n_tokens = 6635, truncated = 0
+0.26.949.771 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.947 (> 0.100 thold), f_keep = 0.961
+0.26.950.020 I slot launch_slot_: id  0 | task 1284 | processing task, is_child = 0
+0.27.172.568 I slot print_timing: id  0 | task 1284 | prompt eval time =     129.44 ms /   492 tokens (    0.26 ms per token,  3800.90 tokens per second)
+0.27.172.571 I slot print_timing: id  0 | task 1284 |        eval time =      93.09 ms /    17 tokens (    5.82 ms per token,   171.88 tokens per second)
+0.27.172.571 I slot print_timing: id  0 | task 1284 |       total time =     222.53 ms /   509 tokens
+0.27.172.572 I slot print_timing: id  0 | task 1284 |    graphs reused =       1201
+0.27.172.626 I slot      release: id  0 | task 1284 | stop processing: n_tokens = 6747, truncated = 0
+0.27.424.096 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.730 (> 0.100 thold), f_keep = 0.690
+0.27.424.375 I slot launch_slot_: id  0 | task 1304 | processing task, is_child = 0
+0.27.620.415 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.27.620.912 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.27.660.429 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.27.660.510 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.28.043.062 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.28.043.532 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.28.084.691 W find_slot: non-consecutive token position 649 after 513 for sequence 0 with 87 new tokens
+0.28.084.750 W find_slot: non-consecutive token position 649 after 513 for sequence 0 with 87 new tokens
+0.28.505.790 W find_slot: non-consecutive token position 650 after 649 for sequence 0 with 1530 new tokens
+0.28.506.306 W find_slot: non-consecutive token position 650 after 649 for sequence 0 with 1530 new tokens
+0.28.538.106 W find_slot: non-consecutive token position 697 after 650 for sequence 0 with 3 new tokens
+0.28.538.121 W find_slot: non-consecutive token position 697 after 650 for sequence 0 with 3 new tokens
+0.30.048.473 I slot print_timing: id  0 | task 1304 | prompt eval time =    1429.87 ms /  4833 tokens (    0.30 ms per token,  3380.04 tokens per second)
+0.30.048.477 I slot print_timing: id  0 | task 1304 |        eval time =    1194.21 ms /   126 tokens (    9.55 ms per token,   104.67 tokens per second)
+0.30.048.478 I slot print_timing: id  0 | task 1304 |       total time =    2624.07 ms /  4959 tokens
+0.30.048.479 I slot print_timing: id  0 | task 1304 |    graphs reused =       1324
+0.30.048.523 I slot      release: id  0 | task 1304 | stop processing: n_tokens = 6499, truncated = 0
+0.30.283.813 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.961 (> 0.100 thold), f_keep = 0.980
+0.30.284.007 I slot launch_slot_: id  0 | task 1436 | processing task, is_child = 0
+0.30.493.153 I slot print_timing: id  0 | task 1436 | prompt eval time =     116.26 ms /   395 tokens (    0.29 ms per token,  3397.59 tokens per second)
+0.30.493.156 I slot print_timing: id  0 | task 1436 |        eval time =      92.87 ms /    17 tokens (    5.80 ms per token,   172.28 tokens per second)
+0.30.493.156 I slot print_timing: id  0 | task 1436 |       total time =     209.13 ms /   412 tokens
+0.30.493.157 I slot print_timing: id  0 | task 1436 |    graphs reused =       1339
+0.30.493.209 I slot      release: id  0 | task 1436 | stop processing: n_tokens = 6644, truncated = 0
+0.30.743.926 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.729 (> 0.100 thold), f_keep = 0.701
+0.30.744.194 I slot launch_slot_: id  0 | task 1456 | processing task, is_child = 0
+0.30.939.988 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.30.940.483 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.30.979.878 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.30.979.960 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.31.360.145 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.31.360.632 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.31.401.326 W find_slot: non-consecutive token position 658 after 513 for sequence 0 with 96 new tokens
+0.31.401.380 W find_slot: non-consecutive token position 658 after 513 for sequence 0 with 96 new tokens
+0.31.825.161 W find_slot: non-consecutive token position 659 after 658 for sequence 0 with 1530 new tokens
+0.31.825.683 W find_slot: non-consecutive token position 659 after 658 for sequence 0 with 1530 new tokens
+0.31.857.525 W find_slot: non-consecutive token position 706 after 659 for sequence 0 with 3 new tokens
+0.31.857.541 W find_slot: non-consecutive token position 706 after 659 for sequence 0 with 3 new tokens
+0.35.176.732 I slot print_timing: id  0 | task 1456 | n_gen =    438, tg = 145.43 t/s, tg_3s = 145.76 t/s
+0.35.622.914 I slot print_timing: id  0 | task 1456 | prompt eval time =    1427.69 ms /  4842 tokens (    0.29 ms per token,  3391.50 tokens per second)
+0.35.622.917 I slot print_timing: id  0 | task 1456 |        eval time =    3451.02 ms /   512 tokens (    6.75 ms per token,   148.07 tokens per second)
+0.35.622.918 I slot print_timing: id  0 | task 1456 |       total time =    4878.71 ms /  5354 tokens
+0.35.622.918 I slot print_timing: id  0 | task 1456 |    graphs reused =       1847
+0.35.622.959 I slot      release: id  0 | task 1456 | stop processing: n_tokens = 6894, truncated = 0
+0.35.877.553 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.729 (> 0.100 thold), f_keep = 0.675
+0.35.877.824 I slot launch_slot_: id  0 | task 1974 | processing task, is_child = 0
+0.36.073.976 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.36.074.470 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.36.113.977 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.36.114.060 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.36.496.749 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.36.497.231 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.36.537.810 W find_slot: non-consecutive token position 654 after 513 for sequence 0 with 92 new tokens
+0.36.537.864 W find_slot: non-consecutive token position 654 after 513 for sequence 0 with 92 new tokens
+0.36.958.039 W find_slot: non-consecutive token position 655 after 654 for sequence 0 with 1530 new tokens
+0.36.958.555 W find_slot: non-consecutive token position 655 after 654 for sequence 0 with 1530 new tokens
+0.36.990.680 W find_slot: non-consecutive token position 702 after 655 for sequence 0 with 3 new tokens
+0.36.990.696 W find_slot: non-consecutive token position 702 after 655 for sequence 0 with 3 new tokens
+0.38.433.290 I slot print_timing: id  0 | task 1974 | prompt eval time =    1426.19 ms /  4842 tokens (    0.29 ms per token,  3395.07 tokens per second)
+0.38.433.294 I slot print_timing: id  0 | task 1974 |        eval time =    1129.26 ms /   113 tokens (   10.08 ms per token,    99.18 tokens per second)
+0.38.433.294 I slot print_timing: id  0 | task 1974 |       total time =    2555.45 ms /  4955 tokens
+0.38.433.295 I slot print_timing: id  0 | task 1974 |    graphs reused =       1957
+0.38.433.334 I slot      release: id  0 | task 1974 | stop processing: n_tokens = 6495, truncated = 0
+0.38.640.802 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.963 (> 0.100 thold), f_keep = 0.982
+0.38.641.027 I slot launch_slot_: id  0 | task 2093 | processing task, is_child = 0
+0.38.853.032 I slot print_timing: id  0 | task 2093 | prompt eval time =     111.76 ms /   383 tokens (    0.29 ms per token,  3426.89 tokens per second)
+0.38.853.035 I slot print_timing: id  0 | task 2093 |        eval time =     100.22 ms /    14 tokens (    7.71 ms per token,   129.71 tokens per second)
+0.38.853.036 I slot print_timing: id  0 | task 2093 |       total time =     211.99 ms /   397 tokens
+0.38.853.037 I slot print_timing: id  0 | task 2093 |    graphs reused =       1969
+0.38.853.087 I slot      release: id  0 | task 2093 | stop processing: n_tokens = 6634, truncated = 0
+0.39.096.600 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.729 (> 0.100 thold), f_keep = 0.701
+0.39.096.851 I slot launch_slot_: id  0 | task 2110 | processing task, is_child = 0
+0.39.292.558 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.39.293.066 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.39.332.624 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.39.332.708 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.39.714.965 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.39.715.450 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.39.755.899 W find_slot: non-consecutive token position 650 after 513 for sequence 0 with 88 new tokens
+0.39.755.952 W find_slot: non-consecutive token position 650 after 513 for sequence 0 with 88 new tokens
+0.40.176.785 W find_slot: non-consecutive token position 651 after 650 for sequence 0 with 1530 new tokens
+0.40.177.313 W find_slot: non-consecutive token position 651 after 650 for sequence 0 with 1530 new tokens
+0.40.209.425 W find_slot: non-consecutive token position 698 after 651 for sequence 0 with 3 new tokens
+0.40.209.441 W find_slot: non-consecutive token position 698 after 651 for sequence 0 with 3 new tokens
+0.41.682.112 I slot print_timing: id  0 | task 2110 | prompt eval time =    1424.14 ms /  4838 tokens (    0.29 ms per token,  3397.13 tokens per second)
+0.41.682.116 I slot print_timing: id  0 | task 2110 |        eval time =    1161.10 ms /   125 tokens (    9.36 ms per token,   106.80 tokens per second)
+0.41.682.117 I slot print_timing: id  0 | task 2110 |       total time =    2585.24 ms /  4963 tokens
+0.41.682.117 I slot print_timing: id  0 | task 2110 |    graphs reused =       2091
+0.41.682.155 I slot      release: id  0 | task 2110 | stop processing: n_tokens = 6503, truncated = 0
+0.41.893.439 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.961 (> 0.100 thold), f_keep = 0.980
+0.41.893.699 I slot launch_slot_: id  0 | task 2241 | processing task, is_child = 0
+0.42.111.568 I slot print_timing: id  0 | task 2241 | prompt eval time =     118.75 ms /   398 tokens (    0.30 ms per token,  3351.69 tokens per second)
+0.42.111.571 I slot print_timing: id  0 | task 2241 |        eval time =      99.10 ms /    14 tokens (    7.62 ms per token,   131.18 tokens per second)
+0.42.111.572 I slot print_timing: id  0 | task 2241 |       total time =     217.85 ms /   412 tokens
+0.42.111.573 I slot print_timing: id  0 | task 2241 |    graphs reused =       2103
+0.42.111.624 I slot      release: id  0 | task 2241 | stop processing: n_tokens = 6645, truncated = 0
+0.42.324.575 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.730 (> 0.100 thold), f_keep = 0.700
+0.42.324.848 I slot launch_slot_: id  0 | task 2258 | processing task, is_child = 0
+0.42.523.116 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.42.523.620 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.42.566.237 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.42.566.324 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.42.946.353 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.42.946.846 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.42.990.489 W find_slot: non-consecutive token position 649 after 513 for sequence 0 with 87 new tokens
+0.42.990.541 W find_slot: non-consecutive token position 649 after 513 for sequence 0 with 87 new tokens
+0.43.407.943 W find_slot: non-consecutive token position 650 after 649 for sequence 0 with 1530 new tokens
+0.43.408.472 W find_slot: non-consecutive token position 650 after 649 for sequence 0 with 1530 new tokens
+0.43.440.768 W find_slot: non-consecutive token position 697 after 650 for sequence 0 with 3 new tokens
+0.43.440.788 W find_slot: non-consecutive token position 697 after 650 for sequence 0 with 3 new tokens
+0.45.296.147 I slot print_timing: id  0 | task 2258 | prompt eval time =    1437.07 ms /  4837 tokens (    0.30 ms per token,  3365.87 tokens per second)
+0.45.296.151 I slot print_timing: id  0 | task 2258 |        eval time =    1534.21 ms /   187 tokens (    8.25 ms per token,   121.24 tokens per second)
+0.45.296.152 I slot print_timing: id  0 | task 2258 |       total time =    2971.28 ms /  5024 tokens
+0.45.296.153 I slot print_timing: id  0 | task 2258 |    graphs reused =       2287
+0.45.296.207 I slot      release: id  0 | task 2258 | stop processing: n_tokens = 6564, truncated = 0
+0.45.538.936 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.952 (> 0.100 thold), f_keep = 0.971
+0.45.539.115 I slot launch_slot_: id  0 | task 2451 | processing task, is_child = 0
+0.45.790.726 I slot print_timing: id  0 | task 2451 | prompt eval time =     123.53 ms /   459 tokens (    0.27 ms per token,  3715.67 tokens per second)
+0.45.790.730 I slot print_timing: id  0 | task 2451 |        eval time =     128.06 ms /    23 tokens (    5.82 ms per token,   171.79 tokens per second)
+0.45.790.731 I slot print_timing: id  0 | task 2451 |       total time =     251.59 ms /   482 tokens
+0.45.790.732 I slot print_timing: id  0 | task 2451 |    graphs reused =       2308
+0.45.790.810 I slot      release: id  0 | task 2451 | stop processing: n_tokens = 6714, truncated = 0
+0.46.029.892 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.731 (> 0.100 thold), f_keep = 0.693
+0.46.030.083 I slot launch_slot_: id  0 | task 2477 | processing task, is_child = 0
+0.46.226.216 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.46.226.716 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.46.266.174 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.46.266.261 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.46.648.815 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.46.649.303 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.46.689.663 W find_slot: non-consecutive token position 637 after 513 for sequence 0 with 75 new tokens
+0.46.689.712 W find_slot: non-consecutive token position 637 after 513 for sequence 0 with 75 new tokens
+0.47.117.019 W find_slot: non-consecutive token position 638 after 637 for sequence 0 with 1530 new tokens
+0.47.117.557 W find_slot: non-consecutive token position 638 after 637 for sequence 0 with 1530 new tokens
+0.47.149.632 W find_slot: non-consecutive token position 685 after 638 for sequence 0 with 3 new tokens
+0.47.149.649 W find_slot: non-consecutive token position 685 after 638 for sequence 0 with 3 new tokens
+0.48.830.974 I slot print_timing: id  0 | task 2477 | prompt eval time =    1446.30 ms /  4825 tokens (    0.30 ms per token,  3336.09 tokens per second)
+0.48.830.977 I slot print_timing: id  0 | task 2477 |        eval time =    1354.55 ms /   164 tokens (    8.31 ms per token,   120.34 tokens per second)
+0.48.830.978 I slot print_timing: id  0 | task 2477 |       total time =    2800.85 ms /  4989 tokens
+0.48.830.978 I slot print_timing: id  0 | task 2477 |    graphs reused =       2469
+0.48.831.016 I slot      release: id  0 | task 2477 | stop processing: n_tokens = 6529, truncated = 0
+0.49.084.460 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.955 (> 0.100 thold), f_keep = 0.974
+0.49.084.645 I slot launch_slot_: id  0 | task 2647 | processing task, is_child = 0
+0.49.304.206 I slot print_timing: id  0 | task 2647 | prompt eval time =     119.65 ms /   441 tokens (    0.27 ms per token,  3685.78 tokens per second)
+0.49.304.209 I slot print_timing: id  0 | task 2647 |        eval time =      99.89 ms /    14 tokens (    7.68 ms per token,   130.14 tokens per second)
+0.49.304.210 I slot print_timing: id  0 | task 2647 |       total time =     219.54 ms /   455 tokens
+0.49.304.211 I slot print_timing: id  0 | task 2647 |    graphs reused =       2481
+0.49.304.262 I slot      release: id  0 | task 2647 | stop processing: n_tokens = 6675, truncated = 0
+0.49.551.853 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.729 (> 0.100 thold), f_keep = 0.697
+0.49.552.153 I slot launch_slot_: id  0 | task 2664 | processing task, is_child = 0
+0.49.747.945 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.49.748.449 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.49.788.636 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.49.788.743 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.50.168.327 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.50.168.827 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.50.209.177 W find_slot: non-consecutive token position 654 after 513 for sequence 0 with 92 new tokens
+0.50.209.236 W find_slot: non-consecutive token position 654 after 513 for sequence 0 with 92 new tokens
+0.50.629.870 W find_slot: non-consecutive token position 655 after 654 for sequence 0 with 1530 new tokens
+0.50.630.407 W find_slot: non-consecutive token position 655 after 654 for sequence 0 with 1530 new tokens
+0.50.662.884 W find_slot: non-consecutive token position 702 after 655 for sequence 0 with 3 new tokens
+0.50.662.904 W find_slot: non-consecutive token position 702 after 655 for sequence 0 with 3 new tokens
+0.52.179.135 I slot print_timing: id  0 | task 2664 | prompt eval time =    1419.84 ms /  4846 tokens (    0.29 ms per token,  3413.07 tokens per second)
+0.52.179.138 I slot print_timing: id  0 | task 2664 |        eval time =    1207.13 ms /   145 tokens (    8.38 ms per token,   119.29 tokens per second)
+0.52.179.139 I slot print_timing: id  0 | task 2664 |       total time =    2626.96 ms /  4991 tokens
+0.52.179.140 I slot print_timing: id  0 | task 2664 |    graphs reused =       2623
+0.52.179.179 I slot      release: id  0 | task 2664 | stop processing: n_tokens = 6531, truncated = 0
+0.52.440.091 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.957 (> 0.100 thold), f_keep = 0.977
+0.52.440.334 I slot launch_slot_: id  0 | task 2815 | processing task, is_child = 0
+0.52.654.161 I slot print_timing: id  0 | task 2815 | prompt eval time =     125.67 ms /   430 tokens (    0.29 ms per token,  3421.55 tokens per second)
+0.52.654.164 I slot print_timing: id  0 | task 2815 |        eval time =      88.14 ms /    16 tokens (    5.88 ms per token,   170.19 tokens per second)
+0.52.654.165 I slot print_timing: id  0 | task 2815 |       total time =     213.81 ms /   446 tokens
+0.52.654.165 I slot print_timing: id  0 | task 2815 |    graphs reused =       2637
+0.52.654.219 I slot      release: id  0 | task 2815 | stop processing: n_tokens = 6683, truncated = 0
+0.52.905.515 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.726 (> 0.100 thold), f_keep = 0.696
+0.52.905.752 I slot launch_slot_: id  0 | task 2834 | processing task, is_child = 0
+0.53.101.351 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.53.101.847 W find_slot: non-consecutive token position 306 after 305 for sequence 0 with 1400 new tokens
+0.53.141.362 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.53.141.446 W find_slot: non-consecutive token position 512 after 306 for sequence 0 with 157 new tokens
+0.53.522.597 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.53.523.082 W find_slot: non-consecutive token position 513 after 512 for sequence 0 with 1400 new tokens
+0.53.563.423 W find_slot: non-consecutive token position 675 after 513 for sequence 0 with 113 new tokens
+0.53.563.491 W find_slot: non-consecutive token position 675 after 513 for sequence 0 with 113 new tokens
+0.53.989.689 W find_slot: non-consecutive token position 676 after 675 for sequence 0 with 1530 new tokens
+0.53.990.214 W find_slot: non-consecutive token position 676 after 675 for sequence 0 with 1530 new tokens
+0.54.022.625 W find_slot: non-consecutive token position 723 after 676 for sequence 0 with 3 new tokens
+0.54.022.641 W find_slot: non-consecutive token position 723 after 676 for sequence 0 with 3 new tokens
+0.55.612.789 I slot print_timing: id  0 | task 2834 | prompt eval time =    1441.98 ms /  4867 tokens (    0.30 ms per token,  3375.21 tokens per second)
+0.55.612.794 I slot print_timing: id  0 | task 2834 |        eval time =    1265.03 ms /   133 tokens (    9.58 ms per token,   104.35 tokens per second)
+0.55.612.794 I slot print_timing: id  0 | task 2834 |       total time =    2707.02 ms /  5000 tokens
+0.55.612.795 I slot print_timing: id  0 | task 2834 |    graphs reused =       2768
+0.55.612.847 I slot      release: id  0 | task 2834 | stop processing: n_tokens = 6540, truncated = 0
+0.55.851.987 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.962 (> 0.100 thold), f_keep = 0.979
+0.55.852.152 I slot launch_slot_: id  0 | task 2973 | processing task, is_child = 0
+0.56.062.700 I slot print_timing: id  0 | task 2973 | prompt eval time =     120.69 ms /   395 tokens (    0.31 ms per token,  3272.79 tokens per second)
+0.56.062.703 I slot print_timing: id  0 | task 2973 |        eval time =      89.84 ms /    16 tokens (    5.99 ms per token,   166.97 tokens per second)
+0.56.062.703 I slot print_timing: id  0 | task 2973 |       total time =     210.53 ms /   411 tokens
+0.56.062.704 I slot print_timing: id  0 | task 2973 |    graphs reused =       2781
+0.56.062.751 I slot      release: id  0 | task 2973 | stop processing: n_tokens = 6669, truncated = 0
+0.56.079.724 I srv    operator(): operator(): cleaning up before exit...

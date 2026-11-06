@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-c"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.46,
+    0.61,
+    0.55,
+    0.73
+  ],
+  "scene_facts": "Человек указывает на коробку с оранжевой этикеткой."
+}

@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a"
+  ]
+,
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.51,
+    0.78,
+    0.78,
+    0.99
+  ]
+,
+  "scene_facts": "The image shows a cluttered desk with a laptop, a bowl of small packets, and a white computer mouse. A person's hand is pointing at the bowl. The exhibit being pointed at is the bowl containing small packets, which is identified as epobj-405-a."
+}

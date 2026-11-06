@@ -1,0 +1,116 @@
+{
+  "case_id": "SCN-CC-002",
+  "source": "pilot-cc",
+  "track": "scene",
+  "prompt_mode": "deployed",
+  "variant_id": "D2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 3569.73,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003590015694499016,
+              "upload_ms": 54.665403004037216,
+              "ttft_ms": 96.24854099820368,
+              "full_ms": 1996.6585199872497,
+              "parse_ready_ms": 1996.6585199872497
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.004150002496317029,
+              "upload_ms": 42.888974014203995,
+              "ttft_ms": 134.57587399170734,
+              "full_ms": 1573.0070960125886,
+              "parse_ready_ms": 1573.0070960125886
+            }
+          ]
+        }
+      },
+      "cot_reason": "На изображении представлена простая, стилизованная сцена в интерьере.\n\n**Перечень видимых элементов:**\n\n*   **Люди:** Присутствуют два стилизованных человеческих силуэта (фигуры).\n*   **Объекты:**\n    *   Растение (дерево/куст) слева.\n    *   Большой вертикальный постер/картина (цвет фиолетовый, ID: poster-01) в центре.\n    *   Большой квадратный постер/картина (цвет желтый, ID: frame-03) справа.\n*   **Окружение:** Сцена разворачивается в помещении с ровным светло-бежевым/серым фоном (стена) и коричневым полом.\n*   **Качество кадра:** Кадр выполнен в минималистичном, плоском, векторном стиле с ограниченной палитрой цветов.\n\n**Связное краткое описание:**\n\nСцена представляет собой минималистичную композицию в интерьере. На фоне светлой стены и коричневого пола расположены два стилизованных человеческих силуэта. Слева от центральной фигуры находится зеленое растение. В центре доминирует большой вертикальный фиолетовый постер (poster-01), а справа от него расположен желтый квадратный постер (frame-03)."
+    }
+  },
+  "latency_ms": 3569.73,
+  "attempts": 2,
+  "case": {
+    "case_id": "SCN-CC-002",
+    "source": "pilot-cc",
+    "track": "scene",
+    "split_group_id": "g-cc-SCN-CC-002",
+    "media": {
+      "path": "pilot/media/cc/SCN-CC-002.png",
+      "sha256": "5cb25b8c6e4093488dcf20752a0781fe3985463107c08251a5432104def82fb7",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Опиши, что на фото",
+      "language": "ru"
+    },
+    "candidates": [
+      "poster-01",
+      "frame-03"
+    ],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "claims",
+      "claims": [
+        "на стене тёмно-розовый постер",
+        "слева зелёное растение в горшке",
+        "справа жёлтая рама",
+        "в кадре два человека",
+        "один человек стоит перед постером"
+      ]
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

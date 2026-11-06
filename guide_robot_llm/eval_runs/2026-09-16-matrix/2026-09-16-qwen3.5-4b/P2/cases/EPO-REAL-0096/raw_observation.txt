@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a",
+    "epobj-96-b",
+    "epobj-96-c",
+    "epobj-96-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a building with a visible Uniqlo logo. The question asks for the brand name on the building being pointed at. Only one candidate (epobj-96-b) corresponds to the Uniqlo brand."
+}

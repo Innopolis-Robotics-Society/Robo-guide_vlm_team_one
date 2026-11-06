@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a cluttered desk with a laptop, medicine, snacks, and a computer mouse. A person's hand is pointing at a small tin of snacks on the desk. The person is not pointing at any exhibit. The exhibits are not visible in the image."
+}

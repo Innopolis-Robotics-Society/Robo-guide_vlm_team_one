@@ -1,0 +1,17 @@
+{
+  "people_count": 4,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.58,
+    0.59,
+    0.78,
+    0.71
+  ],
+  "scene_facts": "The person is pointing at a whole raw chicken in a supermarket display case. The chicken is pale yellow, consistent with a broiler chicken, not a duck (which would be darker) or pork. It is clearly poultry, not a pork chop. Among the options, 'Yellow broiler chicken' matches the visual evidence best."
+}

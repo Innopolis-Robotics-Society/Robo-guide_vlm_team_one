@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a"
+  ]
+,
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.53,
+    0.52,
+    0.67,
+    0.77
+  ]
+,
+  "scene_facts": "The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be an illuminated business name or logo, mounted on the wall directly above the entrance to what looks like a salon or service booth. The hand is in the foreground, and the sign is clearly visible in the background, positioned horizontally across the top of the doorway frame."
+}

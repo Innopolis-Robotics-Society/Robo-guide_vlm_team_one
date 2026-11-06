@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-8-a",
+    "epobj-8-b",
+    "epobj-8-c",
+    "epobj-8-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The person is pointing at a package of hangers on a display rack. The package is labeled with a woman's image and appears to be for clothing. The hangers are visible below the package, hanging on the rack. The person's hand is extended towards the package, indicating interest or selection. The background shows shelves with various household items, including cleaning supplies and personal care products. The lighting is bright, typical of a retail environment. The person's posture suggests they are actively engaged in selecting an item from the display."
+}

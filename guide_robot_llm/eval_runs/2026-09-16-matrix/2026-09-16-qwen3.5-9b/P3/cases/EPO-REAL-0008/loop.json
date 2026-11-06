@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a retail store aisle with shelves stocked with various household and personal care items. On the left, there are packaged undergarments and slippers. In the center, a person’s arm is extended, pointing toward a hanging display of what appears to be fabric or textile products — possibly cleaning cloths, microfiber towels, or similar items. The packaging includes images of people using the product, suggesting it's for cleaning or household use. To the right, shelves hold bottles of detergents, soaps, and other cleaning supplies. The pointed item is not clearly identifiable as a beverage container, clothing hanger, or thermal flask — it looks more like a pack of cleaning cloths or similar textile product.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3250.906170986127,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n, \"pointing_evidence\": \"yes\", \"pointing_box\": [\n    0.46,\n    0.59,\n    0.54,\n    0.66\n  ], \"scene_facts\": \"The image shows a retail store aisle with shelves stocked with various household and personal care items. A person's arm is extended, pointing towards a hanging display of what appears to be reusable cloth pads or menstrual products. The packaging includes an image of a woman and text that suggests it is a product for feminine hygiene. The surrounding shelves contain items like socks, slippers, cleaning supplies, and bottles, indicating a general household goods section. The pointing gesture is directed specifically at the hanging packaged items in the center of the frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2714.807993004797,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n, \"pointing_evidence\": \"yes\", \"pointing_box\": [\n    0.45,\n    0.42,\n    0.54,\n    0.64\n  ], \"scene_facts\": \"The image shows a retail store aisle with shelves stocked with household and personal care items. A person's arm is extended, pointing at a packaged item hanging on a display rack in the center of the frame. The item appears to be a disposable or reusable cloth product, possibly a cleaning cloth or towel, based on its packaging and context within the store (near other cleaning supplies like detergents and sponges). The surrounding products include laundry detergents, cleaning cloths, and other household goods, reinforcing the likelihood that the pointed item is related to cleaning or household maintenance.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2863.6595139978454,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

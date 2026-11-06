@@ -1,0 +1,1 @@
+{"answer": "No, it is mounted on a pedestal", "confidence": 0.95, "abstain": false}

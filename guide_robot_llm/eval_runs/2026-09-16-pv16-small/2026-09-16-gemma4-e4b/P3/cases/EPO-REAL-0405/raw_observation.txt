@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "The image shows a person's hand holding a small, light-colored object (possibly a snack or small item) over a metal plate. There are several other items on the table, including a laptop, packaged goods, and a white object that resembles a mouse or small electronic device."
+}

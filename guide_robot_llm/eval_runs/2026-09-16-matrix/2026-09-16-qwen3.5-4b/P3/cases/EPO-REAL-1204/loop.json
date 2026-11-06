@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"a person is reaching for an item on a shelf in what appears to be a stationery store. the shelf contains various office supplies such as folders, pens, and paper. the person's hand is extended towards a stack of clear plastic folders or sleeves on one of the shelves. there are small digital price tags attached to the shelves, indicating this is likely a retail environment. the person is not pointing at a specific item but rather reaching for one. the action suggests selection or retrieval of an item from the shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2060.4566800175235,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"a person is reaching for an item on a shelf in what appears to be a stationery store. The shelf contains various office supplies such as folders, binders, and pens. The person's hand is positioned near a stack of clear plastic folders or sleeves on one of the lower shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1538.9290460152552,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"A person is reaching for an item on a shelf in what appears to be a stationery store. The shelf contains various office supplies such as folders, pens, and notebooks. The person's hand is extended towards a stack of clear plastic folders or sleeves on one of the shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1395.049480983289,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

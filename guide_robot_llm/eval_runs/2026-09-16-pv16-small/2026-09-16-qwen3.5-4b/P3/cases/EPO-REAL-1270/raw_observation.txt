@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ]
+,
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person's arm pointing at a shelf in a store. The shelf contains various packaged goods, including what appear to be tissues, wet wipes, and other household items. The person is wearing a black glove and is pointing towards a blue package on the shelf. The background shows more shelves with similar products. The lighting is bright, typical of a retail environment. The person's arm is extended towards the shelf, indicating a specific item of interest."
+}

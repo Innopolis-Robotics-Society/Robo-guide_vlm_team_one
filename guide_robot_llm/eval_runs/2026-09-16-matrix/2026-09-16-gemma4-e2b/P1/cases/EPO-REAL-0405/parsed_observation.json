@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "the_image_shows_a_person_pointing_at_a_small_yellow_object_on_a_plate_in_the_foreground_while_a_computer_screen_is_visible_in_the_background_there_is_a_white_object_resembling_a_mouse_on_the_desk_and_a_robot_figure_is_visible_in_the_background_the_person_is_pointing_towards_the_yellow_object_on_the_plate"
+}

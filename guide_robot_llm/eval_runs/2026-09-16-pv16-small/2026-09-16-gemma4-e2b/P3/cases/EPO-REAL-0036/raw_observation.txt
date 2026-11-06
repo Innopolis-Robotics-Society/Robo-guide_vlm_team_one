@@ -1,0 +1,20 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-36-a",
+"epobj-36-b",
+"epobj-36-c",
+"epobj-36-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": [
+1,
+1,
+1,
+1
+]
+,
+"scene_facts": "The image shows a person's hand pointing towards a display or sign in the foreground. The background shows an interior space with what appears to be a hallway or room with glass partitions and furniture. There is a large illuminated sign in the middle ground. The question asks to identify which exhibit the visitor is pointing at."
+}

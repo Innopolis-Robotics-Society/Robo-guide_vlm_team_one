@@ -1,0 +1,134 @@
+{
+ "started": "2026-11-05T19:47:21",
+ "updated": "2026-11-05T20:06:13",
+ "models": {
+  "gemma4-e2b__p15-p3": {
+   "status": "done",
+   "started": "2026-11-05T19:47:21",
+   "exit_code": 0,
+   "wall_s": 152.2,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e2b__p15-p3",
+   "finished": "2026-11-05T19:49:53"
+  },
+  "gemma4-e4b__p15-p3": {
+   "status": "done",
+   "started": "2026-11-05T19:50:13",
+   "exit_code": 0,
+   "wall_s": 176.5,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e4b__p15-p3",
+   "finished": "2026-11-05T19:53:10"
+  },
+  "qwen3.5-4b__p15-p0": {
+   "status": "done",
+   "started": "2026-11-05T19:53:11",
+   "exit_code": 0,
+   "wall_s": 97.8,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-4b__p15-p0",
+   "finished": "2026-11-05T19:54:48"
+  },
+  "qwen3.5-9b__p15-p4": {
+   "status": "done",
+   "started": "2026-11-05T19:54:49",
+   "exit_code": 0,
+   "wall_s": 219.3,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-9b__p15-p4",
+   "finished": "2026-11-05T19:58:28"
+  },
+  "gemma4-e2b__p15-base": {
+   "status": "done",
+   "started": "2026-11-05T19:58:29",
+   "exit_code": 0,
+   "wall_s": 13.1,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e2b__p15-base",
+   "finished": "2026-11-05T19:58:42"
+  },
+  "gemma4-e4b__p15-base": {
+   "status": "done",
+   "started": "2026-11-05T19:58:42",
+   "exit_code": 0,
+   "wall_s": 14.9,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e4b__p15-base",
+   "finished": "2026-11-05T19:58:57"
+  },
+  "qwen3.5-4b__p15-base": {
+   "status": "done",
+   "started": "2026-11-05T19:58:58",
+   "exit_code": 0,
+   "wall_s": 15.5,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-4b__p15-base",
+   "finished": "2026-11-05T19:59:13"
+  },
+  "qwen3.5-9b__p15-base": {
+   "status": "done",
+   "started": "2026-11-05T19:59:14",
+   "exit_code": 0,
+   "wall_s": 27.5,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-9b__p15-base",
+   "finished": "2026-11-05T19:59:41"
+  },
+  "gemma4-e2b__h15-p3": {
+   "status": "done",
+   "started": "2026-11-05T19:59:42",
+   "exit_code": 0,
+   "wall_s": 82.4,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e2b__h15-p3",
+   "finished": "2026-11-05T20:01:04"
+  },
+  "gemma4-e4b__h15-p3": {
+   "status": "done",
+   "started": "2026-11-05T20:01:04",
+   "exit_code": 0,
+   "wall_s": 83.0,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e4b__h15-p3",
+   "finished": "2026-11-05T20:02:27"
+  },
+  "qwen3.5-4b__h15-p0": {
+   "status": "done",
+   "started": "2026-11-05T20:02:28",
+   "exit_code": 0,
+   "wall_s": 42.2,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-4b__h15-p0",
+   "finished": "2026-11-05T20:03:10"
+  },
+  "qwen3.5-9b__h15-p4": {
+   "status": "done",
+   "started": "2026-11-05T20:03:11",
+   "exit_code": 0,
+   "wall_s": 111.1,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-9b__h15-p4",
+   "finished": "2026-11-05T20:05:02"
+  },
+  "gemma4-e2b__h15-base": {
+   "status": "done",
+   "started": "2026-11-05T20:05:02",
+   "exit_code": 0,
+   "wall_s": 13.0,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e2b__h15-base",
+   "finished": "2026-11-05T20:05:15"
+  },
+  "gemma4-e4b__h15-base": {
+   "status": "done",
+   "started": "2026-11-05T20:05:16",
+   "exit_code": 0,
+   "wall_s": 14.7,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-gemma4-e4b__h15-base",
+   "finished": "2026-11-05T20:05:30"
+  },
+  "qwen3.5-4b__h15-base": {
+   "status": "done",
+   "started": "2026-11-05T20:05:31",
+   "exit_code": 0,
+   "wall_s": 14.9,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-4b__h15-base",
+   "finished": "2026-11-05T20:05:46"
+  },
+  "qwen3.5-9b__h15-base": {
+   "status": "done",
+   "started": "2026-11-05T20:05:46",
+   "exit_code": 0,
+   "wall_s": 26.7,
+   "out": "/home/sinorin/jupyter/Robo-guide_vlm_team_one/guide_robot_llm/eval_runs/2026-11-05-matrix/2026-11-05-qwen3.5-9b__h15-base",
+   "finished": "2026-11-05T20:06:13"
+  }
+ }
+}

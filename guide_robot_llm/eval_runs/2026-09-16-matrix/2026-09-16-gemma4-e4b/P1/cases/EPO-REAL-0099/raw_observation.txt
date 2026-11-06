@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-99-b"], "pointing_evidence": "yes", "pointing_box": [1, 1, 1, 1], "scene_facts": "The visitor is pointing towards the middle shelf, specifically at an item in the center of the visible display area."}

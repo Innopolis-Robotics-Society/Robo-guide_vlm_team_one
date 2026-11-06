@@ -1,0 +1,22 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409268_859984459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом — 2 человека. Оба стоят на пути, смотрят на него и выглядят внимательными — значит, оба готовы слушать. Достаточно слушателей — останавливаемся.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 891.507234016899,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409268_859984459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре сейчас 2 человека рядом с роботом. Один человек стоит слева, другой — по центру на тропинке. Оба смотрят на робота, что указывает на готовность слушать. Поскольку у нас уже есть 2 готовых слушателя, и это достаточное количество, мы можем завершить процесс.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 2,
+    "latency_ms": 697.0772259810474,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

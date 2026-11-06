@@ -1,0 +1,79 @@
+{
+  "case_id": "AGHRI-SEQ-0009-F124",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A3",
+  "calls_per_case": 3,
+  "terminal_reason": "k_exhausted",
+  "terminal_abstain": true,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 556.852,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0029900111258029938,
+            "upload_ms": 30.242498993175104,
+            "ttft_ms": 60.0344069825951,
+            "full_ms": 556.6267639806028,
+            "parse_ready_ms": 556.6267639806028
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 2058.883,
+  "attempts": 3,
+  "case": {
+    "case_id": "AGHRI-SEQ-0009-F124",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0009",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407346_174407459.png",
+      "sha256": "a231d5d1b312d0f4ff7e0d3351fabbe6797aa25a61201ce12c85997c44764472",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 0
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "0",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a shelf of snacks in a store. The hand is visible in the lower left, pointing towards the bottom shelf. The snacks appear to be various brands, including Lay's and others. The exact brand being pointed at is not clearly identifiable from the image alone.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1851.4410030038562,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"a person is pointing at a shelf in a store, specifically at a row of snack packages. the packages appear to be chips or similar snacks. the person's hand is visible, and they are pointing towards the lower part of the shelf. the background shows more shelves with various products, indicating a retail environment, likely a supermarket or convenience store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1922.5132080027834,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-103-a\",\n    \"epobj-103-b\",\n    \"epobj-103-c\",\n    \"epobj-103-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a shelf of snacks in a store. The brand name is not clearly visible on the package being pointed at.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1567.24917399697,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

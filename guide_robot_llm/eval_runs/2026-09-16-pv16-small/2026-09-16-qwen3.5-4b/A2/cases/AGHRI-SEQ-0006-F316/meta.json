@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0006-F316",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 2403.431,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0036199926398694515,
+              "upload_ms": 183.45665899687447,
+              "ttft_ms": 310.22685099742375,
+              "full_ms": 1761.4077850012109,
+              "parse_ready_ms": 1761.4077850012109
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003190012648701668,
+              "upload_ms": 48.88485200353898,
+              "ttft_ms": 190.11069799307734,
+              "full_ms": 641.6359760041814,
+              "parse_ready_ms": 641.6359760041814
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В кадре видна одна женщина в чёрном пальто, которая стоит рядом с роботом (видимо, с ним взаимодействует или рядом с ним стоит).\n- На заднем плане, у дороги или поля, нет других людей — только деревья, поле, забор и дом.\n- Значит, всего людей в кадре: **1**.\n\nЭтап 2: Оценим готовность этого человека слушать.\n\n- Женщина стоит близко к роботу (возможно, прямо перед ним или чуть в стороне, но в поле зрения камеры).\n- Её поза — она стоит, смотрит на камеру/робота, рука поднята (может быть, жестикулирует или указывает), что говорит о вовлечённости.\n- Нет признаков отвлечения (например, взгляд в сторону, движение в другую сторону, разговор с кем-то другим).\n- Следовательно, она, скорее всего, готова слушать или активно участвует в диалоге с роботом.\n\nИтого:\n- Всего людей: **1**\n- Готовых слушать: **1**\n\nОтвет: 1 1"
+    }
+  },
+  "latency_ms": 2403.431,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0006-F316",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0006",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407399_127993459.png",
+      "sha256": "bb835e374e4a0e18535577a6f6297b6c9340dc31a0d1ef38cb48013e969020a4",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

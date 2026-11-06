@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-28-a", "epobj-28-b", "epobj-28-c", "epobj-28-d"], "pointing_evidence": "none", "pointing_box": [1, 1, 1, 1], "scene_facts": "no_facts"}

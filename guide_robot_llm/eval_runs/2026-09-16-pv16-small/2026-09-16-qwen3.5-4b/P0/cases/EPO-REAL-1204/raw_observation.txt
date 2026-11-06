@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.51,
+    0.86,
+    0.65,
+    0.98
+  ],
+  "scene_facts": "The image shows a person pointing at an item on a shelf in what appears to be a stationery or office supply store. The person's hand is visible in the lower right portion of the image, gesturing toward a stack of clear plastic folders or document sleeves on one of the shelves. These items are commonly used for organizing papers and are part of the displayed merchandise."
+}

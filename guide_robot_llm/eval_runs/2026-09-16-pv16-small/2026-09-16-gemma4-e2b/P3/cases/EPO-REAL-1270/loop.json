@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf with numerous white and colored packages, likely personal hygiene products or similar items, stacked in clear plastic containers. the hand is pointing towards the middle section of these stacked items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1609.8463700036518,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf filled with various packaged goods, primarily white and yellow/orange packages, suggesting a retail setting, possibly a supermarket or convenience store. the hand in the foreground is pointing towards the middle section of the shelf where several white and some colorful packages are visible.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1285.7720520114526,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1270-a\",\n    \"epobj-1270-b\",\n    \"epobj-1270-c\",\n    \"epobj-1270-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a close-up of a shelf stocked with various packaged goods, primarily white and yellow/orange packages, suggesting a retail environment, likely a supermarket or convenience store. the focus is on the products on the shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1262.2915329993702,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-69-a",
+"epobj-69-b",
+"epobj-69-c",
+"epobj-69-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "the_person_is_looking_at_the_display_in_the_center_of_the_image_with_their_hand_pointing_towards_the_products_on_the_shelves"
+}

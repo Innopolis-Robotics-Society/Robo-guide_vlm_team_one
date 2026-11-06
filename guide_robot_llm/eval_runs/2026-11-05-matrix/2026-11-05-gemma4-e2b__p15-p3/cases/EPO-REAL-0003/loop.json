@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-3-a\",\n\"epobj-3-b\",\n\"epobj-3-c\",\n\"epobj-3-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the visitor is pointing towards a display of various fresh vegetables, including what appears to be radishes, green onions, and possibly some other root vegetables or leafy greens.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3776.1865769862197,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-3-a\",\n\"epobj-3-b\",\n\"epobj-3-c\",\n\"epobj-3-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"the visitor is pointing towards a display of various green vegetables, including what appears to be some kind of leafy greens and possibly some root vegetables or other vegetables arranged in trays.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1227.6572000118904,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/3.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-3-a\",\n\"epobj-3-b\",\n\"epobj-3-c\",\n\"epobj-3-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the visitor is pointing towards a display of various vegetables, including what appears to be radishes, green leafy vegetables, and possibly some root vegetables or other fresh produce.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1295.2876219933387,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

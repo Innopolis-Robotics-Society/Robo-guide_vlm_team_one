@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store display with skincare products. There are two people visible: one on the left wearing a white jacket and black pants, and another on the right in dark clothing. Neither person is pointing at any exhibit. The scene is static with no gestures indicating selection or interaction with specific items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3252.8742919967044,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store interior, likely a cosmetics or skincare section. There are shelves with products, promotional signs in Chinese (mentioning 'sensitive skin hydration series'), and two people visible: one on the left wearing a white jacket and black pants, and another on the right partially visible, wearing dark clothing. The person on the left is facing away from the camera and appears to be browsing or walking past the display. The person on the right is standing further back, near a wire basket, and their face is blurred. Neither person is making a pointing gesture toward any specific exhibit. There is no visible hand gesture, finger direction, or body orientation that indicates pointing at any of the candidate exhibits (epobj-69-a through epobj-69-d). Since no pointing evidence is present, it is impossible to determine which exhibit the visitor is indicating. No clarification request is made yet, as the instruction allows for iterative observation — but since no pointing behavior is observed in this frame, and no new frame or dialogue has been provided, we cannot proceed further without additional input. However, per the constraint: 'Never return a content_id that is not in the candidate list' — and since no pointing is detected, no candidate can be confidently selected. Therefore, no content_id is returned.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 4198.831761983456,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 4,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store interior, likely a cosmetics or personal care section. There are multiple shelves with products, promotional signs in Chinese, and several people browsing. One person on the left is wearing a white jacket and black pants, facing away from the camera. Another person on the right is partially visible, wearing dark clothing. A third person is seen in the background near the center, and a fourth person is visible further back on the right side. No one is actively pointing at any exhibit. The scene appears to be a typical shopping environment with customers examining products on display shelves.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2544.04990200419,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

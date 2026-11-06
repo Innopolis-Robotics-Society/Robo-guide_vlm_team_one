@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a hand holding small, yellow, wrapped items in a metal dish. There are no visible exhibits from the provided list in the frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2172.0937420031987,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1506.1220829957165,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a hand holding some small, yellow, wrapped items over a metal plate. There are no visible exhibits from the provided list in this frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1757.1519990160596,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

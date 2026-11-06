@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-1270",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 5994.52,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.002410000888630748,
+              "upload_ms": 293.3449940173887,
+              "ttft_ms": 352.25269399234094,
+              "full_ms": 3317.540407006163,
+              "parse_ready_ms": 3317.540407006163
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028600043151527643,
+              "upload_ms": 115.18467799760401,
+              "ttft_ms": 282.50173799460754,
+              "full_ms": 2676.902056991821,
+              "parse_ready_ms": 2676.902056991821
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово, как указано в инструкции:\n\n---\n\n**(1) Куда направлен жест?**\n\nНа изображении видна рука в чёрной перчатке, указывающая пальцем на полку. Палец направлен вправо и немного вверх, указывая на ряд товаров на средней полке — там находятся упаковки с синей и белой этикеткой, рядом с которыми также есть жёлтые и зелёные пакеты.\n\nКонкретно палец указывает на **синие пакеты**, которые находятся на уровне, где также лежат жёлтые пакеты (возможно, это разные типы влажных салфеток или туалетной бумаги).\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nИз списка доступных экспонатов:  \n- epobj-1270-a  \n- epobj-1270-b  \n- epobj-1270-c  \n- epobj-1270-d  \n\nМы не знаем, что именно означает каждый из этих ID, но по логике задачи — они должны соответствовать объектам на полке, на которые может указывать рука.\n\nПоскольку рука указывает на **синие пакеты**, а среди кандидатов — только один из них может быть синим пакетом (предположим, что один из ID соответствует синему пакету), то мы ищем тот, который визуально совпадает с указанным объектом.\n\nНо поскольку у нас нет прямого соответствия ID к картинке, нужно использовать логику: если рука указывает на **синий пакет**, и среди кандидатов есть только один, который может быть синим пакетом — то это он.\n\nОднако в задании сказано: “Если после шага (4) кандидатов не один — воздержись.”\n\nЗначит, нам нужно определить, сколько кандидатов попадает в зону указывания.\n\nПредположим, что:\n\n- epobj-1270-a — жёлтый пакет  \n- epobj-1270-b — синий пакет  \n- epobj-1270-c — зелёный пакет  \n- epobj-1270-d — белый/прозрачный контейнер  \n\nТогда рука указывает на **синий пакет** → только epobj-1270-b попадает в зону указывания.\n\n---\n\n**(3) Согласуются ли слова посетителя?**\n\nВопрос: “Is the object indicated"
+    }
+  },
+  "latency_ms": 5994.52,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-1270",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-1270",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/1270.jpg",
+      "sha256": "efe7154936623f238698b6f0986a297f9839b131a2cb2eb4a4aa8978327e7669",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Is the object indicated here a package of sanitary wet wipes?\nA. No, it is a black metal shelf guard\nB. Yes, it is a yellow package of tissues\nC. No, it is a large plastic storage bin\nD. Yes, it is a blue package of wet wipes\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-1270-a",
+      "epobj-1270-b",
+      "epobj-1270-c",
+      "epobj-1270-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-1270-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-1270-b",
+        "epobj-1270-c",
+        "epobj-1270-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Adversarial",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "No, it is a black metal shelf guard": "epobj-1270-a",
+        "Yes, it is a yellow package of tissues": "epobj-1270-b",
+        "No, it is a large plastic storage bin": "epobj-1270-c",
+        "Yes, it is a blue package of wet wipes": "epobj-1270-d"
+      }
+    }
+  }
+}

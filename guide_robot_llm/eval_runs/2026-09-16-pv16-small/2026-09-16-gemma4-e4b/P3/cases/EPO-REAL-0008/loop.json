@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-8-a\",\n\"epobj-8-b\",\n\"epobj-8-c\",\n\"epobj-8-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"The visitor is pointing towards a section of shelves containing various products, likely in a supermarket or large retail store.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1726.6137980041094,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person in a supermarket aisle, pointing towards the shelves of various products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1546.4036429766566,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person in a supermarket aisle, pointing towards the shelves of various products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1505.5169579864014,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

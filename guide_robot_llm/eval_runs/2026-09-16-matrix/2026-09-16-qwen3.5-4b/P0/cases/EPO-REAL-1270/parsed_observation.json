@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.48,
+    0.5,
+    0.52,
+    0.54
+  ],
+  "scene_facts": "The image shows a person in a supermarket pointing at a shelf stocked with various household products, including tissues and wet wipes. The person is wearing a black glove and pointing towards a blue package of wet wipes on the middle shelf."
+}

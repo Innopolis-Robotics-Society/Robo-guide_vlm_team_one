@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407158_733920459.png",
+    "raw_text": "{\n  \"answer\": \"В текущем кадре рядом с роботом (камерой) находится один человек — его видна часть тела в оранжевом жилете и чёрных брюках. Готовых слушателей — 1. Поскольку 1 < 2, переходим к следующему шагу: вызываем навык на новых кадрах.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 1,
+    "latency_ms": 960.4009450122248,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407158_733920459.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей рядом с роботом — только часть тела человека в оранжевом жилете слева. Готовых слушателей — 0. Поскольку их недостаточно, не переходим к следующему шагу. Повторяем вызов навыка на новых кадрах.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 771.7061410075985,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_oj+mk+gl_1walk+check_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407158_733920459.png",
+    "raw_text": "{\n  \"answer\": \"Сейчас рядом с роботом нет людей. В кадре виден только фрагмент человека в оранжевом жилете слева, но он не взаимодействует с роботом и не готов слушать. Поскольку готовых слушателей недостаточно, продолжаем цикл — вызываем этот же навык на новых кадрах.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 791.4239829988219,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

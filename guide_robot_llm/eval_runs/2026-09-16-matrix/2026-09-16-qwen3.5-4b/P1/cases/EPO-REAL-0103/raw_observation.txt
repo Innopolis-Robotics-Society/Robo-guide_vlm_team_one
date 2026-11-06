@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "scene_facts": "The image shows a first-person perspective in a supermarket aisle. A person's hand is visible at the bottom center, reaching towards a shelf of snack products. The hand is pointing or touching a package of chips on the lower shelf. The brand name 'Oishi' is clearly visible on the red and green packages being pointed at. The other options (Lay's, Orion, Pringles) are not the focus of the gesture. The person is specifically interacting with the Oishi products on the shelf."
+}

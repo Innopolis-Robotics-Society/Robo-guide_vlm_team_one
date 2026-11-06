@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.54,
+    0.48,
+    0.99,
+    0.99
+  ],
+  "scene_facts": "Кадр показывает интерьер салона красоты с указывающей рукой на световую вывеску над входом."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\n  \"answer\": \"На предоставленном изображении я вижу **3 человека** (двое на переднем плане и один вдали).\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 815.2862199931405,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\"answer\": \"На предоставленном изображении я вижу **3 человека** рядом с роботом (или, по крайней мере, на фоне, где присутствует робот).\", \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 391.34566800203174,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_1walk_1stand_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731409262_049107459.png",
+    "raw_text": "{\"answer\": \"На предоставленном изображении я вижу **4 человека** рядом с роботом. Поскольку у меня нет информации о том, **готовы ли** эти люди слушать, я не могу определить, сколько из них готовы слушать. Для выполнения вашего запроса мне нужна дополнительная информация или другой набор изображений, где можно было бы оценить готовность слушателей.\"\n  , \"confidence\": 0.95,\n  \"abstain\": true}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 710.9785150096286,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

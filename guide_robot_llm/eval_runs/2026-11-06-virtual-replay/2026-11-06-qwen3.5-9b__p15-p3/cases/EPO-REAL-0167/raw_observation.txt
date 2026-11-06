@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "scene_facts": "The image shows a bakery aisle in a store. A hand is pointing at a packaged bread item on the shelf. The bread appears to be sliced and has visible dark specks or chunks inside, suggesting it might contain chocolate chips or similar inclusions. The packaging is clear plastic with a white top, and the bread itself looks like a loaf of sliced bread with embedded ingredients. The surrounding items include milk bottles and other packaged goods, but the focus is on the bread being pointed at. The hand is clearly indicating one specific product among several similar ones on the shelf."
+}

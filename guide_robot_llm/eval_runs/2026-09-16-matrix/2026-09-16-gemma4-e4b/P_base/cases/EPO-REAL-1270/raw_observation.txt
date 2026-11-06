@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": [], "pointing_evidence": "yes", "pointing_box": [0.33, 0.67, 0.54, 0.85], "scene_facts": "Человек в перчатке указывает на полку с товарами в магазине."}

@@ -1,0 +1,120 @@
+{
+  "case_id": "EPO-REAL-0162",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P0",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1611.986,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0029400107450783253,
+            "upload_ms": 92.22394099924713,
+            "ttft_ms": 504.15975699434057,
+            "full_ms": 1611.956337990705,
+            "parse_ready_ms": 1611.956337990705
+          }
+        ]
+      }
+    },
+    "decision": {
+      "latency_ms": 229.034,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.002981018042191863,
+            "upload_ms": 53.19017599686049,
+            "ttft_ms": 120.57886700495146,
+            "full_ms": 229.00773098808713,
+            "parse_ready_ms": 229.00773098808713
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 1841.02,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0162",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-162",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/162.jpg",
+      "sha256": "a463a5525b437d62b97cd47c9ecb83db317a88d063734b7f2ab4fe82d6cae522",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Based on the text on this machine, what does it specifically provide?\nA. Ice cubes\nB. Cold beverages\nC. Coffee\nD. Boiling water\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-162-a",
+      "epobj-162-b",
+      "epobj-162-c",
+      "epobj-162-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-162-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-162-a",
+        "epobj-162-b",
+        "epobj-162-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Ice cubes": "epobj-162-a",
+        "Cold beverages": "epobj-162-b",
+        "Coffee": "epobj-162-c",
+        "Boiling water": "epobj-162-d"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a",
+    "epobj-96-b",
+    "epobj-96-c",
+    "epobj-96-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person's hand pointing towards a building with a large red 'UNIQLO' sign. The person is standing in an open plaza, and the building is clearly visible in the background. The pointing gesture is directed at the UNIQLO store, which is one of the exhibits in the scene."
+}

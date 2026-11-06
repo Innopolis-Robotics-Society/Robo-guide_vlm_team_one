@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-61-a",
+    "epobj-61-b",
+    "epobj-61-c",
+    "epobj-61-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "the visitor is pointing at a bust placed on a pedestal on the floor."
+}

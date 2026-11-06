@@ -1,0 +1,11 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a supermarket meat display case with various packaged poultry products. A person in the foreground is pointing at a specific item in the display case. The person is wearing a green jacket and is pointing with their right hand. The display case contains several trays of packaged meat products, including what appears to be whole chickens and other poultry items. The person's finger is pointing at a specific tray in the lower section of the display case. The person is standing in front of the display case, and their pointing gesture is directed towards one of the items in the case. The display case has multiple trays, each containing different types of packaged meat products. The person's pointing gesture is clear and directed towards a specific item in the display case. The person's hand is extended towards the display case, and their finger is pointing at a specific tray. The display case is well-lit, and the items are clearly visible. The person's pointing gesture is the primary focus of the image, and it is directed towards a specific item in the display case. The person's hand is positioned in the lower section of the display case, and their finger is pointing at a specific tray. The display case contains several trays of packaged meat products, and the person's pointing gesture is directed towards one of these trays. The person's hand is extended towards the display case, and their finger is pointing at a specific tray. The display case is well-lit, and the items are clearly visible. The person's pointing gesture is the primary focus of the image, and it is directed towards a specific item in the display case. The person's hand is positioned in the lower section of the display case, and their finger is pointing at a specific tray. The display case contains several trays of packaged meat products, and the person's pointing gesture is directed towards one of these trays. The person's hand is extended towards the display case, and their finger is pointing at a specific tray. The display case is well-lit, and the items are clearly visible. The person's pointing gesture is the

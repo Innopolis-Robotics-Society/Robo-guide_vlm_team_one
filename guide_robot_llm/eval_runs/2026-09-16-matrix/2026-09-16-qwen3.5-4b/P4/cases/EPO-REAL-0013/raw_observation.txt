@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The person is pointing with their right hand toward the left side of the image, but there is no visible exhibit or object in that direction within the frame. The visible exhibits are on shelves to the right and center, but the pointing gesture does not clearly target any specific one among the candidates. Additionally, the hand is gloved and the gesture is ambiguous without further context or visible target."
+}

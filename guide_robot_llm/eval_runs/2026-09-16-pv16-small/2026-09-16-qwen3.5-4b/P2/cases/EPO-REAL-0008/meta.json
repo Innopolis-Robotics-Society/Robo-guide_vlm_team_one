@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0008",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "parse_failed",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 7039.972,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "length",
+      "parse_status": "failed",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0022900057956576347,
+              "upload_ms": 265.29597101034597,
+              "ttft_ms": 323.2643280061893,
+              "full_ms": 3277.8346769919153,
+              "parse_ready_ms": 3277.8346769919153
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0032799725886434317,
+              "upload_ms": 88.17786801955663,
+              "ttft_ms": 255.74019900523126,
+              "full_ms": 3762.054557999363,
+              "parse_ready_ms": 3762.054557999363
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово:\n\n---\n\n**(1) Куда направлен жест?**\n\nВ изображении видна рука, указывающая на **пакет с прозрачным предметом**, который висит на вешалке в центре композиции. Этот предмет — это **сетчатый мешок или пакет**, внутри которого находится что-то белое и мягкое, похожее на **сponge (губку)** или **мешочек для хранения**.\n\nРука указывает именно на этот пакет, а не на другие товары вокруг.\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nИз списка кандидатов:  \n- epobj-8-a  \n- epobj-8-b  \n- epobj-8-c  \n- epobj-8-d  \n\nМы не знаем, что именно означает каждый из этих ID, но по контексту задачи — они должны соответствовать экспонатам на фото.\n\nПоскольку рука указывает на **пакет с губкой/мешком**, и если предположить, что каждый ID соответствует одному объекту, то нужно выбрать тот, который соответствует этому объекту.\n\nНо поскольку у нас нет прямой связи между ID и объектом, мы должны использовать **логическое исключение** и **исключить явно неподходящие варианты**.\n\n---\n\n**(3) Согласуются ли слова посетителя?**\n\nВопрос: *«What is the primary function of the object I am pointing at?»*\n\nВарианты ответов:\n- A. To store cold beverages for drinking → термос/кружка\n- B. To clean surfaces like a sponge → губка\n- C. To hang clothes for drying → вешалка\n- D. To provide warmth when filled with heated liquid → термос\n\nПоскольку указанный объект — **пакет с губкой**, правильный ответ — **B**.\n\n---\n\n**(4) Остался ли ровно один кандидат?**\n\nЕсли мы предположим, что каждый ID соответствует одному объекту, и только один из них — это губка (или пакет с губкой), то после анализа мы можем сказать, что **только один кандидат соответствует правильному ответу**.\n\nНо поскольку мы не знаем, какой ID соответствует губке, мы должны сделать вывод на основе **только того, что видно на фото и указано в вопросе**.\n\nОднако в задании сказано: *«НИКОГДА не возвращай content"
+    }
+  },
+  "latency_ms": 7039.972,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0008",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-8",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+      "sha256": "72927c622d1e6c56fa18e2c20ac65f50fc9b5eb4e1e50bbe941bf2f7d94de4e0",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the primary function of the object I am pointing at?\nA. To store cold beverages for drinking\nB. To clean surfaces like a sponge\nC. To hang clothes for drying\nD. To provide warmth when filled with heated liquid\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-8-a",
+      "epobj-8-b",
+      "epobj-8-c",
+      "epobj-8-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-8-d",
+      "box_px": null,
+      "distractors": [
+        "epobj-8-a",
+        "epobj-8-b",
+        "epobj-8-c"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "Affordance & Function",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "To store cold beverages for drinking": "epobj-8-a",
+        "To clean surfaces like a sponge": "epobj-8-b",
+        "To hang clothes for drying": "epobj-8-c",
+        "To provide warmth when filled with heated liquid": "epobj-8-d"
+      }
+    }
+  }
+}

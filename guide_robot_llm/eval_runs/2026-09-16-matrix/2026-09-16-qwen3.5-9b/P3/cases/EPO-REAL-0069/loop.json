@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"В кадре видны два человека: один в белой куртке слева, другой — частично справа в красной одежде. Ни один из них не указывает жестом на конкретный экспонат. Визуально нет явного указательного жеста (палец, рука, взгляд направлен на объект). Экспонаты представлены как полки с косметикой, но без четкого выделения одного предмета для указания.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2555.7199910108466,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"В кадре три человека: слева — женщина в белой куртке, спиной к камере; справа — человек в красной куртке, частично виден; в центре — человек с размытым лицом, стоящий у витрины. Ни один из них не указывает жестом на конкретный экспонат. Все находятся в торговом зале, вокруг витрины с косметикой. Жестового указания нет.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2311.2657540186774,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store interior, likely a cosmetics or skincare section, with shelves displaying products and promotional signage. There are three people visible: one on the left in a white jacket, one partially visible behind the display on the right, and another person whose face is blurred on the far right. No person is making a pointing gesture toward any exhibit. The scene is static and does not include any explicit pointing action or indication of which exhibit is being referenced.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2305.15140100033,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

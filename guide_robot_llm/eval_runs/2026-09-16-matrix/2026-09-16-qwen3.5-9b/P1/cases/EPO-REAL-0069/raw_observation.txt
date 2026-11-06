@@ -1,0 +1,13 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ]
+,
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a retail display of skincare products, with bottles and packaging arranged on shelves. A person is standing to the left, facing the display, but their hand is not pointing at any specific item. There is no visible gesture, gaze direction, or verbal indication from the person that identifies a particular exhibit. The scene lacks explicit pointing behavior or contextual cues to determine which exhibit the person is referring to."
+}

@@ -1,0 +1,120 @@
+{
+  "case_id": "EPO-REAL-0235",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P3",
+  "calls_per_case": 3,
+  "terminal_reason": "k_exhausted",
+  "terminal_abstain": true,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1618.965,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0031200179364532232,
+            "upload_ms": 46.93271897849627,
+            "ttft_ms": 79.43953899666667,
+            "full_ms": 1618.9337059913669,
+            "parse_ready_ms": 1618.9337059913669
+          }
+        ]
+      }
+    },
+    "decision": {
+      "latency_ms": 218.709,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0032700190786272287,
+            "upload_ms": 49.107951985206455,
+            "ttft_ms": 117.5717239966616,
+            "full_ms": 218.67926698178053,
+            "parse_ready_ms": 218.67926698178053
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 5190.128,
+  "attempts": 3,
+  "case": {
+    "case_id": "EPO-REAL-0235",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-235",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/235.jpg",
+      "sha256": "2f9282fffe8de10129b2a5994ba250f32f26e19ba4cf0f62d63a814d710c562c",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the title subject written on the spine of the object I am pointing to?\nA. University Physics\nB. Analog Electronics Technique\nC. C Programming Design\nD. Engineering Drawing\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-235-a",
+      "epobj-235-b",
+      "epobj-235-c",
+      "epobj-235-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-235-c",
+      "box_px": null,
+      "distractors": [
+        "epobj-235-a",
+        "epobj-235-b",
+        "epobj-235-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "University Physics": "epobj-235-a",
+        "Analog Electronics Technique": "epobj-235-b",
+        "C Programming Design": "epobj-235-c",
+        "Engineering Drawing": "epobj-235-d"
+      }
+    }
+  }
+}

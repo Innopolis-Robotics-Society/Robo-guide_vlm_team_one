@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0103",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P4",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1588.188,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0029400107450783253,
+            "upload_ms": 135.18548000138253,
+            "ttft_ms": 557.7548849978484,
+            "full_ms": 1588.1595649989322,
+            "parse_ready_ms": 1588.1595649989322
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 1588.188,
+  "attempts": 1,
+  "case": {
+    "case_id": "EPO-REAL-0103",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-103",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+      "sha256": "c02a34846757feafff001a36ebd9d70a73aa7088869e285635aa468069a741dc",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Based on the text on the package, what is the brand name of this product?\nA. Lay's\nB. Orion\nC. Pringles\nD. Oishi\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-103-a",
+      "epobj-103-b",
+      "epobj-103-c",
+      "epobj-103-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-103-b",
+      "box_px": null,
+      "distractors": [
+        "epobj-103-a",
+        "epobj-103-c",
+        "epobj-103-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Lay's": "epobj-103-a",
+        "Orion": "epobj-103-b",
+        "Pringles": "epobj-103-c",
+        "Oishi": "epobj-103-d"
+      }
+    }
+  }
+}

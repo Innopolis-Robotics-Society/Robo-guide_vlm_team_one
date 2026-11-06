@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.53,
+    0.49,
+    0.67,
+    0.62
+  ],
+  "scene_facts": "The person is pointing at a barber pole located above the doorway to the salon area."
+}

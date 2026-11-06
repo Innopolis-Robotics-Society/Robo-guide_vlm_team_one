@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-100-a",
+    "epobj-100-b",
+    "epobj-100-c",
+    "epobj-100-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a cluttered desk with various items. There is a small wooden shelf on the left side of the desk, and the main surface of the desk is in the foreground. A hand is visible at the bottom center, pointing towards the right side of the desk surface. On the desk surface, there are several items including a clear bottle with a white cap (likely containing liquid), a small grey container, and other small objects. The shelf on the left contains a figurine, a large water bottle, and some papers or books. The hand's gesture is directed towards the items on the desk surface, not the shelf. The question asks whether an object is located on the shelf or on the desk surface. Given the pointing gesture towards the desk surface, the most likely intended object is one of the items on the desk. Among the candidates, epobj-100-a, epobj-100-b, and epobj-100-c are on the desk surface, while epobj-100-d is on the shelf. Since the hand is pointing at the desk surface, the answer should be 'on the desk surface'. However, the question is asking for the location of the object, not the object itself. The options are 'A. On the desk surface', 'B. On the shelf', 'C. Hanging from a cable', 'D. Mounted on the wall'. The hand is pointing at the desk surface, so the object being referred to is on the desk surface. Therefore, the answer is 'A. On the desk surface'. But wait, the question is 'Is the object located on the shelf or on the desk surface?' and the options are A, B, C, D. The options are not 'shelf' or 'desk surface' directly, but rather 'A. On the desk surface', 'B. On the shelf', etc. So

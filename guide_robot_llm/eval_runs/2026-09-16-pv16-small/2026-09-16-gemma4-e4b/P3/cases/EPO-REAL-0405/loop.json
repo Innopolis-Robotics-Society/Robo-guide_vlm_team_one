@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a hand holding some small, yellow, wrapped items over a metal plate. There are no visible exhibits from the provided list in the immediate vicinity of the hand or the items being held.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2108.141392993275,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"no_facts\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1478.9863570185844,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a person's hand holding a small, light-colored object (possibly a snack or small item) over a metal plate. There are several other items on the table, including a laptop, packaged goods, and a white object that resembles a mouse or small electronic device.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1768.4182680095546,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

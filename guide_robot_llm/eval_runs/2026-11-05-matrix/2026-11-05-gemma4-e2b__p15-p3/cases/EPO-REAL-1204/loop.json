@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-1204-a\", \"epobj-1204-b\", \"epobj-1204-c\", \"epobj-1204-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows a person's hand pointing towards a stack of documents or files on a shelf. The context of the previous question was about electronic functions, and the current image shows a display case filled with documents, folders, and possibly some small items (like colored plastic pieces).\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1857.9137999913655,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n\"people_count\": 1\n,\n\"exhibit_candidates\": [\n\"epobj-1204-a\",\n\"epobj-1204-b\",\n\"epobj-1204-c\",\n\"epobj-1204-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"a person's hand is pointing towards a stack of documents or files on a shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1153.9867969986517,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-1204-a\", \"epobj-1204-b\", \"epobj-1204-c\", \"epobj-1204-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"Посетитель указывает пальцем на верхнюю часть ряда папок, где видны цветные канцелярские принадлежности (красные, желтые, зеленые).\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1158.2020760106388,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

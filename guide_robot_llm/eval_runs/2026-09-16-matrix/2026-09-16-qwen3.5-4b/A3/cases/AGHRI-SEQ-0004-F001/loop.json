@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593519_022185047.png",
+    "raw_text": "{\n  \"answer\": \"0\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 544.684005988529,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593519_022185047.png",
+    "raw_text": "{\n  \"answer\": \"В кадре нет людей рядом с роботом — их не видно ни в одном месте. Следовательно, количество готовых слушателей равно 0. Поскольку условие «готовых недостаточно» выполняется, переходим к следующему шагу — вызываем тот же навык на новых кадрах.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 752.0002450037282,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_3walk_mv_11_14_2024_2_label/sensor_data/cam_zed_rgb/1731593519_022185047.png",
+    "raw_text": "{\n  \"answer\": \"На данный момент в кадре нет людей рядом с роботом — его не видно, и вокруг пусто. Значит, пока нет ни одного готового слушателя. Продолжим наблюдение на новых кадрах.\",\n  \"confidence\": 0.95,\n  \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 681.2690689985175,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

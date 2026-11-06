@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": [], "pointing_evidence": "yes", "pointing_box": [0.51, 0.76, 0.71, 0.99], "scene_facts": "Рука указывает на контейнер с конфетами на ноутбуке."}

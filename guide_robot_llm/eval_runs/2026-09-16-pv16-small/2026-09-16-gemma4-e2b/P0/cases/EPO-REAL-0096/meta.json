@@ -1,0 +1,94 @@
+{
+  "case_id": "EPO-REAL-0096",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P0",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 1347.921,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0034400145523250103,
+            "upload_ms": 62.5464899931103,
+            "ttft_ms": 395.4913530033082,
+            "full_ms": 1347.886325995205,
+            "parse_ready_ms": 1347.886325995205
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 1347.921,
+  "attempts": 1,
+  "case": {
+    "case_id": "EPO-REAL-0096",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-96",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+      "sha256": "9e3b22621058a335bfe4a5987372caaa3dc720354401111004a93ea77e50f60a",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the name of the brand displayed on the building I am pointing at?\nA. Nike\nB. Uniqlo\nC. H&M\nD. Adidas\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-96-a",
+      "epobj-96-b",
+      "epobj-96-c",
+      "epobj-96-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-96-b",
+      "box_px": null,
+      "distractors": [
+        "epobj-96-a",
+        "epobj-96-c",
+        "epobj-96-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Nike": "epobj-96-a",
+        "Uniqlo": "epobj-96-b",
+        "H&M": "epobj-96-c",
+        "Adidas": "epobj-96-d"
+      }
+    }
+  }
+}

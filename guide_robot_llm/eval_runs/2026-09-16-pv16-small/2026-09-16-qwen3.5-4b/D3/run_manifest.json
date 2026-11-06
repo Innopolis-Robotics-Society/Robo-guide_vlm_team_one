@@ -1,0 +1,41 @@
+[
+  {
+    "case_id": "SCN-CC-001",
+    "source": "pilot-cc",
+    "track": "scene",
+    "status": "ok",
+    "pass": null,
+    "variant": "D3",
+    "calls_per_case": null,
+    "terminal_reason": null,
+    "terminal_abstain": null,
+    "latency_ms": 1456.384,
+    "attempts": 1
+  },
+  {
+    "case_id": "SCN-CC-002",
+    "source": "pilot-cc",
+    "track": "scene",
+    "status": "ok",
+    "pass": null,
+    "variant": "D3",
+    "calls_per_case": null,
+    "terminal_reason": null,
+    "terminal_abstain": null,
+    "latency_ms": 1637.139,
+    "attempts": 1
+  },
+  {
+    "case_id": "SCN-CC-003",
+    "source": "pilot-cc",
+    "track": "scene",
+    "status": "ok",
+    "pass": null,
+    "variant": "D3",
+    "calls_per_case": null,
+    "terminal_reason": null,
+    "terminal_abstain": null,
+    "latency_ms": 1577.499,
+    "attempts": 1
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.53,
+    0.62,
+    0.68,
+    0.78
+  ],
+  "scene_facts": "The person is pointing at a packaged bread item on the shelf. The bread has a light brown color with visible dark specks, which is characteristic of chocolate chip bread. The other options (red bean, whole wheat, milk) do not match the visual appearance of the pointed item as well as chocolate chip does. The milk bottle is on the left, not being pointed at. The whole wheat breads are further to the right. The red bean item is not clearly visible in the pointed area."
+}

@@ -1,0 +1,12 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-385-a",
+    "epobj-385-b",
+    "epobj-385-c",
+    "epobj-385-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a food service counter with various dishes in metal trays, including fried items, boiled eggs, carrots, and steamed buns. A person’s hand is visible pointing toward a purple bowl containing small white round food items (likely dumplings or rice balls). There are two people visible: one in the background wearing a purple hat and mask, and another whose hand is pointing. The pointing action is directed at the purple bowl, not at any of the labeled exhibits (epobj-385-a through d), which appear to be unrelated to the scene or not clearly identifiable as pointed-to objects."
+}

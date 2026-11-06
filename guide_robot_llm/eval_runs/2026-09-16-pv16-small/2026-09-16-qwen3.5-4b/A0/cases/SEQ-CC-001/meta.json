@@ -1,0 +1,97 @@
+{
+  "case_id": "SEQ-CC-001",
+  "source": "pilot-cc",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A0",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 934.081,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.00410998472943902,
+            "upload_ms": 179.98455700580962,
+            "ttft_ms": 633.09568198747,
+            "full_ms": 934.0490600152407,
+            "parse_ready_ms": 934.0490600152407
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 934.081,
+  "attempts": 1,
+  "case": {
+    "case_id": "SEQ-CC-001",
+    "source": "pilot-cc",
+    "track": "audience",
+    "split_group_id": "g-eng-SEQ-CC-001",
+    "media": {
+      "path": "pilot/media/cc/SEQ-CC-001_f0.png",
+      "sha256": "cf9b613c4bf67fb8a22638a9a5a7d9f70f56b3d3450e6de2e84b1597b9c81408",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Посчитай людей на кадре и определи, сколько из них готовы слушать дальше.",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 3,
+      "engaged_count": 3
+    },
+    "provenance": {
+      "source": "pilot-cc",
+      "license": "self-generated synthetic (PIL, deterministic spec, seed 20260914); no real persons; no redistribution",
+      "version": "eng-manifest-v1 (2026-09-15, Taiga #16 F1)",
+      "rights_note": "synthetic, no real persons (rights_ledger: n/a)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec)",
+      "min_engaged": 2,
+      "count_bucket": "3",
+      "sequence": "SEQ-CC-001",
+      "n_frames": 3,
+      "frames": [
+        {
+          "path": "pilot/media/cc/SEQ-CC-001_f0.png",
+          "sha256": "cf9b613c4bf67fb8a22638a9a5a7d9f70f56b3d3450e6de2e84b1597b9c81408",
+          "format": "png"
+        },
+        {
+          "path": "pilot/media/cc/SEQ-CC-001_f1.png",
+          "sha256": "270268d97cc0041499ffe6c29b5a7cf4ad7095947897c8a083aaaf01504d7015",
+          "format": "png"
+        },
+        {
+          "path": "pilot/media/cc/SEQ-CC-001_f2.png",
+          "sha256": "eda6206fc0954cd603bfb1c14fc4831e83d0be0ebb34ac6640a3604814bb234c",
+          "format": "png"
+        }
+      ]
+    }
+  }
+}

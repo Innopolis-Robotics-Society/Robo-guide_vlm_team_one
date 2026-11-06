@@ -1,0 +1,12 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person pointing at a speed limit sign that reads '15'. The sign is mounted on a pole near a tree, with a car and another person visible in the background."
+}

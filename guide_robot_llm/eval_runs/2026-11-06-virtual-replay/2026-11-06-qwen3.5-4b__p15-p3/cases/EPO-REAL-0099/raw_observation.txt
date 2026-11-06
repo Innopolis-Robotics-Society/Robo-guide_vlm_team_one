@@ -1,0 +1,17 @@
+{
+ "people_count": 1,
+ "exhibit_candidates": [
+  "epobj-99-a",
+  "epobj-99-b",
+  "epobj-99-c",
+  "epobj-99-d"
+ ],
+ "pointing_evidence": "yes",
+ "pointing_box": [
+  0.36,
+  0.66,
+  0.48,
+  0.78
+ ],
+ "scene_facts": "The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be instant noodles, dumplings, and other prepared meals. A person's hand is visible in the foreground, pointing towards a specific item on the lower shelf. The item being pointed at is a yellow package, which looks like a single-serving snack bar or a similar packaged food product. The person is wearing a green sleeve, suggesting they are dressed in a casual outfit. The lighting is bright, typical of a retail environment, and the overall scene suggests a shopping context where the person is selecting or examining a product."
+}

@@ -1,0 +1,1 @@
+{"people_count": 3, "exhibit_candidates": ["poster-01", "frame-03"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "A room with light walls and a wooden floor. There are three people and three rectangular objects on the floor. Two people are standing, and one is seated or positioned in front of a large rectangular object."}

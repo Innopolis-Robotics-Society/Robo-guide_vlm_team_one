@@ -1,0 +1,12 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/ENG-CC-001.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 3 человека. Все 3 смотрят вперёд, на зелёный экран — значит, все готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 3,
+    "latency_ms": 832.5648930040188,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

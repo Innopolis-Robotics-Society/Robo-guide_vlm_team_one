@@ -1,0 +1,16 @@
+{
+  "people_count": 1
+,
+  "exhibit_candidates": [
+    "epobj-4-a",
+    "epobj-4-b",
+    "epobj-4-c",
+    "epobj-4-d"
+  ]
+,
+  "pointing_evidence": "none"
+,
+  "pointing_box": null
+,
+  "scene_facts": "The image shows a close-up of various packaged goods, likely in a store setting. A hand is pointing towards the bottom center of the visible display area. The items in the foreground are predominantly red and gold packaging. The background shows shelves with various products."
+}

@@ -1,0 +1,1 @@
+{"people_count": 2, "exhibit_candidates": ["poster-01", "frame-03"], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "Светлая комната: два человека у стен, на которых висят прямоугольные объекты"}

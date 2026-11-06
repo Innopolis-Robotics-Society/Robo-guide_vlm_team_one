@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-3-b"], "pointing_evidence": "yes", "pointing_box": [0.53, 0.63, 0.67, 0.78], "scene_facts": "Человек указывает на овощи, расположенные в нижней части кадра."}

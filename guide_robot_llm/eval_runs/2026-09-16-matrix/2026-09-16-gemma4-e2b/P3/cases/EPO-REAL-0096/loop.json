@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-96-a\",\n\"epobj-96-b\",\n\"epobj-96-c\",\n\"epobj-96-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_image_shows_a_building_with_logos_of_nike_and_uniqlo\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1538.4031110152137,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-96-a\",\n\"epobj-96-b\",\n\"epobj-96-c\",\n\"epobj-96-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_building_has_logos_of_nike_and_uniqlo\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1222.767188999569,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/96.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-96-a\",\n\"epobj-96-b\",\n\"epobj-96-c\",\n\"epobj-96-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_building_has_logos_of_nike_and_uniqlo\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1256.6968410101254,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

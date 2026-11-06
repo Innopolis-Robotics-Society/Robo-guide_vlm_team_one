@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-99-a", "epobj-99-b", "epobj-99-c", "epobj-99-d"], "pointing_evidence": "none", "pointing_box": [1, 1, 1, 1], "scene_facts": "the_person_is_pointing_at_a_shelf_of_packaged_food_which_appears_to_be_noodles_or_snacks"}

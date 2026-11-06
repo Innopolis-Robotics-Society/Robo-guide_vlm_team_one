@@ -1,0 +1,1 @@
+{"people_count": 1, "exhibit_candidates": ["epobj-1204-d"], "pointing_evidence": "yes", "pointing_box": [0.57, 0.82, 0.75, 0.94], "scene_facts": "Человек указывает пальцем на какой-то предмет в нижней части витрины."}

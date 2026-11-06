@@ -1,0 +1,11 @@
+{
+    "people_count": 1,
+    "exhibit_candidates": [
+        "epobj-28-a",
+        "epobj-28-b",
+        "epobj-28-c",
+        "epobj-28-d"
+    ],
+    "pointing_evidence": "none",
+    "pointing_box": null,
+    "scene_facts": "The image shows a hand pointing at a traffic sign. The sign has two circular signs: the top one is a 'no entry' symbol (red circle with a car and a diagonal line), and the bottom one is a speed limit sign showing '15'. The hand is clearly pointing at the lower sign, which indicates a speed limit of 15 km/h. The question asks whether the object indicated by the finger is above or below the speed limit sign. Since the finger is pointing directly at the speed limit sign itself, it is not above or below it — it is the sign. However, the question may be interpreted as asking about the relative position of the indicated object to the speed limit sign. In this case, the indicated object is the speed limit sign, so it is neither above nor below itself. But given the options, the most logical interpretation is that the question is asking whether the indicated object is above or below another sign. Since the finger is pointing at the lower sign, and the upper sign is above it, the indicated object (the lower sign) is below the upper sign. However, the question specifically asks about the speed limit sign. The speed limit sign is the lower one, and the finger is pointing at it. Therefore, the indicated object is the speed limit sign, and it is not above or below itself. But if we consider the context, the question might be asking whether the indicated object is above or below the speed limit sign, and since the indicated object is the speed limit sign, it is neither. However, the options suggest that the answer is either above or below. Given the image, the finger is pointing at the lower sign, which is the speed limit sign. Therefore, the indicated object is the speed limit sign, and it is not above or below itself. But if we consider the relative position, the indicated object is below the upper sign. However, the question specifically asks about the speed limit sign. The speed limit sign is the lower one, and the finger is pointing at

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the visitor is pointing towards a sign or display located near the doorway, specifically on the wall or structure framing the doorway.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1746.0664929822087,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a person's arm pointing towards an area within a room, which appears to be an exhibition space with several display booths or areas. The person is pointing towards the right side of the frame, near a display or entrance area.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1405.4674289945979,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the visitor is pointing towards a sign or display located near the doorway, specifically on the wall or structure framing the doorway.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1406.7186689935625,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

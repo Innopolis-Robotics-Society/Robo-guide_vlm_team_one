@@ -1,0 +1,13 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ]
+  ,
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows two people in a park-like setting with trees and a road. One person is pointing towards a signpost that has two circular signs: one indicating no entry for cars and another showing a speed limit of 15. The other person is standing nearby, observing the scene. There are parked cars visible in the background, along with some buildings and additional signage. The overall environment appears to be a public area, possibly near a park or recreational zone."
+}

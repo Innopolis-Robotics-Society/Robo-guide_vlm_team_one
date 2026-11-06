@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-1204-a\", \"epobj-1204-b\", \"epobj-1204-c\", \"epobj-1204-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"A person's finger is pointing towards a stack of clear plastic files/folders on a shelf. The files appear to be documents or materials. The context suggests an interaction with these items, possibly related to browsing or selecting materials.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1733.6918610089924,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-1204-a\", \"epobj-1204-b\", \"epobj-1204-c\", \"epobj-1204-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"A person's hand is pointing towards a set of files/folders on a shelf. The items on the shelf appear to be documents, folders, and possibly some small colored items (like clips or markers).\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1356.0764619905967,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/1204.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-1204-a\",\n    \"epobj-1204-b\",\n    \"epobj-1204-c\",\n    \"epobj-1204-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"a person's hand is pointing towards a stack of documents or files on a shelf.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1554.1424810071476,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

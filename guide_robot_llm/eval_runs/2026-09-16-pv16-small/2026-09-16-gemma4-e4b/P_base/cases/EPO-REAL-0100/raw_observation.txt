@@ -1,0 +1,1 @@
+{"people_count": 0, "exhibit_candidates": [], "pointing_evidence": "none", "pointing_box": null, "scene_facts": "На столе и полке видны различные предметы, включая бутылки и коробки."}

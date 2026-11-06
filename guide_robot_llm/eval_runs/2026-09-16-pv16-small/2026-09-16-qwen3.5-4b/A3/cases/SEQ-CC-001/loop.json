@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/SEQ-CC-001_f0.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 1 человек. Он смотрит вверх, на экран — значит, готов слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 637.1434819884598,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/SEQ-CC-001_f1.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 2 человека. Оба смотрят вверх, на зелёный прямоугольник — значит, оба готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1015.426554979058,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/SEQ-CC-001_f2.png",
+    "raw_text": "{\n  \"answer\": \"В кадре 3 человека. Все трое смотрят на зелёный прямоугольник — это может быть экран, презентация или что-то, что требует внимания. Их выражения нейтральные, но не отстранённые — глаза открыты, взгляд направлен вперёд. Это говорит о том, что они готовы слушать дальше.\",\n  \"confidence\": 0.85,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1277.8189569944516,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

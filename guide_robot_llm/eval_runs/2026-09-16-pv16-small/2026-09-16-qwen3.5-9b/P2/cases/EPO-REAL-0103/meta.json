@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0103",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 8308.191,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0030700175557285547,
+              "upload_ms": 279.04224599478766,
+              "ttft_ms": 356.5635349950753,
+              "full_ms": 5376.682031987002,
+              "parse_ready_ms": 5376.682031987002
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0030600058380514383,
+              "upload_ms": 110.18805397907272,
+              "ttft_ms": 340.75036499416456,
+              "full_ms": 2931.4338809926994,
+              "parse_ready_ms": 2931.4338809926994
+            }
+          ]
+        }
+      },
+      "cot_reason": "(1) Жест: рука посетителя указывает вниз, на нижнюю полку, в сторону красных и зелёных пакетов с надписью «呀!丝» (Ya! Si) — это бренд Oishi.\n\n(2) Кандидаты в этом секторе: epobj-103-a (красный пакет Oishi), epobj-103-b (зелёный пакет Oishi), epobj-103-c (жёлтый пакет Oishi), epobj-103-d (оранжевый пакет Oishi). Все они находятся на той же полке, куда указывает рука.\n\n(3) Слова посетителя: не указаны в задании, но по контексту — если бы он сказал, например, «я беру красный», то это было бы epobj-103-a. Однако в задании нет слов — только жест.\n\n(4) После шага (4): остаётся несколько кандидатов (все четыре на той полке), значит — нельзя однозначно выбрать один.\n\nНо! Внимательно再看: рука указывает именно на **красный пакет** — он находится прямо под пальцами, и он самый близкий к указательному пальцу. Также, в таких задачах обычно подразумевается, что указание — на ближайший или центральный объект в зоне жеста.\n\nОднако, поскольку в задании нет слов, и жест неочевиден по точности, и есть несколько кандидатов — согласно инструкции: «Если после шага (4) кандидатов не один — воздержись».\n\nНо! Давайте ещё раз: рука указывает на **нижнюю полку**, где есть красные, зелёные, жёлтые, оранжевые пакеты Oishi. Но если посмотреть внимательнее — рука указывает на **красный пакет**, который находится слева в ряду на нижней полке — это epobj-103-a.\n\nИтак:\n\n- Жест направлен на красный пакет (epobj-103-a).\n- Он попадает в сектор.\n- Без слов — но визуально — это наиболее вероятный кандидат.\n- Остались ли другие? Да, но если жест точный — только один.\n\nВ таких тестах обычно подразумевается, что указание — на конкретный объект, а не всю полку.\n\nПоэтому — **epobj-103-a**.\n\nНо! В оригинальном вопросе был английский вариант с вариантами A-D,"
+    }
+  },
+  "latency_ms": 8308.191,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0103",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-103",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+      "sha256": "c02a34846757feafff001a36ebd9d70a73aa7088869e285635aa468069a741dc",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Based on the text on the package, what is the brand name of this product?\nA. Lay's\nB. Orion\nC. Pringles\nD. Oishi\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-103-a",
+      "epobj-103-b",
+      "epobj-103-c",
+      "epobj-103-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-103-b",
+      "box_px": null,
+      "distractors": [
+        "epobj-103-a",
+        "epobj-103-c",
+        "epobj-103-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Lay's": "epobj-103-a",
+        "Orion": "epobj-103-b",
+        "Pringles": "epobj-103-c",
+        "Oishi": "epobj-103-d"
+      }
+    }
+  }
+}

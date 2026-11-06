@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного кадра невозможно определить, сколько людей находится рядом с роботом, так как на изображении нет робота, и количество людей, готовых слушать, не может быть подсчитано.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 733.3635300165042,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как вы не предоставили мне видео или последовательность кадров для анализа. Пожалуйста, предоставьте изображение или видео, чтобы я мог посчитать людей и выполнить заданный цикл.\"\n, \"confidence\": 0.0, \"abstain\": true}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 709.4934330089018,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_sc+mk+gl_1walk_st_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407073_194332459.png",
+    "raw_text": "{\"answer\": \"Я не могу выполнить этот запрос, так как предоставленное вами изображение не содержит информации о том, сколько людей готовы слушать. На изображении виден только один человек (или часть его) на переднем плане, и нет никаких признаков того, что он или кто-либо другой готов слушать робота. Кроме того, я не могу \"\n    \n    , \"confidence\": 0.0\n    \n    , \"abstain\": true\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1078.8926999957766,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

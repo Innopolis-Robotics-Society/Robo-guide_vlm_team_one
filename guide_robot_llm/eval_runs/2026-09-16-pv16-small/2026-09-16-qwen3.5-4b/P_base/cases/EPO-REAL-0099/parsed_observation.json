@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-c"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.44,
+    0.71,
+    0.63,
+    0.94
+  ],
+  "scene_facts": "Холодильный шкаф с замороженными продуктами, пальца указывают на желтую упаковку."
+}

@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.51,
+    0.86,
+    0.66,
+    0.98
+  ],
+  "scene_facts": "Рука указывает на полку с офисными принадлежностями, включая папки и файлы."
+}

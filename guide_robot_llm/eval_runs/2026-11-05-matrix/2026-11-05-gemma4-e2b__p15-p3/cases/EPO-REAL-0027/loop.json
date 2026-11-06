@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a display of raw poultry, specifically whole birds, which are typically categorized as chicken or duck. the options provided are pork chop, yellow broiler chicken, silkie chicken, and duck breast. the visible items are whole, uncooked poultry, most resembling chicken or duck. without clearer, specific details (like skin texture, size, or specific cut), it is difficult to definitively distinguish between a yellow broiler chicken, a silkie chicken, or a duck. however, the general appearance is that of poultry.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2047.5093699933495,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the image shows a display of raw poultry, specifically whole birds, which are typically categorized as chicken or duck. the options provided are: A. Pork chop, B. Yellow broiler chicken, C. Silkie chicken, D. Duck breast. the visible items are whole, uncooked poultry, consistent with a general chicken display. without closer inspection of specific features (like feather quality, size, or cut), it is difficult to definitively distinguish between a 'Yellow broiler chicken' and a 'Silkie chicken' or a generic chicken display. however, the context strongly points towards a chicken product.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1873.6336769943591,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"the_image_shows_a_display_of_poultry_cuts_or_whole_birds_in_a_market_setting_the_person_is_pointing_towards_a_group_of_light_colored_birds_on_a_tray_in_the_foreground_right\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1813.2721119909547,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

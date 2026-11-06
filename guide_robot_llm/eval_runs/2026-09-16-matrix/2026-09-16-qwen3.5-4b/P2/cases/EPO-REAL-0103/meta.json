@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0103",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 6059.671,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0029200164135545492,
+              "upload_ms": 290.72260300745256,
+              "ttft_ms": 349.4510309828911,
+              "full_ms": 3318.0123349884525,
+              "parse_ready_ms": 3318.0123349884525
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0028609938453882933,
+              "upload_ms": 119.63736600591801,
+              "ttft_ms": 285.089140990749,
+              "full_ms": 2741.5784639888443,
+              "parse_ready_ms": 2741.5784639888443
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово:\n\n---\n\n**(1) Куда направлен жест?**\n\nНа изображении видна рука (в чёрном рукаве), которая указывает пальцем на нижнюю полку, в левом нижнем углу кадра. Указательный палец направлен прямо на пакет с красным дизайном и японскими иероглифами — это один из пакетов бренда **Oishi** (например, «Oishi Dorayaki» или похожие снеки).\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nСмотрим на нижнюю полку слева — там находятся пакеты с красным, зелёным, жёлтым дизайном. Из списка кандидатов:\n\n- **epobj-103-a** — вероятно, красный пакет (виден в самом низу, левый угол)\n- **epobj-103-b** — зелёный пакет (рядом с красным)\n- **epobj-103-c** — жёлтый пакет (справа от зелёного)\n- **epobj-103-d** — возможно, ещё один пакет, но он не точно попадает в зону указывания\n\nРука указывает именно на **красный пакет** — то есть, скорее всего, **epobj-103-a**.\n\n---\n\n**(3) Согласуются ли с этим слова посетителя?**\n\nВопрос: «На какой экспонат из списка кандидатов указывает посетитель?» — и мы видим, что рука указывает на красный пакет. Если предположить, что «слова посетителя» — это контекст вопроса (хотя их нет в тексте, но по логике задачи — мы ищем тот, на который указывает рука), то всё сходится: рука → красный пакет → epobj-103-a.\n\n---\n\n**(4) Остался ли ровно один кандидат?**\n\nДа, только **epobj-103-a** попадает точно в зону указывания. Остальные кандидаты (зелёный, жёлтый) находятся рядом, но не являются объектом жеста.\n\n---\n\n✅ Ответ: **A**\n\n(Так как в вариантах ответа A — Lay's, B — Orion, C — Pringles, D — Oishi — и Oishi соответствует красному пакету на нижней полке, то правильный ответ — **D**, но в задании сказано: «Ответ"
+    }
+  },
+  "latency_ms": 6059.671,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0103",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-103",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/103.jpg",
+      "sha256": "c02a34846757feafff001a36ebd9d70a73aa7088869e285635aa468069a741dc",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "Based on the text on the package, what is the brand name of this product?\nA. Lay's\nB. Orion\nC. Pringles\nD. Oishi\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-103-a",
+      "epobj-103-b",
+      "epobj-103-c",
+      "epobj-103-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-103-b",
+      "box_px": null,
+      "distractors": [
+        "epobj-103-a",
+        "epobj-103-c",
+        "epobj-103-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L3",
+      "n_distractors": 3,
+      "answer_map": {
+        "Lay's": "epobj-103-a",
+        "Orion": "epobj-103-b",
+        "Pringles": "epobj-103-c",
+        "Oishi": "epobj-103-d"
+      }
+    }
+  }
+}

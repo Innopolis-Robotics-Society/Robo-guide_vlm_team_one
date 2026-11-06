@@ -1,0 +1,9 @@
+{
+  "people_count": 0,
+  "exhibit_candidates": [
+    "epobj-18-a"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a street scene with a row of parked electric scooters and bicycles on the sidewalk next to a building. A finger is visible in the bottom right corner, pointing towards the ground or the lower part of the image, but not at any specific exhibit. There are no people in the image. The exhibits are not clearly visible or identifiable in the image."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/ENG-CC-003.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре не видно людей. Поэтому невозможно посчитать их или определить, сколько из них готовы слушать дальше.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 915.0860430090688,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/ENG-CC-003.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре не обнаружено людей. Следовательно, невозможно определить, сколько из них готовы слушать дальше.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 547.5917969888542,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/ENG-CC-003.png",
+    "raw_text": "{\"answer\": \"На предоставленном кадре не видно людей. Поэтому невозможно посчитать, сколько их и сколько готовы слушать.\"\n, \"confidence\": 1, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 521.0162389848847,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

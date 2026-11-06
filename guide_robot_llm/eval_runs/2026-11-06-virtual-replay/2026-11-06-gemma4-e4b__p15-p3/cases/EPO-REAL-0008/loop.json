@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-8-a\", \"epobj-8-b\", \"epobj-8-c\", \"epobj-8-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The user is pointing towards the middle section of the shelving unit, specifically towards a white/light-colored plastic bag or package located on a metal rack structure, slightly above the shoe display.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1734.3848820019048,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a retail store aisle with various products on shelves. The visitor is pointing towards the shelves of products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1595.6995480228215,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/8.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-8-a\",\n    \"epobj-8-b\",\n    \"epobj-8-c\",\n    \"epobj-8-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a retail store aisle with various products on shelves. The visitor's hand is visible in the lower right, seemingly pointing towards the shelves of products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1646.8794720130973,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

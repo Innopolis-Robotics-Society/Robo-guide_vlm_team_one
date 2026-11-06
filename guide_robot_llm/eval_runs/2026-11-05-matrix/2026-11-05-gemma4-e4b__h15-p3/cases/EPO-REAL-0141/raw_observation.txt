@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-141-a",
+    "epobj-141-b",
+    "epobj-141-c",
+    "epobj-141-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "The image shows an interior view of a retail store, likely a pharmacy or beauty supply store, with shelves stocked with various products. There is one person visible in the foreground, seemingly browsing or moving through the aisles."
+}

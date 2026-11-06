@@ -1,0 +1,23 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-92-a",
+    "epobj-92-b",
+    "epobj-92-c",
+    "epobj-92-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ]
+  
+  ,
+  "scene_facts": "The image shows a person's hand pointing towards a white sign or panel mounted on a railing or barrier. The sign has a white arrow pointing to the left. The text on the sign includes Japanese characters and what appears to be a directional indicator. The context is an outdoor pedestrian area, likely a walkway or staircase."
+}

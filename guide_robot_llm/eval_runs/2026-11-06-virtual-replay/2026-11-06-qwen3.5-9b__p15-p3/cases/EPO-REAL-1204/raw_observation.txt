@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a hand reaching toward a shelf in what appears to be a stationery or office supply store. The hand is pointing at or touching a stack of clear plastic folders or document sleeves on the lower shelf. There are multiple shelves with various office supplies: notebooks, folders, pens, and other stationery items. The hand is clearly interacting with one specific item — the stack of clear plastic sleeves/folders on the bottom shelf, near the center-right of the frame. No other exhibits are being pointed at or interacted with. The gesture is direct and unambiguous: the finger is extended toward that particular stack. Based on the spatial layout, this item is likely labeled as epobj-1204-c (assuming standard labeling from top-left to bottom-right or similar convention). Since only one item is being interacted with and it’s clearly visible, we can confidently identify it without further clarification."
+}

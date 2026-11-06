@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"unconfirmed\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1564.9643950164318,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a supermarket shelf with various baked goods. A person's hand is pointing at a packaged bread item. The bread appears to have a light, creamy filling or texture, possibly indicating milk or a similar ingredient. The packaging is white with a clear window showing the bread inside. The bread looks like a sandwich or a filled bread roll. The person's hand is pointing directly at one of the bread packages on the shelf. The bread in question has a light, creamy appearance, which could suggest a milk-based filling or ingredient. The packaging is simple and clean, with a focus on the product inside. The bread appears to be a sandwich or a filled bread roll, with a light, creamy texture visible through the clear window. The person's hand is pointing at the bread, indicating interest or selection. The bread's appearance suggests it might be a milk-based product, such as a milk bread or a sandwich with a milk filling. The packaging is white with a clear window, allowing the bread to be seen clearly. The bread's texture and color are consistent with a milk-based product. The person's hand is pointing at the bread, suggesting they are considering it for purchase. The bread's appearance and the person's action indicate a focus on the milk-based product. The bread's light, creamy texture and the person's pointing gesture suggest a selection of a milk-based baked good. The packaging is simple and clean, highlighting the product's appearance. The bread's texture and color are consistent with a milk-based product, and the person's hand is pointing at it, indicating interest. The bread's appearance and the person's action suggest a selection of a milk-based baked good. The bread's light, creamy texture and the person's pointing gesture suggest a selection of a milk-based baked good. The packaging is simple and clean, highlighting the product's appearance. The bread's texture and color are consistent with a milk",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 3499.854083987884,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The person is pointing at a packaged bread item on a shelf. The packaging is white with a clear window showing the bread inside. The bread appears to have a light brownish color with some darker specks or chunks, possibly nuts or chocolate chips. The person's hand is extended towards the item, indicating interest or selection. The background shows a bakery or grocery store setting with other baked goods and beverages visible.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1895.8325010025874,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

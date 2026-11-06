@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.0,
+    0.0,
+    1.0,
+    1.0
+  ],
+  "scene_facts": "The image shows a person pointing at an exhibit on a shelf. The exhibit appears to be a stack of clear plastic folders or sleeves, which is one of the known exhibits listed."
+}

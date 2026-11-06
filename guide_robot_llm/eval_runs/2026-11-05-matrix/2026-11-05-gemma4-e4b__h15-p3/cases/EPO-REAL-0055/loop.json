@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/55.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-55-a\",\n    \"epobj-55-b\",\n    \"epobj-55-c\",\n    \"epobj-55-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards a metal strainer/skimmer in the middle of the shelf display.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1999.8178599926177,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/55.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-55-a\",\n    \"epobj-55-b\",\n    \"epobj-55-c\",\n    \"epobj-55-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards a metal strainer/skimmer in the middle of the display.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1577.883149991976,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/55.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-55-a\", \"epobj-55-b\", \"epobj-55-c\", \"epobj-55-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The visitor is pointing towards a group of kitchen utensils displayed on a shelf. The utensils include ladles, strainers, and spatulas.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1227.7400649909396,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

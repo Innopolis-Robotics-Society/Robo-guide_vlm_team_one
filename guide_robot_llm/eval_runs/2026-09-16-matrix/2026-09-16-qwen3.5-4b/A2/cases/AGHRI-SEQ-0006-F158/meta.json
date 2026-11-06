@@ -1,0 +1,101 @@
+{
+  "case_id": "AGHRI-SEQ-0006-F158",
+  "source": "aghri",
+  "track": "audience",
+  "prompt_mode": "freeform",
+  "variant_id": "A2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "freeform": {
+      "latency_ms": 3793.006,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003990979166701436,
+              "upload_ms": 222.69157800474204,
+              "ttft_ms": 275.5739770072978,
+              "full_ms": 3031.614242005162,
+              "parse_ready_ms": 3031.614242005162
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003630004357546568,
+              "upload_ms": 145.57073899777606,
+              "ttft_ms": 301.7302440130152,
+              "full_ms": 760.9306979866233,
+              "parse_ready_ms": 760.9306979866233
+            }
+          ]
+        }
+      },
+      "cot_reason": "Этап 1: Посчитаем всех людей в кадре по одному.\n\n- В центре кадра идёт один человек — женщина в тёмном пальто и синей маске. Она движется прямо на камеру, по дорожке, усыпанной листьями.\n- На заднем плане, справа, за забором, видна ещё одна фигура — человек, стоящий у машины или рядом с ней. Он нечёткий, но различим как отдельная фигура.\n- Слева на заднем плане, у забора, также видна ещё одна фигура — возможно, человек, идущий по траве или стоящий. Он тоже нечёткий, но присутствует.\n\nИтого: 3 человека в кадре.\n\nЭтап 2: Оценим готовность каждого слушать (по критериям: близость, взгляд, вовлечённость).\n\n1. Женщина в центре:\n   - Близость: да, она идёт прямо к камере — это максимальная близость.\n   - Взгляд: она смотрит прямо в камеру (на нас), что указывает на внимание.\n   - Вовлечённость: она движется уверенно, не отвлекается — выглядит вовлечённой в своё движение, но не в разговор. Однако, поскольку она смотрит на нас, можно предположить, что она готова к общению.\n   → Готов слушать: да.\n\n2. Человек справа на заднем плане:\n   - Близость: нет, он далеко, за забором.\n   - Взгляд: не видно, он не смотрит на камеру.\n   - Вовлечённость: неясно, он стоит, возможно, ждёт или наблюдает, но нет признаков взаимодействия.\n   → Готов слушать: нет.\n\n3. Человек слева на заднем плане:\n   - Близость: нет, тоже далеко.\n   - Взгляд: не видно, не смотрит на камеру.\n   - Вовлечённость: неясно, возможно, просто проходит мимо.\n   → Готов слушать: нет.\n\nИтого: всего людей — 3, готовых слушать — 1.\n\nОтвет: 3 1"
+    }
+  },
+  "latency_ms": 3793.006,
+  "attempts": 2,
+  "case": {
+    "case_id": "AGHRI-SEQ-0006-F158",
+    "source": "aghri",
+    "track": "audience",
+    "split_group_id": "g-aghri-seq-0006",
+    "media": {
+      "path": "eval_data/aghri/footpath1_p1_nj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407383_772028459.png",
+      "sha256": "5b43d011e84b309a05824c93d1292cfe36648bd765731a140cb8708369313d56",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Сколько людей сейчас рядом с роботом?",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [],
+    "gold": {
+      "type": "count",
+      "count": 1
+    },
+    "provenance": {
+      "source": "AGHRI (University of Lincoln, LCAS)",
+      "license": "CC BY 4.0 (verified 2026-09-15, T1)",
+      "version": "dataset_summary.csv sha256:27b1dfb66fc3c5c3",
+      "rights_note": "attribution (CC BY 4.0); selected sequences only; no redistribution beyond this eval set (T1, 2026-09-15)"
+    },
+    "slices": {
+      "count_bucket": "1",
+      "declared_count": 1,
+      "environment": "Footpath",
+      "robot_state": "move",
+      "split": "unknown"
+    }
+  }
+}

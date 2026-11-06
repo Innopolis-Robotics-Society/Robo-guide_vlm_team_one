@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n  ,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  ,\n  \"pointing_evidence\": \"none\"\n  ,\n  \"pointing_box\": null\n  ,\n  \"scene_facts\": \"a person's hand is pointing towards a package of what appears to be a baked good or snack in the foreground. The package is brown/tan in color and has a somewhat textured appearance. The background shows various other packaged goods, suggesting a supermarket or bakery aisle.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1788.0890450032894,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-167-a\",\n    \"epobj-167-b\",\n    \"epobj-167-c\",\n    \"epobj-167-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a person's hand pointing towards a packaged food item on a shelf. The item being pointed at appears to be a rectangular, light brown/tan packaged food product, possibly a type of pastry, bread, or snack. The packaging suggests a baked good or a similar food item.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1601.811906992225,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/167.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-167-a\", \"epobj-167-b\", \"epobj-167-c\", \"epobj-167-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": null, \"scene_facts\": \"The image shows a close-up of various packaged bakery items, including what appear to be pastries, bread, and possibly some sweet fillings. The hand is pointing towards a package in the lower center-right area. The packaging is brown/tan and appears to contain a baked good, possibly a type of bread or pastry. Without clearer context or a specific target, it is difficult to definitively link the pointer to one specific exhibit among the four options based solely on this single frame.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1446.451010007877,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a",
+    "epobj-28-b",
+    "epobj-28-c",
+    "epobj-28-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "The image shows a person's hand pointing at a speed limit sign (15 km/h) mounted on a pole. The sign is located outdoors, near a road with trees and parked cars. There is no clear indication of which exhibit from the list the person is pointing to, as the image does not show any exhibits or their locations relative to the sign."
+}

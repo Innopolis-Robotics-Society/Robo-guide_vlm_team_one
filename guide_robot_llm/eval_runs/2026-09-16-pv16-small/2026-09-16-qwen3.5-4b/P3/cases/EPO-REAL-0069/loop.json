@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 6,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"noevidence\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1549.135245004436,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a retail store, likely a department store or a cosmetics store, with shelves displaying various products. There are two people in the image, one on the left and one on the right. The person on the left is wearing a white jacket and black pants, and the person on the right is wearing a black coat. The shelves are filled with bottles and other items, suggesting a variety of products for sale. The lighting is bright, and the overall atmosphere is clean and organized. There are no clear indications of pointing or selection in the image.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1790.5874119896907,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 6,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"nope\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1283.3321879734285,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

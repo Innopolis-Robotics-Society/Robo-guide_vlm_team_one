@@ -1,0 +1,7 @@
+{
+"people_count": 1,
+"exhibit_candidates": ["epobj-13-c"],
+"pointing_evidence": "yes",
+"pointing_box": null,
+"scene_facts": "The visitor is pointing towards the central orange/brown box, which corresponds to epobj-13-c."
+}

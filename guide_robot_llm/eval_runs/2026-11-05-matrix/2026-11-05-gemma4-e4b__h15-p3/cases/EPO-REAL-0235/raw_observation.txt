@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-235-a",
+    "epobj-235-b",
+    "epobj-235-c",
+    "epobj-235-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "The user is pointing towards a shelf of books."
+}

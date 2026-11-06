@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\"people_count\": 1, \"exhibit_candidates\": [\"epobj-405-a\", \"epobj-405-b\", \"epobj-405-c\", \"epobj-405-d\"], \"pointing_evidence\": \"none\", \"pointing_box\": [0, 0, 0, 0], \"scene_facts\": \"На изображении видна рука, указывающая на круглую металлическую коробку с желтыми и белыми пакетиками внутри. На экране ноутбука запущено приложение для видеозвонка или записи экрана. На столе разложены различные предметы: пакетики с лекарствами или добавками, книги, мышь, подставка для телефона в виде лапы животного. Указательный палец направлен прямо на коробку с пакетиками, что явно указывает на неё как на объект интереса.\"}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3586.7139199981466,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The scene shows a desk with a laptop, a bowl of small packets, a computer mouse, books, and other items. A hand is pointing at the bowl of packets. There is no clear pointing gesture directed at any of the exhibit candidates (epobj-405-a, epobj-405-b, epobj-405-c, epobj-405-d). The hand is pointing at the bowl, which is not one of the exhibit candidates. Therefore, there is no evidence to determine which exhibit the visitor is pointing at. I need to request clarification or a new frame to identify the exhibit being pointed at.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2953.739416989265,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/405.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-405-a\",\n    \"epobj-405-b\",\n    \"epobj-405-c\",\n    \"epobj-405-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a first-person view of a desk with a laptop, a bowl of small packets, and a white computer mouse on the right side. A finger is pointing at the bowl, not at any exhibit. There are no visible exhibits labeled epobj-405-a through epobj-405-d in the scene.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2157.450302009238,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

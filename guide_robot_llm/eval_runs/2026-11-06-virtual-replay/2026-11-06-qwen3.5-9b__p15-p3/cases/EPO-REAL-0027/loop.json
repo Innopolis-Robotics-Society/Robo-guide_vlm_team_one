@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 5,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing towards a specific item in the refrigerated case. The pointed item appears to be a whole chicken or similar poultry product, but it's partially obscured and the exact type is not immediately clear from the image alone.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3653.6443039949518,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 4,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0,\n    0,\n    0,\n    0\n  ],\n  \"scene_facts\": \"The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing at a specific item in the refrigerated case. The pointed item appears to be a whole chicken or similar poultry product, packaged and placed among other similar items. The surrounding area includes other poultry cuts and whole birds, as well as shoppers and staff in the background.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2440.6100350024644,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 5,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ],\n  \"pointing_evidence\": \"none\",\n  \"pointing_box\": null,\n  \"scene_facts\": \"The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing at a specific item in the refrigerated case. The pointed item appears to be a whole chicken, likely a broiler, given its size and typical supermarket presentation. Other items include packaged chicken parts and possibly other poultry like duck or quail, but the pointed item is clearly a whole chicken.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2328.492772008758,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

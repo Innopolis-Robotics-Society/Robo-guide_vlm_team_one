@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-69-a\",\n\"epobj-69-b\",\n\"epobj-69-c\",\n\"epobj-69-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": null\n,\n\"scene_facts\": \"the_items_are_bottles_of_liquid_products_likely_cosmetics_or_skincare\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1490.9736569970846,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"the_image_shows_a_store_display_with_many_small_bottles_or_containers_arranged_in_rows_on_shelves_the_products_appear_to_be_some_kind_of_liquid_or_cream_the_overall_setting_is_a_retail_environment_suggesting_products_for_personal_care_or_cosmetics\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1673.780434008222,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/69.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-69-a\",\n    \"epobj-69-b\",\n    \"epobj-69-c\",\n    \"epobj-69-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"The image shows a retail display with numerous small bottles and containers, likely related to personal care or skincare products, given the context of similar displays in such environments. The items are arranged in rows, suggesting a product line. The overall aesthetic points towards cosmetics or personal hygiene products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1406.2613999994937,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

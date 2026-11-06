@@ -1,0 +1,14 @@
+{
+    "people_count": 1,
+    "exhibit_candidates": [
+        "epobj-405-a"
+    ]
+, "pointing_evidence": "none",
+    "pointing_box": [
+        0.4,
+        0.65,
+        0.65,
+        0.95
+    ]
+, "scene_facts": "noe"
+}

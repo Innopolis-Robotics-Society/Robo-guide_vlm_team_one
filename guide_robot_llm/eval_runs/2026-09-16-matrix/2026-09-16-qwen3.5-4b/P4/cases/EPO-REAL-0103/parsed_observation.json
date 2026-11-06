@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-103-a",
+    "epobj-103-b",
+    "epobj-103-c",
+    "epobj-103-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": null,
+  "scene_facts": "one person standing in a room with four exhibits labeled epobj-103-a through epobj-103-d; no visible pointing gesture, gaze direction, or verbal indication from the person; all exhibits are within view but no clear selection is made."
+}

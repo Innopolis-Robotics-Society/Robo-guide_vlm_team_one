@@ -1,0 +1,9 @@
+{"people_count": 0, "exhibit_candidates": []
+, "pointing_evidence": "none", "pointing_box": [
+  0,
+  0,
+  0,
+  0
+ ]
+, "scene_facts": "no_scene_facts"
+}

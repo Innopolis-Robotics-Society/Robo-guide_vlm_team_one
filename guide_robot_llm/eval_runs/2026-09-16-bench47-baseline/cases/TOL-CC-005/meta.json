@@ -1,0 +1,113 @@
+{
+  "case_id": "TOL-CC-005",
+  "source": "pilot-cc",
+  "track": "tool",
+  "prompt_mode": "deployed",
+  "variant_id": null,
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 16414.587,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.0034800032153725624,
+            "upload_ms": 458.91369198216125,
+            "ttft_ms": 15785.245031001978,
+            "full_ms": 16414.54786597751,
+            "parse_ready_ms": 16414.54786597751
+          }
+        ]
+      }
+    },
+    "action": {
+      "latency_ms": 1311.805,
+      "attempts": 1,
+      "calls": 1,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "attempts": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "skipped_incompatible": 0,
+        "http_failures": 0,
+        "timeouts": 0,
+        "failure_stages": {},
+        "last_failure": null,
+        "timings": [
+          {
+            "serialization_ms": 0.004159985110163689,
+            "upload_ms": 60.267387016210705,
+            "ttft_ms": 640.8060179965105,
+            "full_ms": 1311.7527959984727,
+            "parse_ready_ms": 1311.7527959984727
+          }
+        ]
+      }
+    }
+  },
+  "latency_ms": 17726.392,
+  "attempts": 2,
+  "case": {
+    "case_id": "TOL-CC-005",
+    "source": "pilot-cc",
+    "track": "tool",
+    "split_group_id": "g-cc-TOL-NEUTRAL",
+    "media": {
+      "path": "pilot/media/cc/TOL-NEUTRAL.png",
+      "sha256": "933dec73ea446503fa5d93497a3752e46813ad2cb52926f4ac3c2fdaf965f26d",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Понятно, продолжай.",
+      "language": "ru"
+    },
+    "candidates": [],
+    "allowed_tools": [
+      "reply",
+      "stop_tour",
+      "finish_answer",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "guide_to"
+    ],
+    "gold": {
+      "type": "action",
+      "tool": "finish_answer",
+      "args": {
+        "outcome": 0
+      }
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

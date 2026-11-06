@@ -1,0 +1,15 @@
+{
+"people_count": 1,
+"exhibit_candidates": [
+"epobj-1270-a",
+"epobj-1270-b",
+"epobj-1270-c",
+"epobj-1270-d"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "the_person_is_pointing_towards_the_bottom_shelf_of_the_display_which_contains_white_plastic_containers_of_products"
+}

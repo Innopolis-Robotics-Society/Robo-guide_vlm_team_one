@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a retail shelf with various boxes of Chinese liquor. A gloved hand is pointing at an orange-colored box labeled '海之蓝' (Hai Zhi Lan). To the left are yellow boxes labeled '红星' (Hong Xing), and to the right are blue boxes labeled '梦之蓝' (Meng Zhi Lan). The pointing gesture is clearly directed at the orange box in the center of the visible row."
+}

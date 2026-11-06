@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a",
+    "epobj-36-b",
+    "epobj-36-c",
+    "epobj-36-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person pointing towards a sign above a doorway in what appears to be a salon or barbershop. The sign has Chinese characters and is illuminated. There is also a barber pole visible next to the sign. The person's hand is in the foreground, pointing upwards towards the sign."
+}

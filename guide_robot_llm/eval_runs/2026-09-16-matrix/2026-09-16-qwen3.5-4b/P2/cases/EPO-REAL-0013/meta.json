@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0013",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 4857.459,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0027799978852272034,
+              "upload_ms": 293.758309999248,
+              "ttft_ms": 352.15086600510404,
+              "full_ms": 2972.6321390189696,
+              "parse_ready_ms": 2972.6321390189696
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0045000051613897085,
+              "upload_ms": 112.2349799843505,
+              "ttft_ms": 270.03771800082177,
+              "full_ms": 1884.7262429771945,
+              "parse_ready_ms": 1884.7262429771945
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся пошагово:\n\n---\n\n**(1) Куда направлен жест?**\n\nВизуально видно, что рука в перчатке указывает пальцем вверх и немного вправо — на розово-оранжевую коробку, расположенную между двумя желтыми коробками (с логотипом «红日星») и синими коробками (с логотипом «梦之蓝»).\n\nЭтот объект — **розовая/персиковая коробка** с китайскими иероглифами:  \n→ **海之蓝** (Hǎi zhī lán) — это название бренда.\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nИз списка доступных id:  \n- epobj-13-a → желтая коробка (слева)  \n- epobj-13-b → желтая коробка (справа от первой)  \n- epobj-13-c → розовая коробка (там, куда указывает рука)  \n- epobj-13-d → синяя коробка (справа)\n\nЗначит, только **epobj-13-c** находится в зоне указывания.\n\n---\n\n**(3) Согласуются ли слова посетителя?**\n\nПосетитель говорит:  \n> “What is the English translation of the brand name written on the object I am pointing to?”\n\nНа розовой коробке написано **海之蓝**, что переводится как **“Ocean Blue”** — это известный бренд виски.\n\nПроверим варианты:\n- A. Ocean Blue → ✅ совпадает\n- B. Red Star → нет, это на желтых коробках (红日星 ≈ Red Sun Star, но не Red Star)\n- C. Dream Blue → это для синих коробок (梦之蓝 ≈ Dream Blue)\n- D. Golden Harvest → не соответствует ни одному из видимых брендов\n\n---\n\n**(4) Остался ли ровно один кандидат?**\n\nДа — только **A. Ocean Blue** соответствует как визуальному указанию, так и смысловому переводу.\n\n---\n\n✅ Ответ: **A**"
+    }
+  },
+  "latency_ms": 4857.459,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0013",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-13",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+      "sha256": "78272cc7068500f6a0fb12acc361ad40866b94ea0c1cb01a82ed557ab24b8843",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the English translation of the brand name written on the object I am pointing to?\nA. Ocean Blue\nB. Red Star\nC. Dream Blue\nD. Golden Harvest\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-13-a",
+      "epobj-13-b",
+      "epobj-13-c",
+      "epobj-13-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-13-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-13-b",
+        "epobj-13-c",
+        "epobj-13-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Ocean Blue": "epobj-13-a",
+        "Red Star": "epobj-13-b",
+        "Dream Blue": "epobj-13-c",
+        "Golden Harvest": "epobj-13-d"
+      }
+    }
+  }
+}

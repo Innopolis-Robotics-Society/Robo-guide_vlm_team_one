@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-c"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.45,
+    0.5,
+    0.65,
+    0.68
+  ],
+  "scene_facts": "В магазине на полке стоят пакеты влажных салфеток, один из них указывают рукой."
+}

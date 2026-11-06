@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1270-a",
+    "epobj-1270-b",
+    "epobj-1270-c",
+    "epobj-1270-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.45,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "scene_facts": "The image shows a retail store aisle with shelves stocked with various household products. A person's arm, wearing a black glove, is extended and pointing towards the middle shelf. The hand is pointing specifically at a row of small, colorful packages that appear to be wet wipes or similar personal care items. The packages are arranged in a neat row, with different colors like yellow, pink, and blue. The person's finger is clearly indicating one of these packages, but it is not possible to determine which specific package is being pointed at due to the angle and resolution of the image. The surrounding shelves contain larger items such as plastic storage bins on the top shelf and various other packaged goods on the lower shelves."
+}

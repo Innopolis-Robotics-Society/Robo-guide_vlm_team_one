@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-96-a"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ]
+,
+  "scene_facts": "The image shows a person pointing at a building with a large Nike logo on it. The person is wearing a black jacket and has their arm extended. The background includes other buildings and people walking around."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/ENG-CC-002.png",
+    "raw_text": "{\n  \"answer\": \"1 человек готов слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 686.676308978349,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/ENG-CC-002.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 1: всего людей — 1, готовых слушать — 0. Продолжаем.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 0,
+    "latency_ms": 672.9920009966008,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/ENG-CC-002.png",
+    "raw_text": "{\n  \"answer\": \"1 человек на кадре. Он стоит спиной к зрителю, смотрит на зелёный экран — возможно, это презентация или выступление. Его поза (прямая, без отвлечения) и направление взгляда указывают на то, что он **готов слушать дальше**.\\n\\n✅ Готовых слушателей: **1**\\n\\nПродолжаю цикл — вызываю этот же навык на следующем кадре, чтобы проверить, есть ли другие люди и готовы ли они слушать.\",\n  \"confidence\": 0.95\n,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 1,
+    "latency_ms": 1521.705891995225,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

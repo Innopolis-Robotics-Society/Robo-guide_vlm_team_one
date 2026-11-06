@@ -1,0 +1,8 @@
+{
+  "tool": "start_tour",
+  "args": {
+    "location": "лаборатория"
+  },
+  "confidence": 0.9,
+  "abstain": false
+}

@@ -1,0 +1,116 @@
+{
+  "case_id": "EPO-REAL-0013",
+  "source": "egopoint",
+  "track": "pointing",
+  "prompt_mode": "deployed",
+  "variant_id": "P2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 4033.694,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0027799978852272034,
+              "upload_ms": 267.6541639957577,
+              "ttft_ms": 325.89189801365137,
+              "full_ms": 2607.0709330087993,
+              "parse_ready_ms": 2607.0709330087993
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003289984306320548,
+              "upload_ms": 108.26160400756635,
+              "ttft_ms": 256.9314060092438,
+              "full_ms": 1426.54288499034,
+              "parse_ready_ms": 1426.54288499034
+            }
+          ]
+        }
+      },
+      "cot_reason": "Давайте разберёмся по шагам:\n\n---\n\n**(1) Куда направлен жест?**\n\nНа изображении видна рука в чёрной перчатке, указывающая пальцем вверх и немного вправо — на **розовый/персиковый ящик**, который находится между двумя желтыми ящиками (слева) и синими ящиками (справа). Этот ящик имеет надпись «海之蓝» (Hǎi zhī lán).\n\n---\n\n**(2) Какие кандидаты попадают в этот сектор?**\n\nСписок кандидатов:  \n- epobj-13-a → желтый ящик с «红星» (Red Star)  \n- epobj-13-b → розовый ящик с «海之蓝» (Ocean Blue)  \n- epobj-13-c → синий ящик с «梦之蓝» (Dream Blue)  \n- epobj-13-d → ещё один синий ящик, похожий на c\n\nЖест направлен именно на **розовый ящик** — то есть на **epobj-13-b**.\n\n---\n\n**(3) Согласуются ли слова посетителя?**\n\nВопрос: «What is the English translation of the brand name written on the object I am pointing to?»\n\nНа розовом ящике написано «海之蓝» — что переводится как **«Ocean Blue»**.\n\nСреди вариантов ответов:\n- A. Ocean Blue ✅\n- B. Red Star ❌\n- C. Dream Blue ❌\n- D. Golden Harvest ❌\n\nТолько вариант A совпадает с названием на указываемом объекте.\n\n---\n\n**(4) Остался ли ровно один кандидат?**\n\nДа — только **A. Ocean Blue** соответствует как визуальному указанию, так и переводу названия.\n\n---\n\n✅ Ответ: **A**"
+    }
+  },
+  "latency_ms": 4033.694,
+  "attempts": 2,
+  "case": {
+    "case_id": "EPO-REAL-0013",
+    "source": "egopoint",
+    "track": "pointing",
+    "split_group_id": "g-ep-real-13",
+    "media": {
+      "path": "eval_data/egopoint/realdata_benchmark/test_img/13.jpg",
+      "sha256": "78272cc7068500f6a0fb12acc361ad40866b94ea0c1cb01a82ed557ab24b8843",
+      "format": "jpg"
+    },
+    "prompt": {
+      "mode": "freeform",
+      "user_text": "What is the English translation of the brand name written on the object I am pointing to?\nA. Ocean Blue\nB. Red Star\nC. Dream Blue\nD. Golden Harvest\nAnswer directly using the letters of the options given.",
+      "language": "en"
+    },
+    "candidates": [
+      "epobj-13-a",
+      "epobj-13-b",
+      "epobj-13-c",
+      "epobj-13-d"
+    ],
+    "allowed_tools": [],
+    "gold": {
+      "type": "target_box",
+      "target_id": "epobj-13-a",
+      "box_px": null,
+      "distractors": [
+        "epobj-13-b",
+        "epobj-13-c",
+        "epobj-13-d"
+      ]
+    },
+    "provenance": {
+      "source": "EgoPoint-Bench",
+      "license": "HF license undeclared — GO 2026-09-15 (T1): unmodified private research use only; NO-GO for adaptation/redistribution",
+      "version": "pure_real_test.json sha256:3cc3b6aa4e686217",
+      "rights_note": "no redistribution, no derivative images; adapter read-only on data dir (T1, 2026-09-15)"
+    },
+    "slices": {
+      "dimension": "OCR & Text",
+      "deixis_level": "L1",
+      "n_distractors": 3,
+      "answer_map": {
+        "Ocean Blue": "epobj-13-a",
+        "Red Star": "epobj-13-b",
+        "Dream Blue": "epobj-13-c",
+        "Golden Harvest": "epobj-13-d"
+      }
+    }
+  }
+}

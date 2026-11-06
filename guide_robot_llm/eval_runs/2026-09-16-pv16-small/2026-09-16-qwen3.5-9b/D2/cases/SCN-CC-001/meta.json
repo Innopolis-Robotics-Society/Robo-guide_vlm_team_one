@@ -1,0 +1,117 @@
+{
+  "case_id": "SCN-CC-001",
+  "source": "pilot-cc",
+  "track": "scene",
+  "prompt_mode": "deployed",
+  "variant_id": "D2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 6155.694,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0023710017558187246,
+              "upload_ms": 208.75618100399151,
+              "ttft_ms": 288.83595002116635,
+              "full_ms": 3043.989635014441,
+              "parse_ready_ms": 3043.989635014441
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0033599790185689926,
+              "upload_ms": 62.04995000734925,
+              "ttft_ms": 246.50832699262537,
+              "full_ms": 3111.6316380212083,
+              "parse_ready_ms": 3111.6316380212083
+            }
+          ]
+        }
+      },
+      "cot_reason": "1. На сцене виден один человек — стилизованная фигура с розовым круглым лицом, зелёным прямоугольным туловищем и тёмно-синими ногами, стоящая спиной к зрителю.\n2. Слева от человека — коричневый подиум с красным кубом (redbox-01) наверху.\n3. Перед человеком — ещё один коричневый подиум, на котором стоит белый вертикальный объект (vase-04).\n4. Справа от человека — большой синий прямоугольный объект (cabinet-03), стоящий на полу.\n5. Фон — однотонная светло-бежевая стена и коричневый пол с вертикальными линиями, имитирующими панели.\n6. Качество кадра — плоский, минималистичный стиль, без теней или детализации, характерный для простой 2D-анимации.\n\nПередо мной минималистичная сцена: один человек стоит спиной к зрителю между двумя коричневыми подиумами — на левом — красный куб, на правом — белый вазообразный объект; справа от него — большой синий шкаф. Фон — простая стена и пол, стиль — плоская 2D-анимация без детализации."
+    }
+  },
+  "latency_ms": 6155.694,
+  "attempts": 2,
+  "case": {
+    "case_id": "SCN-CC-001",
+    "source": "pilot-cc",
+    "track": "scene",
+    "split_group_id": "g-cc-SCN-CC-001",
+    "media": {
+      "path": "pilot/media/cc/SCN-CC-001.png",
+      "sha256": "907f79e1c8e5dd998d5801d5de0392241032cc3834219c7ba56af055fff6734e",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Что ты видишь перед собой?",
+      "language": "ru"
+    },
+    "candidates": [
+      "redbox-01",
+      "cabinet-03",
+      "vase-04"
+    ],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "claims",
+      "claims": [
+        "на полке стоит красная коробка",
+        "справа стоит синий шкаф",
+        "на столе стоит белая ваза",
+        "в кадре один человек",
+        "стены светлые, пол деревянный"
+      ]
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

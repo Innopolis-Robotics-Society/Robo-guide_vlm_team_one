@@ -1,0 +1,12 @@
+{
+  "people_count": 6,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing towards a specific item in the refrigerated case. The pointed item appears to be a whole chicken or similar poultry product, packaged and placed among other similar items. The gesture is directed at one of the poultry products in the lower right section of the display case."
+}

@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.45,
+    0.71,
+    0.56,
+    0.83
+  ],
+  "scene_facts": "The image shows a refrigerated display case in a grocery store, stocked with various packaged food items. A person's hand is visible in the foreground, pointing towards a specific item on the bottom shelf. The item being pointed at is a yellow package containing what appears to be a single-serving snack bar or similar food product. The surrounding items include other packaged foods like dumplings, noodles, and possibly meat products. The setting is clearly a retail environment, not a kitchen or dining area. The gesture is a clear pointing action directed at one specific product among many."
+}

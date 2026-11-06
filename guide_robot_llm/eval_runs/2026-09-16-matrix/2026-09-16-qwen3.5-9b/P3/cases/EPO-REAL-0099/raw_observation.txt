@@ -1,0 +1,15 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ]
+, "pointing_evidence": "uncertain", "pointing_box": [
+    0,
+    0,
+    1,
+    1
+  ], "scene_facts": "The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be dumplings, noodles, and other ready-to-eat or quick-cook meals. A person's hand is visible in the foreground, pointing towards a specific item on the lower shelf. The item being pointed at is a small, yellow-packaged product. The packaging has some text and an image on it, but it's not entirely clear from this distance. The surrounding items include green-wrapped packages that look like sausages or meat sticks, and white packages that could be cheese or other dairy products. The overall setting suggests a retail environment where customers can browse and select food items."
+}

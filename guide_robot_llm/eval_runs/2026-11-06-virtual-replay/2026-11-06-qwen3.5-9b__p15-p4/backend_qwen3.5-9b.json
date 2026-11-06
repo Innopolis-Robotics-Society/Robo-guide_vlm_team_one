@@ -1,0 +1,9 @@
+{
+ "base_url": "http://127.0.0.1:11436/v1",
+ "api_key": "",
+ "model_name": "qwen3.5-9b-q4_k_m",
+ "connect_timeout_s": 5.0,
+ "read_timeout_s": 180.0,
+ "multimodal_enabled": true,
+ "max_images": 4
+}

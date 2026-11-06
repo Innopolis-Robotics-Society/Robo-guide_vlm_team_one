@@ -1,0 +1,17 @@
+{
+  "people_count": 5,
+  "exhibit_candidates": [
+    "epobj-27-a",
+    "epobj-27-b",
+    "epobj-27-c",
+    "epobj-27-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "scene_facts": "The image shows a supermarket meat section with various poultry products on display. A person in the foreground is pointing at a specific item in the refrigerated case. The item being pointed at appears to be a whole chicken, possibly a yellow broiler chicken, based on its color and shape. The other options (pork chop, Silkie chicken, duck breast) do not match the visual evidence as closely as the yellow broiler chicken. The person's hand is clearly indicating the whole chicken, which is distinct from the other items in the display case."
+}

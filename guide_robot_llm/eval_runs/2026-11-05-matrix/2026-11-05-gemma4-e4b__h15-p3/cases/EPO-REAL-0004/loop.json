@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/4.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-4-a\",\n    \"epobj-4-b\",\n    \"epobj-4-c\",\n    \"epobj-4-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the lower shelves of the refrigerated display case.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2098.1346530024894,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/4.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-4-a\",\n    \"epobj-4-b\",\n    \"epobj-4-c\",\n    \"epobj-4-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor is pointing towards the lower shelves of the refrigerated display case.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1474.7270910011139,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/4.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-4-a\",\n    \"epobj-4-b\",\n    \"epobj-4-c\",\n    \"epobj-4-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The user is pointing towards a display case containing various packaged goods. The hand is pointing towards the lower shelves of the display case.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1565.2199410251342,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

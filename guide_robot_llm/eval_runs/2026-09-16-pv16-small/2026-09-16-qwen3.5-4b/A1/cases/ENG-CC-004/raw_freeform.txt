@@ -1,0 +1,5 @@
+{
+  "answer": "В кадре всего 4 человека.",
+  "confidence": 0.95,
+  "abstain": false
+}

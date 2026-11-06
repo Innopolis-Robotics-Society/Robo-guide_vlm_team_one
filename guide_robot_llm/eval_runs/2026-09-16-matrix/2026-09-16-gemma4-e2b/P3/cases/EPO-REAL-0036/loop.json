@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a person's hand pointing towards a display or sign located in the foreground, near a doorway or entrance area. The background shows an interior space with what appears to be a hallway or exhibition area, featuring some furniture or display booths. The hand is pointing towards a sign or illuminated area on the wall or structure near the entrance/doorway.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1731.8087280145846,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a person's hand pointing towards a display or sign located in the foreground, near a doorway or entrance area. The background shows an interior space with what appears to be a hallway or exhibition area, featuring some furniture or displays. The hand is pointing towards a bright, illuminated sign or display panel on the right side of the frame, near a doorway/opening.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1492.5014690088574,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n\"people_count\": 1\n,\n\"exhibit_candidates\": [\n\"epobj-36-a\",\n\"epobj-36-b\",\n\"epobj-36-c\",\n\"epobj-36-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a person's hand pointing towards a display or sign located near a doorway/opening. The hand is positioned in the foreground, pointing towards the area where some signage or display is visible in the background, near a light-colored wall/partition.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1405.2445210109,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

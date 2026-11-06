@@ -1,0 +1,9 @@
+{
+  "people_count": 2,
+  "exhibit_candidates": [
+    "epobj-28-a"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a hand pointing at a speed limit sign (15 km/h) on a pole. The sign is located below a no-parking sign. The background includes trees, a road, and parked cars. The hand is clearly indicating the speed limit sign, which is positioned below the no-parking sign. The scene is outdoors during the daytime with clear weather."
+}

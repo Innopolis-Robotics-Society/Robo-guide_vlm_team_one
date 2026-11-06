@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n \"people_count\": 1,\n \"exhibit_candidates\": [\n  \"epobj-99-a\",\n  \"epobj-99-b\",\n  \"epobj-99-c\",\n  \"epobj-99-d\"\n ],\n \"pointing_evidence\": \"uncertain\",\n \"pointing_box\": [\n  0,\n  0,\n  1,\n  1\n ],\n \"scene_facts\": \"uncertaiin\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1526.651722000679,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n \"people_count\": 1,\n \"exhibit_candidates\": [\n  \"epobj-99-a\",\n  \"epobj-99-b\",\n  \"epobj-99-c\",\n  \"epobj-99-d\"\n ]\n,\n \"pointing_evidence\": \"yes\",\n \"pointing_box\": [\n  1,\n  1,\n  1,\n  1\n ]\n,\n \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store. The shelves are stocked with various packaged food items, including what appear to be instant noodles, dumplings, and other ready-to-eat meals. A person's hand is visible in the foreground, pointing towards a specific item on the lower shelf. The item being pointed at is a small, yellow package, which looks like a single-serving snack or a small food product. The packaging has some text and images on it, but the details are not entirely clear due to the angle and resolution. The overall setting suggests a retail environment where customers can purchase pre-packaged food items.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2001.3753040111624,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n \"people_count\": 1,\n \"exhibit_candidates\": [\n  \"epobj-99-a\",\n  \"epobj-99-b\",\n  \"epobj-99-c\",\n  \"epobj-99-d\"\n ],\n \"pointing_evidence\": \"uncertain\",\n \"pointing_box\": [\n  0,\n  0,\n  1,\n  1\n ]\n,\n \"scene_facts\": \"The image shows a refrigerated display case in a store, likely a supermarket or convenience store, containing various packaged food items. The items appear to be a mix of snacks, possibly including bread, cakes, and other baked goods. There are price tags visible on the shelves, indicating that these are for sale. The lighting is bright, typical of a retail environment. The focus is on the middle shelf, where several packaged items are neatly arranged. The packaging colors vary, with some items having yellow and green packaging, while others are in clear plastic with white or brown labels. The overall scene suggests a well-stocked and organized display of ready-to-eat or easy-to-prepare food products.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2139.3745169916656,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

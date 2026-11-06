@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of various packaged food items displayed in a refrigerated or well-lit section of a store, likely a grocery or convenience store. The items appear to be various types of snacks, dried goods, or perhaps instant meals/noodles. The focus is on packaged food products with clear labeling and pricing visible (e.g., '3.99').\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2108.7944880127907,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1\n,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n,\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"The image shows a display of packaged food items, likely snacks or instant meals, arranged in rows on a shelf. The items appear to be various types of packaged food, some resembling noodles or snack bars.\"\n}\n",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1370.8780109882355,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/99.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-99-a\",\n    \"epobj-99-b\",\n    \"epobj-99-c\",\n    \"epobj-99-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": [\n    1,\n    1,\n    1,\n    1\n  ]\n  \n  ,\n  \"scene_facts\": \"The image shows a close-up of a display case filled with various packaged food items, primarily noodles, snacks, and possibly other processed foods. The items are arranged in rows and are clearly food products. The hand in the foreground is pointing towards a package in the lower middle section of the display. The options provided are: A. An ingredient for a meal. B. A single-serving snack bar. C. A cleaning product. D. A fresh noodle dish.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2112.564769020537,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

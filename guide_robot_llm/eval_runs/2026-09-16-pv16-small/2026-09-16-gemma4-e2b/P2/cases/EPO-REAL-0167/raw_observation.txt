@@ -1,0 +1,13 @@
+{
+"people_count": 1
+,
+"exhibit_candidates": [
+"epobj-167-a"
+]
+,
+"pointing_evidence": "none"
+,
+"pointing_box": null
+,
+"scene_facts": "the_person_is_pointing_towards_the_item_in_the_center_of_the_frame_with_their_finger"
+}

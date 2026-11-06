@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.55,\n    0.52,\n    0.68,\n    0.75\n  ]\n,\n  \"scene_facts\": \"The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be for a business, possibly a salon or clinic, given the chairs and mirrors visible inside the room. The hand is in the foreground, and the sign is in the background, above the entrance to the room. The sign is not attached to the side wall at eye level, nor is it inside the room on a desk, above the doorway, or on the floor in front of the doorway. It is clearly above the doorway, as indicated by its position relative to the entrance and the ceiling. The sign is illuminated and has Chinese characters on it, suggesting it is a business sign. The hand is pointing directly at the sign, indicating that it is the object of interest. The sign is located above the doorway, which is the most logical placement for a business sign. The other options are less likely because the sign is not attached to the side wall at eye level, nor is it inside the room on a desk, above the doorway, or on the floor in front of the doorway. The sign is clearly above the doorway, as indicated by its position relative to the entrance and the ceiling. The sign is illuminated and has Chinese characters on it, suggesting it is a business sign. The hand is pointing directly at the sign, indicating that it is the object of interest. The sign is located above the doorway, which is the most logical placement for a business sign. The other options are less likely because the sign is not attached to the side wall at eye level, nor is it inside the room on a desk, above the doorway, or on the floor in front of the doorway. The sign is clearly above the doorway, as indicated by its position relative to the entrance and the ceiling. The sign is illuminated and has Chinese characters on it, suggesting it is a business sign. The hand is pointing directly at the sign, indicating that it is the object of interest. The sign is located",
+    "parse_status": "failed",
+    "engaged": null,
+    "latency_ms": 5656.052455015015,
+    "attempts": 1,
+    "finish_reason": "length"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.52,\n    0.51,\n    0.71,\n    0.99\n  ]\n,\n  \"scene_facts\": \"The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be for a business, possibly related to hair or beauty services, given the chairs and mirrors visible inside the room. The hand is in the foreground, and the sign is in the background, above the entrance to the room. The sign is not directly above the doorway but rather on the wall adjacent to it, at eye level or slightly above. The hand is pointing towards the sign, indicating that it is the object of interest. The sign is not on the floor, nor is it inside the room on a desk. It is attached to the side wall at eye level, which matches option A. The other options are incorrect: the sign is not inside the room on a desk (B), not above the doorway (C), and not on the floor in front of the doorway (D). Therefore, the correct answer is A.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 3344.3690199928824,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/36.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-36-a\"\n  ]\n,\n  \"pointing_evidence\": \"uncertain\",\n  \"pointing_box\": [\n    0.53,\n    0.52,\n    0.67,\n    0.77\n  ]\n,\n  \"scene_facts\": \"The image shows a first-person perspective of a hand pointing towards a brightly lit sign above a doorway. The sign appears to be an illuminated business name or logo, mounted on the wall directly above the entrance to what looks like a salon or service booth. The hand is in the foreground, and the sign is clearly visible in the background, positioned horizontally across the top of the doorway frame.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2201.420203986345,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The visitor in the center of the image is looking at the refrigerated display case. His hand is extended towards the case, but it is not clearly pointing at a specific item.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1992.4144289980177,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a grocery store refrigerated display case. A man in a blue shirt is standing in front of the case, looking at the products. There are various cuts of meat and poultry visible in the display.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1673.4151109994855,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/27.jpg",
+    "raw_text": "{\n  \"people_count\": 3,\n  \"exhibit_candidates\": [\n    \"epobj-27-a\",\n    \"epobj-27-b\",\n    \"epobj-27-c\",\n    \"epobj-27-d\"\n  ]\n  \n  ,\n  \"pointing_evidence\": \"none\"\n  \n  ,\n  \"pointing_box\": null\n  \n  ,\n  \"scene_facts\": \"The image shows a supermarket or butcher shop counter with various meat products displayed in refrigerated cases. A customer (man in blue shirt) is standing in front of the counter, looking at the display. There are several items in the display cases, including what appears to be pork chops (reddish cuts) and whole poultry (light-colored birds).\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1810.0640299962834,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

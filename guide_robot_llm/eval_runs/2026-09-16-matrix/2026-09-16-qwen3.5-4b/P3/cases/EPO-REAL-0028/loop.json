@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 1,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n,\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0,\n    0,\n    1,\n    1\n  ],\n  \"scene_facts\": \"The image shows a person pointing at a speed limit sign. The sign is located on a pole next to a tree. The person is standing on the sidewalk, and the sign is clearly visible in the foreground. The person's hand is extended towards the sign, indicating that they are pointing at it. The sign is a circular sign with a red border and the number '15' in the center, indicating a speed limit of 15 km/h. The background shows a street with parked cars and some trees. The person is wearing a white shirt and blue jeans. The sign is positioned to the right of the person, and the person is facing towards the sign. The sign is mounted on a metal pole, and there are other signs nearby. The overall scene appears to be in an urban or suburban area with clear weather conditions.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 2475.877799006412,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ]\n,\n  \"pointing_evidence\": \"yes\",\n  \"pointing_box\": [\n    0.51,\n    0.49,\n    0.54,\n    0.67\n  ],\n  \"scene_facts\": \"The image shows a person's hand pointing at a speed limit sign (15) on a pole. There is also a no-car sign above it. The background includes trees, a road, and some buildings.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1652.9682289983612,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n  \"people_count\": 2,\n  \"exhibit_candidates\": [\n    \"epobj-28-a\",\n    \"epobj-28-b\",\n    \"epobj-28-c\",\n    \"epobj-28-d\"\n  ],\n  \"pointing_evidence\": \"none\"\n,\n  \"pointing_box\": null\n,\n  \"scene_facts\": \"no\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1321.2816180021036,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

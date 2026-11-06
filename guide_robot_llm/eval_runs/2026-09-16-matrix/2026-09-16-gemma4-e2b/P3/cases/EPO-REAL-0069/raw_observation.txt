@@ -1,0 +1,18 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-69-a",
+    "epobj-69-b",
+    "epobj-69-c",
+    "epobj-69-d"
+  ]
+  
+  ,
+  "pointing_evidence": "none"
+  
+  ,
+  "pointing_box": null
+  
+  ,
+  "scene_facts": "the_image_shows_a_store_display_with_many_small_bottles_or_containers_arranged_on_shelves_in_a_retail_setting_the_products_appear_to_be_cosmetics_or_skincare_items_the_packaging_is_uniform_and_the_display_is_well_lit_the_items_are_primarily_white_or_light_colored_and_suggest_a_beauty_product_range"
+}

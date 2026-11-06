@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": null,
+  "scene_facts": "The image shows a bakery section in a store. There are several packaged bread items on display. A hand is pointing at one of the packages. The package being pointed at has a dark brown color, suggesting it might be chocolate or cocoa-flavored. Other packages nearby have lighter colors, such as yellow or beige. The text on the packages is not clearly visible, but the visual appearance of the pointe"
+}

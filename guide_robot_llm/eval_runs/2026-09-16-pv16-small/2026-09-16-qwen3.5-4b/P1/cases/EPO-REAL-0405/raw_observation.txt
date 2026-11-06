@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-405-a",
+    "epobj-405-b",
+    "epobj-405-c",
+    "epobj-405-d"
+  ],
+  "pointing_evidence": "none",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The image shows a person's hand reaching into a small metal tin filled with individually wrapped candies. The hand is positioned over the tin, which is placed on the palm rest of a laptop. There is no pointing gesture, no verbal indication, and no clear focus on any specific exhibit from the candidate list. The scene is cluttered with various items including books, a mouse, and other objects, but none are clearly identified as the target exhibit in the context of the question. The hand is interacting with the tin of candies, but there is no evidence to link this to any of the provided exhibit IDs."
+}

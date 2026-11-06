@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n\"people_count\": 1\n,\n\"exhibit_candidates\": [\n\"epobj-28-a\",\n\"epobj-28-b\",\n\"epobj-28-c\",\n\"epobj-28-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the_visitor_is_pointing_at_a_sign_on_a_pole_in_the_foreground_of_the_image\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1895.9470060071908,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-28-a\",\n\"epobj-28-b\",\n\"epobj-28-c\",\n\"epobj-28-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"The image shows a road with a speed limit sign (15) and a red circle with a car inside, indicating a prohibition. A person's finger is pointing towards the speed limit sign or the area near it. The question asks whether the object indicated by the finger is located above or below the speed limit sign.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1748.6869359854609,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/28.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-28-a\",\n\"epobj-28-b\",\n\"epobj-28-c\",\n\"epobj-28-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1]\n,\n\"scene_facts\": \"a person is pointing at a speed limit sign on the road.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1556.388989003608,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

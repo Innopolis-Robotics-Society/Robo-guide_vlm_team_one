@@ -1,0 +1,116 @@
+{
+  "case_id": "SCN-CC-002",
+  "source": "pilot-cc",
+  "track": "scene",
+  "prompt_mode": "deployed",
+  "variant_id": "D2",
+  "calls_per_case": null,
+  "terminal_reason": null,
+  "terminal_abstain": null,
+  "status": "ok",
+  "error": null,
+  "tokens": null,
+  "tokens_note": "server usage not captured by llm_client (known gap, out of scope for #10)",
+  "phases": {
+    "observation": {
+      "latency_ms": 7389.504,
+      "attempts": 2,
+      "calls": 2,
+      "finish_reason": "stop",
+      "parse_status": "ok",
+      "timings": {
+        "pass1": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.0027700152713805437,
+              "upload_ms": 256.3250309904106,
+              "ttft_ms": 334.01667297584936,
+              "full_ms": 3328.455615002895,
+              "parse_ready_ms": 3328.455615002895
+            }
+          ]
+        },
+        "pass2": {
+          "attempts": 0,
+          "retries": 0,
+          "fallbacks": 0,
+          "skipped_incompatible": 0,
+          "http_failures": 0,
+          "timeouts": 0,
+          "failure_stages": {},
+          "last_failure": null,
+          "timings": [
+            {
+              "serialization_ms": 0.003269989974796772,
+              "upload_ms": 81.36137100518681,
+              "ttft_ms": 275.36277202307247,
+              "full_ms": 4060.982975002844,
+              "parse_ready_ms": 4060.982975002844
+            }
+          ]
+        }
+      },
+      "cot_reason": "1. На фото изображена сцена в минималистичном стиле с плоскими цветами и простыми геометрическими формами.\n2. Слева — зелёное овальное дерево на коричневом стволе, стоящее на полу.\n3. В центре — человек в коричневом прямоугольном теле и голубых ногах, стоящий спиной к зрителю, перед фиолетовым прямоугольным объектом (poster-01), который висит на стене.\n4. Справа — другой человек в синем прямоугольном теле и голубых ногах, также спиной к зрителю, перед жёлтым квадратным объектом (frame-03), который висит на стене.\n5. Фон: светлая стена и коричневый пол с вертикальными линиями, имитирующими панели.\n6. Все объекты имеют тень под собой, что придаёт им объём.\n7. Качество кадра — чёткое, без размытия, с ровными контурами и однородными цветами.\n\nСцена представляет собой интерьер, где два человека стоят спиной к зрителю перед двумя экспонатами на стене: фиолетовым плакатом (poster-01) и жёлтым рамочным объектом (frame-03). Слева от них — декоративное дерево. Всё выполнено в простом графическом стиле с акцентом на формы и цвета."
+    }
+  },
+  "latency_ms": 7389.504,
+  "attempts": 2,
+  "case": {
+    "case_id": "SCN-CC-002",
+    "source": "pilot-cc",
+    "track": "scene",
+    "split_group_id": "g-cc-SCN-CC-002",
+    "media": {
+      "path": "pilot/media/cc/SCN-CC-002.png",
+      "sha256": "5cb25b8c6e4093488dcf20752a0781fe3985463107c08251a5432104def82fb7",
+      "format": "png"
+    },
+    "prompt": {
+      "mode": "deployed",
+      "user_text": "Опиши, что на фото",
+      "language": "ru"
+    },
+    "candidates": [
+      "poster-01",
+      "frame-03"
+    ],
+    "allowed_tools": [
+      "reply",
+      "tell_about",
+      "ask_visitor",
+      "lookup_content",
+      "search_content",
+      "resolve_location",
+      "start_tour",
+      "guide_to",
+      "tour_by_points"
+    ],
+    "gold": {
+      "type": "claims",
+      "claims": [
+        "на стене тёмно-розовый постер",
+        "слева зелёное растение в горшке",
+        "справа жёлтая рама",
+        "в кадре два человека",
+        "один человек стоит перед постером"
+      ]
+    },
+    "provenance": {
+      "source": "pilot-manifest",
+      "license": "self-captured/pre-approved (rights_ledger: approved)",
+      "version": "2026-09-14",
+      "rights_note": "n/a (synthetic, no real persons)"
+    },
+    "slices": {
+      "venue": "synthetic (PIL, deterministic spec, seed 20260914)"
+    }
+  }
+}

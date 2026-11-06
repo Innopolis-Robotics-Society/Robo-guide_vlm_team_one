@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-99-a",
+    "epobj-99-b",
+    "epobj-99-c",
+    "epobj-99-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    0.45,
+    0.71,
+    0.5,
+    0.77
+  ],
+  "scene_facts": "The image shows a refrigerated shelf in a grocery store containing various packaged food items. A person's hand is pointing at a specific item on the bottom shelf. The item being pointed at is a small, yellow-packaged product. To the left of the yellow package are several silver-wrapped items that appear to be meat or jerky. To the right of the yellow package are green packages and then white trays containing what looks like cheese sticks or similar dairy products. The yellow package has some text and an image on it, but it is not clearly legible. The surrounding items suggest this is a section for ready-to-eat or semi-prepared foods, possibly snacks or small meals. The pointing gesture is directed specifically at the yellow package, distinguishing it from the adjacent products."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/61.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-61-a\",\n\"epobj-61-b\",\n\"epobj-61-c\",\n\"epobj-61-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the visitor is pointing at a bust placed on a pedestal on the floor.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1611.8688239948824,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/61.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-61-a\",\n\"epobj-61-b\",\n\"epobj-61-c\",\n\"epobj-61-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1\n]\n,\n\"scene_facts\": \"the visitor is pointing at a bust placed on a pedestal on the floor.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1516.275225993013,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/egopoint/realdata_benchmark/test_img/61.jpg",
+    "raw_text": "{\n\"people_count\": 1,\n\"exhibit_candidates\": [\n\"epobj-61-a\",\n\"epobj-61-b\",\n\"epobj-61-c\",\n\"epobj-61-d\"\n]\n,\n\"pointing_evidence\": \"none\"\n,\n\"pointing_box\": [\n1,\n1,\n1,\n1]\n,\n\"scene_facts\": \"the visitor is pointing at a bust placed on a pedestal on the floor.\"\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1332.2253150108736,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

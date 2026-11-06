@@ -1,0 +1,16 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a peach-colored box with Chinese characters on it. The box is located between two yellow boxes and several blue boxes. The hand is extended, with the index finger pointing directly at the peach-colored box. The box has text that appears to be '海之蓝' (Hǎi zhī lán), which translates to 'Ocean Blue' in English. The other boxes have different colors and designs: yellow boxes with red text, blue boxes with white text and patterns, and red/gold boxes below. The pointing gesture is clear and directed at the peach-colored box. The text on the box is legible and matches one of the options provided. The other options do not match the visible text or the color of the box being pointed at. The peach-colored box is the only one that matches the 'Ocean Blue' translation among the options, despite the color difference. The other options are not supported by the visual evidence. The pointing is unambiguous in its direction, but the translation of the text is the key factor here. The text '海之蓝' is clearly visible and corresponds to 'Ocean Blue'. The other options are not relevant to the visible text or the box being pointed at. The scene is well-lit, and the text is readable. The pointing hand is in focus, and the box is clearly the target of the gesture. The other boxes are not being pointed at, and their text does not match any of the options. The peach-colored box is the only one that fits the description of 'Ocean Blue' based on the text. The other options are not supported by the visual evidence. The pointing is clear, and the text is legible. The box is the only one that matches the translation. The other options are not relevant to the visible text or the box being pointed at. The scene is well-lit, and the text is readable.

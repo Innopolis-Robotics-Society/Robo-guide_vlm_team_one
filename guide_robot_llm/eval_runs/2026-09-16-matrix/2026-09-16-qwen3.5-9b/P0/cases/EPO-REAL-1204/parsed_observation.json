@@ -1,0 +1,12 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-1204-a",
+    "epobj-1204-b",
+    "epobj-1204-c",
+    "epobj-1204-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": null,
+  "scene_facts": "The image shows a retail shelf stocked with stationery items such as notebooks, folders, and plastic sleeves. A hand is visible in the lower right corner, pointing toward a stack of clear plastic document sleeves or file folders on one of the shelves. The pointing gesture is directed at a specific product among the displayed items."
+}

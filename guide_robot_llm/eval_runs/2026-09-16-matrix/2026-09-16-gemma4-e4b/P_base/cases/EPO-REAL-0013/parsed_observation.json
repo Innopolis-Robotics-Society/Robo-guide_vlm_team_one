@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-c"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.43,
+    0.67,
+    0.56,
+    0.82
+  ],
+  "scene_facts": "Человек в перчатке указывает на коробку с надписью '海之盐'"
+}

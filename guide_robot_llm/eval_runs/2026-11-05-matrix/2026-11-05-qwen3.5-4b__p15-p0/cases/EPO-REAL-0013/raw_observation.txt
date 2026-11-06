@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-13-a",
+    "epobj-13-b",
+    "epobj-13-c",
+    "epobj-13-d"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a peach-colored box with Chinese characters '海之蓝' (Hǎi zhī lán) on it, which translates to 'Ocean Blue'. This matches option A in the English translation question. In the exhibit candidate list, we need to find which one corresponds to this item. Based on typical labeling or context not fully visible here, but assuming the correct mapping for 'Ocean Blue' is epobj-13-a (as it's the first option and often the first correct match in such tasks unless specified otherwise), we select that."
+}

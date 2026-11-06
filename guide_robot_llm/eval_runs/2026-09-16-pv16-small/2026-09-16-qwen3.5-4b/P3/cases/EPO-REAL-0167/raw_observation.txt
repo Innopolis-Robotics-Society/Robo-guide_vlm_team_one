@@ -1,0 +1,17 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ],
+  "pointing_evidence": "uncertain",
+  "pointing_box": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "scene_facts": "The person is pointing at a packaged bread item on a shelf. The packaging is white with a clear window showing the bread inside. The bread appears to have a light brownish color with some darker specks or chunks, possibly nuts or chocolate chips. The person's hand is extended towards the item, indicating interest or selection. The background shows a bakery or grocery store setting with other baked goods and beverages visible."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "eval_data/aghri/footpath1_p1_yj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407286_009154459.png",
+    "raw_text": "{\"answer\": \"Я не вижу ни одного робота и ни одного человека на предоставленном изображении. Поэтому я не могу выполнить ваш запрос.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 898.3665120031219,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "eval_data/aghri/footpath1_p1_yj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407286_009154459.png",
+    "raw_text": "{\"answer\": \"Из предоставленного изображения невозможно определить, сколько людей находится рядом с роботом, так как на изображении нет робота и людей.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 583.8949519966263,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "eval_data/aghri/footpath1_p1_yj+mk+gl_1walk+check_mv_11_12_2024_1_label/sensor_data/cam_zed_rgb/1731407286_009154459.png",
+    "raw_text": "{\"answer\": \"На предоставленном изображении я не вижу ни одного робота и ни одного человека. Поэтому я не могу выполнить ваш запрос.\"\n, \"confidence\": 0.95, \"abstain\": false}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 559.3865030095913,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

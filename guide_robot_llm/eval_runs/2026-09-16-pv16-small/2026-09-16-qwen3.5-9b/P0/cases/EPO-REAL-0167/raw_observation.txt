@@ -1,0 +1,20 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-167-a",
+    "epobj-167-b",
+    "epobj-167-c",
+    "epobj-167-d"
+  ]
+,
+  "pointing_evidence": "uncertain"
+,
+  "pointing_box": [
+    0.5,
+    0.7,
+    0.6,
+    0.8
+  ]
+,
+  "scene_facts": "The image shows a hand pointing at a bakery item on a shelf. The item is a packaged loaf of bread with visible dark specks inside, consistent with chocolate chips. The packaging is clear plastic with a white top, and the bread inside has a light-colored crumb with dark inclusions. Other items on the shelf include milk bottles and other breads, but the pointed item is distinct due to its appearance and the gesture. The pointing box [0.5, 0.7, 0.6, 0.8] corresponds to the location of this specific bread item on the shelf."
+}

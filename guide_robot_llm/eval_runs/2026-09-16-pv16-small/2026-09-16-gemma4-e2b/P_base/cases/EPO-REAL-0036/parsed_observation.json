@@ -1,0 +1,14 @@
+{
+  "people_count": 1,
+  "exhibit_candidates": [
+    "epobj-36-a"
+  ],
+  "pointing_evidence": "yes",
+  "pointing_box": [
+    0.55,
+    0.66,
+    0.75,
+    0.83
+  ],
+  "scene_facts": "Человек указывает на стенд с экспонатом."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "tick": 0,
+    "frame": "pilot/media/cc/SEQ-CC-002_f0.png",
+    "raw_text": "{\n  \"answer\": \"0\",\n  \"confidence\": 0.99,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 572.6156049931888,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 1,
+    "frame": "pilot/media/cc/SEQ-CC-002_f1.png",
+    "raw_text": "{\n  \"answer\": \"1 человек на кадре. Он стоит спиной к зрителю, смотрит на зелёный прямоугольник (возможно, экран или доску). Его поза — прямая, без признаков отвлечения. Можно предположить, что он готов слушать дальше.\",\n  \"confidence\": 0.85,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": null,
+    "latency_ms": 1036.2341559957713,
+    "attempts": 1,
+    "finish_reason": "stop"
+  },
+  {
+    "tick": 2,
+    "frame": "pilot/media/cc/SEQ-CC-002_f2.png",
+    "raw_text": "{\n  \"answer\": \"На кадре 3 человека. Все 3 смотрят прямо на зелёный экран — значит, все готовы слушать дальше.\",\n  \"confidence\": 0.95,\n  \"abstain\": false\n}",
+    "parse_status": "ok",
+    "engaged": 3,
+    "latency_ms": 1672.5736639928073,
+    "attempts": 1,
+    "finish_reason": "stop"
+  }
+]

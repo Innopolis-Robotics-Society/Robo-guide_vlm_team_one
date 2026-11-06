@@ -1,0 +1,6 @@
+{"answer": "Всего людей: 2, Готовых слушать: 0."
+  
+  											 	 	 	 , "confidence": 1
+  
+  											 	 	 	 , "abstain": false
+  }
