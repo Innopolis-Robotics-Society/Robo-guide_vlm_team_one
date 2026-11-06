@@ -6,7 +6,7 @@ The Stage-3 review (weakness W2, Minor, −3.75) confirmed that exact model/proj
 
 ## What Changes
 
-- Add `llm_server/config/models/PROVENANCE.md`: for each GGUF + mmproj file (4 models × weight, 4 mmproj) record source URL, quantization, SHA-256 (computed from the current local files), and retrieval date.
+- Add `guide_robot_llm/docs/model_provenance.md` (the originally planned `llm_server/config/models/` path is gitignored): for each GGUF + mmproj file (4 models × weight, 4 mmproj) record source URL, quantization, SHA-256 (computed from the current local files), and retrieval date; plus the development model `qwen3.5-2b`.
 - Record the llama.cpp build (commit `1511ce3bc3f087376c8526b4ad07100bfabb277f`, 2026-08-18) in the provenance doc, and note that the full server command line is frozen per-run in `run_config.json`.
 - Add a fixed `--seed` to `server_cmd()` in `guide_robot_llm/scripts/run_matrix.py`; carry the seed value through the model profile so it lands in `run_config.json` (the runner already preserves extra backend keys such as `seed` declaratively).
 - Report §6.3 (reproducibility) updated to point at the provenance doc.

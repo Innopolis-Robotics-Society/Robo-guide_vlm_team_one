@@ -235,6 +235,12 @@ The supplied report describes 32 audience cases. “Production” means `A_base`
 “selected variant” is the best result chosen from the tested variants for that
 model. MAE is calculated only over outputs with an extractable count.
 
+Unlike the pointing track, no disjoint count holdout exists: the count variants
+were **selected and evaluated on the same 32 cases**. The selected-variant
+numbers are therefore in-sample and are the optimistic bound for unseen cases;
+only the `A_base` (production) column is a held-out-free statement about the
+deployed prompt.
+
 | Model | Production prompt | Selected variant |
 |---|---|---|
 | Gemma 4 E2B | MAE 0.76 (`n=21`), exact 12/32 (38%) | `A2`: MAE 0.43 (`n=28`), exact 21/32 (66%) |
@@ -269,7 +275,7 @@ purely for confirmation.
 | Model (variant) | Set | Right one on shortlist | Saw a point at all | Picked the right one | Says “nobody's pointing” when true |
 |---|---|---:|---:|---:|---:|
 | Gemma 4 E2B (`P3`) | original 15 | 100% (15/15) | 0% | — (15/15 abstained) | n/a (no no-target cases) |
-| Gemma 4 E2B (`P3`) | held-out 15 | 100% (15/15) | 0% | 1/2 (50%) | n/a |
+| Gemma 4 E2B (`P3`) | held-out 15 | 100% (15/15) | 0% | 2/4 (50%) | n/a |
 | Gemma 4 E4B (`P3`) | original 15 | 100% (15/15) | 0% | 0/2 (0%) | n/a |
 | Gemma 4 E4B (`P3`) | held-out 15 | 100% (15/15) | 0% | 0/1 (0%) | n/a |
 | Qwen3.5-4B (`P0`) | original 15 | 100% (15/15) | 87% (13/15) | 4/13 (31%) | n/a |
@@ -281,7 +287,7 @@ The earlier report's “production prompt” column (20–33%) measured freeform
 multiple-choice answer extraction, a different execution mode; the comparable
 freeform baseline re-runs give 27–93% top-1 on these sets. The honest
 picture: all models keep the right object on the shortlist 100% of the time,
-but final-choice accuracy is 0–31% with heavy abstention (the models often
+but final-choice accuracy is 0–50% with heavy abstention (the models often
 declare that nobody is pointing at anything). The selected variants' ordering
 roughly holds on the held-out set (Qwen3.5-4B `P0`: 31% → 22%; Gemma models
 remain mostly abstaining), but samples are tiny. No no-target cases exist in
@@ -361,6 +367,14 @@ system. The offline benchmark should be reproduced first because it isolates
 model and prompt behavior from camera, localization, speech, and navigation.
 
 ### 6.1 Offline benchmark
+
+The exact environment of all recorded runs is pinned in
+`guide_robot_llm/docs/model_provenance.md`: source URLs and SHA-256 of all eight
+weight/projector files (unsloth GGUF quants from Hugging Face, `Q4_K_M` +
+`mmproj-F16`), the llama.cpp build commit
+(`1511ce3bc3f087376c8526b4ad07100bfabb277f`, 2026-08-18), and the sampling
+pins — seed 42 (frozen per run in `run_config.json.backend.seed`) and
+temperature 0.2 (`run_config.json.prompt.temperature`).
 
 The code declares Python dependencies on Requests and Pillow; the ROS package
 also depends on ROS 2 Humble interfaces and the project message package. From a

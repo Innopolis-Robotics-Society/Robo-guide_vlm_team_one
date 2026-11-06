@@ -1,3 +1,4 @@
 models/
+!config/models/
 .env
 __pycache__/

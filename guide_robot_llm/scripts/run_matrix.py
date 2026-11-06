@@ -48,6 +48,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import signal
 import subprocess
 import sys
@@ -132,29 +133,48 @@ def load_profile(profile_path: Path) -> dict[str, str]:
     return env
 
 
+def models_dir(profile: dict[str, str]) -> Path:
+    """Корень весов: env-переменная `MODELS_DIR` в приоритете, иначе значение профиля.
+
+    Коммит-профили несут относительный путь (`models/pilot`) без home-директорий
+    (анонимный сабмит); на машине с другим раскладом весов задаётся `MODELS_DIR`.
+    Каталог не найден — понятная ошибка, а не тихий неверный путь.
+    """
+    raw = os.environ.get("MODELS_DIR") or profile.get("MODELS_DIR", "")
+    path = Path(raw).expanduser()
+    if not path.is_absolute():
+        path = Path.cwd() / path
+    if not path.is_dir():
+        raise SystemExit(
+            f"каталог весов не найден: {path}. Задайте env-переменную MODELS_DIR "
+            f"(каталог, содержащий подкаталоги моделей) или поправьте профиль."
+        )
+    return path
+
+
 def profile_model_paths(profile: dict[str, str]) -> list[Path]:
     """Пути весов из профиля: `MODELS_DIR` + `MODEL_FILE`/`MM_PROJ` (с подкаталогом)."""
-    models_dir = Path(profile.get("MODELS_DIR", "")).expanduser()
+    models_root = models_dir(profile)
     paths: list[Path] = []
     for key in ("MODEL_FILE", "MM_PROJ"):
         f = profile.get(key, "")
         if f:
-            paths.append(models_dir / f)
+            paths.append(models_root / f)
     return paths
 
 
 def server_cmd(cfg: dict[str, Any], model: dict[str, Any], profile: dict[str, str]) -> list[str]:
     """Команда llama-server по профилю модели (флаги 1:1 с пилотом)."""
-    models_dir = Path(profile["MODELS_DIR"]).expanduser()
+    models_root = models_dir(profile)
     cmd = [
         cfg["llama_server_bin"],
         "-m",
-        str(models_dir / profile["MODEL_FILE"]),
+        str(models_root / profile["MODEL_FILE"]),
         "-a",
         profile.get("MODEL_ALIAS", model["id"]),
     ]
     if profile.get("MM_PROJ"):
-        cmd += ["-mm", str(models_dir / profile["MM_PROJ"])]
+        cmd += ["-mm", str(models_root / profile["MM_PROJ"])]
     cmd += [
         "--host",
         cfg["host"],
@@ -173,7 +193,31 @@ def server_cmd(cfg: dict[str, Any], model: dict[str, Any], profile: dict[str, st
     ]
     if profile.get("REASONING", "off").lower() == "off":
         cmd += ["--reasoning", "off"]
+    if profile.get("SEED"):
+        cmd += ["--seed", profile["SEED"]]
     return cmd
+
+
+def backend_config(base_url: str, cfg: dict[str, Any], profile: dict[str, str]) -> dict[str, Any]:
+    """Конфиг-файл эндпоинта для раннера (`backend_{model}.json`).
+
+    Операторские ключи профиля (``SEED``) уходят сюда как есть: раннер
+    декларативно фиксирует их в ``run_config.json.backend`` (см.
+    ``_backend_freeze_info``), так что сид попадает в per-run freeze
+    (документировано в ``docs/model_provenance.md``).
+    """
+    backend: dict[str, Any] = {
+        "base_url": base_url,
+        "api_key": "",
+        "model_name": profile["MODEL_ALIAS"],
+        "connect_timeout_s": 5.0,
+        "read_timeout_s": float(cfg.get("read_timeout_s", 180.0)),
+        "multimodal_enabled": True,
+        "max_images": 4,
+    }
+    if profile.get("SEED"):
+        backend["seed"] = int(profile["SEED"])
+    return backend
 
 
 def free_vram_gb() -> float | None:
@@ -408,19 +452,7 @@ def run_model(
             warmup(base_url, profile["MODEL_ALIAS"])
             backend_cfg = model_dir / f"backend_{model_id}.json"
             backend_cfg.write_text(
-                json.dumps(
-                    {
-                        "base_url": base_url,
-                        "api_key": "",
-                        "model_name": profile["MODEL_ALIAS"],
-                        "connect_timeout_s": 5.0,
-                        "read_timeout_s": float(cfg.get("read_timeout_s", 180.0)),
-                        "multimodal_enabled": True,
-                        "max_images": 4,
-                    },
-                    indent=1,
-                )
-                + "\n",
+                json.dumps(backend_config(base_url, cfg, profile), indent=1) + "\n",
                 encoding="utf-8",
             )
             runner_cmd += ["--backend-config", str(backend_cfg)]
