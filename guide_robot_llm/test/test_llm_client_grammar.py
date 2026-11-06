@@ -6,7 +6,13 @@
 
 from __future__ import annotations
 
-from guide_robot_llm.llm_client.grammar import build_action_grammar, build_observation_grammar
+import pytest
+
+from guide_robot_llm.llm_client.grammar import (
+    build_action_grammar,
+    build_decision_grammar,
+    build_observation_grammar,
+)
 from guide_robot_llm.tools.validate import parse_action
 from guide_robot_llm.visual_context import parse_observation
 
@@ -170,6 +176,53 @@ def test_observation_root_keys_are_json_quoted_and_output_parses() -> None:
     )
 
 
+def test_decision_grammar_root_has_contract_fields_in_order() -> None:
+    """W1: ровно {target_id, confidence}, target_id до confidence."""
+    grammar = build_decision_grammar(["epobj-3-a", "epobj-3-b"])
+    root_rule = next(line for line in grammar.splitlines() if line.startswith("root ::="))
+
+    assert root_rule.index("target_id") < root_rule.index("confidence")
+    assert "abstain" not in root_rule
+    assert "answer" not in root_rule
+
+
+def test_decision_grammar_is_closed_over_candidate_set() -> None:
+    """W1: target-id -- ровно переданные id + литерал "none", ничего лишнего."""
+    grammar = build_decision_grammar(["epobj-3-a", "epobj-3-b", "epobj-3-c"])
+    target_rule = next(line for line in grammar.splitlines() if line.startswith("target-id ::="))
+
+    for name in ("epobj-3-a", "epobj-3-b", "epobj-3-c"):
+        assert f'"\\"{name}\\""' in target_rule
+    assert '"\\"none\\""' in target_rule
+    # Три id-альтернативы + none -- ровно 4 альтернативы.
+    assert target_rule.count("|") == 3
+
+
+def test_decision_grammar_empty_candidates_only_none() -> None:
+    """W1: пустое наблюдение -- единственный легальный ответ "none"."""
+    grammar = build_decision_grammar([])
+    target_rule = next(line for line in grammar.splitlines() if line.startswith("target-id ::="))
+
+    assert target_rule == 'target-id ::= "\\"none\\"" ws'
+
+
+def test_decision_grammar_confidence_pinned_to_zero_one() -> None:
+    grammar = build_decision_grammar(["cand-1"])
+    confidence_rule = next(
+        line for line in grammar.splitlines() if line.startswith("confidence ::=")
+    )
+
+    assert '"1"' in confidence_rule
+    assert '"0"' in confidence_rule
+    assert "[0-9]+" not in confidence_rule
+
+
+def test_decision_grammar_none_id_collision_rejected() -> None:
+    """W1: id "none" сломал бы однозначность отказа -- ошибка, а не тишина."""
+    with pytest.raises(ValueError, match="none"):
+        build_decision_grammar(["none"])
+
+
 def _gbnf_literals(line: str) -> list[str | None]:
     """GBNF-литералы строки: содержимое каждого (экраны сняты).
 
@@ -224,6 +277,7 @@ def test_all_grammar_literals_terminated_and_key_literals_exactly_quoted() -> No
     grammars = (
         build_action_grammar(["reply", "start_tour"]),
         build_observation_grammar(["cabinet-01", "frame-02"]),
+        build_decision_grammar(["cabinet-01", "frame-02"]),
     )
     for grammar in grammars:
         for line in grammar.splitlines():
@@ -244,6 +298,10 @@ def test_all_grammar_literals_terminated_and_key_literals_exactly_quoted() -> No
                 "pointing_box",
                 "scene_facts",
             },
+        ),
+        (
+            next(rule for rule in grammars[2].splitlines() if rule.startswith("root ::=")),
+            {"target_id", "confidence"},
         ),
     ):
         literals = set(_gbnf_literals(line))

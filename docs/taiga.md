@@ -26,6 +26,7 @@ Login is by **username + password** (not email).
 
 | Username | Password |
 |---|---|
+| `sinorin` (server admin — **agent login, always use this one**) | `4UfnLydARFMzLuptAQ` |
 | `andrei` | `GRZMfXgoFepmMomq` |
 | `daria` | `3uOtYXdy54DniWJM` |
 | `evgenii` | `do87ak4QNfcGizMB` |
@@ -42,7 +43,7 @@ Login is by **username + password** (not email).
 # Get a JWT (access token + refresh token)
 curl -s -X POST https://corgi.sinorin.ru/api/v1/auth \
   -H 'Content-Type: application/json' \
-  -d '{"type": "normal", "username": "andrei", "password": "GRZMfXgoFepmMomq"}'
+  -d '{"type": "normal", "username": "sinorin", "password": "4UfnLydARFMzLuptAQ"}'
 ```
 
 Response: JSON user object containing **`auth_token`** (JWT access token) and
@@ -207,7 +208,7 @@ def call(token, method, path, payload=None):
         raise
 
 # examples
-tok = login("andrei", "GRZMfXgoFepmMomq")
+tok = login("sinorin", "4UfnLydARFMzLuptAQ")
 call(tok, "POST", "/issues", {"subject": "t", "description": "d", "project": 1, "type": 3})
 o = call(tok, "GET", "/issues/1")
 call(tok, "PATCH", f"/issues/{o['id']}", {"status": 2, "version": o["version"]})

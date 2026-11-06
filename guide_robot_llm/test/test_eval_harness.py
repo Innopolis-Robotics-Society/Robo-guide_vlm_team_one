@@ -19,11 +19,12 @@ from guide_robot_llm.eval.runner import (
     parse_freeform_answer,
     run_case,
     run_manifest,
+    write_case_run,
 )
 from guide_robot_llm.eval.runner import (
     main as runner_main,
 )
-from guide_robot_llm.eval.schema import CaseError, case_from_dict, case_to_dict
+from guide_robot_llm.eval.schema import Case, CaseError, case_from_dict, case_to_dict
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
 PILOT_MANIFEST = PACKAGE_ROOT / "pilot" / "manifest.jsonl"
@@ -43,6 +44,8 @@ OBS_GOOD = (
 OBS_BAD = "модель не в JSON"
 ACTION_GOOD = '{"tool": "say", "args": {"text": "привет"}, "confidence": 0.9, "abstain": false}'
 FREEFORM_GOOD = '{"answer": "epa", "confidence": 0.8, "abstain": false}'
+DECISION_GOOD = '{"target_id": "a", "confidence": 0.9}'
+DECISION_NONE = '{"target_id": "none", "confidence": 0.6}'
 
 
 def _case(
@@ -270,6 +273,7 @@ def test_two_synthetic_cases_end_to_end(tmp_path) -> None:
     backend = MockBackend(
         {
             ("E2E-POI", "observation"): OBS_GOOD,
+            ("E2E-POI", "decision"): DECISION_GOOD,
             ("E2E-EPO", "freeform"): FREEFORM_GOOD,
         }
     )
@@ -297,6 +301,7 @@ def test_two_synthetic_cases_end_to_end(tmp_path) -> None:
     assert meta["tokens_note"]
     assert meta["prompt_mode"] == "deployed"
     assert meta["phases"]["observation"]["attempts"] == 1
+    assert meta["phases"]["decision"]["parse_status"] == "ok"  # фаза решения (W1)
     assert meta["case"]["case_id"] == "E2E-POI"  # снапшот кейса в meta
     assert meta["case"]["media"]["sha256"] == sha
 
@@ -499,3 +504,185 @@ def test_media_missing_runs_text_only(tmp_path) -> None:
     run = run_case(case, backend, data_root=tmp_path)
     assert run.status == "ok"
     assert run.observation is not None and run.observation.parse_status == "ok"
+
+
+# ---------------------------------------------------------------------------
+# Фаза решения (исправление W1: финальный выбор pointing-кейса)
+# ---------------------------------------------------------------------------
+
+
+def _pointing_case(case_id: str, *, media_sha: str, **kw) -> Case:
+    return case_from_dict(
+        _case(
+            case_id,
+            gold={
+                "type": "target_box",
+                "target_id": kw.pop("target", "a"),
+                "box_px": [1, 2, 3, 4],
+                "distractors": ["b"],
+            },
+            media_sha=media_sha,
+            **kw,
+        )
+    )
+
+
+def test_decision_phase_fires_for_deployed_target_with_parsed_observation(tmp_path) -> None:
+    """W1: deployed + target_box + разобранное наблюдение → фаза решения.
+
+    Ответ пишется в raw_/parsed_decision, в meta.json фаза присутствует.
+    """
+    sha = _make_media(tmp_path)
+    case = _pointing_case("DEC-E2E", media_sha=sha)
+    backend = MockBackend(
+        {
+            ("DEC-E2E", "observation"): OBS_GOOD,
+            ("DEC-E2E", "decision"): DECISION_GOOD,
+        }
+    )
+    run = run_case(case, backend, data_root=tmp_path)
+    assert run.status == "ok"
+    assert run.decision is not None
+    assert run.decision.parse_status == "ok"
+    assert run.decision.parsed == {"target_id": "a", "confidence": 0.9}
+    write_case_run(case, run, tmp_path)
+
+    case_dir = tmp_path / "cases" / "DEC-E2E"
+    assert (case_dir / "raw_decision.txt").read_text(encoding="utf-8") == DECISION_GOOD
+    parsed = json.loads((case_dir / "parsed_decision.json").read_text(encoding="utf-8"))
+    assert parsed == {"target_id": "a", "confidence": 0.9}
+    meta = json.loads((case_dir / "meta.json").read_text(encoding="utf-8"))
+    assert meta["phases"]["decision"]["parse_status"] == "ok"
+
+
+def test_decision_phase_abstain_none_roundtrips_as_null(tmp_path) -> None:
+    """W1: "none" в ответе → `target_id: null` в parsed-записи."""
+    sha = _make_media(tmp_path)
+    case = _pointing_case("DEC-ABS", media_sha=sha)
+    backend = MockBackend(
+        {
+            ("DEC-ABS", "observation"): OBS_GOOD,
+            ("DEC-ABS", "decision"): DECISION_NONE,
+        }
+    )
+    run = run_case(case, backend, data_root=tmp_path)
+    assert run.status == "ok"
+    assert run.decision is not None and run.decision.parse_status == "ok"
+    assert run.decision.parsed == {"target_id": None, "confidence": 0.6}
+
+
+def test_decision_phase_fires_for_no_target_case_too(tmp_path) -> None:
+    """W1: no-target кейс тоже проходит фазу решения (единственный
+    «правильный» ответ -- "none")."""
+    sha = _make_media(tmp_path)
+    case = case_from_dict(
+        _case(
+            "DEC-NOTGT",
+            gold={
+                "type": "target_box",
+                "target_id": "unknown",
+                "box_px": None,
+                "distractors": ["b"],
+            },
+            media_sha=sha,
+        )
+    )
+    backend = MockBackend(
+        {
+            ("DEC-NOTGT", "observation"): OBS_GOOD,
+            ("DEC-NOTGT", "decision"): DECISION_NONE,
+        }
+    )
+    run = run_case(case, backend, data_root=tmp_path)
+    assert run.status == "ok"
+    assert run.decision is not None
+    assert run.decision.parsed == {"target_id": None, "confidence": 0.6}
+
+
+def test_decision_phase_not_fired_without_pointing_gold(tmp_path) -> None:
+    """W1: freeform-режим и non-target gold → фазы решения нет."""
+    sha = _make_media(tmp_path)
+    ff = case_from_dict(
+        _case(
+            "DEC-FF",
+            mode="freeform",
+            gold={
+                "type": "target_box",
+                "target_id": "epa",
+                "box_px": None,
+                "distractors": ["epb"],
+            },
+            media_sha=sha,
+        )
+    )
+    run = run_case(ff, MockBackend({("DEC-FF", "freeform"): FREEFORM_GOOD}), data_root=tmp_path)
+    assert run.decision is None
+
+    cnt = case_from_dict(_case("DEC-CNT", gold={"type": "count", "count": 1}, media_sha=sha))
+    run = run_case(cnt, MockBackend({("DEC-CNT", "observation"): OBS_GOOD}), data_root=tmp_path)
+    assert run.decision is None
+
+
+def test_decision_phase_skipped_when_observation_unparsed(tmp_path) -> None:
+    """W1: сломанное наблюдение → фаза решения не запускается."""
+    sha = _make_media(tmp_path)
+    case = _pointing_case("DEC-BADOBS", media_sha=sha)
+    backend = MockBackend({("DEC-BADOBS", "observation"): OBS_BAD})
+    run = run_case(case, backend, data_root=tmp_path)
+    assert run.status == "parse_failed"
+    assert run.decision is None
+
+
+def test_decision_phase_backend_error_marks_case(tmp_path) -> None:
+    class Down:
+        def complete(self, messages, **kwargs):
+            raise ConnectionError("нет сервера")
+
+    sha = _make_media(tmp_path)
+    case = _pointing_case("DEC-DOWN", media_sha=sha)
+    run = run_case(case, Down(), data_root=tmp_path)  # type: ignore[arg-type]
+    assert run.status == "backend_error"
+
+
+def test_decision_instruction_lists_exactly_observation_candidates() -> None:
+    """W1: инструкция фазы решения -- ровно id наблюдения, без лишнего."""
+    from guide_robot_llm.eval.runner import _decision_instruction
+
+    text = _decision_instruction(("epobj-3-a", "epobj-3-b"))
+    assert "epobj-3-a" in text
+    assert "epobj-3-b" in text
+    assert "epobj-3-c" not in text  # чужой id не просочился
+
+    # Пустое множество -- подсказка, что легален только "none".
+    empty = _decision_instruction(())
+    assert '"none"' in empty
+
+
+def test_parse_decision_strict_rules() -> None:
+    """W1: парсер -- строгий: ровно 2 ключа, id из множества или none."""
+    from guide_robot_llm.eval.runner import _parse_decision
+
+    cands = ("a", "b")
+    assert _parse_decision(DECISION_GOOD, candidates=cands) == {
+        "target_id": "a",
+        "confidence": 0.9,
+    }
+    assert _parse_decision(DECISION_NONE, candidates=cands) == {
+        "target_id": None,
+        "confidence": 0.6,
+    }
+    # Вне множества -- reject.
+    assert _parse_decision('{"target_id": "zzz", "confidence": 0.5}', candidates=cands) is None
+    # Лишний ключ -- reject.
+    assert _parse_decision(
+        '{"target_id": "a", "confidence": 0.5, "think": "x"}', candidates=cands
+    ) is None
+    # bool confidence -- reject (bool ⊂ int в Python).
+    assert _parse_decision('{"target_id": "a", "confidence": true}', candidates=cands) is None
+    # Вне [0, 1] -- reject.
+    assert _parse_decision('{"target_id": "a", "confidence": -0.1}', candidates=cands) is None
+    # Пустое множество: только "none" легален.
+    assert _parse_decision(DECISION_NONE, candidates=()) == {"target_id": None, "confidence": 0.6}
+    assert _parse_decision(DECISION_GOOD, candidates=()) is None
+    # Не-JSON -- reject.
+    assert _parse_decision("нет json", candidates=cands) is None

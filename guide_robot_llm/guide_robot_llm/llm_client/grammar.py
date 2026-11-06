@@ -19,7 +19,11 @@
 
 from __future__ import annotations
 
-__all__ = ["build_action_grammar", "build_observation_grammar"]
+__all__ = [
+    "build_action_grammar",
+    "build_decision_grammar",
+    "build_observation_grammar",
+]
 
 # Порядок полей контракта фиксирован (ADR-0001 §2) -- не менять:
 # repair-инструкции и парсер на него опираются.
@@ -151,3 +155,34 @@ def build_observation_grammar(candidate_ids: list[str]) -> str:
     if candidate_id_rule is not None:
         rules.append(candidate_id_rule)
     return "\n".join([*rules, *_JSON_RULES.splitlines()])
+
+
+# Решение (исправление W1, openspec fix-eval-w1-pointing-final-choice):
+# финальный выбор для pointing-кейса. Закрытая форма: ровно один id из
+# СОБСТВЕННОГО наблюдения модели либо литерал "none" (отказ). Ключи -- с
+# теми же экранированными кавычками, что у других root'ов (см. _ACTION_ROOT):
+# strict json.loads хост-парсера принимает только валидный JSON.
+_DECISION_ROOT = (
+    'root ::= "{" ws "\\"target_id\\"" ws ":" ws target-id ws "," ws '
+    '"\\"confidence\\"" ws ":" ws confidence ws "}" ws'
+)
+
+
+def build_decision_grammar(candidate_ids: list[str]) -> str:
+    """Собрать GBNF фазы решения (финальный выбор, исправление W1).
+
+    `candidate_ids` -- id кандидатов из наблюдения модели: модель не
+    сгенерирует ни одного id вне этого списка; единственная альтернатива
+    id-ам -- литерал "none" (отказ). Пустой список легален: единственный
+    допустимый ответ -- "none" (кейс «никто не указывает»). Кольлизия id
+    "none" -- ошибка: грамматика должна оставаться однозначной.
+    """
+    if "none" in candidate_ids:
+        raise ValueError("кандидат id 'none' конфликтует с литералом отказа")
+    none_lit = '"\\"none\\""'  # GBNF-литерал JSON-строки "none"
+    if candidate_ids:
+        id_rule = " | ".join(f'"\\"{name}\\""' for name in candidate_ids)
+        target_id_rule = f"target-id ::= ({id_rule} | {none_lit}) ws"
+    else:
+        target_id_rule = f"target-id ::= {none_lit} ws"
+    return "\n".join([_DECISION_ROOT, target_id_rule, _CONFIDENCE_RULE, *_JSON_RULES.splitlines()])

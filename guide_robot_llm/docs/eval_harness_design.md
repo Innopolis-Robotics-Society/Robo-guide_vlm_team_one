@@ -237,10 +237,25 @@ Deterministic for a fixed `--bootstrap-seed` (default 0, 1000 resamples);
   - perception: `pointing_evidence` accuracy vs gold presence,
     `pointing_box` IoU vs gold box (where gold has a box),
     gold-target membership in `exhibit_candidates` (top-2 recall slice);
-  - policy/action: top-1 target accuracy (action-args ID or freeform answer
-    mapped via candidate table), false-positive rate on no-target/ambiguous
-    cases (gold `unknown` + model answered), abstention credit (gold
-    `unknown` + model abstained).
+  - policy/action — **deployed `target_box` cases are judged on the final
+    decision, not on candidate recall** (W1 fix, 2026-11-05). The runner
+    fires a **decision phase** after the main phase/loop: one call with a
+    closed grammar over the ids the model itself listed in
+    `exhibit_candidates` (plus the `"none"` abstain literal), instruction
+    embedded in the call. Artifacts: `raw_decision.txt` +
+    `parsed_decision.json` per case. Scoring: correct pick → `pass`;
+    wrong pick → `fail`; abstain on a target case → unjudged +
+    `abstention_credit`; no-target case (gold `unknown`): naming a
+    candidate → `fail` (`false_positive`), abstain → `pass` +
+    `abstention_credit`; missing decision file (legacy runs) →
+    `decision_missing`, unjudged; file present but unparsed →
+    `decision_unparsed`, unjudged. Aggregates:
+    `policy.pointing.final_choice_accuracy` (judged picks only),
+    `abstention_rate`, `decision_missing_rate`. The old recall-based
+    `pass` is gone; recall stays as a perception column.
+  - freeform pointing cases (no decision phase): top-1 target accuracy
+    (freeform answer mapped via candidate table) under
+    `policy.pointing.top1_target_accuracy`.
 - **Audience**: `people_count` MAE + exact-count accuracy + within-1
   accuracy over 0–5. Freeform answers are judged on count extracted from
   the `answer` text (digit words/ordinals, "Всего N" totals); a refusal is
@@ -263,6 +278,69 @@ Deterministic for a fixed `--bootstrap-seed` (default 0, 1000 resamples);
   policy problem — the report must let a reviewer tell them apart), plus an
   explicit statement: *diagnostic only — no final project score, no #11
   selection*.
+
+## Replay mode (virtual geometry, `add-pointing-virtual-replay`)
+
+The offline harness cannot run the live pointing pipeline (no robot pose,
+camera, or depth). Replay mode closes that gap **on a fixed virtual
+geometry**: the runner takes a per-manifest **geometry sidecar** and, after
+the decision phase, runs the real production resolver
+(`guide_robot_vision.pointing.resolve_pointing()`) on the model's own
+observation. The model call is unchanged — only the geometric ground truth
+is virtual. This measures *pipeline mechanics + model behavior under the
+production contract*, not the physical robot (a live-episode dataset is out
+of scope).
+
+**Activation.** `runner --geometry <sidecar.json>` (per-run flag; a standard
+run without it is byte-for-byte unchanged). The matrix driver threads a
+per-leg `"geometry"` field from the campaign config into the runner and
+validates the file exists before any leg starts.
+
+**Geometry sidecar** (`pointing_virtual_geometry.v1`). One JSON per manifest,
+keyed by `case_id`; per case: 4 candidate anchors (normalized `x`,`y` in the
+image frame), inverted robot-frame positions (clamped to `D_MAX_M=10.0`),
+clamped flags, a 15%-of-frame `gold_region`, the pinned production camera
+model (`1280×720`, HFOV 60°, VFOV 34°, mount `z=1.0 m`, pitch 10°), the
+image `sha256` (must match the manifest), author/method/date, and
+`review_status`. No unflagged horizon violations are allowed. Anchors are
+**agent-authored then human-reviewed** — `review_status: confirmed` is the
+gate; the sidecar is rejected at load time otherwise. Review workflow:
+`scripts/author_pointing_geometry.py` (source of truth for anchors) →
+`scripts/make_geometry_review_page.py` → a self-contained `geometry_review.html`
+(anchors + gold regions overlaid on every image) → a human passes it →
+`review_status` is set to `confirmed`. The current confirmed sidecars:
+`eval_manifests/egopoint_15.geometry.json` and
+`eval_manifests/pointing_holdout_15.geometry.json` (confirmed 2026-11-06,
+3 review rounds; two golds flipped to option D — `EPO-REAL-1270`,
+`EPO-REAL-0021`).
+
+**Resolution step.** After the decision phase, per pointing case the runner
+builds the `PointingContext` from the model's parsed observation
+(`pointing_evidence`, `pointing_box`, `exhibit_candidates`), the sidecar
+candidates, the fixed robot pose (origin) and production camera, and the
+decision-phase pick as `model_content_id`, then calls the real
+`resolve_pointing()`. Artifacts: `resolution.json` per case — `status`
+(`resolved` / `ambiguous` / `no_candidate` / `model_abstained`), `content_id`,
+`geometry_leader`, `model_content_id`, `box_iou`, and capped per-candidate
+scores. A model abstain (`decision: none`) maps to `model_abstained` — the
+resolver is not run, matching the production safe-fallback.
+
+**Scoring** — new block `policy.pointing.replay` (decomposition signal; the
+primary pointing metric `final_choice_accuracy` is untouched):
+`detection_rate` (share of cases with `pointing_evidence: yes`),
+`resolved_accuracy` (resolved cases whose `content_id` == gold),
+`agreement_rate` (resolved cases where the resolver's pick == the model's
+decision pick), `box_iou_mean` (model box vs gold region), and
+`clarification_rate` (`ambiguous` / `no_candidate` shares). A
+`scripts/tabulate_replay.py` aggregates a campaign directory into a stable
+`replay_tabulation.csv` (one row per model×leg) for selection.
+
+**Selection campaign.** `scripts/matrix_virtual_replay.json` is the 16-run
+selection grid (4 models × {base, P0, P3, P4} × `egopoint_15`, every leg
+carrying the confirmed sidecar); the held-out confirmation legs
+(`pointing_holdout_15`) are a separate config, added only for the top pairs
+so the selection grid stays exactly 16 runs. Same `:11434` GPU guard as the
+W1 matrix.
 
 ## Freeze rules
 

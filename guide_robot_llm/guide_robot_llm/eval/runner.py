@@ -54,15 +54,25 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Protocol
 
+from guide_robot_llm.eval.geometry import PRODUCTION_CAMERA, box_iou as _box_iou
 from guide_robot_llm.eval.schema import Case, case_to_dict
 from guide_robot_llm.llm_client.backend import Backend, BackendConfig, build_content
 from guide_robot_llm.llm_client.grammar import (
     _CONFIDENCE_RULE,
     _JSON_RULES,
     build_action_grammar,
+    build_decision_grammar,
     build_observation_grammar,
 )
 from guide_robot_llm.llm_client.telemetry import ClientTelemetry
+from guide_robot_llm.pointing import (
+    Candidate,
+    CameraGeometry,
+    PointingContext,
+    PointingEvidence,
+    RobotPose,
+    resolve_pointing,
+)
 from guide_robot_llm.tools.validate import parse_action
 from guide_robot_llm.visual_context import (
     QUALITY_OK,
@@ -136,6 +146,19 @@ _FREEFORM_INSTRUCTION = (
     "нельзя -- abstain=true."
 )
 
+# Инструкция фазы решения (исправление W1): закрытая форма -- ровно один id
+# из списка наблюдения либо "none" (отказ).
+_DECISION_INSTRUCTION_TEMPLATE = (
+    "[Инструкция фазы решения]\n"
+    "На основании наблюдения реши, какой экспонат указывает человек, и "
+    "ответь ТОЛЬКО одним JSON-объектом вида "
+    '{"target_id": "<id>" | "none", "confidence": <0..1>} '
+    "без какого-либо текста до или после него.\n"
+    "target_id -- ровно один id из списка того, что ты видел в наблюдении; "
+    'если жеста-указания не видно или цель определить нельзя -- "none".\n'
+    "Доступные id экспонатов из наблюдения: {IDS}."
+)
+
 _MIME_BY_FORMAT = {"jpg": "image/jpeg", "jpeg": "image/jpeg", "png": "image/png"}
 
 
@@ -167,6 +190,31 @@ def parse_freeform_answer(text: str) -> dict[str, Any] | None:
     if not isinstance(data["abstain"], bool):
         return None
     return {"answer": data["answer"], "confidence": confidence, "abstain": data["abstain"]}
+
+
+def _parse_decision(text: str, *, candidates: tuple[str, ...]) -> dict[str, Any] | None:
+    """Строгий host-парсер фазы решения; `None` = malformed.
+
+    Правила те же, что у `parse_freeform_answer`: ровно два ключа, `target_id`
+    -- один из id наблюдения или "none" (отказ → `None` в записи),
+    `confidence` -- число в [0, 1] (bool отклоняется).
+    """
+    try:
+        data = json.loads(text.strip())
+    except (json.JSONDecodeError, ValueError):
+        return None
+    if not isinstance(data, dict) or set(data) != {"target_id", "confidence"}:
+        return None
+    target = data["target_id"]
+    if target != "none" and (not isinstance(target, str) or target not in candidates):
+        return None
+    confidence = data["confidence"]
+    if isinstance(confidence, bool) or not isinstance(confidence, int | float):
+        return None
+    confidence = float(confidence)
+    if not 0.0 <= confidence <= 1.0:
+        return None
+    return {"target_id": None if target == "none" else target, "confidence": confidence}
 
 
 def media_to_data_url(media_path: Path) -> str:
@@ -368,6 +416,16 @@ def _action_instruction(allowed_tools: tuple[str, ...]) -> str:
     return _ACTION_INSTRUCTION_TEMPLATE.replace("{TOOLS}", tools)
 
 
+def _decision_instruction(candidates: tuple[str, ...]) -> str:
+    """Инструкция фазы решения с inline-списком id из наблюдения."""
+    ids = (
+        ", ".join(candidates)
+        if candidates
+        else '(пустой -- единственный допустимый ответ "none")'
+    )
+    return _DECISION_INSTRUCTION_TEMPLATE.replace("{IDS}", ids)
+
+
 def _action_to_dict(action: Any | None) -> dict[str, Any] | None:
     """`ParsedAction` → плоский dict для записи в run-директорию."""
     if action is None:
@@ -391,6 +449,18 @@ def _observation_to_dict(observation: Observation | None) -> dict[str, Any] | No
         "pointing_box": observation.pointing_box,
         "scene_facts": observation.scene_facts,
     }
+
+
+def _dict_to_observation(data: dict[str, Any]) -> Observation:
+    """Плоский dict записи → `Observation` (для рендера фазе решения)."""
+    box = data.get("pointing_box")
+    return Observation(
+        people_count=data.get("people_count", 0),
+        exhibit_candidates=tuple(data.get("exhibit_candidates") or ()),
+        pointing_evidence=data.get("pointing_evidence", "none"),
+        scene_facts=data.get("scene_facts", ""),
+        pointing_box=tuple(box) if box is not None else None,
+    )
 
 
 def _parse_observation(
@@ -424,7 +494,7 @@ class MockBackend:
     """Тестовый/драйв-раннер бэкенд: заранее заготовленные ответы без сети.
 
     Ключи ответов -- пары `(case_id, phase)`, где фаза --
-    `observation` / `action` / `freeform`. Раннер перед каждым вызовом
+    `observation` / `action` / `freeform` / `decision`. Раннер перед каждым вызовом
     вызывает `set_context(case_id, phase)`; неизвестный кейс/фаза →
     пустой текст (host-парсер отметит `parse_failed` -- прогон фиксирует
     сбой, а не молча пропускает кейс).
@@ -522,6 +592,9 @@ class LoopResult:
     calls: list[LoopCallRecord]
     terminal_reason: str
     terminal_abstain: bool | None
+    # Базовые сообщения последнего вызова (система + кадры) -- для фазы
+    # решения после цикла (исправление W1).
+    final_messages: list[dict[str, Any]] | None = None
 
 
 @dataclass
@@ -536,6 +609,13 @@ class CaseRun:
     observation: PhaseRecord | None = None
     action: PhaseRecord | None = None
     freeform: PhaseRecord | None = None
+    # Финальный выбор pointing-кейса (исправление W1).
+    decision: PhaseRecord | None = None
+    # Replay-режим (add-pointing-virtual-replay): итог production-
+    # resolve_pointing() на виртуальной геометрии кейса (D1). `None` --
+    # прогон без флага `--geometry` либо кейс без разобранного
+    # наблюдения.
+    resolution: dict[str, Any] | None = None
     error: str = ""
     variant_id: str | None = None
     # execution=loop (F3): число вызовов, путь остановки, терминальный
@@ -795,6 +875,7 @@ def _run_loop(
 
     calls: list[LoopCallRecord] = []
     final: PhaseRecord | None = None
+    final_messages: list[dict[str, Any]] | None = None
     terminal_reason = "budget_exhausted"
     for tick in range(budget_ticks):
         if tick >= max_calls:
@@ -802,6 +883,7 @@ def _run_loop(
             break
         frame_path, frame_urls = frames[min(tick, len(frames) - 1)]
         messages = _phase_messages(case, variant, ex_root, instruction, frame_urls)
+        final_messages = messages
         if mode == "deployed":
             final = _run_phase(
                 llm,
@@ -850,7 +932,136 @@ def _run_loop(
         calls=calls,
         terminal_reason=terminal_reason,
         terminal_abstain=terminal_abstain,
+        final_messages=final_messages,
     )
+
+
+def _run_decision_phase(
+    llm: Llm,
+    case: Case,
+    *,
+    base_messages: list[dict[str, Any]],
+    observation: Observation,
+    max_attempts: int,
+) -> PhaseRecord:
+    """Фаза решения (исправление W1): финальный выбор по кандидатам
+    наблюдения. Один вызов; грамматика закрыта на id самого наблюдения.
+    Паттерн -- как у фазы действия: базовые сообщения + инструкция +
+    отрендеренное наблюдение.
+    """
+    obs_ids = tuple(observation.exhibit_candidates)
+    messages = [
+        *base_messages,
+        {"role": "user", "content": _decision_instruction(obs_ids)},
+        {
+            "role": "user",
+            "content": render_observation(
+                observation,
+                quality=QUALITY_OK,
+                max_chars=OBSERVATION_MAX_CHARS,
+            ),
+        },
+    ]
+    return _run_phase(
+        llm,
+        messages,
+        case_id=case.case_id,
+        grammar=build_decision_grammar(list(obs_ids)),
+        phase="decision",
+        max_attempts=max_attempts,
+        parse_fn=lambda text: _parse_decision(text, candidates=obs_ids),
+    )
+
+
+def _candidate_names(case: Case) -> dict[str, str]:
+    """Имена кандидатов для языка-сигнала резолюции: `slices.answer_map`
+    (текст опции → id); без мапы -- id сам по себе."""
+    answer_map = case.slices.get("answer_map") or {}
+    return {cid: label for label, cid in answer_map.items()}
+
+
+def _run_resolution(
+    case: Case, run: CaseRun, geometry_entry: dict[str, Any]
+) -> dict[str, Any] | None:
+    """Replay (D1): настоящий `resolve_pointing()` на виртуальной геометрии.
+
+    Вход: разобранное наблюдение (evidence/box/видимые id) + выбор фазы
+    решения + запись сайдcara кейса. Выход -- плоский dict для
+    `resolution.json`: статус, resolved id, геомет-лидер, box_iou,
+    ограниченные per-candidate-счёты. Модель-отказ (decision "none") --
+    `model_abstained`: резолюция не запускалась, в production это тот же
+    safe fallback (уточнение).
+    """
+    obs = run.observation.parsed if run.observation is not None else None
+    if not isinstance(obs, dict) or case.gold.get("type") != "target_box":
+        return None
+    positions = geometry_entry.get("positions") or {}
+    names = _candidate_names(case)
+    candidates: list[Candidate] = []
+    for cid in case.candidates:
+        pos = positions.get(cid)
+        if not isinstance(pos, dict) or "x" not in pos or "y" not in pos:
+            raise ValueError(
+                f"geometry sidecar: нет позиции кандидата {cid} "
+                f"(кейс {case.case_id})"
+            )
+        candidates.append(
+            Candidate(id=cid, name=names.get(cid, cid), x=pos["x"], y=pos["y"])
+        )
+    evidence = obs.get("pointing_evidence")
+    box = obs.get("pointing_box")
+    pointing = PointingEvidence(
+        present=evidence == "yes",
+        box=tuple(box) if box is not None else None,
+    )
+    gold_region = geometry_entry.get("gold_region")
+    box_iou = (
+        _box_iou(tuple(box), tuple(gold_region))
+        if box is not None and gold_region is not None
+        else None
+    )
+    decision = run.decision.parsed if run.decision is not None else None
+    pick = decision.get("target_id") if isinstance(decision, dict) else None
+    ctx = PointingContext(
+        candidates=tuple(candidates),
+        robot_pose=RobotPose(x=0.0, y=0.0, yaw=0.0),
+        camera=CameraGeometry(**PRODUCTION_CAMERA),
+        pointing=pointing,
+        utterance=case.prompt.user_text,
+        frame_quality=QUALITY_OK,
+        visible_ids=frozenset(obs.get("exhibit_candidates") or ()),
+    )
+    if pick is None:
+        return {
+            "status": "model_abstained",
+            "content_id": None,
+            "geometry_leader": None,
+            "model_content_id": None,
+            "box_iou": box_iou,
+            "scores": [],
+        }
+    resolution = resolve_pointing(ctx, model_content_id=pick)
+    leader = max(resolution.scores, key=lambda s: s.score, default=None)
+    return {
+        "status": resolution.status,
+        "content_id": resolution.content_id,
+        "geometry_leader": (
+            leader.content_id if leader is not None and leader.score > 0.0 else None
+        ),
+        "model_content_id": pick,
+        "box_iou": box_iou,
+        "scores": [
+            {
+                "content_id": s.content_id,
+                "score": s.score,
+                "in_image": s.in_image,
+                "visible": s.visible,
+                "geometry": round(s.geometry, 6),
+                "language": round(s.language, 6),
+            }
+            for s in resolution.scores
+        ],
+    }
 
 
 def run_case(
@@ -863,6 +1074,7 @@ def run_case(
     examples_root: Path | None = None,
     loop_max_calls: int = LOOP_MAX_CALLS,
     loop_budget_ticks: int = LOOP_BUDGET_TICKS,
+    replay_geometry: dict[str, Any] | None = None,
 ) -> CaseRun:
     """Прогнать один кейс (без записи -- см. `write_case_run`).
 
@@ -894,6 +1106,9 @@ def run_case(
     )
 
     try:
+        # Базовые сообщения для фазы решения: single-путь -- сообщения
+        # наблюдения, loop -- сообщения последнего вызова (W1).
+        base_messages: list[dict[str, Any]] | None = None
         if variant is not None and variant.execution == "loop":
             loop = _run_loop(
                 llm,
@@ -913,6 +1128,7 @@ def run_case(
             run.terminal_reason = loop.terminal_reason
             run.terminal_abstain = loop.terminal_abstain
             run.loop_calls = loop.calls
+            base_messages = loop.final_messages
         elif mode == "deployed":
             base_messages = _phase_messages(
                 case,
@@ -1023,6 +1239,29 @@ def run_case(
                     max_attempts=max_attempts,
                     parse_fn=parse_freeform_answer,
                 )
+        # Фаза решения (исправление W1): финальный выбор для pointing-
+        # кейсов. Срабатывает ТОЛЬКО при разобранным наблюдении: модель
+        # выбирает ровно один id из собственного наблюдения или "none"
+        # (отказ); для no-target кейсов единственный легальный ответ --
+        # "none". Один вызов, после цикла в loop-вариантах.
+        if (
+            mode == "deployed"
+            and case.gold.get("type") == "target_box"
+            and base_messages is not None
+        ):
+            obs_dict = run.observation.parsed if run.observation is not None else None
+            if isinstance(obs_dict, dict):
+                run.decision = _run_decision_phase(
+                    llm,
+                    case,
+                    base_messages=base_messages,
+                    observation=_dict_to_observation(obs_dict),
+                    max_attempts=max_attempts,
+                )
+        # Replay (add-pointing-virtual-replay, D1): после фазы решения --
+        # настоящая production-резолюция на виртуальной геометрии.
+        if replay_geometry is not None:
+            run.resolution = _run_resolution(case, run, replay_geometry)
     except _PhaseBackendError as error:
         run.status = "backend_error"
         run.error = str(error)
@@ -1059,7 +1298,7 @@ def write_case_run(case: Case, run: CaseRun, out_dir: Path) -> Path:
             )
 
     phases: dict[str, Any] = {}
-    for phase_name in ("observation", "action", "freeform"):
+    for phase_name in ("observation", "action", "freeform", "decision"):
         record = getattr(run, phase_name)
         if record is None:
             continue
@@ -1097,6 +1336,9 @@ def write_case_run(case: Case, run: CaseRun, out_dir: Path) -> Path:
     if run.loop_calls is not None:
         with open(case_dir / "loop.json", "w", encoding="utf-8") as fh:
             json.dump([asdict(call) for call in run.loop_calls], fh, ensure_ascii=False, indent=2)
+    if run.resolution is not None:
+        with open(case_dir / "resolution.json", "w", encoding="utf-8") as fh:
+            json.dump(run.resolution, fh, ensure_ascii=False, indent=2)
     return case_dir
 
 
@@ -1111,6 +1353,7 @@ def run_manifest(
     examples_root: Path | None = None,
     loop_max_calls: int = LOOP_MAX_CALLS,
     loop_budget_ticks: int = LOOP_BUDGET_TICKS,
+    replay_geometry: dict[str, dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     """Прогнать список кейсов → run-директория + `run_manifest.json`.
 
@@ -1134,6 +1377,9 @@ def run_manifest(
             examples_root=examples_root,
             loop_max_calls=loop_max_calls,
             loop_budget_ticks=loop_budget_ticks,
+            replay_geometry=(
+                replay_geometry.get(case.case_id) if replay_geometry else None
+            ),
         )
         write_case_run(case, run, out_dir)
         latency_ms, attempts = _case_totals(run)
@@ -1163,6 +1409,7 @@ def _phase_records(run: CaseRun) -> tuple[tuple[str, PhaseRecord | None], ...]:
         ("observation", run.observation),
         ("action", run.action),
         ("freeform", run.freeform),
+        ("decision", run.decision),
     )
 
 
@@ -1268,6 +1515,7 @@ def write_run_config(
     loop_max_calls: int = LOOP_MAX_CALLS,
     loop_budget_ticks: int = LOOP_BUDGET_TICKS,
     data_root: Path | None = None,
+    geometry_path: Path | None = None,
 ) -> Path:
     """Записать `run_config.json` -- freeze-метаданные прогона (Taiga #10, AC).
 
@@ -1298,6 +1546,11 @@ def write_run_config(
             "data_root": str(data_root) if data_root is not None else None,
         },
     }
+    if geometry_path is not None:
+        config["geometry"] = {
+            "path": str(geometry_path),
+            "sha256": _sha256_of_file(geometry_path),
+        }
     path = out_dir / "run_config.json"
     path.write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")
     return path
@@ -1332,7 +1585,16 @@ def main(argv: list[str] | None = None) -> int:
         "--examples-root",
         help="корень медиа few-shot-примеров (по умолчанию корень пакета)",
     )
+    parser.add_argument(
+        "--geometry",
+        help="сайдкар виртуальной геометрии (replay, add-pointing-virtual-replay)",
+    )
     args = parser.parse_args(argv)
+
+    replay_geometry: dict[str, dict[str, Any]] | None = None
+    if args.geometry:
+        geometry_doc = json.loads(Path(args.geometry).read_text(encoding="utf-8"))
+        replay_geometry = geometry_doc.get("cases") or {}
 
     from guide_robot_llm.eval.loader import load_manifest as _load_manifest
 
@@ -1358,6 +1620,7 @@ def main(argv: list[str] | None = None) -> int:
         examples_root=Path(args.examples_root) if args.examples_root else None,
         loop_max_calls=args.loop_max_calls,
         loop_budget_ticks=args.loop_budget_ticks,
+        replay_geometry=replay_geometry,
     )
     freeze = dict(
         backend=backend_info,
@@ -1367,6 +1630,7 @@ def main(argv: list[str] | None = None) -> int:
         loop_max_calls=args.loop_max_calls,
         loop_budget_ticks=args.loop_budget_ticks,
         data_root=common["data_root"],
+        geometry_path=Path(args.geometry) if args.geometry else None,
     )
 
     if not args.prompt_variant:

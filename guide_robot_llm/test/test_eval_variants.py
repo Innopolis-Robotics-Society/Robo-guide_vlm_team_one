@@ -40,6 +40,7 @@ OBS_GOOD = (
     '"scene_facts": "один человек у шкафа"}'
 )
 FREEFORM_GOOD = '{"answer": "2 человека, готов 1", "confidence": 0.8, "abstain": false}'
+DECISION_GOOD = '{"target_id": "a", "confidence": 0.9}'
 
 
 def _case(case_id: str, track: str, gold: dict, mode: str = "deployed") -> dict:
@@ -147,8 +148,10 @@ def test_run_manifest_by_variant_id_only_runs_its_track(tmp_path) -> None:
     vs = _variants()
     data_root = tmp_path / "data"
 
-    # P1: deployed single → только pointing-кейс
-    llm = MockBackend({("VAR-POI-01", "observation"): OBS_GOOD})
+    # P1: deployed single → только pointing-кейс (+ фаза решения, W1)
+    llm = MockBackend(
+        {("VAR-POI-01", "observation"): OBS_GOOD, ("VAR-POI-01", "decision"): DECISION_GOOD}
+    )
     lines = run_manifest(cases, llm, tmp_path / "run-p1", variant=vs["P1"], data_root=data_root)
     assert [row["case_id"] for row in lines] == ["VAR-POI-01"]
     assert all(row["variant"] == "P1" and row["status"] == "ok" for row in lines)
@@ -172,8 +175,8 @@ def test_cot_2pass_two_calls_grammar_and_bridge(tmp_path) -> None:
     vs = _variants()
     data_root = tmp_path / "data"
 
-    # deployed: D2 (cot_2pass)
-    backend = RecordingBackend(["рассуждение: человек, шкаф", OBS_GOOD])
+    # deployed: D2 (cot_2pass) + фаза решения (W1) -- 3-й вызов
+    backend = RecordingBackend(["рассуждение: человек, шкаф", OBS_GOOD, DECISION_GOOD])
     run = run_case(
         cases["VAR-POI-01"],
         backend,
@@ -185,9 +188,14 @@ def test_cot_2pass_two_calls_grammar_and_bridge(tmp_path) -> None:
     assert run.observation.parsed is not None  # strict-ответ pass-2 распарсился
     assert run.observation.calls == 2
     assert run.observation.cot_reason == "рассуждение: человек, шкаф"
-    assert len(backend.calls) == 2
+    assert len(backend.calls) == 3
     assert backend.calls[0]["grammar"] is None  # pass 1 -- без грамматики
     assert backend.calls[1]["grammar"] is not None  # pass 2 -- строгая
+    # Фаза решения: строгая грамматика с target_id + разобранное решение
+    assert backend.calls[2]["grammar"] is not None
+    assert "target_id" in backend.calls[2]["grammar"]
+    assert run.decision is not None
+    assert run.decision.parsed == {"target_id": "a", "confidence": 0.9}
     # Текст pass-1 в контексте pass-2 (мост-сообщение, последнее в списке).
     bridge = backend.calls[1]["messages"][-1]
     assert bridge["role"] == "user"

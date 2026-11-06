@@ -1,0 +1,41 @@
+{
+  "campaign": "virtual-replay-holdout",
+  "doc": "Held-out-подтверждение верхних пар (OpenSpec add-pointing-virtual-replay, V5.2): qwen3.5-9b×P0 и gemma4-e4b×P0 на pointing_holdout_15 (только подтверждение, отбор был на egopoint_15 — см. eval_runs/2026-11-06-virtual-replay/selection_note.md). Запуск в ТОМ ЖЕ каталоге кампании: --campaign-dir eval_runs/2026-11-06-virtual-replay (ноги h15-* не конфликтуют с p15-* в state.json).",
+  "llama_server_bin": "/home/sinorin/llama.cpp/build-cuda/bin/llama-server",
+  "host": "127.0.0.1",
+  "port": 11436,
+  "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+  "read_timeout_s": 180.0,
+  "max_attempts": 2,
+  "health_timeout_s": 300,
+  "models": [
+    {
+      "id": "gemma4-e4b",
+      "enabled": true,
+      "profile": "config/models/gemma4-e4b.env",
+      "min_free_gb": 8
+    },
+    {
+      "id": "qwen3.5-9b",
+      "enabled": true,
+      "profile": "config/models/qwen3.5-9b.env",
+      "min_free_gb": 9
+    }
+  ],
+  "campaigns": [
+    {
+      "name": "h15-p0-9b",
+      "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+      "variant": "P0",
+      "geometry": "eval_manifests/pointing_holdout_15.geometry.json",
+      "models": ["qwen3.5-9b"]
+    },
+    {
+      "name": "h15-p0-e4b",
+      "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+      "variant": "P0",
+      "geometry": "eval_manifests/pointing_holdout_15.geometry.json",
+      "models": ["gemma4-e4b"]
+    }
+  ]
+}

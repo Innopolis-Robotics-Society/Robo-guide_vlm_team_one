@@ -258,7 +258,9 @@ def _build_run(tmp_path: Path) -> Path:
     ]
     responses: dict[tuple[str, str], str] = {
         ("SC-P1", "observation"): OBS_P1,
+        ("SC-P1", "decision"): '{"target_id": "a", "confidence": 0.9}',  # верно (W1)
         ("SC-P2", "observation"): OBS_P2,
+        ("SC-P2", "decision"): '{"target_id": "b", "confidence": 0.5}',  # неверно (W1)
         ("SC-P3", "freeform"): FF_P3,
         ("SC-P4", "freeform"): FF_P4,
         ("SC-P5", "freeform"): FF_P5,
@@ -522,7 +524,15 @@ def test_deployed_no_target_case_abstention_credit(tmp_path: Path) -> None:
         _case("NT-1", gold=gold),
         _case("NT-2", gold=gold),
     ]
-    backend = MockBackend({("NT-1", "observation"): abstain, ("NT-2", "observation"): answered})
+    backend = MockBackend(
+        {
+            ("NT-1", "observation"): abstain,
+            ("NT-2", "observation"): answered,
+            # W1: вердикт -- по финальному выбору, не по наблюдениям.
+            ("NT-1", "decision"): '{"target_id": "none", "confidence": 0.8}',
+            ("NT-2", "decision"): '{"target_id": "a", "confidence": 0.7}',
+        }
+    )
     (tmp_path / FAKE_MEDIA).write_bytes(b"x")
     out = tmp_path / "run"
     run_manifest(cases, backend, out, data_root=tmp_path)
@@ -534,6 +544,134 @@ def test_deployed_no_target_case_abstention_credit(tmp_path: Path) -> None:
     m = score["metrics"]["policy"]["pointing"]["no_target"]
     assert m["false_positive_rate"] == {"value": 0.5, "n": 2}
     assert m["abstention_credit"] == {"value": 0.5, "n": 2}
+
+
+# --- W1: финальный выбор определяет pass --------------------------------------
+
+W1_OBS = (
+    '{"people_count": 1, "exhibit_candidates": ["a", "b"],'
+    ' "pointing_evidence": "yes", "pointing_box": null, "scene_facts": "x"}'
+)
+
+
+def test_w1_final_choice_determines_pass(tmp_path: Path) -> None:
+    """W1: верный выбор → pass, неверный → fail, отказ → unjudged + credit.
+
+    Три кейса с ОДНОЙ И ТОЙ ЖЕ перцепцией (gold в кандидатах): различается
+    только фаза решения -- recall на вердикт не влияет.
+    """
+    gold = _target_gold("a", ("a", "b"))
+    cases = [_case(f"W1-{i}", gold=gold) for i in range(3)]
+    backend = MockBackend(
+        {
+            ("W1-0", "observation"): W1_OBS,
+            ("W1-0", "decision"): '{"target_id": "a", "confidence": 0.9}',  # верно
+            ("W1-1", "observation"): W1_OBS,
+            ("W1-1", "decision"): '{"target_id": "b", "confidence": 0.8}',  # неверно
+            ("W1-2", "observation"): W1_OBS,
+            ("W1-2", "decision"): '{"target_id": "none", "confidence": 0.5}',  # отказ
+        }
+    )
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest(cases, backend, out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    # Перцепция у всех трёх одинаковая: цель в кандидатах.
+    for i in range(3):
+        p = score["per_case"][f"W1-{i}"]["perception"]
+        assert p["target_in_candidates"] is True
+        assert p["evidence_correct"] is True
+    # Политика: вердикт -- финальный выбор.
+    assert score["per_case"]["W1-0"]["pass"] is True
+    assert score["per_case"]["W1-0"]["policy"]["top1_correct"] is True
+    assert score["per_case"]["W1-1"]["pass"] is False
+    assert score["per_case"]["W1-1"]["policy"]["top1_correct"] is False
+    # Отказ на кейсе с целью: unjudged + credit, НЕ pass.
+    assert score["per_case"]["W1-2"]["pass"] is None
+    assert score["per_case"]["W1-2"]["policy"]["abstained"] is True
+    assert score["per_case"]["W1-2"]["policy"]["abstention_credit"] is True
+    assert score["pass_counts"] == {"pass": 1, "fail": 1, "unjudged": 1}
+    # Агрегаты: точность -- по судимым (1/2); отказ 1 из 3.
+    m = score["metrics"]["policy"]["pointing"]
+    assert m["final_choice_accuracy"] == {"value": 0.5, "n": 2}
+    # _mean округляет до 4 знаков: 1/3 → 0.3333.
+    assert m["abstention_rate"] == {"value": round(1 / 3, 4), "n": 3}
+
+
+def test_w1_no_target_decision_outcomes(tmp_path: Path) -> None:
+    """W1: no-target -- назвать кого-то FP, отказаться -- верно + credit."""
+    gold = {"type": "target_box", "target_id": NO_TARGET_ID, "box_px": None, "distractors": ["a"]}
+    obs = (
+        '{"people_count": 1, "exhibit_candidates": ["a"], "pointing_evidence": "yes",'
+        ' "pointing_box": null, "scene_facts": "x"}'
+    )
+    cases = [_case(f"WN-{i}", gold=gold) for i in range(2)]
+    backend = MockBackend(
+        {
+            ("WN-0", "observation"): obs,
+            ("WN-0", "decision"): '{"target_id": "none", "confidence": 0.7}',
+            ("WN-1", "observation"): obs,
+            ("WN-1", "decision"): '{"target_id": "a", "confidence": 0.6}',
+        }
+    )
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest(cases, backend, out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    assert score["per_case"]["WN-0"]["pass"] is True
+    assert score["per_case"]["WN-0"]["policy"]["abstention_credit"] is True
+    assert score["per_case"]["WN-1"]["pass"] is False
+    assert score["per_case"]["WN-1"]["policy"]["false_positive"] is True
+    m = score["metrics"]["policy"]["pointing"]["no_target"]
+    assert m["false_positive_rate"] == {"value": 0.5, "n": 2}
+    assert m["abstention_credit"] == {"value": 0.5, "n": 2}
+
+
+def test_w1_legacy_without_decision_is_unjudged(tmp_path: Path) -> None:
+    """W1: legacy-прогон (нет decision-артефактов) → unjudged + decision_missing.
+
+    Recall (gold в кандидатах) pass НЕ даёт -- вердикта просто нет.
+    """
+    case = _case("W1L-1", gold=_target_gold("a", ("a", "b")))
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest([case], MockBackend({("W1L-1", "observation"): W1_OBS}), out, data_root=tmp_path)
+    # Имитация pre-W1 прогона: decision-артефакты и meta-запись удалены.
+    case_dir = out / "cases" / "W1L-1"
+    (case_dir / "raw_decision.txt").unlink()
+    (case_dir / "parsed_decision.json").unlink()
+    meta = json.loads((case_dir / "meta.json").read_text(encoding="utf-8"))
+    meta["phases"].pop("decision", None)
+    (case_dir / "meta.json").write_text(json.dumps(meta), encoding="utf-8")
+    score = score_run(out, data_root=tmp_path)
+    r = score["per_case"]["W1L-1"]
+    assert r["pass"] is None
+    assert r["policy"]["decision_missing"] is True
+    # Перцепционные колонки на месте -- они просто не вердикт.
+    assert r["perception"]["target_in_candidates"] is True
+    assert score["pass_counts"] == {"pass": 0, "fail": 0, "unjudged": 1}
+    assert score["metrics"]["policy"]["pointing"]["decision_missing_rate"] == {
+        "value": 1.0,
+        "n": 1,
+    }
+
+
+def test_w1_decision_unparsed_is_unjudged(tmp_path: Path) -> None:
+    """W1: фаза была, но ответ не лег в замкнутую форму → unjudged + decision_unparsed."""
+    case = _case("W1U-1", gold=_target_gold("a", ("a", "b")))
+    backend = MockBackend(
+        {
+            ("W1U-1", "observation"): W1_OBS,
+            ("W1U-1", "decision"): "Не могу выбрать",  # не JSON-формат
+        }
+    )
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest([case], backend, out, data_root=tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    r = score["per_case"]["W1U-1"]
+    assert r["pass"] is None
+    assert r["policy"]["decision_unparsed"] is True
 
 
 # --- t4-count: MAE + exact accuracy ------------------------------------------
@@ -595,7 +733,13 @@ def test_variant_deployed_over_freeform_snapshot_is_judged(tmp_path: Path) -> No
     out = tmp_path / "run"
     run_manifest(
         [case],
-        MockBackend({("MM-1", "observation"): obs}),
+        MockBackend(
+            {
+                ("MM-1", "observation"): obs,
+                # W1: pass определяет финальный выбор, а не recall.
+                ("MM-1", "decision"): '{"target_id": "b", "confidence": 0.9}',
+            }
+        ),
         out,
         data_root=tmp_path,
         variant=variant,
@@ -1377,6 +1521,141 @@ def test_confidence_calibration_absent_without_freeform(tmp_path: Path) -> None:
     assert "confidence" not in score["per_case"]["DC-1"]
     assert "calibration" not in score["metrics"]
     assert "Confidence calibration" not in build_report(score)
+
+
+# --- replay: end-to-end по production resolve_pointing (D1/D4) --------------
+# Геометрия: «a» в (5.0, 0.0) → проекция ≈ (0.50, 0.537); «b» в (4.0, 2.0)
+# → ≈ (0.933, 0.572) (production-камера llm.yaml, единичная поза).
+
+REPLAY_GEO = {
+    "positions": {
+        "a": {"x": 5.0, "y": 0.0, "clamped": False},
+        "b": {"x": 4.0, "y": 2.0, "clamped": False},
+    },
+    "gold_region": [0.45, 0.49, 0.55, 0.58],
+}
+
+REPLAY_OBS_A = (
+    '{"people_count": 1, "exhibit_candidates": ["a", "b"],'
+    ' "pointing_evidence": "yes", "pointing_box": [0.45, 0.49, 0.55, 0.58],'
+    ' "scene_facts": "x"}'
+)
+REPLAY_OBS_B = (
+    '{"people_count": 1, "exhibit_candidates": ["a", "b"],'
+    ' "pointing_evidence": "yes", "pointing_box": [0.88, 0.52, 0.98, 0.62],'
+    ' "scene_facts": "x"}'
+)
+REPLAY_OBS_NONE = (
+    '{"people_count": 1, "exhibit_candidates": ["a", "b"],'
+    ' "pointing_evidence": "none", "pointing_box": null, "scene_facts": "x"}'
+)
+
+
+def _replay_run(tmp_path: Path) -> Path:
+    """4 кейса, по одному на каждый путь replay-вердикта."""
+    gold = _target_gold("a", ("a", "b"))
+    cases = [_case(f"RP-{i}", gold=gold) for i in range(4)]
+    backend = MockBackend(
+        {
+            ("RP-0", "observation"): REPLAY_OBS_A,
+            ("RP-0", "decision"): '{"target_id": "a", "confidence": 0.9}',  # resolved-верно
+            ("RP-1", "observation"): REPLAY_OBS_B,
+            ("RP-1", "decision"): '{"target_id": "b", "confidence": 0.9}',  # resolved-неверно
+            ("RP-2", "observation"): REPLAY_OBS_NONE,
+            ("RP-2", "decision"): '{"target_id": "a", "confidence": 0.9}',  # no_candidate
+            ("RP-3", "observation"): REPLAY_OBS_A,
+            ("RP-3", "decision"): '{"target_id": "none", "confidence": 0.5}',  # model_abstained
+        }
+    )
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest(
+        cases,
+        backend,
+        out,
+        data_root=tmp_path,
+        replay_geometry={c.case_id: REPLAY_GEO for c in cases},
+    )
+    return out
+
+
+def test_replay_verdict_paths(tmp_path: Path) -> None:
+    """Все четыре пути: resolved-верно / resolved-неверно / clarification /
+    model_abstained -- вердикты и артефакты `resolution.json`."""
+    out = _replay_run(tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    # resolved → gold: pass.
+    r0 = score["per_case"]["RP-0"]
+    assert r0["pass"] is True
+    assert r0["replay"]["status"] == "resolved"
+    assert r0["replay"]["resolved_id"] == "a"
+    assert r0["replay"]["correct"] is True
+    # resolved → не gold: fail + high-confidence-wrong.
+    r1 = score["per_case"]["RP-1"]
+    assert r1["pass"] is False
+    assert r1["replay"]["status"] == "resolved"
+    assert r1["replay"]["resolved_id"] == "b"
+    assert r1["replay"]["correct"] is False
+    assert r1["policy"]["replay_high_confidence_wrong"] is True
+    # no evidence → резолюция no_candidate → unjudged + причина.
+    r2 = score["per_case"]["RP-2"]
+    assert r2["pass"] is None
+    assert r2["replay"]["status"] == "no_candidate"
+    assert r2["replay"]["clarification"] == "no_candidate"
+    # модель-отказ: unjudged, резолюция не запускалась.
+    r3 = score["per_case"]["RP-3"]
+    assert r3["pass"] is None
+    assert r3["replay"]["status"] == "model_abstained"
+    assert r3["replay"]["model_abstained"] is True
+    assert r3["policy"]["abstained"] is True
+    assert score["pass_counts"] == {"pass": 1, "fail": 1, "unjudged": 2}
+    # Артефакты на месте: status, resolved id, лидер, box_iou, ограниченные счёты.
+    res0 = json.loads((out / "cases" / "RP-0" / "resolution.json").read_text())
+    assert res0["status"] == "resolved" and res0["content_id"] == "a"
+    assert res0["geometry_leader"] == "a"
+    assert res0["box_iou"] == 1.0
+    assert {s["content_id"] for s in res0["scores"]} == {"a", "b"}
+    res3 = json.loads((out / "cases" / "RP-3" / "resolution.json").read_text())
+    assert res3["status"] == "model_abstained" and res3["scores"] == []
+
+
+def test_replay_aggregates(tmp_path: Path) -> None:
+    """D4-метрики: resolved_accuracy, detection, agreement, box_iou, clarification."""
+    out = _replay_run(tmp_path)
+    score = score_run(out, data_root=tmp_path)
+    m = score["metrics"]["policy"]["pointing"]["replay"]
+    assert m["n"] == 4
+    # Судимы только два resolved: 1 верно из 2.
+    assert m["resolved_accuracy"] == {"value": 0.5, "n": 2}
+    # evidence=yes в RP-0, RP-1, RP-3.
+    assert m["detection_rate"] == {"value": 0.75, "n": 4}
+    # Лидер==выбор только там, где резолюция была (RP-0, RP-1) -- и совпал.
+    assert m["agreement_rate"] == {"value": 1.0, "n": 2}
+    # box_iou: 1.0 (RP-0), 0.0 (RP-1), None (RP-2), 1.0 (RP-3).
+    assert m["box_iou_mean"] == {"value": round(2.0 / 3.0, 4), "n": 3}
+    assert m["clarification_rate"] == {"no_candidate": 0.25}
+
+
+def test_replay_absent_without_geometry_flag(tmp_path: Path) -> None:
+    """Без `replay_geometry` -- ни `resolution.json`, ни replay-колонки:
+    семантика W1 не тронута (регресс)."""
+    gold = _target_gold("a", ("a", "b"))
+    case = _case("RPN-1", gold=gold)
+    backend = MockBackend(
+        {
+            ("RPN-1", "observation"): REPLAY_OBS_A,
+            ("RPN-1", "decision"): '{"target_id": "a", "confidence": 0.9}',
+        }
+    )
+    (tmp_path / FAKE_MEDIA).write_bytes(b"x")
+    out = tmp_path / "run"
+    run_manifest([case], backend, out, data_root=tmp_path)
+    assert not (out / "cases" / "RPN-1" / "resolution.json").is_file()
+    score = score_run(out, data_root=tmp_path)
+    assert "replay" not in score["per_case"]["RPN-1"]
+    assert "replay" not in score["metrics"]["policy"]["pointing"]
+    # W1-вердикт на месте: верный выбор → pass.
+    assert score["per_case"]["RPN-1"]["pass"] is True
 
 
 if __name__ == "__main__":

@@ -1,0 +1,86 @@
+{
+  "campaign": "virtual-replay-pointing",
+  "doc": "Virtual replay selection grid (OpenSpec add-pointing-virtual-replay, D5): 4 модели × {P_base, P0, P3, P4} × egopoint_15 = 16 runs / 240 кейсов. Каждая нога -- replay-режим раннера (--geometry из подтверждённого сайдкара, review_status=confirmed, 2026-11-06). Драйвер: scripts/run_matrix.py (многоножечный режим `campaigns`), GPU-гвардия 11436/11434 как в W1. Верхние пары по resolved_accuracy на выборочном наборе подтверждаются на pointing_holdout_15 -- шаблон ноги в `held_out_template` (НЕ в `campaigns`: сетка ровно 16 ног).",
+  "llama_server_bin": "/home/sinorin/llama.cpp/build-cuda/bin/llama-server",
+  "host": "127.0.0.1",
+  "port": 11436,
+  "manifest": "eval_manifests/egopoint_15.jsonl",
+  "read_timeout_s": 180.0,
+  "max_attempts": 2,
+  "health_timeout_s": 300,
+  "models": [
+    {
+      "id": "gemma4-e2b",
+      "enabled": true,
+      "profile": "config/models/gemma4-e2b.env",
+      "min_free_gb": 6
+    },
+    {
+      "id": "gemma4-e4b",
+      "enabled": true,
+      "profile": "config/models/gemma4-e4b.env",
+      "min_free_gb": 8
+    },
+    {
+      "id": "qwen3.5-4b",
+      "enabled": true,
+      "profile": "config/models/qwen3.5-4b.env",
+      "min_free_gb": 6
+    },
+    {
+      "id": "qwen3.5-9b",
+      "enabled": true,
+      "profile": "config/models/qwen3.5-9b.env",
+      "min_free_gb": 9
+    }
+  ],
+  "campaigns": [
+    {
+      "name": "p15-base",
+      "manifest": "eval_manifests/egopoint_15.jsonl",
+      "variant": null,
+      "geometry": "eval_manifests/egopoint_15.geometry.json",
+      "models": ["gemma4-e2b", "gemma4-e4b", "qwen3.5-4b", "qwen3.5-9b"]
+    },
+    {
+      "name": "p15-p0",
+      "manifest": "eval_manifests/egopoint_15.jsonl",
+      "variant": "P0",
+      "geometry": "eval_manifests/egopoint_15.geometry.json",
+      "models": ["gemma4-e2b", "gemma4-e4b", "qwen3.5-4b", "qwen3.5-9b"]
+    },
+    {
+      "name": "p15-p3",
+      "manifest": "eval_manifests/egopoint_15.jsonl",
+      "variant": "P3",
+      "geometry": "eval_manifests/egopoint_15.geometry.json",
+      "models": ["gemma4-e2b", "gemma4-e4b", "qwen3.5-4b", "qwen3.5-9b"]
+    },
+    {
+      "name": "p15-p4",
+      "manifest": "eval_manifests/egopoint_15.jsonl",
+      "variant": "P4",
+      "geometry": "eval_manifests/egopoint_15.geometry.json",
+      "models": ["gemma4-e2b", "gemma4-e4b", "qwen3.5-4b", "qwen3.5-9b"]
+    }
+  ],
+  "held_out_template": {
+    "doc": "Шаблоны ног подтверждения (V5.2) для верхних пар по resolved_accuracy: добавить в `campaigns` отдельной конфигурации (не здесь), подставив id модели. Манифест и геометрия -- held-out, только для подтверждения.",
+    "legs": [
+      {
+        "name": "h15-base",
+        "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+        "variant": null,
+        "geometry": "eval_manifests/pointing_holdout_15.geometry.json",
+        "models": ["<top-model-1>", "<top-model-2>"]
+      },
+      {
+        "name": "h15-pX",
+        "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+        "variant": "P?",
+        "geometry": "eval_manifests/pointing_holdout_15.geometry.json",
+        "models": ["<top-model-1>", "<top-model-2>"]
+      }
+    ]
+  }
+}

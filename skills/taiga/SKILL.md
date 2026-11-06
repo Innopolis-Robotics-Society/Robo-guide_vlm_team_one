@@ -22,10 +22,16 @@ versioned in this repo at `skills/taiga/` and installed by symlinking:
 ```bash
 TAIGA=$HOME/.pi/agent/skills/taiga/taiga.py
 # login once per machine; stores JWT in ~/.taiga_token (chmod 600)
-python3 $TAIGA --user andrei --password <pw> login
+# AGENT RULE: always log in as `sinorin` (server admin/superuser).
+# Never log in as a team-member account (andrei, daria, evgenii, ilya, taisiia).
+python3 $TAIGA --user sinorin --password <pw> login
 # or set TAIGA_USER / TAIGA_PASSWORD env vars and just run commands
 python3 $TAIGA projects
 ```
+
+Before the first Taiga write in a session, verify the stored token is sinorin's
+(`grep '"username"' ~/.taiga_token`); if it belongs to another account, log in
+as sinorin first.
 
 Account table lives in `docs/taiga.md` (section 2). Never print passwords in
 issue bodies, logs, or commits.

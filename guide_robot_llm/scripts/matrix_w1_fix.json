@@ -1,0 +1,87 @@
+{
+  "campaign": "w1-fix-pointing",
+  "doc": "W1-fix (Taiga-канбан, ветка fix/eval-w1-pointing-final-choice): честный pointing-прогон. Ноги = манифест × вариант: оригинальный EgoPoint-15 (egopoint_15) и held-out-15 (pointing_holdout_15, заморожен scripts/make_pointing_holdout.py) × {gemma4-e2b×P3, gemma4-e4b×P3, qwen3.5-4b×P0, qwen3.5-9b×P4} + baseline (variant: null, production-промпт) на все 4 модели. Варианты выбраны по оригинальному набору (отчёт §5.2); held-out используется ТОЛЬКО для подтверждения. Драйвер: scripts/run_matrix.py (многоножечный режим `campaigns`).",
+  "llama_server_bin": "/home/sinorin/llama.cpp/build-cuda/bin/llama-server",
+  "host": "127.0.0.1",
+  "port": 11436,
+  "manifest": "eval_manifests/egopoint_15.jsonl",
+  "read_timeout_s": 180.0,
+  "max_attempts": 2,
+  "health_timeout_s": 300,
+  "models": [
+    {
+      "id": "gemma4-e2b",
+      "enabled": true,
+      "profile": "config/models/gemma4-e2b.env",
+      "min_free_gb": 6
+    },
+    {
+      "id": "gemma4-e4b",
+      "enabled": true,
+      "profile": "config/models/gemma4-e4b.env",
+      "min_free_gb": 8
+    },
+    {
+      "id": "qwen3.5-4b",
+      "enabled": true,
+      "profile": "config/models/qwen3.5-4b.env",
+      "min_free_gb": 6
+    },
+    {
+      "id": "qwen3.5-9b",
+      "enabled": true,
+      "profile": "config/models/qwen3.5-9b.env",
+      "min_free_gb": 9
+    }
+  ],
+  "campaigns": [
+    {
+      "name": "p15-p3",
+      "manifest": "eval_manifests/egopoint_15.jsonl",
+      "variant": "P3",
+      "models": ["gemma4-e2b", "gemma4-e4b"]
+    },
+    {
+      "name": "p15-p0",
+      "manifest": "eval_manifests/egopoint_15.jsonl",
+      "variant": "P0",
+      "models": ["qwen3.5-4b"]
+    },
+    {
+      "name": "p15-p4",
+      "manifest": "eval_manifests/egopoint_15.jsonl",
+      "variant": "P4",
+      "models": ["qwen3.5-9b"]
+    },
+    {
+      "name": "p15-base",
+      "manifest": "eval_manifests/egopoint_15.jsonl",
+      "variant": null,
+      "models": ["gemma4-e2b", "gemma4-e4b", "qwen3.5-4b", "qwen3.5-9b"]
+    },
+    {
+      "name": "h15-p3",
+      "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+      "variant": "P3",
+      "models": ["gemma4-e2b", "gemma4-e4b"]
+    },
+    {
+      "name": "h15-p0",
+      "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+      "variant": "P0",
+      "models": ["qwen3.5-4b"]
+    },
+    {
+      "name": "h15-p4",
+      "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+      "variant": "P4",
+      "models": ["qwen3.5-9b"]
+    },
+    {
+      "name": "h15-base",
+      "manifest": "eval_manifests/pointing_holdout_15.jsonl",
+      "variant": null,
+      "models": ["gemma4-e2b", "gemma4-e4b", "qwen3.5-4b", "qwen3.5-9b"]
+    }
+  ]
+}

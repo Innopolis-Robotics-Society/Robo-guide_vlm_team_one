@@ -250,21 +250,78 @@ performed best with the minimal `A0` prompt.
 
 ### 5.2 Pointing results
 
-The supplied report describes 15 pointing cases:
+The supplied report describes 15 pointing cases. The original numbers in that
+report measured candidate recall — whether the right object appeared on the
+model's shortlist — not the final pointing decision. The evaluation harness now
+runs an explicit decision phase (the model picks one candidate from its own
+observation, or abstains) and scores `pass` on that final choice. The drop
+from the earlier “100%” is not a model regression: it is the metric now
+measuring what it claims to measure.
 
-| Model | Production prompt | Selected variant |
-|---|---:|---:|
-| Gemma 4 E2B | 20% | `P3`: 15/15 (100%) |
-| Gemma 4 E4B | 33% | `P3`: 15/15 (100%) |
-| Qwen3.5-4B | 33% | `P0`: 15/15 (100%) |
-| Qwen3.5-9B | 33% | `P4`: 14/15 (93%); one case unjudged |
+Perception and policy are reported separately. “Right one on shortlist” is
+target-in-candidates (recall); “saw a point at all” is pointing-evidence
+accuracy; “picked the right one” is final-choice accuracy over non-abstained
+decisions; “says 'nobody is pointing' when true” is no-target credit. The
+variant for each model was selected on the **original** 15-case set only; the
+**held-out** 15 (disjoint EgoPoint images, frozen with provenance) are used
+purely for confirmation.
 
-These figures show a large prompt effect on this small sample, but they do not
-show that the selected prompt will generalize. The best variant was selected
-from results on the reported cases, no held-out confirmation is included, and
-the set contains too little no-target evidence to evaluate safe abstention
-reliably. The offline score also does not validate the complete live pointing
-pipeline with robot pose and camera geometry.
+| Model (variant) | Set | Right one on shortlist | Saw a point at all | Picked the right one | Says “nobody's pointing” when true |
+|---|---|---:|---:|---:|---:|
+| Gemma 4 E2B (`P3`) | original 15 | 100% (15/15) | 0% | — (15/15 abstained) | n/a (no no-target cases) |
+| Gemma 4 E2B (`P3`) | held-out 15 | 100% (15/15) | 0% | 1/2 (50%) | n/a |
+| Gemma 4 E4B (`P3`) | original 15 | 100% (15/15) | 0% | 0/2 (0%) | n/a |
+| Gemma 4 E4B (`P3`) | held-out 15 | 100% (15/15) | 0% | 0/1 (0%) | n/a |
+| Qwen3.5-4B (`P0`) | original 15 | 100% (15/15) | 87% (13/15) | 4/13 (31%) | n/a |
+| Qwen3.5-4B (`P0`) | held-out 15 | 100% (15/15) | 53% (8/15) | 2/9 (22%) | n/a |
+| Qwen3.5-9B (`P4`) | original 15 | 100% (15/15) | 0% | 1/4 (25%) | n/a |
+| Qwen3.5-9B (`P4`) | held-out 15 | 100% (15/15) | 0% | 1/5 (20%) | n/a |
+
+The earlier report's “production prompt” column (20–33%) measured freeform
+multiple-choice answer extraction, a different execution mode; the comparable
+freeform baseline re-runs give 27–93% top-1 on these sets. The honest
+picture: all models keep the right object on the shortlist 100% of the time,
+but final-choice accuracy is 0–31% with heavy abstention (the models often
+declare that nobody is pointing at anything). The selected variants' ordering
+roughly holds on the held-out set (Qwen3.5-4B `P0`: 31% → 22%; Gemma models
+remain mostly abstaining), but samples are tiny. No no-target cases exist in
+either set, so safe-abstention credit on true negatives is still unmeasured —
+the same limitation the original report flagged. The offline score also does
+not validate the complete live pointing pipeline with robot pose and camera
+geometry.
+
+**Virtual replay (2026-11-06).** To close the “no live pipeline” gap without
+a robot, the harness now runs the *real* production resolver
+(`resolve_pointing`) on a fixed virtual geometry: per-case candidate anchors,
+inverted robot-frame positions, and a gold region, authored for the two 15-case
+sets and confirmed by human review (`review_status: confirmed`). After the
+decision phase the runner feeds the model's own observation and pick into the
+resolver and scores a `replay` block: detection rate, resolved accuracy,
+model/geometry agreement, and clarification rates. Full 4×4 grid
+(4 models × {base, P0, P3, P4}) on the original 15, then the top pairs
+confirmed on the held-out 15. Tabulation:
+`guide_robot_llm/eval_runs/2026-11-06-virtual-replay/replay_tabulation.csv`
+(18 legs, 270 cases, 0 backend errors).
+
+| Model (variant) | Set | Saw a point | Resolved (n) | Resolved correct | Agreement |
+|---|---|---:|---:|---:|---:|
+| Qwen3.5-9B (`P0`) | original 15 | 67% | 5 | 1/5 (20%) | 70% |
+| Qwen3.5-9B (`P0`) | held-out 15 | 53% | 4 | 1/4 (25%) | 100% |
+| Gemma 4 E4B (`P0`) | original 15 | 20% | 2 | 1/2 (50%) | 67% |
+| Gemma 4 E4B (`P0`) | held-out 15 | 33% | 4 | 1/4 (25%) | 100% |
+| Qwen3.5-4B (`P0`) | original 15 | 73% | 1 | 0/1 (0%) | 36% |
+
+Two findings. First, **only `P0` produces pointing evidence**: under `P3`/
+`P4` the detection rate is ~0, so the resolver degenerates to its
+safe-fallback (clarification) — the `P0` observation contract is what makes
+the pipeline engage. Second, the two confirmed pairs give a **reproducible
+but modest** end-to-end signal: ~4 of 15 cases resolve, ~25% of those to the
+correct object, and the resolver's pick agrees with the model's decision in
+100% of held-out resolved cases (it confirms or rejects the model's choice;
+it does not wander). The absolute numbers are small (n ≤ 5, wide CIs) and do
+not establish a winning model — they establish that the production pointing
+pipeline, driven by the model's own observation, runs end-to-end offline and
+behaves consistently across selection and held-out sets.
 
 ### 5.4 Reliability and latency
 

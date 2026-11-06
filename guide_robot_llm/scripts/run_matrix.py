@@ -325,6 +325,14 @@ def generate_canned(manifest_path: Path) -> dict[str, dict[str, str]]:
                     "abstain": False,
                 }
                 phases["action"] = json.dumps(action, ensure_ascii=False)
+        # W1: фаза решения (deployed + target_box). Gold-верный выбор: цель
+        # из gold; no-target (target_id == "unknown") -- отказ "none".
+        if gold.get("type") == "target_box":
+            tid = gold.get("target_id")
+            picked = "none" if (not tid or tid == "unknown") else tid
+            phases["decision"] = json.dumps(
+                {"target_id": picked, "confidence": 0.9}, ensure_ascii=False
+            )
         canned[case["case_id"]] = phases
     return canned
 
@@ -339,17 +347,24 @@ def run_model(
     model: dict[str, Any],
     camp: Campaign,
     *,
-    variant: str,
+    variant: str | None,
     mock: bool,
     allow_low: bool,
+    run_key: str | None = None,
 ) -> int:
-    """Один этап кампании: сервер → раннер (все варианты) → остановка."""
+    """Один этап кампании: сервер → раннер (вариант или baseline) → остановка.
+
+    `variant=None` -- baseline (production-промпт, флаг раннера не передаётся).
+    `run_key` -- уникальное имя состояния/каталога (многоножечные кампании,
+    где одна модель бежит в нескольких ногах).
+    """
     model_id = model["id"]
+    key = run_key or model_id
     profile = load_profile(_LLM_SERVER / model["profile"])
     manifest = _PKG_ROOT / cfg["manifest"]
     if not manifest.exists():
         raise RuntimeError(f"нет манифеста {manifest} — сначала: python3 scripts/make_bench50.py")
-    model_dir = camp.dir / f"{datetime.now().strftime('%Y-%m-%d')}-{model_id}"
+    model_dir = camp.dir / f"{datetime.now().strftime('%Y-%m-%d')}-{key}"
     model_dir.mkdir(parents=True, exist_ok=True)
     base_url = f"http://{cfg['host']}:{cfg['port']}/v1"
 
@@ -363,11 +378,13 @@ def run_model(
         str(model_dir),
         "--data-root",
         str(_PKG_ROOT),
-        "--prompt-variant",
-        variant,
-        "--max-attempts",
-        str(cfg.get("max_attempts", 2)),
     ]
+    if variant is not None:
+        runner_cmd += ["--prompt-variant", variant]
+    geometry = cfg.get("geometry")
+    if geometry:
+        runner_cmd += ["--geometry", str(_PKG_ROOT / geometry)]
+    runner_cmd += ["--max-attempts", str(cfg.get("max_attempts", 2))]
     proc: subprocess.Popen | None = None
     t0 = time.time()
     try:
@@ -417,7 +434,7 @@ def run_model(
         ).returncode
         wall = time.time() - t0
         camp.set_model(
-            model_id,
+            key,
             status="done" if proc_rc == 0 else "failed",
             exit_code=proc_rc,
             wall_s=round(wall, 1),
@@ -425,7 +442,7 @@ def run_model(
             finished=_now(),
         )
         if proc_rc != 0:
-            camp.log(f"model {model_id}: раннер: код {proc_rc} (см. {runner_log.name})")
+            camp.log(f"model {key}: раннер: код {proc_rc} (см. {runner_log.name})")
         return proc_rc
     finally:
         stop_server(proc, camp, model_id)
@@ -612,7 +629,49 @@ def main(argv: list[str] | None = None) -> int:
     if not args.dry_run and not args.mock and not models:
         raise SystemExit("после --skip-missing не осталось моделей с весами")
 
+    # Многоножечные кампании (W1-fix): `campaigns: [{name, manifest, variant, models}]`.
+    # `variant: null` -- baseline (production-промпт). Каждая нога -- свой
+    # манифест/вариант, state и каталоги ключуются `model__leg`.
+    legs: list[dict[str, Any]] = cfg.get("campaigns") or []
+    if legs:
+        variants_cfg = _PKG_ROOT / "guide_robot_llm" / "eval" / "prompt_variants.json"
+        variants_doc = json.loads(variants_cfg.read_text(encoding="utf-8"))
+        known_variants = {v["id"] for v in variants_doc["variants"]}
+        model_ids = {m["id"] for m in cfg["models"]}
+        for leg in legs:
+            if not (_PKG_ROOT / leg["manifest"]).exists():
+                raise SystemExit(f"нога {leg['name']}: нет манифеста {leg['manifest']}")
+            if leg.get("variant") is not None and leg["variant"] not in known_variants:
+                raise SystemExit(f"нога {leg['name']}: неизвестный вариант {leg['variant']!r}")
+            unknown = set(leg.get("models") or ()) - model_ids
+            if unknown:
+                raise SystemExit(f"нога {leg['name']}: неизвестные модели {sorted(unknown)}")
+            geometry = leg.get("geometry")
+            if geometry and not (_PKG_ROOT / geometry).exists():
+                raise SystemExit(f"нога {leg['name']}: нет геометрии {geometry}")
+        camp.log(f"кампания-сетка: {len(legs)} ног (manifest+variant+models в каждой)")
+
     if args.dry_run:
+        if legs:
+            for leg in legs:
+                manifest = _PKG_ROOT / leg["manifest"]
+                n_cases = sum(
+                    1 for line in manifest.read_text(encoding="utf-8").splitlines() if line.strip()
+                )
+                vlabel = leg.get("variant") or "baseline"
+                glabel = f", geometry={leg['geometry']}" if leg.get("geometry") else ""
+                camp.log(
+                    f"PLAN-нога {leg['name']}: {manifest.name} "
+                    f"({n_cases} кейсов), variant={vlabel}{glabel}"
+                )
+                for model in models:
+                    if leg.get("models") and model["id"] not in set(leg["models"]):
+                        continue
+                    key = f"{model['id']}__{leg['name']}"
+                    status = camp.model_status(key)
+                    mark = "SKIP(done)" if status == "done" and not args.force else "RUN"
+                    camp.log(f"  {mark} {key}")
+            return 0
         manifest = _PKG_ROOT / cfg["manifest"]
         n_cases = sum(
             1 for line in manifest.read_text(encoding="utf-8").splitlines() if line.strip()
@@ -635,28 +694,46 @@ def main(argv: list[str] | None = None) -> int:
     _install_signal_handlers(camp)
 
     failures = 0
-    for model in models:
+    work: list[tuple[dict[str, Any] | None, dict[str, Any]]] = (
+        [
+            (leg, model)
+            for leg in legs
+            for model in models
+            if not leg.get("models") or model["id"] in set(leg["models"])
+        ]
+        if legs
+        else [(None, model) for model in models]
+    )
+    for leg, model in work:
         if camp._stop_flag:
             camp.log("стоп-сигнал — завершаю кампанию")
             break
-        if not args.force and camp.model_status(model["id"]) == "done":
-            camp.log(f"model {model['id']}: done — пропускаю (переопределение: --force)")
+        key = f"{model['id']}__{leg['name']}" if leg else model["id"]
+        if not args.force and camp.model_status(key) == "done":
+            camp.log(f"{key}: done — пропускаю (переопределение: --force)")
             continue
-        camp.set_model(model["id"], status="running", started=_now())
+        if leg:
+            cfg_leg = {**cfg, "manifest": leg["manifest"]}
+            if leg.get("geometry"):
+                cfg_leg["geometry"] = leg["geometry"]
+        else:
+            cfg_leg = cfg
+        camp.set_model(key, status="running", started=_now())
         try:
             rc = run_model(
-                cfg,
+                cfg_leg,
                 model,
                 camp,
-                variant=args.variants,
+                variant=leg.get("variant") if leg else args.variants,
                 mock=args.mock,
                 allow_low=args.allow_low_vram,
+                run_key=key,
             )
             if rc != 0:
                 failures += 1
         except Exception as exc:  # noqa: BLE001 — безприсмотрный прогон: фиксация и далее
-            camp.log(f"model {model['id']}: ОШИБКА: {exc}")
-            camp.set_model(model["id"], status="failed", error=str(exc))
+            camp.log(f"{key}: ОШИБКА: {exc}")
+            camp.set_model(key, status="failed", error=str(exc))
             failures += 1
 
     score_runs(camp)

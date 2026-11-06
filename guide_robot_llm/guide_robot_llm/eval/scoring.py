@@ -288,15 +288,17 @@ def score_case(
         no_target = gold.get("target_id") == NO_TARGET_ID
         if mode == "deployed":
             result["kind"] = "pointing-no-target" if no_target else "pointing-target-deployed"
+            dec_path = case_dir / "parsed_decision.json"
+            dec_exists = dec_path.is_file()
+            dec = _read_parsed(dec_path)
             if obs is not None:
                 evidence = obs.get("pointing_evidence")
                 candidates = list(obs.get("exhibit_candidates") or ())
+                # === Перцепция (T1/T2): считается, но не определяет `pass` (W1) ===
                 if no_target:
-                    answered = bool(candidates) or evidence == "yes"
-                    result["policy"]["answered"] = answered
-                    result["policy"]["false_positive"] = answered
-                    result["policy"]["abstention_credit"] = not answered
-                    result["pass"] = not answered
+                    result["perception"]["observed_answer"] = (
+                        bool(candidates) or evidence == "yes"
+                    )
                 else:
                     target = gold["target_id"]
                     in_candidates = target in candidates
@@ -308,7 +310,80 @@ def score_case(
                     result["perception"]["box_iou"] = iou
                     if reason is not None:
                         result["perception"]["box_iou_skipped"] = reason
-                    result["pass"] = in_candidates
+                # === Политика (W1): `pass` определяет ТОЛЬКО финальный выбор ===
+                policy = result["policy"]
+                if dec is None and not dec_exists:
+                    # Legacy-прогон (до W1) или фаза решения не выполнялась:
+                    # вердикта нет, pass через recall невозможен.
+                    policy["decision_missing"] = True
+                elif dec is None:
+                    # Фаза была, но ответ не лег в замкнутую форму.
+                    policy["decision_unparsed"] = True
+                else:
+                    chosen = dec["target_id"]  # str | None ("none" → None)
+                    if no_target:
+                        policy["abstained"] = chosen is None
+                        policy["false_positive"] = chosen is not None
+                        policy["abstention_credit"] = chosen is None
+                        if chosen is None:
+                            result["pass"] = True
+                        else:
+                            policy["chosen_id"] = chosen
+                            result["pass"] = False
+                    elif chosen is None:
+                        # Отказ на кейсе с целью: unjudged + credit, не pass.
+                        policy["abstained"] = True
+                        policy["abstention_credit"] = True
+                    else:
+                        policy["abstained"] = False
+                        policy["chosen_id"] = chosen
+                        policy["top1_correct"] = chosen == gold["target_id"]
+                        result["pass"] = bool(policy["top1_correct"])
+            # === Replay (add-pointing-virtual-replay, D1): end-to-end по
+            # настоящему resolve_pointing(). `resolution.json` есть только
+            # в прогонах с `--geometry`; без него -- семантика W1. ===
+            res_path = case_dir / "resolution.json"
+            res = _read_parsed(res_path)
+            if isinstance(res, dict):
+                status = res.get("status")
+                pick = res.get("model_content_id")
+                leader = res.get("geometry_leader")
+                resolved_id = res.get("content_id")
+                correct: bool | None = None
+                if status == "resolved":
+                    if no_target:
+                        # Резолвер резолвит только id кандидатов: на
+                        # no-target кейсе любой resolved -- false positive.
+                        policy["false_positive"] = True
+                        result["pass"] = False
+                    else:
+                        correct = resolved_id == gold.get("target_id")
+                        if not correct:
+                            policy["replay_high_confidence_wrong"] = True
+                        result["pass"] = bool(correct)
+                else:
+                    # Уточнение резолюции ИЛИ модель-отказ: unjudged.
+                    result["pass"] = None
+                    if status == "model_abstained":
+                        policy["abstained"] = True
+                result["replay"] = {
+                    "status": status,
+                    "resolved_id": resolved_id,
+                    "correct": correct,
+                    "clarification": (
+                        status
+                        if status in ("ambiguous", "no_candidate", "unusable_frames")
+                        else None
+                    ),
+                    "model_abstained": status == "model_abstained",
+                    "detected": bool(obs is not None and obs.get("pointing_evidence") == "yes"),
+                    "agreement": (
+                        pick == leader
+                        if pick is not None and leader is not None
+                        else None
+                    ),
+                    "box_iou": res.get("box_iou"),
+                }
         else:  # freeform (авторский QA-протокол)
             result["kind"] = "pointing-no-target" if no_target else "pointing-target-freeform"
             if ff is not None:
@@ -510,14 +585,36 @@ def _aggregate(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
     c_eng_mae: list[Any] = []
     c_eng_exact: list[Any] = []
     f_top1: list[Any] = []
+    d_top1: list[Any] = []
+    d_abstain: list[Any] = []
+    d_missing: list[Any] = []
     nt_fp: list[Any] = []
     nt_credit: list[Any] = []
     t_exact: list[Any] = []
     t_nt_fp: list[Any] = []
     t_nt_credit: list[Any] = []
+    rep_n = 0
+    rep_correct: list[Any] = []
+    rep_detected: list[Any] = []
+    rep_agreement: list[Any] = []
+    rep_iou: list[Any] = []
+    rep_clar: dict[str, int] = {}
     for r in per_case.values():
         kind = r["kind"]
         p, pol = r["perception"], r["policy"]
+        rep = r.get("replay")
+        if isinstance(rep, dict):
+            # Replay-декомпозиция (add-pointing-virtual-replay, D4).
+            rep_n += 1
+            rep_correct.append(rep.get("correct"))
+            rep_detected.append(1.0 if rep.get("detected") else 0.0)
+            if rep.get("agreement") is not None:
+                rep_agreement.append(1.0 if rep["agreement"] else 0.0)
+            if rep.get("box_iou") is not None:
+                rep_iou.append(rep["box_iou"])
+            reason = rep.get("clarification")
+            if reason is not None:
+                rep_clar[reason] = rep_clar.get(reason, 0) + 1
         if kind == "pointing-target-deployed":
             p_ev.append(p.get("evidence_correct"))
             p_in.append(p.get("target_in_candidates"))
@@ -526,6 +623,12 @@ def _aggregate(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
                 p_iou.append(p.get("box_iou"))
                 if p.get("box_iou") is None:
                     p_iou_skipped += 1
+            # W1: политика -- финальный выбор (decision phase), не recall.
+            d_top1.append(pol.get("top1_correct"))
+            if "abstained" in pol:
+                d_abstain.append(1.0 if pol["abstained"] else 0.0)
+            if "decision_missing" in pol:
+                d_missing.append(1.0)
         elif kind == "pointing-target-freeform":
             f_top1.append(pol.get("top1_correct"))
         elif kind == "pointing-no-target":
@@ -559,10 +662,30 @@ def _aggregate(per_case: dict[str, dict[str, Any]]) -> dict[str, Any]:
     put(perception["audience"], "engaged_mae", _mean(c_eng_mae))
     put(perception["audience"], "engaged_exact_accuracy", _mean(c_eng_exact))
     put(policy["pointing"], "top1_target_accuracy", _mean(f_top1))
+    # W1: deployed-политика (decision phase): точность финального выбора
+    # (судимые только), частота отказов, доля legacy-кейсов без решения.
+    put(policy["pointing"], "final_choice_accuracy", _mean(d_top1))
+    put(policy["pointing"], "abstention_rate", _mean(d_abstain))
+    put(policy["pointing"], "decision_missing_rate", _mean(d_missing))
 
     block = _no_target_block(len(nt_fp), nt_fp, nt_credit)
     if block is not None:
         policy["pointing"]["no_target"] = block
+    # Replay (add-pointing-virtual-replay): primary-метрика -- resolved
+    # accuracy end-to-end; остальное -- декомпозиция факторов production-
+    # pipeline. Пишется только для прогонов с `--geometry`.
+    if rep_n:
+        replay_block: dict[str, Any] = {"n": rep_n}
+        put(replay_block, "resolved_accuracy", _mean(rep_correct))
+        put(replay_block, "detection_rate", _mean(rep_detected))
+        put(replay_block, "agreement_rate", _mean(rep_agreement))
+        put(replay_block, "box_iou_mean", _mean(rep_iou))
+        if rep_clar:
+            replay_block["clarification_rate"] = {
+                reason: round(count / rep_n, 4)
+                for reason, count in sorted(rep_clar.items())
+            }
+        policy["pointing"]["replay"] = replay_block
     put(policy["tool"], "exact_match_accuracy", _mean(t_exact))
     block = _no_target_block(len(t_nt_fp), t_nt_fp, t_nt_credit)
     if block is not None:
@@ -1130,6 +1253,10 @@ _AUDIENCE_ROWS: tuple[tuple[str, str], ...] = (
 )
 _POINTING_POLICY_ROWS: tuple[tuple[str, str], ...] = (
     ("top1_target_accuracy", "top-1 target (freeform answer)"),
+    # W1: deployed-политика -- финальный выбор (decision phase), не recall.
+    ("final_choice_accuracy", "final-choice accuracy (decision phase, judged only)"),
+    ("abstention_rate", "abstention rate (decision says \"none\")"),
+    ("decision_missing_rate", "legacy cases without a decision (unjudged)"),
 )
 _TOOL_ROWS: tuple[tuple[str, str], ...] = (("exact_match_accuracy", "{tool, args} exact match"),)
 

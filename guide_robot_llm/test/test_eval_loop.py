@@ -279,7 +279,13 @@ def test_loop_terminal_abstain_deployed(tmp_path) -> None:
         candidates=("a", "b"),
     )
     run = run_case(
-        poi_a, MockBackend({("LP-PA", "observation"): OBS_NO_CANDIDATE}),
+        poi_a,
+        MockBackend(
+            {
+                ("LP-PA", "observation"): OBS_NO_CANDIDATE,
+                ("LP-PA", "decision"): '{"target_id": "none", "confidence": 0.3}',
+            }
+        ),
         variant=vs["P3"], data_root=tmp_path,
     )
     assert run.status == "ok"
@@ -297,7 +303,13 @@ def test_loop_terminal_abstain_deployed(tmp_path) -> None:
         candidates=("a", "b"),
     )
     run = run_case(
-        poi_b, MockBackend({("LP-PB", "observation"): OBS_CONFIDENT}),
+        poi_b,
+        MockBackend(
+            {
+                ("LP-PB", "observation"): OBS_CONFIDENT,
+                ("LP-PB", "decision"): '{"target_id": "a", "confidence": 0.9}',
+            }
+        ),
         variant=vs["P3"], data_root=tmp_path,
     )
     assert run.terminal_abstain is False
